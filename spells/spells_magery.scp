@@ -122,24 +122,6 @@ MANAUSE=4
 SKILLREQ=MAGERY 10.0
 INTERRUPT=100.0,100.0
 
-On=@Select
-SERV.b Selected
-
-On=@Fail
-SERV.b Failed
-
-On=@Start
-SERV.b Started
-
-On=@Success
-SERV.b Successed
-
-On=@Effect
-SERV.b Affected
-
-On=@TargetCancel
-SERV.b Cancelled
-
 [SPELL 7]
 DEFNAME=s_reactive_armor
 NAME=Reactive Armor
