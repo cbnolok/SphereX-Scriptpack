@@ -622,4 +622,32 @@ transfer_lockdowns	= 01	// Transfer LockDowns
 transfer_addon		= 02	// Transfer Addons
 transfer_all		= 04	// Transfer LockDowns, Addons and every other item found inside a house that is not a component of it.
 
+[DEFNAME serv_resource_types]
+RES_ACCOUNT			= 1		// Define an account instance.
+RES_AREA			= 3		// Complex region. (w/extra tags)
+RES_BOOK			= 5		// A book or a page from a book.
+RES_CHAMPION		= 6		// A Champion definition.
+RES_CHARDEF			= 7		// Define a char type. (overlap with RES_SPAWN)
+RES_DIALOG			= 10	// A scriptable gump dialog, text or handler block.
+RES_ITEMDEF			= 15	// Define an item type. (overlap with RES_TEMPLATE)
+RES_MENU			= 18	// General scriptable menus.
+RES_NAMES			= 20	// A block of possible names for a NPC type. (read as needed)
+RES_NEWBIE			= 21	// Triggers to execute on Player creation (based on skills selected)
+RES_REGIONRESOURCE	= 25	// Define an Ore type.
+RES_REGIONTYPE		= 26	// Triggers etc. that can be assinged to a RES_AREA
+RES_ROOM			= 29	// Non-complex region. (no extra tags)
+RES_SCROLL			= 31	// SCROLL_GUEST=message scroll sent to player at guest login. SCROLL_MOTD, SCROLL_NEWBIE
+RES_SKILL			= 34	// Define attributes for a skill (how fast it raises etc)
+RES_SKILLCLASS		= 35	// Define specifics for a char with this skill class. (ex. skill caps)
+RES_SKILLMENU		= 36	// A menu that is attached to a skill. special arguments over other menus.
+RES_SPAWN			= 37	// Define a list of NPC's and how often they may spawn.
+RES_SPEECH			= 38	// A speech block with ON=*blah* in it.
+RES_SPELL			= 39	// Define a magic spell. (0-64 are reserved)
+RES_TEMPLATE		= 45	// Define lists of items. (for filling loot etc)
+RES_TIP				= 47	// Tips (similar to RES_SCROLL) that can come up at startup.
+RES_TYPEDEF			= 48	// Define a trigger block for a RES_WORLDITEM m_type.
+RES_WEBPAGE			= 51	// Define a web page template.
+//--
+RESTYPE_BIT_SHIFT	= 20
+
 [EOF]

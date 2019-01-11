@@ -247,9 +247,11 @@ t_cartography           195   // cartography tool
 t_cooking               196   // cooking tool
 t_pilot                 197   // t_pilot (PacketWheelBoatMove)
 t_rope                  198   // almost the same as a ship plank, but not lockable by default.
-t_healing_stone         199
-t_spawn_champion	      200   // Champion Spawn
-t_multi_addon	          201   // AddOn
+t_weapon_whip			      199
+
+// New SphereX types starting from 300
+t_spawn_champion        300   // Champion Spawn
+t_multi_addon           301   // AddOn
 
 //Add custom types after 500 to leave room for future hardcoded types
 t_forest                500   // Forest Tiles

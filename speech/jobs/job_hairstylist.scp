@@ -1,0 +1,21 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
+[SPEECH jobHAIRSTYLIST]
+ON=*buy*
+	IF (<SRC.FLAGS> & statf_dead)
+		SRC.SYSMESSAGE You cannot use the services of a hairstylist right now.
+		return 1
+	ELIF (<SRC.FLAGS> & statf_polymorph)
+		SRC.SYSMESSAGE Your current form does not allow for new styles.
+		return 1
+	ELIF (<SRC.f_isgarg>)
+		SRC.SYSMESSAGE A hairstylist cannot style your horns!
+		return 1
+	ENDIF
+	SDIALOG d_hairstylist
+	
+[EOF]

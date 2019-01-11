@@ -1,0 +1,18 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
+[SPEECH jobBODYSCULPTOR]
+ON=*buy*
+	IF (<SRC.f_isgarg>)
+		SRC.SYSMESSAGE Gargoyles cannot use the services of a body sculptor.
+		return 1
+	ELIF !((<SRC.CLIENTISKR>) || (<SRC.CLIENTISENHANCED>))
+		SRC.SYSMESSAGE Your legacy self looks too good to change.
+		return 1
+	ENDIF
+	SDIALOG d_body_sculptor
+	
+[EOF]
