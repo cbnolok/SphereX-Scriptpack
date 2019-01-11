@@ -897,40 +897,43 @@ ITEM=i_fey_leggings
 ITEM=i_pads_of_cu_sidhe
 ITEM=i_totem_of_void
 
-[TEMPLATE full_aquarium]
-CATEGORY=Item Set Templates
-SUBSECTION=GM Collections
-DESCRIPTION=Full Aquarium
-CONTAINER=i_aquarium
-NAME=Aquarium
-ITEM=i_coral
-ITEM=i_coral_2
-ITEM=i_coral_3
-ITEM=i_crab_speckled
-ITEM=i_fish_unknown
-ITEM=i_fish_minoc_blue
-ITEM=i_fish_unknown_2
-ITEM=i_fish_unknown_3
-ITEM=i_fish_unknown_4
-ITEM=i_fish_fandancer
-ITEM=i_fish_golden_broadtail
-ITEM=i_fish_unknown_5
-ITEM=i_fish_unknown_6
-ITEM=i_fish_nujelm_honey
-ITEM=i_fish_unknown_7
-ITEM=i_fish_vesper_reef_tiger
-ITEM=i_fish_spotted_bucaneer
-ITEM=i_fish_striped_sosarian_swill
-ITEM=i_fish_unknown_8
-ITEM=i_fish_bones
-ITEM=i_frog
-ITEM=i_jellyfish
-ITEM=i_seahorse
-ITEM=i_shrimp_brine
-ITEM=i_shell_2
-ITEM=i_shell_3
-ITEM=i_shrimp
-ITEM=i_sea_sponge
-
+//xwerswoodx:
+//Commented all template because the items currently not defined.
+//I didn't want to remove it for later usage.
+//
+//[TEMPLATE full_aquarium]
+//CATEGORY=Item Set Templates
+//SUBSECTION=GM Collections
+//DESCRIPTION=Full Aquarium
+//CONTAINER=i_aquarium
+//NAME=Aquarium
+//ITEM=i_coral
+//ITEM=i_coral_2
+//ITEM=i_coral_3
+//ITEM=i_crab_speckled
+//ITEM=i_fish_unknown
+//ITEM=i_fish_minoc_blue
+//ITEM=i_fish_unknown_2
+//ITEM=i_fish_unknown_3
+//ITEM=i_fish_unknown_4
+//ITEM=i_fish_fandancer
+//ITEM=i_fish_golden_broadtail
+//ITEM=i_fish_unknown_5
+//ITEM=i_fish_unknown_6
+//ITEM=i_fish_nujelm_honey
+//ITEM=i_fish_unknown_7
+//ITEM=i_fish_vesper_reef_tiger
+//ITEM=i_fish_spotted_bucaneer
+//ITEM=i_fish_striped_sosarian_swill
+//ITEM=i_fish_unknown_8
+//ITEM=i_fish_bones
+//ITEM=i_frog
+//ITEM=i_jellyfish
+//ITEM=i_seahorse
+//ITEM=i_shrimp_brine
+//ITEM=i_shell_2
+//ITEM=i_shell_3
+//ITEM=i_shrimp
+//ITEM=i_sea_sponge
 
 [EOF]

@@ -13,4 +13,13 @@ i_candleabra_lit      i_candelabra_lit
 i_candleabra2         i_candelabra2
 i_candleabra2_lit     i_candelabra2_lit
 
+//xwerswoodx:
+//For fixing that definition problems, I just add some defnames for avoiding errors.
+c_waitress            c_waiter_f
+c_demon_balron        c_balron
+c_dragon              c_dragon_green
+c_drake               c_drake_gray
+c_ophidian_shaman     c_ophidian_mage
+c_demon_ice           c_icefiend
+
 [EOF]

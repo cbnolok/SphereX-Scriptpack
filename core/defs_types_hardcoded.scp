@@ -248,13 +248,14 @@ t_cooking               196   // cooking tool
 t_pilot                 197   // t_pilot (PacketWheelBoatMove)
 t_rope                  198   // almost the same as a ship plank, but not lockable by default.
 t_healing_stone         199
-t_spawn_champion		200   // Champion Spawn
-t_multi_addon			201   // AddOn
+t_spawn_champion	      200   // Champion Spawn
+t_multi_addon	          201   // AddOn
 
 //Add custom types after 500 to leave room for future hardcoded types
 t_forest                500   // Forest Tiles
 t_jungle                501   // Jungle Tiles
 t_furniture             502   // Furniture
 t_soul_forge            503   // Soul Forge
+t_eerie_stuff           t_normal //I added this to avoid missing type error.
 
 [EOF]

@@ -1,0 +1,87 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
+[CHARDEF 026]
+//FIXME: No Stratics data yet
+DEFNAME=c_demon_blackgate
+NAME=#NAMES_DAEMON
+ICON=i_pet_demon_blackgate
+SOUND=snd_monster_daemon1
+CAN=MT_WALK|MT_FLY|MT_USEHANDS|MT_EQUIP
+DAM=133,149
+ARMOR=60
+DESIRES=r_caves,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
+AVERSIONS=t_trap,r_civilization
+FOODTYPE=45 t_meat_raw
+RESOURCES=1 i_ribs_raw,4 i_reag_daemon_bone
+TAG.Barding.Diff=114.5
+DAMCOLD=25
+DAMENERGY=25
+DAMFIRE=25
+TAG.SlayerGroup=DEMON
+TEVENTS=e_carnivores3
+CATEGORY=Monsters
+SUBSECTION=Demons
+DESCRIPTION=Demon (dark)
+
+ON=@Create
+NPC=brain_monster
+FAME={6500 6999}
+KARMA={-6500 -6999}
+STR={690 900}
+MAXHITS={4000 4999}
+DEX={150 180}
+MAXSTAM={150 180}
+INT={140 150}
+MAXMANA={140 150}
+EVALUATINGINTEL={90.0 100.0}
+MAGERY={90.0 100.0}
+MAGICRESISTANCE={90.0 100.0}
+MEDITATION={90.0 100.0}
+PARRYING={90.0 100.0}
+TACTICS={99.0 100.0}
+WRESTLING={98.0 99.0}
+RESPHYSICAL={0 20}
+RESCOLD={20 30}
+RESENERGY={40 50}
+RESFIRE={50 60}
+RESPOISON={70 80}
+
+ON=@NPCRestock
+ITEM=loot_demon
+
+[CHARDEF 090]
+DEFNAME=c_sea_horse
+NAME=Sea Horse
+SOUND=
+CAN=mt_swim
+DAM=
+ARMOR=
+CATEGORY=Mounts
+SUBSECTION=Aquatic
+DESCRIPTION=Horse, Sea
+
+On=@Create
+NPC=brain_monster
+STR={251, 425}
+DEX={87, 135}
+INT={87, 155}
+MAXHITS={151, 255}
+RESPHYSICAL={30, 40}
+RESFIRE={70, 80}
+RESCOLD={40, 50}
+RESPOISON={30, 40}
+RESENERGY={15, 20}
+MAGICRESISTANCE={60.1, 75.0}
+TACTICS={60.1, 70.0}
+WRESTLING={60.1, 70.0}
+FAME=6000
+KARMA=-6000
+
+On=@NpcRestock
+ITEM={ i_fish_big_1 1 i_fish_big_2 1 i_fish_big_3 1 i_fish_big_4 1 },4
+
+[EOF]

@@ -781,27 +781,6 @@ ITEM=random_reagent,{4 6},R3
 ITEM=random_wand_magery,1,R5
 //ITEM=i_map_treasure,1,R80
 
-[TEMPLATE loot_lich_ancient]
-CATEGORY=Item Templates
-SUBSECTION=Monster Loot Templates
-DESCRIPTION=Lich (ancient)
-ITEM=i_gold,{1000 1100}
-ITEM=random_jewel,{3 4}
-ITEM=random_scroll,{2 3}
-ITEM=random_reagent,{6 9}
-//ITEM=i_map_treasure,1,R20
-ITEM={ random_weapon_staff_normal 99 i_staff_lich 1 }
-ITEM={ random_magic_loot 1 0 20 }
-ITEM=monster_regbag_necromancy
-ITEM=random_weapon_all_normal
-ITEM=random_armor_all
-CONTAINER=i_bag
-ITEM=i_gold,{500 600}
-ITEM=random_jewel,{2 3}
-ITEM=random_reagent,{5 8}
-ITEM=random_wand_magery
-ITEM={ random_item_misc_rare 1 0 200 }
-
 [TEMPLATE loot_lich_lord]
 CATEGORY=Item Templates
 SUBSECTION=Monster Loot Templates
@@ -1583,21 +1562,6 @@ ITEM=random_reagent,{4 6}
 ITEM=random_jewel,{1 2}
 ITEM={ random_magic_custom_lesser 1 random_magic_jewelry 1 0 260 }
 
-[TEMPLATE loot_gargoyle]
-CATEGORY=Item Templates
-SUBSECTION=Monster Loot Templates
-DESCRIPTION=Gargoyle
-ITEM=i_gold,{75 100}
-ITEM=random_jewel,{1 2}
-ITEM=random_potion
-ITEM=random_scroll,{1 3}
-ITEM=random_wand_magery,R20
-CONTAINER=i_bag
-ITEM=i_gold,{50 75}
-ITEM=random_jewel,R2
-ITEM=random_potion,R2
-ITEM=random_scroll,{1 2},R2
-
 [TEMPLATE loot_gargoyle_stone]
 CATEGORY=Item Templates
 SUBSECTION=Monster Loot Templates
@@ -1932,13 +1896,6 @@ ITEM={ i_cheese_wedge 1 i_cheese_cut 1 i_cheese_wheel 1 0 3 }
 // Wild animal loot //
 //////////////////////
 
-[TEMPLATE loot_lava_lizard]
-CATEGORY=Item Templates
-SUBSECTION=Monster Loot Templates
-DESCRIPTION=Lava Lizard
-ITEM=i_gold,{50 100}
-ITEM=i_reag_sulfur_ash,{5 15}
-
 [TEMPLATE loot_ice_snake]
 CATEGORY=Item Templates
 SUBSECTION=Monster Loot Templates
@@ -1976,12 +1933,6 @@ DESCRIPTION=Giant Silver Serpent
 ITEM=i_gold,{250 300}
 ITEM=random_jewel,{2 3}
 ITEM={ random_body_parts_1 1 random_body_parts_2 1 random_item_bone 1 }
-
-[TEMPLATE loot_rat_giant]
-CATEGORY=Item Templates
-SUBSECTION=Monster Loot Templates
-DESCRIPTION=Giant Rat
-ITEM=i_gold,{25 50}
 
 [TEMPLATE loot_toad_giant]
 CATEGORY=Item Templates
@@ -2143,14 +2094,6 @@ ITEM=i_reag_sulfur_ash,{2 4}
 ITEM=random_scroll,{1 2}
 ITEM=random_potion
 ITEM={ random_weapon_all 50 random_armor_all 50 random_magic_custom_lesser 1 }
-
-[TEMPLATE loot_steed_fire]
-CATEGORY=Item Templates
-SUBSECTION=Monster Loot Templates
-DESCRIPTION=Fire Steed
-ITEM=i_gold,{50 100}
-ITEM=random_jewel,{15 20}
-ITEM=i_reag_sulfur_ash,{6 9}
 
 [TEMPLATE loot_hiryu]
 CATEGORY=Item Templates
@@ -3143,16 +3086,6 @@ ITEM=random_reagent,{5 9},R2
 ITEM=random_scroll,{1 3},R3
 ITEM=random_wand_magery,R40
 
-
-[TEMPLATE loot_harpy]
-CATEGORY=Item Templates
-SUBSECTION=Monster Loot Templates
-DESCRIPTION=Harpy
-ITEM=i_gold,{75 100}
-ITEM=random_jewel,1,R5
-CONTAINER=i_bag
-ITEM=i_gold,{25 50}
-
 [TEMPLATE loot_harpy_stone]
 CATEGORY=Item Templates
 SUBSECTION=Monster Loot Templates
@@ -3191,15 +3124,6 @@ ITEM={ random_weapon_all 1 0 35 }
 CONTAINER=i_bag
 ITEM=i_gold,{100 150}
 ITEM=random_scroll
-
-[TEMPLATE loot_kraken]
-CATEGORY=Item Templates
-SUBSECTION=Monster Loot Templates
-DESCRIPTION=Kraken
-ITEM=i_gold,{275 325}
-//ITEM=i_map_treasure,1,R80
-ITEM=random_weapon_all
-ITEM={ random_nautical_fish 4 random_tool_nautical 2 random_nautical_live 1 }
 
 [TEMPLATE loot_phoenix]
 CATEGORY=Item Templates

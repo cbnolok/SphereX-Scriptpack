@@ -31,7 +31,8 @@ endif
 return 0
 
 [FUNCTION f_isPlayableChar]
-IF <IsHuman> || <IsElf> || <IsGargoyle>
+//IF <IsHuman> || <IsElf> || <IsGargoyle>
+IF (<f_isHuman> || <f_isElf> || <f_isGargoyle>) //IsHuman, IsElf and IsGargoyle is not valid command so changed it to scripted ones!
 	RETURN 1
 ENDIF
 RETURN 0
@@ -41,5 +42,13 @@ IF (<ISEVENT.e_undead>) || (<ISTEVENT.e_undead>) // || (<NPC>==brain_undead)
 	RETURN 1
 ENDIF
 RETURN 0
+
+//<ITEM>.f_isStackable
+[FUNCTION f_isStackable]
+RETURN <qVal (<CAN>&can_i_pile)?1:0>
+
+//<NPC>.f_isTameable
+[FUNCTION f_isTameable]
+RETURN <qVal (((<NPC> == brain_animal) || (<NPC> == brain_monster) || (<NPC> == brain_dragon)) && (<dTAMING>)) ? 1 : 0>
 
 [EOF]

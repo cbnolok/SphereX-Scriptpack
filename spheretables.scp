@@ -50,6 +50,8 @@ speech/monsters/
 speech/towns/
 types/
 items/
+core/backward_compatibility_56c.scp
+core/backward_compatibility_56d.scp
 multis/
 templates/
 newbie_templates.scp
@@ -58,6 +60,7 @@ core/regiontypes.scp
 events/
 spells/
 npcs/
+core/backward_compatibility_56b.scp
 spawns/
 stones/
 stones/guilds/

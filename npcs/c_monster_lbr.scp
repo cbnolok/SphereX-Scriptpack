@@ -1,90 +1,55 @@
-[CHARDEF 02e]
-defname=c_wyrm_ancient
-defname2=c_dragon_wyrm
-NAME=Ancient Wyrm
-SOUND=362
-ICON=i_pet_dragon
-dam=29,35
-armor=70
-resources=40 i_hide_barbed,19 i_ribs_raw, 12 random_dragon_scales
-CAN=MT_USEHANDS|MT_WALK|MT_FLY
-DESIRES=i_gold,e_notoriety,e_horses,c_man,c_woman,t_corpse
-MOVERATE=50
-RESDISPDNID=c_dragon_red
-RESLEVEL=2
-RESDISPDNHUE=78
-CATEGORY=Monsters
-SUBSECTION=Dragons
-DESCRIPTION=Wyrm, Ancient
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
 
-ON=@Create
-npc=brain_dragon
-str={1096, 1185}
-dex={86, 175}
-int={686, 775}
-maxhits={658, 711}
-resphysical={65, 75}
-resfire={80, 90}
-rescold={70, 80}
-respoison={60, 70}
-resenergy={60, 70}
-evaluatingintel={80.1, 100.0}
-magery={80.1, 100.0}
-meditation={52.5, 75.0}
-magicresistance={100.5, 150.0}
-tactics={97.6, 100.0}
-wrestling={97.6, 100.0}
-fame=22500
-karma=-22500
+[CHARDEF 0be]
+DEFNAME=c_steed_fire
+NAME=fire steed
+ICON=i_pet_steed_fire
+SOUND=snd_animals_horse1
+CAN=MT_WALK|MT_RUN|MT_NONHUM
+DAM=34,86
+ARMOR=30
+DESIRES=r_desert,r_mountains_volcanic,t_coin,t_gold,t_gem
+AVERSIONS=t_trap,r_civilization
+FOODTYPE=t_meat_raw
+MAXFOOD=35
+RESOURCES=19 i_ribs_raw
+TAG.Barding.Diff=83.6
+FollowerSlots=2
+DamFire=80
+TEVENTS=e_horses
+TEVENTS=e_carnivores2
+CATEGORY=Mounts
+SUBSECTION=Wild
+DESCRIPTION=Fire Steed
 
+On=@Create
+NPC=brain_dragon
+FAME={1000 2000}
+KARMA={-4000 -5999}
+STR={376 400}
+MAXHITS={226 240}
+DEX={91 120}
+MAXSTAM={91 120}
+INT={91 120}
+MAXMANA={291 300}
+MAGICRESISTANCE={100.0 120.0}
+TACTICS={95.0 105.0}
+WRESTLING={95.0 105.0}
+TAMING=106.0
+RESPHYSICAL={0 10}
+RESCOLD={20 30}
+RESENERGY={30 40}
+RESFIRE={70 80}
+RESPOISON={30 40}
 
-ON=@NpcRestock
-	item=i_gold,{1600 1800}
-	item=random_jewel
-	item=random_jewel
-	item=random_jewel
-	item=random_jewel
-	item=random_jewel
-	//item=magic_items
-	item=i_treasure_map5,R99
-
-
-[CHARDEF 03e]
-DEFNAME=c_wyvern
-NAME=Wyvern
-sound=362
-dam=8,19
-armor=40
-RESOURCES=20 i_hide_horned, 10 i_ribs_raw
-FOODTYPE=25 t_meat_raw
-DESIRES=i_gold
-AVERSIONS=r_civilization,r_water
-CATEGORY=Monsters
-SUBSECTION=Dragons
-DESCRIPTION=Wyvern
-
-ON=@Create
-npc=brain_dragon
-str={202, 240}
-dex={153, 172}
-int={51, 90}
-maxhits={125, 141}
-resphysical={35, 45}
-resfire={30, 40}
-rescold={20, 30}
-respoison={90, 100}
-resenergy={30, 40}
-poisoning={60.1, 80.0}
-magicresistance={65.1, 80.0}
-tactics={65.1, 90.0}
-wrestling={65.1, 80.0}
-fame=4000
-karma=-4000
-
-ON=@NPCRestock
-	item=i_gold,{175 225}
-	item=i_potion_poisonless
-	item={random_fourth_circle 1 random_fifth_circle 1}
+On=@NpcRestock
+ITEM=i_gold,{50 100}
+ITEM=random_jewel,{15 20}
+ITEM=i_reag_sulfur_ash,{6 9}
 
 [CHARDEF 04a]
 DEFNAME=c_imp
@@ -245,7 +210,7 @@ SOUND=362
 ICON=i_pet_dragon
 dam=5,12
 armor=36
-RESOURCES=19 i_ribs_raw,20 i_hide_barbed, 6 random_dragon_scales_wb
+RESOURCES=19 i_ribs_raw,20 i_hide_barbed
 CAN=MT_WALK|MT_USEHANDS
 MOVERATE=40
 FOODTYPE=40 t_meat_raw

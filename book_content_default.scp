@@ -864,7 +864,7 @@ blast and trash And blow
 these orcs away!
 
 [BOOK b_virtues]
-PAGES=17
+PAGES=18
 TITLE=The Virtues
 AUTHOR=Lord British
 
@@ -1010,7 +1010,7 @@ place in this world and
 whether one's deeds will
 be recorded as a gift to
 
-[BOOK b_virtues 14]
+[BOOK b_virtues 15]
 the world or a plague.
 
 The final Virtue is more
@@ -1021,7 +1021,7 @@ Love or Courage which
 can only exist in a
 state of great Pride,
 
-[BOOK b_virtues 15]
+[BOOK b_virtues 16]
 which of course is not a
 virtue at all. Perhaps
 this trick of fate is
@@ -1032,7 +1032,7 @@ Humility. I feel that
 the people of Magincia
 fail to see this to
 
-[BOOK b_virtues 16]
+[BOOK b_virtues 17]
 such a degree that I
 would not be surprised
 if some ill fate awaited
@@ -1043,7 +1043,7 @@ possibilities which
 spawned the Three
 Principles of Truth,
 
-[BOOK b_virtues 17]
+[BOOK b_virtues 18]
 Love and Courage,
 come the Eight
 Virtues of Honesty,

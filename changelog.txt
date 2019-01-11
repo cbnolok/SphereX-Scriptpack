@@ -1,0 +1,139 @@
+10/01/2019 - xwerswoodx
+- web/
+    Created web folder and move all 56c web files inside that folder to avoid missing web files.
+- book_content_default.scp:
+    Fixed duplicate name error on b_virtues.
+- npcs/c_monster_initial.scp:
+    Monsters moved from classic to initial script file.
+    Treasure map drop removed from Ogre.
+    Missing #Names_Ogre definition removed.
+    Treasure map drop removed from Ettin.
+    loot_gargoyle template removed because not using anymore.
+    c_eagle gold drop reduced to 5-10 from 50-100 and reg drop removed.
+    log and board drop removed from corpser. (Log, Board and Corpser?)
+    Treasure map drop removed from Daemon.
+    Demon added.
+    Dread Spider added.
+    Treasure map drop removed from Green Dragon.
+    Removed too many unnecessary jewelary drop from Green Dragon.
+    Treasure map drop removed from Air Elemental.
+    Removed color setting from Air Elemental.
+    Treasure map drop removed from Water Elemental.
+    Treasure map drop removed from Orc.
+    Treasure map drop removed from Ettin with Axe.
+    Treasure map drop removed from Gazer.
+    Added gold drop to Gorilla.
+    Treasure map drop removed from Liche.
+    Treasure map drop removed from Lizard Man.
+    Treasure map drop removed from Lizard Man Spear.
+    Treasure map drop removed from Lizard Man Mace.
+    Removed backpack drop from Harpy and loot_harpy template removed because of not used.
+    c_ratman_w_axe defname removed from c_ratman_w_mace. Because it's not used in any scripts.
+    Treasure map drop removed from Balron.
+    Treasure map drop removed from Orc with Club.
+    Treasure map drop removed from Ice Fiend.
+    Treasure map drop removed from Reaper.
+    Gold drop added to Snake.
+    Treasure map drop removed from Troll with Axe.
+    Treasure map drop removed from Troll.
+    Treasure map drop removed from Red Dragon.
+    Treasure map drop removed from Gray Drake.
+    Treasure map drop removed from Red Drake.
+    Removed unnecessary jewelary drops from Red Dragon
+    Gold drop added to Cougar.
+    Gold drop added to Mountain Goat.
+    Fish drop added to Dolphin.
+    Treasure map drop removed from Rotting Corpse.
+    Gold drop added to Brown Bear.
+    loot_steed_fire template removed because not using anymore.
+    loot_lava_lizard template removed because not using anymore.
+    loot_rat_giant template removed because not using anymore.
+    Kraken script added.
+    loot_kraken template removed.
+    Ancient Lich added.
+    Grey Wolf added.
+    Lizardman added.
+    White Wolf added.
+    Leopard added.
+    Snow Leopard added.
+    Elder Gazer added.
+    Gazer added.
+    Ogre Lord added.
+    Silver Sepent added.
+    Ettin with Axe defname changed to c_ettin_w_hammer.
+- npcs/c_monster_t2a.scp:
+    Frost spider added.
+    Ice Fiend added.
+    Frost Trool added.
+    Treasure map drop removed from Frost Troll.
+    Lava Lizard added.
+    Terathan Warrior added.
+    Treasure map drop removed from Tarethan Warrior.
+    Tarethan Drone added.
+    Tarethan Matriarch added.
+    Treasure map drop removed from Terathan Matriarch.
+    Cyclopean Warrior added.
+    Treasure map drop removed from Cyclopean Warrior.
+    Titan added.
+    Treasure map drop removed from Titan.
+    Kraken added.
+    Giant Toad added.
+    Bullfrog added.
+    Ophidian Mage added.
+    Treasure map drop removed from Ophidian Mage.
+    Ophidian Warrior added.
+    Treasure map drop removed from Ophidian Warrior.
+    Ophidian Matriarch added.
+    Treasure map drop removed from Ophidian Matriarch.
+    c_ophidian_matriarch defname removed from Ophidian Matriarch because of not used.
+    Ice Serpent added.
+    Lava Serpent added.
+    Desert Ostard added.
+    Frenzied Ostard added.
+    Forest Ostard added.
+    White Wyrm added.
+    Wyvern added.
+    Swam Tentacle added.
+    Stone Gargoyle added.
+    Stone Harpy added.
+    Imp added.
+    Frost Ooze added.
+- npcs/c_monster_ml.scp:
+    Malefic added.
+    Ancient Lich added.
+    loot_lich_ancient template removed.
+    Coil added.
+    Serpent Arrow added.
+- npcs/c_monster_3d.scp:
+    Blackgate Daemon added.
+    Sea Horse added.
+    Fish drop added to Sea Horse.
+- npcs/c_monster_tol.scp:
+    Rotting Corpse added.
+- npcs/c_monster_lbr.scp:
+    Ancient Wyrm removed.
+    Fire Steed added.
+    Wyvern removed.
+- npcs/c_monster_aos.scp:
+    Dark Wolf Familiar added.
+    Dark Guardian added.
+- npcs/c_monster_custom.scp:
+    56c Custom Lich added.
+- functions/f_is.scp:
+    f_isStackable added.
+    f_isTameable added.
+- core/defs_sounds.scp:
+    snd_monster_fetidessence1 added.
+- spheretables.scp
+    core/backward_compatibility_56c.scp and core/backward_compatibility_56d.scp re-loaded after items loaded to avoid missing item ids.
+    core/backward_compatibility_56b.scp re-loaded after chars loaded to avoid missing char ids.
+- core/backward_compatibility_56d.scp:
+    Added some defnames for avoiding errors.
+- templates/tm_sets.scp
+    Commented full_aquarium template because all items are missing. I haven't removed it for later use.
+- npcs/sphere_monsters.scp
+- npcs/sphere_monsters_custom.scp
+- npcs/sphere_citizens.scp
+- npcs/sphere_guildmasters.scp
+    Added for npc file for avoiding missing chardefs until we moved all of them to X1 script pack.
+    This can cause some duplicate errors but it will be fixed later on.

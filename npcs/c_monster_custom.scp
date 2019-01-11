@@ -1,0 +1,122 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
+[CHARDEF c_lich_poly]
+//FIXME: Can be redeemed using the sacrifice virtue.
+ID=c_lich
+NAME=Lich
+ICON=i_pet_lich
+SOUND=snd_monster_lich1
+CAN=MT_WALK|MT_RUN|MT_USEHANDS|MT_EQUIP
+DAM=50,55
+ARMOR=40
+DESIRES=r_graveyards,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
+AVERSIONS=t_trap,r_civilization
+RESOURCES=1 i_reag_blackmoor
+DAMCOLD=40
+DAMENERGY=50
+TAG.SlayerGroup=UNDEAD
+TEVENTS=e_undead
+CATEGORY=Monsters
+SUBSECTION=Undead
+DESCRIPTION=Lich (Scripted)
+
+ON=@Create
+NPC=brain_monster
+FAME={3000 3499}
+KARMA={-3000 -3499}
+STR={170 200}
+MAXHITS={100 120}
+DEX={125 145}
+MAXSTAM={125 145}
+INT={275 305}
+MAXMANA={275 305}
+ARCHERY={50.0 70.0}
+EVALUATINGINTEL={95.0 105.0}
+FENCING={50.0 70.0}
+MACEFIGHTING={50.0 70.0}
+MAGERY={70.0 80.0}
+MAGICRESISTANCE={80.0 100.0}
+MEDITATION={85.0 95.0}
+NECROMANCY={70.0 80.0}
+PARRYING={70.0 90.0}
+SWORDSMANSHIP={50.0 70.0}
+TACTICS={70.0 90.0}
+WRESTLING={50.0 70.0}
+RESPHYSICAL={0 10}
+RESCOLD={50 60}
+RESENERGY={40 50}
+RESFIRE={20 30}
+RESPOISON={55 65}
+//Current number of skeletons summoned.
+CURFOLLOWER = 0
+//Max number of skeletons to summon. Between 4 and 6 is a nice number?
+MAXFOLLOWER = <R4,6>
+//Just to not use "magic numbers". And can be modified per monster.
+TAG.BEHAVIOURDELAY = 10
+//We add the death trigger.
+EVENTS +e_lich_death
+TIMERF <DTAG.BEHAVIOURDELAY>, f_lich_polymorph
+TIMERF <DTAG.BEHAVIOURDELAY>, f_lich_summon_skeletons
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_clumsy
+ADDSPELL=s_weaken
+ADDSPELL=s_feeblemind
+ADDSPELL=s_harm
+ADDSPELL=s_magic_arrow
+ADDSPELL=s_fireball
+ADDSPELL=s_poison
+ADDSPELL=s_curse
+ADDSPELL=s_paralyze
+ADDSPELL=s_dispel
+ADDSPELL=s_summon_undead
+ADDSPELL=s_animate_dead
+ADDSPELL=s_fire_bolt
+
+ON=@NPCRestock
+ITEM=loot_lich
+ITEM=loot_ai_hard
+
+// Function that polymorphs a lich into a skeleton.
+[FUNCTION f_lich_polymorph]
+IF (<BODY> == c_lich)
+  SOUND snd_spell_animate_dead
+  BODY = c_skeleton
+  EVENTS +e_polymorphed_lich
+ENDIF
+RETURN
+
+// Function that summon skeletons. Check for follower limits.
+// c_lich used Tags:
+// TAG.SLOT_x: Stores the UID from a summoned skeleton.
+// TAG.BEHAVIOURDELAY: Timer delay.
+[FUNCTION f_lich_summon_skeletons]
+LOCAL.FOLLOWERSLOTS = <SERV.CHARDEF.c_skeleton.FOLLOWERSLOTS>
+// If c_skeleton.FOLLOWERSLOTS is not setted, it will be 0. Then we set an
+// arbitrary value (1).
+IF (!<LOCAL.FOLLOWERSLOTS>)
+        LOCAL.FOLLOWERSLOTS = 1
+ENDIF
+LOCAL.NEWCURFOLLOWER = <CURFOLLOWER> + <LOCAL.FOLLOWERSLOTS>
+IF (<DLOCAL.NEWCURFOLLOWER> <= <MAXFOLLOWER>)
+   // Create new npc and set the same home that summoner.
+   SERV.NEWNPC = c_skeleton
+   NEW.MOVENEAR = <UID>
+   NEW.HOME = <HOME>
+   NEW.HOMEDIST = <HOMEDIST>
+   // Update events and status from follower.
+   NEW.FOLLOWERSLOTS = <LOCAL.FOLLOWERSLOTS>
+   NEW.EVENTS +e_skeleton_summoned_by_lich
+   NEW.FLAGS |= statf_conjured
+   // Link follower and master.
+   NEW.TAG.MASTER = <UID>
+   CURFOLLOWER = <DLOCAL.NEWCURFOLLOWER>
+   TAG.SLOT_<NEW.UID> = <NEW.UID>
+   TIMERF <DTAG.BEHAVIOURDELAY>,f_lich_summon_skeletons
+ENDIF
+RETURN
+
+[EOF]
