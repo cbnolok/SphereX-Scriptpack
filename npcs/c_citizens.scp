@@ -1,0 +1,107 @@
+[CHARDEF c_guard]
+ID=c_man
+NAME=#NAMES_HUMANMALE the guard
+//DESIRES=i_gold
+AVERSIONS=t_trap
+TSPEECH=spk_human_default
+TSPEECH=spk_shopkeep
+CATEGORY=Civilized
+SUBSECTION=Guards & Law
+DESCRIPTION=Guard (human male)
+ON=@Create
+   COLOR=colors_skin
+   NPC=brain_guard
+   STR={151 165}
+   DEX={151 165}
+   INT={151 165}
+
+   ANATOMY={20.0 30.0}
+   ARMSLORE={20.0 30.0}
+   BUSHIDO={20.0 30.0}
+   CHIVALRY={20.0 30.0}
+   DETECTINGHIDDEN={50.0 75.0}
+   EVALUATINGINTEL={20.0 30.0}
+   FENCING={50.0 75.0}
+   FORENSICS={50.0 75.0}
+   MACEFIGHTING={50.0 75.0}
+   MAGICRESISTANCE={50.0 75.0}
+   PARRYING={50.0 75.0}
+   SWORDSMANSHIP={50.0 75.0}
+   TACTICS={50.0 75.0}
+   THROWING={50.0 75.0}
+   TRACKING={20.0 30.0}
+   WRESTLING={50.0 75.0}
+
+   ITEMNEWBIE=random_male_hair
+   COLOR=colors_hair
+   ITEMNEWBIE=random_facial_hair,1,R5
+   COLOR=match_hair
+   ITEM=random_shirts_human
+   COLOR=colors_all
+   ITEM=random_pants_human
+   COLOR=colors_all
+   ITEM=i_platemail_chest
+   ITEM=i_platemail_leggings
+   ITEM=i_platemail_arms
+   ITEM=i_sash
+   COLOR=colors_red
+ON=@NPCRestock
+   ITEM=random_coin_purse
+   ITEM=i_halberd
+   ITEM=i_mt_horse_gray,1,R5
+ON=@NPCRefuseItem
+   SAY I cannot be bribed. be gone.
+   RETURN 1
+
+[CHARDEF c_guard_f]
+ID=c_woman
+NAME=#NAMES_HUMANFEMALE the guard
+//DESIRES=i_gold
+AVERSIONS=t_trap
+TSPEECH=spk_human_default
+TSPEECH=spk_shopkeep
+CATEGORY=Civilized
+SUBSECTION=Guards & Law
+DESCRIPTION=Guard (human female)
+ON=@Create
+   COLOR=colors_skin
+   NPC=brain_guard
+   STR={151 165}
+   DEX={151 165}
+   INT={151 165}
+
+   ANATOMY={20.0 30.0}
+   ARMSLORE={20.0 30.0}
+   BUSHIDO={20.0 30.0}
+   CHIVALRY={20.0 30.0}
+   DETECTINGHIDDEN={50.0 75.0}
+   EVALUATINGINTEL={20.0 30.0}
+   FENCING={50.0 75.0}
+   FORENSICS={50.0 75.0}
+   MACEFIGHTING={50.0 75.0}
+   MAGICRESISTANCE={50.0 75.0}
+   PARRYING={50.0 75.0}
+   SWORDSMANSHIP={50.0 75.0}
+   TACTICS={50.0 75.0}
+   THROWING={50.0 75.0}
+   TRACKING={20.0 30.0}
+   WRESTLING={50.0 75.0}
+
+   ITEMNEWBIE=random_female_hair
+   COLOR=colors_hair
+   ITEM=random_shirts_human
+   COLOR=colors_all
+   ITEM=random_pants_human
+   COLOR=colors_all
+   ITEM=i_platemail_chest
+   ITEM=i_platemail_leggings
+   ITEM=i_platemail_arms
+   ITEM=i_sash
+   COLOR=colors_red
+ON=@NPCRestock
+   ITEM=random_coin_purse
+   ITEM=i_halberd
+   ITEM=i_mt_horse_gray,1,R5
+ON=@NPCRefuseItem
+   SAY I cannot be bribed. be gone.
+   RETURN 1
