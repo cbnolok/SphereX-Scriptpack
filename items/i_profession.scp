@@ -2333,13 +2333,6 @@ SUBSECTION=Scribe
 DESCRIPTION=Stack of Books 2
 
 
-[ITEMDEF 01e2c]
-//pickpocket dip
-
-[ITEMDEF 01e2d]
-//pickpocket dip
-
-
 [ITEMDEF 01e34]
 DEFNAME=i_scarecrow
 FLIP=1
@@ -2654,13 +2647,21 @@ SKILLMAKE=Carpentry 73.6,Tailoring 50.0,t_carpentry
 CATEGORY=Items by Professions
 SUBSECTION=Thief
 DESCRIPTION=Pickpocket Dip
-DUPELIST=01ec1,01ec2
+DUPELIST=01ec1,01ec2,01e2c,01e2d
 
 [ITEMDEF 01ec1]
 //pickpocket dip
 DUPEITEM=01ec0
 
 [ITEMDEF 01ec2]
+//pickpocket dip
+DUPEITEM=01ec0
+
+[ITEMDEF 01e2c]
+//pickpocket dip
+DUPEITEM=01ec0
+
+[ITEMDEF 01e2d]
 //pickpocket dip
 DUPEITEM=01ec0
 
