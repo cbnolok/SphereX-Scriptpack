@@ -5,7 +5,7 @@
 VERSION=X1
 
 [BOOK b_sphere]
-PAGES=3
+PAGES=4
 TITLE=First Book of Sphere
 AUTHOR=Menace
 
@@ -20,7 +20,11 @@ But it was not
 the Ultimate.
 
 [BOOK b_sphere 3]
-Let there be Sphere!
+After, it was Sphere!
+But it was not enough
+
+[BOOK b_sphere 4]
+So it is Sphere-X
 
 [BOOK b_hitchhiker]
 PAGES=3
