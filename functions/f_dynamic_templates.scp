@@ -30,18 +30,20 @@ DTL_flag_artifact			0040000000
 DTL_flag_equipment_special	0080000000
 DTL_flag_equipment_3donly	0100000000
 
-
 [function f_DTL_mdb_update]
-// Delete old table
-mdb.execute DROP TABLE IF EXISTS '<def.DTL_DB_Table>'
-if !<file.fileexist "<serv.scpfiles><def.DTL_DB_File>">
-	serv.log Couldn't find database file: "<serv.scpfiles><def.DTL_DB_File>".
-	return
+if (<serv.OptionFlags>& 080)	//check if is enabled OF_FileCommands
+	// Delete old table
+	mdb.execute DROP TABLE IF EXISTS '<def.DTL_DB_Table>'
+	if !<file.fileexist "<serv.scpfiles><def.DTL_DB_File>">
+		serv.log Couldn't find database file: "<serv.scpfiles><def.DTL_DB_File>".
+		return
+	endif
+	// Import .db file into the MDB
+	mdb.importdb "<serv.scpfiles><def.DTL_DB_File>"
+	serv.log DynamicTemplateLoot database loaded in memory.
+else
+	serv.log To use this, enable OF_FileCommands in sphere.ini
 endif
-// Import .db file into the MDB
-mdb.importdb "<serv.scpfiles><def.DTL_DB_File>"
-serv.log DynamicTemplateLoot database loaded in memory.
-
 
 // DynamicTemplateLoot
 // f_DTLoot arguments: class, race, sex ID (0=male, 1=female), expansion ID (optional)
