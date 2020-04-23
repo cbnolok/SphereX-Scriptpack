@@ -2568,7 +2568,7 @@ COMPONENT=04b7c,-1,1
 COMPONENT=04b7d,1,0
 COMPONENT=04b7f,1,-1
 
-[ITEMDEF m_fountain_dragon_turtle_s]
+[MULTIDEF m_fountain_dragon_turtle_s]
 ID=09c98
 NAME=Dragon Turtle Fountain
 TYPE=t_multi
@@ -2580,7 +2580,7 @@ COMPONENT=09c97,0,1
 COMPONENT=09c99,-1,0
 COMPONENT=09c9a,0,-1
 
-[ITEMDEF m_fountain_dragon_turtle_e]
+[MULTIDEF m_fountain_dragon_turtle_e]
 ID=09c9e
 NAME=Dragon Turtle Fountain
 TYPE=t_multi

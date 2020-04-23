@@ -631,7 +631,7 @@ DUPEITEM=0360e
 // Custom Items //
 //////////////////
 
-[ITEMDEF i_globe_sosaria]
+[MULTIDEF i_globe_sosaria]
 ID=03657
 NAME=Globe of Sosaria
 TYPE=t_multi
@@ -643,7 +643,7 @@ COMPONENT=03658,-1,0
 COMPONENT=03659,0,-1
 COMPONENT=03660,0,0
 
-[ITEMDEF i_shadow_altar_south]
+[MULTIDEF i_shadow_altar_south]
 ID=0365a
 NAME=Shadow Altar
 TYPE=t_multi
@@ -653,7 +653,7 @@ DESCRIPTION=Shadow Altar (south)
 MULTIREGION=0,0,0,0
 COMPONENT=0365b,-1,0
 
-[ITEMDEF i_shadow_altar_east]
+[MULTIDEF i_shadow_altar_east]
 ID=0369d
 NAME=Shadow Altar
 TYPE=t_multi
@@ -663,7 +663,7 @@ DESCRIPTION=Shadow Altar (east)
 MULTIREGION=0,0,0,0
 COMPONENT=0369e,0,1
 
-[ITEMDEF i_shadow_banner_south]
+[MULTIDEF i_shadow_banner_south]
 ID=0365c
 NAME=Shadow Banner
 TYPE=t_multi
@@ -673,7 +673,7 @@ DESCRIPTION=Shadow Banner (south)
 MULTIREGION=0,0,0,0
 COMPONENT=0365d,-1,0
 
-[ITEMDEF i_shadow_banner_east]
+[MULTIDEF i_shadow_banner_east]
 ID=0365e
 NAME=Shadow Banner
 TYPE=t_multi
@@ -683,7 +683,7 @@ DESCRIPTION=Shadow Banner (east)
 MULTIREGION=0,0,0,0
 COMPONENT=0365f,0,1
 
-[ITEMDEF i_shadow_fire_pit]
+[MULTIDEF i_shadow_fire_pit]
 ID=03651
 NAME=Shadow Fire Pit
 TYPE=t_multi
@@ -707,7 +707,7 @@ ON=@DClick
    NEW.MULTICREATE
    return 1
 
-[ITEMDEF i_shadow_fire_pit_o]
+[MULTIDEF i_shadow_fire_pit_o]
 ID=03654
 NAME=Shadow Fire Pit
 TYPE=t_multi

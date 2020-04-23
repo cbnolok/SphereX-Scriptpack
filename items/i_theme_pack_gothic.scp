@@ -520,7 +520,7 @@ NAME=advanced training dummy
 // Custom Items //
 //////////////////
 
-[ITEMDEF m_table_ritual]
+[MULTIDEF m_table_ritual]
 ID=04982
 NAME=ritual table
 TYPE=t_multi
@@ -532,7 +532,7 @@ COMPONENT=04983,0,-1
 COMPONENT=04984,-1,0
 COMPONENT=04985,-1,-1
 
-[ITEMDEF m_advanced_training_dummy_south]
+[MULTIDEF m_advanced_training_dummy_south]
 ID=09829
 NAME=advanced training dummy
 TYPE=t_multi
@@ -548,7 +548,7 @@ COMPONENT=0982a,-1,1
 COMPONENT=0982b,-1,0
 COMPONENT=0982c,-1,-1
 
-[ITEMDEF m_advanced_training_dummy_east]
+[MULTIDEF m_advanced_training_dummy_east]
 ID=09830
 NAME=advanced training dummy
 TYPE=t_multi

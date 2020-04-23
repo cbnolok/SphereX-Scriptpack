@@ -3932,7 +3932,7 @@ NAME=Lord Blackthorn's Throne
 //Lord Blackthorn's Throne (south)
 NAME=Lord Blackthorn's Throne
 
-[ITEMDEF i_throne_lord_blackthorn_south]
+[MULTIDEF i_throne_lord_blackthorn_south]
 ID=04c1b
 NAME=Lord Blackthorn's Throne
 TYPE=t_multi
@@ -3955,7 +3955,7 @@ NAME=Lord Blackthorn's Throne
 //Lord Blackthorn's Throne (east)
 NAME=Lord Blackthorn's Throne
 
-[ITEMDEF i_throne_lord_blackthorn_east]
+[MULTIDEF i_throne_lord_blackthorn_east]
 ID=04c1e
 NAME=Lord Blackthorn's Throne
 TYPE=t_multi

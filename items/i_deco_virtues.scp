@@ -813,7 +813,7 @@ DUPEITEM=040da
 //virtue symbol
 DUPEITEM=040da
 
-[ITEMDEF i_multi_floor_virtue]
+[MULTIDEF i_multi_floor_virtue]
 NAME=virtue floor symbol
 TYPE=t_multi
 CATEGORY=Multis
