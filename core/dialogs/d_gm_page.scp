@@ -1,16 +1,8 @@
 //****************************************************************************
-// SPHERE by : Menasoft ©1997-2020
+// SphereServer by: SphereServer development team and Menasoft.
 // www.sphereserver.net
-// All SPHERE script files and formats are copyright Menasoft & Partners.
-// This file may be freely edited for personal use, but may not be distributed
-// in whole or in part, in any format without express written permission from
-// Menasoft & Partners.  All donations and contributions
-// become the property of Menasoft & Partners.
 //****************************************************************************
-// FILE LAST UPDATED: Tuesday, Dec 10
-// Version du script pack Tuesday, Dec 10
 VERSION=X1
-
 
 [FUNCTION Page]
 SDIALOG d_gmpage_queue
