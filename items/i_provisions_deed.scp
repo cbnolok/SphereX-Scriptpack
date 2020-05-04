@@ -58,7 +58,7 @@ ON=@Create
    ATTR=attr_newbie
    COLOR=034
 ON=@ClientTooltip
-   SRC.ADDCLILOC 1060738,<MORE>	//value: ~1_val~
+   addcliloc 1060738,<MORE>	//value: ~1_val~
 ON=@AfterClick
    LOCAL.ClickMsgText .= ": <MORE>"
 ON=@DClick
@@ -520,7 +520,7 @@ CATEGORY=Provisions - Deeds
 SUBSECTION=Item Deeds
 DESCRIPTION=Brown Fountain
 ON=@Create
-   MORE=i_multi_fount_brown
+   MORE=m_fountain_brown
 
 [ITEMDEF i_deed_fount_wh]
 ID=i_deed
@@ -529,7 +529,7 @@ CATEGORY=Provisions - Deeds
 SUBSECTION=Item Deeds
 DESCRIPTION=White Fountain
 ON=@Create
-   MORE=i_multi_fount_white
+   MORE=m_fountain_white
 
 [ITEMDEF i_deed_wandering_healer_camp]
 ID=i_deed
@@ -568,17 +568,17 @@ ON=@Create
    MORE=m_scaffold_and_trailer
 
 
-[ITEMDEF i_deed_forge_bellow]
-ID=i_deed
-NAME=Deed to a Large Forge with Bellow
-TYPE=t_deed
-CATEGORY=Provisions - Deeds
-SUBSECTION=Multi Item Deeds
-DESCRIPTION=Large Forge with Bellow
-ON=@Create
-   MORE=i_multi_forge_bellow
+// [ITEMDEF i_deed_forge_bellow]
+// ID=i_deed
+// NAME=Deed to a Large Forge with Bellow
+// TYPE=t_deed
+// CATEGORY=Provisions - Deeds
+// SUBSECTION=Multi Item Deeds
+// DESCRIPTION=Large Forge with Bellow
+// ON=@Create
+   // MORE=i_multi_forge_bellow
 
-[ITEMDEF i_deed_bearskin_rug]
+[ITEMDEF i_deed_bearskin_rug_w]
 ID=i_deed
 NAME=Deed to a Bearskin Rug
 TYPE=t_deed
@@ -586,9 +586,19 @@ CATEGORY=Provisions - Deeds
 SUBSECTION=Multi Item Deeds
 DESCRIPTION=Bearskin Rug
 ON=@Create
-   MORE=i_multi_bearskin_rug
+   MORE=i_multi_rug_bearskin_w
+   
+[ITEMDEF i_deed_bearskin_rug_s]
+ID=i_deed
+NAME=Deed to a Bearskin Rug
+TYPE=t_deed
+CATEGORY=Provisions - Deeds
+SUBSECTION=Multi Item Deeds
+DESCRIPTION=Bearskin Rug
+ON=@Create
+   MORE=i_multi_rug_bearskin_s
 
-[ITEMDEF i_deed_polarbear_rug]
+[ITEMDEF i_deed_polarbear_rug_w]
 ID=i_deed
 NAME=Deed to a Polar Bearskin Rug
 TYPE=t_deed
@@ -596,7 +606,17 @@ CATEGORY=Provisions - Deeds
 SUBSECTION=Multi Item Deeds
 DESCRIPTION=Polar Bearskin Rug
 ON=@Create
-   MORE=i_multi_polarbear_rug
+   MORE=i_multi_rug_polarbear_w
+   
+[ITEMDEF i_deed_polarbear_rug_s]
+ID=i_deed
+NAME=Deed to a Polar Bearskin Rug
+TYPE=t_deed
+CATEGORY=Provisions - Deeds
+SUBSECTION=Multi Item Deeds
+DESCRIPTION=Polar Bearskin Rug
+ON=@Create
+   MORE=i_multi_rug_polarbear_s
 
 [ITEMDEF i_deed_gardenshed_south]
 ID=i_deed
@@ -606,8 +626,17 @@ CATEGORY=Provisions - Deeds
 SUBSECTION=Multi Item Deeds
 DESCRIPTION=Garden Shed
 ON=@Create
-   MORE=i_multi_gardenshed_south
-
+   MORE=m_garden_shed_south
+   
+[ITEMDEF i_deed_gardenshed_east]
+ID=i_deed
+NAME=Deed to a Garden Shed
+TYPE=t_deed
+CATEGORY=Provisions - Deeds
+SUBSECTION=Multi Item Deeds
+DESCRIPTION=Garden Shed
+ON=@Create
+   MORE=m_garden_shed_east
 
 [ITEMDEF i_deed_foundation_7x7]
 ID=i_deed

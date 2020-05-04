@@ -1233,7 +1233,7 @@ NAME=Display of Minax's Wand
 TYPE=t_normal
 VALUE=1059
 WEIGHT=25.0
-RESOURCES=10 i_log,1 i_nails,1 i_pillow_fancy//,1 i_wand_minax
+RESOURCES=10 i_log,1 i_nails,1 i_pillow_throw//,1 i_wand_minax
 CATEGORY=Quest
 SUBSECTION=Minax
 DESCRIPTION=Minax's Wand Display Case
@@ -1244,7 +1244,7 @@ NAME=Display of Minax's Wand (empty)
 TYPE=t_normal
 VALUE=59
 WEIGHT=25.0
-RESOURCES=10 i_log,1 i_nails,1 i_pillow_fancy
+RESOURCES=10 i_log,1 i_nails,1 i_pillow_throw
 CATEGORY=Quest
 SUBSECTION=Minax
 DESCRIPTION=Minax's Wand Display Case (empty)
@@ -1693,7 +1693,7 @@ DEFNAME=i_eq_marker
 // Lord British Armor
 DEFNAME=i_person_lord_british
 TYPE=t_armor
-
+TEVENTS=ei_equipment_special
 CATEGORY=Provisions - GM Items
 SUBSECTION=Special Items
 DESCRIPTION=Lord British Armour
@@ -1705,7 +1705,7 @@ HITPOINTS=150
 // Blackthorne Robe
 DEFNAME=i_person_black_thorne
 TYPE=t_armor
-
+TEVENTS=ei_equipment_special
 CATEGORY=Provisions - GM Items
 SUBSECTION=Special Items
 DESCRIPTION=Blackthorne Robe
@@ -1717,7 +1717,7 @@ HITPOINTS=150
 DEFNAME=i_deathshroud
 NAME=Death Shroud
 TYPE=t_clothing
-
+TEVENTS=ei_equipment_special
 CATEGORY=Provisions - GM Items
 SUBSECTION=Special Items
 DESCRIPTION=Death Shroud
@@ -1727,6 +1727,7 @@ DESCRIPTION=Death Shroud
 DEFNAME=i_robe_gm
 TYPE=t_clothing
 DYE=1
+TEVENTS=ei_equipment_special
 DESCRIPTION=GM Robes
 SUBSECTION=GM Robes
 CATEGORY=Provisions - GM Items
@@ -1738,7 +1739,10 @@ HITPOINTS=150
 // Dupre
 DEFNAME=i_dupre
 TYPE=t_armor
-
+TEVENTS=ei_equipment_special
+CATEGORY=Provisions - GM Items
+SUBSECTION=Special Items
+DESCRIPTION=Dupre Armour
 ON=@Create
 HITPOINTS=150
 

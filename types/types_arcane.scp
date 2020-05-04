@@ -27,7 +27,7 @@ ON=@TargOn_Item
       SRC.SYSMESSAGE @021 The clothing you wish to enchant must be exceptional.
       RETURN 1
    ENDIF
-   IF (<SRC.TARG.ISTEVENT.t_arcane_clothing>) || (<SRC.TARG.ISEVENT.t_arcane_clothing>)
+   IF (<SRC.TARG.ISTEVENT.ei_arcane_clothing>) || (<SRC.TARG.ISEVENT.ei_arcane_clothing>)
       SRC.EMOTE recharge <SRC.TARG.NAME>
       SRC.TARG.TAG0.ArcaneCharges += <EVAL <SRC.TAILORING>/50>
       IF (<SRC.TARG.TAG0.ArcaneCharges> > 24)
@@ -62,7 +62,7 @@ ON=@TargOn_Item
       SRC.TARG.QUALITY={177 200}
       SRC.TARG.ATTR=attr_magic|attr_identified
       SRC.TARG.TAG.ArcaneCharges=24
-      //SRC.TARG.EVENTS +t_arcane_clothing
+      //SRC.TARG.EVENTS +ei_arcane_clothing
       SRC.TARG.UPDATE
       SRC.TARG.RESENDTOOLTIP
       SRC.EMOTE enchant the <SRC.TARG.NAME>
@@ -80,11 +80,11 @@ CATEGORY=Provisions - Jewels and Jewelry
 SUBSECTION=Special Jewels
 DESCRIPTION=Arcane Gem
 
-[TYPEDEF t_arcane_clothing]
+[TYPEDEF ei_arcane_clothing]
 // This TYPEDEF is added to equipable items that grant the wearer the
 // e_arcane_player_effect EVENT.
 ON=@CLIENTTOOLTIP
-	SRC.ADDCLILOC 1061837,<dTAG0.ArcaneCharges>,24
+	addcliloc 1061837,<dTAG0.ArcaneCharges>,24
    RETURN 0
 ON=@Equip
    IF (<TAG0.ArcaneCharges> > 0)
@@ -103,28 +103,28 @@ ON=@UnEquip
 
 [EVENTS e_arcane_player_effect]
 // This event is added to the player when they equip an item that has a
-// TEVENT of t_arcane_clothing
+// TEVENT of ei_arcane_clothing
 ON=@SpellSelect
    IF (<ARGN3> != 1)
       IF !(<SRC.CANCAST <ARGN1>>)
          REF1=<FINDLAYER(layer_shoes).UID>
          REF2=<FINDLAYER(layer_gloves).UID>
          REF3=<FINDLAYER(layer_cape).UID>
-         SERV.LOG name=<REF3.NAME> charges=<REF3.TAG0.ArcaneCharges> event=<REF3.ISTEVENT.t_arcane_clothing>
+         SERV.LOG name=<REF3.NAME> charges=<REF3.TAG0.ArcaneCharges> event=<REF3.ISTEVENT.ei_arcane_clothing>
          REF4=<FINDLAYER(layer_robe).UID>
-         IF (<REF1.ISTEVENT.t_arcane_clothing>) && (<REF1.TAG0.ArcaneCharges>)
+         IF (<REF1.ISTEVENT.ei_arcane_clothing>) && (<REF1.TAG0.ArcaneCharges>)
             SYSMESSAGE You cannot cast this spell ... but the Arcane Boots uses a charge to help you!
             REF1.TAG0.ArcaneCharges -= 1
             RETURN 6//allow the casting anyway
-         ELSEIF (<REF2.ISTEVENT.t_arcane_clothing>) && (<REF2.TAG0.ArcaneCharges>)
+         ELSEIF (<REF2.ISTEVENT.ei_arcane_clothing>) && (<REF2.TAG0.ArcaneCharges>)
             SYSMESSAGE You cannot cast this spell ... but the Arcane Gloves uses a charge to help you!
             REF2.TAG0.ArcaneCharges -= 1
             RETURN 6//allow the casting anyway
-         ELSEIF (<REF3.ISTEVENT.t_arcane_clothing>) && (<REF3.TAG0.ArcaneCharges>)
+         ELSEIF (<REF3.ISTEVENT.ei_arcane_clothing>) && (<REF3.TAG0.ArcaneCharges>)
             SYSMESSAGE You cannot cast this spell ... but the Arcane Cape uses a charge to help you!
             REF3.TAG0.ArcaneCharges -= 1
             RETURN 6//allow the casting anyway
-         ELSEIF (<REF4.ISTEVENT.t_arcane_clothing>) && (<REF4.TAG0.ArcaneCharges>)
+         ELSEIF (<REF4.ISTEVENT.ei_arcane_clothing>) && (<REF4.TAG0.ArcaneCharges>)
             SYSMESSAGE You cannot cast this spell ... but the Arcane Robe uses a charge to help you!
             REF4.TAG0.ArcaneCharges -= 1
             RETURN 6//allow the casting anyway

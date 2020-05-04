@@ -1,0 +1,796 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
+[COMMENT sphere_item_typedef_equipitem]
+
+The ei_equipitem TYPEDEF is typically applied on every equipable item.  For
+example:
+
+  t_clothing
+  t_armor*
+  t_weapon*
+  t_wand
+  t_jewelry
+  t_container (just quivers)
+  t_light_lit (just lights that could be equipped like candles, lanterns)
+  t_spellbook
+  t_fishing_pole
+
+When an item with ei_equipitem is equipped by a player or NPC, the TAGs on
+the item are usually added to the person wearing it.  That way multiple items
+with the same TAG can be equipped at the same time, stacking the effect.
+
+By themselves, the TAGs are just information.  The actual effect of those
+TAGs may be implemented inside this TYPEDEF or they may be implemented inside
+another TYPEDEF or a character EVENT.  Where the effect is implemented will
+be noted below.
+
+The values of each TAG require careful consideration. Applying a negative
+number to a property that expects only positive numbers may have side effects.
+Similarly, extreme numbers (large or small) might also have side effects.
+On most items I suggest only values between -5 to 5, and with properties shown
+as SMALL -2 to 2.  I arrived at this conclusion because there are more than 20
+layers that equipment can end up on, so +5% times 20 could easily give
+100%...
+
+Known Issues:
+
+ Sometime tooltips are not refreshed when TAGs are changing (as charges are
+ used up, or when the vital stats of a person wearing an item change etc...)
+ Using TooltipMode=0 and AutoTooltipResend=07f inside the Sphere.ini helps.
+
+ Since this event overrides the default tooltip, the NAME of the item is
+ forced, and as a result, "client localization" (clilocs which dynamically
+ translate based on the language of the client) gets lost.  The first couple
+ lines of the @ClientToolTip trigger have a sample of how you might correct
+ that, but the sample only works on original items.
+
+The TAGs being handled inside this TYPEDEF currently include (THE LIST IS OUTDATED!):
+
+Rarity
+ - Purpose: When the value is 1, the item tooltip will indicate the item is
+            an artifact, and tell you how many of these items exist within
+            the world.
+ - Values:  One or zero.
+ - Effect:  This TAG is implemented inside the ei_equipitem TYPEDEF and
+            does not rely on other TYPEDEFs or EVENTs.
+
+TAG.Stolen
+ - Purpose: When the value is 1, the item tooltip will indicate the item is
+            stolen.
+ - Values:  One or zero.
+ - Effect:  This TAG is implemented inside the ei_equipitem TYPEDEF and
+            does not rely on other TYPEDEFs or EVENTs.
+
+Exceptional
+ - Purpose: When the value is 1, the item tooltip will indicate the item is
+            exceptional.
+ - Values:  One or zero.
+ - Effect:  This TAG is implemented inside the ei_equipitem TYPEDEF and
+            does not rely on other TYPEDEFs or EVENTs.
+
+CraftedBy
+ - Purpose: The value of the tag will show up on the tooltip like this:
+            "crafted by <CraftedBy>"
+ - Values:  Usually the name of a person
+ - Effect:  This TAG is implemented inside the ei_equipitem TYPEDEF and
+            does not rely on other TYPEDEFs or EVENTs.
+
+CanUse
+ - Purpose: CanUse is a flag's variable allowing to insert different values
+			in order to give different equiping possibilities for items
+ - Values:	can_u_human
+			can_u_elf
+			can_u_gargoyle
+			can_u_female
+			can_u_all
+			can_u_none
+ - Effect:  This TAG is implemented inside the ei_equipitem TYPEDEF and
+            does not rely on other TYPEDEFs or EVENTs.
+
+SpellChanneling
+ - Purpose: When the value is 1, allows the caster to cast Magery spells
+            even when they are holding items.  In other words, it overrides
+            the EquippedCast=0 setting from sphere.ini
+ - Values:  One or zero.
+ - Effect:  NOT IMPLEMENTED YET
+
+NightSight
+ - Purpose: When the value is 1, the item grants permanent nightsight.
+ - Values:  One or zero.
+ - Effect:  This TAG is implemented inside the ei_equipitem TYPEDEF and
+            does not rely on other TYPEDEFs or EVENTs.
+
+IncreaseDefChance
+ - Purpose: When the value is positive, the item improves the defense of the
+            person wearing it.  When negative, the item makes the person
+            easier to hit (a curse of sorts).
+ - Values:  Positive or negative integer.
+ - Effect:  NOT IMPLEMENTED YET
+
+IncreaseHitChance
+ - Purpose: When the value is positive, the item improves the chance to hit
+            you opponent.  When negative, the item makes it harder to hit
+            your target (a curse of sorts).
+ - Values:  Positive or negative integer.
+ - Effect:  NOT IMPLEMENTED YET
+
+IncreaseSwingSpeed
+ - Purpose: Increases the attack speed of your weapon.
+ - Values:  Positive or negative integer.
+ - Effect:  NOT IMPLEMENTED YET
+
+RESCOLD
+RESENERGY
+RESFIRE
+RESPOISON
+ - Purpose: Increases the resistance to damage of the indicated type.
+ - Values:  Positive or negative integer.
+ - Effect:  This effect only works when the sphere.ini COMBAT_USE_RESISTANCE
+            flag is enabled.  These TAGs are implemented inside the
+            ei_equipitem TYPEDEF and does not rely on other TYPEDEFs or EVENTs.
+
+RESPHYSICAL
+ - Purpose: A more flexible alternative to ARMOR= on equipable items.
+ - Values:  Positive or negative integer
+ - Effect:  This TAG is implemented inside the ei_equipitem TYPEDEF and
+            does not rely on other TYPEDEFs or EVENTs.
+
+LowerManaCost
+ - Purpose: Improves the potency of potions you craft when wearing the item.
+ - Values:  Positive or negative integer.
+ - Effect:  NOT IMPLEMENTED YET
+
+LowerManaCost
+ - Purpose: Reduces the amount of Mana required to cast a spell (Magery,
+            Chivalry, Necromancy, Bushido, Ninjitsu and Spellweaving) or use
+            a special combat move.
+ - Values:  Positive or negative integer.
+ - Effect:  NOT IMPLEMENTED YET
+
+LowerReagentCost
+ - Purpose: Reduces the number of reagents used during the casting of a spell.
+ - Values:  Positive or negative integer.
+ - Effect:  NOT IMPLEMENTED YET
+
+LowerReq
+ - Purpose: This TAG affects the Strength Requirement on the item.
+ - Values:  Positive or negative integer.
+ - Effect:  For this to work, the ITEMDEF cannot have a REQSTR... instead,
+            the item should have a ReqStr.
+
+IncreaseSpellDam
+ - Purpose: Increases the damage of spells with spellflag_damage flag.
+ - Values:  Positive or negative integer.
+ - Effect:  NOT IMPLEMENTED YET
+
+IncreaseGold
+ - Purpose: Increases the gold found when looting a corpse.
+ - Values:  Positive or negative integer
+ - Effect:  NOT IMPLEMENTED YET
+
+ReflectPhysicalDam
+ - Purpose: Reflects some physical damage back to the damage source.
+ - Values:  Positive or negative integer.
+ - Effect:  NOT IMPLEMENTED YET
+
+LUCK
+ - Purpose: Increases (or decreases) the LUCK of the wearer.
+ - Values:  Positive or negative integer.
+ - Effect:  This TAG is implemented inside the ei_equipitem TYPEDEF and
+            does not rely on other TYPEDEFs or EVENTs.
+
+BonusStr
+BonusDex
+BonusINT
+BonusHits
+BonusStam
+BonusMana
+ - Purpose: Increases (or decreases) the applicable Stat.
+ - Values:  Positive or negative integer.
+ - Effect:  This TAG is implemented inside the ei_equipitem TYPEDEF and
+            does not rely on other TYPEDEFs or EVENTs.
+
+RegenHits
+RegenStam
+RegenMana
+ - Purpose: Speeds up or slows down the rate of regeneration
+            of the applicable stat.
+ - Values:  SMALL positive or negative integer.
+ - Effect:  This TAG is implemented inside the ei_equipitem TYPEDEF and
+            does not rely on other TYPEDEFs or EVENTs.
+
+FasterCastRecovery
+ - Purpose: Increases (or decreases) the amount of MANA recovered. If
+            this number is less than one, the wearer will not recover
+            ANY mana!
+ - Values:  SMALL positive or negative integer.
+ - Effect:  This TAG is implemented inside the ei_equipitem TYPEDEF and
+            does not rely on other TYPEDEFs or EVENTs.
+
+FasterCasting
+ - Purpose: Speeds up the casting of a spell.
+ - Values:  SMALL positive or negative integer.
+ - Effect:  NOT IMPLEMENTED YET
+
+SelfRepair
+ - Purpose: Instead of taking damage, items with this propery might
+            become less damaged instead.
+ - Values:  Positive or negative integer.
+ - Effect:  This TAG is implemented inside the ei_equipitem TYPEDEF and
+            does not rely on other TYPEDEFs or EVENTs.
+
+BonusSkill1
+BonusSkill2
+BonusSkill3
+BonusSkill4
+BonusSkill5
+ - Purpose: An item can enhance up to 5 skills when it is worn.
+ - Values:  The value must be: the KEY from a skill, a comma, followed
+            by the amount (including one decimal place!)
+ - Effect:  This TAG is implemented inside the ei_equipitem TYPEDEF and
+            does not rely on other TYPEDEFs or EVENTs.
+
+TAG.MaxLevel
+TAG.MinLevel
+ - Purpose: Prevent the item from being equipped when the player does not
+            meet the level requirement.
+ - Values:  Positive Integer.
+ - Effect:  This TAG is implemented inside the ei_equipitem TYPEDEF and
+            does not rely on other TYPEDEFs or EVENTs.
+
+The following tags are weapons only (NONE OF THEM ARE IMPLEMENTED YET):
+
+Balanced              - Values: MUST be one or zero
+IncreaseDam			  - Values: positive or negative integer
+DamPhysical			  - Values: positive ONLY
+DamFire				  - Values: positive ONLY
+DamCold				  - Values: positive ONLY
+DamPoison  			  - Values: positive ONLY
+DamEnergy 			  - Values: positive ONLY
+HitAreaPhysical      - Values: positive ONLY
+HitAreaFire           - Values: positive ONLY
+HitAreaCold           - Values: positive ONLY
+HitAreaPoison         - Values: positive ONLY
+HitAreaEnergy         - Values: positive ONLY
+HitLowerAtk        - Values: positive or negative integer
+HitLowerDef       - Values: positive or negative integer
+HitLeechLife          - Values: positive or negative integer
+HitLeechMana          - Values: positive or negative integer
+HitLeechStam       - Values: positive or negative integer
+UseBestWeaponSkill
+ - Purpose: If the value is 1, the tooltip will indicate the weapon is using
+            the best weapon skill of the wearer.
+ - Values: one or zero only
+ - Effect: NOT IMPLEMENTED YET
+HitDispel             - Values: positive ONLY
+HitFireball           - Values: positive ONLY
+HitHarm               - Values: positive ONLY
+HitLightning          - Values: positive ONLY
+HitMagicArrow         - Values: positive ONLY
+MageWeapon       - Values: MUST be one or zero
+TAG.SlayerGroup - 
+
+ SPECIAL values maximum of up to two of the following list (comma separated):
+
+ REPOND, OGRE, ORC, TROLL,
+ UNDEAD,
+ ELEMENTAL, AIRELEM, BLOODELEM, EARTHELEM, FIREELEM, POISONELEM, SNOWELEM, WATERELEM,
+ DEMON, GARGOYLE,
+ ARACHNID, SCORPION, SPIDER, TERATHAN,
+ REPTILE, DRAGON, LIZARDMAN, OPHIDIAN, SNAKE,
+
+ FEY,
+ MAGE,
+ BOVINE, WOLF, BEAR, VERMIN, BAT, BEETLE, BIRD,
+ ICE, FLAME,
+ GOBLIN
+
+The following tags are armor only:
+
+MageArmor             - Values:  One or zero.
+
+
+
+[TYPEDEF ei_equipitem]
+ON=@EquipTest
+IF (<CanUse>&<def.can_u_none>)
+	RETURN 1
+ELSEIF (<CanUse>&<def.can_u_all>)
+	return 0
+ENDIF
+IF (<SRC.IsPlayer>)
+	//Checking if the item can be equiped by gargoyles, don't uncomment the following 2 checks.
+	IF (<CanUse>&<def.can_u_gargoyle>)
+		IF !(<SRC.f_isGargoyle>)
+			SRC.SYSMESSAGELOC <def.color_text>,1111707//"Only gargoyles can wear this."
+			RETURN 1
+		ENDIF
+	ELSEIF !(<CanUse>&<def.can_u_all>)
+		IF (<SRC.f_isGargoyle>)
+			SRC.SYSMESSAGELOC <def.color_text>,1111708//"Gargoyles can't wear this."
+			RETURN 1
+		ENDIF
+	ENDIF
+	//If you want every item equipable for every character without checking for race/sex uncomment the next line (return 0).
+	//return 0
+	IF ( (<CanUse>&<def.can_u_female>) && !(<CanUse>&<def.can_u_male>) ) 	//Female item
+		IF !(<SRC.f_isFemale>)	//must be used by females.
+			SRC.SYSMESSAGELOC <def.color_text>,1010388//"Only females can wear this."
+			RETURN 1
+		ENDIF
+	ELSEIF ( (<CanUse>&<def.can_u_male>) && !(<CanUse>&<def.can_u_female>) )	//male item
+		IF (<SRC.f_isFemale>)	//must be used by males.
+			SRC.SYSMESSAGELOC <def.color_text>,1063343//"Only males can wear this."
+			RETURN 1
+		ENDIF
+	ENDIF
+	IF ( ( (<CanUse>&<def.can_u_human>) && !(<src.f_isHuman>) ) && !( (<CanUse>&<def.can_u_elf>) && (<src.f_isElf>) ) )
+		SRC.SYSMESSAGELOC <def.color_text>,1071936//"You cannot equip that."
+		RETURN 1
+	ELSEIF ( ( (<CanUse>&<def.can_u_elf>) && !(<SRC.f_isElf>) ) && !( (<CanUse>&<def.can_u_human>) && (<src.f_isHuman>) ) )		//can't be used by elves
+			SRC.SYSMESSAGELOC <def.color_text>,1072203//"Only elves may use this."
+			RETURN 1
+	ENDIF
+ENDIF
+
+IF (<HasComponentProps <def.CompProps_ItemWeapon>>)
+	IF (<MageWeapon>)
+		//FIXME: This needs to be tested...
+		IF (<SRC.<MageWeapon>> < <MageWeapon>)
+			SRC.SYSMESSAGE @<def.color_text> You have insufficient skill to equip this item.
+			RETURN 1
+		ENDIF
+	ENDIF
+ENDIF
+IF (<SRC.ISPLAYER>) && (<TAG0.MaxLevel>)
+	IF (<SRC.LEVEL> > <TAG.MaxLevel>)
+		SRC.SYSMESSAGE @<def.color_text> You are too high level to use this item.
+		RETURN 1
+	ENDIF
+ENDIF
+IF (<SRC.ISPLAYER>) && (<TAG0.MinLevel>)
+	IF (<SRC.LEVEL> < <TAG.MinLevel>)
+		SRC.SYSMESSAGE @<def.color_text> You are too low level to use this item.
+		RETURN 1
+	ENDIF
+ENDIF
+
+ON=@Equip
+IF (<HasComponentProps <def.CompProps_ItemWeapon>>)
+	IF (<Balanced>)
+		SRC.Balanced += 1
+	ENDIF
+	IF (<HitAreaPhysical>)
+		SRC.HitAreaPhysical += <HitAreaPhysical>
+	ENDIF
+	IF (<HitAreaFire>)
+		SRC.HitAreaFire += <HitAreaFire>
+	ENDIF
+	IF (<HitAreaCold>)
+		SRC.HitAreaCold += <HitAreaCold>
+	ENDIF
+	IF (<HitAreaPoison>)
+		SRC.HitAreaPoison += <HitAreaPoison>
+	ENDIF
+	IF (<HitAreaEnergy>)
+		SRC.HitAreaEnergy += <HitAreaEnergy>
+	ENDIF
+	IF (<HitLowerAtk>)
+		SRC.HitLowerAtk += <HitLowerAtk>
+	ENDIF
+	IF (<HitLowerDef>)
+		SRC.HitLowerDef += <HitLowerDef>
+	ENDIF
+	IF (<HitLeechLife>)
+		SRC.HitLeechLife += <HitLeechLife>
+	ENDIF
+	IF (<HitLeechMana>)
+		SRC.HitLeechMana += <HitLeechMana>
+	ENDIF
+	IF (<HitLeechStam>)
+		SRC.HitLeechStam += <HitLeechStam>
+	ENDIF
+	IF (<MageWeapon>)
+		TRY SRC.MageWeapon> += <MageWeapon>
+	ENDIF
+	IF (<HitDispel>)
+		SRC.HitDispel += <HitDispel>
+	ENDIF
+	IF (<HitFireball>)
+		SRC.HitFireball += <HitFireball>
+		IF (<tag0.HitFireballCharges> > 1)
+			tag.HitFireballCharges -= 1
+		ENDIF
+	ENDIF
+	IF (<HitHarm>)
+		SRC.HitHarm= += <HitHarm>
+		IF (<tag0.HitHarmCharges> > 1)
+			tag.HitHarmCharges -= 1
+		ENDIF
+	ENDIF
+	IF (<HitLightning>)
+		SRC.HitLightning += <HitLightning>
+		IF (<tag0.HitLightningCharges> > 1)
+			tag.HitLightningCharges -= 1
+		ENDIF
+	ENDIF
+	IF (<HitMagicArrow>)
+		SRC.HitMagicArrow += <HitMagicArrow>
+		IF (<tag0.HitMagicArrowCharges> > 1)
+			tag.HitMagicArrowCharges -= 1
+		ENDIF
+	ENDIF
+ENDIF
+IF (<HasComponentProps <def.CompProps_ItemEquippable>>)
+	// IF (<NightSight>)
+		// IF (<SRC.NightSight>==0)
+			// SRC.NIGHTSIGHT 1
+			// FIXME: remove nightsight spell effect first?
+			// FIXME: Add nightsight buff icon?
+		// ENDIF
+		// SRC.TAG0.NightSight += 1
+	// ENDIF
+	// IF (<IncreaseDam>)
+		// SRC.IncreaseDam += <IncreaseDam>
+	// ENDIF
+	// IF (<IncreaseDefChance>)
+		// IF (<IncreaseDefChance> < 0)
+			// SRC.SYSMESSAGELOC <def.color_text>,1062318//"Your defense chance has been reduced!"
+		// ENDIF
+		// SRC.IncreaseDefChance += <IncreaseDefChance>
+	// ENDIF
+	// IF (<IncreaseHitChance>)
+		// IF (<IncreaseHitChance> < 0)
+			// SRC.SYSMESSAGELOC <def.color_text>,1062319//"Your attack chance has been reduced!"
+		// ELSE
+			// SRC.SYSMESSAGELOC <def.color_text>,1062319//"Your attack chance has been reduced!"
+		// ENDIF
+		// SRC.IncreaseHitChance += <IncreaseHitChance>
+	// ENDIF
+	// IF (<IncreaseSwingSpeed>)
+		// SRC.IncreaseSwingSpeed += <IncreaseSwingSpeed>
+	// ENDIF
+	// IF (<DamPhysical>)
+		// SRC.DamPhysical += <DamPhysical>
+	// ENDIF
+	// IF (<DamFire>)
+		// SRC.DamFire += <DamFire>
+	// ENDIF
+	// IF (<DamCold>)
+		// SRC.DamCold += <DamCold>
+	// ENDIF
+	// IF (<DamPoison>)
+		// SRC.DamPoison += <DamPoison>
+	// ENDIF
+	// IF (<DamEnergy>)
+		// SRC.DamEnergy += <DamEnergy>
+	// ENDIF
+	// IF (<RESCOLD>)
+		// SRC.RESCOLD += <RESCOLD>
+	// ENDIF
+	// IF (<RESENERGY>)
+		// SRC.RESENERGY += <RESENERGY>
+	// ENDIF
+	// IF (<RESFIRE>)
+		// SRC.RESFIRE += <RESFIRE>
+	// ENDIF
+	// IF (<RESPHYSICAL>)
+		// SRC.RESPHYSICAL += <RESPHYSICAL>
+		// SRC.MODAR += <RESPHYSICAL>
+	// ENDIF
+	// IF (<RESPOISON>)
+		// SRC.RESPOISON += <RESPOISON>
+	// ENDIF
+	IF (<EnhancePotions>)
+		SRC.EnhancePotions += <EnhancePotions>
+	ENDIF
+	IF (<LowerManaCost>)
+		SRC.LowerManaCost += <LowerManaCost>
+	ENDIF
+	IF (<LowerReagentCost>)
+		SRC.LowerReagentCost += <LowerReagentCost>
+	ENDIF
+	// IF (<IncreaseSpellDam>)
+		// SRC.IncreaseSpellDam += <IncreaseSpellDam>
+	// ENDIF
+	IF (<IncreaseGold>)
+		SRC.IncreaseGold += <IncreaseGold>
+	ENDIF
+	IF (<ReflectPhysicalDam>)
+		SRC.ReflectPhysicalDam += <ReflectPhysicalDam>
+	ENDIF
+	// IF (<LUCK>)
+		// SRC.LUCK += <LUCK>
+		// IF (<LUCK> > 0)
+			// SRC.SYSMESSAGELOC <def.color_text>,1079551//"Your luck just improved!"
+		// ELSE
+			// SRC.SYSMESSAGELOC <def.color_text>,1079552//"Your luck just ran out."
+		// ENDIF
+	// ENDIF
+	IF (<BonusStr>)//strength bonus
+		SRC.MODSTR += <BonusStr>
+	ENDIF
+	IF (<BonusHitsMax>)//hitpoint increase
+		SRC.MODMAXHITS += <BonusHitsMax>
+	ENDIF
+	IF (<RegenHits>)
+		SRC.RegenHits += <RegenHits>
+	ENDIF
+	IF (<BonusDex>)//dexterity bonus
+		SRC.MODDEX += <BonusDex>
+	ENDIF
+	IF (<BonusStamMax>)//stamina increase
+		SRC.MODMAXSTAM += <BonusStamMax>
+	ENDIF
+	IF (<RegenStam>)
+		SRC.RegenStam += <RegenStam>
+	ENDIF
+	IF (<BonusINT>)//intelligence bonus
+		SRC.MODINT += <BonusINT>
+	ENDIF
+	IF (<BonusManaMax>)//mana increase
+		SRC.MODMAXMANA <BonusManaMax>
+	ENDIF
+	IF (<RegenMana>)//alters the "rate" of mana regeneration
+		SRC.RegenMana += <RegenMana>
+	ENDIF
+	IF (<FasterCastRecovery>)//alters the "value" of mana regenerated
+		SRC.FasterCastRecovery += <FasterCastRecovery>
+		SRC.RegenValMana += <FasterCastRecovery>
+	ENDIF
+	// IF (<FasterCasting>)
+		// SRC.FasterCasting += <FasterCasting>
+	// ENDIF
+	IF (<SpellChanneling>)
+		SRC.SpellChanneling += 1
+	ENDIF
+	IF (<MageArmor>)
+		SRC.tag.MageArmor=<EVAL <SRC.tag.MageArmor> + 1>
+	ENDIF
+ENDIF
+IF <BonusSkill1>
+	SRC.<BonusSkill1> += <BonusSkill1Amt>
+ENDIF
+IF <BonusSkill2>
+	SRC.<BonusSkill2> += <BonusSkill2Amt>
+ENDIF
+IF <BonusSkill3>
+	SRC.<BonusSkill3> += <BonusSkill3Amt>
+ENDIF
+IF <BonusSkill4>
+	SRC.<BonusSkill4> += <BonusSkill4Amt>
+ENDIF
+IF <BonusSkill5>
+	SRC.<BonusSkill5> += <BonusSkill5Amt>
+ENDIF
+
+ON=@UnEquip
+IF (<HasComponentProps <def.CompProps_ItemWeapon>>)
+	IF (<Balanced>)
+		SRC.Balanced -=1
+	ENDIF
+	IF (<HitAreaPhysical>)
+		SRC.HitAreaPhysical -= <HitAreaPhysical>
+	ENDIF
+	IF (<HitAreaFire>)
+		SRC.HitAreaFire -= <HitAreaFire>
+	ENDIF
+	IF (<HitAreaCold>)
+		SRC.HitAreaCold -= <HitAreaCold>
+	ENDIF
+	IF (<HitAreaPoison>)
+		SRC.HitAreaPoison -= <HitAreaPoison>
+	ENDIF
+	IF (<HitAreaEnergy>)
+		SRC.HitAreaEnergy -= <HitAreaEnergy>
+	ENDIF
+	IF (<HitLowerAtk>)
+		SRC.HitLowerAtk -= <HitLowerAtk>
+	ENDIF
+	IF (<HitLowerDef>)
+		SRC.HitLowerDef -= <HitLowerDef>
+	ENDIF
+	IF (<HitLeechLife>)
+		SRC.HitLeechLife -= <HitLeechLife>
+	ENDIF
+	IF (<HitLeechMana>)
+		SRC.HitLeechMana -= <HitLeechMana>
+	ENDIF
+	IF (<HitLeechStam>)
+		SRC.HitLeechStam -= <HitLeechStam>
+	ENDIF
+	//IF (<MageWeapon>)
+	//	SRC.<MageWeapon> -= <MageWeapon> // FIXME ?
+	//ENDIF
+	IF (<HitDispel>)
+		SRC.HitDispel -= <HitDispel>
+	ENDIF
+	IF (<HitFireball>)
+		SRC.HitFireball -= <HitFireball>
+	ENDIF
+	IF (<HitHarm>)
+		SRC.HitHarm -= <HitHarm>
+	ENDIF
+	IF (<HitLightning>)
+		SRC.HitLightning -= <HitLightning>
+	ENDIF
+	IF (<HitMagicArrow>)
+		SRC.HitMagicArrow -= <HitMagicArrow>
+	ENDIF
+ENDIF
+IF (<HasComponentProps <def.CompProps_ItemEquippable>>)
+	IF (<SpellChanneling>)
+		SRC.SpellChanneling -=1
+	ENDIF
+	// IF (<NightSight>)
+		// SRC.TAG.NightSight -= 1
+		// IF (<SRC.TAG.NightSight>==0)
+			// SRC.TAG.NightSight
+			// SRC.NIGHTSIGHT 0
+		// ENDIF
+	// ENDIF
+	// IF (<IncreaseDam>)
+		// SRC.IncreaseDam -= <IncreaseDam>
+	// ENDIF
+	IF (<IncreaseDefChance>)
+		SRC.IncreaseDefChance -= <IncreaseDefChance>
+		IF (<SRC.IncreaseDefChance>==0)
+			SRC.SYSMESSAGELOC <def.color_text>,1062321//"Your defense chance has returned to normal."
+		ENDIF
+	ENDIF
+	// IF (<IncreaseHitChance>)
+		// SRC.IncreaseHitChance -= <IncreaseHitChance>
+		// IF (<SRC.IncreaseHitChance>==0)
+			// SRC.SYSMESSAGELOC <def.color_text>,1062320//"Your attack chance has returned to normal."
+		// ENDIF
+	// ENDIF
+	IF (<IncreaseHitChance>)
+		SRC.IncreaseHitChance -= <IncreaseHitChance>
+		IF (<SRC.IncreaseHitChance>==0)
+			SRC.SYSMESSAGELOC <def.color_text>,1062320//"Your attack chance has returned to normal."
+		ENDIF
+	ENDIF
+	// IF (<IncreaseSwingSpeed>)
+		// SRC.IncreaseSwingSpeed -= <IncreaseSwingSpeed>
+	// ENDIF
+	// IF (<DamPhysical>)
+		// SRC.DamPhysical -= <DamPhysical>
+	// ENDIF
+	// IF (<DamFire>)
+		// SRC.DamFire -= <DamFire>
+	// ENDIF
+	// IF (<DamCold>)
+		// SRC.DamCold -= <DamCold>
+	// ENDIF
+	// IF (<DamPoison>)
+		// SRC.DamPoison -= <DamPoison>
+	// ENDIF
+	// IF (<DamEnergy>)
+		// SRC.DamEnergy -= <DamEnergy>
+	// ENDIF
+	// IF (<RESCOLD>)
+		// SRC.RESCOLD -= <RESCOLD>
+	// ENDIF
+	// IF (<RESENERGY>)
+		// SRC.RESENERGY -= <RESENERGY>
+	// ENDIF
+	// IF (<RESFIRE>)
+		// SRC.RESFIRE -= <RESFIRE>
+	// ENDIF
+	// IF (<RESPOISON>)
+		// SRC.RESPOISON -= <RESPOISON>
+	// ENDIF
+	// IF (<RESPHYSICAL>)
+		// SRC.RESPHYSICAL -= <RESPHYSICAL>
+		// SRC.MODAR -= <RESPHYSICAL>
+	// ENDIF
+	IF (<EnhancePotions>)
+		SRC.EnhancePotions -= <EnhancePotions>
+	ENDIF
+	IF (<LowerManaCost>)
+		SRC.LowerManaCost -= <LowerManaCost>
+	ENDIF
+	IF (<LowerReagentCost>)
+		SRC.LowerReagentCost -= <LowerReagentCost>
+	ENDIF
+	IF (<IncreaseSpellDam>)
+		SRC.IncreaseSpellDam -= <IncreaseSpellDam>
+	ENDIF
+	IF (<IncreaseGold>)
+		SRC.IncreaseGold -= <IncreaseGold>
+	ENDIF
+	IF (<ReflectPhysicalDam>)
+		SRC.ReflectPhysicalDam -= <ReflectPhysicalDam>
+	ENDIF
+	// IF (<LUCK>)
+		// IF (<LUCK> < 0)
+			// SRC.SYSMESSAGELOC <def.color_text>,1079551//"Your luck just improved!"
+		// ELSE
+			// SRC.SYSMESSAGELOC <def.color_text>,1079552//"Your luck just ran out."
+		// ENDIF
+		// SRC.LUCK -= <LUCK>
+	// ENDIF
+	IF (<BonusStr>)//strength bonus
+		SRC.MODSTR -= <BonusStr>
+	ENDIF
+	IF (<BonusHitsMax>)//hitpoint increase
+		SRC.MODMAXHITS -= <BonusHitsMax>
+	ENDIF
+	IF (<RegenHits>)
+		SRC.RegenHits -= <RegenHits>
+	ENDIF
+	IF (<BonusDex>)//dexterity bonus
+		SRC.MODDEX -= <BonusDex>
+	ENDIF
+	IF (<BonusStamMax>)//stamina increase
+		SRC.MODMAXSTAM -= <BonusStamMax>
+	ENDIF
+	IF (<RegenStam>)
+		SRC.RegenStam -= <RegenStam>
+	ENDIF
+	IF (<BonusINT>)//intelligence bonus
+		SRC.MODINT -= <BonusINT>
+	ENDIF
+	IF (<BonusManaMax>)//mana increase
+		SRC.MODMAXMANA -= <BonusManaMax>
+	ENDIF
+	IF (<RegenMana>)
+		SRC.RegenMana -= <RegenMana>
+	ENDIF
+	IF (<FasterCastRecovery>)
+		SRC.FasterCastRecovery -= <FasterCastRecovery>
+		SRC.RegenValMana -= <FasterCastRecovery>
+	ENDIF
+	// IF (<FasterCasting>)
+		// SRC.FasterCasting -= <FasterCasting>
+	// ENDIF
+	IF (<MageArmor>)
+		SRC.tag.MageArmor -= 1
+	ENDIF
+ENDIF
+IF <BonusSkill1>
+	SRC.<BonusSkill1> -= <BonusSkill1Amt>
+ENDIF
+IF <BonusSkill2>
+	SRC.<BonusSkill2> -= <BonusSkill2Amt>
+ENDIF
+IF <BonusSkill3>
+	SRC.<BonusSkill3> -= <BonusSkill3Amt>
+ENDIF
+IF <BonusSkill4>
+	SRC.<BonusSkill4> -= <BonusSkill4Amt>
+ENDIF
+IF <BonusSkill5>
+	SRC.<BonusSkill5> -= <BonusSkill5Amt>
+ENDIF
+
+ON=@Damage
+// Default is the item taking damage.
+// SRC     is the source of the damage.
+// ARGN1   is the damage amount.
+// ARGN2   is the type of damage.
+//
+// 1080034//"Their ~ is destroyed by the attack."
+// 1080035//"Your ~ is destroyed by the attack."
+
+//   SERV.LOG "<NAME> has <dMORE1L> of <dMORE1H> hitpoints and might take <ARGN1> damage of type <HVAL <ARGN2>> from <SRC.NAME>"
+IF (<SelfRepair>) && (<MORE1L> < <MORE1H>) 
+	IF (<SelfRepair> > <DEF.MaxSelfRepair>)
+		LOCAL.Chance=<DEF.MaxSelfRepair>
+	ELSE
+		LOCAL.Chance=<SelfRepair>
+	ENDIF
+	IF (<R50> < <EVAL <LOCAL.Chance>>)
+		MORE1L += <EVAL <LOCAL.Chance>>
+		IF (<MORE1L> > <MORE1H>)
+			MORE1L = <MORE1H>
+		ENDIF
+	ENDIF
+ENDIF
+
+
+[EOF]

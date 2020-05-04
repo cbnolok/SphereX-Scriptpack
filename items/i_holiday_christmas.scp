@@ -899,7 +899,7 @@ DESCRIPTION=Santa Statue (unlit)
 ON=@Create
    MOREZ=29
 ON=@ClientTooltip
-   SRC.ADDCLILOC 502696	//turned off
+   addcliloc 502696	//turned off
 
 [ITEMDEF 04a99]
 DEFNAME=i_statue_santa_south
@@ -912,7 +912,7 @@ DESCRIPTION=Santa Statue (unlit)
 ON=@Create
    MOREZ=29
 ON=@ClientTooltip
-   SRC.ADDCLILOC 502696	//turned off
+   addcliloc 502696	//turned off
 
 [ITEMDEF 04a9a]
 DEFNAME=i_statue_santa_east_lit
@@ -925,7 +925,7 @@ DESCRIPTION=Santa Statue (lit)
 ON=@Create
    MOREZ=29
 ON=@ClientTooltip
-   SRC.ADDCLILOC 502695	//turned on
+   addcliloc 502695	//turned on
 
 [ITEMDEF 04a9b]
 DEFNAME=i_statue_santa_south_lit
@@ -938,7 +938,7 @@ DESCRIPTION=Santa Statue (lit)
 ON=@Create
    MOREZ=29
 ON=@ClientTooltip
-   SRC.ADDCLILOC 502695	//turned on
+   addcliloc 502695	//turned on
 
 
 [ITEMDEF 04b20]
@@ -1877,7 +1877,7 @@ DESCRIPTION=Holiday Gift Token
 // Custom Items //
 //////////////////
 
-[ITEMDEF m_holiday_tree_classic]
+[MULTIDEF m_holiday_tree_classic]
 ID=0cd6
 NAME=Holiday Tree
 TYPE=t_multi
@@ -1914,7 +1914,7 @@ COMPONENT=0f30,0,0,33
 COMPONENT=0f29,0,0,34
 COMPONENT=0f2b,0,1,37
 
-[ITEMDEF m_holiday_tree_classic_bare]
+[MULTIDEF m_holiday_tree_classic_bare]
 ID=0cd6
 NAME=Holiday Tree
 TYPE=t_multi
@@ -1924,7 +1924,7 @@ DESCRIPTION=Holiday Tree (Classic Bare)
 MULTIREGION=0,0,0,0
 COMPONENT=0cd7,0,0,0
 
-[ITEMDEF m_holiday_tree_modern]
+[MULTIDEF m_holiday_tree_modern]
 ID=01b7e
 NAME=Holiday Tree
 TYPE=t_multi
@@ -1956,7 +1956,7 @@ COMPONENT=0f28,0,0,23
 COMPONENT=0f18,0,0,25
 COMPONENT=0f2a,0,0,25
 
-[ITEMDEF m_holiday_tree_modern_bare]
+[MULTIDEF m_holiday_tree_modern_bare]
 ID=01b7e
 NAME=Holiday Tree
 TYPE=t_multi
@@ -1965,7 +1965,7 @@ SUBSECTION=Multis
 DESCRIPTION=Holiday Tree (Modern Bare)
 MULTIREGION=0,0,0,0
 
-[ITEMDEF m_gingerbread_house]
+[MULTIDEF m_gingerbread_house]
 ID=02be6
 NAME=Gingerbread House
 TYPE=t_multi
@@ -1979,7 +1979,7 @@ COMPONENT=02be7,0,-1
 ON=@Create
    MOREZ=29
 
-[ITEMDEF m_sleigh_e]
+[MULTIDEF m_sleigh_e]
 ID=03a73
 NAME=Sleigh
 TYPE=t_multi
@@ -1989,7 +1989,7 @@ DESCRIPTION=Sleigh (E)
 MULTIREGION=0,0,0,0
 COMPONENT=03a74,-1,0
 
-[ITEMDEF m_sleigh_sw]
+[MULTIDEF m_sleigh_sw]
 ID=03a7a
 NAME=Sleigh
 TYPE=t_multi
@@ -1998,7 +1998,7 @@ SUBSECTION=Multis
 DESCRIPTION=Sleigh (SW)
 MULTIREGION=0,0,0,0
 
-[ITEMDEF m_sleigh_n]
+[MULTIDEF m_sleigh_n]
 ID=03a7d
 NAME=Sleigh
 TYPE=t_multi
@@ -2008,7 +2008,7 @@ DESCRIPTION=Sleigh (N)
 MULTIREGION=0,0,0,0
 COMPONENT=03a7e,0,-1
 
-[ITEMDEF m_sleigh_ne]
+[MULTIDEF m_sleigh_ne]
 ID=03a84
 NAME=Sleigh
 TYPE=t_multi
@@ -2017,7 +2017,7 @@ SUBSECTION=Multis
 DESCRIPTION=Sleigh (NE)
 MULTIREGION=0,0,0,0
 
-[ITEMDEF m_sleigh_s]
+[MULTIDEF m_sleigh_s]
 ID=03a87
 NAME=Sleigh
 TYPE=t_multi
@@ -2027,7 +2027,7 @@ DESCRIPTION=Sleigh (S)
 MULTIREGION=0,0,0,0
 COMPONENT=03a88,0,-1
 
-[ITEMDEF m_sleigh_w]
+[MULTIDEF m_sleigh_w]
 ID=03a8d
 NAME=Sleigh
 TYPE=t_multi
@@ -2037,7 +2037,7 @@ DESCRIPTION=Sleigh (W)
 MULTIREGION=0,0,0,0
 COMPONENT=03a8e,-1,0
 
-[ITEMDEF m_claw_foot_tub_south]
+[MULTIDEF m_claw_foot_tub_south]
 ID=0996c
 NAME=Claw Foot Tub
 TYPE=t_multi
@@ -2048,7 +2048,7 @@ MULTIREGION=0,0,0,0
 COMPONENT=0996b,0,1
 COMPONENT=0996d,0,-1
 
-[ITEMDEF m_claw_foot_tub_east]
+[MULTIDEF m_claw_foot_tub_east]
 ID=09977
 NAME=Claw Foot Tub
 TYPE=t_multi
@@ -2059,7 +2059,7 @@ MULTIREGION=0,0,0,0
 COMPONENT=09976,1,0
 COMPONENT=09978,-1,0
 
-[ITEMDEF m_fireplace_marble_gold_east]
+[MULTIDEF m_fireplace_marble_gold_east]
 ID=09a5d
 NAME=Fireplace
 TYPE=t_multi
@@ -2073,7 +2073,7 @@ COMPONENT=09a4d,0,-1
 ON=@Create
    MOREZ=1
 
-[ITEMDEF m_fireplace_marble_gold_south]
+[MULTIDEF m_fireplace_marble_gold_south]
 ID=09a63
 NAME=Fireplace
 TYPE=t_multi
@@ -2087,7 +2087,7 @@ COMPONENT=09a50,-1,0
 ON=@Create
    MOREZ=1
 
-[ITEMDEF m_fireplace_marble_blue_east]
+[MULTIDEF m_fireplace_marble_blue_east]
 ID=09a69
 NAME=Fireplace
 TYPE=t_multi
@@ -2101,7 +2101,7 @@ COMPONENT=09a53,0,-1
 ON=@Create
    MOREZ=1
 
-[ITEMDEF m_fireplace_marble_blue_south]
+[MULTIDEF m_fireplace_marble_blue_south]
 ID=09a6f
 NAME=Fireplace
 TYPE=t_multi
@@ -2115,7 +2115,7 @@ COMPONENT=09a56,-1,0
 ON=@Create
    MOREZ=1
 
-[ITEMDEF m_fireplace_marble_green_east]
+[MULTIDEF m_fireplace_marble_green_east]
 ID=09a75
 NAME=Fireplace
 TYPE=t_multi
@@ -2129,7 +2129,7 @@ COMPONENT=09a59,0,-1
 ON=@Create
    MOREZ=1
 
-[ITEMDEF m_fireplace_marble_green_south]
+[MULTIDEF m_fireplace_marble_green_south]
 ID=09a7b
 NAME=Fireplace
 TYPE=t_multi
@@ -2143,7 +2143,7 @@ COMPONENT=09a5c,-1,0
 ON=@Create
    MOREZ=1
 
-[ITEMDEF i_card_semidar_dupre]
+[MULTIDEF i_card_semidar_dupre]
 ID=09c14
 NAME=Card of Semidar
 TYPE=t_sign_gump
@@ -2152,7 +2152,7 @@ CATEGORY=Christmas
 SUBSECTION=Misc
 DESCRIPTION=Card of Semidar (Dupre the Paladin)
 ON=@ClientTooltip
-   SRC.ADDCLILOC 1156396	//Dupre the Paladin
+   addcliloc 1156396	//Dupre the Paladin
 
 [ITEMDEF i_card_semidar_nystul]
 ID=09c14
@@ -2163,7 +2163,7 @@ CATEGORY=Christmas
 SUBSECTION=Misc
 DESCRIPTION=Card of Semidar (Nystul the Mage)
 ON=@ClientTooltip
-   SRC.ADDCLILOC 1156397	//Nystul the Mage
+   addcliloc 1156397	//Nystul the Mage
 
 [ITEMDEF i_card_semidar_shamino]
 ID=09c14
@@ -2174,7 +2174,7 @@ CATEGORY=Christmas
 SUBSECTION=Misc
 DESCRIPTION=Card of Semidar (Shamino Sallé Dacil)
 ON=@ClientTooltip
-   SRC.ADDCLILOC 1156398	//Shamino Sallé Dacil
+   addcliloc 1156398	//Shamino Sallé Dacil
 
 [ITEMDEF i_card_semidar_juonar]
 ID=09c14
@@ -2185,7 +2185,7 @@ CATEGORY=Christmas
 SUBSECTION=Misc
 DESCRIPTION=Card of Semidar (Juo'nar the Lich)
 ON=@ClientTooltip
-   SRC.ADDCLILOC 1156399	//Juo'nar the Lich
+   addcliloc 1156399	//Juo'nar the Lich
 
 [ITEMDEF i_card_semidar_professor_rafkin]
 ID=09c14
@@ -2196,7 +2196,7 @@ CATEGORY=Christmas
 SUBSECTION=Misc
 DESCRIPTION=Card of Semidar (Professor Ellie Rafkin)
 ON=@ClientTooltip
-   SRC.ADDCLILOC 1156562	//Professor Ellie Rafkin
+   addcliloc 1156562	//Professor Ellie Rafkin
 
 [ITEMDEF i_card_semidar_minax]
 ID=09c14
@@ -2207,9 +2207,9 @@ CATEGORY=Christmas
 SUBSECTION=Misc
 DESCRIPTION=Card of Semidar (Minax the Enchantress)
 ON=@ClientTooltip
-   SRC.ADDCLILOC 1156981	//Minax the Enchantress
+   addcliloc 1156981	//Minax the Enchantress
 
-[ITEMDEF m_sleigh_reindeer_n]
+[MULTIDEF m_sleigh_reindeer_n]
 ID=09dc6
 NAME=Decorative Sleigh & Reindeer
 TYPE=t_multi
@@ -2220,7 +2220,7 @@ MULTIREGION=0,0,0,0
 COMPONENT=09dc5,0,1
 COMPONENT=09dc7,0,-1
 
-[ITEMDEF m_sleigh_reindeer_w]
+[MULTIDEF m_sleigh_reindeer_w]
 ID=09dc9
 NAME=Decorative Sleigh & Reindeer
 TYPE=t_multi
@@ -2231,7 +2231,7 @@ MULTIREGION=0,0,0,0
 COMPONENT=09dc8,1,0
 COMPONENT=09dca,-1,0
 
-[ITEMDEF m_snowy_holiday_tree]
+[MULTIDEF m_snowy_holiday_tree]
 ID=09dd2
 NAME=Snowy Holiday Tree
 TYPE=t_multi

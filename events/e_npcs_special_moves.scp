@@ -226,3 +226,55 @@ ON=@Timer
    RETURN 1
 
 [EVENTS e_angry_fire]
+
+[EVENTS AI_Lich] // by Khaos
+On=@NPCActFight
+If !(<R19>)
+If (<Int> <= 400)    // Lich
+  Serv.NewNPC={c_Skeleton 1 c_Zombie 1 c_Ghoul 1 c_Spectre 1 c_Wraith 1 c_Shade 1}
+  New.Amount={4 1 6 1 8 1}
+  New.Flags |= <def.StatF_Conjured>
+  New.TimerF 300,Remove
+  New.P=<Src.P>
+  New.Attack <Src>
+  f_lich_AssumeForm 300
+  P=<New.P>
+  Update
+ElIf (<Int> <= 800)    // Lich Lord
+  Serv.NewNPC={c_Bone_Knight 1 c_Bone_Mage 1 c_Skeletal_Knight 1 c_Skeletal_Mage 1 c_Rotting_Corpse 1 c_Mummy 1}
+  New.Amount={4 1 6 1 8 1}
+  New.Flags |= <def.StatF_Conjured>
+  New.TimerF 300,Remove
+  New.P=<Src.P>
+  New.Attack <Src>
+  f_lich_AssumeForm 300
+  P=<New.P>
+  Update
+ElIF (<Int> <= 1200)    // Ancient Lich
+  Serv.NewNPC={c_Flesh_Golem 1 c_Gore_Fiend 1 c_Patchwork_Skeleton 1 c_Interred_Grizzle 1 c_Rotting_Corpse 1 c_Mummy 1}
+  New.Amount={4 1 6 1 8 1}
+  New.Flags |= <def.StatF_Conjured>
+  New.TimerF 300,Remove
+  New.P=<Src.P>
+  New.Attack <Src>
+  f_lich_AssumeForm 300
+  P=<New.P>
+  Update
+EndIf
+EndIf
+
+[Function f_lich_AssumeForm]
+Tag.Name=<Name>
+Body=<New.DispID>
+Name=<New.Name>
+Color=<New.Color>
+TimerF <ArgN>,f_lich_ResumeForm
+
+[Function f_lich_ResumeForm]
+Body=<OBody>
+Name=<Tag.Name>
+Color=<OSkin>
+Tag.Name=
+
+[EOF]
+

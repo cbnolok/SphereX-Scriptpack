@@ -83,7 +83,7 @@ ON=@Create
 [TYPEDEF t_golden_easter_goose]
 ON=@ClientTooltip
    IF (<MORE1>)
-    SRC.ADDCLILOC 1154089	//The goose contains an egg!
+    addcliloc 1154089	//The goose contains an egg!
    ENDIF
 ON=@DClick
    IF (<DISPID>==i_golden_easter_goose_south) || (<DISPID>==i_golden_easter_goose_east)

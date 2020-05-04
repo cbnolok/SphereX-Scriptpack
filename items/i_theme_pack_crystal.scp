@@ -565,7 +565,7 @@ NAME=crystal altar
 // Custom Items //
 //////////////////
 
-[ITEMDEF i_statue_crystal_bull_east]
+[MULTIDEF i_statue_crystal_bull_east]
 ID=035fe
 NAME=Crystal Bull Statue
 TYPE=t_multi
@@ -575,7 +575,7 @@ DESCRIPTION=Crystal Bull Statue (east)
 MULTIREGION=0,0,0,0
 COMPONENT=035ff,0,-1
 
-[ITEMDEF i_statue_crystal_bull_south]
+[MULTIDEF i_statue_crystal_bull_south]
 ID=03600
 NAME=Crystal Bull Statue
 TYPE=t_multi
@@ -585,7 +585,7 @@ DESCRIPTION=Crystal Bull Statue (south)
 MULTIREGION=0,0,0,0
 COMPONENT=03601,-1,0
 
-[ITEMDEF i_table_crystal_east]
+[MULTIDEF i_table_crystal_east]
 ID=03605
 NAME=Crystal Table
 TYPE=t_multi
@@ -595,7 +595,7 @@ DESCRIPTION=Crystal Table (east)
 MULTIREGION=0,0,0,0
 COMPONENT=03606,0,-1
 
-[ITEMDEF i_table_crystal_south]
+[MULTIDEF i_table_crystal_south]
 ID=03607
 NAME=Crystal Table
 TYPE=t_multi

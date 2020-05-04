@@ -3,7 +3,7 @@
 // www.sphereserver.net
 //****************************************************************************
 VERSION=X1
-
+[EOF]
 [SPAWN spawn_Animals]
 CATEGORY=Spawn Groups
 SUBSECTION=Animals
@@ -42,7 +42,6 @@ ID=c_pig_big
 ID=c_rabbit
 ID=c_rat
 ID=c_rat_giant
-ID=c_rat_sewer
 ID=c_sheep_woolly
 ID=c_skittering_hopper
 ID=c_snake

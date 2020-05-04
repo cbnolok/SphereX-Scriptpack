@@ -55,6 +55,7 @@ If (<ref1.memberfromuid.<argo.uid>.uid> != <argo.uid>)
     else
       f_townsys_addchartotown <ref1.uid>,<argo.uid>,0
     endif
+   endif
 else
   sysmessage @038A They are already a candidate.
 endif

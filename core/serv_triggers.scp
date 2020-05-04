@@ -14,6 +14,7 @@ f_onaccount_login
 f_onaccount_create
 f_onaccount_delete
 f_onaccount_pwchange
+f_onchar_create_init
 f_onchar_create
 f_onchar_delete
 f_onserver_start
@@ -50,8 +51,10 @@ f_onserver_timer
 [FUNCTION f_onaccount_login]
 // This function is called after client entered correct password.
 // Variables:
-//	ARGS --> Account name connecting
-//	ARGO --> Client connecting
+//	ARGS  --> Account name connecting
+//	ARGO  --> Client connecting
+//  ARGN1 --> Login type (3: UO client connected to login server, 4: client connected to game server, 
+//				5: HTTP, 6: telnet, 7: UOG, 8: Axis)
 // Return:
 //	0 --> Allow connection (default action)
 //	1 --> Deny connection
@@ -86,9 +89,24 @@ f_onserver_timer
 //	1 --> Deny password change
 
 
-[FUNCTION f_onchar_create]
-// This function is called before an account character got created.
+[FUNCTION f_onchar_create_init]
+// This function is called before an account character is created.
 // Variables:
+//  Read-Write:
+//	 ARGN1 --> Feature flags sent by client
+//	 ARGN2 --> Character profession (0=Advanced, 1=Warrior, 2=Mage, 3=Blacksmith, 4=Necromancer, 5=Paladin, 6=Samurai, 7=Ninja)
+//	 ARGN3 --> Character race (1=Human, 2=Elf, 3=Gargoyle)
+//  Read-Only:
+//	 ARGS  --> Account name
+//	 ARGO  --> Client creating the character
+// Return:
+//	0 --> Allow character creation (default action)
+//	1 --> Deny character creation
+
+
+[FUNCTION f_onchar_create]
+// This function is called after an account character got created.
+// Variables (Read-Only):
 //	SRC   --> Character being created
 //	ARGN1 --> Feature flags sent by client
 //	ARGN2 --> Character profession (0=Advanced, 1=Warrior, 2=Mage, 3=Blacksmith, 4=Necromancer, 5=Paladin, 6=Samurai, 7=Ninja)
@@ -116,6 +134,7 @@ f_onserver_timer
 // This function is called on server startup.
 
 //SERV.ServIP=xxx.xxx.xxx.xxx	//Add your public IP here (not domain) if you are behind a router
+f_DTL_mdb_update 		// Load into MDB (in-memory database) the database file used for the loot dynamic templates
 
 
 [FUNCTION f_onserver_exit]

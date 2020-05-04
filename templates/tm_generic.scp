@@ -39,13 +39,13 @@ random_shoes           { i_sandals 1 i_shoes_plain 1 i_shoes_tabi 1 }
 random_pants_all       { i_pants_short 1 i_pants_long 1 i_hakama_tattsuke 1 i_elven_pants 1 i_elven_pants 1 i_gargish_cloth_leggings_female 1 i_gargish_cloth_leggings 1 }
 random_pants_human     { i_pants_short 1 i_pants_long 1 i_hakama_tattsuke 1 }
 random_pants_elven       i_elven_pants
-random_pants_gargoyle  { i_gargish_cloth_leggings_female 1 i_gargish_leather_leggings_female 1 i_gargish_cloth_kilt_female 1 i_gargish_leather_kilt_female 1 i_gargish_cloth_leggings 1 i_gargish_leather_leggings 1 i_gargish_cloth_kilt 1 i_gargish_leather_kilt 1 i_gargish_leather_belt 1 }
+random_pants_gargoyle  { i_gargish_cloth_leggings_female 1 i_gargish_leather_leggings_f 1 i_gargish_cloth_kilt_female 1 i_gargish_leather_kilt_f 1 i_gargish_cloth_leggings 1 i_gargish_leather_leggings 1 i_gargish_cloth_kilt 1 i_gargish_leather_kilt 1 i_gargish_belt 1 }
 
 //layer_shirt
 random_shirts_all      { i_shirt_plain 1 i_shirt_fancy 1 i_shirt_checkered 1 i_elven_shirt 1 i_elven_shirt_female 1 }
 random_shirts_human    { i_shirt_plain 1 i_shirt_fancy 1 i_shirt_checkered 1 }
 random_shirts_elven    { i_elven_shirt 1 i_elven_shirt_female 1 }
-random_shirts_gargoyle { i_gargish_cloth_chest_female 1 i_gargish_cloth_chest 1 i_gargish_leather_wings 1 i_gargish_cloth_wings 1 i_gargish_sash_female 1 i_gargish_sash 1 }
+random_shirts_gargoyle { i_gargish_cloth_chest_female 1 i_gargish_cloth_chest 1 i_gargish_cloth_wings 1 i_gargish_sash_female 1 i_gargish_sash 1 }
 
 //layer_helm
 random_headgear_all    { i_mask_orc 1 i_bandana 1 i_skull_cap 1 i_mask_bear 1 i_mask_deer 1 i_mask_blue 1 i_mask_tribal_red 1 i_hat_floppy 1 i_hat_wide_brim 1 i_cap 1 i_hat_straw_tall 1 i_hat_straw 1 i_hat_wizards 1 i_bonnet 1 i_hat_feather 1 i_hat_tricorne 1 i_hat_jester 1 i_hat_kasa 1 i_hood_ninja 1 i_helm_garland 1 i_helm_circlet1 1 i_helm_circlet2 1 i_helm_circlet3 1 }
@@ -57,7 +57,7 @@ random_masks           { i_mask_orc 1 i_mask_bear 1 i_mask_deer 1 i_mask_blue 1 
 //layer_skirt
 random_skirts_all      { i_skirt_long 1 i_skirt_short 1 i_kilt 1 i_sarong_fur 1 i_hakama 1 i_gargish_cloth_kilt_female 1 i_gargish_cloth_kilt 1 }
 random_skirts_human    { i_skirt_long 1 i_skirt_short 1 i_kilt 1 i_sarong_fur 1 i_hakama 1 }
-random_skirts_gargoyle { i_gargish_cloth_kilt_female 1 i_gargish_leather_kilt_female 1 i_gargish_cloth_kilt 1 i_gargish_leather_kilt 1 }
+random_skirts_gargoyle { i_gargish_cloth_kilt_female 1 i_gargish_leather_kilt_f 1 i_gargish_cloth_kilt 1 i_gargish_leather_kilt 1 }
 
 //layer_half_apron
 random_aprons_all      { i_apron_half 1 i_belt_ninja_leather 1 i_obi 1 i_woodland_belt 1 }

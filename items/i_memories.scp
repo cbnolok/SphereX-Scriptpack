@@ -524,14 +524,7 @@ WEIGHT=0
 ID=03ec7
 TYPE=t_eq_horse
 LAYER=layer_horse
-TDATA3=c_wild_tiger
-WEIGHT=0
-
-[ITEMDEF i_mt_tiger_ethereal]
-ID=03ec8
-TYPE=t_eq_horse
-LAYER=layer_horse
-TDATA3=c_tiger_ethereal
+TDATA3=c_tiger_wild
 WEIGHT=0
 
 [ITEMDEF i_mt_hellhound_ancient]
@@ -560,13 +553,6 @@ ID=03ecc
 TYPE=t_eq_horse
 LAYER=layer_horse
 TDATA3=c_windrunner
-WEIGHT=0
-
-[ITEMDEF i_mt_palomino]
-ID=03ecd
-TYPE=t_eq_horse
-LAYER=layer_horse
-TDATA3=c_palomino
 WEIGHT=0
 
 [ITEMDEF i_mt_serpentine_dragon_ethereal]

@@ -1,0 +1,74 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
+[DEFNAME npc_faction_groups]
+npcgroup_none			0
+npcgroup_fey			01
+npcgroup_elemental  	02
+npcgroup_abyss	 		04
+npcgroup_humanoid		08
+npcgroup_undead			010
+npcgroup_arachnid		020
+npcgroup_reptilian  	040
+
+
+// Faction IDs used for both NPC's FACTION and Item's SLAYER properties.
+[DEFNAME npc_factions]
+// Fey group (opposed to Abyss Group)
+faction_fey                 01	        // Super Slayer
+
+// Elemental Group (opposed to Abyss Group)
+faction_elemental           02          // Super Slayer
+faction_air_elemental		04
+faction_blood_elemental     08
+faction_earth_elemental     010
+faction_fire_elemental      020
+faction_poison_elemental    040
+faction_snow_elemental      080
+faction_water_elemental     0100
+
+// Abyss group (opposed to Elemental and Fey Groups)
+faction_demon               0200        // Super Slayer
+faction_gargoyle            0400        // Super Slayer
+
+// Humanoid group(opposed to Undead Group)
+faction_repond              0800        // Super Slayer
+faction_goblin              01000
+faction_vermin              02000
+faction_ogre                04000
+faction_orc                 08000
+faction_troll               010000
+
+// Undead group ( opposed to Humanoid Group)
+faction_undead              020000      // Super Slayer
+faction_mage                040000
+
+// Arachnid group ( opposed to Reptilian Group)
+faction_arachnid            080000      // Super Slayer
+faction_scorpion            0100000
+faction_spider              0200000
+faction_terathan            0400000
+
+// Reptilian group (opposed to Arachnid)
+faction_reptile             0800000     // Super Slayer
+faction_dragon              01000000
+faction_ophidian            02000000
+faction_snake               04000000
+faction_lizardman           08000000
+
+// Mondain’s Legacy Slayers
+faction_bat                 010000000
+faction_bear                020000000
+faction_beetle              040000000
+faction_bird                080000000
+
+// Others
+faction_bovine              0100000000
+faction_flame               0200000000
+faction_ice                 0400000000
+faction_wolf                0800000000
+
+[EOF]

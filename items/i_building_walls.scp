@@ -535,6 +535,10 @@ DUPEITEM=07a
 [ITEMDEF 080]
 //This is the hardcoded ITEMDEF used by Wall of Stone spell
 //It has been excluded from the i_wall_hugebrick DUPELIST on purpose
+on @create
+if <serv.spell.<morex>.flags>&SPELLFLAG_FIELD
+timerf 1,timer = <R10,15>
+endif
 
 [ITEMDEF 081]
 //hugebrick wall (full)

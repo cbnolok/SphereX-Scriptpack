@@ -1,0 +1,132 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
+
+[ITEMDEF i_house_placement_tool]
+ID=014f6
+NAME=House Placement Tool
+VALUE=600
+DUPELIST=014f5
+
+ON=@DClick
+if (<topobj> != <src>)
+    src.sysmessage @,,1 The item must be in your backpack.
+    return 1
+endif
+SDIALOG d_house_placement_tool
+return 1
+
+
+[ITEMDEF i_trashcan] 
+NAME=trashcan 
+ID=i_barrel_open 
+TYPE=t_container 
+
+//FIXME: better axis categorization?
+CATEGORY=Special Items
+SUBSECTION=Unequippable
+DESCRIPTION=Trashcan
+
+ON=@CREATE 
+COLOR=0835 
+
+ON=@Dropon_Self
+src.sound=011e
+argo.remove 
+return 1
+
+
+[ITEMDEF i_house_interior_decorator]
+ID=0fc1
+NAME=Interior Decorator
+VALUE=10000
+
+ON=@ClientToolTip
+if (<TAG0.MODE>)
+	addcliloc <eval 1018322+<TAG0.MODE>>
+endif
+
+ON=@Click
+if (<TAG0.MODE>==1)
+	MESSAGE (turn)
+elif (<TAG0.MODE>==2)
+	MESSAGE (up)
+elif (<TAG0.MODE>==3)
+	MESSAGE (down)
+endif
+
+ON=@DClick
+REF1=<src.REGION.uid>
+if (<CONT.TOPOBJ> != <SRC>)
+	SRC.SYSMESSAGE @32,,1 That must be in your pack for you to use it.
+	return 1
+elif !((<ref1.isowner <src>>) || (<ref1.getcoownerpos <src>> >= 0) || (<src.isgm>))
+	SRC.SYSMESSAGE @32,,1 Only owner and co-owners can change items locations!
+	return 1
+elif !(<TAG0.MODE>)
+	SDIALOG d_house_interior_decorator
+else
+	TAG.House=<REGION.UID>
+	TARGET
+endif
+return 1
+
+ON=@TargOn_Char
+TAG.House=
+return 1
+
+ON=@TargOn_Cancel
+TAG.House=
+
+ON=@TargOn_Item
+if (<ARGO> == <UID>)
+	TAG.House=
+	TAG.Mode=
+	SDIALOG d_house_interior_decorator
+	return 1
+else
+	ref1 = <argo.region.uid>
+	if (<ref1> != <TAG0.HOUSE>) || !(<SRC.f_house_isInside>)
+	serv.log <SRC.REGION.UID> --- <TAG0.HOUSE> ---- <SRC.f_house_isInside>
+		SRC.SYSMESSAGE @32,,1 You must be in your house to do this.
+		return 1
+	elif (<ARGO.CONT>) || (<ARGO.REGION.UID> != <TAG0.HOUSE>) || !(<ARGO.f_house_isInside>)
+		SRC.SYSMESSAGE @32,,1 That must be in your house.
+		return 1
+	elif !(<ARGO.isevent.ei_house_lockdown>)
+		SRC.SYSMESSAGE @32,,1 That must be locked.
+		return 1
+	elif !(<ref1.owner> == <src>)
+		SRC.SYSMESSAGE @32,,1 That must be in your house.
+		return 1		
+	else
+		TAG.House=
+		if (<TAG0.Mode>==1)
+			if !(<ARGO.FLIP>)
+				SRC.SYSMESSAGE @32,,1 You can not flip it!
+			else
+				ARGO.FLIP
+			endif
+			return 1
+		elif (<TAG0.MODE>==2)
+			if (<eval <argo.p.z>-<ARGO.tag.startedz>> >= 15)
+				SRC.SYSMESSAGE @32,,1 This item can not go upper!
+			else
+				ARGO.NUDGEUP
+			endif
+			return 1
+		elif (<TAG0.MODE>==3)
+			if (<eval <argo.p.z>-<ARGO.tag.startedz>> <= 0)
+				SRC.SYSMESSAGE @32,,1 This item can not go lower!
+			else
+				ARGO.NUDGEDOWN
+			endif
+			return 1
+		endif
+	endif
+	return 1
+endif
+

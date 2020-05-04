@@ -295,7 +295,7 @@ MENU M_ADDN
 [MENU M_ADDN_MYTH]
 Mythical Creatures
 ON=0 Air Elemental
-ADD c_elem_AIR
+ADD c_elemental_air
 ON=0 Earth Elemental
 ADD c_elem_earth
 ON=0 Fire Elemental
@@ -3481,8 +3481,8 @@ ON=0139c Statue
 ADD 0139c
 ON=0139d Statue
 ADD 0139d
-ON=i_statue_stone_lg_5 Statue
-ADD i_statue_stone_lg_5
+ON=i_statue_stone_lg Statue
+ADD i_statue_stone_lg
 ON=0139f Statue
 ADD 0139f
 ON=013a0 Statue

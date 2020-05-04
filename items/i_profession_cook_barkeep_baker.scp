@@ -422,6 +422,7 @@ DEFNAME=i_pitcher_glass
 TYPE=t_pitcher_empty
 TDATA1=i_pitcher_glass
 FLIP=1
+VALUE=3
 CATEGORY=Decoration - Kitchen and Dining
 SUBSECTION=Table Settings
 DESCRIPTION=Empty Glass Pitcher
@@ -1292,8 +1293,8 @@ ON=@Create
    MOREM=6
 
 [ITEMDEF 01041]
-DEFNAME=i_quiche_baked
-NAME=baked quiche
+DEFNAME=i_pie_baked
+NAME=baked pie
 TYPE=t_food
 VALUE=15
 WEIGHT=0.2
@@ -1309,7 +1310,7 @@ ON=@Create
 DEFNAME=i_quiche_unbaked
 NAME=uncooked quiche
 TYPE=t_food_raw
-TDATA1=i_quiche_baked
+TDATA1=i_pie_baked
 VALUE=10
 WEIGHT=0.4
 RESOURCES=1 i_dough,1 t_meat_raw
@@ -2339,7 +2340,7 @@ DEFNAME=i_sushi_rolls
 TYPE=t_food
 FLIP=1
 RESOURCES=10 i_fish_cut_raw
-SKILLMAKING=Cooking 90.0, t_cooking
+SKILLMAKE=Cooking 90.0, t_cooking
 CATEGORY=Provisions - Food
 SUBSECTION=Assembled
 DESCRIPTION=Sushi Rolls
@@ -2356,7 +2357,7 @@ DEFNAME=i_sushi_platter
 TYPE=t_food
 FLIP=1
 RESOURCES=10 i_fish_cut_raw,1 i_pitcher_water
-SKILLMAKING=Cooking 90.0, t_cooking
+SKILLMAKE=Cooking 90.0, t_cooking
 CATEGORY=Provisions - Food
 SUBSECTION=Assembled
 DESCRIPTION=Sushi Platter
@@ -2728,6 +2729,15 @@ DUPELIST=044e6
 //Fish (dragon)
 DUPEITEM=044e5
 
+[ITEMDEF 03b10]
+DEFNAME=i_seahorse
+NAME=seahorse
+TYPE=t_fish
+VALUE=10
+WEIGHT=1.0
+CATEGORY=Provisions - Food
+SUBSECTION=Aquarium
+DESCRIPTION=Seahorse
 
 [ITEMDEF 0495e]
 DEFNAME=i_jug_hooch

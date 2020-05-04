@@ -1,0 +1,21 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
+[COMMENT]
+These types are meant to be used as TEVENTS (or even EVENTS) for ITEMS. Since these add additional behavior (or are just
+used for classification purpose), they doesn't fit for a base TYPE.
+
+
+[TYPEDEF ei_artifact]
+
+[TYPEDEF ei_material_nonbase] // "colored" weapons/armors
+
+[TYPEDEF ei_equipment_special] // Stuff like arcane clothing... Mainly used to exclude these non base/standard items from the dynamic loot template generation
+
+[TYPEDEF ei_equipment_3donly] // Items which have an animation and gump (so, usable) only with the old LBR 3d client
+// TODO: block dclick or show a serv.log or a sysmessage if the client isn't lbr-3d?
+
+[EOF]

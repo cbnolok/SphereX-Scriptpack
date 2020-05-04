@@ -1,0 +1,94 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+// Ported from the old 0.55i GM page menu
+
+[FUNCTION HelpPage]
+// HelpPage is executed whenever someone presses the "HelpPage" button
+MENU MENU_PAGEGM
+
+[MENU MENU_PAGEGM] // PAGEGM is executed whenever someone presses the "Page GM" button
+SPHERE Main Support Menu
+
+ON=0 PAGE A GM: Sends a notice to the server administrators, if they are online. They can help you with almost all your in-game problems.
+MENU MENU_PAGEGM_3
+
+ON=0 WEB MENU: Provides a list of links to various websites.
+MENU MENU_PAGEGM_2
+
+ON=0 INFO: Shows the version of SPHERE this server is running.
+VERSION
+
+ON=0 SERVER STATUS: Shows some status information about this server.
+INFORMATION
+
+ON=0 GO TO THE HELP ROOM: This will teleport you to the Help Desk of Hell.
+MENU MENU_PAGEGM_4
+
+[MENU MENU_PAGEGM_2]
+Web Menu
+ON=0 SPHERE HOMEPAGE: Redirects you to the official SphereServer homepage.
+WEBLINK http:\\www.spherecommunity.net
+
+[MENU MENU_PAGEGM_3]
+GM Page Menu
+ON=0 STUCK: Use this option if you cant move and need GM assistance.
+GMPAGE Stuck
+ON=0 ITEM PROBLEM: Use this if you have run into a problem with a specific item.
+GMPAGE Item Problem
+ON=0 BUG: Use this if you have found a bug that you would like to report to the GMs.
+GMPAGE Bug Report
+ON=0 INFO: Use this if you need helping information about some part of the game.
+GMPAGE Information
+ON=0 OTHER: Use this for anything not listed above.
+GMPAGE Other
+
+[MENU MENU_PAGEGM_4]
+Are you sure you want to be teleported to the Depths of Development? You will be stuck there until a GM teleports you back to the world.
+ON=0 YES, down we go!
+//GOPLACE a_helpdesk
+src.newitem i_teleport_delay
+src.act.equip
+
+ON=0 NO, I'd rather stay here.
+SYSMESSAGE Help request aborted.
+
+[ITEMDEF i_teleport_delay]
+// Create an object that just is an equipped timer.
+// src.newitem i_teleport_delay
+// src.act.equip		// We must equip this on the char we want to effect.
+// src.act.timer 100	// if we want to change the time
+//
+NAME=Delay Teleport
+ID=i_handr_1
+TYPE=T_EQ_SCRIPT
+WEIGHT=0
+LAYER=layer_special
+
+ON=@Create
+	ATTR=attr_invis|attr_decay
+	MORE1=10
+	MOREP=a_helpdesk
+
+ON=@Equip
+	TIMER=1
+	
+ON=@Timer
+	// Take the effect we would like.
+	if ( <cont> )
+		if ( <more1> )
+			cont.message <EVAL(<more1>)> // put countdown above my head.
+			more1=<more1>-1
+			TIMER=1
+			return 1
+		else
+			cont.go <morep>	
+		endif
+	endif
+	// normal timer fall through is to delete the item
+	remove
+	return 1
+
+[EOF]

@@ -4,6 +4,7 @@
 //****************************************************************************
 VERSION=X1
 
+// Translate defnames used in 56c to the currently used ones
 [DEFNAME backward_compatibility_defs_56c_multis]
 // Ships (multis)
 i_multi_ship_small_n				m_small_ship_n

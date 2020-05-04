@@ -12,7 +12,7 @@ ON=*buy*
 	ELIF (<SRC.FLAGS> & statf_polymorph)
 		SRC.SYSMESSAGE Your current form does not allow for new styles.
 		return 1
-	ELIF (<SRC.f_isgarg>)
+	ELIF (<SRC.f_isGargoyle>)
 		SRC.SYSMESSAGE A hairstylist cannot style your horns!
 		return 1
 	ENDIF

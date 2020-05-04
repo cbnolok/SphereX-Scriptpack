@@ -363,9 +363,9 @@ ON=@Create
    ATTR=attr_magic|attr_newbie|attr_move_never
    TAG.CLILOC.NAME=1032629
 ON=@ClientToolTip
-   SRC.ADDCLILOC <TAG0.CLILOC.NAME>
-   SRC.ADDCLILOC 1060485,<dMORE1>
-   SRC.ADDCLILOC 1072517,<dTIMER>
+   addcliloc <TAG0.CLILOC.NAME>
+   addcliloc 1060485,<dMORE1>
+   addcliloc 1072517,<dTIMER>
    RETURN 1
 ON=@Timer
    CONT.SYSMESSAGELOC color_text,1072515,#<TAG0.CLILOC.NAME>

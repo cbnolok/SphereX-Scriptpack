@@ -58,7 +58,7 @@ dhtmlgump 55 400 400 35 0 0 Return to the previous menu.
 
 [dialog d_Guild_Master_Warfare Button]
 ON=0 5  
-  If (<masteruid>!=<src.uid>)&&(!<src.isgm>))
+  If (<masteruid>!=<src.uid>)&&(!<src.isgm>)
     return 1
   endif
   

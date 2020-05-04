@@ -1,5 +1,4 @@
 ﻿//****************************************************************************
-//****************************************************************************
 // SphereServer by: SphereServer development team and Menasoft.
 // www.sphereserver.net
 //****************************************************************************
@@ -104,11 +103,11 @@ ON=@TargOn_Item
 // (typically based off i_clippers).  It lets the user manufacture plant
 // clippings and dry reeds for use in fabricating baskets etc.
 ON=@ClientToolTip
-   SRC.ADDCLILOC 1060728,<dMORE2L>,<dMORE2H>//"charges: ~/~"
+   addcliloc 1060728,<dMORE2L>,<dMORE2H>//"charges: ~/~"
    IF (<MORE1>)
-      SRC.ADDCLILOC 1112283//"Set to cut reeds"
+      addcliloc 1112283//"Set to cut reeds"
    ELSE
-      SRC.ADDCLILOC 1112282//"Set to clip plants"
+      addcliloc 1112282//"Set to clip plants"
    ENDIF
 ON=@ContextMenuRequest
    SRC.AddContextEntry 101,5089//"Type"
@@ -255,9 +254,9 @@ ON=@DClick
 ON=@ClientToolTip
    IF (<TAG0.StableOwner>)
       REF99=<EVAL <TAG.StableOwner>&~030000000>
-      SRC.ADDCLILOC 1072304,<REF99.NAME>//"Owned by ~"
+      addcliloc 1072304,<REF99.NAME>//"Owned by ~"
    ENDIF
-   SRC.ADDCLILOC 1071250,<dTAG0.StablesUsed>,<dTAG0.StablesMax>//"~/~ stable stalls used."
+   addcliloc 1071250,<dTAG0.StablesUsed>,<dTAG0.StablesMax>//"~/~ stable stalls used."
 ON=@ContextMenuRequest
    IF (<TAG0.StableOwner>==<SRC>)
       SRC.AddContextEntry 101,3006126//"Stable Pet"//1112556//"Stable a chicken"

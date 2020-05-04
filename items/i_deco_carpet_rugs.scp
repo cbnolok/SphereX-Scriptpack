@@ -714,7 +714,7 @@ DUPEITEM=01e36
 //bearskin rug
 DUPEITEM=01e36
 
-[ITEMDEF i_multi_rug_bearskin_s]
+[MULTIDEF i_multi_rug_bearskin_s]
 NAME=bearskin rug
 TYPE=t_multi
 CATEGORY=Multis
@@ -767,7 +767,7 @@ DUPEITEM=01e36
 //bearskin rug
 DUPEITEM=01e36
 
-[ITEMDEF i_multi_rug_bearskin_w]
+[MULTIDEF i_multi_rug_bearskin_w]
 NAME=bearskin rug
 TYPE=t_multi
 CATEGORY=Multis
@@ -827,7 +827,7 @@ DUPEITEM=01e49
 //bearskin rug
 DUPEITEM=01e49
 
-[ITEMDEF i_multi_rug_polarbear_s]
+[MULTIDEF i_multi_rug_polarbear_s]
 NAME=polarbear rug
 TYPE=t_multi
 CATEGORY=Multis
@@ -880,7 +880,7 @@ DUPEITEM=01e49
 //bearskin rug
 DUPEITEM=01e49
 
-[ITEMDEF i_multi_rug_polarbear_ew]
+[MULTIDEF i_multi_rug_polarbear_w]
 NAME=polarbear rug
 TYPE=t_multi
 CATEGORY=Multis
@@ -1241,7 +1241,7 @@ DUPEITEM=04707
 //skull rug south
 DUPEITEM=04707
 
-[ITEMDEF i_multi_rug_skull_s]
+[MULTIDEF i_multi_rug_skull_s]
 NAME=skull rug south
 TYPE=t_multi
 CATEGORY=Multis
@@ -1331,7 +1331,7 @@ DUPEITEM=0473d
 //skull rug west
 DUPEITEM=0473d
 
-[ITEMDEF i_multi_rug_skull_w]
+[MULTIDEF i_multi_rug_skull_w]
 NAME=skull rug west
 TYPE=t_multi
 CATEGORY=Multis
@@ -1421,7 +1421,7 @@ DUPEITEM=04745
 //rose rug south
 DUPEITEM=04745
 
-[ITEMDEF i_multi_rug_rose_s]
+[MULTIDEF i_multi_rug_rose_s]
 NAME=rose rug south
 TYPE=t_multi
 CATEGORY=Multis
@@ -1511,7 +1511,7 @@ DUPEITEM=04754
 //rose rug west
 DUPEITEM=04754
 
-[ITEMDEF i_multi_rug_rose_w]
+[MULTIDEF i_multi_rug_rose_w]
 NAME=rose rug west
 TYPE=t_multi
 CATEGORY=Multis
@@ -1601,7 +1601,7 @@ DUPEITEM=04763
 //dolphin rug south
 DUPEITEM=04763
 
-[ITEMDEF i_multi_rug_dolphin_s]
+[MULTIDEF i_multi_rug_dolphin_s]
 NAME=dolphin rug south
 TYPE=t_multi
 CATEGORY=Multis
@@ -1692,7 +1692,7 @@ DUPEITEM=04772
 //dolphin rug west
 DUPEITEM=04772
 
-[ITEMDEF i_multi_rug_dolphin_w]
+[MULTIDEF i_multi_rug_dolphin_w]
 NAME=dolphin rug west
 TYPE=t_multi
 CATEGORY=Multis

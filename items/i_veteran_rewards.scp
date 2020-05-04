@@ -996,7 +996,7 @@ DESCRIPTION=Enchanted Writing Desk (unlit)
 ON=@Create
    MOREZ=29
 ON=@ClientTooltip
-   SRC.ADDCLILOC 502696	//turned off
+   addcliloc 502696	//turned off
 
 [ITEMDEF 09feb]
 DEFNAME=i_enchanted_writing_desk_south_lit
@@ -1009,7 +1009,7 @@ DESCRIPTION=Enchanted Writing Desk (lit)
 ON=@Create
    MOREZ=29
 ON=@ClientTooltip
-   SRC.ADDCLILOC 502695	//turned on
+   addcliloc 502695	//turned on
 
 [ITEMDEF 09fec]
 //enchanted writing desk (south)(anim)
@@ -1037,7 +1037,7 @@ DESCRIPTION=Enchanted Writing Desk (unlit)
 ON=@Create
    MOREZ=29
 ON=@ClientTooltip
-   SRC.ADDCLILOC 502696	//turned off
+   addcliloc 502696	//turned off
 
 [ITEMDEF 09ff2]
 DEFNAME=i_enchanted_writing_desk_east_lit
@@ -1050,7 +1050,7 @@ DESCRIPTION=Enchanted Writing Desk (lit)
 ON=@Create
    MOREZ=29
 ON=@ClientTooltip
-   SRC.ADDCLILOC 502695	//turned on
+   addcliloc 502695	//turned on
 
 [ITEMDEF 09ff3]
 //enchanted writing desk (east)(anim)
@@ -1428,7 +1428,7 @@ COMPONENT=04bf3,-1,1
 COMPONENT=04bf4,-1,0
 COMPONENT=04bf5,-1,-1
 
-[ITEMDEF m_davies_locker_e]
+[MULTIDEF m_davies_locker_e]
 ID=04bf7
 NAME=Davies' Locker
 TYPE=t_multi
@@ -1442,7 +1442,7 @@ COMPONENT=04bf9,-1,-1
 COMPONENT=04bfa,-1,0
 COMPONENT=04bfb,-1,1
 
-[ITEMDEF m_davies_locker_s]
+[MULTIDEF m_davies_locker_s]
 ID=04bfc
 NAME=Davies' Locker
 TYPE=t_multi
@@ -1456,7 +1456,7 @@ COMPONENT=04bff,-1,-1
 COMPONENT=04c00,0,-1
 COMPONENT=04c01,1,-1
 
-[ITEMDEF m_gadgetry_table_s]
+[MULTIDEF m_gadgetry_table_s]
 ID=04ce8
 NAME=Gadgetry Table
 TYPE=t_multi
@@ -1468,7 +1468,7 @@ COMPONENT=04ce6,-1,0
 COMPONENT=04ce7,-1,1
 COMPONENT=04ce9,1,0
 
-[ITEMDEF m_gadgetry_table_e]
+[MULTIDEF m_gadgetry_table_e]
 ID=04ceb
 NAME=Gadgetry Table
 TYPE=t_multi

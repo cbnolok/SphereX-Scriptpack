@@ -1,1166 +1,2303 @@
 [CHARDEF 014]
+//Base
 DEFNAME=c_spider_frost
-NAME=frost spider
+NAME=Frost Spider
 ICON=i_pet_spider_dread
 SOUND=snd_monster_gispidr1
-CAN=MT_WALK|MT_RUN|MT_NONHUM
+CAN=mt_walk|mt_run|mt_nonhum
+
+//Properties/Resists with fixed values
+//Tags with fixed values that are global to all chars too
 DAM=9,28
 ARMOR=25
+MAXFOOD=25
+FOLLOWERSLOTS=1
+DAMCOLD=80
+FACTION=faction_spider
+HEIGHT=10
+TAG.BARDING.DIFF=45.4
+TAG.OVERRIDE.SPIDERWEB=1
+
+//Misc
 DESIRES=r_snow,t_coin,t_gold,t_gem
+RESOURCES=2 i_ribs_raw
 AVERSIONS=t_trap,r_civilization
 FOODTYPE=t_meat_raw
-MAXFOOD=25
-RESOURCES=2 i_ribs_raw
-TAG.Barding.Diff=45.4
-FollowerSlots=1
-DamCold=80
-TAG.OVERRIDE.SPIDERWEB=1
-TAG.SlayerGroup=SPIDER,ARACHNID
-TEVENTS=e_carnivores2
+
+//Expansion Settings
+//RESLEVEL=
+//RESDISPDNID=
+//RESDISPDNHUE=
+
+ERALIMITLOOT=1
+ERALIMITGEAR=1
+ERALIMITPROPS=1
+
+//TEvents
+
+
+//Cat
 CATEGORY=Animals
 SUBSECTION=Arachnids
 DESCRIPTION=Spider, Frost
+
 ON=@Create
-   NPC=brain_monster
-   FAME={1500 1999}
-   KARMA={-1500 -1999}
-   STR={75 100}
-   MAXHITS={45 60}
-   DEX={126 145}
-   MAXSTAM={126 145}
-   INT={36 60}
-   MAXMANA={36 60}
-   MAGICRESISTANCE={25.0 40.0}
-   TACTICS={35.0 50.0}
-   TAMING=74.7
-   WRESTLING={50.0 65.0}
-   RESPHYSICAL={0 5}
-   RESCOLD={40 50}
-   RESENERGY={10 20}
-   RESFIRE={1 10}
-   RESPOISON={20 30}
-ON=@NpcRestock
-   ITEM=loot_spider_frost
-   
+    //Brain
+    NPC=brain_monster
+    
+    //Fame/Karma
+    FAME={1500 1999}
+    KARMA={-1500 -1999}
+    
+    //Stats
+    STR={75 100}
+    MAXHITS={45 60}
+    DEX={126 145}
+    MAXSTAM={126 145}
+    INT={36 60}
+    MAXMANA={36 60}
+    
+    //Resistances
+    RESPHYSICAL={0 5}
+    RESCOLD={40 50}
+    RESENERGY={10 20}
+    RESFIRE={1 10}
+    RESPOISON={20 30}
+    
+    //Skills
+    MAGICRESISTANCE={25.0 40.0}
+    TACTICS={35.0 50.0}
+    TAMING=74.7
+    WRESTLING={50.0 65.0}
+    
+ON=@Createloot
+    ITEM=Loot_Spider_Frost
+
+
 [CHARDEF 02b]
-//FIXME: Moves quick at full health, and slows down as health decreases.
-DEFNAME=c_demon_ice
-NAME=ice fiend
-ICON=i_pet_demon_icefiend
+//Fixme: Moves Quick At Full Health, And Slows Down As Health Decreases.
+DEFNAME=c_daemon_ice
+NAME=Ice Fiend
+ICON=i_pet_daemon_icefiend
 SOUND=snd_monster_daemon1
-CAN=MT_WALK|MT_FLY|MT_USEHANDS|MT_EQUIP
+CAN=mt_walk|mt_fly|mt_usehands|mt_equip
+
 DAM=24,50
 ARMOR=55
-DESIRES=r_snow,r_dungeon,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
+MAXFOOD=55
+MOVERATE=120
+DAMCOLD=80
+FACTION=faction_demon
+HEIGHT=35
+TAG.BARDING.DIFF=89.3
+
+DESIRES=r_snow,r_dungeon,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent,e_carnivores3
 AVERSIONS=t_trap,r_civilization
 FOODTYPE=t_meat_raw
-MAXFOOD=55
 RESOURCES=1 i_ribs_raw,2 i_reag_daemon_bone
-BLOODCOLOR=colors_white
-MOVERATE=120
-TAG.Barding.Diff=89.3
-DamCold=80
-TAG.SlayerGroup=DEMON
-TEVENTS=e_carnivores3
+
+ERALIMITLOOT=1
+ERALIMITGEAR=1
+ERALIMITPROPS=1
+
 CATEGORY=Monsters
-SUBSECTION=Demons
-DESCRIPTION=Demon, Ice
+SUBSECTION=Daemons
+DESCRIPTION=Daemon, Ice
+
 ON=@Create
-   NPC=brain_monster
-   FAME={2500 2999}
-   KARMA={-5000 -5999}
-   STR={376 405}
-   MAXHITS={376 405}
-   DEX={176 195}
-   MAXSTAM={176 195}
-   INT={201 225}
-   MAXMANA={201 225}
-   ARCHERY={80.0 90.0}
-   EVALUATINGINTEL={80.0 90.0}
-   FENCING={80.0 90.0}
-   MACEFIGHTING={80.0 90.0}
-   MAGERY={80.0 90.0}
-   MAGICRESISTANCE={75.0 85.0}
-   PARRYING={80.0 90.0}
-   SWORDSMANSHIP={80.0 90.0}
-   TACTICS={80.0 90.0}
-   WRESTLING={80.0 100.0}
-   RESPHYSICAL={0 10}
-   RESCOLD={60 70}
-   RESENERGY={30 40}
-   RESFIRE={10 20}
-   RESPOISON={20 30}
-ON=@NPCRestock
-   ITEM=loot_ice_fiend
-   ITEM=loot_ai_hard
-ON=@GetHit
-   //Ice Aura Attack
-   IF !(<R3>)
-      REF11=<UID>
-      FORCHARS 3
-         IF (<ISPLAYER>) || (<FLAGS>&statf_pet)
-            LOCAL.DAM=<R10,20>
-            DAMAGE <LOCAL.DAM> <DEF.dam_cold> <REF11>
-            SYSMESSAGE Intense cold radiating from the demon damages you
-         ENDIF
-      END
-   ENDIF
-   
+    NPC=brain_monster
+    
+    BLOODCOLOR=colors_white
+    
+    FAME={2500 2999}
+    KARMA={-5000 -5999}
+    
+    STR={376 405}
+    MAXHITS={376 405}
+    DEX={176 195}
+    MAXSTAM={176 195}
+    INT={201 225}
+    MAXMANA={201 225}
+    
+    RESPHYSICAL={0 10}
+    RESCOLD={60 70}
+    RESENERGY={30 40}
+    RESFIRE={10 20}
+    RESPOISON={20 30}
+    
+    ARCHERY={80.0 90.0}
+    EVALUATINGINTEL={80.0 90.0}
+    FENCING={80.0 90.0}
+    MACEFIGHTING={80.0 90.0}
+    MAGERY={80.0 90.0}
+    MAGICRESISTANCE={75.0 85.0}
+    PARRYING={80.0 90.0}
+    SWORDSMANSHIP={80.0 90.0}
+    TACTICS={80.0 90.0}
+    WRESTLING={80.0 100.0}
+    
+    f_addExtendedAIEvent e_extendedAI_aura_frost
+    
+ON=@Createloot
+    ITEM=loot_ice_fiend
+    ITEM=loot_ai_hard
+
+
 [CHARDEF 031]
 DEFNAME=c_wyrm_white
-NAME=white wyrm
+NAME=White Wyrm
 ICON=i_pet_dragon
 SOUND=snd_monster_dragon1
-CAN=MT_WALK|MT_FLY|MT_NONHUM
+CAN=mt_walk|mt_fly|mt_nonhum
+
 DAM=17,25
 ARMOR=60
-DESIRES=r_dungeon,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
+MAXFOOD=80
+DAMCOLD=50
+FACTION=faction_dragon
+HEIGHT=45
+TAG.BARDING.DIFF=100.3
+TAG.TAMINGSLOT=3
+
+DESIRES=r_dungeon,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent,e_carnivores3
 AVERSIONS=t_trap,r_civilization
 FOODTYPE=t_meat_raw
-MAXFOOD=80
 RESOURCES=19 i_ribs_raw,20 i_hide_barbed,8 i_reag_dragon_blood,9 i_dragonscale_white
-TAG.Barding.Diff=100.3
-TAG.TamingSlot=3
-DamCold=50
-TAG.SlayerGroup=DRAGON,REPTILE
-TEVENTS=e_carnivores3
+
+ERALIMITLOOT=1
+ERALIMITGEAR=1
+ERALIMITPROPS=1
+
 CATEGORY=Monsters
 SUBSECTION=Dragons
 DESCRIPTION=Wyrm, White
+
 ON=@Create
-   NPC=brain_monster
-   FAME=18000
-   KARMA=-18000
-   STR={721 760}
-   MAXHITS={433 456}
-   DEX={101 130}
-   INT={386 425}
-   WRESTLING={90.1 100.0}
-   TACTICS={97.6 100.0}
-   MAGICRESISTANCE={99.1 100.0}
-   MAGERY={99.1 100.0}
-   EVALUATINGINTEL={99.1 100.0}
-   TAMING=96.3
-   RESPHYSICAL={55 70}
-   RESFIRE={15 25}
-   RESCOLD={80 90}
-   RESPOISON={40 50}
-   RESENERGY={40 50}
-ON=@NPCRestock
-   ITEM=loot_wyrm_white
+    NPC=brain_monster
+    
+    FAME=18000
+    KARMA=-18000
+    
+    STR={721 760}
+    MAXHITS={433 456}
+    DEX={101 130}
+    INT={386 425}
+    
+    RESPHYSICAL={55 70}
+    RESFIRE={15 25}
+    RESCOLD={80 90}
+    RESPOISON={40 50}
+    RESENERGY={40 50}
+    
+    WRESTLING={90.1 100.0}
+    TACTICS={97.6 100.0}
+    MAGICRESISTANCE={99.1 100.0}
+    MAGERY={99.1 100.0}
+    EVALUATINGINTEL={99.1 100.0}
+    TAMING=96.3
+    
+ON=@Createloot
+    ITEM=loot_wyrm_white
 
 
 [CHARDEF 037]
 DEFNAME=c_frost_troll
-NAME=frost troll
+NAME=Frost Troll
 ICON=i_pet_troll
 SOUND=snd_monster_troll1
-CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+CAN=mt_walk|mt_usehands|mt_equip
+
 DAM=14,20
 DAMCOLD=25
 ARMOR=50
-FOODTYPE=t_meat_raw
 MAXFOOD=35
+FACTION=faction_troll
+HEIGHT=23
+TAG.BARDING.DIFF=54.5
+
+FOODTYPE=t_meat_raw
 RESOURCES=2 i_ribs_raw
-TAG.Barding.Diff=54.5
-TAG.SlayerGroup=TROLL,REPOND
-TEVENTS=e_carnivores2
+DESIRES=e_carnivores2
+
+ERALIMITLOOT=1
+ERALIMITGEAR=1
+ERALIMITPROPS=1
+
 CATEGORY=Monsters
 SUBSECTION=Giants
 DESCRIPTION=Frost Troll
+
 ON=@Create
-   NPC=brain_monster
-   FAME=4500
-   KARMA=-4500
-   STR={225 265}
-   DEX={65 85}
-   INT={45 70}
-   MAXHITS={140 160}
-   WRESTLING={80.1 100.0}
-   TACTICS={80.1 100.0}
-   MAGICRESISTANCE={65.1 80.0}
-   RESPHYSICAL={45 55}
-   RESFIRE=0
-   RESCOLD={40 50}
-   RESPOISON={5 10}
-   RESENERGY={5 10}
-ON=@NPCRestock
-   ITEM=loot_troll
-   ITEM=i_maul 
- 
+    NPC=brain_monster
+    
+    FAME=4500
+    KARMA=-4500
+    
+    STR={225 265}
+    DEX={65 85}
+    INT={45 70}
+    
+    RESPHYSICAL={45 55}
+    
+    RESCOLD={40 50}
+    RESPOISON={5 10}
+    RESENERGY={5 10}
+    
+    MAXHITS={140 160}
+    WRESTLING={80.1 100.0}
+    TACTICS={80.1 100.0}
+    MAGICRESISTANCE={65.1 80.0}
+    
+ON=@Createloot
+    ITEM=loot_troll
+    ITEM=i_maul 
+
+
 [CHARDEF 041]
 DEFNAME=c_leopard_snow
-NAME=snow leopard
+NAME=Snow Leopard
 ICON=i_pet_panther
 SOUND=snd_animals_cougar1
-CAN=MT_WALK|MT_RUN|MT_NONHUM
+CAN=mt_walk|mt_run|mt_nonhum
+
 DAM=4,14
 ARMOR=20
-DESIRES=r_snow
+MAXFOOD=15
+FOLLOWERSLOTS=1
+HEIGHT=8
+TAG.BARDING.DIFF=34.3
+
+DESIRES=R_Snow,e_carnivores
 AVERSIONS=r_civilization,r_water
 FOODTYPE=t_meat_raw
-MAXFOOD=15
 RESOURCES=1 i_ribs_raw,8 i_hide
-TAG.Barding.Diff=34.3
-FollowerSlots=1
-TEVENTS=e_carnivores
+
+ERALIMITLOOT=1
+ERALIMITGEAR=1
+ERALIMITPROPS=1
+
 CATEGORY=Animals
 SUBSECTION=Wild
 DESCRIPTION=Leopard, Snow
-ON=@Create
-   COLOR=0481
-   NPC=brain_animal
-   FAME={500 999}
-   KARMA={-500 -999}
-   STR={56 80}
-   MAXHITS={34 48}
-   DEX={66 85}
-   MAXSTAM={66 85}
-   INT={26 50}
-   MAXMANA={26 50}
-   MAGICRESISTANCE={25.0 35.0}
-   TACTICS={43.0 60.0}
-   TAMING={50.0 55.0}
-   WRESTLING={40.0 50.0}
-   RESPHYSICAL={0 5}
-   RESCOLD={30 40}
-   RESENERGY={20 30}
-   RESFIRE={5 10}
-   RESPOISON={10 20} 
- 
- [CHARDEF 042]
+
+ON=@Create    
+    NPC=brain_animal
+    
+    FAME={500 999}
+    KARMA={-500 -999}
+    
+    COLOR=0481
+    
+    STR={56 80}
+    MAXHITS={34 48}
+    DEX={66 85}
+    MAXSTAM={66 85}
+    INT={26 50}
+    MAXMANA={26 50}
+    
+    RESPHYSICAL={0 5}
+    RESCOLD={30 40}
+    RESENERGY={20 30}
+    RESFIRE={5 10}
+    RESPOISON={10 20} 
+    
+    MAGICRESISTANCE={25.0 35.0}
+    TACTICS={43.0 60.0}
+    TAMING={50.0 55.0}
+    WRESTLING={40.0 50.0}
+
+
+[CHARDEF 042]
 DEFNAME=c_swamp_tentacles
-NAME=swamp tentacles
+NAME=Swamp Tentacles
 ICON=i_pet_tentacles_swamp
 SOUND=snd_monster_corpsr1
-CAN=MT_WALK|MT_NONHUM
+CAN=mt_walk|mt_nonhum
+
 DAM=11,21
 RANGE=2
 ARMOR=25
-DESIRES=r_swamp,t_coin,t_gold,t_gem
-AVERSIONS=t_trap,r_civilization
-FOODTYPE=t_meat_raw
 MAXFOOD=35
 RESOURCES=3 i_reag_dead_wood
-BLOODCOLOR=colors_green
-TAG.Barding.Diff=48.0
-DamPoison=60
-TEVENTS=e_carnivores
+DAMPOISON=60
+HEIGHT=18
+TAG.BARDING.DIFF=48.0
+
+DESIRES=r_swamp,t_coin,t_gold,t_gem,e_carnivores
+AVERSIONS=t_trap,r_civilization
+FOODTYPE=t_meat_raw
+
+ERALIMITLOOT=1
+ERALIMITGEAR=1
+ERALIMITPROPS=1
+
 CATEGORY=Monsters
 SUBSECTION=Plants
 DESCRIPTION=Swamp Tentacles
+
 ON=@Create
-   NPC=brain_monster
-   KARMA={-1500 -1999}
-   FAME={1500 1999}
-   STR={96 120}
-   MAXHITS={58 72}
-   DEX={66 85}
-   MAXSTAM={66 85}
-   INT={16 30}
-   MAXMANA={16 30}
-   MAGICRESISTANCE={15.0 20.0}
-   TACTICS={65.0 80.0}
-   WRESTLING={65.0 80.0}
-   RESPHYSICAL={0 10}
-   RESCOLD={10 20}
-   RESENERGY={10 20}
-   RESFIRE={10 20}
-   RESPOISON={60 80}
-ON=@NPCRestock
-   ITEM=loot_swamp_tentacle
+    NPC=brain_monster
+    
+    BLOODCOLOR=colors_green
+    
+    KARMA={-1500 -1999}
+    FAME={1500 1999}
+    
+    STR={96 120}
+    MAXHITS={58 72}
+    DEX={66 85}
+    MAXSTAM={66 85}
+    INT={16 30}
+    MAXMANA={16 30}
+    
+    RESPHYSICAL={0 10}
+    RESCOLD={10 20}
+    RESENERGY={10 20}
+    RESFIRE={10 20}
+    RESPOISON={60 80}
+    
+    MAGICRESISTANCE={15.0 20.0}
+    TACTICS={65.0 80.0}
+    WRESTLING={65.0 80.0}
+    
+ON=@Createloot
+    ITEM=loot_swamp_tentacle
+
 
 [CHARDEF 043]
 DEFNAME=c_gargoyle_stone
-NAME=stone gargoyle
+NAME=Stone Gargoyle
 ICON=i_pet_gargoyle_stone
 SOUND=snd_monster_gargyl1
-CAN=MT_WALK|MT_FLY|MT_USEHANDS|MT_EQUIP
+CAN=mt_walk|mt_fly|mt_usehands|mt_equip
+
 DAM=25,40
 ARMOR=45
-DESIRES=r_mountains,r_ruins,t_coin,t_gold,t_gem,t_potion
+MAXFOOD=25
+FACTION=faction_gargoyle
+BLOODCOLOR=-1
+HEIGHT=16
+TAG.BARDING.DIFF=71.4
+
+DESIRES=r_mountains,r_ruins,t_coin,t_gold,t_gem,t_potion, e_carnivores2
 AVERSIONS=t_trap,r_civilization
 RESOURCES=1 i_rock_plain
 FOODTYPE=t_meat_raw
-MAXFOOD=25
-BLOODCOLOR=-1
-TAG.Barding.Diff=71.4
-TAG.SlayerGroup=GARGOYLE,DEMON
-TEVENTS=e_carnivores2
+
+ERALIMITLOOT=1
+ERALIMITGEAR=1
+ERALIMITPROPS=1
+
 CATEGORY=Monsters
 SUBSECTION=Gargoyles
 DESCRIPTION=Gargoyle, Stone
+
 ON=@Create
-   NPC=brain_monster
-   FAME={2500 2999}
-   KARMA={-3000 -3999}
-   STR={246 275}
-   MAXHITS={148 165}
-   DEX={76 95}
-   MAXSTAM={76 95}
-   INT={81 105}
-   MAXMANA={81 105}
-   MAGICRESISTANCE={85.0 100.0}
-   PARRYING={80.0 100.0}
-   TACTICS={80.0 100.0}
-   WRESTLING={60.0 80.0}
-   RESPHYSICAL={0 10}
-   RESCOLD={10 20}
-   RESENERGY={30 40}
-   RESFIRE={20 30}
-   RESPOISON={30 40}
-ON=@NpcRestock
-   ITEM=loot_gargoyle_stone
+    NPC=brain_monster
+    
+    FAME={2500 2999}
+    KARMA={-3000 -3999}
+    
+    STR={246 275}
+    MAXHITS={148 165}
+    DEX={76 95}
+    MAXSTAM={76 95}
+    INT={81 105}
+    MAXMANA={81 105}
+    
+    RESPHYSICAL={0 10}
+    RESCOLD={10 20}
+    RESENERGY={30 40}
+    RESFIRE={20 30}
+    RESPOISON={30 40}
+    
+    MAGICRESISTANCE={85.0 100.0}
+    PARRYING={80.0 100.0}
+    TACTICS={80.0 100.0}
+    WRESTLING={60.0 80.0}
+    
+ON=@Createloot
+    ITEM=loot_gargoyle_stone
+
 
 [CHARDEF 044]
 DEFNAME=c_gazer_elder
-NAME=elder gazer
+NAME=Elder Gazer
 ICON=i_pet_gazer
 SOUND=snd_monster_gazer1
-CAN=MT_WALK|MT_RUN|MT_NONHUM
+CAN=mt_walk|mt_run|mt_nonhum
+
 DAM=23,59
 ARMOR=45
-DESIRES=r_jungle,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
+MAXFOOD=25
+DAMENERGY=50
+FACTION=Faction_Mage
+HEIGHT=16
+TAG.BARDING.DIFF=90.2
+
+DESIRES=r_jungle,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent,e_carnivores2
 AVERSIONS=t_trap,r_civilization
 FOODTYPE=t_meat_raw
-MAXFOOD=25
 RESOURCES=1 i_ribs_raw
-TAG.Barding.Diff=90.2
-DamEnergy=50
-TAG.SlayerGroup=MAGE
-TEVENTS=e_carnivores2
+
+ERALIMITLOOT=1
+ERALIMITGEAR=1
+ERALIMITPROPS=1
+
 CATEGORY=Monsters
 SUBSECTION=Gazers
 DESCRIPTION=Gazer, Elder
+
 ON=@Create
-   NPC=brain_monster
-   FAME={2500 2999}
-   KARMA={-2500 -2999}
-   STR={296 325}
-   MAXHITS={178 195}
-   DEX={86 105}
-   MAXSTAM={86 105}
-   INT={291 385}
-   MAXMANA={291 385}
-   ANATOMY={62.0 100.0}
-   EVALUATINGINTEL={90.0 105.0}
-   MAGERY={90.0 105.0}
-   MAGICRESISTANCE={115.0 130.0}
-   TACTICS={80.0 100.0}
-   WRESTLING={80.0 100.0}
-   RESPHYSICAL={0 10}
-   RESCOLD={40 50}
-   RESENERGY={40 50}
-   RESFIRE={60 70}
-   RESPOISON={40 50}
-ON=@NpcRestock
-   ITEM=loot_gazer_elder
- 
+    NPC=brain_monster
+    
+    FAME={2500 2999}
+    KARMA={-2500 -2999}
+    
+    STR={296 325}
+    MAXHITS={178 195}
+    DEX={86 105}
+    MAXSTAM={86 105}
+    INT={291 385}
+    MAXMANA={291 385}
+    
+    RESPHYSICAL={0 10}
+    RESCOLD={40 50}
+    RESENERGY={40 50}
+    RESFIRE={60 70}
+    RESPOISON={40 50}
+    
+    ANATOMY={62.0 100.0}
+    EVALUATINGINTEL={90.0 105.0}
+    MAGERY={90.0 105.0}
+    MAGICRESISTANCE={115.0 130.0}
+    TACTICS={80.0 100.0}
+    WRESTLING={80.0 100.0}
+    
+ON=@Createloot
+    ITEM=loot_gazer_elder
+
+
 [CHARDEF 046]
 DEFNAME=c_terathan_warrior
 NAME=Terathan Warrior
 SOUND=589
 ICON=i_pet_terathan_war
-CAN=MT_WALK|MT_USEHANDS
-dam=7,17
-armor=30
+CAN=mt_walk|mt_usehands
+
+DAM=7,17
+ARMOR=30
+FACTION=faction_terathan
+HEIGHT=16
+
 RESOURCES=4 i_ribs_raw
 FOODTYPE=15 t_meat_raw
 AVERSIONS=r_civilization
-DESIRES=e_TERATHAN
-TEVENTS=e_TERATHAN
+DESIRES=e_terathan
+
+ERALIMITLOOT=1
+ERALIMITGEAR=1
+ERALIMITPROPS=1
+
 RESLEVEL=1
 RESDISPDNID=c_snake_giant
 RESDISPDNHUE=0100
+
 CATEGORY=Monsters
 SUBSECTION=Terathans
 DESCRIPTION=Terathan, Warrior
 
 ON=@Create
-	NPC=brain_monster
-	str={166, 215}
-	dex={96, 145}
-	int={41, 65}
-	maxhits={100, 129}
-	maxmana={0}
-	resphysical={30, 35}
-	resfire={20, 30}
-	rescold={25, 35}
-	respoison={30, 40}
-	resenergy={25, 35}
-	poisoning={ 60.1, 80.0}
-	magicresistance={60.1, 75.0}
-	tactics={80.1, 100.0}
-	wrestling={80.1, 90.0}
-	fame=4000
-	karma=-4000
+    NPC=brain_monster
+    
+    FAME=4000
+    KARMA=-4000
+    
+    STR={166, 215}
+    DEX={96, 145}
+    INT={41, 65}
+    MAXHITS={100, 129}
+    
+    RESPHYSICAL={30, 35}
+    RESFIRE={20, 30}
+    RESCOLD={25, 35}
+    RESPOISON={30, 40}
+    RESENERGY={25, 35}
+    
+    POISONING={ 60.1, 80.0}
+    MAGICRESISTANCE={60.1, 75.0}
+    TACTICS={80.1, 100.0}
+    WRESTLING={80.1, 90.0}
 
-ON=@NPCRestock
-	item=i_gold,{125 175}
-	item=i_treasure_map1,R99
-	//item=i_seed_fragrant
-	//item=i_seed_peculiar
+ON=@Createloot
+    ITEM=i_gold,{125 175}
+    ITEM=i_treasure_map1,R99
+
 
 [CHARDEF 047]
 DEFNAME=c_terathan_drone
 NAME=Terathan Drone
 SOUND=594
 ICON=i_pet_terathan_drone
-dam=6,12
-armor=24
+CAN=mt_walk
+
+DAM=6,12
+ARMOR=24
+FACTION=faction_terathan
+HEIGHT=15
+
 RESOURCES=4 i_ribs_raw
-CAN=MT_WALK
 FOODTYPE=15 t_meat_raw
 AVERSIONS=r_civilization
-DESIRES=e_TERATHAN
-TEVENTS=e_TERATHAN
+DESIRES=e_terathan
+
+ERALIMITLOOT=1
+ERALIMITGEAR=1
+ERALIMITPROPS=1
+
 RESLEVEL=1
 RESDISPDNID=c_snake_giant
 RESDISPDNHUE=0100
+
 CATEGORY=Monsters
 SUBSECTION=Terathans
 DESCRIPTION=Terathan, Drone
 
 ON=@Create
-	NPC=brain_monster
-	str={36, 65}
-	dex={96, 145}
-	int={21, 45}
-	maxhits={22, 39}
-	maxmana={0}
-	resphysical={20, 25}
-	resfire={10, 20}
-	rescold={15, 25}
-	respoison={30, 40}
-	resenergy={15, 25}
-	poisoning={ 40.1, 60.0}
-	magicresistance={30.1, 45.0}
-	tactics={30.1, 50.0}
-	wrestling={40.1, 50.0}
-	fame=2000
-	karma=-2000
+    NPC=brain_monster
+    
+    FAME=2000
+    KARMA=-2000
+    
+    STR={36, 65}
+    DEX={96, 145}
+    INT={21, 45}
+    MAXHITS={22, 39}
+    
+    RESPHYSICAL={20, 25}
+    RESFIRE={10, 20}
+    RESCOLD={15, 25}
+    RESPOISON={30, 40}
+    RESENERGY={15, 25}
+    
+    POISONING={ 40.1, 60.0}
+    MAGICRESISTANCE={30.1, 45.0}
+    TACTICS={30.1, 50.0}
+    WRESTLING={40.1, 50.0}
 
-ON=@NPCRestock
-	item=i_gold,{50 100}
-	item=i_reag_spider_silk,2
+ON=@Createloot
+    ITEM=i_gold,{50 100}
+    ITEM=i_reag_spider_silk,2
+
 
 [CHARDEF 048]
 DEFNAME=c_terathan_matriarch
 NAME=Terathan Matriarch
 SOUND=599
 ICON=i_pet_terathan_queen
-dam=11,14
+CAN=mt_walk|mt_usehands
+
+DAM=11,14
 ARMOR=25
-CAN=MT_WALK|MT_USEHANDS
+FACTION=faction_terathan
+HEIGHT=18
+
 AVERSIONS=r_civilization
-DESIRES=e_TERATHAN
-TEVENTS=e_TERATHAN
+DESIRES=e_terathan
+
+ERALIMITLOOT=1
+ERALIMITGEAR=1
+ERALIMITPROPS=1
+
 RESLEVEL=1
 RESDISPDNID=c_snake_giant
 RESDISPDNHUE=0100
 CATEGORY=Monsters
+
 SUBSECTION=Terathans
 DESCRIPTION=Terathan, Matriarch
 
 ON=@Create
-	NPC=brain_monster
-	str={316, 405}
-	dex={96, 115}
-	int={366, 455}
-	maxhits={190, 243}
-	resphysical={45, 55}
-	resfire={30, 40}
-	rescold={35, 45}
-	respoison={40, 50}
-	resenergy={35, 45}
-	evaluatingintel={90.1, 100.0}
-	magery={90.1, 100.0}
-	magicresistance={90.1, 100.0}
-	tactics={50.1, 70.0}
-	wrestling={60.1, 80.0}
-	fame=10000
-	karma=-10000
+    NPC=brain_monster
+    
+    FAME=10000
+    KARMA=-10000
+    
+    STR={316, 405}
+    DEX={96, 115}
+    INT={366, 455}
+    MAXHITS={190, 243}
+    
+    RESPHYSICAL={45, 55}
+    RESFIRE={30, 40}
+    RESCOLD={35, 45}
+    RESPOISON={40, 50}
+    RESENERGY={35, 45}
+    
+    EVALUATINGINTEL={90.1, 100.0}
+    MAGERY={90.1, 100.0}
+    MAGICRESISTANCE={90.1, 100.0}
+    TACTICS={50.1, 70.0}
+    WRESTLING={60.1, 80.0}
 
-ON=@NPCRestock
-	item=i_gold,{550 650}
-	item=random_second_circle,2
-	item=i_reag_spider_silk,5
-	item=random_potion
-	item=random_reagent_necro,{4 10}
-	item=i_treasure_map4,R99
+ON=@Createloot
+    ITEM=i_gold,{550 650}
+    ITEM=random_second_circle,2
+    ITEM=i_reag_spider_silk,5
+    ITEM=random_potion
+    ITEM=random_reagent_necro,{4 10}
+    ITEM=i_treasure_map4,R99
+
 
 [CHARDEF 049]
 DEFNAME=c_harpy_stone
-NAME=stone harpy
+NAME=Stone Harpy
 ICON=i_pet_harpy
 SOUND=snd_monster_harpy1
-CAN=MT_WALK|MT_FLY|MT_FEMALE|MT_USEHANDS|MT_NONHUM
+CAN=mt_walk|mt_fly|mt_female|mt_usehands|mt_nonhum
+
 DAM=20,40
 ARMOR=45
-DESIRES=r_mountains,r_ruins,t_coin,t_gold,t_gem,t_potion
+MAXFOOD=25
+DAMPOISON=25
+FACTION=faction_bird
+BLOODCOLOR=-1
+HEIGHT=18
+TAG.BARDING.DIFF=70.3
+
+DESIRES=r_mountains,r_ruins,t_coin,t_gold,t_gem,t_potion, e_carnivores2
 AVERSIONS=t_trap,r_civilization
 FOODTYPE=t_meat_raw
-MAXFOOD=25
 RESOURCES=1 i_bird_raw,50 i_feather
-BLOODCOLOR=-1
-TAG.Barding.Diff=70.3
-DamPoison=25
-TAG.SlayerGroup=BIRD
-TEVENTS=e_carnivores2
+
+ERALIMITLOOT=1
+ERALIMITGEAR=1
+ERALIMITPROPS=1
+
 CATEGORY=Monsters
 SUBSECTION=Mythological
 DESCRIPTION=Harpy, Stone
+
 ON=@Create
-   NPC=brain_monster
-   FAME={2000 2499}
-   KARMA={-2000 -2499}
-   STR={296 320}
-   MAXHITS={178 192}
-   DEX={86 110}
-   MAXSTAM={86 110}
-   INT={51 75}
-   MAXMANA={51 75}
-   MAGICRESISTANCE={50.0 65.0}
-   TACTICS={70.0 100.0}
-   WRESTLING={70.0 100.0}
-   RESPHYSICAL={0 10}
-   RESCOLD={10 30}
-   RESENERGY={30 40}
-   RESFIRE={20 30}
-   RESPOISON={30 40}
-ON=@NPCRestock
-   ITEM=loot_harpy_stone
-	
+    NPC=brain_monster
+    
+    FAME={2000 2499}
+    KARMA={-2000 -2499}
+    
+    STR={296 320}
+    MAXHITS={178 192}
+    DEX={86 110}
+    MAXSTAM={86 110}
+    INT={51 75}
+    MAXMANA={51 75}
+    
+    RESPHYSICAL={0 10}
+    RESCOLD={10 30}
+    RESENERGY={30 40}
+    RESFIRE={20 30}
+    RESPOISON={30 40}
+    
+    MAGICRESISTANCE={50.0 65.0}
+    TACTICS={70.0 100.0}
+    WRESTLING={70.0 100.0}
+    
+ON=@Createloot
+    ITEM=Loot_Harpy_Stone
+    
+
 [CHARDEF 04b]
 DEFNAME=c_cyclops
 NAME=Cyclopean Warrior
 SOUND=604
-ICON=i_pet_CYCLOPS
-CAN=MT_WALK|MT_USEHANDS
-dam=7,23
-armor=48
+ICON=i_pet_cyclops
+CAN=mt_walk|mt_usehands
+
+DAM=7,23
+ARMOR=48
+FACTION=Faction_Repond
+HEIGHT=28
+RESLEVEL=1
+
 RESOURCES=4 i_ribs_raw
 FOODTYPE=15 t_meat_raw
 DESIRES=c_cyclops,t_arock
 AVERSIONS=r_civilization
-RESLEVEL=1
+
 RESDISPDNID=c_ogre
 RESDISPDNHUE=01a0
+
+ERALIMITLOOT=1
+ERALIMITGEAR=1
+ERALIMITPROPS=1
+
 CATEGORY=Monsters
 SUBSECTION=Giants
 DESCRIPTION=Cyclops
 
 ON=@Create
-NPC=brain_monster
-str={336, 385}
-dex={96, 115}
-int={31, 55}
-maxhits={202, 231}
-maxmana=0
-resphysical={45, 50}
-resfire={30, 40}
-rescold={25, 35}
-respoison={30, 40}
-resenergy={30, 40}
-magicresistance={60.3, 105.0}
-tactics={80.1, 100.0}
-wrestling={80.1, 90.0}
-fame=4500
-karma=-4500
+    NPC=brain_monster
+    FAME=4500
+    KARMA=-4500
+
+    STR={336, 385}
+    DEX={96, 115}
+    INT={31, 55}
+    MAXHITS={202, 231}
+    
+    
+    RESPHYSICAL={45, 50}
+    RESFIRE={30, 40}
+    RESCOLD={25, 35}
+    RESPOISON={30, 40}
+    RESENERGY={30, 40}
+    
+    MAGICRESISTANCE={60.3, 105.0}
+    TACTICS={80.1, 100.0}
+    WRESTLING={80.1, 90.0}
 
 
-ON=@NPCRestock
-	item=i_gold,{400 500}
-	//item=magic_items
-	item=i_treasure_map3,R99
+ON=@Createloot
+    ITEM=i_gold,{400 500}
+    ITEM=i_treasure_map3,r99
+
 
 [CHARDEF 04c]
 DEFNAME=c_titan
 NAME=Titan
-SOUND=snd_MONSTER_TITAN1
-ICON=i_pet_TITAN
-dam=13,16
-armor=40
+SOUND=snd_monster_titan1
+ICON=i_pet_titan
+CAN=mt_walk|mt_usehands
+
+DAM=13,16
+ARMOR=40
+FACTION=faction_repond
+HEIGHT=40
+
 RESOURCES=4 i_ribs_raw
-CAN=MT_WALK|MT_USEHANDS
 FOODTYPE=15 t_meat_raw
-DESIRES=c_titan
 AVERSIONS=r_civilization
+DESIRES=c_titan
+
 RESLEVEL=1
 RESDISPDNID=c_ogre
 RESDISPDNHUE=01a2
+
+ERALIMITLOOT=1
+ERALIMITGEAR=1
+ERALIMITPROPS=1
+
 CATEGORY=Monsters
 SUBSECTION=Giants
 DESCRIPTION=Titan
 
 ON=@Create
-NPC=brain_monster
-str={536, 585}
-dex={126, 145}
-int={281, 305}
-maxhits={322, 351}
-resphysical={35, 45}
-resfire={30, 40}
-rescold={25, 35}
-respoison={30, 40}
-resenergy={30, 40}
-evaluatingintel={85.1, 100.0}
-magery={85.1, 100.0}
-magicresistance={80.2, 110.0}
-tactics={60.1, 80.0}
-wrestling={40.1, 50.0}
-fame=11500
-karma=-11500
+    NPC=brain_monster
+    
+    FAME=11500
+    KARMA=-11500
+    
+    STR={536, 585}
+    DEX={126, 145}
+    INT={281, 305}
+    MAXHITS={322, 351}
+    
+    RESPHYSICAL={35, 45}
+    RESFIRE={30, 40}
+    RESCOLD={25, 35}
+    RESPOISON={30, 40}
+    RESENERGY={30, 40}
+    
+    EVALUATINGINTEL={85.1, 100.0}
+    MAGERY={85.1, 100.0}
+    MAGICRESISTANCE={80.2, 110.0}
+    TACTICS={60.1, 80.0}
+    WRESTLING={40.1, 50.0}
 
-ON=@NPCRestock
-	item=i_gold,{600 900}
-	item={random_fourth_circle 1 random_fifth_circle 1}
-	item=i_treasure_map5,R99
-	//item=i_seed_fragrant
-	//item=i_seed_peculiar
+ON=@Createloot
+    ITEM=i_gold,{600 900}
+    ITEM={random_fourth_circle 1 random_fifth_circle 1}
+    ITEM=i_treasure_map5,R99
+
 
 [CHARDEF 04e]
-//FIXME: Summons lesser monsters and polymorphs into one.
-//FIXME: Cannot be provoked
+//Fixme: Summons Lesser Monsters And Polymorphs Into One.
+//Fixme: Cannot Be Provoked
 DEFNAME=c_lich_ancient
-NAME=#NAMES_ANCIENT_LICH
+NAME=#Names_Ancient_Lich
 ICON=i_pet_lich
 SOUND=snd_monster_lich1
-CAN=MT_WALK|MT_RUN|MT_USEHANDS|MT_EQUIP
+CAN=mt_walk|mt_run|mt_usehands|mt_equip
+
 DAM=35,69
 ARMOR=55
-DESIRES=r_graveyards,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
+TAG.BARDING.DIFF=135.9
+DAMCOLD=40
+DAMENERGY=40
+FACTION=faction_undead
+HEIGHT=18
+
+DESIRES=r_graveyards,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent,e_undead
 AVERSIONS=t_trap,r_civilization
-//FOODTYPE=
-//MAXFOOD=
 RESOURCES=3 i_reag_blackmoor
-BLOODCOLOR=colors_green
-TAG.Barding.Diff=135.9
-DamCold=40
-DamEnergy=40
-TAG.SlayerGroup=UNDEAD
-TEVENTS=e_undead
+
+ERALIMITLOOT=1
+ERALIMITGEAR=1
+ERALIMITPROPS=1
+
 CATEGORY=Monsters
 SUBSECTION=Undeads
 DESCRIPTION=Lich, Ancient
+
 ON=@Create
-   NPC=brain_monster
-   FAME={4000 4499}
-   KARMA={-4000 -4499}
-   STR={216 305}
-   MAXHITS={560 595}
-   DEX={96 115}
-   MAXSTAM={96 115}
-   INT={966 1045}
-   MAXMANA={225 269}
-   ARCHERY={75.0 100.0}
-   EVALUATINGINTEL={120.0 130.0}
-   FENCING={75.0 100.0}
-   MACEFIGHTING={75.0 100.0}
-   MAGERY={120.0 130.0}
-   MAGICRESISTANCE={175.0 200.0}
-   MEDITATION={100.0 102.0}
-   NECROMANCY={120.0 130.0}
-   PARRYING={90.0 100.0}
-   SWORDSMANSHIP={75.0 100.0}
-   TACTICS={90.0 100.0}
-   WRESTLING={75.0 100.0}
-   RESPHYSICAL={0 10}
-   RESCOLD={50 60}
-   RESENERGY={25 30}
-   RESFIRE={25 30}
-   RESPOISON={50 60}
-ON=@NPCRestock
-   ITEM=loot_lich_ancient
-   ITEM=loot_ai_hard
+    NPC=brain_monster
+    
+    BLOODCOLOR=colors_green
+    
+    FAME={4000 4499}
+    KARMA={-4000 -4499}
+    
+    STR={216 305}
+    MAXHITS={560 595}
+    DEX={96 115}
+    MAXSTAM={96 115}
+    INT={966 1045}
+    MAXMANA={225 269}
+    
+    RESPHYSICAL={0 10}
+    RESCOLD={50 60}
+    RESENERGY={25 30}
+    RESFIRE={25 30}
+    RESPOISON={50 60}
+    
+    ARCHERY={75.0 100.0}
+    EVALUATINGINTEL={120.0 130.0}
+    FENCING={75.0 100.0}
+    MACEFIGHTING={75.0 100.0}
+    MAGERY={120.0 130.0}
+    MAGICRESISTANCE={175.0 200.0}
+    MEDITATION={100.0 102.0}
+    NECROMANCY={120.0 130.0}
+    PARRYING={90.0 100.0}
+    SWORDSMANSHIP={75.0 100.0}
+    TACTICS={90.0 100.0}
+    WRESTLING={75.0 100.0}
+    
+ON=@Createloot
+    ITEM=loot_lich_ancient
+    ITEM=loot_ai_hard
+
 
 [CHARDEF 050]
-defname=c_toad_giant
-name=Giant Toad
-sound=snd_MONSTER_GIANTTOAD1
-icon=i_pet_toad_giant
-dam=5,17
-armor=24
-resources=1 i_ribs_raw,12 i_hide	//fixme: Spined hide
-can=MT_WALK
-foodtype=5 t_meat_raw
-aversions=r_civilization
+DEFNAME=c_toad_giant
+NAME=Giant Toad
+SOUND=snd_monster_gianttoad1
+ICON=i_pet_toad_giant
+CAN=mt_walk
+
+DAM=5,17
+ARMOR=24
+HEIGHT=15
+
+RESOURCES=1 i_ribs_raw,12 i_hide    //Fixme: Spined Hide
+FOODTYPE=5 t_meat_raw
+AVERSIONS=r_civilization
+
+ERALIMITLOOT=1
+ERALIMITGEAR=1
+ERALIMITPROPS=1
+
 CATEGORY=Animals
 SUBSECTION=Amphibious
 DESCRIPTION=Toad, Giant
 
 ON=@Create
-	npc=brain_monster
-	str={76, 100}
-	dex={6, 25}
-	int={11, 20}
-	maxhits={46, 60}
-	resphysical={20, 25}
-	resfire={5, 10}
-	resenergy={5, 10}
-	magicresistance={25.1, 40.0}
-	tactics={40.1, 60.0}
-	wrestling={40.1, 60.0}
-	fame=750
-	karma=-750
+    NPC=brain_monster
+    FAME=750
+    KARMA=-750
+    
+    STR={76, 100}
+    DEX={6, 25}
+    INT={11, 20}
+    MAXHITS={46, 60}
+    
+    RESPHYSICAL={20, 25}
+    RESFIRE={5, 10}
+    RESENERGY={5, 10}
+    
+    MAGICRESISTANCE={25.1, 40.0}
+    TACTICS={40.1, 60.0}
+    WRESTLING={40.1, 60.0}
 
-on=@npcrestock
-	item=i_gold,{25,50}
+ON=@Createloot
+    ITEM=i_gold,{25,50}
 
 
 [CHARDEF 051]
-defname=c_bullfrog
-name=Bull Frog
-sound=snd_MONSTER_BULLFROG1
-icon=i_pet_bullfrog
-can=MT_WALK
-dam=1,2
-armor=8
-resources=1 i_ribs_raw,4 i_hide
-foodtype=5 t_meat_raw
-aversions=r_civilization
+DEFNAME=c_bullfrog
+NAME=Bull Frog
+SOUND=snd_monster_bullfrog1
+ICON=i_pet_bullfrog
+CAN=mt_walk
+
+DAM=1,2
+ARMOR=8
+HEIGHT=5
+
+RESOURCES=1 i_ribs_raw,4 i_hide
+FOODTYPE=5 t_meat_raw
+AVERSIONS=r_civilization
+
+ERALIMITLOOT=1
+ERALIMITGEAR=1
+ERALIMITPROPS=1
+
 CATEGORY=Animals
 SUBSECTION=Amphibious
 DESCRIPTION=Bullfrog
 
 ON=@Create
-	npc=brain_animal
-	str={46, 70}
-	dex={6, 25}
-	int={11, 20}
-	maxhits={28, 42}
-	resphysical={5, 10}
-	magicresistance={25.1, 40.0}
-	tactics={40.1, 60.0}
-	wrestling={40.1, 60.0}
-	taming=23.1
-	fame=350
-	karma=0
+    NPC=brain_animal
+    
+    FAME=350
+    
+    
+    STR={46, 70}
+    DEX={6, 25}
+    INT={11, 20}
+    MAXHITS={28, 42}
+    
+    RESPHYSICAL={5, 10}
+    
+    MAGICRESISTANCE={25.1, 40.0}
+    TACTICS={40.1, 60.0}
+    WRESTLING={40.1, 60.0}
+    TAMING=23.1
 
-ON=@NPCRestock
-	item=i_gold,{25,50}
+ON=@Createloot
+    ITEM=i_gold,{25,50}
+
 
 [CHARDEF 055]
-DEFNAME=c_ophidian_mage
-NAME=Ophidian Mage
+DEFNAME=c_ophidian_shaman
+NAME=Ophidian Shaman
 SOUND=639
 ICON=i_pet_ophid_mage
-CAN=MT_WALK|MT_USEHANDS
-dam=5,10
-armor=30
+CAN=mt_walk|mt_usehands
+
+DAM=5,10
+ARMOR=30
+FACTION=faction_ophidian
+HEIGHT=18
+
 RESOURCES=1 i_ribs_raw
 FOODTYPE=5 t_meat_raw, 5 t_food
-DESIRES=i_gold,t_reagent,t_web,i_reag_spider_silk,e_Ophidian
-TEVENTS=e_Ophidian
+DESIRES=i_gold,t_reagent,t_web,i_reag_spider_silk,e_ophidian
+
 RESLEVEL=1
 RESDISPDNID=c_spider_giant
 RESDISPDNHUE=0153
+
+ERALIMITLOOT=1
+ERALIMITGEAR=1
+ERALIMITPROPS=1 
+
 CATEGORY=Monsters
 SUBSECTION=Ophidians
-DESCRIPTION=Ophidian, Mage
+DESCRIPTION=Ophidian, Shaman
 
 ON=@Create
-	NPC=brain_monster
-	str={181, 205}
-	dex={191, 215}
-	int={96, 120}
-	maxhits={109, 123}
-	resphysical={25, 35}
-	resfire={30, 40}
-	rescold={35, 45}
-	respoison={40, 50}
-	resenergy={35, 45}
-	evaluatingintel={85.1, 100.0}
-	magery={85.1, 100.0}
-	magicresistance={75.0, 97.5}
-	tactics={65.0, 87.5}
-	wrestling={20.2, 60.0}
-	fame=4000
-	karma=-4000
+    NPC=brain_monster
+    
+    FAME=4000
+    KARMA=-4000
+    
+    STR={181, 205}
+    DEX={191, 215}
+    INT={96, 120}
+    MAXHITS={109, 123}
+    
+    RESPHYSICAL={25, 35}
+    RESFIRE={30, 40}
+    RESCOLD={35, 45}
+    RESPOISON={40, 50}
+    RESENERGY={35, 45}
+    
+    EVALUATINGINTEL={85.1, 100.0}
+    MAGERY={85.1, 100.0}
+    MAGICRESISTANCE={75.0, 97.5}
+    TACTICS={65.0, 87.5}
+    WRESTLING={20.2, 60.0}
 
-ON=@NPCRestock
-	item=i_gold,{125 175}
-	item={random_first_circle 1 random_second_circle 1}
-	item={random_third_circle 1 random_fifth_circle 1}
-	item=random_reagents,5
-	item=random_reagents,5
-	item=i_treasure_map2,R99
+ON=@Createloot
+    ITEM=i_gold,{125 175}
+    ITEM={random_first_circle 1 random_second_circle 1}
+    ITEM={random_third_circle 1 random_fifth_circle 1}
+    ITEM=random_reagents,5
+    ITEM=random_reagents,5
+    ITEM=i_treasure_map2,R99
+
 
 [CHARDEF 056]
 DEFNAME=c_ophidian_warrior
 NAME=Ophidian Warrior
 SOUND=634
 ICON=i_pet_ophid_war
-CAN=MT_WALK|MT_USEHANDS
-dam=5,11
-armor=36
+CAN=mt_walk|mt_usehands
+
+DAM=5,11
+ARMOR=36
+FACTION=faction_ophidian
+HEIGHT=15
+
 RESOURCES=1 i_ribs_raw
 FOODTYPE=15 t_meat_raw
-DESIRES=e_Ophidian
-TEVENTS=e_Ophidian
+DESIRES=e_ophidian
+
 RESLEVEL=1
 RESDISPDNID=c_spider_giant
 RESDISPDNHUE=0153
+
+ERALIMITLOOT=1
+ERALIMITGEAR=1
+ERALIMITPROPS=1
+
 CATEGORY=Monsters
 SUBSECTION=Ophidians
 DESCRIPTION=Ophidian, Warrior
 
 ON=@Create
-	NPC=brain_monster
-	str={150, 320}
-	dex={94, 190}
-	int={64, 160}
-	maxhits={128, 155}
-	maxmana={0}
-	resphysical={35, 40}
-	resfire={20, 30}
-	rescold={25, 35}
-	respoison={30, 40}
-	resenergy={25, 35}
-	magicresistance={70.1, 85.0}
-	swordsmanship={60.1, 85.0}
-	tactics={75.1, 90.0}
-	fame=4500
-	karma=-4500
+    NPC=brain_monster
+    FAME=4500
+    KARMA=-4500
+    
+    STR={150, 320}
+    DEX={94, 190}
+    INT={64, 160}
+    MAXHITS={128, 155}
+    
+    RESPHYSICAL={35, 40}
+    RESFIRE={20, 30}
+    RESCOLD={25, 35}
+    RESPOISON={30, 40}
+    RESENERGY={25, 35}
+    
+    MAGICRESISTANCE={70.1, 85.0}
+    SWORDSMANSHIP={60.1, 85.0}
+    TACTICS={75.1, 90.0}
 
-ON=@NPCRestock
-	item=i_gold,{175 225}	
-	item=i_treasure_map1,R99
+ON=@Createloot
+    ITEM=i_gold,{175 225}    
+    ITEM=i_treasure_map1,R99
 
 
 [CHARDEF 057]
-defname=c_ophidian_matriarch
-defname2=c_ophidian_queen
+DEFNAME=c_ophidian_matriarch
+Defname2=c_ophidian_queen
 NAME=Ophidian Matriarch
 SOUND=644
 ICON=i_pet_ophid_queen
-CAN=MT_WALK|MT_USEHANDS
-dam=11,13
-armor=50
-RESOURCES=
+CAN=mt_walk|mt_usehands
+
+DAM=11,13
+ARMOR=50
+FACTION=faction_ophidian
+HEIGHT=15
+
 FOODTYPE=15 t_meat_raw, 5 t_food
-DESIRES=i_gold,e_Ophidian
-TEVENTS=e_Ophidian
+DESIRES=i_gold,e_ophidian
+
 RESLEVEL=1
 RESDISPDNID=c_spider_giant
 RESDISPDNHUE=0153
+
+ERALIMITLOOT=1
+ERALIMITGEAR=1
+ERALIMITPROPS=1
+
 CATEGORY=Monsters
 SUBSECTION=Ophidians
 DESCRIPTION=Ophidian, Queen
 
 ON=@Create
-	NPC=brain_monster
-	str={416, 505}
-	dex={96, 115}
-	int={366, 455}
-	maxhits={250, 303}
-	resphysical={45, 55}
-	resfire={30, 40}
-	rescold={35, 45}
-	respoison={40, 50}
-	resenergy={35, 45}
-	evaluatingintel={90.1, 100.0}
-	magery={90.1, 100.0}
-	meditation={5.4, 25.0}
-	magicresistance={90.1, 100.0}
-	tactics={50.1, 70.0}
-	wrestling={60.1, 80.0}
-	fame=16000
-	karma=-16000
+    NPC=brain_monster
+    
+    FAME=16000
+    KARMA=-16000
+    
+    STR={416, 505}
+    DEX={96, 115}
+    INT={366, 455}
+    MAXHITS={250, 303}
+    
+    RESPHYSICAL={45, 55}
+    RESFIRE={30, 40}
+    RESCOLD={35, 45}
+    RESPOISON={40, 50}
+    RESENERGY={35, 45}
+    
+    EVALUATINGINTEL={90.1, 100.0}
+    MAGERY={90.1, 100.0}
+    MEDITATION={5.4, 25.0}
+    MAGICRESISTANCE={90.1, 100.0}
+    TACTICS={50.1, 70.0}
+    WRESTLING={60.1, 80.0}
 
-ON=@NPCRestock
-	item=i_gold,{550 650}
-	item=random_potion
-	item={random_fourth_circle 1 random_fifth_circle 1}
-	item=i_treasure_map4,R99
+ON=@Createloot
+    ITEM=i_gold,{550 650}
+    ITEM=random_potion
+    ITEM={random_fourth_circle 1 random_fifth_circle 1}
+    ITEM=i_treasure_map4,R99
 
 [CHARDEF 059]
 DEFNAME=c_serpent_ice
-NAME=ice serpent
+NAME=Ice Serpent
 ICON=i_pet_serpent_ice
 SOUND=snd_animals_snake1
-CAN=MT_WALK|MT_RUN|MT_NONHUM
+CAN=mt_walk|mt_run|mt_nonhum
+
 DAM=17,41
 ARMOR=30
-DESIRES=r_snow,t_coin,t_gold,t_gem
+MAXFOOD=35
+DAMCOLD=90
+FACTION=Faction_Snake
+HEIGHT=6
+TAG.BARDING.DIFF=53.1
+
+DESIRES=r_snow,t_coin,t_gold,t_gem,e_carnivores2
 AVERSIONS=t_trap,r_civilization
 FOODTYPE=t_meat_raw
-MAXFOOD=35
-RESOURCES=4 i_ribs_raw,15 i_hide_spined
-TAG.Barding.Diff=53.1
-DamCold=90
-TAG.SlayerGroup=SNAKE,REPTILE
-TEVENTS=e_carnivores2
+RESOURCES=4 i_ribs_raw,15 i_hide_Spined
+
+ERALIMITLOOT=1
+ERALIMITGEAR=1
+ERALIMITPROPS=1
+
 CATEGORY=Animals
 SUBSECTION=Reptiles
 DESCRIPTION=Snake, Giant Ice
+
 ON=@Create
-   NPC=brain_animal
-   FAME={2000 2499}
-   KARMA={-2000 -2499}
-   STR={216 245}
-   MAXHITS={130 147}
-   DEX={26 50}
-   MAXSTAM={26 50}
-   INT={66 85}
-   MAXMANA={66 85}
-   ANATOMY={27.0 50.0}
-   MAGICRESISTANCE={25.0 40.0}
-   TACTICS={75.0 80.0}
-   WRESTLING={60.0 80.0}
-   RESPHYSICAL={0 5}
-   RESCOLD={80 90}
-   RESENERGY={10 20}
-   RESFIRE=0
-   RESPOISON={15 25}
-ON=@NPCRestock
-   ITEM=loot_serpent_ice
+    NPC=brain_animal
+    
+    FAME={2000 2499}
+    KARMA={-2000 -2499}
+    
+    STR={216 245}
+    MAXHITS={130 147}
+    DEX={26 50}
+    MAXSTAM={26 50}
+    INT={66 85}
+    MAXMANA={66 85}
+    
+    RESPHYSICAL={0 5}
+    RESCOLD={80 90}
+    RESENERGY={10 20}
+    
+    RESPOISON={15 25}
+    
+    ANATOMY={27.0 50.0}
+    MAGICRESISTANCE={25.0 40.0}
+    TACTICS={75.0 80.0}
+    WRESTLING={60.0 80.0}
+    
+ON=@Createloot
+    ITEM=loot_serpent_ice
 
 [CHARDEF 05a]
 DEFNAME=c_serpent_lava
-NAME=lava serpent
+NAME=Lava Serpent
 ICON=i_pet_serpent_lava
 SOUND=snd_animals_snake1
-CAN=MT_WALK|MT_RUN|MT_NONHUM
+CAN=mt_walk|mt_run|mt_nonhum
+
 DAM=33,56
 ARMOR=35
-DESIRES=r_mountains_volcanic,r_desert,t_coin,t_gold,t_gem
+MAXFOOD=35
+DAMFIRE=80
+FACTION=faction_snake
+HEIGHT=6
+TAG.BARDING.DIFF=75.5
+
+DESIRES=r_mountains_Volcanic,r_desert,t_coin,t_gold,t_gem,e_carnivores2
 AVERSIONS=t_trap,r_civilization
 FOODTYPE=t_meat_raw
-MAXFOOD=35
-RESOURCES=4 i_ribs_raw,15 i_hide_spined
-TAG.Barding.Diff=75.5
-DamFire=80
-TAG.SlayerGroup=SNAKE,REPTILE
-TEVENTS=e_carnivores2
+RESOURCES=4 i_ribs_raw,15 i_hide_Spined
+
+ERALIMITLOOT=1
+ERALIMITGEAR=1
+ERALIMITPROPS=1
+
 CATEGORY=Animals
 SUBSECTION=Reptiles
 DESCRIPTION=Snake, Giant Lava
+
 ON=@Create
-   NPC=brain_animal
-   FAME={2500 2999}
-   KARMA={-2500 -2999}
-   STR={386 415}
-   MAXHITS={232 249}
-   DEX={56 80}
-   MAXSTAM={56 80}
-   INT={66 85}
-   MAXMANA={66 85}
-   MAGICRESISTANCE={25.0 70.0}
-   TACTICS={65.0 70.0}
-   WRESTLING={60.0 80.0}
-   RESPHYSICAL={0 10}
-   RESCOLD=0
-   RESENERGY={10 20}
-   RESFIRE={70 80}
-   RESPOISON={30 40}
-ON=@NPCRestock
-   ITEM=loot_serpent_lava
-ON=@GetHit
-   //Fire Aura Attack
-   IF ( (<MANA> >= 20) && !(<R5>) )
-      MANA -= 20
-      REF11=<UID>
-      FORCHARS 3
-         IF (<ISPLAYER>) || (<FLAGS>&statf_pet)
-            LOCAL.DAM=<R10,20>
-            DAMAGE <LOCAL.DAM> <DEF.dam_fire> <REF11>
-            SYSMESSAGE Intense heat radiating from the serpent damages you
-         ENDIF
-      END
-   ENDIF
+    NPC=brain_animal
+    
+    FAME={2500 2999}
+    KARMA={-2500 -2999}
+    
+    STR={386 415}
+    MAXHITS={232 249}
+    DEX={56 80}
+    MAXSTAM={56 80}
+    INT={66 85}
+    MAXMANA={66 85}
+    
+    RESPHYSICAL={0 10}
+    
+    RESENERGY={10 20}
+    RESFIRE={70 80}
+    RESPOISON={30 40}
+    
+    MAGICRESISTANCE={25.0 70.0}
+    TACTICS={65.0 70.0}
+    WRESTLING={60.0 80.0}
+    
+    f_addExtendedAIEvent e_extendedAI_aura_fire
+
+ON=@Createloot
+    ITEM=loot_serpent_lava
+
+
+[CHARDEF 05e]
+DEFNAME=c_frostooze
+NAME=Frost Ooze
+ICON=i_pet_slime
+SOUND=snd_monster_slime1
+CAN=mt_walk|mt_nonhum
+
+DAM=3,11
+ARMOR=15
+MAXFOOD=10
+TAG.BARDING.DIFF=14.5
+TAG.CORROSIVEBLOOD=10
+FACTION=faction_vermin
+HEIGHT=1
+
+DESIRES=r_snow,t_coin,t_gold,t_gem,e_carnivores
+AVERSIONS=r_civilization,t_light_lit
+FOODTYPE=t_meat_raw
+
+ERALIMITLOOT=1
+ERALIMITGEAR=1
+ERALIMITPROPS=1
+
+CATEGORY=Monsters
+SUBSECTION=Slimes
+DESCRIPTION=Slime, Frost
+
+ON=@Create
+    NPC=brain_monster
+    
+    FAME={1 499}
+    KARMA={-800 -999}
+    
+    STR={18 30}
+    MAXHITS={13 17}
+    DEX={16 21}
+    MAXSTAM={16 21}
+    INT={16 20}
+    MAXMANA={16 20}
+    
+    RESPHYSICAL={0 5}
+    RESCOLD={40 50}
+    RESENERGY={10 20}
+    
+    RESPOISON={20 30}
+    
+    MAGICRESISTANCE={5.0 10.0}
+    TACTICS={19.0 34.0}
+    WRESTLING={25.0 40.0}
+    
+ON=@Createloot
+    ITEM=loot_frostooze
 
 
 [CHARDEF 05f]
-// This body cannot be viewed on newer clients and will cause
-// client crashes. Use c_sea_monster instead.
+// This Body Cannot Be Viewed On Newer Clients And Will Cause
+// Client Crashes. Use C_Sea_Monster Instead.
 DEFNAME=c_sea_monster_old
 NAME=Sea Monster
-SOUND=snd_MONSTER_SEASERP1
+SOUND=snd_monster_seaserp1
 ICON=i_pet_snake
-CAN=MT_SWIM
+CAN=mt_swim
+
 ANIM=078c7f
 DAM=5,15
 ARMOR=15
-RESOURCES=50 i_ribs_raw,8 i_reag_serpent_scale
+FACTION=faction_snake
+HEIGHT=6
+
+RESOURCES=50 i_ribs_raw,8 i_reag_nox_crystal
 FOODTYPE=25 t_meat_raw,t_fish
 DESIRES=t_ship
-//SHELTER=r_water
 AVERSIONS=r_civilization
+
 RESLEVEL=1
 RESDISPDNID=c_sea_serpent
 RESDISPDNHUE=0123
+
+ERALIMITLOOT=1
+ERALIMITGEAR=1
+ERALIMITPROPS=1
+
 CATEGORY=Monsters
 SUBSECTION=Aquatic
 DESCRIPTION=Sea Monster
 
 ON=@Create
-	NPC=brain_monster
-	FAME={2000 6000}
-	KARMA={-3000 -3999}
-	//ALIGNMENT=NEUTRAL
-	STR={165 225}
-	DEX={58 85}
-	INT={53 85}
-	PARRYING={65.0 75.0}
-	MAGICRESISTANCE={60.0 75.0}
-	TACTICS={60.0 70.0}
-	WRESTLING={60.0 75.0}
-	FISHING=80.0
+    NPC=brain_monster
+    
+    FAME={2000 6000}
+    KARMA={-3000 -3999}
+    
+    STR={165 225}
+    DEX={58 85}
+    INT={53 85}
+    
+    PARRYING={65.0 75.0}
+    MAGICRESISTANCE={60.0 75.0}
+    TACTICS={60.0 70.0}
+    WRESTLING={60.0 75.0}
+    FISHING=80.0
 
-ON=@NPCRestock
-	ITEM=loot_SEA_SERPENT
+ON=@Createloot
+    ITEM=loot_sea_serpent
 
-[CHARDEF 05e]
-DEFNAME=c_frostooze
-NAME=frost ooze
-ICON=i_pet_slime
-SOUND=snd_monster_slime1
-CAN=MT_WALK|MT_NONHUM
-DAM=3,11
-ARMOR=15
-DESIRES=r_snow,t_coin,t_gold,t_gem
-AVERSIONS=r_civilization,t_light_lit
+[CHARDEF 061]
+//FIXME: Fireball attack based on their hitpoints
+//FIXME: Fight in packs
+DEFNAME=c_hellhound
+NAME=hell hound
+ICON=i_pet_hellhound
+SOUND=snd_animals_wolf1
+CAN=mt_walk|mt_run
+
+DAM=21,31
+ARMOR=25
+DAMFIRE=80
+TAG.Barding.Diff=62.8
+
+DESIRES=r_desert,r_mountains_volcanic,t_coin,t_gold,t_gem
+AVERSIONS=r_civilization
 FOODTYPE=t_meat_raw
-MAXFOOD=10
-//RESOURCES=
-TAG.Barding.Diff=14.5
-TAG.CorrosiveBlood=10
-TAG.SlayerGroup=VERMIN
-TEVENTS=e_carnivores
+MAXFOOD=15
+RESOURCES=1 i_ribs_raw,5 i_reag_sulfur_ash
+
+CATEGORY=Animals
+SUBSECTION=Wild
+DESCRIPTION=Hell Hound
+ON=@Create
+   NPC=brain_dragon
+   FAME={1000 1499}
+   KARMA={-1000 -1499}
+   
+   STR={102 150}
+   MAXHITS={66 125}
+   DEX={81 105}
+   MAXSTAM={81 105}
+   INT={36 60}
+   MAXMANA={36 60}
+   
+   RESPHYSICAL={0 10}
+   RESENERGY={10 20}
+   RESFIRE={30 40}
+   RESPOISON={10 20}
+   
+   MAGICRESISTANCE={57.0 75.0}
+   TACTICS={50.0 70.0}
+   TAMING=85.5
+   WRESTLING={60.0 80.0}
+  
+ON=@Createloot
+   ITEM=loot_hellhound
+   
+[CHARDEF 062]
+//FIXME: Fireball attack based on their hitpoints
+//FIXME: Fight in packs
+DEFNAME=c_hellhound_leader
+NAME=Alpha hell hound
+SOUND=snd_animals_wolf1
+ICON=i_pet_hellhound
+
+CAN=MT_WALK|MT_RUN|MT_NONHUM
+DAM=21,31
+ARMOR=35
+
+DESIRES=r_desert,r_mountains_volcanic,t_coin,t_gold,t_gem
+AVERSIONS=r_civilization
+FOODTYPE=t_meat_raw
+MAXFOOD=15
+RESOURCES=1 i_ribs_raw,5 i_reag_sulfur_ash
+
+TAG.Barding.Diff=65.0
+FACTION=faction_wolf
+FollowerSlots=2
+
+DamFire=80
+
+CATEGORY=Animals
+SUBSECTION=Wild
+DESCRIPTION=Hell Hound, Alpha
+
+ON=@Create
+   NPC=brain_animal
+   
+   FAME={1000 1499}
+   KARMA={-1000 -1499}
+   
+   STR={132 174}
+   MAXHITS={132 174}
+   DEX={81 105}
+   MAXSTAM={81 105}
+   INT={36 60}
+   MAXMANA={36 60}
+   
+   MAGICRESISTANCE={77.0 90.0}
+   TACTICS={70.0 90.0}
+   WRESTLING={74.0 91.0}
+   
+   RESPHYSICAL={0 10}
+   RESCOLD=0
+   RESENERGY={10 20}
+   RESFIRE={50 60}
+   RESPOISON={10 20}
+   
+ON=@CreateLoot
+   ITEM=loot_hellhound
+   
+[CHARDEF 06a]
+DEFNAME=c_wyrm_shadow
+NAME=Shadow wyrm
+SOUND=snd_monster_dragon1
+ICON=i_pet_dragon
+CAN=MT_WALK|MT_FLY|MT_NONHUM
+
+DAM=130,165
+ARMOR=65
+
+DESIRES=r_dungeon,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
+AVERSIONS=t_trap,r_civilization
+FOODTYPE=t_meat_raw
+MAXFOOD=50
+RESOURCES=19 i_ribs_raw,20 i_hide_barbed,6 i_reag_dragon_blood,10 i_dragonscale_black
+
+TAG.Barding.Diff=124.9
+DamCold=25
+
+FACTION=faction_dragon
+
 CATEGORY=Monsters
-SUBSECTION=Slimes
-DESCRIPTION=Slime, Frost
+SUBSECTION=Dragons
+DESCRIPTION=Wyrm, Shadow
+ON=@Create
+   NPC=brain_dragon
+   
+   FAME={6000 6999}
+   KARMA={-6000 -6999}
+   STR={898 1030}
+   MAXHITS={558 599}
+   DEX={68 200}
+   MAXSTAM={68 200}
+   INT={488 620}
+   MAXMANA={488 620}
+   
+   EVALUATINGINTEL={80.0 100.0}
+   MAGERY={80.0 100.0}
+   MAGICRESISTANCE={100.0 130.0}
+   MEDITATION={52.0 75.0}
+   TACTICS={97.0 100.0}
+   WRESTLING={97.0 100.0}
+   TAMING=104.7
+   
+   RESPHYSICAL={0 10}
+   RESCOLD={45 55}
+   RESENERGY={50 60}
+   RESFIRE={50 60}
+   RESPOISON={20 30}
+   //BREATH.ANIM=i_fx_explode		//explosion id
+   //BREATH.TYPE=3				// Follow target
+ON=@CreateLoot
+   ITEM=loot_wyrm_shadow
+   
+[CHARDEF 074]
+DEFNAME=c_nightmare
+NAME=nightmare
+SOUND=snd_animals_horse1
+ICON=i_pet_horse_nightmare
+CAN=mt_walk|mt_run|mt_nonhum
+
+DAM=52,70
+ARMOR=55
+
+TAG.Barding.Diff=85.2
+FollowerSlots=2
+DAMENERGY=20
+DAMFIRE=40
+
+DESIRES=r_dungeon,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
+AVERSIONS=t_trap,r_civilization
+RESOURCES=5 i_ribs_raw,10 i_hide_barbed
+FOODTYPE=t_meat_raw
+MAXFOOD=35
+
+TEVENTS=e_carnivores2
+TEVENTS=e_horses
+
+CATEGORY=Mounts
+SUBSECTION=Wild
+DESCRIPTION=Nightmare
+
+ON=@Create
+   NPC=brain_dragon
+   COLOR=colors_black
+   FAME={3000 3499}
+   KARMA={-3000 -3499}
+   
+   STR={496 525}
+   MAXHITS={298 315}
+   DEX={86 105}
+   MAXSTAM={86 105}
+   INT={86 125}
+   MAXMANA={86 125}
+
+   RESPHYSICAL={0 10}
+   RESCOLD={30 40}
+   RESENERGY={20 30}
+   RESFIRE={30 40}
+   RESPOISON={30 40}
+
+   MAGICRESISTANCE={84.0 100.0}
+   MAGERY={10.0 50.0}
+   TACTICS={97.0 100.0}
+   TAMING=95.1
+   WRESTLING={80.0 93.0}
+
+ON=@Createloot
+   ITEM=loot_nightmare  
+
+[CHARDEF 07f]
+DEFNAME=c_hellcat
+NAME=hellcat
+ICON=i_pet_hellcat
+SOUND=snd_animals_panther1
+CAN=mt_walk|mt_run|mt_nonhum
+
+DAM=10,32
+ARMOR=25
+TAG.Barding.Diff=71.2
+DAMFIRE=25
+
+DESIRES=r_jungle,r_mountains_volcanic,t_coin,t_gold,t_gem
+AVERSIONS=r_civilization,r_water
+FOODTYPE=t_meat_raw
+MAXFOOD=25
+RESOURCES=1 i_ribs_raw,10 i_hide_spined
+
+CATEGORY=Animals
+SUBSECTION=Wild
+DESCRIPTION=Hellcat
+
 ON=@Create
    NPC=brain_monster
-   FAME={1 499}
-   KARMA={-800 -999}
-   STR={18 30}
-   MAXHITS={13 17}
-   DEX={16 21}
-   MAXSTAM={16 21}
-   INT={16 20}
-   MAXMANA={16 20}
-   MAGICRESISTANCE={5.0 10.0}
-   TACTICS={19.0 34.0}
-   WRESTLING={25.0 40.0}
-   RESPHYSICAL={0 5}
-   RESCOLD={40 50}
-   RESENERGY={10 20}
-   RESFIRE=0
-   RESPOISON={20 30}
-ON=@NPCRestock
-   ITEM=loot_frostooze
+   FAME={1500 1999}
+   KARMA={-1500 -1999}
+   STR={116 185}
+   MAXHITS={97 131}
+   DEX={96 115}
+   MAXSTAM={96 115}
+   INT={76 100}
+   MAXMANA={76 100}
+   
+   MAGICRESISTANCE={75.0 90.0}
+   TACTICS={50.0 65.0}
+   TAMING=89.1
+   WRESTLING={50.0 65.0}
+   
+   RESPHYSICAL={0 10}
+   RESENERGY={5 15}
+   RESFIRE={30 40}
+   
+ON=@Createloot
+   ITEM=loot_hellcat
 
+[CHARDEF 083]
+DEFNAME=c_efreet
+NAME=efreet
+SOUND=snd_monster_efreet1
+ICON=i_pet_efreet
+CAN=mt_walk|mt_run|mt_usehands
+
+DAM=27,32
+ARMOR=50
+TAG.Barding.Diff=85.0
+DAMENERGY=50
+DAMFIRE=50
+MOVERATE=200
+
+DESIRES=r_desert,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
+AVERSIONS=t_trap,r_civilization
+FOODTYPE=t_meat_raw
+MAXFOOD=25
+
+CATEGORY=Monsters
+SUBSECTION=Elementals
+DESCRIPTION=Efreet
+ON=@Create
+   NPC=brain_monster
+   
+   FAME={2500 2999}
+   KARMA={-2500 -2999}
+   
+   STR={326 355}
+   MAXHITS={196 213}
+   DEX={266 285}
+   MAXSTAM={266 285}
+   INT={171 195}
+   MAXMANA={171 195}
+   
+   RESPHYSICAL={0 10}
+   RESENERGY={40 50}
+   RESFIRE={60 70}
+   RESPOISON={30 40}
+   
+   MAGERY={60.0 75.0}
+   MAGICRESISTANCE={60.0 75.0}
+   TACTICS={60.0 80.0}
+   WRESTLING={60.0 80.0}
+   
+ 
+ON=@CreateLoot
+   ITEM=loot_efreet
+   ITEM=loot_ai_hard
+   
+[CHARDEF 086]
+//FIXME: No Stratics data yet
+DEFNAME=c_dragon_komodo
+NAME=komodo dragon
+SOUND=snd_animal_kirin1
+ICON=i_pet_dragon_komodo
+
+CAN=mt_walk|mt_run|mt_nonhum
+DAM=9,18
+ARMOR=25
+
+TAG.Barding.Diff=52.2
+FollowerSlots=1
+TAG.SlayerGroup=REPTILE
+
+DESIRES=r_jungle,t_coin,t_gold,t_gem
+AVERSIONS=e_carnivores3
+FOODTYPE=t_fruit,t_grain,t_grass
+MAXFOOD=25
+RESOURCES=3 i_ribs_raw,8 i_hide_spined
+
+CATEGORY=Animals
+SUBSECTION=Wild
+DESCRIPTION=Komodo Dragon
+
+ON=@Create
+   NPC=brain_animal
+   FAME={1000 1499}
+   KARMA={-1000 -1499}
+   
+   STR={76 100}
+   MAXHITS={46 60}
+   DEX={16 25}
+   MAXSTAM={65 75}
+   INT={11 20}
+   MAXMANA={11 20}
+   
+    RESPHYSICAL={0 10}
+   RESENERGY={5 10}
+   RESFIRE={15 25}
+   RESPOISON={40 50}
+   
+   MAGICRESISTANCE={25.0 40.0}
+   POISONING={50.0 75.0}
+   TACTICS={40.0 60.0}
+   TAMING={45.0 50.0}
+   WRESTLING={40.0 60.0}
+
+[CHARDEF 087]
+//FIXME: Immune to low level poison
+DEFNAME=c_ogre_lord_arctic
+NAME=arctic ogre lord
+SOUND=snd_monster_ogre1
+ICON=i_pet_ogre_lord
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+
+DAM=82,111
+ARMOR=45
+
+DESIRES=r_snow,t_coin,t_gold,t_gem,t_potion
+AVERSIONS=t_trap,r_civilization
+FOODTYPE=t_meat_raw
+MAXFOOD=35
+RESOURCES=2 i_ribs_raw
+BLOODCOLOR=colors_white
+
+TAG.Barding.Diff=88.8
+DamCold=70
+FACTION=faction_ogre|faction_repond
+
+CATEGORY=Monsters
+SUBSECTION=Giants
+DESCRIPTION=Ogre, Lord Arctic
+
+ON=@Create
+   NPC=brain_monster
+   
+   FAME={5000 5999}
+   KARMA={-5000 -5999}
+   STR={767 945}
+   MAXHITS={476 552}
+   DEX={66 75}
+   MAXSTAM={66 75}
+   INT={46 70}
+   MAXMANA={46 70}
+   
+   ARCHERY={90.0 100.0}
+   FENCING={90.0 100.0}
+   MACEFIGHTING={90.0 100.0}
+   MAGICRESISTANCE={125.0 140.0}
+   PARRYING={90.0 100.0}
+   SWORDSMANSHIP={90.0 100.0}
+   TACTICS={90.0 100.0}
+   WRESTLING={90.0 100.0}
+   
+   RESPHYSICAL={0 10}
+   RESCOLD={30 40}
+   RESENERGY={40 50}
+   RESFIRE={30 40}
+   RESPOISON={40 50}
+   
+ON=@CreateLoot
+   ITEM=loot_ogre_lord_arctic
+   ITEM=loot_ai_hard
+   
+[CHARDEF 088]
+DEFNAME=c_ophidian_archmage
+NAME=ophidian justicar
+ICON=i_pet_ophidian_archmage
+SOUND=snd_monster_ophidian_mage1
+CAN=mt_walk|mt_run|mt_usehands|mt_equip|mt_nonhum
+
+DAM=12,27
+ARMOR=40
+TAG.Barding.Diff=81.5
+
+DESIRES=r_caves,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
+AVERSIONS=t_trap,e_carnivores3
+FOODTYPE=t_meat_raw
+MAXFOOD=25
+RESOURCES=1 i_ribs_raw
+
+CATEGORY=Monsters
+SUBSECTION=Ophidians
+DESCRIPTION=Ophidian, Archmage
+ON=@Create
+   NPC=brain_monster
+   FAME={1000 1499}
+   KARMA={-1000 -1499}
+   
+   STR={281 305}
+   MAXHITS={169 183}
+   DEX={191 215}
+   MAXSTAM={36 45}
+   INT={226 250}
+   MAXMANA={226 250}
+   
+   RESPHYSICAL={0 5}
+   RESCOLD={25 35}
+   RESENERGY={25 35}
+   RESFIRE={20 30}
+   RESPOISON={35 40}
+   
+   MAGICRESISTANCE={75.0 100.0}
+   MAGERY={95.0 100.0}
+   TACTICS={65.0 90.0}
+   WRESTLING={20.0 60.0}
+  
+ON=@Createloot
+   ITEM=loot_ophidian_justicar
+
+[CHARDEF 089]
+DEFNAME=c_ophidian_knight
+NAME=ophidian knight
+SOUND=snd_monster_ophidian_warrior1
+ICON=i_pet_ophidian_knight
+CAN=mt_walk|mt_run|mt_usehands|mt_nonhum
+
+DAM=49,65
+ARMOR=35
+MOVERATE=130
+TAG.Barding.Diff=86.6
+
+DESIRES=r_caves,t_coin,t_gold,t_gem,t_potion
+AVERSIONS=t_trap,r_civilization
+FOODTYPE=t_meat_raw
+MAXFOOD=40
+RESOURCES=2 i_ribs_raw
+
+CATEGORY=Monsters
+SUBSECTION=Ophidians
+DESCRIPTION=Ophidian, Knight
+ON=@Create
+   NPC=brain_monster
+   FAME={3000 3499}
+   KARMA={-3000 -3499}
+   
+   STR={417 595}
+   MAXHITS={266 342}
+   DEX={166 175}
+   MAXSTAM={166 175}
+   INT={46 70}
+   MAXMANA={46 70}
+   
+   RESPHYSICAL={0 5}
+   RESCOLD={35 45}
+   RESENERGY={35 45}
+   RESFIRE={30 40}
+   RESPOISON={90 100}
+   
+   ARCHERY={90.0 100.0}
+   FENCING={90.0 100.0}
+   MACEFIGHTING={90.0 100.0}
+   MAGICRESISTANCE={65.0 80.0}
+   PARRYING={90.0 100.0}
+   POISONING={60.0 80.0}
+   SWORDSMANSHIP={90.0 100.0}
+   TACTICS={90.0 100.0}
+   WRESTLING={90.0 100.0}
+ 
+ON=@Createloot
+   ITEM=loot_ophidian_avenger
+   ITEM=loot_ai_hard
+   
+[CHARDEF 09e]
+DEFNAME=c_elemental_acid
+NAME=acid elemental
+SOUND=snd_elementl_watrel1
+ICON=i_pet_elem_acid
+CAN=mt_walk|mt_swim|mt_nonhum
+
+DAM=26,42
+ARMOR=45
+TAG.Barding.Diff=83.9
+TAG.CorrosiveBlood=25
+DAMENERGY=25
+DAMFIRE=50
+
+DESIRES=r_ruins,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
+AVERSIONS=t_trap,r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Elementals
+DESCRIPTION=Elemental, Acid
+
+ON=@Create
+   NPC=brain_monster
+   
+   FAME={2500 2999}
+   KARMA={-2500 -2999}
+   
+   BLOODCOLOR=colors_green
+   
+   STR={326 355}
+   MAXHITS={196 213}
+   DEX={66 85}
+   MAXSTAM={66 85}
+   INT={111 135}
+   MAXMANA={271 295}
+   
+   RESPHYSICAL={0 10}
+   RESCOLD={20 30}
+   RESENERGY={30 40}
+   RESFIRE={40 50}
+   RESPOISON={10 20}
+   
+   EVALUATINGINTEL={70.0 85.0}
+   MAGERY={70.0 85.0}
+   MAGICRESISTANCE={60.0 75.0}
+   TACTICS={80.0 90.0}
+   WRESTLING={70.0 90.0}
+
+ON=@Createloot
+   ITEM=loot_elem_acid
+   
+[CHARDEF 09f]
+DEFNAME=c_elemental_blood
+NAME=blood elemental
+SOUND=snd_elementl_watrel1
+ICON=i_pet_elem_blood
+CAN=MT_WALK|MT_SWIM|MT_NONHUM
+
+DAM=57,91
+ARMOR=55
+TAG.Barding.Diff=93.5
+TAG.CorrosiveBlood=15
+DAMENERGY=50
+DAMPOISON=50
+
+DESIRES=r_dungeon,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
+AVERSIONS=t_trap,r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Elementals
+DESCRIPTION=Elemental, Blood
+ON=@Create
+   NPC=brain_monster
+   
+   FAME={4500 4999}
+   KARMA={-4500 -4999}
+   
+   STR={526 615}
+   MAXHITS={316 369}
+   DEX={66 85}
+   MAXSTAM={66 85}
+   INT={126 150}
+   MAXMANA={226 350}
+   
+   RESPHYSICAL={0 10}
+   RESCOLD={40 50}
+   RESENERGY={30 40}
+   RESFIRE={20 30}
+   RESPOISON={50 60}
+   
+   EVALUATINGINTEL={85.0 100.0}
+   MAGERY={85.0 100.0}
+   MAGICRESISTANCE={80.0 95.0}
+   MEDITATION={10.0 50.0}
+   POISONING={110.0 120.0}
+   TACTICS={80.0 100.0}
+   WRESTLING={80.0 100.0}
+ 
+ON=@Createloot
+   ITEM=loot_elem_blood
+   
+[CHARDEF 0a1]
+DEFNAME=c_elemental_ice
+NAME=ice elemental
+SOUND=snd_elementl_erthel1
+ICON=i_pet_elem_ice
+CAN=mt_walk|mt_usehands|mt_equip
+BLOODCOLOR= color_ice	//this is a single value
+
+DAM=22,45
+ARMOR=35
+TAG.Barding.Diff=76.9
+DAMCOLD=75
+
+CATEGORY=Monsters
+SUBSECTION=Elementals
+DESCRIPTION=Elemental, Ice
+
+ON=@Create
+   NPC=brain_monster
+   
+   FAME={1500 1999}
+   KARMA={-1500 -1999}
+   
+   STR={156 185}
+   MAXHITS={94 111}
+   DEX={96 115}
+   MAXSTAM={96 115}
+   INT={171 192}
+   MAXMANA={171 192}
+   
+   RESPHYSICAL={0 10}
+   RESCOLD={50 60}
+   RESENERGY={20 30}
+   RESFIRE={5 10}
+   RESPOISON={20 30}
+   
+   EVALUATINGINTEL={10.0 60.0}
+   MAGERY={10.0 60.0}
+   MAGICRESISTANCE={30.0 80.0}
+   TACTICS={70.0 100.0}
+   WRESTLING={60.0 100.0}
+
+ON=@Createloot
+   ITEM=loot_elem_ice
+
+ON=@GetHit
+   //Ice Aura Attack
+   IF !(<R3>)
+      REF11=<UID>
+      FORCHARS 2
+         IF (<ISPLAYER>) || (<FLAGS>&statf_pet)
+            LOCAL.DAM=<R10,20>
+            DAMAGE <LOCAL.DAM> <DEF.dam_cold> <REF11>
+            SYSMESSAGE Intense cold radiating from the elemental damages you
+         ENDIF
+      END
+   ENDIF
+
+[CHARDEF 0a2]
+DEFNAME=c_elemental_poison
+NAME=poison elemental
+SOUND=snd_elementl_airelem1
+ICON=i_pet_elem_poison
+CAN=mt_walk|mt_run|mt_nonhum
+
+DAM=36,57
+ARMOR=60
+
+MOVERATE=150
+TAG.Barding.Diff=105.1
+TAG.HitPoison=5	//Lethal
+DAMPOISON=90
+
+DESIRES=r_swamp,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
+AVERSIONS=t_trap,r_civilization
+RESOURCES=i_reag_nightshade
+
+CATEGORY=Monsters
+SUBSECTION=Elementals
+DESCRIPTION=Elemental, Poison>
+ON=@Create
+   NPC=brain_monster
+   
+   FAME={3000 3499}
+   KARMA={-3000 -3499}
+   
+   BLOODCOLOR=colors_green
+   
+   STR={426 515}
+   MAXHITS={256 309}
+   DEX={166 185}
+   MAXSTAM={166 185}
+   INT={144 166}
+   MAXMANA={361 435}
+   
+   RESPHYSICAL={0 10}
+   RESCOLD={20 30}
+   RESENERGY={40 50}
+   RESFIRE={20 30}
+   RESPOISON=100
+   
+   EVALUATINGINTEL={80.0 95.0}
+   MAGERY={80.0 95.0}
+   MAGICRESISTANCE={85.0 115.0}
+   MEDITATION={80.0 120.0}
+   POISONING={100.0 125.0}
+   TACTICS={80.0 100.0}
+   WRESTLING={70.0 100.0}
+
+ON=@Createloot
+   ITEM=loot_elem_poison
+
+[CHARDEF 0a3]
+DEFNAME=c_elemental_snow
+NAME=snow elemental
+SOUND=snd_elementl_airelem1
+ICON=i_pet_elem_snow
+CAN=mt_walk|mt_run|mt_nonhum
+
+DAM=31,45
+ARMOR=45
+MOVERATE=150
+TAG.Barding.Diff=78.2
+DAMCOLD=80
+
+DESIRES=r_snow,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
+AVERSIONS=t_trap,r_civilization
+
+CATEGORY=Monsters
+SUBSECTION=Elementals
+DESCRIPTION=Elemental, Snow
+
+ON=@Create
+   NPC=brain_monster
+   
+   FAME={1500 1999}
+   KARMA={-1500 -1999}
+   
+   BLOODCOLOR=colors_white
+   
+   STR={326 355}
+   MAXHITS={196 213}
+   DEX={166 185}
+   MAXSTAM={166 185}
+   INT={71 95}
+   MAXMANA={71 95}
+   
+   RESPHYSICAL={0 10}
+   RESCOLD={60 70}
+   RESENERGY={25 35}
+   RESFIRE={10 15}
+   RESPOISON={25 35}
+   
+   MAGICRESISTANCE={50.0 65.0}
+   TACTICS={80.0 100.0}
+   WRESTLING={80.0 100.0}
+ 
+ON=@Createloot
+   ITEM=loot_elem_snow
+ON=@GetHit
+   //Ice Aura Attack
+   IF !(<R3>)
+      REF11=<UID>
+      FORCHARS 2
+         IF (<ISPLAYER>) || (<FLAGS>&statf_pet)
+            LOCAL.DAM=<R10,20>
+            DAMAGE <LOCAL.DAM> <DEF.dam_cold> <REF11>
+            SYSMESSAGE Intense cold radiating from the elemental damages you
+         ENDIF
+      END
+   ENDIF
+   
 [CHARDEF 0d2]
-defname=c_ostard_desert
-defname2=c_ostard_ocklock
-name=Desert Ostard
-sound=0270
-icon=i_pet_OSTARD_Desert
-dam=5,11
-armor=9
-resources=3 i_ribs_raw
-can=MT_WALK|MT_RUN
-foodtype=55 t_crops, 55 t_fruit, 64 t_grass
-desires=e_OSTARDS
+DEFNAME=c_ostard_desert
+Defname2=c_ostard_ocklock
+NAME=Desert Ostard
+SOUND=0270
+ICON=i_pet_ostard_desert
+CAN=mt_walk|mt_run
+
+DAM=5,11
+ARMOR=9
+HEIGHT=18
+
+RESOURCES=3 i_ribs_raw
+FOODTYPE=55 t_crops, 55 t_fruit, 64 t_grass
+DESIRES=e_ostards
+
 RESLEVEL=1
 RESDISPDNID=c_horse_tan
 RESDISPDNHUE=0100
+
+ERALIMITLOOT=1
+ERALIMITGEAR=1
+ERALIMITPROPS=1
+
 CATEGORY=Mounts
 SUBSECTION=Ostards
 DESCRIPTION=Ostard, Desert
 
 ON=@Create
-	npc=brain_animal
-	str={94, 170}
-	dex={56, 75}
-	int={6, 10}
-	maxhits={71, 88}
-	resphysical={15, 20}
-	resfire={5, 15}
-	magicresistance={25.1, 30.0}
-	tactics={25.3, 40.0}
-	wrestling={29.3, 44.0}
-	taming=29.1
-	fame=450
-	karma=0
+    NPC=brain_animal
+    
+    FAME=450
+    
+    
+    STR={94, 170}
+    DEX={56, 75}
+    INT={6, 10}
+    MAXHITS={71, 88}
+    
+    RESPHYSICAL={15, 20}
+    RESFIRE={5, 15}
+    
+    MAGICRESISTANCE={25.1, 30.0}
+    TACTICS={25.3, 40.0}
+    WRESTLING={29.3, 44.0}
+    TAMING=29.1
 
 [CHARDEF 0da]
-defname=c_ostard_frenzied
-defname2=c_ostard_zostrich
-name=Zostrich
-sound=0275
-icon=i_pet_OSTARD_ZOSTRICH
-can=MT_WALK|MT_RUN
-dam=11,17
-armor=15
-resources=3 i_ribs_raw
-foodtype=55 t_crops, 55 t_fruit, 64 t_grass
-desires=e_OSTARDS
+DEFNAME=c_ostard_frenzied
+Defname2=c_ostard_zostrich
+NAME=Zostrich
+SOUND=0275
+ICON=i_pet_ostard_frenzied_2
+CAN=mt_walk|mt_run
+
+DAM=11,17
+ARMOR=15
+HEIGHT=18
 ANIM=01fff
+
+RESOURCES=3 i_ribs_raw
+FOODTYPE=55 t_crops, 55 t_fruit, 64 t_grass
+DESIRES=e_ostards
+
 RESLEVEL=1
 RESDISPDNID=c_horse_tan
 RESDISPDNHUE=0150
+
+ERALIMITLOOT=1
+ERALIMITGEAR=1
+ERALIMITPROPS=1
+
 CATEGORY=Mounts
 SUBSECTION=Ostards
 DESCRIPTION=Ostard, Frenzied
 
 ON=@Create
-	npc=brain_animal
-	color={044e, 047d}
-	str={94, 170}
-	dex={96, 115}
-	int={6, 10}
-	maxhits={71, 110}
-	resphysical={25, 30}
-	resfire={10, 15}
-	respoison={20, 25}
-	resenergy={20, 25}
-	magicresistance={75.1, 80.0}
-	tactics={79.3, 94.0}
-	wrestling={79.3, 94.0}
-	taming=77.1
-	fame=1500
-	karma=-1500
+    NPC=brain_animal
+    
+    FAME=1500
+    KARMA=-1500
+    
+    COLOR={044e, 047d}
+    
+    STR={94, 170}
+    DEX={96, 115}
+    INT={6, 10}
+    MAXHITS={71, 110}
+    
+    RESPHYSICAL={25, 30}
+    RESFIRE={10, 15}
+    RESPOISON={20, 25}
+    RESENERGY={20, 25}
+    
+    MAGICRESISTANCE={75.1, 80.0}
+    TACTICS={79.3, 94.0}
+    WRESTLING={79.3, 94.0}
+    TAMING=77.1
 
 
 [CHARDEF 0db]
-defname=c_ostard_forest
-defname2=c_ostard_orn
-name=Forest Ostard
-sound=0270
-icon=i_pet_OSTARD_Forest
-can=MT_WALK|MT_RUN
-DAM=4,12
-armor=9
-resources=3 i_ribs_raw
-foodtype=55 t_crops, 55 t_fruit, 64 t_grass
-desires=e_OSTARDS,c_man,c_woman
-aversions=e_carnivores3
+DEFNAME=c_ostard_forest
+Defname2=c_ostard_orn
+NAME=Forest Ostard
+SOUND=0270
+ICON=i_pet_ostard_forest
+CAN=mt_walk|mt_run
+
+DAM=8,14
+ARMOR=9
+HEIGHT=18
 ANIM=01fff
+
+RESOURCES=3 i_ribs_raw
+FOODTYPE=55 t_crops, 55 t_fruit, 64 t_grass
+DESIRES=e_ostards,c_man,c_woman
+AVERSIONS=e_carnivores3
+
 RESLEVEL=1
 RESDISPDNID=c_horse_tan
 RESDISPDNHUE=0166lla
+
+ERALIMITLOOT=1
+ERALIMITGEAR=1
+ERALIMITPROPS=1
+
 CATEGORY=Mounts
 SUBSECTION=Ostards
 DESCRIPTION=Ostard, Forest
 
 ON=@Create
-	npc=brain_animal
-	color={0899,08b0} 
-	str={94, 170}
-	dex={56, 75}
-	int={6, 10}
-	maxhits={71, 88}
-dam=8,14
-	resphysical={15, 20}
-	magicresistance={27.1, 32.0}
-	tactics={29.3, 44.0}
-	wrestling={29.3, 44.0}
-	taming=29.1
-	fame=450
-	karma=0
+    NPC=brain_animal
+    
+    FAME=450
+    
+    
+    COLOR={0899,08b0} 
+    
+    STR={94, 170}
+    DEX={56, 75}
+    INT={6, 10}
+    MAXHITS={71, 88}
+    
+    RESPHYSICAL={15, 20}
+    
+    MAGICRESISTANCE={27.1, 32.0}
+    TACTICS={29.3, 44.0}
+    WRESTLING={29.3, 44.0}
+    TAMING=29.1
 
 
-[EOF]
+[Eof]

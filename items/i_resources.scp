@@ -928,7 +928,7 @@ DESCRIPTION=Runed Switch
 [ITEMDEF 04008]
 DEFNAME=i_crystal_granule
 SKILLMAKE=Alchemy 75.0,t_glassblowing_tool
-RESOURCES=1 i_shimmering_crystal
+RESOURCES=1 i_prismatic_crystal
 CATEGORY=Resources
 SUBSECTION=Glassblowing
 DESCRIPTION=Crystal Granule

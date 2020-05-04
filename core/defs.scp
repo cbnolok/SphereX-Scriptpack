@@ -15,6 +15,17 @@ deffood		{ i_fruit_grapes 1 i_ham 1 i_cheese_cut 1 i_muffin 1 i_fish_cut_cooked 
 //These ones can have multiple words seperated by a ','
 guardcall	GUARD,GUARDS
 
+// "magic"  values
+link_invalid 04fffffff
+
+[DEFNAME trigger_argtype] // to be used with the TRIGGER keyword
+TAT_AS_ARGN   1      // Treat the arguments as ARGN1/2/3
+TAT_AS_ARGS   2      // Treat the arguments as ARGS (with ARGV[x] enabled)
+TAT_AS_ARGO   3      // Treat the arguments as ARGO
+
+[DEFNAME misc_clilocs]
+empty_cliloc      1042971
+empty_cliloc2     1070722
 
 [DEFNAME brains]
 brain_none             0
@@ -183,7 +194,7 @@ mt_usehands       000200   // Can do actions that require hands: looting, moving
 mt_mount          000400   // can ride mountables
 mt_female         000800
 mt_nonhum         001000   // Body type for combat messages
-mt_run            002000
+mt_run            002000   // Not needed if mt_fly is activated
 mt_nodclicklos    004000   // when dclicking sth., ignore LOS checks
 mt_nodclickdist   008000   // when dclicking sth., ignore distance checks
 mt_nonmover       010000   // Stay in place, no move at all
@@ -301,10 +312,11 @@ LAYER_SPELL_Dryad_Allure		72
 LAYER_SPELL_Essence_Of_Wind		73
 
 //Mysticism
-LAYER_SPELL_Sleep				74
-LAYER_SPELL_Bombard				75
-LAYER_SPELL_Spell_Plague		76
-LAYER_SPELL_Nether_Cyclone		77
+LAYER_SPELL_Enchant				74
+LAYER_SPELL_Sleep				75
+LAYER_SPELL_Bombard				76
+LAYER_SPELL_Spell_Plague		77
+LAYER_SPELL_Nether_Cyclone		78
 
 [DEFNAME def_gumps]
 // name the gumps.
@@ -328,7 +340,9 @@ dam_pierce              00800   // damage done with spear and such.
 dam_nodisturb           02000   // victim won't be disturbed
 dam_noreveal            04000   // damage that does not reveal the attacker.
 dam_nounparalyze        08000   // victim won't be unparalyzed
-dam_fixed               010000	// damage will not be recalculated with default checks, lowering it because of armor, resistances ...
+dam_fixed               010000	// damage will not be recalculated with default checks, lowering it because of armor, resistances...
+dam_breath				020000	// damage source is from the NPC Breath action (brain_dragon only).
+dam_thrown				040000	// damage source is from the NPC Throw action, not to be confused with the Throwing skill.
 
 [DEFNAME can_i_flags]
 can_i_door				000001		// is a door uflag4_door
@@ -406,7 +420,8 @@ prof_samurai         6
 prof_ninja           7
 
 [DEFNAME resdisp_version]
-// RESDISP is a property of the user ACCOUNT
+// RESDISP is a property of the user ACCOUNT, but these values are used also for EXPANSION
+// and the ini settings: EraLimitGear, EraLimitLoot, EraLimitProps.
 RDS_PRET2A      0
 RDS_T2A         1
 RDS_LBR         2
@@ -461,15 +476,6 @@ SKILLTITLE_GRANDMASTER	1000
 SKILLTITLE_ELDER		1100	// This works with the normal skills and Bushido/Ninjitsu too.
 SKILLTITLE_LEGENDARY	1200	// Same here
 
-[DEFNAME trigger_argtype]
-TAT_AS_ARGN   1      // Treat the arguments as ARGN1/2/3
-TAT_AS_ARGS   2      // Treat the arguments as ARGS (with ARGV[x] enabled)
-TAT_AS_ARGO   3      // Treat the arguments as ARGO
-
-[DEFNAME misc_own]
-empty_cliloc      1042971
-empty_cliloc2     1070722
-
 [DEFNAME los_flags]
 los_nb_local_terrain   00001   // Terrain inside a region I am standing in does not block LOS
 los_nb_local_static    00002   // Static items inside a region I am standing in do not block LOS
@@ -484,7 +490,6 @@ los_no_other_region    00200   // Do not allow LOS path checking to go out of yo
 los_nc_multi           00400   // Do not allow LOS path checking to go through (no cross) a multi region (except the one you are standing in)
 los_fishing            00800   // Do not allow LOS path checking to go through objects or terrain which do not represent water
 los_nc_water           01000   // Do not allow LOS path checking to go through water.
-
 
 [DEFNAME ref_types]
 tref_serv          000001
@@ -540,18 +545,6 @@ war_swing_equipping		0	// we are recoiling our weapon.
 war_swing_ready			1	// we can swing at any time.
 war_swing_swinging		2	// we are swinging our weapon.
 
-[DEFNAME expansions]
-expansion_t2a			0
-expansion_renaissance	1
-expansion_thirddawn		2
-expansion_lbr			3
-expansion_aos			4
-expansion_se			5
-expansion_ml			6
-expansion_sa			7
-expansion_hs			8
-expansion_tol			9
-
 [DEFNAME theme_packs]
 theme_gothic		1
 theme_rustic		2
@@ -569,57 +562,10 @@ mapwaypoint_moongate			12
 mapwaypoint_greendot			14
 mapwaypoint_greendot_flashing	15
 
-// Faction IDs used for both NPC's FACTION and Item's SLAYER properties.
-[DEFNAME faction_ids]
-// Fey group (opposed to Abyss Group)
-faction_fey                 01	        // Super Slayer
-// Elemental Group (opposed to Abyss Group)
-faction_elemental           02          // Super Slayer
-faction_blood_elemental     04
-faction_earth_elemental     08
-faction_fire_elemental      010
-faction_poison_elemental    020
-faction_snow_elemental      040
-faction_water_elemental     080
-// Abyss group (opposed to Elemental and Fey Groups)
-faction_demon               0100        // Super Slayer
-faction_gargoyle            0200        // Super Slayer
-// Humanoid group(opposed to Undead Group)
-faction_repond              0400        // Super Slayer
-faction_goblin              0800
-faction_vermin              01000
-faction_ogre                02000
-faction_orc                 04000
-faction_troll               08000
-// Undead group ( opposed to Humanoid Group)
-faction_undead              010000      // Super Slayer
-faction_mage                020000
-// Arachnid group ( opposed to Reptilian Group)
-faction_arachnid            040000      // Super Slayer
-faction_scorpion            080000
-faction_spider              0100000
-faction_terathan            0200000
-// Reptilian group (opposed to Arachnid)
-faction_reptile             0400000     // Super Slayer
-faction_dragon              0800000
-faction_ophidian            01000000
-faction_snake               02000000
-faction_lizardman           04000000
-// Mondain’s Legacy Slayers
-faction_bat                 08000000
-faction_bear                010000000
-faction_beetle              020000000
-faction_bird                040000000
-// Others
-faction_bovine              080000000
-faction_flame               0100000000
-faction_ice                 0200000000
-faction_wolf                0400000000
-
 [DEFNAME house_types]
-house_private=0
-house_public=1
-house_guild=2
+house_private	0
+house_public	1
+house_guild		2
 
 [DEFNAME house_transfer_types]
 transfer_nothing	= 0		// Do not transfer any item to the Moving Crate, the crate will still be moved if uid is given.

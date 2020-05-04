@@ -46,7 +46,7 @@ SKILLMENU=sm_wood_trophies
 ON=i_saddle Rancher Types
 SKILLMENU=sm_wood_rancher
 
-ON=i_BED_9 Beds
+ON=i_bed_small_unmade_2 Beds
 SKILLMENU=sm_wood_beds
 
 ON=i_bulletin_board Miscellaneous
@@ -259,8 +259,8 @@ MAKEITEM=i_portrait_3
 ON=i_portrait_4 <name> (<resmake>)
 MAKEITEM=i_portrait_4
 
-ON=i_portrait_7 <name> (<resmake>)
-MAKEITEM=i_portrait_7
+ON=i_portrait_6 <name> (<resmake>)
+MAKEITEM=i_portrait_6
 
 ON=i_portrait_big <name> (<resmake>)
 MAKEITEM=i_portrait_big
@@ -310,8 +310,8 @@ Woodworkers Bench
 ON=i_bench_woodworker <name> (<resmake>)
 MAKEITEM=i_bench_woodworker
 
-ON=i_vise <name> (<resmake>)
-MAKEITEM=i_vise
+ON=i_bench_woodworker <name> (<resmake>)
+MAKEITEM=i_bench_woodworker
 
 ON=i_bench_cooper <name> (<resmake>)
 MAKEITEM=i_bench_cooper
@@ -328,8 +328,8 @@ MAKEITEM=i_saddle
 [SKILLMENU sm_wood_beds]
 Beds
 
-ON=i_BED_9 <name> (<resmake>)
-MAKEITEM=i_BED_9
+ON=i_bed_small_unmade_2 <name> (<resmake>)
+MAKEITEM=i_bed_small_unmade_2
 
 ON=i_BED_11 <name> (<resmake>)
 MAKEITEM=i_BED_11

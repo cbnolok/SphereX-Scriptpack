@@ -4,7 +4,7 @@
 //****************************************************************************
 VERSION=X1
 
-// OSI Housing System created by Morinkushi(azmanomer)
+// OSI Housing System
 // Features:
 //		Put house up for sale via sign, Ideal for static buildings.
 //
@@ -15,9 +15,9 @@ VERSION=X1
 //			Players can check a region's maintenance rate by using .rate
 //
 // Estate Tax:		This comes into effect when set to a number other than 0 (but lower than def.account_house_limit if set) and a player has MORE than this number of houses.
-//			def.estate_rate will be overridden by regional maintenance rates.
-//			Flate rate (def.estate_calc = 1) adds an extra def.estate_rate or regional maintenance rate to the cost to refresh a house when a player has more than <def.estate_tax> houses regardless of how many.
-//			Linear rate (def.estate_calc = 2) adds 1 def.estate_rate or regional maintenance rate for each house over <def.estate_tax> (gets more expensive with more houses)
+//			def.hs_estate_rate will be overridden by regional maintenance rates.
+//			Flate rate (def.hs_estate_calc = 1) adds an extra def.hs_estate_rate or regional maintenance rate to the cost to refresh a house when a player has more than <def.hs_estate_tax> houses regardless of how many.
+//			Linear rate (def.hs_estate_calc = 2) adds 1 def.hs_estate_rate or regional maintenance rate for each house over <def.hs_estate_tax> (gets more expensive with more houses)
 //
 //		To retain the house the player should use another character on the account and use the transfer ownership option on that character 
 //		(you can use this to transfer the house around the chars in account) BEFORE they delete the named character.
@@ -26,12 +26,13 @@ VERSION=X1
 
 [DEFNAME housing_control]
 //general settings
-can_bank 		1 		// set to 1 to allow players to bank from home. (verbal command)(owner, co-owners & friends only)
-allow_custom 		1		// Allow players to convert to custom houses 0 to disable
-wipe_switch_lists 	1 		// if set to 1 access/ban lists are wiped when house is switched between private/public (helps reduce server memory)
-allow_sign_color 	1		// Allow player to change the color of their house signs.
-secure_locks_limit 	1		// Lockdowns & Secures Zero to turn off limitations
-custom_placement	0		//Overwrite hardcoded placement check. (Doesnt work right now)
+hs_can_bank 				1 		// set to 1 to allow players to bank from home. (verbal command)(owner, co-owners & friends only)
+hs_allow_custom 			1		// Allow players to convert to custom houses 0 to disable
+hs_wipe_switch_lists 		1 		// if set to 1 access/ban lists are wiped when house is switched between private/public (helps reduce server memory)
+hs_allow_sign_color 		1		// Allow player to change the color of their house signs.
+hs_hs_secure_locks_limit 	1		// Lockdowns & Secures Zero to turn off limitations
+hs_secure_locks_limit		0		//Overwrite hardcoded placement check. (Doesnt work right now)
+hs_placement_check_roads    1
 	
 //vendor settings
 house_list_vendors	0 	// set to 1 to allow players on house list to place vendors, 0 = owner only
@@ -39,25 +40,25 @@ house_sell			0   //set to 0 if you dont want to allow sell houses.
 
 //Set these to the body types for vendors in your script
 vendor_deed_id		i_deed_vendor
-vendor_obody_male	c_h_vendor
-vendor_obody_female	c_h_vendor_f
+vendor_obody_male	c_vendor
+vendor_obody_female	c_vendor_f
 
 //Taxes & Fees 
-redeed_fee 		10	// Cost to redeed a house % of house value, zero disables.
-can_decay 		30 	// set to number of days for a house to decay, or set to 0 to disable
-property_tax		10	// Set to % figure of house value to pay for maintenance on houses, WORKS ONLY WHEN can_decay IS ON! zero disables.
-House_PlaceMinDistFront	5	// Minimum front distance allowed between placed houses. Default = 5
-House_PlaceMinDistArea	1	// Minimum area distance allowed between placed houses. Default = 1
+hs_redeed_fee 			10	// Cost to redeed a house % of house value, zero disables.
+hs_can_decay 			30 	// set to number of days for a house to decay, or set to 0 to disable
+hs_property_tax			10	// Set to % figure of house value to pay for maintenance on houses, WORKS ONLY WHEN hs_can_decay IS ON! zero disables.
+hs_PlaceMinDistFront	5	// Minimum front distance allowed between placed houses. Default = 5
+hs_PlaceMinDistArea		1	// Minimum area distance allowed between placed houses. Default = 1
 
-estate_tax 		2	// Extra charges for player with MORE than this many houses.  0 disables
-estate_rate 		10	// % per house over the estate_tax
-estate_calc 		1	// 1 = flat <def.estate_rate>% rate    2 = linear charge increase per house (1 over = + premium rate, 2 over = + premium rate*2, 3 over = + premium rate*3 e.t.c..) 
+hs_estate_tax 			2	// Extra charges for player with MORE than this many houses.  0 disables
+hs_estate_rate 			10	// % per house over the hs_estate_tax
+hs_estate_calc 			1	// 1 = flat <def.hs_estate_rate>% rate    2 = linear charge increase per house (1 over = + premium rate, 2 over = + premium rate*2, 3 over = + premium rate*3 e.t.c..) 
 
-buy_storage 		1 	// if set to 1 allows players to increase secure storage by up to 100% via house sign, 0 to disable
+hs_buy_storage 			1 	// if set to 1 allows players to increase secure storage by up to 100% via house sign, 0 to disable
 
 //DO NOT ALTER THE FOLLOWING AFTER INITIAL SETUP!!! - - Doing so could cause problems when players go over these limits.
-max_friends 		20 	// DO NOT SET THIS ONE ABOVE 20 Dialog doesn't have extra pages for above that amount (actual number is set from building size)
-max_co_owners 		10 	// DO NOT SET THIS ONE ABOVE 10 Dialog is not set up for more than that amount (actual number is set from building size)
+hs_max_friends 			20 	// DO NOT SET THIS ONE ABOVE 20 Dialog doesn't have extra pages for above that amount (actual number is set from building size)
+hs_max_co_owners 		10 	// DO NOT SET THIS ONE ABOVE 10 Dialog is not set up for more than that amount (actual number is set from building size)
 
 //Available sign colors - Test colors only, set to suit your hues and tastes.
 sign_color_1 06d6
@@ -248,16 +249,17 @@ house_custom_3story_54		"m_foundation_18x17"
 house_custom_3story_55		"m_foundation_18x18"
 
 [defname house_access_level]
-house_access_owner      = 0
-house_access_coowner    = 1
-house_access_friend     = 2
-house_access_guild      = 3
-house_access_all        = 4
+house_access_none       = 0
+house_access_owner      = 1
+house_access_coowner    = 2
+house_access_friend     = 3
+house_access_guild      = 4
+house_access_all        = 5
 
 [defname house_container_access_level]
-house_container_access_all         = 0
-house_container_access_friend     = 1
-house_container_access_coowner    = 2
+house_container_access_all      = 0
+house_container_access_friend   = 1
+house_container_access_coowner  = 2
 house_container_access_owner    = 3
 
 [DEFNAME house_privs]
@@ -269,3 +271,5 @@ hp_accessonly   = 4
 hp_ban          = 5
 hp_vendor       = 6
 hp_guild        = 7
+
+[EOF]

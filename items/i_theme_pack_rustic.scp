@@ -352,7 +352,7 @@ DUPEITEM=07807
 // Custom Items //
 //////////////////
 
-[ITEMDEF m_bench_rustic_south]
+[MULTIDEF m_bench_rustic_south]
 ID=0e51
 NAME=rustic bench
 TYPE=t_multi
@@ -362,7 +362,7 @@ DESCRIPTION=Rustic Bench (south)
 MULTIREGION=0,0,0,0
 COMPONENT=0e50,-1,0
 
-[ITEMDEF m_bench_rustic_east]
+[MULTIDEF m_bench_rustic_east]
 ID=0e52
 NAME=rustic bench
 TYPE=t_multi
@@ -372,7 +372,7 @@ DESCRIPTION=Rustic Bench (east)
 MULTIREGION=0,0,0,0
 COMPONENT=0e53,0,-1
 
-[ITEMDEF m_distillery_south]
+[MULTIDEF m_distillery_south]
 ID=03db8
 NAME=distillery
 TYPE=t_multi
@@ -382,7 +382,7 @@ DESCRIPTION=Distillery (south)
 MULTIREGION=0,0,0,0
 COMPONENT=03db9,-1,0
 
-[ITEMDEF m_distillery_east]
+[MULTIDEF m_distillery_east]
 ID=03dba
 NAME=distillery
 TYPE=t_multi
@@ -392,7 +392,7 @@ DESCRIPTION=Distillery (east)
 MULTIREGION=0,0,0,0
 COMPONENT=03dbb,0,1
 
-[ITEMDEF m_raised_garden_bed_small]
+[MULTIDEF m_raised_garden_bed_small]
 ID=04b22
 NAME=raised garden bed
 TYPE=t_multi
@@ -404,7 +404,7 @@ COMPONENT=04b23,1,0
 COMPONENT=04b26,0,1
 COMPONENT=04b27,1,1
 
-[ITEMDEF m_raised_garden_bed_large]
+[MULTIDEF m_raised_garden_bed_large]
 ID=04b22
 NAME=raised garden bed
 TYPE=t_multi
@@ -421,7 +421,7 @@ COMPONENT=04b28,1,0
 COMPONENT=04b29,1,1
 COMPONENT=04b2a,1,2
 
-[ITEMDEF m_raised_garden_bed_south]
+[MULTIDEF m_raised_garden_bed_south]
 ID=04b22
 NAME=raised garden bed
 TYPE=t_multi
@@ -435,7 +435,7 @@ COMPONENT=04b27,2,1
 COMPONENT=04b28,1,0
 COMPONENT=04b2a,1,1
 
-[ITEMDEF m_raised_garden_bed_east]
+[MULTIDEF m_raised_garden_bed_east]
 ID=04b22
 NAME=raised garden bed
 TYPE=t_multi

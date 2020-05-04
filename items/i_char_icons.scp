@@ -48,7 +48,7 @@ DESCRIPTION=Gorilla (terrible frame)
 DEFNAME=i_pet_lizman_2
 NAME=lizardman
 TYPE=t_figurine
-TDATA3=c_Lizardman
+TDATA3=c_lizardman
 CATEGORY=Miscellaneous
 SUBSECTION=Character Icons
 DESCRIPTION=Lizardman (large frame)
@@ -129,13 +129,13 @@ SUBSECTION=Character Icons
 DESCRIPTION=Corpser (frame)
 
 [ITEMDEF 020d3]
-DEFNAME=i_pet_demon_2
-NAME=demon
+DEFNAME=i_pet_daemon_2
+NAME=daemon
 TYPE=t_figurine
-TDATA3=c_demon
+TDATA3=c_daemon
 CATEGORY=Miscellaneous
 SUBSECTION=Character Icons
-DESCRIPTION=Demon (frame)
+DESCRIPTION=Daemon (frame)
 
 [ITEMDEF 020d4]
 DEFNAME=i_pet_deer
@@ -596,18 +596,18 @@ SUBSECTION=Character Icons
 DESCRIPTION=Cow (black & white)
 
 [ITEMDEF 02104]
-DEFNAME=i_pet_demon_large
-NAME=demon
-TDATA3=c_demon
+DEFNAME=i_pet_daemon_large
+NAME=daemon
+TDATA3=c_daemon
 TYPE=t_figurine
 VALUE={750 800}
 CATEGORY=Miscellaneous
 SUBSECTION=Character Icons
-DESCRIPTION=Demon (large)
+DESCRIPTION=Daemon (large)
 DUPELIST=02105
 
 [ITEMDEF 02105]
-//Demon (large)
+//daemon (large)
 DUPEITEM=02104
 
 [ITEMDEF 02106]
@@ -670,7 +670,7 @@ DESCRIPTION=Water Elemental
 DEFNAME=i_pet_male_elf
 NAME=male elf
 TYPE=t_figurine
-TDATA3=c_h_vendor
+TDATA3=c_elf_male
 CATEGORY=Miscellaneous
 SUBSECTION=Character Icons
 DESCRIPTION=Male Elf
@@ -679,7 +679,7 @@ DESCRIPTION=Male Elf
 DEFNAME=i_pet_female_elf
 NAME=female elf
 TYPE=t_figurine
-TDATA3=c_h_vendor_f
+TDATA3=c_elf_female
 CATEGORY=Miscellaneous
 SUBSECTION=Character Icons
 DESCRIPTION=Female Elf
@@ -798,7 +798,7 @@ DESCRIPTION=Panther (big cat)
 DEFNAME=i_pet_raven
 NAME=bird
 TYPE=t_figurine
-TDATA3=c_bird_raven
+TDATA3=c_bird
 VALUE={25 50}
 CATEGORY=Miscellaneous
 SUBSECTION=Character Icons
@@ -888,7 +888,7 @@ DESCRIPTION=Wolf
 DEFNAME=i_pet_rat
 NAME=rat
 TYPE=t_figurine
-TDATA3=c_rat_sewer
+TDATA3=c_rat
 VALUE={150 200}
 CATEGORY=Miscellaneous
 SUBSECTION=Character Icons
@@ -1231,40 +1231,40 @@ SUBSECTION=Character Icons
 DESCRIPTION=Cougar
 
 [ITEMDEF 02584]
-DEFNAME=i_pet_demon
-NAME=demon
+DEFNAME=i_pet_daemon
+NAME=daemon
 TYPE=t_figurine
-TDATA3=c_demon
+TDATA3=c_daemon
 CATEGORY=Miscellaneous
 SUBSECTION=Character Icons
-DESCRIPTION=Demon (new)
+DESCRIPTION=daemon (new)
 
 [ITEMDEF 02585]
-DEFNAME=i_pet_demon_blackgate
-NAME=black gate demon
+DEFNAME=i_pet_daemon_blackgate
+NAME=black gate daemon
 TYPE=t_figurine
-TDATA3=c_demon_blackgate
+TDATA3=c_daemon_blackgate
 CATEGORY=Miscellaneous
 SUBSECTION=Character Icons
-DESCRIPTION=Black Gate Demon
+DESCRIPTION=Black Gate daemon
 
 [ITEMDEF 02586]
-DEFNAME=i_pet_demon_elder
-NAME=elder demon
+DEFNAME=i_pet_daemon_elder
+NAME=elder daemon
 TYPE=t_figurine
-TDATA3=c_demon_balron
+TDATA3=c_daemon_balron
 CATEGORY=Miscellaneous
 SUBSECTION=Character Icons
-DESCRIPTION=Demon (elder)
+DESCRIPTION=daemon (elder)
 
 [ITEMDEF 02587]
-DEFNAME=i_pet_demon_icefiend
+DEFNAME=i_pet_daemon_icefiend
 NAME=ice fiend
 TYPE=t_figurine
-TDATA3=c_demon_ice
+TDATA3=c_daemon_ice
 CATEGORY=Miscellaneous
 SUBSECTION=Character Icons
-DESCRIPTION=Demon (ice fiend)
+DESCRIPTION=daemon (ice fiend)
 
 [ITEMDEF 02588]
 DEFNAME=i_pet_dog_hound
@@ -1595,7 +1595,7 @@ SUBSECTION=Character Icons
 DESCRIPTION=Ophidian Knight
 
 [ITEMDEF 025ab]
-DEFNAME=i_pet_ophidian_mage
+DEFNAME=i_pet_ophidian_shaman
 NAME=ophidian mage
 TYPE=t_figurine
 TDATA3=c_ophidian_shaman
@@ -1652,7 +1652,7 @@ DESCRIPTION=Orc Lord
 DEFNAME=i_pet_orc_shaman
 NAME=orc shaman
 TYPE=t_figurine
-TDATA3=c_orc_mage
+TDATA3=c_orc_shaman
 CATEGORY=Miscellaneous
 SUBSECTION=Character Icons
 DESCRIPTION=Orc Shaman
@@ -1857,7 +1857,7 @@ DESCRIPTION=Spider (giant new)
 DEFNAME=i_pet_ghost
 NAME=ghost
 TYPE=t_figurine
-TDATA3=c_ghost
+TDATA3=c_ghost_male
 CATEGORY=Miscellaneous
 SUBSECTION=Character Icons
 DESCRIPTION=Ghost
@@ -2138,13 +2138,13 @@ SUBSECTION=Character Icons
 DESCRIPTION=Solen Worker
 
 [ITEMDEF 02605]
-DEFNAME=i_pet_demon_arcane
-NAME=arcane demon
+DEFNAME=i_pet_daemon_arcane
+NAME=arcane daemon
 TYPE=t_figurine
-TDATA3=c_demon_arcane
+TDATA3=c_daemon_arcane
 CATEGORY=Miscellaneous
 SUBSECTION=Character Icons
-DESCRIPTION=Demon (arcane)
+DESCRIPTION=daemon (arcane)
 
 [ITEMDEF 02606]
 DEFNAME=i_pet_betrayer
@@ -2174,13 +2174,13 @@ SUBSECTION=Character Icons
 DESCRIPTION=Bog Thing
 
 [ITEMDEF 02609]
-DEFNAME=i_pet_demon_chaos
-NAME=chaos demon
+DEFNAME=i_pet_daemon_chaos
+NAME=chaos daemon
 TYPE=t_figurine
-TDATA3=c_demon_chaos
+TDATA3=c_daemon_chaos
 CATEGORY=Miscellaneous
 SUBSECTION=Character Icons
-DESCRIPTION=Demon (chaos)
+DESCRIPTION=daemon (chaos)
 
 [ITEMDEF 0260a]
 DEFNAME=i_pet_chariot
@@ -2219,13 +2219,13 @@ SUBSECTION=Character Icons
 DESCRIPTION=Doppleganger
 
 [ITEMDEF 0260e]
-DEFNAME=i_pet_demon_moloch
-NAME=moloch demon
+DEFNAME=i_pet_daemon_moloch
+NAME=moloch daemon
 TYPE=t_figurine
-TDATA3=c_demon_moloch
+TDATA3=c_daemon_moloch
 CATEGORY=Miscellaneous
 SUBSECTION=Character Icons
-DESCRIPTION=Demon (moloch)
+DESCRIPTION=daemon (moloch)
 
 [ITEMDEF 0260f]
 DEFNAME=i_pet_beetle_giant
@@ -2247,13 +2247,13 @@ SUBSECTION=Character Icons
 DESCRIPTION=Golem (iron)
 
 [ITEMDEF 02611]
-DEFNAME=i_pet_demon_horde
-NAME=horde demon
+DEFNAME=i_pet_daemon_horde
+NAME=horde daemon
 TYPE=t_figurine
-TDATA3=c_demon_horde_minion
+TDATA3=c_daemon_horde_minion
 CATEGORY=Miscellaneous
 SUBSECTION=Character Icons
-DESCRIPTION=Demon (horde minion)
+DESCRIPTION=daemon (horde minion)
 
 [ITEMDEF 02612]
 DEFNAME=i_pet_juggernaut
@@ -2458,13 +2458,13 @@ SUBSECTION=Character Icons
 DESCRIPTION=Gibberling
 
 [ITEMDEF 02628]
-DEFNAME=i_pet_demon_bone
-NAME=bone demon
+DEFNAME=i_pet_daemon_bone
+NAME=bone daemon
 TYPE=t_figurine
-TDATA3=c_bone_demon
+TDATA3=c_bone_daemon
 CATEGORY=Miscellaneous
 SUBSECTION=Character Icons
-DESCRIPTION=Demon (bone)
+DESCRIPTION=daemon (bone)
 
 [ITEMDEF 02629]
 DEFNAME=i_pet_skeleton_patchwork
@@ -2548,13 +2548,13 @@ SUBSECTION=Character Icons
 DESCRIPTION=Vampire Bat
 
 [ITEMDEF 02632]
-DEFNAME=i_pet_demon_knight
-NAME=demon knight
+DEFNAME=i_pet_daemon_knight
+NAME=daemon knight
 TYPE=t_figurine
-TDATA3=c_demon
+TDATA3=c_daemon
 CATEGORY=Miscellaneous
 SUBSECTION=Character Icons
-DESCRIPTION=Demon (knight)
+DESCRIPTION=daemon (knight)
 
 [ITEMDEF 02633]
 DEFNAME=i_pet_mound_maggots
@@ -3273,7 +3273,7 @@ DESCRIPTION=Gray Goblin (frame)
 DEFNAME=i_pet_gremlin
 NAME=gremlin
 TYPE=t_figurine
-TDATA3=c_goblin_gray_mage
+TDATA3=c_gremlin
 CATEGORY=Miscellaneous
 SUBSECTION=Character Icons
 DESCRIPTION=Gremlin
@@ -3552,7 +3552,7 @@ DESCRIPTION=Clockwork Exodus
 DEFNAME=i_pet_tiger
 NAME=Tiger
 TYPE=t_figurine
-TDATA3=c_tiger
+TDATA3=c_tiger_wild
 CATEGORY=Miscellaneous
 SUBSECTION=Character Icons
 DESCRIPTION=Tiger

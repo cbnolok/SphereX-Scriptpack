@@ -570,7 +570,7 @@ COMPONENT=4797,3,-3
 COMPONENT=4807,4,-4
 
 [ITEMDEF m_statue]
-ID=i_statue_stone_lg_5
+ID=i_statue_stone_lg
 NAME=Statue
 TYPE=t_multi
 CATEGORY=Multis

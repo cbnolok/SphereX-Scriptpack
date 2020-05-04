@@ -12,6 +12,7 @@ if (!<isempty <args>> && <serv.chardef.<dargs>>)
 endif
 sysmessage <defmsg.cmd_invalid>
 
+
 [FUNCTION tweak]
 INFO
 
@@ -103,8 +104,8 @@ return 1
 //             - can be a uid or map location
 //
 // Determine spell and skill used to cast
-LOCAL.SPELL = <EVAL <ARGV[0]> &~ 0ff000000>
-LOCAL.SKILL = <EVAL (<STREAT <SERV.SPELL.<LOCAL.SPELL>.SKILLREQ>>) &~ 0ff000000>
+LOCAL.SPELL = <RESOURCEINDEX <ARGV[0]>>
+LOCAL.SKILL = <RESOURCEINDEX <STREAT <SERV.SPELL.<LOCAL.SPELL>.SKILLREQ>>>
 IF !(<LOCAL.SKILL>)
  LOCAL.SKILL = 25
 ENDIF

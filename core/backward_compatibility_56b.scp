@@ -4,6 +4,7 @@
 //****************************************************************************
 VERSION=X1
 
+// Translate defnames used in 56b to the currently used ones
 [DEFNAME backward_compatibility_defs_56b]
 loot_ORGE_LORD        loot_OGRE_LORD
 i_axe_war_VANQUISIHNG i_axe_war_VANQ

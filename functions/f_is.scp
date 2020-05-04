@@ -5,19 +5,19 @@
 VERSION=X1
 
 [FUNCTION f_isHuman]
-IF (<BODY>==c_man) || (<BODY>==c_woman) || (<BODY>==c_ghost_man) || (<BODY>==c_ghost_woman) || (<BODY>==c_man_gm)
+IF (<BODY>==c_man) || (<BODY>==c_woman) || (<BODY>==c_ghost_male) || (<BODY>==c_ghost_female)
 	RETURN 1
 ENDIF
 RETURN 0
 
 [FUNCTION f_isElf]
-IF (<BODY>==c_elf_male) || (<BODY>==c_elf_female) || (<BODY>==c_elf_ghost_man) || (<BODY>==c_elf_ghost_woman)
+IF (<BODY>==c_elf_male) || (<BODY>==c_elf_female) || (<BODY>==c_elf_ghost_male) || (<BODY>==c_elf_ghost_female)
 	RETURN 1
 ENDIF
 RETURN 0
 
 [FUNCTION f_isGargoyle]
-IF (<BODY>==c_gargoyle_male) || (<BODY>==c_gargoyle_female) || (<BODY>==c_garg_ghost_man) || (<BODY>==c_garg_ghost_woman)
+IF (<BODY>==c_gargoyle_male) || (<BODY>==c_gargoyle_female) || (<BODY>==c_gargoyle_ghost_male) || (<BODY>==c_gargoyle_ghost_female)
 	RETURN 1
 ENDIF
 RETURN 0
@@ -41,5 +41,13 @@ IF (<ISEVENT.e_undead>) || (<ISTEVENT.e_undead>) // || (<NPC>==brain_undead)
 	RETURN 1
 ENDIF
 RETURN 0
+
+[function f_isContainer]
+if <isitem>
+	if ((<type>==t_container) || (<type>==t_container_locked))
+		return 1
+	endif
+endif
+return 0
 
 [EOF]

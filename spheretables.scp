@@ -28,16 +28,20 @@ core/backward_compatibility_functions.scp
 //core/backward_compatibility_56c.scp
 //core/backward_compatibility_56c_multis.scp
 //core/backward_compatibility_56d.scp
-//core/combat_override.scp
+//core/combat_override.scp // incomplete and outdated
 core/defs.scp
+core/defs_component_props.scp
 core/defs_buffs_debuffs.scp
+core/defs_faction.scp
 core/defs_height.scp
+core/defs_hues.scp
 core/defs_html.scp
 core/defs_mounts.scp
 core/defs_sounds.scp
 core/defs_types_hardcoded.scp
 core/msgs.scp
 core/serv_triggers.scp
+core/magic_preaos.scp
 core/dialogs/
 //core/dialogs/legacy/
 book_content_default.scp
@@ -50,6 +54,8 @@ speech/monsters/
 speech/towns/
 types/
 items/
+items/magic_pre_aos/
+items/material_nonbase/
 multis/
 templates/
 newbie_templates.scp
@@ -115,6 +121,8 @@ maps/map5/map5_teleports.scp
 maps/map5/map5_teleports_tol.scp
 maps/map5/map5_moongates.scp
 maps/map5/map5_moongates_tol.scp
+
+//custom/
 
 [OBSCENE]
 
@@ -266,8 +274,8 @@ XGO
 JAIL
 FORGIVE
 // Scripted functions
-t
-sm
+t	// teleport
+sm	// staff message
 //gmtravel
 
 [PLEVEL 3]

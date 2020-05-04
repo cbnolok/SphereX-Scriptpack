@@ -8,7 +8,7 @@ VERSION=X1
 ON=lock this*
 ref1 = <region.uid>
 if (<ref1.isowner <uid>>) || (<ref1.GetCoownerPos <uid>> >= 0) || (<ref1.GetFriendPos <uid>> >= 0) || (<isgm>)
-	targetf, f_lock
+	targetf, f_house_item_lock
 	sysmessage @,,1 What do you wish to lockdown?
 	return 1
 else
@@ -19,7 +19,7 @@ endif
 ON=release this*
 ref1 = <region.uid>
 if (<ref1.isowner <uid>>) || (<ref1.GetCoownerPos <uid>> >= 0) || (<ref1.GetFriendPos <uid>> >= 0) || (<isgm>)
-	targetf, f_unlock
+	targetf, f_house_item_unlock
 	sysmessage @,,1 What do you wish to release?
 	return 1
 else
@@ -30,7 +30,7 @@ endif
 ON=secure this*
 ref1 = <region.uid>
 if (<ref1.isowner <uid>>) || (<ref1.GetCoownerPos <uid>> >= 0) || (<isgm>)
-	targetf, f_secureitem
+	targetf, f_house_item_secure
 	sysmessage @,,1 What do you wish to secure?
 	return 1
 else
@@ -41,7 +41,7 @@ endif
 ON=move north*
 ref1 = <region.uid>
 if (<ref1.isowner <uid>>) || (<ref1.GetCoownerPos <uid>> >= 0) || (<ref1.GetFriendPos <uid>> >= 0) || (<isgm>)
-	targetf, f_moven
+	targetf, f_house_moven
 	sysmessage @,,1 What do you wish to move?
 	return 1
 else
@@ -52,7 +52,7 @@ endif
 ON=move south*
 ref1 = <region.uid>
 if (<ref1.isowner <uid>>) || (<ref1.GetCoownerPos <uid>> >= 0) || (<ref1.GetFriendPos <uid>> >= 0) || (<isgm>)
-	targetf, f_moves
+	targetf, f_house_moves
 	sysmessage @,,1 What do you wish to move?
 	return 1
 else
@@ -63,7 +63,7 @@ endif
 ON=move east*
 ref1 = <region.uid>
 if (<ref1.isowner <uid>>) || (<ref1.GetCoownerPos <uid>> >= 0) || (<ref1.GetFriendPos <uid>> >= 0) || (<isgm>)
-	targetf, f_movee
+	targetf, f_house_movee
 	sysmessage @,,1 What do you wish to move?
 	return 1
 else
@@ -74,7 +74,7 @@ endif
 ON=move west*
 ref1 = <region.uid>
 if (<ref1.isowner <uid>>) || (<ref1.GetCoownerPos <uid>> >= 0) || (<ref1.GetFriendPos <uid>> >= 0) || (<isgm>)
-	targetf, f_movew
+	targetf, f_house_movew
 	sysmessage @,,1 What do you wish to move?
 	return 1
 else
@@ -95,7 +95,7 @@ endif
 
 ON=bank*
 if !<isgm>
-	if <def.can_bank>
+	if <def.hs_can_bank>
 		ref1 = <region.uid>
 		if (<ref1.isowner <uid>>) || (<ref1.GetCoownerPos <uid>> >= 0) || (<ref1.GetFriendPos <uid>> >= 0) || (<isgm>)
 			bankself
@@ -112,7 +112,7 @@ endif
 ON=eject*
 ref1 = <region.uid>
 if (<ref1.isowner <uid>>) || (<ref1.GetCoownerPos <uid>> >= 0) || (<ref1.GetFriendPos <uid>> >= 0) || (<isgm>) 
-	targetf, f_eject
+	targetf, f_house_eject
 else
 	return 0
 endif
@@ -120,7 +120,7 @@ endif
 ON=Ban Person*
 ref1 = <region.uid>
 if (<ref1.isowner <uid>>) || (<ref1.GetCoownerPos <uid>> >= 0) || (<ref1.GetFriendPos <uid>> >= 0) || (<isgm>)
-	targetf, f_add_list ban
+	targetf, f_house_add_list ban
 else
 	return 0
 endif
@@ -159,3 +159,5 @@ endif
 
 ON=house commands*
 sdialog d_house_commands
+
+[EOF]

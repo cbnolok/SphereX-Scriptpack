@@ -4,10 +4,31 @@
 //****************************************************************************
 VERSION=X1
 
+[COMMENT ATTR_MAGIC]
+// Property: Weapon Damage Increase. Prefixes. (ascending order)
+Ruin
+Might
+Force
+Power
+Vanquishing
+
+// Property: Weapon Damage Increase. Bonus calculation
+Based on s_enchant MOREY...
+
+// Property: Weapon Skill Bonus. Prefixes. (ascending order) (NOT IMPLEMENTED)
+Accurate
+Surpassingly Accurate
+Eminently Accurate
+Exceedingly Accurate
+Supremely Accurate
+
+
 [ITEMDEF i_scimitar_ruin]
 ID=i_scimitar
 NAME=Scimitar of Ruin
 RESOURCES=10 i_ingot_iron, i_scimitar
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -24,6 +45,8 @@ COLOR=color_magic_weap
 ID=i_scimitar
 NAME=Scimitar of Might
 RESOURCES=10 i_ingot_iron, i_scimitar
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -40,6 +63,8 @@ COLOR=color_magic_weap
 ID=i_scimitar
 NAME=Scimitar of Force
 RESOURCES=10 i_ingot_iron, i_scimitar
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -56,6 +81,8 @@ COLOR=color_magic_weap
 ID=i_scimitar
 NAME=Scimitar of Power
 RESOURCES=10 i_ingot_iron, i_scimitar
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -72,6 +99,8 @@ COLOR=color_magic_weap
 ID=i_scimitar
 NAME=Scimitar of Vanquishing
 RESOURCES=10 i_ingot_iron, i_scimitar
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
@@ -88,6 +117,8 @@ COLOR=color_magic_weap
 ID=i_halberd
 NAME=Halberd of Ruin
 RESOURCES=20 i_ingot_iron, i_halberd
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -104,6 +135,8 @@ COLOR=color_magic_weap
 ID=i_halberd
 NAME=Halberd of Might
 RESOURCES=20 i_ingot_iron, i_halberd
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -120,6 +153,8 @@ COLOR=color_magic_weap
 ID=i_halberd
 NAME=Halberd of Force
 RESOURCES=20 i_ingot_iron, i_halberd
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -136,6 +171,8 @@ COLOR=color_magic_weap
 ID=i_halberd
 NAME=Halberd of Power
 RESOURCES=20 i_ingot_iron, i_halberd
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -152,6 +189,8 @@ COLOR=color_magic_weap
 ID=i_halberd
 NAME=Halberd of Vanquishing
 RESOURCES=20 i_ingot_iron, i_halberd
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
@@ -168,6 +207,8 @@ COLOR=color_magic_weap
 ID=i_bardiche
 NAME=Bardiche of Ruin
 RESOURCES=18 i_ingot_iron, i_bardiche
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -184,6 +225,8 @@ COLOR=color_magic_weap
 ID=i_bardiche
 NAME=Bardiche of Might
 RESOURCES=18 i_ingot_iron, i_bardiche
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -200,6 +243,8 @@ COLOR=color_magic_weap
 ID=i_bardiche
 NAME=Bardiche of Force
 RESOURCES=18 i_ingot_iron, i_bardiche
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -216,6 +261,8 @@ COLOR=color_magic_weap
 ID=i_bardiche
 NAME=Bardiche of Power
 RESOURCES=18 i_ingot_iron, i_bardiche
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -232,6 +279,8 @@ COLOR=color_magic_weap
 ID=i_bardiche
 NAME=Bardiche of Vanquishing
 RESOURCES=18 i_ingot_iron, i_bardiche
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
@@ -248,6 +297,8 @@ COLOR=color_magic_weap
 ID=i_cutlass
 NAME=Cutlass of Ruin
 RESOURCES=8 i_ingot_iron, i_cutlass
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -264,6 +315,8 @@ COLOR=color_magic_weap
 ID=i_cutlass
 NAME=Cutlass of Might
 RESOURCES=8 i_ingot_iron, i_cutlass
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -280,6 +333,8 @@ COLOR=color_magic_weap
 ID=i_cutlass
 NAME=Cutlass of Force
 RESOURCES=8 i_ingot_iron, i_cutlass
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -296,6 +351,8 @@ COLOR=color_magic_weap
 ID=i_cutlass
 NAME=Cutlass of Power
 RESOURCES=8 i_ingot_iron, i_cutlass
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -312,6 +369,8 @@ COLOR=color_magic_weap
 ID=i_cutlass
 NAME=Cutlass of Vanquishing
 RESOURCES=8 i_ingot_iron, i_cutlass
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
@@ -328,6 +387,8 @@ COLOR=color_magic_weap
 ID=i_sword_viking
 NAME=Viking Sword of Ruin
 RESOURCES=14 i_ingot_iron, i_sword_viking
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -344,6 +405,8 @@ COLOR=color_magic_weap
 ID=i_sword_viking
 NAME=Viking Sword of Might
 RESOURCES=14 i_ingot_iron, i_sword_viking
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -360,6 +423,8 @@ COLOR=color_magic_weap
 ID=i_sword_viking
 NAME=Viking Sword of Force
 RESOURCES=14 i_ingot_iron, i_sword_viking
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -376,6 +441,8 @@ COLOR=color_magic_weap
 ID=i_sword_viking
 NAME=Viking Sword of Power
 RESOURCES=14 i_ingot_iron, i_sword_viking
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -392,6 +459,8 @@ COLOR=color_magic_weap
 ID=i_sword_viking
 NAME=Viking Sword of Vanquishing
 RESOURCES=14 i_ingot_iron, i_sword_viking
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
@@ -408,6 +477,8 @@ COLOR=color_magic_weap
 ID=i_katana
 NAME=Katana of Ruin
 RESOURCES=8 i_ingot_iron, i_katana
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -424,6 +495,8 @@ COLOR=color_magic_weap
 ID=i_katana
 NAME=Katana of Might
 RESOURCES=8 i_ingot_iron, i_katana
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -440,6 +513,8 @@ COLOR=color_magic_weap
 ID=i_katana
 NAME=Katana of Force
 RESOURCES=8 i_ingot_iron, i_katana
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -456,6 +531,8 @@ COLOR=color_magic_weap
 ID=i_katana
 NAME=Katana of Power
 RESOURCES=8 i_ingot_iron, i_katana
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -472,6 +549,8 @@ COLOR=color_magic_weap
 ID=i_katana
 NAME=Katana of Vanquishing
 RESOURCES=8 i_ingot_iron, i_katana
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
@@ -488,6 +567,8 @@ COLOR=color_magic_weap
 ID=i_pitchfork
 NAME=Pitchfork of Ruin
 RESOURCES=5 i_ingot_iron, i_pitchfork
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -504,6 +585,8 @@ COLOR=color_magic_weap
 ID=i_pitchfork
 NAME=Pitchfork of Might
 RESOURCES=5 i_ingot_iron, i_pitchfork
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -520,6 +603,8 @@ COLOR=color_magic_weap
 ID=i_pitchfork
 NAME=Pitchfork of Force
 RESOURCES=5 i_ingot_iron, i_pitchfork
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -536,6 +621,8 @@ COLOR=color_magic_weap
 ID=i_pitchfork
 NAME=Pitchfork of Power
 RESOURCES=5 i_ingot_iron, i_pitchfork
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -552,6 +639,8 @@ COLOR=color_magic_weap
 ID=i_pitchfork
 NAME=Pitchfork of Vanquishing
 RESOURCES=5 i_ingot_iron, i_pitchfork
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
@@ -568,6 +657,8 @@ COLOR=color_magic_weap
 ID=i_sword_broad
 NAME=Broadsword of Ruin
 RESOURCES=10 i_ingot_iron, i_sword_broad
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -584,6 +675,8 @@ COLOR=color_magic_weap
 ID=i_sword_broad
 NAME=Broadsword of Might
 RESOURCES=10 i_ingot_iron, i_sword_broad
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -600,6 +693,8 @@ COLOR=color_magic_weap
 ID=i_sword_broad
 NAME=Broadsword of Force
 RESOURCES=10 i_ingot_iron, i_sword_broad
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -616,6 +711,8 @@ COLOR=color_magic_weap
 ID=i_sword_broad
 NAME=Broadsword of Power
 RESOURCES=10 i_ingot_iron, i_sword_broad
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -632,6 +729,8 @@ COLOR=color_magic_weap
 ID=i_sword_broad
 NAME=Broadsword of Vanquishing
 RESOURCES=10 i_ingot_iron, i_sword_broad
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
@@ -648,6 +747,8 @@ COLOR=color_magic_weap
 ID=i_kryss
 NAME=Kryss of Ruin
 RESOURCES=8 i_ingot_iron, i_kryss
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -664,6 +765,8 @@ COLOR=color_magic_weap
 ID=i_kryss
 NAME=Kryss of Might
 RESOURCES=8 i_ingot_iron, i_kryss
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -680,6 +783,8 @@ COLOR=color_magic_weap
 ID=i_kryss
 NAME=Kryss of Force
 RESOURCES=8 i_ingot_iron, i_kryss
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -696,6 +801,8 @@ COLOR=color_magic_weap
 ID=i_kryss
 NAME=Kryss of Power
 RESOURCES=8 i_ingot_iron, i_kryss
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -712,6 +819,8 @@ COLOR=color_magic_weap
 ID=i_kryss
 NAME=Kryss of Vanquishing
 RESOURCES=8 i_ingot_iron, i_kryss
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
@@ -728,6 +837,8 @@ COLOR=color_magic_weap
 ID=i_sword_long
 NAME=Longsword of Ruin
 RESOURCES=12 i_ingot_iron, i_sword_long
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -744,6 +855,8 @@ COLOR=color_magic_weap
 ID=i_sword_long
 NAME=Longsword of Might
 RESOURCES=12 i_ingot_iron, i_sword_long
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -760,6 +873,8 @@ COLOR=color_magic_weap
 ID=i_sword_long
 NAME=Longsword of Force
 RESOURCES=12 i_ingot_iron, i_sword_long
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -776,6 +891,8 @@ COLOR=color_magic_weap
 ID=i_sword_long
 NAME=Longsword of Power
 RESOURCES=12 i_ingot_iron, i_sword_long
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -792,6 +909,8 @@ COLOR=color_magic_weap
 ID=i_sword_long
 NAME=Longsword of Vanquishing
 RESOURCES=12 i_ingot_iron, i_sword_long
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
@@ -808,6 +927,8 @@ COLOR=color_magic_weap
 ID=i_spear
 NAME=Spear of Ruin
 RESOURCES=12 i_ingot_iron, i_spear
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -824,6 +945,8 @@ COLOR=color_magic_weap
 ID=i_spear
 NAME=Spear of Might
 RESOURCES=12 i_ingot_iron, i_spear
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -840,6 +963,8 @@ COLOR=color_magic_weap
 ID=i_spear
 NAME=Spear of Force
 RESOURCES=12 i_ingot_iron, i_spear
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -856,6 +981,8 @@ COLOR=color_magic_weap
 ID=i_spear
 NAME=Spear of Power
 RESOURCES=12 i_ingot_iron, i_spear
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -872,6 +999,8 @@ COLOR=color_magic_weap
 ID=i_spear
 NAME=Spear of Vanquishing
 RESOURCES=12 i_ingot_iron, i_spear
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
@@ -888,6 +1017,8 @@ COLOR=color_magic_weap
 ID=i_spear_short
 NAME=Short Spear of Ruin
 RESOURCES=6 i_ingot_iron, i_spear_short
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -904,6 +1035,8 @@ COLOR=color_magic_weap
 ID=i_spear_short
 NAME=Short Spear of Might
 RESOURCES=6 i_ingot_iron, i_spear_short
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -920,6 +1053,8 @@ COLOR=color_magic_weap
 ID=i_spear_short
 NAME=Short Spear of Force
 RESOURCES=6 i_ingot_iron, i_spear_short
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -936,6 +1071,8 @@ COLOR=color_magic_weap
 ID=i_spear_short
 NAME=Short Spear of Power
 RESOURCES=6 i_ingot_iron, i_spear_short
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -952,6 +1089,8 @@ COLOR=color_magic_weap
 ID=i_spear_short
 NAME=Short Spear of Vanquishing
 RESOURCES=6 i_ingot_iron, i_spear_short
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
@@ -968,6 +1107,8 @@ COLOR=color_magic_weap
 ID=i_war_fork
 NAME=War Fork of Ruin
 RESOURCES=12 i_ingot_iron, i_war_fork
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -984,6 +1125,8 @@ COLOR=color_magic_weap
 ID=i_war_fork
 NAME=War Fork of Might
 RESOURCES=12 i_ingot_iron, i_war_fork
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1000,6 +1143,8 @@ COLOR=color_magic_weap
 ID=i_war_fork
 NAME=War Fork of Force
 RESOURCES=12 i_ingot_iron, i_war_fork
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1016,6 +1161,8 @@ COLOR=color_magic_weap
 ID=i_war_fork
 NAME=War Fork of Power
 RESOURCES=12 i_ingot_iron, i_war_fork
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1032,6 +1179,8 @@ COLOR=color_magic_weap
 ID=i_war_fork
 NAME=War Fork of Vanquishing
 RESOURCES=12 i_ingot_iron, i_war_fork
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1048,6 +1197,8 @@ COLOR=color_magic_weap
 ID=i_mace
 NAME=Mace of Ruin
 RESOURCES=6 i_ingot_iron, i_mace
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1064,6 +1215,8 @@ COLOR=color_magic_weap
 ID=i_mace
 NAME=Mace of Might
 RESOURCES=6 i_ingot_iron, i_mace
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1080,6 +1233,8 @@ COLOR=color_magic_weap
 ID=i_mace
 NAME=Mace of Force
 RESOURCES=6 i_ingot_iron, i_mace
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1096,6 +1251,8 @@ COLOR=color_magic_weap
 ID=i_mace
 NAME=Mace of Power
 RESOURCES=6 i_ingot_iron, i_mace
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1112,6 +1269,8 @@ COLOR=color_magic_weap
 ID=i_mace
 NAME=Mace of Vanquishing
 RESOURCES=6 i_ingot_iron, i_mace
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1128,6 +1287,8 @@ COLOR=color_magic_weap
 ID=i_mace_war
 NAME=War Mace of Ruin
 RESOURCES=14 i_ingot_iron, i_mace_war
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1144,6 +1305,8 @@ COLOR=color_magic_weap
 ID=i_mace_war
 NAME=War Mace of Might
 RESOURCES=14 i_ingot_iron, i_mace_war
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1160,6 +1323,8 @@ COLOR=color_magic_weap
 ID=i_mace_war
 NAME=War Mace of Force
 RESOURCES=14 i_ingot_iron, i_mace_war
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1176,6 +1341,8 @@ COLOR=color_magic_weap
 ID=i_mace_war
 NAME=War Mace of Power
 RESOURCES=14 i_ingot_iron, i_mace_war
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1192,6 +1359,8 @@ COLOR=color_magic_weap
 ID=i_mace_war
 NAME=War Mace of Vanquishing
 RESOURCES=14 i_ingot_iron, i_mace_war
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1208,6 +1377,8 @@ COLOR=color_magic_weap
 ID=i_maul
 NAME=Maul of Ruin
 RESOURCES=10 i_ingot_iron, i_maul
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1224,6 +1395,8 @@ COLOR=color_magic_weap
 ID=i_maul
 NAME=Maul of Might
 RESOURCES=10 i_ingot_iron, i_maul
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1240,6 +1413,8 @@ COLOR=color_magic_weap
 ID=i_maul
 NAME=Maul of Force
 RESOURCES=10 i_ingot_iron, i_maul
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1256,6 +1431,8 @@ COLOR=color_magic_weap
 ID=i_maul
 NAME=Maul of Power
 RESOURCES=10 i_ingot_iron, i_maul
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1272,6 +1449,8 @@ COLOR=color_magic_weap
 ID=i_maul
 NAME=Maul of Vanquishing
 RESOURCES=10 i_ingot_iron, i_maul
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1288,6 +1467,8 @@ COLOR=color_magic_weap
 ID=i_hammer_pick
 NAME=Hammer Pick of Ruin
 RESOURCES=16 i_ingot_iron, i_hammer_pick
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1304,6 +1485,8 @@ COLOR=color_magic_weap
 ID=i_hammer_pick
 NAME=Hammer Pick of Might
 RESOURCES=16 i_ingot_iron, i_hammer_pick
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1320,6 +1503,8 @@ COLOR=color_magic_weap
 ID=i_hammer_pick
 NAME=Hammer Pick of Force
 RESOURCES=16 i_ingot_iron, i_hammer_pick
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1336,6 +1521,8 @@ COLOR=color_magic_weap
 ID=i_hammer_pick
 NAME=Hammer Pick of Power
 RESOURCES=16 i_ingot_iron, i_hammer_pick
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1352,6 +1539,8 @@ COLOR=color_magic_weap
 ID=i_hammer_pick
 NAME=Hammer Pick of Vanquishing
 RESOURCES=16 i_ingot_iron, i_hammer_pick
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1368,6 +1557,8 @@ COLOR=color_magic_weap
 ID=i_hammer_war
 NAME=War Hammer of Ruin
 RESOURCES=16 i_ingot_iron, i_hammer_war
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1384,6 +1575,8 @@ COLOR=color_magic_weap
 ID=i_hammer_war
 NAME=War Hammer of Might
 RESOURCES=16 i_ingot_iron, i_hammer_war
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1400,6 +1593,8 @@ COLOR=color_magic_weap
 ID=i_hammer_war
 NAME=War Hammer of Force
 RESOURCES=16 i_ingot_iron, i_hammer_war
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1416,6 +1611,8 @@ COLOR=color_magic_weap
 ID=i_hammer_war
 NAME=War Hammer of Power
 RESOURCES=16 i_ingot_iron, i_hammer_war
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1432,6 +1629,8 @@ COLOR=color_magic_weap
 ID=i_hammer_war
 NAME=War Hammer of Vanquishing
 RESOURCES=16 i_ingot_iron, i_hammer_war
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1448,6 +1647,8 @@ COLOR=color_magic_weap
 ID=i_axe
 NAME=Axe of Ruin
 RESOURCES=14 i_ingot_iron, i_axe
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1464,6 +1665,8 @@ COLOR=color_magic_weap
 ID=i_axe
 NAME=Axe of Might
 RESOURCES=14 i_ingot_iron, i_axe
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1480,6 +1683,8 @@ COLOR=color_magic_weap
 ID=i_axe
 NAME=Axe of Force
 RESOURCES=14 i_ingot_iron, i_axe
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1496,6 +1701,8 @@ COLOR=color_magic_weap
 ID=i_axe
 NAME=Axe of Power
 RESOURCES=14 i_ingot_iron, i_axe
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1512,6 +1719,8 @@ COLOR=color_magic_weap
 ID=i_axe
 NAME=Axe of Vanquishing
 RESOURCES=14 i_ingot_iron, i_axe
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1528,6 +1737,8 @@ COLOR=color_magic_weap
 ID=i_axe_exec
 NAME=Executioner's Axe of Ruin
 RESOURCES=14 i_ingot_iron, i_axe_exec
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1544,6 +1755,8 @@ COLOR=color_magic_weap
 ID=i_axe_exec
 NAME=Executioner's Axe of Might
 RESOURCES=14 i_ingot_iron, i_axe_exec
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1560,6 +1773,8 @@ COLOR=color_magic_weap
 ID=i_axe_exec
 NAME=Executioner's Axe of Force
 RESOURCES=14 i_ingot_iron, i_axe_exec
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1576,6 +1791,8 @@ COLOR=color_magic_weap
 ID=i_axe_exec
 NAME=Executioner's Axe of Power
 RESOURCES=14 i_ingot_iron, i_axe_exec
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1592,6 +1809,8 @@ COLOR=color_magic_weap
 ID=i_axe_exec
 NAME=Executioner's Axe of Vanquishing
 RESOURCES=14 i_ingot_iron, i_axe_exec
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1608,6 +1827,8 @@ COLOR=color_magic_weap
 ID=i_axe_battle
 NAME=Battle Axe of Ruin
 RESOURCES=14 i_ingot_iron, i_axe_battle
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1624,6 +1845,8 @@ COLOR=color_magic_weap
 ID=i_axe_battle
 NAME=Battle Axe of Might
 RESOURCES=14 i_ingot_iron, i_axe_battle
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1640,6 +1863,8 @@ COLOR=color_magic_weap
 ID=i_axe_battle
 NAME=Battle Axe of Force
 RESOURCES=14 i_ingot_iron, i_axe_battle
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1656,6 +1881,8 @@ COLOR=color_magic_weap
 ID=i_axe_battle
 NAME=Battle Axe of Power
 RESOURCES=14 i_ingot_iron, i_axe_battle
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1672,6 +1899,8 @@ COLOR=color_magic_weap
 ID=i_axe_battle
 NAME=Battle Axe of Vanquishing
 RESOURCES=14 i_ingot_iron, i_axe_battle
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1688,6 +1917,8 @@ COLOR=color_magic_weap
 ID=i_axe_double
 NAME=Double Axe of Ruin
 RESOURCES=12 i_ingot_iron, i_axe_double
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1704,6 +1935,8 @@ COLOR=color_magic_weap
 ID=i_axe_double
 NAME=Double Axe of Might
 RESOURCES=12 i_ingot_iron, i_axe_double
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1720,6 +1953,8 @@ COLOR=color_magic_weap
 ID=i_axe_double
 NAME=Double Axe of Force
 RESOURCES=12 i_ingot_iron, i_axe_double
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1736,6 +1971,8 @@ COLOR=color_magic_weap
 ID=i_axe_double
 NAME=Double Axe of Power
 RESOURCES=12 i_ingot_iron, i_axe_double
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1752,6 +1989,8 @@ COLOR=color_magic_weap
 ID=i_axe_double
 NAME=Double Axe of Vanquishing
 RESOURCES=12 i_ingot_iron, i_axe_double
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1768,6 +2007,8 @@ COLOR=color_magic_weap
 ID=i_axe_two_hand
 NAME=Two Handed Axe of Ruin
 RESOURCES=16 i_ingot_iron, i_axe_two_hand
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1784,6 +2025,8 @@ COLOR=color_magic_weap
 ID=i_axe_two_hand
 NAME=Two Handed Axe of Might
 RESOURCES=16 i_ingot_iron, i_axe_two_hand
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1800,6 +2043,8 @@ COLOR=color_magic_weap
 ID=i_axe_two_hand
 NAME=Two Handed Axe of Force
 RESOURCES=16 i_ingot_iron, i_axe_two_hand
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1816,6 +2061,8 @@ COLOR=color_magic_weap
 ID=i_axe_two_hand
 NAME=Two Handed Axe of Power
 RESOURCES=16 i_ingot_iron, i_axe_two_hand
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1832,6 +2079,8 @@ COLOR=color_magic_weap
 ID=i_axe_two_hand
 NAME=Two Handed Axe of Vanquishing
 RESOURCES=16 i_ingot_iron, i_axe_two_hand
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1848,6 +2097,8 @@ COLOR=color_magic_weap
 ID=i_axe_war
 NAME=War Axe of Ruin
 RESOURCES=16 i_ingot_iron, i_axe_war
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1864,6 +2115,8 @@ COLOR=color_magic_weap
 ID=i_axe_war
 NAME=War Axe of Might
 RESOURCES=16 i_ingot_iron, i_axe_war
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1880,6 +2133,8 @@ COLOR=color_magic_weap
 ID=i_axe_war
 NAME=War Axe of Force
 RESOURCES=16 i_ingot_iron, i_axe_war
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1896,6 +2151,8 @@ COLOR=color_magic_weap
 ID=i_axe_war
 NAME=War Axe of Power
 RESOURCES=16 i_ingot_iron, i_axe_war
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1912,6 +2169,8 @@ COLOR=color_magic_weap
 ID=i_axe_war
 NAME=War Axe of Vanquishing
 RESOURCES=16 i_ingot_iron, i_axe_war
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1928,6 +2187,8 @@ COLOR=color_magic_weap
 ID=i_axe_battle_large
 NAME=Large Battle Axe of Ruin
 RESOURCES=12 i_ingot_iron, i_axe_battle_large
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1944,6 +2205,8 @@ COLOR=color_magic_weap
 ID=i_axe_battle_large
 NAME=Large Battle Axe of Might
 RESOURCES=12 i_ingot_iron, i_axe_battle_large
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1960,6 +2223,8 @@ COLOR=color_magic_weap
 ID=i_axe_battle_large
 NAME=Large Battle Axe of Force
 RESOURCES=12 i_ingot_iron, i_axe_battle_large
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1976,6 +2241,8 @@ COLOR=color_magic_weap
 ID=i_axe_battle_large
 NAME=Large Battle Axe of Power
 RESOURCES=12 i_ingot_iron, i_axe_battle_large
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -1992,6 +2259,8 @@ COLOR=color_magic_weap
 ID=i_axe_battle_large
 NAME=Large Battle Axe of Vanquishing
 RESOURCES=12 i_ingot_iron, i_axe_battle_large
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
@@ -2008,6 +2277,8 @@ COLOR=color_magic_weap
 ID=i_club
 NAME=Club of Ruin
 RESOURCES=4 i_log, i_club
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -2024,6 +2295,8 @@ COLOR=color_magic_weap
 ID=i_club
 NAME=Club of Might
 RESOURCES=4 i_log, i_club
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -2040,6 +2313,8 @@ COLOR=color_magic_weap
 ID=i_club
 NAME=Club of Force
 RESOURCES=4 i_log, i_club
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -2056,6 +2331,8 @@ COLOR=color_magic_weap
 ID=i_club
 NAME=Club of Power
 RESOURCES=4 i_log, i_club
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -2072,6 +2349,8 @@ COLOR=color_magic_weap
 ID=i_club
 NAME=Club of Vanquishing
 RESOURCES=4 i_log, i_club
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
@@ -2088,6 +2367,8 @@ COLOR=color_magic_weap
 ID=i_bow
 NAME=Bow of Ruin
 RESOURCES=7 i_log, i_bow
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -2104,6 +2385,8 @@ COLOR=color_magic_weap
 ID=i_bow
 NAME=Bow of Might
 RESOURCES=7 i_log, i_bow
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -2120,6 +2403,8 @@ COLOR=color_magic_weap
 ID=i_bow
 NAME=Bow of Force
 RESOURCES=7 i_log, i_bow
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -2136,6 +2421,8 @@ COLOR=color_magic_weap
 ID=i_bow
 NAME=Bow of Power
 RESOURCES=7 i_log, i_bow
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -2152,6 +2439,8 @@ COLOR=color_magic_weap
 ID=i_bow
 NAME=Bow of Vanquishing
 RESOURCES=7 i_log, i_bow
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
@@ -2168,6 +2457,8 @@ COLOR=color_magic_weap
 ID=i_crossbow
 NAME=Crossbow of Ruin
 RESOURCES=7 i_log, i_crossbow
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -2184,6 +2475,8 @@ COLOR=color_magic_weap
 ID=i_crossbow
 NAME=Crossbow of Might
 RESOURCES=7 i_log, i_crossbow
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -2200,6 +2493,8 @@ COLOR=color_magic_weap
 ID=i_crossbow
 NAME=Crossbow of Force
 RESOURCES=7 i_log, i_crossbow
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -2216,6 +2511,8 @@ COLOR=color_magic_weap
 ID=i_crossbow
 NAME=Crossbow of Power
 RESOURCES=7 i_log, i_crossbow
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -2232,6 +2529,8 @@ COLOR=color_magic_weap
 ID=i_crossbow
 NAME=Crossbow of Vanquishing
 RESOURCES=7 i_log, i_crossbow
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
@@ -2248,6 +2547,8 @@ COLOR=color_magic_weap
 ID=i_crossbow_heavy
 NAME=Heavy Crossbow of Ruin
 RESOURCES=10 i_log, i_crossbow_heavy
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=15
 
 CATEGORY=Provisions - Weapons - Magic
@@ -2264,6 +2565,8 @@ COLOR=color_magic_weap
 ID=i_crossbow_heavy
 NAME=Heavy Crossbow of Might
 RESOURCES=10 i_log, i_crossbow_heavy
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=20
 
 CATEGORY=Provisions - Weapons - Magic
@@ -2280,6 +2583,8 @@ COLOR=color_magic_weap
 ID=i_crossbow_heavy
 NAME=Heavy Crossbow of Force
 RESOURCES=10 i_log, i_crossbow_heavy
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=25
 
 CATEGORY=Provisions - Weapons - Magic
@@ -2296,6 +2601,8 @@ COLOR=color_magic_weap
 ID=i_crossbow_heavy
 NAME=Heavy Crossbow of Power
 RESOURCES=10 i_log, i_crossbow_heavy
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=30
 
 CATEGORY=Provisions - Weapons - Magic
@@ -2312,6 +2619,8 @@ COLOR=color_magic_weap
 ID=i_crossbow_heavy
 NAME=Heavy Crossbow of Vanquishing
 RESOURCES=10 i_log, i_crossbow_heavy
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic

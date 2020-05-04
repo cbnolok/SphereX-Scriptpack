@@ -97,9 +97,9 @@ on=i_pet_croc <name>
 test=magery 65.0
 poly c_alligator
 
-ON=i_PET_DEMON Demon
+ON=i_pet_daemon Demon
 TEST=MAGERY 85.0
-POLY c_DEMON
+POLY c_DAEMON
 
 ON=i_pet_DRAGON Dragon
 TEST=MAGERY 98.0

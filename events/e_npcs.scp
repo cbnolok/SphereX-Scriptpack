@@ -4,6 +4,16 @@
 //****************************************************************************
 VERSION=X1
 
+[DEFNAME extendedAI]
+ExtendedAI=1
+
+
+[FUNCTION f_addExtendedAIEvent]
+if (<def.ExtendedAI>==1)
+    events +<args>
+endif
+
+
 [EVENTS e_Undead]
 ON=@EnvironChange
    Return 0
@@ -92,5 +102,94 @@ ENDIF
 REF1.TAG.SLOT_<I.UID> =
 REF1.CURFOLLOWER = <EVAL <REF1.CURFOLLOWER> - <I.FOLLOWERSLOTS>>
 RETURN 0
+
+
+[EVENTS e_extendedAI_aura_frost]
+ON=@GetHit
+//Ice Aura Attack
+IF !(<R3>)
+  REF11=<UID>
+  FORCHARS 3
+     IF (<ISPLAYER>) || (<FLAGS>&statf_pet)
+        LOCAL.DAM=<R10,20>
+        DAMAGE <LOCAL.DAM> <DEF.dam_cold> <REF11>
+        SYSMESSAGE Intense cold radiating from the demon damages you
+     ENDIF
+  END
+ENDIF
+
+
+[EVENTS e_extendedAI_aura_fire]
+ON=@GetHit
+//Fire Aura Attack
+IF ( (<MANA> >= 20) && !(<R5>) )
+  MANA -= 20
+  REF11=<UID>
+  FORCHARS 3
+     IF (<ISPLAYER>) || (<FLAGS>&statf_pet)
+        LOCAL.DAM=<R10,20>
+        DAMAGE <LOCAL.DAM> <DEF.dam_fire> <REF11>
+        SYSMESSAGE Intense heat radiating from the serpent damages you
+     ENDIF
+  END
+ENDIF
+
+
+[EVENTS e_extendedAI_aura_summonDreadSpider]
+ON=@GetHit
+IF !(<R9>)
+    SERV.NEWNPC C_DREAD_SPIDER
+    NEW.P=<P>
+    NEW.HOME=<NEW.P>
+    NEW.HOMEDIST=7
+    NEW.REMOVETIMER 120
+endif
+
+
+[EVENTS e_extendedAI_hit_etherealWarrior]
+ON=@Hit
+HITS += <EVAL <ARGN1>/6>
+IF (<HITS> > <MAXHITS>)
+    HITS=<MAXHITS>
+endif
+STAM += <EVAL <ARGN1>/12>
+IF (<STAM> > <MAXSTAM>)
+    STAM=<MAXSTAM>
+endif
+SRC.STAM -= <EVAL <ARGN1>/12>
+IF (<SRC.STAM> < 0)
+    SRC.STAM=0
+endif
+MANA += <EVAL <ARGN1>/9>
+IF (<MANA> > <MAXMANA>)
+    MANA=<MAXMANA>
+endif
+SRC.MANA -= <EVAL <ARGN1>/9>
+IF (<SRC.MANA> < 0)
+    SRC.MANA=0
+endif
+
+
+[EVENTS e_extendedAI_plageBeast_eatCorpse]
+ON=@ItemStep
+IF (<ACT.TYPE>==t_corpse)
+    IF !(<ACT.TAG0.PLAGUEEATEN>)
+        MAXHITS += 200
+        HITS += 200
+        ACT.TAG.PLAGUEEATEN=1
+        SAY @03c1,3,1 * <NAME> eats a corpse *
+    endif
+endif
+
+
+[EVENTS e_extendedAI_aura_summon_fireAntWorker]
+ON=@GetHit
+IF !(<R10>)
+    SERV.NEWNPC C_FIRE_ANT_WORKER
+    NEW.P=<P>
+    NEW.HOME=<NEW.P>
+    NEW.HOMEDIST=7
+    NEW.REMOVETIMER 120
+endif
 
 [EOF]

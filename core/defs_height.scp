@@ -175,7 +175,7 @@ height_09b 15 //DEFNAME=c_rotting_corpse
 height_09d 10 //DEFNAME=c_spider_unknown
 height_09e 18 //DEFNAME=c_elemental_acid
 height_09f 18 //DEFNAME=c_elemental_blood
-
+///
 height_0a0 18 //DEFNAME=c_elemental_unknown_red
 height_0a1 18 //DEFNAME=c_elemental_ice
 height_0a2 18 //DEFNAME=c_elemental_poison
@@ -321,8 +321,8 @@ height_013f 8  //DEFNAME=c_mound_maggots
 
 height_0190 16 //DEFNAME=c_man
 height_0191 16 //DEFNAME=c_woman
-height_0192 16 //DEFNAME=c_ghost_man
-height_0193 16 //DEFNAME=c_ghost_woman
+height_0192 16 //DEFNAME=c_ghost_male
+height_0193 16 //DEFNAME=c_ghost_female
 
 height_01a4 8  //DEFNAME=c_child_mb
 height_01a5 8  //DEFNAME=c_child_md
@@ -334,15 +334,15 @@ height_023e 16 //DEFNAME=c_blade_spirit
 
 height_025d 16 //DEFNAME=c_elf_male
 height_025e 16 //DEFNAME=c_elf_female
-height_025f 16 //DEFNAME=c_elf_ghost_man
+height_025f 16 //DEFNAME=c_elf_ghost_male
 
-height_0260 16 //DEFNAME=c_elf_ghost_woman
+height_0260 16 //DEFNAME=c_elf_ghost_female
 
 height_029a 16 //DEFNAME=c_gargoyle_male
 height_029b 16 //DEFNAME=c_gargoyle_female
 
-height_02b6 16 //DEFNAME=c_garg_ghost_man
-height_02b7 16 //DEFNAME=c_garg_ghost_woman
+height_02b6 16 //DEFNAME=c_gargoyle_ghost_male
+height_02b7 16 //DEFNAME=c_gargoyle_ghost_female
 
 height_02f0 30 //DEFNAME=c_iron_golem
 height_02f1 16 //DEFNAME=c_gargoyle_enslaved

@@ -1,53 +1,70 @@
 [CHARDEF 042c]
 //FIXME: Animates dead, summons parasitic eels, water ball ranged attack
 DEFNAME=c_scalis
-NAME=scalis
+NAME=Osiredon
 //FIXME: ICON=i_pet_scalis
 SOUND=snd_monster_tera_warrior1
-CAN=MT_SWIM
+CAN=mt_swim
+
 DAM=19,26
 RANGE=2
 ARMOR=80
+MAXFOOD=80
+DamCOLD=30
+DamENERGY=30
+//FACTION=faction_dragon
+TAG.Barding.DIFF=160.0
+
 DESIRES=t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
 AVERSIONS=t_trap,r_civilization
 FOODTYPE=t_meat_raw
-MAXFOOD=80
 RESOURCES=20 i_dragonscale_blue
-BLOODCOLOR=colors_blue
-TAG.Barding.Diff=160.0
-DamCold=30
-DamEnergy=30
-//TAG.SlayerGroup=DRAGON,REPTILE
+
 TEVENTS=e_carnivores3
+
+//FIXME RESDISPDNID
+
+ERALIMITLOOT=7
+ERALIMITGEAR=7
+ERALIMITPROPS=7
+
 CATEGORY=Named Creatures
 SUBSECTION=Aquatic
 DESCRIPTION=Scalis (Osiredon)
+
 ON=@Create
-   NPC=brain_monster
-   NAME=Osiredon
-   FAME={9500 9999}
-   KARMA={-9500 -9999}
-   STR={800 825}
-   MAXHITS={45000 55000}
-   DEX={130 140}
-   MAXSTAM={130 140}
-   INT={160 170}
-   MAXMANA={3500 4500}
-   ANATOMY={35.0 40.0}
-   EVALUATINGINTEL={5.0 10.0}
-   MAGERY={15.0 20.0}
-   MAGICRESISTANCE={120.0 125.0}
-   MEDITATION={70.0 75.0}
-   TACTICS={125.0 130.0}
-   WRESTLING={125.0 130.0}
-   RESPHYSICAL={0 5}
-   RESCOLD={85 90}
-   RESENERGY={80 85}
-   RESFIRE={90 95}
-   RESPOISON={80 85}
-ON=@NpcRestock
-   ITEM=loot_champ_scalis
-   ITEM=loot_ai_healer
+    NPC=brain_monster
+    
+    BLOODCOLOR=colors_blue
+    
+    FAME={9500 9999}
+    KARMA={-9500 -9999}
+    
+    STR={800 825}
+    MAXHITS={45000 55000}
+    DEX={130 140}
+    MAXSTAM={130 140}
+    INT={160 170}
+    MAXMANA={3500 4500}
+    
+    RESPHYSICAL={0 5}
+    RESCOLD={85 90}
+    RESENERGY={80 85}
+    RESFIRE={90 95}
+    RESPOISON={80 85}
+    
+    ANATOMY={35.0 40.0}
+    EVALUATINGINTEL={5.0 10.0}
+    MAGERY={15.0 20.0}
+    MAGICRESISTANCE={120.0 125.0}
+    MEDITATION={70.0 75.0}
+    TACTICS={125.0 130.0}
+    WRESTLING={125.0 130.0}
+    
+ON=@CreateLoot
+    ITEM=loot_champ_scalis
+    ITEM=loot_ai_healer
+
 
 [CHARDEF 042d]
 //FIXME: Fireball attack based on their hitpoints
@@ -56,84 +73,115 @@ DEFNAME=c_hellhound_ancient
 NAME=ancient hellhound
 ICON=i_pet_hellhound_ancient
 SOUND=snd_animals_wolf1
-CAN=MT_WALK|MT_RUN|MT_NONHUM
+CAN=mt_walk|mt_run|mt_nonhum
+
 DAM=28,36
 ARMOR=50
+MAXFOOD=15
+MOVERATE=150
+FACTION=faction_flame
+//FollowerSLOTS=3
+DamFIRE=80
+TAG.Barding.DIFF=122.8
+
 DESIRES=r_desert,r_mountains_volcanic,t_coin,t_gold,t_gem
 AVERSIONS=r_civilization
 FOODTYPE=t_meat_raw
-MAXFOOD=15
 RESOURCES=1 i_ribs_raw,5 i_reag_sulfur_ash
-MOVERATE=150
-TAG.Barding.Diff=122.8
-TAG.SlayerGroup=FLAME
-//FollowerSlots=3
-DamFire=80
+
 TEVENTS=e_carnivores2
+
+//FIXME RESDISPDNID
+
+ERALIMITLOOT=7
+ERALIMITGEAR=7
+ERALIMITPROPS=7
+
 CATEGORY=Monsters
-SUBSECTION=Demons
+SUBSECTION=Daemons
 DESCRIPTION=Hell Hound
+
 ON=@Create
-   NPC=brain_dragon
-   FAME={3500 3999}
-   KARMA={-3500 -3999}
-   STR={1200 1300}
-   MAXHITS={66 125}
-   DEX={180 190}
-   MAXSTAM={180 190}
-   INT={950 1050}
-   MAXMANA={950 1050}
-   MAGICRESISTANCE={95.0 105.0}
-   TACTICS={105.0 110.0}
-   WRESTLING={100.0 105.0}
-   RESPHYSICAL={0 10}
-   RESCOLD={40 45}
-   RESENERGY={80 90}
-   RESFIRE={70 80}
-   RESPOISON={60 70}
-ON=@NPCRestock
-   ITEM=loot_hellhound_ancient
+    NPC=brain_dragon
+    
+    FAME={3500 3999}
+    KARMA={-3500 -3999}
+    
+    STR={1200 1300}
+    MAXHITS={66 125}
+    DEX={180 190}
+    MAXSTAM={180 190}
+    INT={950 1050}
+    MAXMANA={950 1050}
+    
+    RESPHYSICAL={0 10}
+    RESCOLD={40 45}
+    RESENERGY={80 90}
+    RESFIRE={70 80}
+    RESPOISON={60 70}
+    
+    MAGICRESISTANCE={95.0 105.0}
+    TACTICS={105.0 110.0}
+    WRESTLING={100.0 105.0}
+    
+ON=@CreateLoot
+    ITEM=loot_hellhound_ancient
 
 
 [CHARDEF 042e]
 DEFNAME=c_werewolf
 NAME=were wolf
 SOUND=snd_animals_wolf1
-CAN=MT_WALK|MT_RUN
+CAN=mt_walk|mt_run
+
 DAM=14,25
 ARMOR=35
+MAXFOOD=20
+FACTION=faction_wolf
+TAG.Barding.DIFF=79.8
+
 DESIRES=r_forests,t_coin,t_gold,t_gem
 AVERSIONS=t_trap,r_civilization
 FOODTYPE=t_meat_raw
-MAXFOOD=20
 RESOURCES=1 i_ribs_raw,1 i_fur
-TAG.Barding.Diff=79.8
-TAG.SlayerGroup=WOLF
+
 TEVENTS=e_carnivores2
+
+//FIXME RESDISPDNID
+
+ERALIMITLOOT=7
+ERALIMITGEAR=7
+ERALIMITPROPS=7
+
 CATEGORY=Monsters
 SUBSECTION=Mythological
 DESCRIPTION=Were Wolf
-ON=@Create
-   NPC=brain_monster
-   FAME={2500 2999}
-   KARMA={-2500 -2999}
-   STR={350 375}
-   MAXHITS={220 245}
-   DEX={95 105}
-   MAXSTAM={105 125}
-   INT={35 55}
-   MAXMANA={35 55}
-   MAGICRESISTANCE={58.0 75.0}
-   TACTICS={50.0 70.0}
-   WRESTLING={80.0 90.0}
-   RESPHYSICAL={0 5}
-   RESCOLD={45 55}
-   RESENERGY={25 35}
-   RESFIRE={30 40}
-   RESPOISON={35 40}
-ON=@NPCRestock
-   ITEM=loot_werewolf
 
+ON=@Create
+    NPC=brain_monster
+    
+    FAME={2500 2999}
+    KARMA={-2500 -2999}
+    
+    STR={350 375}
+    MAXHITS={220 245}
+    DEX={95 105}
+    MAXSTAM={105 125}
+    INT={35 55}
+    MAXMANA={35 55}
+    
+    RESPHYSICAL={0 5}
+    RESCOLD={45 55}
+    RESENERGY={25 35}
+    RESFIRE={30 40}
+    RESPOISON={35 40}
+    
+    MAGICRESISTANCE={58.0 75.0}
+    TACTICS={50.0 70.0}
+    WRESTLING={80.0 90.0}
+    
+ON=@CreateLoot
+    ITEM=loot_werewolf
 
 
 [CHARDEF 042f]
@@ -141,257 +189,353 @@ DEFNAME=c_minotaur_lord
 NAME=minotaur lord
 ICON=i_pet_minotaur_lord
 SOUND=snd_monster_minotaur1
-CAN=MT_WALK|MT_RUN|MT_USEHANDS|MT_EQUIP
+CAN=mt_walk|mt_run|mt_usehands|mt_equip
+
 DAM=25,40
 ARMOR=50
+MAXFOOD=55
+FACTION=faction_bovine
+TAG.Barding.DIFF=160.0
+
 DESIRES=r_dungeon_labyrinth,t_coin,t_gold,t_wand,t_potion,t_scroll,t_reagent,e_notoriety
 AVERSIONS=t_trap
 FOODTYPE=t_meat_raw
-MAXFOOD=55
 RESOURCES=1 i_ribs_raw,10 i_hide
-TAG.Barding.Diff=160.0
-TAG.SlayerGroup=BOVINE
+
 TEVENTS=e_minotaurs
 TEVENTS=e_carnivores2
+
+//FIXME RESDISPDNID
+
+ERALIMITLOOT=7
+ERALIMITGEAR=7
+ERALIMITPROPS=7
+
 CATEGORY=Monsters
 SUBSECTION=Minotaurs
 DESCRIPTION=Minotaur, Lord
+
 ON=@Create
-   NPC=brain_monster
-   FAME={4500 5000}
-   KARMA={-4500 -5000}
-   STR={200 250}
-   MAXHITS={300 350}
-   DEX={90 100}
-   MAXSTAM={90 100}
-   INT={100 130}
-   MAXMANA={100 130}
-   ANATOMY={90.0 100.0}
-   ARCHERY={90.0 100.0}
-   DETECTINGHIDDEN={90.0 100.0}
-   FENCING={90.0 100.0}
-   MACEFIGHTING={90.0 100.0}
-   MAGICRESISTANCE={90.0 100.0}
-   PARRYING={90.0 100.0}
-   SWORDSMANSHIP={90.0 100.0}
-   TACTICS={90.0 100.0}
-   WRESTLING={90.0 100.0}
-   RESPHYSICAL={0 10}
-   RESCOLD={50 60}
-   RESENERGY={10 20}
-   RESFIRE={20 30}
-   RESPOISON={40 50}
-ON=@NpcRestock
-   ITEM=loot_minotaur_lord
-   ITEM=loot_ai_hard
-   
+    NPC=brain_monster
+    
+    FAME={4500 5000}
+    KARMA={-4500 -5000}
+    
+    STR={200 250}
+    MAXHITS={300 350}
+    DEX={90 100}
+    MAXSTAM={90 100}
+    INT={100 130}
+    MAXMANA={100 130}
+    
+    RESPHYSICAL={0 10}
+    RESCOLD={50 60}
+    RESENERGY={10 20}
+    RESFIRE={20 30}
+    RESPOISON={40 50}
+    
+    ANATOMY={90.0 100.0}
+    ARCHERY={90.0 100.0}
+    DETECTINGHIDDEN={90.0 100.0}
+    FENCING={90.0 100.0}
+    MACEFIGHTING={90.0 100.0}
+    MAGICRESISTANCE={90.0 100.0}
+    PARRYING={90.0 100.0}
+    SWORDSMANSHIP={90.0 100.0}
+    TACTICS={90.0 100.0}
+    WRESTLING={90.0 100.0}
+    
+ON=@CreateLoot
+    ITEM=loot_minotaur_lord
+    ITEM=loot_ai_hard
+
+
 [CHARDEF 04dc]
 DEFNAME=c_charybdis
 NAME=Charybdis
 SOUND=snd_monster_corpsr1
-CAN=MT_SWIM
+CAN=mt_swim
+
 DAM=24,33
 ARMOR=70
+MAXFOOD=75
+TAG.Barding.DIFF=160.0
+
 DESIRES=t_coin,t_gold,t_wand,t_potion,t_scroll,t_reagent,e_notoriety
 FOODTYPE=t_fish
-MAXFOOD=75
-TAG.Barding.Diff=160.0
+
 RESLEVEL=7
-RESDISPDNID=c_sea_serpent_deep
+RESDISPDNID=c_sea_serpent
 RESDISPDNHUE=33
+
+ERALIMITLOOT=7
+ERALIMITGEAR=7
+ERALIMITPROPS=7
+
 CATEGORY=Named Creatures
 SUBSECTION=Aquatic
 DESCRIPTION=Charybdis
+
 ON=@Create
-   NPC=brain_monster
-   FAME={7500 8000}
-   KARMA={-7500 -8000}
-   STR={525 600}
-   MAXHITS={3000 3500}
-   DEX={110 135}
-   MAXSTAM={110 135}
-   INT={110 155}
-   MAXMANA={110 155}
-   ANATOMY={90.0 100.0}
-   EVALUATINGINTEL={140.0 145.0}
-   MAGERY={135.0 145.0}
-   MAGICRESISTANCE={100.0 115.0}
-   TACTICS={120.0 125.0}
-   WRESTLING={90.0 100.0}
-   RESPHYSICAL={0 10}
-   RESCOLD={45 55}
-   RESENERGY={60 70}
-   RESFIRE={70 80}
-   RESPOISON={80 90}
-ON=@NpcRestock
-   ITEM=loot_charybdis
+    NPC=brain_monster
+    
+    FAME={7500 8000}
+    KARMA={-7500 -8000}
+    
+    STR={525 600}
+    MAXHITS={3000 3500}
+    DEX={110 135}
+    MAXSTAM={110 135}
+    INT={110 155}
+    MAXMANA={110 155}
+    
+    RESPHYSICAL={0 10}
+    RESCOLD={45 55}
+    RESENERGY={60 70}
+    RESFIRE={70 80}
+    RESPOISON={80 90}
+    
+    ANATOMY={90.0 100.0}
+    EVALUATINGINTEL={140.0 145.0}
+    MAGERY={135.0 145.0}
+    MAGICRESISTANCE={100.0 115.0}
+    TACTICS={120.0 125.0}
+    WRESTLING={90.0 100.0}
+    
+ON=@CreateLoot
+    ITEM=loot_charybdis
+
 
 [CHARDEF 04dd]
 DEFNAME=c_charybdis_tentacle
 NAME=Charybdis Tentacle
-CAN=MT_SWIM
+CAN=mt_swim
+
 DAM=10,15
 ARMOR=35
-TAG.Barding.Diff=160.0
+TAG.Barding.DIFF=160.0
+
+//FIXME RESDISPDNID
+
+ERALIMITLOOT=7
+ERALIMITGEAR=7
+ERALIMITPROPS=7
+
 CATEGORY=Named Creatures
 SUBSECTION=Aquatic
 DESCRIPTION=Charybdis, Tentacle
+
 ON=@Create
-   NPC=brain_monster
-   FAME={7500 8000}
-   KARMA={-7500 -8000}
-   STR={125 155}
-   MAXHITS={105 115}
-   DEX={65 85}
-   MAXSTAM={65 85}
-   INT={100 125}
-   MAXMANA={100 125}
-   ANATOMY={90.0 100.0}
-   EVALUATINGINTEL={60.0 75.0}
-   MAGERY={60.0 75.0}
-   MAGICRESISTANCE={100.0 115.0}
-   WRESTLING={90.0 100.0}
-   RESPHYSICAL={0 10}
-   RESCOLD={10 25}
-   RESENERGY={5 10}
-   RESFIRE={10 25}
-   RESPOISON={60 70}
+    NPC=brain_monster
+    
+    FAME={7500 8000}
+    KARMA={-7500 -8000}
+    
+    STR={125 155}
+    MAXHITS={105 115}
+    DEX={65 85}
+    MAXSTAM={65 85}
+    INT={100 125}
+    MAXMANA={100 125}
+    
+    RESPHYSICAL={0 10}
+    RESCOLD={10 25}
+    RESENERGY={5 10}
+    RESFIRE={10 25}
+    RESPOISON={60 70}
+    
+    ANATOMY={90.0 100.0}
+    EVALUATINGINTEL={60.0 75.0}
+    MAGERY={60.0 75.0}
+    MAGICRESISTANCE={100.0 115.0}
+    WRESTLING={90.0 100.0}
+
 
 [CHARDEF 04de]
 DEFNAME=c_pumpkin_demon
 NAME=killer pumpkin
 ICON=i_jackolantern
 SOUND=snd_monster_gargyl1
-CAN=MT_NONMOVER|MT_NONHUM
+CAN=mt_nonmover|mt_nonhum
+
 DAM=14,27
 ARMOR=30
+TAG.Barding.DIFF=72.5
+FACTION=faction_demon
+
 DESIRES=t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
 AVERSIONS=t_trap,r_civilization,e_carnivores3
 FOODTYPE=45 t_meat_raw
 RESOURCES=1 i_ribs_raw
-BLOODCOLOR=colors_orange
-TAG.Barding.Diff=72.5
-TAG.SlayerGroup=DEMON
+
+//FIXME RESDISPDNID
+
+ERALIMITLOOT=7
+ERALIMITGEAR=7
+ERALIMITPROPS=7
+
 CATEGORY=Holiday Creatures
 SUBSECTION=Halloween
 DESCRIPTION=Killer Pumpkin I
+
 ON=@Create
-   NPC=brain_monster
-   FAME={1500 1999}
-   KARMA={-1500 -1999}
-   STR={145 175}
-   MAXHITS={85 105}
-   DEX={75 95}
-   MAXSTAM={75 95}
-   INT={80 105}
-   MAXMANA={80 105}
-   EVALUATINGINTEL={70.0 85.0}
-   MAGERY={70.0 85.0}
-   MAGICRESISTANCE={70.0 85.0}
-   MEDITATION={65.0 75.0}
-   PARRYING={50.0 70.0}
-   TACTICS={50.0 70.0}
-   WRESTLING={40.0 80.0}
-   RESPHYSICAL={0 5}
-   RESCOLD={5 10}
-   RESENERGY=0
-   RESFIRE={25 35}
-   RESPOISON={15 25}
-ON=@NPCRestock
-   ITEM={ i_mask_daemon 1 i_mask_plague 1 i_mask_clown 1 i_mask_eviljester 1 i_mask_porcelain 1 }
-   ITEM=random_candy
-   ITEM=i_candle
+    NPC=brain_monster
+    
+    BLOODCOLOR=colors_orange
+    
+    FAME={1500 1999}
+    KARMA={-1500 -1999}
+    
+    STR={145 175}
+    MAXHITS={85 105}
+    DEX={75 95}
+    MAXSTAM={75 95}
+    INT={80 105}
+    MAXMANA={80 105}
+    
+    RESPHYSICAL={0 5}
+    RESCOLD={5 10}
+    
+    RESFIRE={25 35}
+    RESPOISON={15 25}
+    
+    EVALUATINGINTEL={70.0 85.0}
+    MAGERY={70.0 85.0}
+    MAGICRESISTANCE={70.0 85.0}
+    MEDITATION={65.0 75.0}
+    PARRYING={50.0 70.0}
+    TACTICS={50.0 70.0}
+    WRESTLING={40.0 80.0}
+    
+ON=@CreateLoot
+    ITEM={ i_mask_daemon 1 i_mask_plague 1 i_mask_clown 1 i_mask_eviljester 1 i_mask_porcelain 1 }
+    ITEM=random_candy
+    ITEM=i_candle
+
 
 [CHARDEF 04df]
 DEFNAME=c_pumpkin_fright
 NAME=killer pumpkin
 ICON=i_jackolantern2
 SOUND=snd_monster_gargyl1
-CAN=MT_NONMOVER|MT_NONHUM
+CAN=mt_nonmover|mt_nonhum
+
 DAM=14,27
 ARMOR=30
+FACTION=faction_demon
+TAG.Barding.DIFF=72.5
+
 DESIRES=t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
 AVERSIONS=t_trap,r_civilization,e_carnivores3
 FOODTYPE=45 t_meat_raw
 RESOURCES=1 i_ribs_raw
-BLOODCOLOR=colors_orange
-TAG.Barding.Diff=72.5
-TAG.SlayerGroup=DEMON
+
+//FIXME RESDISPDNID
+
+ERALIMITLOOT=7
+ERALIMITGEAR=7
+ERALIMITPROPS=7
+
 CATEGORY=Holiday Creatures
 SUBSECTION=Halloween
 DESCRIPTION=Killer Pumpkin II
+
 ON=@Create
-   NPC=brain_monster
-   FAME={1500 1999}
-   KARMA={-1500 -1999}
-   STR={145 175}
-   MAXHITS={85 105}
-   DEX={75 95}
-   MAXSTAM={75 95}
-   INT={80 105}
-   MAXMANA={80 105}
-   EVALUATINGINTEL={70.0 85.0}
-   MAGERY={70.0 85.0}
-   MAGICRESISTANCE={70.0 85.0}
-   MEDITATION={65.0 75.0}
-   PARRYING={50.0 70.0}
-   TACTICS={50.0 70.0}
-   WRESTLING={40.0 80.0}
-   RESPHYSICAL={0 5}
-   RESCOLD={5 10}
-   RESENERGY=0
-   RESFIRE={25 35}
-   RESPOISON={15 25}
-ON=@NPCRestock
-   ITEM={ i_mask_daemon 1 i_mask_plague 1 i_mask_clown 1 i_mask_eviljester 1 i_mask_porcelain 1 }
-   ITEM=random_candy
-   ITEM=i_candle
+    NPC=brain_monster
+    
+    BLOODCOLOR=colors_orange
+    
+    FAME={1500 1999}
+    KARMA={-1500 -1999}
+    
+    STR={145 175}
+    MAXHITS={85 105}
+    DEX={75 95}
+    MAXSTAM={75 95}
+    INT={80 105}
+    MAXMANA={80 105}
+    
+    RESPHYSICAL={0 5}
+    RESCOLD={5 10}
+    
+    RESFIRE={25 35}
+    RESPOISON={15 25}
+    
+    EVALUATINGINTEL={70.0 85.0}
+    MAGERY={70.0 85.0}
+    MAGICRESISTANCE={70.0 85.0}
+    MEDITATION={65.0 75.0}
+    PARRYING={50.0 70.0}
+    TACTICS={50.0 70.0}
+    WRESTLING={40.0 80.0}
+    
+ON=@CreateLoot
+    ITEM={ i_mask_daemon 1 i_mask_plague 1 i_mask_clown 1 i_mask_eviljester 1 i_mask_porcelain 1 }
+    ITEM=random_candy
+    ITEM=i_candle
+
 
 [CHARDEF 04e0]
 DEFNAME=c_clockwork_exodus
 NAME=Clockwork Exodus
 ICON=i_pet_exodus
 SOUND=snd_monster_ophidian_mage1
-CAN=MT_WALK|MT_RUN|MT_USEHANDS|MT_EQUIP
+CAN=mt_walk|mt_run|mt_usehands|mt_equip
+
 DAM=25,40
 ARMOR=50
+MAXFOOD=55
+FACTION=faction_demon
+TAG.Barding.DIFF=160.0
+
 DESIRES=r_dungeon_exodus,t_coin,t_gold,t_wand,t_potion,t_scroll,t_reagent,e_notoriety
 AVERSIONS=t_trap
 FOODTYPE=t_meat_raw
-MAXFOOD=55
 RESOURCES=1 i_ribs_raw,10 i_hide
-TAG.Barding.Diff=160.0
-TAG.SlayerGroup=DEMON
+
+//FIXME RESDISPDNID
+
+ERALIMITLOOT=7
+ERALIMITGEAR=7
+ERALIMITPROPS=7
+
 TEVENTS=e_carnivores2
+
 CATEGORY=Named Creatures
 SUBSECTION=Mechanicals
 DESCRIPTION=Clockwork Exodus
+
 ON=@Create
-   NPC=brain_monster
-   FAME={4500 5000}
-   KARMA={-4500 -5000}
-   STR={200 250}
-   MAXHITS={300 350}
-   DEX={90 100}
-   MAXSTAM={90 100}
-   INT={100 130}
-   MAXMANA={100 130}
-   ANATOMY={90.0 100.0}
-   ARCHERY={90.0 100.0}
-   DETECTINGHIDDEN={90.0 100.0}
-   FENCING={90.0 100.0}
-   MACEFIGHTING={90.0 100.0}
-   MAGICRESISTANCE={90.0 100.0}
-   PARRYING={90.0 100.0}
-   SWORDSMANSHIP={90.0 100.0}
-   TACTICS={90.0 100.0}
-   WRESTLING={90.0 100.0}
-   RESPHYSICAL={0 10}
-   RESCOLD={50 60}
-   RESENERGY={10 20}
-   RESFIRE={20 30}
-   RESPOISON={40 50}
-ON=@NpcRestock
-   ITEM=loot_ai_hard
+    NPC=brain_monster
+    
+    FAME={4500 5000}
+    KARMA={-4500 -5000}
+    
+    STR={200 250}
+    MAXHITS={300 350}
+    DEX={90 100}
+    MAXSTAM={90 100}
+    INT={100 130}
+    MAXMANA={100 130}
+    
+    RESPHYSICAL={0 10}
+    RESCOLD={50 60}
+    RESENERGY={10 20}
+    RESFIRE={20 30}
+    RESPOISON={40 50}
+    
+    ANATOMY={90.0 100.0}
+    ARCHERY={90.0 100.0}
+    DETECTINGHIDDEN={90.0 100.0}
+    FENCING={90.0 100.0}
+    MACEFIGHTING={90.0 100.0}
+    MAGICRESISTANCE={90.0 100.0}
+    PARRYING={90.0 100.0}
+    SWORDSMANSHIP={90.0 100.0}
+    TACTICS={90.0 100.0}
+    WRESTLING={90.0 100.0}
+    
+ON=@CreateLoot
+    ITEM=loot_ai_hard
 
 [EOF]

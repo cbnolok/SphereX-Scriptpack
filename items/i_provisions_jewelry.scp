@@ -16,7 +16,7 @@ SKILLMAKE=Tinkering 61.0,t_tinker_tools
 CATEGORY=Provisions - Jewels and Jewelry
 SUBSECTION=Jewelry
 DESCRIPTION=Necklace
-TEVENTS=t_equipitem
+TEVENTS=ei_equipitem
 DUPELIST=01f05
 
 [ITEMDEF 01086]
@@ -30,7 +30,7 @@ SKILLMAKE=Tinkering 63.5,t_tinker_tools
 CATEGORY=Provisions - Jewels and Jewelry
 SUBSECTION=Jewelry
 DESCRIPTION=Bracelet (Gold)
-TEVENTS=t_equipitem
+TEVENTS=ei_equipitem
 
 [ITEMDEF 01087]
 DEFNAME=i_earrings_gold
@@ -43,7 +43,7 @@ SKILLMAKE=Tinkering 62.5,t_tinker_tools
 CATEGORY=Provisions - Jewels and Jewelry
 SUBSECTION=Jewelry
 DESCRIPTION=Earrings (Gold)
-TEVENTS=t_equipitem
+TEVENTS=ei_equipitem
 
 [ITEMDEF 01088]
 DEFNAME=i_necklace_gold
@@ -56,7 +56,7 @@ SKILLMAKE=Tinkering 61.0,t_tinker_tools
 CATEGORY=Provisions - Jewels and Jewelry
 SUBSECTION=Jewelry
 DESCRIPTION=Necklace
-TEVENTS=t_equipitem
+TEVENTS=ei_equipitem
 
 [ITEMDEF 01089]
 DEFNAME=i_necklace_gold_beads
@@ -69,7 +69,7 @@ SKILLMAKE=Tinkering 62.0,t_tinker_tools
 CATEGORY=Provisions - Jewels and Jewelry
 SUBSECTION=Jewelry
 DESCRIPTION=Necklace (Gold Bead)
-TEVENTS=t_equipitem
+TEVENTS=ei_equipitem
 
 [ITEMDEF 0108a]
 DEFNAME=i_ring_gold
@@ -82,7 +82,7 @@ SKILLMAKE=Tinkering 63.0,t_tinker_tools
 CATEGORY=Provisions - Jewels and Jewelry
 SUBSECTION=Jewelry
 DESCRIPTION=Ring (Gold)
-TEVENTS=t_equipitem
+TEVENTS=ei_equipitem
 
 [ITEMDEF 0108b]
 DEFNAME=i_beads
@@ -123,7 +123,7 @@ SKILLMAKE=Tinkering 62.0,t_tinker_tools
 CATEGORY=Provisions - Jewels and Jewelry
 SUBSECTION=Jewelry
 DESCRIPTION=Silver Bracelet
-TEVENTS=t_equipitem
+TEVENTS=ei_equipitem
 
 [ITEMDEF 01f07]
 DEFNAME=i_earrings_silver
@@ -137,7 +137,7 @@ SKILLMAKE=Tinkering 62.0,t_tinker_tools
 CATEGORY=Provisions - Jewels and Jewelry
 SUBSECTION=Jewelry
 DESCRIPTION=Silver Earrings
-TEVENTS=t_equipitem
+TEVENTS=ei_equipitem
 
 [ITEMDEF 01f08]
 DEFNAME=i_necklace_silver
@@ -151,7 +151,7 @@ SKILLMAKE=Tinkering 62.0,t_tinker_tools
 CATEGORY=Provisions - Jewels and Jewelry
 SUBSECTION=Jewelry
 DESCRIPTION=Silver Necklace
-TEVENTS=t_equipitem
+TEVENTS=ei_equipitem
 
 [ITEMDEF 01f09]
 DEFNAME=i_ring_silver
@@ -165,7 +165,7 @@ SKILLMAKE=Tinkering 62.0,t_tinker_tools
 CATEGORY=Provisions - Jewels and Jewelry
 SUBSECTION=Jewelry
 DESCRIPTION=Silver Ring
-TEVENTS=t_equipitem
+TEVENTS=ei_equipitem
 
 [ITEMDEF 01f0a]
 DEFNAME=i_necklace_silver_beads
@@ -179,7 +179,7 @@ SKILLMAKE=Tinkering 62.0,t_tinker_tools
 CATEGORY=Provisions - Jewels and Jewelry
 SUBSECTION=Jewelry
 DESCRIPTION=Silver Beads
-TEVENTS=t_equipitem
+TEVENTS=ei_equipitem
 
 
 [ITEMDEF 02f58]
@@ -242,7 +242,6 @@ DESCRIPTION=Elven Glasses
 REQSTR=45
 DUPELIST=03172
 ON=@Create
-   HITPOINTS={36 48}
    RESPHYSICAL=2
    RESFIRE=4
    RESCOLD=4
@@ -278,7 +277,7 @@ CATEGORY=Provisions - Jewels and Jewelry
 SUBSECTION=Jewelry
 DESCRIPTION=Gargish Necklace
 canuse=can_u_gargoyle
-TEVENTS=t_equipitem
+TEVENTS=ei_equipitem
 ON=@Create
    HITPOINTS={30 40}
    RESPHYSICAL=1
@@ -297,7 +296,7 @@ CATEGORY=Provisions - Jewels and Jewelry
 SUBSECTION=Jewelry
 DESCRIPTION=Gargish Bracelet
 canuse=can_u_gargoyle
-TEVENTS=t_equipitem
+TEVENTS=ei_equipitem
 
 [ITEMDEF 04212]
 DEFNAME=i_ring_gargoyle
@@ -309,7 +308,7 @@ CATEGORY=Provisions - Jewels and Jewelry
 SUBSECTION=Jewelry
 DESCRIPTION=Gargoyle Ring
 canuse=can_u_gargoyle
-TEVENTS=t_equipitem
+TEVENTS=ei_equipitem
 
 [ITEMDEF 04213]
 DEFNAME=i_earrings_gargoyle
@@ -321,7 +320,7 @@ CATEGORY=Provisions - Jewels and Jewelry
 SUBSECTION=Jewelry
 DESCRIPTION=Gargish Earrings
 canuse=can_u_gargoyle
-TEVENTS=t_equipitem
+TEVENTS=ei_equipitem
 ON=@Create
    HITPOINTS={30 40}
    RESPHYSICAL=1
@@ -341,10 +340,9 @@ SUBSECTION=Glasses
 DESCRIPTION=Gargish Female Glasses
 canuse=can_u_gargoyle|can_u_female
 REQSTR=45
-TEVENTS=t_equipitem
+TEVENTS=ei_equipitem
 DUPELIST=045b3
 ON=@Create
-   HITPOINTS={36 48}
    RESPHYSICAL=2
    RESFIRE=4
    RESCOLD=4
@@ -368,10 +366,9 @@ DESCRIPTION=Gargish Glasses
 canuse=can_u_gargoyle
 //TAG.MaleOnly=1
 REQSTR=45
-TEVENTS=t_equipitem
+TEVENTS=ei_equipitem
 DUPELIST=04645
 ON=@Create
-   HITPOINTS={36 48}
    RESPHYSICAL=2
    RESFIRE=4
    RESCOLD=4
@@ -394,7 +391,7 @@ CATEGORY=Provisions - Jewels and Jewelry
 SUBSECTION=Jewelry
 DESCRIPTION=Gargish Stone Amulet
 canuse=can_u_gargoyle
-TEVENTS=t_equipitem
+TEVENTS=ei_equipitem
 ON=@Create
    COLOR=09c4
    HITPOINTS={30 40}
@@ -414,7 +411,7 @@ CATEGORY=Provisions - Jewels and Jewelry
 SUBSECTION=Jewelry
 DESCRIPTION=Gargish Amulet
 canuse=can_u_gargoyle
-TEVENTS=t_equipitem
+TEVENTS=ei_equipitem
 ON=@Create
    HITPOINTS={30 40}
    RESPHYSICAL=1

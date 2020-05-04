@@ -11,8 +11,8 @@ ON=@Click
 return 1
 
 ON=@ClientToolTip
-  src.addcliloc 1042971,a townstone
-  src.addcliloc 1070722,Town name: <name>
+  addcliloc 1042971,a townstone
+  addcliloc 1070722,Town name: <name>
 return 1
 
 

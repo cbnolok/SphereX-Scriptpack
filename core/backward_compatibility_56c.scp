@@ -4,6 +4,7 @@
 //****************************************************************************
 VERSION=X1
 
+// Translate defnames used in 56c to the currently used ones
 [DEFNAME backward_compatibility_defs_56c]
 // Doors
 i_door_elven_bark				i_door_elven_wooden
@@ -237,17 +238,17 @@ brain_thief						brain_human
 brain_vendor_offduty			brain_vendor
 brain_undead					brain_monster
 loot_orge_lord					loot_ogre_lord
-snd_rune_beetle					snd_monster_rune_beetle
-snd_yomotsu						snd_monster_yomotsu
+snd_rune_beetle					snd_monster_rune_beetle1
+snd_yomotsu						snd_monster_yomotsu1
 snd_kappa						snd_monster_kappa
 snd_gaman						snd_monster_gaman
-snd_tsuki_wolf					snd_monster_tsuki_wolf
+snd_tsuki_wolf					snd_monster_tsuki_wolf1
 snd_rav_lion					snd_monster_rav_lion
 snd_oni							snd_monster_oni
 snd_pixie						snd_monster_pixie
-snd_centaur						snd_monster_centaur
+snd_centaur						snd_monster_centaur1
 snd_crane						snd_animal_crane
-snd_kirin						snd_animal_kirin
+snd_kirin						snd_animal_kirin1
 snd_hiryu						snd_animal_hiryu
 
 //bufficons changed to passiveicon

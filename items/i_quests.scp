@@ -244,8 +244,8 @@ NAME=The Town Cryer
 
 [TYPEDEF t_town_cryer]
 ON=@ClientTooltip
-   SRC.ADDCLILOC 1042971,"<TAG.Title>"	//~1_NOTHING~
-   SRC.ADDCLILOC 1154760,<TAG.Author>	//By: ~1_NAME~
+   addcliloc 1042971,"<TAG.Title>"	//~1_NOTHING~
+   addcliloc 1154760,<TAG.Author>	//By: ~1_NAME~
 ON=@DClick
    SDIALOG d_town_cryer
    return 1

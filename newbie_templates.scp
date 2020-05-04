@@ -17,7 +17,7 @@ Each profession/skill template can have optional
 variants to human, elf and gargoyle races. Example:
   [NEWBIE Alchemy]
   [NEWBIE Alchemy Elf]
-  [NEWBIE Alchemy Gargoyle]
+  [NEWBIE Alchemy Garg]
 
 If the player choose an race which has no template set, the
 default human template will be used by default.

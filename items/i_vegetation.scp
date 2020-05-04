@@ -291,7 +291,7 @@ CATEGORY=Vegetation
 SUBSECTION=Plants and Flowers
 DESCRIPTION=Vines
 ON=@Create
-   FRUIT={ i_fruit_watermelon, i_fruit_pumpkin, i_fruit_pumpkin_2, i_fruit_pumpkin_3, i_fruit_gourd_yellow, i_fruit_gourd_green, i_fruit_cantaloupe, i_fruit_honeydewmelon, i_fruit_squash }
+   FRUIT={ i_fruit_watermelon, i_fruit_pumpkin, i_fruit_pumpkin_2, i_fruit_pumpkin_3, i_fruit_gourd_yellow, i_fruit_gourd_green, i_fruit_cantaloupe, i_fruit_honeydewmelon, i_fruit_squash, i_fruit_watermelon }
 
 [ITEMDEF 0c5f]
 //vines
@@ -305,7 +305,7 @@ CATEGORY=Vegetation
 SUBSECTION=Plants and Flowers
 DESCRIPTION=Vines
 ON=@Create
-   FRUIT={ i_fruit_watermelon, i_fruit_pumpkin, i_fruit_pumpkin_2, i_fruit_pumpkin_3, i_fruit_gourd_yellow, i_fruit_gourd_green, i_fruit_cantaloupe, i_fruit_honeydewmelon, i_fruit_squash }
+   FRUIT={ i_fruit_watermelon, i_fruit_pumpkin, i_fruit_pumpkin_2, i_fruit_pumpkin_3, i_fruit_gourd_yellow, i_fruit_gourd_green, i_fruit_cantaloupe, i_fruit_honeydewmelon, i_fruit_squash, i_fruit_watermelon }
 
 [ITEMDEF 0c60]
 //vines
@@ -318,7 +318,7 @@ CATEGORY=Vegetation
 SUBSECTION=Plants and Flowers
 DESCRIPTION=Vines
 ON=@Create
-   FRUIT={ i_fruit_watermelon, i_fruit_pumpkin, i_fruit_pumpkin_2, i_fruit_pumpkin_3, i_fruit_gourd_yellow, i_fruit_gourd_green, i_fruit_cantaloupe, i_fruit_honeydewmelon, i_fruit_squash }
+   FRUIT={ i_fruit_watermelon, i_fruit_pumpkin, i_fruit_pumpkin_2, i_fruit_pumpkin_3, i_fruit_gourd_yellow, i_fruit_gourd_green, i_fruit_cantaloupe, i_fruit_honeydewmelon, i_fruit_squash, i_fruit_watermelon }
 
 [ITEMDEF 0c61]
 DEFNAME=i_crop_turnip1
@@ -4382,7 +4382,7 @@ DUPEITEM=0309c
 //Tall Pine Tree Trunk
 DUPEITEM=0309c
 
-[ITEMDEF i_multi_tree_tall_pine_trunk]
+[MULTIDEF i_multi_tree_tall_pine_trunk]
 NAME=tall pine trunk
 TYPE=t_multi
 CATEGORY=Multis
@@ -4440,7 +4440,7 @@ DUPEITEM=030a6
 //Tall Pine Tree Foliage
 DUPEITEM=030a6
 
-[ITEMDEF i_multi_tree_tall_pine_foliage]
+[MULTIDEF i_multi_tree_tall_pine_foliage]
 NAME=tall pine foliage
 TYPE=t_multi
 CATEGORY=Multis
@@ -4493,7 +4493,7 @@ DUPEITEM=030af
 //Wide Tree 1 Foliage
 DUPEITEM=030af
 
-[ITEMDEF i_multi_wide_tree_1_foliage]
+[MULTIDEF i_multi_wide_tree_1_foliage]
 NAME=leaves
 TYPE=t_multi
 CATEGORY=Multis
@@ -4536,7 +4536,7 @@ DUPEITEM=030b7
 //Wide Tree 2 Foliage
 DUPEITEM=030b7
 
-[ITEMDEF i_multi_wide_tree_2_foliage]
+[MULTIDEF i_multi_wide_tree_2_foliage]
 NAME=leaves
 TYPE=t_multi
 CATEGORY=Multis
@@ -4578,7 +4578,7 @@ DUPEITEM=030bd
 //Wide Tree 1 Trunk
 DUPEITEM=030bd
 
-[ITEMDEF i_multi_wide_tree_1_trunk]
+[MULTIDEF i_multi_wide_tree_1_trunk]
 NAME=tree trunk
 TYPE=t_multi
 CATEGORY=Multis
@@ -4616,7 +4616,7 @@ DUPEITEM=030c3
 //Wide Tree 2 Trunk
 DUPEITEM=030c3
 
-[ITEMDEF i_multi_wide_tree_2_trunk]
+[MULTIDEF i_multi_wide_tree_2_trunk]
 //FIXME: part 030c5 doesnt fit
 NAME=tree trunk
 TYPE=t_multi

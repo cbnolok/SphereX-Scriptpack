@@ -43,8 +43,8 @@ ON=@Fail
 ON=@Abort
 	SYSMESSAGE You give up trying to hide here.
 
-	[FUNCTION GetCharArmorRating]
-ARGS=4,6,7,10,13,19
+[FUNCTION GetCharArmorRating]
+ARGS=4,6,7,10,13,19,24
 WHILE (<dARGS>)
  IF !(<FINDLAYER.<ARGV0>.MageArmor>)
   LOCAL.AR += <DEF0.ArmorRating.<FINDLAYER.<ARGV0>.GetArmorMaterial>.Layer<ARGV0>>
@@ -88,7 +88,7 @@ ArmorRating.Ring.Layer19	10
 ArmorRating.Chain.Layer4	15
 ArmorRating.Chain.Layer6	10
 ArmorRating.Chain.Layer13	25
-ArmorRating.Plate.Layer4	15
+ArmorRating.Plate.Layer24	15
 ArmorRating.Plate.Layer6	10
 ArmorRating.Plate.Layer7	5
 ArmorRating.Plate.Layer10	5

@@ -1,0 +1,132 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
+// Unfinished yet!
+//FIXME: recalibrate MOREY values on magic items...
+
+[DEFNAME attr_magic_level]
+// MOREY needed to match a level. The actual bonus is calculated with the EFFECT property of the spell s_enchant
+attr_magic_level_1	1.0
+attr_magic_level_2	25.0
+attr_magic_level_3	50.0
+attr_magic_level_4	75.0
+attr_magic_level_5	100.0
+
+
+[COMMENT ATTR_MAGIC ARMOR]
+// Property: Armor Resistance Increase (ascending order)
+// ar += (5 * bonus level)
+(0: Regular)
+1: Defense			// 5
+2: Guarding			// 10
+3: Hardening		// 15
+4: Fortification	// 20
+5: Invulnerability	// 25
+
+// Property: Armor Durability Increase (ascending order) (NOT IMPLEMENTED)
+// Exceptional additional +20?
+(0: Regular)
+1: Durable			// 20
+2: Substantial		// 50
+3: Massive			// 70
+4: Fortified		// 100
+5: Indestructible	// 120
+
+
+[COMMENT ATTR_MAGIC WEAPON]
+// Property: damage increase (ascending order)
+// damage += (2 * (DamageLevel) - 1;
+(0: Regular)
+1: Ruin				// 1
+2: Might			// 3
+3: Force			// 5
+4: Power			// 7
+5: Vanquishing		// 9
+
+// Property: weapon skill bonus (ascending order) (NOT IMPLEMENTED)
+// It's a raw hit chance bonus?
+(0: Regular)
+1: Accurate					// 2.0
+2: Surpassingly Accurate	// 4.0
+3: Eminently Accurate		// 6.0
+4: Exceedingly Accurate		// 8.0
+5: Supremely Accurate		// 10.0
+?OR?
+Accurate           		+5.0 to Tactics or +4.6 to Archery*
+Accurate, Surpassingly	+10.0 to Tactics or +9.3 to Archery*
+Accurate, Eminently		+15.0 to Tactics or +14.0 to Archery*
+Accurate, Exceedingly	+20.0 to Tactics or +18.7 to Archery*
+Accurate, Supremely		+25.0 to Tactics or +23.3 to Archery*
+
+// Properties given by a material (NOT IMPLEMENTED)
+Silver        	Double Damage vs. Undead (no charges)
+
+// Property: Hit Spell (NOT IMPLEMENTED (in this way at least))
+----------------------------------
+Suffix			|	Spell Effect
+----------------+-----------------
+Burning			|	Magic Arrow
+Daemon's Breath	|	Fireball
+Dragon's Breath	|	Fireball
+Evil			|	Curse
+Feeblemind		|	Feeblemind
+Ghoul's Touch	|	Paralyze
+Mage's Bane		|	Mana Drain
+Spell Reflection|	Magic Reflection (Will use up charges fast while being worn)
+Thunder			|	Lightning
+Weakness		|	Weakness
+Wounding		|	Harm
+----------------------------------
+
+
+[function f_magic_preaos_getlevel]
+if <morey> < <def.attr_magic_level_1>
+	return 0
+elif ((<morey> >= <def.attr_magic_level_1>) && <morey> < <def.attr_magic_level_2>))
+	return 1
+elif ((<morey> >= <def.attr_magic_level_2>) && <morey> < <def.attr_magic_level_3>))
+	return 2
+elif ((<morey> >= <def.attr_magic_level_3>) && <morey> < <def.attr_magic_level_4>))
+	return 3
+elif ((<morey> >= <def.attr_magic_level_4>) && <morey> < <def.attr_magic_level_5>))
+	return 4
+endif
+return 5
+
+[function f_magic_preaos_weapon_texthue] // argn1: level
+doswitch <argn>
+return 0		// 0
+return 0a37		// level 1
+return 07be		// level 2
+return 067a		// level 3
+return 09de		// level 4
+return 04e9		// level 5
+//return 0959 // level 6? for MOREY=120.0?
+enddo
+return 0
+
+// Manual calculation (not relying on s_enchant) of the damage bonus
+[function f_magic_preaos_weapon_getbonusdam] // argn1: level
+return <qval (<argn> <= 0) ? 0 : <eval (2*<argn>) - 1>>
+
+// Manual calculation (not relying on s_enchant) of the damage bonus
+[function f_magic_preaos_armor_getbonusdefense] // argn1: level
+return <qval (<argn> <= 0) ? 0 : <eval 10 + (5*<argn>)>>
+
+
+[TYPEDEF ei_magic_preaos]
+On=@AfterClick
+if ((<act.isweapon>) && (<act.attr>&attr_magic))
+	local.level = <act.f_magic_preaos_getlevel>
+	local.clickmsgtext=+<f_magic_preaos_weapon_getbonusdam <local.level>> <act.name>
+	local.clickmsghue=<f_magic_preaos_weapon_texthue <local.level>>	//different colors for each magic value (only for weapons)
+elif ((<act.isarmor>) && (<act.attr>&attr_magic))
+	local.level = <act.f_magic_preaos_getlevel>
+	local.clickmsgtext=+<f_magic_preaos_armor_getbonusdefense <local.level>> <act.name>
+endif
+
+
+[EOF]

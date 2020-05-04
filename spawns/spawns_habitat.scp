@@ -3,6 +3,7 @@
 // www.sphereserver.net
 //****************************************************************************
 VERSION=X1
+[EOF]
 
 [SPAWN spawn_PlainsMonsters]
 CATEGORY=Spawn Groups

@@ -1,6 +1,6 @@
 
 To install:
-1. Open any folder and write in the direction bar %appdata%/notepad++
+1. Open any folder and write in the direction bar %appdata%/notepad++/userDefineLangs
 2. put the userDefineLang.xml inside this folder
 
 Open notepad++

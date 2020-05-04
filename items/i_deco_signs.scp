@@ -481,6 +481,8 @@ DUPEITEM=0bcf
 //brass sign
 DEFNAME=i_sign_brass
 TYPE=T_SIGN_GUMP
+TEVENTS=ei_house_sign
+CAN=can_i_dcignorelos
 TDATA2=064
 FLIP=1
 RESOURCES=2 i_board,1 i_ingot_iron

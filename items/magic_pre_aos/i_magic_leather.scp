@@ -4,9 +4,23 @@
 //****************************************************************************
 VERSION=X1
 
+[COMMENT ATTR_MAGIC]
+// Property: Armor Resistance Increase. Prefixes. (ascending order)
+Defense
+Guarding
+Hardening
+Fortification
+Invulnerability
+
+// Property: Armor Resistance Increase. Bonus calculation.
+Based on s_enchant MOREY...
+
+
 [ITEMDEF i_leather_sleeves_invulnerability]
 ID=i_leather_sleeves
 NAME=Leather Sleeves of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Leather
@@ -21,6 +35,8 @@ ON=@Create
 [ITEMDEF i_leather_gorget_invulnerability]
 ID=i_leather_gorget
 NAME=Leather Gorget of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Leather
@@ -35,6 +51,8 @@ ON=@Create
 [ITEMDEF i_leather_leggings_invulnerability]
 ID=i_leather_leggings
 NAME=Leather Leggings of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Leather
@@ -49,6 +67,8 @@ ON=@Create
 [ITEMDEF i_leather_tunic_invulnerability]
 ID=i_leather_tunic
 NAME=Leather Tunic of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Leather
@@ -63,6 +83,8 @@ ON=@Create
 [ITEMDEF i_leather_gloves_invulnerability]
 ID=i_leather_gloves
 NAME=Leather Gloves of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Leather
@@ -77,6 +99,8 @@ ON=@Create
 [ITEMDEF i_leather_cap_invulnerability]
 ID=i_leather_cap
 NAME=Leather Cap of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Leather
@@ -91,6 +115,8 @@ ON=@Create
 [ITEMDEF i_leather_shorts_invulnerability]
 ID=i_armor_female_shorts
 NAME=Leather Shorts of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Leather
@@ -105,6 +131,8 @@ ON=@Create
 [ITEMDEF i_leather_armor_invulnerability_female]
 ID=i_armor_female_leather
 NAME=Leather Armor of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Leather
@@ -119,6 +147,8 @@ ON=@Create
 [ITEMDEF i_leather_skirt_invulnerability]
 ID=i_armor_female_skirt
 NAME=Leather Skirt of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Leather
@@ -133,6 +163,8 @@ ON=@Create
 [ITEMDEF i_leather_bustier_invulnerability]
 ID=i_armor_female_bustier
 NAME=Leather Bustier of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Leather
@@ -147,6 +179,8 @@ ON=@Create
 [ITEMDEF i_studded_sleeves_invulnerability]
 ID=i_studded_sleeves
 NAME=Studded Sleeves of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Studded
@@ -161,6 +195,8 @@ ON=@Create
 [ITEMDEF i_studded_gloves_invulnerability]
 ID=i_studded_gloves
 NAME=Studded Gloves of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Studded
@@ -175,6 +211,8 @@ ON=@Create
 [ITEMDEF i_studded_gorget_invulnerability]
 ID=i_studded_gorget
 NAME=Studded Gorget of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Studded
@@ -189,6 +227,8 @@ ON=@Create
 [ITEMDEF i_studded_leggings_invulnerability]
 ID=i_studded_leggings
 NAME=Studded Leggings of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Studded
@@ -203,6 +243,8 @@ ON=@Create
 [ITEMDEF i_studded_tunic_invulnerability]
 ID=i_studded_tunic
 NAME=Studded Tunic of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Studded
@@ -217,6 +259,8 @@ ON=@Create
 [ITEMDEF i_studded_armor_invulnerability]
 ID=i_armor_female_studded
 NAME=Studded Armor of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Studded
@@ -231,6 +275,8 @@ ON=@Create
 [ITEMDEF i_studded_bustier_invulnerability]
 ID=i_armor_female_bustier_studded
 NAME=Studded Bustier of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Studded

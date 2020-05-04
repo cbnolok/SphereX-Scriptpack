@@ -47,7 +47,7 @@ ENDIF
 ON=@ClientToolTip
 FOR 1 57
  IF (<TAG0.Mastery> == <LOCAL._FOR>)
-  SRC.AddCliloc <DEF0.SkillMastery.<dLOCAL._FOR>>
+  addcliloc <DEF0.SkillMastery.<dLOCAL._FOR>>
   return 0
  ENDIF
 ENDFOR

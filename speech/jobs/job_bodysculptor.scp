@@ -6,7 +6,7 @@ VERSION=X1
 
 [SPEECH jobBODYSCULPTOR]
 ON=*buy*
-	IF (<SRC.f_isgarg>)
+	IF (<SRC.f_isGargoyle>)
 		SRC.SYSMESSAGE Gargoyles cannot use the services of a body sculptor.
 		return 1
 	ELIF !((<SRC.CLIENTISKR>) || (<SRC.CLIENTISENHANCED>))

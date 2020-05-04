@@ -4,6 +4,7 @@
 //****************************************************************************
 VERSION=X1
 
+[EOF]
 [SPAWN spawn_Villagers]
 CATEGORY=Spawn Groups
 SUBSECTION=Humans

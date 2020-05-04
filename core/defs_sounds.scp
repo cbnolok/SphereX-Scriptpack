@@ -352,6 +352,7 @@ snd_monster_pixie1            1127 // unordered sound IDs, need to use the SOUND
 snd_monster_pixie_spe         1128
 snd_monster_pixie2_1	      1133 // unordered sound IDs, need to use the SOUND overrides
 snd_monster_pixie2_spe        1134
+snd_monster_pixie             1139
 snd_animal_seahorse1          1144
 snd_monster_shadowlord1       1149
 snd_monster_shadows1          1154

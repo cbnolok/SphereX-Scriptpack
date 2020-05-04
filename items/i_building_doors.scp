@@ -102,9 +102,8 @@ DUPEITEM=0e9
 
 
 [ITEMDEF 022c]
-TYPE=t_custom_door
-TDATA1=0435//ID when opened
-TDATA2=022c//ID when closed
+TYPE=t_door
+TDATA2=0435 //ID to change to when the door is used (opened ID)
 //CAN=can_i_block|can_i_blocklos
 CATEGORY=Buildings - Doors
 SUBSECTION=Palisade Door
@@ -113,9 +112,8 @@ DESCRIPTION=Door 1 (closed)
 [ITEMDEF 022d]
 DEFNAME=i_door_tent2
 //FIXME: Cant find the closed ITEMDEF
-//TYPE=t_custom_door
-//TDATA1=022d//ID when opened
-//TDATA2=????//ID when closed
+//TYPE=t_door
+//TDATA2=???? //ID to change to when the door is used (closed ID)
 CATEGORY=Buildings - Doors
 SUBSECTION=Palisade Door
 DESCRIPTION=Door 2 (opened)
@@ -123,17 +121,15 @@ DESCRIPTION=Door 2 (opened)
 [ITEMDEF 022e]
 DEFNAME=i_door_tent3
 //FIXME: Cant find the closed ITEMDEF
-//TYPE=t_custom_door
-//TDATA1=022e//ID when opened
-//TDATA2=????//ID when closed
+//TYPE=t_door
+//TDATA2=???? //ID to change to when the door is used (closed ID)
 CATEGORY=Buildings - Doors
 SUBSECTION=Palisade Door
 DESCRIPTION=Door 3 (opened)
 
 [ITEMDEF 022f]
-TYPE=t_custom_door
-TDATA1=0432//ID when opened
-TDATA2=022f//ID when closed
+TYPE=t_door
+TDATA2=0432 //ID to change to when the door is used (opened ID)
 //CAN=can_i_block|can_i_blocklos
 CATEGORY=Buildings - Doors
 SUBSECTION=Palisade Door
@@ -503,9 +499,8 @@ DUPEITEM=0355
 
 [ITEMDEF 0432]
 DEFNAME=i_door_tent4
-TYPE=t_custom_door
-TDATA1=0432//ID when opened
-TDATA2=022f//ID when closed
+TYPE=t_door
+TDATA2=022f //ID to change to when the door is used (closed ID)
 CATEGORY=Buildings - Doors
 SUBSECTION=Palisade Door
 DESCRIPTION=Door 4 (opened)
@@ -524,9 +519,8 @@ DUPEITEM=0433
 
 [ITEMDEF 0435]
 DEFNAME=i_door_tent1
-TYPE=t_custom_door
-TDATA1=0435//ID when closed
-TDATA2=022c//ID when open
+TYPE=t_door
+TDATA2=0435 //ID to change to when the door is used (closed ID)
 CATEGORY=Buildings - Doors
 SUBSECTION=Palisade Door
 DESCRIPTION=Door 1 (opened)

@@ -31,17 +31,17 @@ ON=@ClientTooltip
 
 if (<link.isitem>)
     if (<link.type> == T_STONE_GUILD )
-    		src.addcliloc 1041054
-        src.addcliloc 1070722, <link.name> <qval (<eval strlen(<link.abbrev>)>) ? [<link.abbrev>]:>
+    		addcliloc 1041054
+        addcliloc 1070722, <link.name> <qval (<eval strlen(<link.abbrev>)>) ? [<link.abbrev>]:>
         return 1
     elif (<link.type> == T_STONE_TOWN )
-    	  src.addcliloc 1070722,townstone teleporter
-        src.addcliloc 1070722,<link.name>
+    	  addcliloc 1070722,townstone teleporter
+        addcliloc 1070722,<link.name>
         return 1
     endif
 endif
 
-src.addcliloc 1070722,stone teleporter
+addcliloc 1070722,stone teleporter
 return 1
 
 ON=@Dclick

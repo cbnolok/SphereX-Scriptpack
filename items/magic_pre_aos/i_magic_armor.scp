@@ -4,9 +4,23 @@
 //****************************************************************************
 VERSION=X1
 
+[COMMENT ATTR_MAGIC]
+// Property: Armor Resistance Increase. Prefixes. (ascending order)
+Defense
+Guarding
+Hardening
+Fortification
+Invulnerability
+
+// Property: Armor Resistance Increase. Bonus calculation.
+Based on s_enchant MOREY...
+
+
 [ITEMDEF i_buckler_shield_defense]
 ID=i_shield_buckler
 NAME=Buckler Shield of Defense
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -21,6 +35,8 @@ ON=@Create
 [ITEMDEF i_buckler_shield_guarding]
 ID=i_shield_buckler
 NAME=Buckler Shield of Guarding
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -35,6 +51,8 @@ ON=@Create
 [ITEMDEF i_buckler_shield_hardening]
 ID=i_shield_buckler
 NAME=Buckler Shield of Hardening
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -49,6 +67,8 @@ ON=@Create
 [ITEMDEF i_buckler_shield_fortification]
 ID=i_shield_buckler
 NAME=Buckler Shield of Fortification
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -63,6 +83,8 @@ ON=@Create
 [ITEMDEF i_buckler_shield_invulnerability]
 ID=i_shield_buckler
 NAME=Buckler Shield of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -77,6 +99,8 @@ ON=@Create
 [ITEMDEF i_wooden_shield_defense]
 ID=i_shield_wood
 NAME=Wooden Shield of Defense
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -91,6 +115,8 @@ ON=@Create
 [ITEMDEF i_wooden_shield_guarding]
 ID=i_shield_wood
 NAME=Wooden Shield of Guarding
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -105,6 +131,8 @@ ON=@Create
 [ITEMDEF i_wooden_shield_hardening]
 ID=i_shield_wood
 NAME=Wooden Shield of Hardening
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -119,6 +147,8 @@ ON=@Create
 [ITEMDEF i_wooden_shield_fortification]
 ID=i_shield_wood
 NAME=Wooden Shield of Fortification
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -133,6 +163,8 @@ ON=@Create
 [ITEMDEF i_wooden_shield_invulnerability]
 ID=i_shield_wood
 NAME=Wooden Shield of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -147,6 +179,8 @@ ON=@Create
 [ITEMDEF i_bronze_shield_defense]
 ID=i_shield_round_bronze
 NAME=Bronze Shield of Defense
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -161,6 +195,8 @@ ON=@Create
 [ITEMDEF i_bronze_shield_guarding]
 ID=i_shield_round_bronze
 NAME=Bronze Shield of Guarding
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -175,6 +211,8 @@ ON=@Create
 [ITEMDEF i_bronze_shield_hardening]
 ID=i_shield_round_bronze
 NAME=Bronze Shield of Hardening
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -189,6 +227,8 @@ ON=@Create
 [ITEMDEF i_bronze_shield_fortification]
 ID=i_shield_round_bronze
 NAME=Bronze Shield of Fortification
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -203,6 +243,8 @@ ON=@Create
 [ITEMDEF i_bronze_shield_invulnerability]
 ID=i_shield_round_bronze
 NAME=Bronze Shield of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -217,6 +259,8 @@ ON=@Create
 [ITEMDEF i_metal_shield_defense]
 ID=i_shield_round_metal
 NAME=Metal Shield of Defense
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -231,6 +275,8 @@ ON=@Create
 [ITEMDEF i_metal_shield_guarding]
 ID=i_shield_round_metal
 NAME=Metal Shield of Guarding
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -245,6 +291,8 @@ ON=@Create
 [ITEMDEF i_metal_shield_hardening]
 ID=i_shield_round_metal
 NAME=Metal Shield of Hardening
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -259,6 +307,8 @@ ON=@Create
 [ITEMDEF i_metal_shield_fortification]
 ID=i_shield_round_metal
 NAME=Metal Shield of Fortification
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -273,6 +323,8 @@ ON=@Create
 [ITEMDEF i_metal_shield_invulnerability]
 ID=i_shield_round_metal
 NAME=Metal Shield of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -287,6 +339,8 @@ ON=@Create
 [ITEMDEF i_metal_kite_shield_defense]
 ID=i_shield_kite_metal
 NAME=Metal Kite Shield of Defense
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -301,6 +355,8 @@ ON=@Create
 [ITEMDEF i_metal_kite_shield_guarding]
 ID=i_shield_kite_metal
 NAME=Metal Kite Shield of Guarding
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -315,6 +371,8 @@ ON=@Create
 [ITEMDEF i_metal_kite_shield_hardening]
 ID=i_shield_kite_metal
 NAME=Metal Kite Shield of Hardening
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -329,6 +387,8 @@ ON=@Create
 [ITEMDEF i_metal_kite_shield_fortification]
 ID=i_shield_kite_metal
 NAME=Metal Kite Shield of Fortification
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -343,6 +403,8 @@ ON=@Create
 [ITEMDEF i_metal_kite_shield_invulnerability]
 ID=i_shield_kite_metal
 NAME=Metal Kite Shield of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -357,6 +419,8 @@ ON=@Create
 [ITEMDEF i_wooden_kite_shield_defense]
 ID=i_shield_kite_wood
 NAME=Tear Kite Shield of Defense
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -371,6 +435,8 @@ ON=@Create
 [ITEMDEF i_wooden_kite_shield_guarding]
 ID=i_shield_kite_wood
 NAME=Tear Kite Shield of Guarding
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -385,6 +451,8 @@ ON=@Create
 [ITEMDEF i_wooden_kite_shield_hardening]
 ID=i_shield_kite_wood
 NAME=Tear Kite Shield of Hardening
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -399,6 +467,8 @@ ON=@Create
 [ITEMDEF i_wooden_kite_shield_fortification]
 ID=i_shield_kite_wood
 NAME=Tear Kite Shield of Fortification
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -413,6 +483,8 @@ ON=@Create
 [ITEMDEF i_wooden_kite_shield_invulnerability]
 ID=i_shield_kite_wood
 NAME=Tear Kite Shield of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -427,6 +499,8 @@ ON=@Create
 [ITEMDEF i_heater_shield_defense]
 ID=i_shield_heater
 NAME=Heater Shield of Defense
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -441,6 +515,8 @@ ON=@Create
 [ITEMDEF i_heater_shield_guarding]
 ID=i_shield_heater
 NAME=Heater Shield of Guarding
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -455,6 +531,8 @@ ON=@Create
 [ITEMDEF i_heater_shield_hardening]
 ID=i_shield_heater
 NAME=Heater Shield of Hardening
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -469,6 +547,8 @@ ON=@Create
 [ITEMDEF i_heater_shield_fortification]
 ID=i_shield_heater
 NAME=Heater Shield of Fortification
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -483,6 +563,8 @@ ON=@Create
 [ITEMDEF i_heater_shield_invulnerability]
 ID=i_shield_heater
 NAME=Heater Shield of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Shields
@@ -497,6 +579,8 @@ ON=@Create
 [ITEMDEF i_platemail_defense]
 ID=i_platemail_chest
 NAME=Platemail Chest of Defense
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -511,6 +595,8 @@ ON=@Create
 [ITEMDEF i_platemail_guarding]
 ID=i_platemail_chest
 NAME=Platemail Chest of Guarding
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -525,6 +611,8 @@ ON=@Create
 [ITEMDEF i_platemail_hardening]
 ID=i_platemail_chest
 NAME=Platemail Chest of Hardening
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -539,6 +627,8 @@ ON=@Create
 [ITEMDEF i_platemail_fortification]
 ID=i_platemail_chest
 NAME=Platemail Chest of Fortification
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -553,6 +643,8 @@ ON=@Create
 [ITEMDEF i_platemail_invulnerability]
 ID=i_platemail_chest
 NAME=Platemail Chest of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -567,6 +659,8 @@ ON=@Create
 [ITEMDEF i_platemail_leggings_defense]
 ID=i_platemail_leggings
 NAME=Platemail Legs of Defense
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -581,6 +675,8 @@ ON=@Create
 [ITEMDEF i_platemail_leggings_guarding]
 ID=i_platemail_leggings
 NAME=Platemail Legs of Guarding
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -595,6 +691,8 @@ ON=@Create
 [ITEMDEF i_platemail_leggings_hardening]
 ID=i_platemail_leggings
 NAME=Platemail Legs of Hardening
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -609,6 +707,8 @@ ON=@Create
 [ITEMDEF i_platemail_leggings_fortification]
 ID=i_platemail_leggings
 NAME=Platemail Legs of Fortification
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -623,6 +723,8 @@ ON=@Create
 [ITEMDEF i_platemail_leggings_invulnerability]
 ID=i_platemail_leggings
 NAME=Platemail Legs of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -637,6 +739,8 @@ ON=@Create
 [ITEMDEF i_platemail_arms_defense]
 ID=i_platemail_arms
 NAME=Platemail Arms of Defense
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -651,6 +755,8 @@ ON=@Create
 [ITEMDEF i_platemail_arms_guarding]
 ID=i_platemail_arms
 NAME=Platemail Arms of Guarding
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -665,6 +771,8 @@ ON=@Create
 [ITEMDEF i_platemail_arms_hardening]
 ID=i_platemail_arms
 NAME=Platemail Arms of Hardening
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -679,6 +787,8 @@ ON=@Create
 [ITEMDEF i_platemail_arms_fortification]
 ID=i_platemail_arms
 NAME=Platemail Arms of Fortification
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -693,6 +803,8 @@ ON=@Create
 [ITEMDEF i_platemail_arms_invulnerability]
 ID=i_platemail_arms
 NAME=Platemail Arms of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -707,6 +819,8 @@ ON=@Create
 [ITEMDEF i_platemail_helm_defense]
 ID=i_platemail_helm
 NAME=Plate Helm of Defense
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -721,6 +835,8 @@ ON=@Create
 [ITEMDEF i_platemail_helm_guarding]
 ID=i_platemail_helm
 NAME=Plate Helm of Guarding
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -735,6 +851,8 @@ ON=@Create
 [ITEMDEF i_platemail_helm_hardening]
 ID=i_platemail_helm
 NAME=Plate Helm of Hardening
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -749,6 +867,8 @@ ON=@Create
 [ITEMDEF i_platemail_helm_fortification]
 ID=i_platemail_helm
 NAME=Plate Helm of Fortification
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -763,6 +883,8 @@ ON=@Create
 [ITEMDEF i_platemail_helm_invulnerability]
 ID=i_platemail_helm
 NAME=Plate Helm of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -777,6 +899,8 @@ ON=@Create
 [ITEMDEF i_platemail_gorget_defense]
 ID=i_platemail_gorget
 NAME=Platemail Gorget of Defense
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -791,6 +915,8 @@ ON=@Create
 [ITEMDEF i_platemail_gorget_guarding]
 ID=i_platemail_gorget
 NAME=Platemail Gorget of Guarding
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -805,6 +931,8 @@ ON=@Create
 [ITEMDEF i_platemail_gorget_hardening]
 ID=i_platemail_gorget
 NAME=Platemail Gorget of Hardening
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -819,6 +947,8 @@ ON=@Create
 [ITEMDEF i_platemail_gorget_fortification]
 ID=i_platemail_gorget
 NAME=Platemail Gorget of Fortification
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -833,6 +963,8 @@ ON=@Create
 [ITEMDEF i_platemail_gorget_invulnerability]
 ID=i_platemail_gorget
 NAME=Platemail Gorget of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -847,6 +979,8 @@ ON=@Create
 [ITEMDEF i_platemail_gauntlets_defense]
 ID=i_platemail_gloves
 NAME=Platemail Gauntlets of Defense
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -861,6 +995,8 @@ ON=@Create
 [ITEMDEF i_platemail_gauntlets_guarding]
 ID=i_platemail_gloves
 NAME=Platemail Gauntlets of Guarding
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -875,6 +1011,8 @@ ON=@Create
 [ITEMDEF i_platemail_gauntlets_hardening]
 ID=i_platemail_gloves
 NAME=Platemail Gauntlets of Hardening
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -889,6 +1027,8 @@ ON=@Create
 [ITEMDEF i_platemail_gauntlets_fortification]
 ID=i_platemail_gloves
 NAME=Platemail Gauntlets of Fortification
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -903,6 +1043,8 @@ ON=@Create
 [ITEMDEF i_platemail_gauntlets_invulnerability]
 ID=i_platemail_gloves
 NAME=Platemail Gauntlets of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -917,6 +1059,8 @@ ON=@Create
 [ITEMDEF i_platemail_defense_female]
 ID=i_armor_female_plate
 NAME=Female Platemail of Defense
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -931,6 +1075,8 @@ ON=@Create
 [ITEMDEF i_platemail_guarding_female]
 ID=i_armor_female_plate
 NAME=Female Platemail of Guarding
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -945,6 +1091,8 @@ ON=@Create
 [ITEMDEF i_platemail_hardening_female]
 ID=i_armor_female_plate
 NAME=Female Platemail of Hardening
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -959,6 +1107,8 @@ ON=@Create
 [ITEMDEF i_platemail_fortification_female]
 ID=i_armor_female_plate
 NAME=Female Platemail of Fortification
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -973,6 +1123,8 @@ ON=@Create
 [ITEMDEF i_platemail_invulnerability_female]
 ID=i_armor_female_plate
 NAME=Female Platemail of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Platemail
@@ -987,6 +1139,8 @@ ON=@Create
 [ITEMDEF i_chainmail_coif_defense]
 ID=i_chainmail_coif
 NAME=Chainmail Coif of Defense
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Chainmail
@@ -1001,6 +1155,8 @@ ON=@Create
 [ITEMDEF i_chainmail_coif_guarding]
 ID=i_chainmail_coif
 NAME=Chainmail Coif of Guarding
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Chainmail
@@ -1015,6 +1171,8 @@ ON=@Create
 [ITEMDEF i_chainmail_coif_hardening]
 ID=i_chainmail_coif
 NAME=Chainmail Coif of Hardening
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Chainmail
@@ -1029,6 +1187,8 @@ ON=@Create
 [ITEMDEF i_chainmail_coif_fortification]
 ID=i_chainmail_coif
 NAME=Chainmail Coif of Fortification
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Chainmail
@@ -1043,6 +1203,8 @@ ON=@Create
 [ITEMDEF i_chainmail_coif_invulnerability]
 ID=i_chainmail_coif
 NAME=Chainmail Coif of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Chainmail
@@ -1057,6 +1219,8 @@ ON=@Create
 [ITEMDEF i_chainmail_leggings_defense]
 ID=i_chainmail_leggings
 NAME=Chainmail Leggings of Defense
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Chainmail
@@ -1071,6 +1235,8 @@ ON=@Create
 [ITEMDEF i_chainmail_leggings_guarding]
 ID=i_chainmail_leggings
 NAME=Chainmail Leggings of Guarding
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Chainmail
@@ -1085,6 +1251,8 @@ ON=@Create
 [ITEMDEF i_chainmail_leggings_hardening]
 ID=i_chainmail_leggings
 NAME=Chainmail Leggings of Hardening
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Chainmail
@@ -1099,6 +1267,8 @@ ON=@Create
 [ITEMDEF i_chainmail_leggings_fortification]
 ID=i_chainmail_leggings
 NAME=Chainmail Leggings of Fortification
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Chainmail
@@ -1113,6 +1283,8 @@ ON=@Create
 [ITEMDEF i_chainmail_leggings_invulnerability]
 ID=i_chainmail_leggings
 NAME=Chainmail Leggings of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Chainmail
@@ -1127,6 +1299,8 @@ ON=@Create
 [ITEMDEF i_chainmail_tunic_defense]
 ID=i_chainmail_tunic
 NAME=Chainmail Tunic of Defense
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Chainmail
@@ -1141,6 +1315,8 @@ ON=@Create
 [ITEMDEF i_chainmail_tunic_guarding]
 ID=i_chainmail_tunic
 NAME=Chainmail Tunic of Guarding
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Chainmail
@@ -1155,6 +1331,8 @@ ON=@Create
 [ITEMDEF i_chainmail_tunic_hardening]
 ID=i_chainmail_tunic
 NAME=Chainmail Tunic of Hardening
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Chainmail
@@ -1169,6 +1347,8 @@ ON=@Create
 [ITEMDEF i_chainmail_tunic_fortification]
 ID=i_chainmail_tunic
 NAME=Chainmail Tunic of Fortification
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Chainmail
@@ -1183,6 +1363,8 @@ ON=@Create
 [ITEMDEF i_chainmail_tunic_invulnerability]
 ID=i_chainmail_tunic
 NAME=Chainmail Tunic of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Chainmail
@@ -1197,6 +1379,8 @@ ON=@Create
 [ITEMDEF i_ringmail_leggings_defense]
 ID=i_ringmail_leggings
 NAME=Ringmail Leggings of Defense
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Ringmail
@@ -1211,6 +1395,8 @@ ON=@Create
 [ITEMDEF i_ringmail_leggings_guarding]
 ID=i_ringmail_leggings
 NAME=Ringmail Leggings of Guarding
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Ringmail
@@ -1225,6 +1411,8 @@ ON=@Create
 [ITEMDEF i_ringmail_leggings_hardening]
 ID=i_ringmail_leggings
 NAME=Ringmail Leggings of Hardening
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Ringmail
@@ -1239,6 +1427,8 @@ ON=@Create
 [ITEMDEF i_ringmail_leggings_fortification]
 ID=i_ringmail_leggings
 NAME=Ringmail Leggings of Fortification
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Ringmail
@@ -1253,6 +1443,8 @@ ON=@Create
 [ITEMDEF i_ringmail_leggings_invulnerability]
 ID=i_ringmail_leggings
 NAME=Ringmail Leggings of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Ringmail
@@ -1267,6 +1459,8 @@ ON=@Create
 [ITEMDEF i_ringmail_sleeves_defense]
 ID=i_ringmail_sleeves
 NAME=Ringmail Sleeves of Defense
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Ringmail
@@ -1281,6 +1475,8 @@ ON=@Create
 [ITEMDEF i_ringmail_sleeves_guarding]
 ID=i_ringmail_sleeves
 NAME=Ringmail Sleeves of Guarding
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Ringmail
@@ -1295,6 +1491,8 @@ ON=@Create
 [ITEMDEF i_ringmail_sleeves_hardening]
 ID=i_ringmail_sleeves
 NAME=Ringmail Sleeves of Hardening
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Ringmail
@@ -1309,6 +1507,8 @@ ON=@Create
 [ITEMDEF i_ringmail_sleeves_fortification]
 ID=i_ringmail_sleeves
 NAME=Ringmail Sleeves of Fortification
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Ringmail
@@ -1323,6 +1523,8 @@ ON=@Create
 [ITEMDEF i_ringmail_sleeves_invulnerability]
 ID=i_ringmail_sleeves
 NAME=Ringmail Sleeves of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Ringmail
@@ -1337,6 +1539,8 @@ ON=@Create
 [ITEMDEF i_ringmail_gloves_defense]
 ID=i_ringmail_gloves
 NAME=Ringmail Gloves of Defense
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Ringmail
@@ -1351,6 +1555,8 @@ ON=@Create
 [ITEMDEF i_ringmail_gloves_guarding]
 ID=i_ringmail_gloves
 NAME=Ringmail Gloves of Guarding
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Ringmail
@@ -1365,6 +1571,8 @@ ON=@Create
 [ITEMDEF i_ringmail_gloves_hardening]
 ID=i_ringmail_gloves
 NAME=Ringmail Gloves of Hardening
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Ringmail
@@ -1379,6 +1587,8 @@ ON=@Create
 [ITEMDEF i_ringmail_gloves_fortification]
 ID=i_ringmail_gloves
 NAME=Ringmail Gloves of Fortification
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Ringmail
@@ -1393,6 +1603,8 @@ ON=@Create
 [ITEMDEF i_ringmail_gloves_invulnerability]
 ID=i_ringmail_gloves
 NAME=Ringmail Gloves of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Ringmail
@@ -1407,6 +1619,8 @@ ON=@Create
 [ITEMDEF i_ringmail_tunic_defense]
 ID=i_ringmail_tunic
 NAME=Ringmail Tunic of Defense
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Ringmail
@@ -1421,6 +1635,8 @@ ON=@Create
 [ITEMDEF i_ringmail_tunic_guarding]
 ID=i_ringmail_tunic
 NAME=Ringmail Tunic of Guarding
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Ringmail
@@ -1435,6 +1651,8 @@ ON=@Create
 [ITEMDEF i_ringmail_tunic_hardening]
 ID=i_ringmail_tunic
 NAME=Ringmail Tunic of Hardening
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Ringmail
@@ -1449,6 +1667,8 @@ ON=@Create
 [ITEMDEF i_ringmail_tunic_fortification]
 ID=i_ringmail_tunic
 NAME=Ringmail Tunic of Fortification
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Ringmail
@@ -1463,6 +1683,8 @@ ON=@Create
 [ITEMDEF i_ringmail_tunic_invulnerability]
 ID=i_ringmail_tunic
 NAME=Ringmail Tunic of Invulnerability
+TEVENTS=ei_equipitem
+TEVENTS=ei_magic_preaos
 
 CATEGORY=Provisions - Armor - Magic
 SUBSECTION=Ringmail

@@ -110,7 +110,7 @@ ON=@DropOn_Self
 
 ON=@ClientToolTip
    IF (<DEFNAME>==i_belt_ninja_leather)
-      SRC.ADDCLILOC 1060584,<dTAG0.ShurikenCount>
+      addcliloc 1060584,<dTAG0.ShurikenCount>
    ENDIF
    RETURN 0
 

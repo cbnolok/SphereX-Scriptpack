@@ -1,0 +1,3444 @@
+; PSPad code template by Viper
+; Created by Viper
+; Name:  SphereServer
+;------------------------------------
+[CHAR | Gets the nth character attached to the account. (zero-based) ]
+CHAR.n
+;
+[ACCOUNT | Gets the name of the account. ]
+ACCOUNT
+;
+[BLOCK | Gets or sets whether or the not the account is blocked. ]
+BLOCK
+;
+[CHARS | Gets how many characters are attached to the account. ]
+CHARS
+;
+[CHATNAME | Gets the name the account uses in chat. ]
+CHATNAME
+;
+[FIRSTCONNECTDATE | Gets the date and time on which the account first connected. ]
+FIRSTCONNECTDATE
+;
+[FIRSTIP | Gets the IP address that the account first connected with. ]
+FIRSTIP
+;
+[GUEST | Gets whether or not the account is a guest account. ]
+GUEST
+;
+[JAIL | Gets whether or not the account is jailed. ]
+JAIL
+;
+[LANG | Gets or sets the account's language. ]
+LANG
+;
+[LASTCHARUID | Gets the UID of the last character used on the account. ]
+LASTCHARUID
+;
+[LASTCONNECTDATE | Gets the date and time on which the account most recently connected. ]
+LASTCONNECTDATE
+;
+[LASTIP | Gets the IP address that the account most recently connected with. ]
+LASTIP
+;
+[MAXCHARS | Gets or sets the maximum number of characters that the player can create on the account. ]
+MAXCHARS
+;
+[NAME | Gets the name of the account. ]
+NAME
+;
+[NEWPASSWORD | Gets or sets a new password that will be set on the account. ]
+NEWPASSWORD
+;
+[PASSWORD | Gets or sets the current password for the account. ]
+PASSWORD
+;
+[PLEVEL | Gets or sets the account's privelege level. ]
+PLEVEL
+;
+[PRIV | Gets or sets account flags. ]
+PRIV
+;
+[RESDISP | Gets or sets the account's expansion level. ]
+RESDISP
+;
+[TAG | Gets or sets the value of a TAG. ]
+TAG.name
+;
+[TAGCOUNT | Gets the number of TAGs on the account. ]
+TAGCOUNT
+;
+[TOTALCONNECTTIME | Gets the total number of minutes that the account has been connected for. ]
+TOTALCONNECTTIME 
+;
+[ACCOUNT | Gets or sets the account that the character belongs to. ]
+ACCOUNT
+;
+[ACT | Gets or sets the character or item that is related to the action the character is performing. ]
+ACT
+;
+[FINDCONT | Gets the nth item equipped to the character. (zero-based) ]
+FINDCONT.n
+;
+[FINDID | Gets the first item found equipped to the character or inside their backpack, with the matching BASEID. ]
+FINDID.item_id
+;
+[FINDLAYER | Gets the item that the character has equipped in a specified layer. ]
+FINDLAYER.layer
+;
+[FINDTYPE | Gets the first item found equipped to the character or inside their backpack, with the matching TYPE. ]
+FINDTYPE.type
+;
+[MEMORYFINDTYPE | Gets a memory item with the specified flags. ]
+MEMORYFINDTYPE..memory_flags
+;
+[MEMORYFIND | Gets a memory item that is linked to the given object. ]
+MEMORYFIND.object_uid
+;
+[OWNER | Gets the character that owns this character. ]
+OWNER
+;
+[SPAWNITEM | Gets the spawn item (t_spawn_char) that this character originated from. ]
+SPAWNITEM
+;
+[WEAPON | Gets the weapon that the character currently has equipped. ]
+WEAPON
+;
+[P | Gets or sets the position that the character is at. ]
+P
+;
+[REGION | Gets the region that the character is currently located in. ]
+REGION
+;
+[ROOM | Gets the room that the character is in. ]
+ROOM
+;
+[SECTOR | Gets the sector that the character is in. ]
+SECTOR
+;
+[TOPOBJ | Gets the top-most character or item in the world that contains the character. ]
+TOPOBJ
+;
+[TYPEDEF | Gets the CHARDEF that defines the character. ]
+TYPEDEF
+;
+[AC | Returns the character's total defense. ]
+AC
+;
+[ACTARG1 | Gets or sets the character's ACTARG1 value. ]
+ACTARG1
+;
+[ACTARG2 | Gets or sets the character's ACTARG2 value. ]
+ACTARG2
+;
+[ACTARG3 | Gets or sets the character's ACTARG3 value. ]
+ACTARG3
+;
+[ACTDIFF | Gets or sets the difficulty of the character's current action. ]
+ACTDIFF
+;
+[ACTION | Gets or sets the skill that the character is currently using. ]
+ACTION
+;
+[ACTP | Gets or sets the character's ACTP value. ]
+ACTP
+;
+[ACTPRV | Gets or sets the character's ACTPRV value. ]
+ACTPRV
+;
+[AFK | Gets or sets whether or not the character is in AFK mode. ]
+AFK
+;
+[AGE | Returns the age of the character since its creation, in seconds. ]
+AGE
+;
+[ALLSKILLS | Sets all of the character's skills to the specified amount. ]
+ALLSKILLS amount
+;
+[ANIM | Plays the specified animation on the character. ]
+ANIM anim_id
+;
+[ATTACKER | Gets the number of opponents who have damaged the character. ]
+ATTACKER
+;
+[ATTACKER | Gets the UID of the opponent who most recently damaged the character. ]
+ATTACKER.LAST
+;
+[ATTACKER | Gets the UID of the opponent who has dealt the most damage to the character. ]
+ATTACKER.MAX
+;
+[ATTACKER | Gets the amount of damage that the nth opponent has dealt to the character. (zero-based) ]
+ATTACKER.n.DAM
+;
+[ATTACKER | Gets the length of time since the nth opponent has damaged the characer, in seconds. (zero-based) ]
+ATTACKER.n.ELAPSED
+;
+[ATTACKER | Gets the UID of the nth opponent who has damaged the characer. (zero-based) ]
+ATTACKER.n.UID
+;
+[BANK | Opens the character's bank (or the container at the specified layer) for SRC to view. ]
+BANK layer
+;
+[BANKBALANCE | Returns the total amount of gold in the character's bankbox. ]
+BANKBALANCE
+;
+[BARK | Plays the specified sound (or the character's generic sound if not specified) to nearby clients from this character. ]
+BARK sound_id
+;
+[BODY | Gets or sets the character's body. ]
+BODY
+;
+[BOUNCE | Places a specified item in the character's backpack. ]
+BOUNCE item_uid
+;
+[BOW | Makes the character bow to SRC. ]
+BOW
+;
+[CANCAST | Returns 1 if the character can cast a given spell, bypassing anti-magic field tests if check_antimagic set to 0. ]
+CANCAST spell_id, check_antimagic
+;
+[CANMAKE | Returns 1 if the character has the skills and resources to craft a certain item. ]
+CANMAKE item_id
+;
+[CANMAKESKILL | Returns 1 if the character has the skills to craft a certain item. ]
+CANMAKESKILL item_id
+;
+[CANMOVE | Returns 1 if the character can move in the given direction. ]
+CANMOVE direction
+;
+[CANSEE | Returns 1 if SRC can see the character. ]
+CANSEE
+;
+[CANSEELOS | Returns 1 if SRC has line of sight to the character. ]
+CANSEELOS
+;
+[CANSEELOSFLAG | Returns 1 if SRC has line of sight to the character, with flags to modify what tests take place. ]
+CANSEELOSFLAG flags
+;
+[COLOR | Gets or sets the character's hue. ]
+COLOR
+;
+[CONSUME | Removes specified resources from SRC's backpack. ]
+CONSUME resource_list
+;
+[COUNT | Returns the number of items equipped to the character. ]
+COUNT
+;
+[CREATE | Gets or sets the character's age since creation, in seconds. ]
+CREATE
+;
+[CRIMINAL | Sets whether or not the character is a criminal. ]
+CRIMINAL
+;
+[DAMAGE | Inflicts damage upon the character. ]
+DAMAGE amount, type, source
+;
+[DEX | Gets or sets the character's total dexterity. ]
+DEX
+;
+[DIALOG | Displays a dialog to SRC. ]
+DIALOG dialog_id, page, parameters
+;
+[DIALOGCLOSE | Closes a dialog that SRC has open, simulating a button press. ]
+DIALOGCLOSE dialog_id button
+;
+[DIALOGLIST | Gets the number of number of dialogs currently considered to be visible on SRC's screen. ]
+DIALOGLIST.COUNT
+;
+[DIALOGLIST | Gets the ID of the nth dialog that SRC has open (zero-based). ]
+DIALOGLIST.n.ID
+;
+[DIALOGLIST | Gets the number of instances of nth dialog SRC has open (zero-based). ]
+DIALOGLIST.n.COUNT
+;
+[DIR | Gets or setes the direction that the character is facing. ]
+DIR
+;
+[DISCONNECT | Disconnects the character. ]
+DISCONNECT
+;
+[DISMOUNT | Dismounts the character from their ride. ]
+DISMOUNT
+;
+[DISPIDDEC | Gets the ID of the character as a decimal number. ]
+DISPIDDEC
+;
+[DISTANCE | Gets the distance between this object and either SRC, a map location or another object. ]
+DISTANCE point_or_uid
+;
+[DCLICK | Double clicks the character, with SRC as the source of the event. ]
+DCLICK
+;
+[DCLICK | Double clicks an object, with the character as SRC. ]
+DCLICK object_uid
+;
+[DRAWMAP | Starts the cartography skill, drawing a map of the local area up to radius tiles. ]
+DRAWMAP radius
+;
+[DROP | Drops a specified item at the character's feet. ]
+DROP item_uid
+;
+[DUPE | Creates a clone of the character. ]
+DUPE
+;
+[EDIT | Displays an editing dialog for the character to SRC. ]
+EDIT
+;
+[EFFECT | Displays an effect to nearby clients. ]
+EFFECT type, item_id, speed, loop, explode, colour, rendermode
+;
+[EMOTE | Displays a *You see* message to all nearby clients. ]
+EMOTE message
+;
+[EMOTEACT | Gets, sets or toggles whether or not the character will emote all of its actions. ]
+EMOTEACT
+;
+[EQUIP | Equips an item to the character. ]
+EQUIP item_uid
+;
+[EQUIPARMOR | Equips the character with the best armour in their backpack. ]
+EQUIPARMOR
+;
+[EQUIPHALO | Equips a halo light to the character, lasting for timeout tenths of a second. ]
+EQUIPHALO timeout
+;
+[EQUIPWEAPON | Equips the character with the best weapon in their backpack. ]
+EQUIPWEAPON
+;
+[EVENTS | Gets a list of events attached to the object, or adds or removes an event to or from the object. ]
+EVENTS event_defname
+;
+[EXP | Gets or sets the character's experience points. ]
+EXP
+;
+[FACE | Turns the character to face a specified object or SRC. ]
+FACE object_uid
+;
+[FAME | Gets or sets the character's fame. ]
+FAME
+;
+[FAME | Returns 1 if the character's fame falls within the specified fame group. ]
+FAME.fame_group
+;
+[FCOUNT | Returns the total number of items equipped to the character, including subitems ]
+FCOUNT
+;
+[FLAGS | Gets or sets the character's flags. ]
+FLAGS
+;
+[FIX | Re-aligns the character's Z level to ground level. ]
+FIX
+;
+[FIXWEIGHT | Recalculates the character's total weight. ]
+FIXWEIGHT
+;
+[FLIP | Rotates the character. ]
+FLIP
+;
+[FONT | Gets or sets the character's speech font. ]
+FONT
+;
+[FOOD | Gets or sets the character's food level. ]
+FOOD
+;
+[FORGIVE | Revokes the character's jailed status. ]
+FORGIVE
+;
+[GO | Teleports the character to the specified location. ]
+GO location
+;
+[GOCHAR | Teleports the character to the nth character in the world. ]
+GOCHAR n
+;
+[GOCHARID | Teleports the character to the next characer in the world with the specified BASEID ]
+GOCHARID character_defname
+;
+[GOCLI | Teleports the character to the nth online player. (zero-based) ]
+GOCLI n
+;
+[GOITEMID | Teleports the character to the next item in the world with the specified BASEID. ]
+GOITEMID item_defname
+;
+[GOLD | Gets or sets the amount of gold the character has. ]
+GOLD
+;
+[GONAME | Teleports the character to the next character or item in the world with the specified name, accepts wildcards (*). ]
+GONAME name
+;
+[GOSOCK | Teleports the character to the online player with the specified socket number. ]
+GOSOCK socket
+;
+[GOTYPE | Teleports the character to the next item in the world with the specified TYPE. ]
+GOTYPE item_type
+;
+[GOUID | Teleports the character to the object with the specified UID. ]
+GOUID object_uid
+;
+[GUILDABBREV | Returns the character's guild abbreviation. ]
+GUILDABBREV
+;
+[HEAR | For NPCs, acts as if SRC had spoken the specified text. For players, displays text as a system message. ]
+HEAR text
+;
+[HEIGHT | Gets the character's height. ]
+HEIGHT
+;
+[HITS | Gets or sets the character's hitpoints. ]
+HITS
+;
+[HOME | Gets or sets the character's home location. ]
+HOME
+;
+[HUNGRY | Displays this character's hunger level to SRC. ]
+HUNGRY
+;
+[INVIS | Sets whether or not the character is invisible. ]
+INVIS
+;
+[INVUL | Sets whether or not the character is invulnerable. ]
+INVUL
+;
+[ISARMOR | Returns 1 if the object is armour. ]
+ISARMOR object_uid
+;
+[ISCHAR | Returns 1 if the object is a character. ]
+ISCHAR
+;
+[ISCONT | Returns 1 if the object is a container. ]
+ISCONT
+;
+[ISDIALOGOPEN | Returns 1 if SRC has the specified dialog visible on their screen. ]
+ISDIALOGOPEN dialog_id
+;
+[ISEVENT | Returns 1 if the object has an event attached to it. ]
+ISEVENT.event_defname
+;
+[ISITEM | Returns 1 if the object is an item. ]
+ISITEM
+;
+[ISNEARTYPE | Returns 1 if a nearby item has the given TYPE. ]
+ISNEARTYPE type, distance, flags
+;
+[ISNEARTYPETOP | Returns a nearby world location of a nearby item which has the given TYPE. ]
+ISNEARTYPETOP type, distance, flags
+;
+[ISPLAYER | Returns 1 if the object is a player. ]
+ISPLAYER
+;
+[ISTEVENT | Returns 1 if the object has an event attached to its CHARDEF. ]
+ISTEVENT.event_defname
+;
+[ISWEAPON | Returns 1 if the object is a weapon. ]
+ISWEAPON object_uid
+;
+[ID | Gets the character's ID. ]
+ID
+;
+[INFO | Displays an information dialog about the character to SRC. ]
+INFO
+;
+[INT | Gets or sets the character's total intelligence. ]
+INT
+;
+[ISGM | Returns 1 if the character is in GM mode. ]
+ISGM
+;
+[ISINPARTY | Returns 1 if the character is in a party. ]
+ISINPARTY
+;
+[ISMYPET | Returns 1 if the character belongs to SRC. ]
+ISMYPET
+;
+[ISONLINE | Returns 1 if the character is considered to be online. ]
+ISONLINE
+;
+[ISSTUCK | Returns 1 if the character cannot walk in any direction. ]
+ISSTUCK
+;
+[ISVENDOR | Returns 1 if the character is a vendor. ]
+ISVENDOR
+;
+[ISVERTICALSPACE | Returns 1 if the ceiling at the given location is high enough for the character to fit under. ]
+ISVERTICALSPACE location
+;
+[JAIL | Sends the character to jail, to a specified jail cell. ]
+JAIL cell
+;
+[KARMA | Gets or sets the character's karma. ]
+KARMA
+;
+[KARMA | Returns 1 if the character's karma falls within the specified karma group. ]
+KARMA.karma_group
+;
+[KILL | Kills the character. ]
+KILL
+;
+[LEVEL | Gets or sets the character's experience level. ]
+LEVEL
+;
+[LIGHT | Gets or sets the character's personal light level. ]
+LIGHT
+;
+[MAKEITEM | Begins an attempt to craft the specified quantity of the given item. ]
+MAKEITEM item_defname, amount
+;
+[MANA | Gets or sets the character's mana. ]
+MANA
+;
+[MAP | Gets or sets the map that this object is located. ]
+MAP
+;
+[MAXHITS | Gets or sets the character's maximum hitpoints. ]
+MAXHITS
+;
+[MAXMANA | Gets or sets the character's maximum mana. ]
+MAXMANA
+;
+[MAXSTAM | Gets or sets the character's maximum stamina. ]
+MAXSTAM
+;
+[MAXWEIGHT | Returns the maximum weight that the character can carry. ]
+MAXWEIGHT
+;
+[MEMORY | Gets or sets the memory flags the character has for the given object. ]
+MEMORY.object_uid
+;
+[MENU | Displays a menu to SRC. ]
+MENU menu_defname
+;
+[MESSAGE | Displays a message above this character to SRC. ]
+MESSAGE message
+;
+[MESSAGEUA | Displays a UNICODE message above this character to SRC. ]
+MESSAGEUA colour, talkmode, font, lang_id, message
+;
+[MODAR | Gets or sets a modifier for the character's armour rating. ]
+MODAR
+;
+[MODDEX | Gets or sets the character's dexterity modifier. ]
+MODDEX
+;
+[MODINT | Gets or sets the character's intelligence modifier. ]
+MODINT
+;
+[MODMAXWEIGHT | Gets or sets the character's maximum weight modifier. ]
+MODMAXWEIGHT
+;
+[MODSTR | Gets or sets the character's strength modifier. ]
+MODSTR
+;
+[MOUNT | Gets the UID of the character's mount. ]
+MOUNT
+;
+[MOUNT | Attempts to mount the character on to the specified mount. ]
+MOUNT mount_uid
+;
+[MOVE | Returns the movement flags for the tile in the given direction (see can_flags in sphere_defs.scp). ]
+MOVE direction
+;
+[MOVE | Moves the object relative to its current position. ]
+MOVE direction, amount
+MOVE
+;
+[MOVENEAR | Moves the character to a random location near another object within a certain distance. ]
+MOVENEAR object_uid, distance
+;
+[MOVETO | Moves the character to a specific location. ]
+MOVETO location
+;
+[NAME | Gets or sets the character's name. ]
+NAME
+;
+[NEWBIESKILL | Distributes items that are associated with the specified skill, to the character. ]
+NEWBIESKILL skill_id
+;
+[NEWGOLD | Generates amount gold in the character's backpack. ]
+NEWGOLD amount
+;
+[NEWLOOT | Generates the specified item or template into the character's backpack, providing that they are an NPC that hasn't been summoned. ]
+NEWLOOT item_or_template_defname
+;
+[NIGHTSIGHT | Gets or sets whether or not the character has nightsight enabled. ]
+NIGHTSIGHT
+;
+[NOTOGETFLAG | Gets the character's notoriety flags as seen by the specified viewer. ]
+NOTOGETFLAG viewer_uid, allow_incognito
+;
+[NPC | Gets or sets the character's AI type. ]
+NPC
+;
+[NUDGEDOWN | Decreases the character's Z level. ]
+NUDGEDOWN amount
+;
+[NUDGEUP | Increases the characer's Z level. ]
+NUDGEUP amount
+;
+[OBODY | Gets or sets the character's original body. ]
+OBODY
+;
+[OPENPAPERDOLL | Displays the character's paperdoll to SRC. ]
+OPENPAPERDOLL
+;
+[OPENPAPERDOLL | Displays a specified character's paperdoll to this character. ]
+OPENPAPERDOLL character_uid
+;
+[OSKIN | Gets or sets the character's original colour. ]
+OSKIN
+;
+[ODEX | Gets or sets the character's base dexterity (without modifiers). ]
+ODEX
+;
+[OINT | Gets or sets the character's base intelligence (without modifiers). ]
+OINT
+;
+[OSTR | Gets or sets the character's base strength (without modifiers). ]
+OSTR
+;
+[PACK | Opens the character's backpack for SRC to view. ]
+PACK
+;
+[POISON | Poisons the character, with the specified poison strength. ]
+POISON strength
+;
+[POLY | Begins casting the polymorph spell, with character_id being the character to turn into. ]
+POLY character_id
+;
+[PROMPTCONSOLE | Displays a prompt message to SRC and passes their response into a specified function. ]
+PROMPTCONSOLE function, prompt_message
+;
+[PROMPTCONSOLEU | Displays a prompt message to SRC and passes their response into a specified function, supporting UNICODE response. ]
+PROMPTCONSOLEU function, prompt_message
+;
+[PRIVSET | Sets the PLEVEL of the character. ]
+PRIVSET plevel
+;
+[RANGE | Gets the combat range of the character. ]
+RANGE
+;
+[RELEASE | Clears the character's owners. ]
+RELEASE
+;
+[REMOVE | Deletes the character. ]
+REMOVE allow_player_removal
+;
+[REMOVEFROMVIEW | Removes the object from nearby clients' screens. ]
+REMOVEFROMVIEW
+;
+[RESCOLD | Gets or sets the character's resistance to cold. ]
+RESCOLD
+;
+[RESCOUNT | Returns the total amount of a specific item equipped to the character or inside their baackpack. ]
+RESCOUNT item_defname
+;
+[RESENDTOOLTIP | Forces Sphere to update the tooltips for nearby clients. ]
+RESENDTOOLTIP
+;
+[RESENERGY | Gets or sets the character's resistance to energy. ]
+RESENERGY
+;
+[RESFIRE | Gets or sets the character's resistance to fire. ]
+RESFIRE
+;
+[RESPOISON | Gets or sets the character's resistance to poison. ]
+RESPOISON
+;
+[RESTEST | Returns 1 if all of the items in the list can be found equipped to the character or inside their backpack. ]
+RESTEST item_list
+;
+[RESURRECT | Resurrects the character. If force is 1 then usual anti-magic checks are bypasses. ]
+RESURRECT force
+;
+[SALUTE | Makes the character salute a specified object or SRC. ]
+SALUTE object_uid
+;
+[SAY | Makes the character speak a message. ]
+SAY message
+;
+[SAYU | Makes the character speak a UTF-8 message ]
+SAYU message
+;
+[SAYUA | MAkes the character speak a UNICODE message. ]
+SAYUA colour, talkmode, font, lang_id, text
+;
+[SDIALOG | Displays a dialog to SRC, providing that it is not already open. ]
+SDIALOG dialog_id, page, parameters
+;
+[SERIAL | Gets the item's unique ID in the world. ]
+SERIAL
+;
+[SEX | Returns value_male or value_female depending on the character's gender. ]
+SEX value_male:value_female
+;
+[SEXTANTP | Converts the character's location or a specified location into sextant coordinates. ]
+SEXTANTP location
+;
+[SKILL | Begins using a skill. ]
+SKILL
+;
+[SKILLCHECK | Performs a check for skill success, returning 1 if the attempt was successful. ]
+SKILLCHECK skill_id, difficulty
+;
+[SKILLBEST | Returns the ID of the character's nth highest skill (0 = Highest) ]
+SKILLBEST.n
+;
+[SKILLGAIN | Invokes Sphere's skill gain for the specified skill, with the given difficulty (0-100) ]
+SKILLGAIN skill, difficulty
+;
+[SKILLTEST | Returns 1 if the character possess all of the skills in the list. ]
+SKILLTEST skill_list
+;
+[SKILLTOTAL | Returns the total value of all the character's skills. ]
+SKILLTOTAL
+;
+[SKILLTOTAL | Returns the total value of all the character's skills with the specified group flag(s). ]
+SKILLTOTAL skill_group
+;
+[SKILLTOTAL | Returns the total value of all the character's skills that are under amount. ]
+SKILLTOTAL -amount
+;
+[SKILLTOTAL | Returns the total value of all the character's skills that are over amount. ]
+SKILLTOTAL +amount
+;
+[SKILLUSEQUICK | Quickly uses a skill, returning 1 if the attempt was successful. ]
+SKILLUSEQUICK skill_id, difficulty
+;
+[SLEEP | Makes the character appear to sleep. ]
+SLEEP fall_forwards
+;
+[SOUND | Plays a sound from this character. ]
+SOUND sound_id, repeat
+;
+[SPELLEFFECT | Causes the character to be affected by a spell. ]
+SPELLEFFECT spell_id, strength, source_character_uid, source_item_uid
+;
+[STAM | Gets or sets the character's stamina. ]
+STAM
+;
+[STONE | Gets or sets whether or not the character is trapped in stone. ]
+STONE
+;
+[STR | Gets or sets the character's total strength. ]
+STR
+;
+[SUICIDE | Forces the character to commit suicide. ]
+SUICIDE
+;
+[SUMMONCAGE | Teleports the character to SRC's, surrounded by a cage multi. ]
+SUMMONCAGE
+;
+[SUMMONTO | Teleports the character to SRC's position. ]
+SUMMONTO
+;
+[TAG | Gets or sets the value of a TAG. ]
+TAG.name
+;
+[TAGAT | Gets a TAG at the given zero-based index. ]
+TAGAT.index
+;
+[TAGAT | Gets the name of the TAG at the given zero-based index. ]
+TAGAT.index.KEY
+;
+[TAGAT | Gets the value of the TAG at the given zero-based index. ]
+TAGAT.index.VAL
+;
+[TAGCOUNT | Gets the number of TAGs stored on the item. ]
+TAGCOUNT
+;
+[TAGLIST | Outputs a list of the object's TAGs. ]
+TAGLIST
+;
+[TARGET | Displays a targeting cursor to SRC. ]
+TARGETFGMW function
+;
+[TIMER | Gets or sets the length of time before the item's timer expires, in seconds. ]
+TIMER
+;
+[TIMERD | Gets or sets the length of time before the item's timer expires, in tenths of a second. ]
+TIMERD
+;
+[TIMERF | Scheduled a function to be executed on this object in time seconds. ]
+TIMERF time, function
+;
+[TIMERF | Clears all scheduled functions from the object. ]
+TIMERF CLEAR
+;
+[TITLE | Gets or sets the character's title. ]
+TITLE
+;
+[TOWNABBREV | Returns the character's town abbreviation. ]
+TOWNABBREV
+;
+[TRIGGER | Fires a custom trigger and returns the RETURN value. ]
+TRIGGER trig_name, trig_type
+;
+[UID | Gets the item's unique ID in the world. ]
+UID
+;
+[UNDERWEAR | Toggles the display of underwear on the character. ]
+UNDERWEAR
+;
+[UNEQUIP | Unequips an item from the character, placing it in their backpack. ]
+UNEQUIP item_uid
+;
+[UPDATE | Updates the state of the character to nearby clients. ]
+UPDATE
+;
+[UPDATEX | Updates the state of the character to nearby clients, removing it from their view first to ensure a full refresh. ]
+UPDATEX
+;
+[USEITEM | Double clicks the character, with SRC as the source of the event, without checking for line of sight. ]
+USEITEM
+;
+[USEITEM | Double clicks an object, with the character as SRC. ]
+USEITEM object_uid
+;
+[VISUALRANGE | Gets or sets the character's sight range. ]
+VISUALRANGE
+;
+[WEIGHT | Gets the weight of the character. ]
+WEIGHT
+;
+[WHERE | Describes the character's location to SRC. ]
+WHERE
+;
+[Z | Gets the Z position of the character. ]
+Z 
+;
+[SKILLCLASS | Gets or sets the player's skillclass. ]
+SKILLCLASS
+;
+[TOWN | Gets the town stone that the player belongs to. ]
+TOWN
+;
+[CURFOLLOWER | Gets or sets the number of current followers the player has, ]
+CURFOLLOWER
+;
+[DEATHS | Gets or sets the number of times the player has died. ]
+DEATHS
+;
+[DSPEECH | Gets a list of attached speech handlers, or adds or removes a speech handler to or from the player. ]
+DSPEECH +/-speech_id
+;
+[GMPAGE | Deletes the nth GM page. (zero-based) ]
+GMPAGE.n.DELETE
+;
+[GMPAGE | Sets the player as the handler for the nth GM page. (zero-based) ]
+GMPAGE.n.HANDLE
+;
+[GMPAGE | Executes the .page command with key as the arguments. ]
+GMPAGE.n.key
+;
+[ISDSPEECH | Returns 1 if the player has the given speech handler attached. ]
+ISDSPEECH.speech_id
+;
+[KICK | Disconnects and blocks the player's account. ]
+KICK
+;
+[KILLS | Gets the number of murders the player has committed. ]
+KILLS
+;
+[KRTOOLBARSTATUS | Gets or sets whether or not the KR toolbar is enabled for this player. ]
+KRTOOLBARSTATUS
+;
+[LASTUSED | Gets the length of time since the player was last attached to a client, in seconds. ]
+LASTUSED
+;
+[LUCK | Gets or sets the luck value for the player. ]
+LUCK
+;
+[MAXFOLLOWER | Gets or sets the maximum number of followers the player can have. ]
+MAXFOLLOWER
+;
+[PASSWORD | Sets or clears the player's password. ]
+PASSWORD
+;
+[PFLAG | Gets or sets the player's PFLAG value. ]
+PFLAG
+;
+[PROFILE | Gets or sets the text to display on the player's profile. ]
+PROFILE
+;
+[SKILLLOCK | Gets or sets the lock state of the player's skill. ]
+SKILLLOCK.skill_id
+;
+[SPEEDMODE | Gets or sets the speed that the player moves at. (0=Normal, 1=Double Speed on Foot, 2=Always walk, 3=Always Run on Foot/Always Walk on Mount, 4=Can not Walk or Run) ]
+SPEEDMODE
+;
+[STATLOCK | Gets or sets the lock state of the player's STR, DEX or INT. ]
+STATLOCK.stat_id
+;
+[TITHING | Gets or sets the number of tithing points the player has. ]
+TITHING
+;
+[ACTPRI | Gets or sets the NPC's motivation towards their current action. ]
+ACTPRI
+;
+[BUY | Displays the shop window to SRC, in buy mode. ]
+BUY
+;
+[BYE | Ends the NPC's current action. ]
+BYE
+;
+[FLEE | Begins moving the NPC away from its current location. ]
+FLEE distance
+;
+[GOTO | Begins moving the NPC towards the specified location. ]
+GOTO location
+;
+[HIRE | Begins the hiring process between the NPC and SRC. ]
+HIRE
+;
+[LEAVE | Begins moving the NPC away from its current location. ]
+LEAVE distance
+;
+[NPC | Gets or sets the NPC's AI type. ]
+NPC
+;
+[HOMEDIST | Gets or sets the distance that the NPC can wander from its HOME position. ]
+HOMEDIST
+;
+[PETRETRIEVE | Enables SRC to retrieve their stabled pets from the NPC. ]
+PETRETRIEVE
+;
+[PETSTABLE | Enables SRC to stable their pet with the NPC. ]
+PETSTABLE
+;
+[RESTOCK | Clears all of the NPC's stock, repopulating it when it is next accessed (or immediately if force=1) ]
+RESTOCK force
+;
+[RUN | Forces the NPC to run one tile in the specified direction. ]
+RUN direction
+;
+[SELL | Displays the shop window to SRC, in sell mode. ]
+SELL
+;
+[SHRINK | Shrinks the NPC into a figurine item. ]
+SHRINK
+;
+[SPEECH | Gets the list of speech handlers attached to the NPC, or adds or removes a speech handler to or from the NPC. ]
+SPEECH +/-speech_id
+;
+[SPEECHCOLOR | Gets or sets the colour of the NPC's speech. ]
+SPEECHCOLOR
+;
+[TRAIN | Initiates training between the NPC and SRC. ]
+TRAIN skill
+;
+[VENDCAP | Gets or sets the amount of gold a vendor will restock to. ]
+VENDCAP
+;
+[VENDGOLD | Gets or sets the amount of gold a vendor has. ]
+VENDGOLD
+;
+[WALK | Forces the NPC to walk one tile in the specified direction. ]
+WALK direction
+;
+[GMPAGEP | Gets the GM page that the client is currently handling. ]
+GMPAGEP
+;
+[HOUSEDESIGN | Gets the building that is currently being designed by the client. ]
+HOUSEDESIGN
+;
+[PARTY | Gets the party that the client is a member of. ]
+PARTY
+;
+[TARG | Gets or sets the character or item that the client has targeted. ]
+TARG
+;
+[TARGP | Gets or sets the location that the client has targeted. ]
+TARGP
+;
+[TARGPROP | Gets or sets the character whose skills are shown in the client's skill menu. ]
+TARGPROP
+;
+[TARGPRV | Gets or sets the character or item that the client previously targeted. ]
+TARGPRV
+;
+[ADD | Prompts the client to target a location to add the specified item at. ]
+ADD item_defname
+;
+[ADDBUFF | Displays a buff icon in the client's buff icon bar. ]
+ADDBUFF icon, cliloc1, cliloc2, time, arg1, arg2, arg3
+;
+[ADDCLILOC | Adds a cliloc to the tooltip being sent to the client. Only valid in @ClientTooltip triggers. ]
+ADDCLILOC cliloc, args
+;
+[ADDCONTEXTENTRY | Adds an entry to the context menu being sent to the client. Only valid in @ContextMenuRequest triggers. ]
+ADDCONTEXTENTRY entry_id, cliloc, flags, colour
+;
+[ALLMOVE | Gets or sets whether or not the client has ALLMOVE privileges. ]
+ALLMOVE
+;
+[ALLSHOW | Gets or sets whether or not the client is able to see disconnected characters. ]
+ALLSHOW
+;
+[ARROWQUEST | Displays an arrow on the client's screen that points to the specified world coordinates. ]
+ARROWQUEST x, y
+;
+[BADSPAWN | Teleports the client to the first invalid spawn point in the world. ]
+BADSPAWN
+;
+[BANKSELF | Opens up the client's bankbox. ]
+BANKSELF
+;
+[CAST | Begins casting a spell. ]
+CAST spell_id'
+;
+[CHARLIST | Displays the client's character list screen. ]
+CHARLIST
+;
+[CLEARCTAGS | Removes all of the client's CTAGs. ]
+CLEARCTAGS
+;
+[CLIENTIS3D | Returns 1 if the client is using the 3D client. ]
+CLIENTIS3D
+;
+[CLIENTISKR | Returns 1 if the client is using the KR client. ]
+CLIENTISKR
+;
+[CLIENTVERSION | Gets the client version the client is using, based on the encryption keys being used (unencrypted clients return 0). ]
+CLIENTVERSION
+;
+[CTAG | Gets or sets the value of a CTAG. ]
+CTAG
+;
+[CTAGLIST | Displays a list of the client's CTAGs to SRC. ]
+CTAGLIST
+;
+[CTAGLIST | Displays a list of the client's CTAGs on the server console. ]
+CTAGLIST LOG
+;
+[DEBUG | Gets or sets whether or not the client is in debug mode. ]
+DEBUG
+;
+[DETAIL | Gets or sets whether or not the client receives additional detail, such as combat messages. ]
+DETAIL
+;
+[EVERBTARG | Prompts the client to enter a command, or arguments to the command if specified. The complete command with arguments is then executed on TARG. ]
+EVERBTARG command
+;
+[EXTRACT | Extracts static items from a targeted area on the map and saves them into the specified file. ]
+EXTRACT file, template_id
+;
+[FLUSH | Forces queued network data to be immediately sent to the client. ]
+FLUSH
+;
+[GM | Gets or sets whether or not the client is in GM mode. ]
+GM
+;
+[GMPAGE | Sends a GM page from the client with the specified message, or if no arguments provided will prompt the client for a message. ]
+GMPAGE ADD message
+;
+[GOTARG | Teleports the client to their targeted item. ]
+GOTARG
+;
+[HEARALL | Gets or sets whether or not the client can hear all player speech regardless of location. ]
+HEARALL
+;
+[INFO | Displays an information dialog to the client for an object they target. ]
+INFO
+;
+[INFORMATION | Displays server information to the client. ]
+INFORMATION
+;
+[LAST | Forces the client to target the object referenced by ACT. ]
+LAST
+;
+[LASTEVENT | Returns the time when data was last received from the client. ]
+LASTEVENT
+;
+[LINK | Allows the client to target two objects to link them together. ]
+LINK
+;
+[MENU | Displays a menu to the client. ]
+MENU menu_id
+;
+[MIDILIST | Selects a random music id from the given list and tells the client to play it. ]
+MIDILIST music1, music2, ...
+;
+[NUDGE | Allows the client to nudge an area of items by the given coordinates, relative to the items' position. ]
+NUDGE dx, dy, dz
+;
+[NUKE | Allows the client to execute command on all items in a targeted area. ]
+NUKE command
+;
+[NUKECHAR | Allows the client to execute command on all NPCs in a targeted area. ]
+NUKECHAR command
+;
+[PAGE | Displays the GM page menu to the client. ]
+PAGE
+;
+[PRIVSHOW | Gets or sets whether or not the client's privilege level should show in their name. ]
+PRIVSHOW
+;
+[REMOVEBUFF | Removes a buff icon from the client's buff icon bar. ]
+REMOVEBUFF icon
+;
+[REPAIR | Prompts the client to target an item for them to repair. ]
+REPAIR
+;
+[REPORTEDCLIVER | Gets the client version the client is using, based on what it has identified itself as to the server. ]
+REPORTEDCLIVER
+;
+[REPORTEDCLIVER | Gets the client version the client is using, based on what it has identified itself as to the server, including the 4th digit. ]
+REPORTEDCLIVER.FULL
+;
+[RESEND | Forces a full refresh of the client's screen. ]
+RESEND
+;
+[SAVE | Begins a world save. If background saving is enabled then SAVE 1 will force a foreground save. ]
+SAVE immediate
+;
+[SCREENSIZE | Gets the client's screen size. (width,height) ]
+SCREENSIZE
+;
+[SCREENSIZE | Gets the width of the client's screen size. ]
+SCREENSIZE.X
+;
+[SCREENSIZE | Gets the height of the client's screen size. ]
+SCREENSIZE.Y
+;
+[SCROLL | Displays a message scroll to the client. ]
+SCROLL scroll_id
+;
+[SELF | Forces the client to target itself. ]
+SELF
+;
+[SENDPACKET | Sends a raw data packet to the client. ]
+SENDPACKET data
+;
+[SET | Prompts the client to target an object to execute command on. ]
+SET command
+;
+[SHOWSKILLS | Refreshes the client's skills for the skill menu. ]
+SHOWSKILLS
+;
+[SKILLMENU | Displays a skillmenu to the client. ]
+SKILLMENU skillmenu_id
+;
+[SKILLSELECT | Simulates the client selecting a skill from their skill menu. ]
+SKILLSELECT skill_id
+;
+[SUMMON | Casts the summon spell, with character_id'; being the character to summon. ]
+SUMMON character_id
+;
+[SYSMESSAGE | Displays a system message to the client. ]
+SYSMESSAGE text
+;
+[SYSMESSAGELOC | Displays a localized system message to the client. ]
+SYSMESSAGELOC hue, cliloc, args
+;
+[SYSMESSAGELOCEX | Displays a localized system message to the client with affixed text. ]
+SYSMESSAGELOCEX hue, cliloc, flags, affix, args
+;
+[SYSMESSAGEUA | Displays a UNICODE system message to the client. ]
+SYSMESSAGEUA hue, font, mode, language, text
+;
+[TARGTXT | Gets or sets the client's target text. ]
+TARGTXT
+;
+[TELE | Casts the teleport spell. ]
+TELE
+;
+[TILE | Tiles the ground within a targeted area with the listed items, at the given Z level. ]
+TILE z, item1, item2, ...
+;
+[UNEXTRACT | Unextracts previously extracted statics, as dynamic items at a targeted location. ]
+UNEXTRACT file
+;
+[VERSION | Displays the server description to the client. ]
+VERSION
+;
+[WEBLINK | Opens the client's web browser to send them to the specified url. ]
+WEBLINK url
+;
+[X | Prompts the client to target an object to execute command on. ]
+Xcommand
+;
+[AEXECUTE | Executes an SQL command in a background thread, calling function when complete. Returns 1 if the command is successfully queued. ]
+AEXECUTE function, command
+;
+[AQUERY | Executes an SQL command in a background thread, calling function when complete. Returns 1 if the command is successfully queued. ]
+AQUERY function, command
+;
+[CLOSE | Closes the connection to the database. ]
+CLOSE
+;
+[CONNECT | Opens a connection to the database, using the settings from Sphere.ini. ]
+CONNECT
+;
+[CONNECTED | Returns 1 if the database is connected. ]
+CONNECTED
+;
+[ESCAPEDATA | Returns text as an escaped SQL string. ]
+ESCAPEDATA text
+;
+[EXECUTE | Exectutes an SQL command that doesn't return any result. ]
+EXECUTE command
+;
+[QUERY | Executes an SQL command that returns results. ]
+QUERY command
+;
+[ROW | Returns the number of columns returned in the last query. ]
+ROW.NUMCOLS
+;
+[ROW | Returns the number of rows returned in the last query. ]
+ROW.NUMROWS
+;
+[ROW | Returns the value of the column at index col_index in the nth row. (zero-based) ]
+ROW.n.col_index
+;
+[ROW | Returns the value of the column named col_name in the nth row. (zero-based) ]
+ROW.n.col_name 
+;
+[CLOSE | Closes the currently open file. ]
+CLOSE
+;
+[DELETEFILE | Deletes file_name. ]
+DELETEFILE file_name
+;
+[FILEEXIST | Returns 1 if file_name exists. ]
+FILEEXIST file_name
+;
+[FILELINES | Returns the total number of lines in file_name. ]
+FILELINES file_name
+;
+[FILEPATH | Returns the name of the currently open file. ]
+FILEPATH
+;
+[FLUSH | Forces all buffered output to be written to the file, ]
+FLUSH
+;
+[INUSE | Returns 1 if a file is currently open. ]
+INUSE
+;
+[ISEOF | Returns 1 if there are no more lines left to read from the file. ]
+ISEOF
+;
+[LENGTH | Returns the total length of the currently open file, in bytes. ]
+LENGTH
+;
+[MODE | Gets or sets whether or not the file will be appended to when opened. Cannot be set after the file has been opened. ]
+MODE.APPEND
+;
+[MODE | Gets or sets whether or not the file will be created when opened. Cannot be set after the file has been opened. ]
+MODE.CREATE
+;
+[MODE | Gets or sets whether or not the file will be opened for reading from. Cannot be set after the file has been opened. ]
+MODE.READLFLAG
+;
+[MODE | Gets or sets whether or not the file will be opened for writing to. Cannot be set after the file has been opened. ]
+MODE.WRITEFLAG
+;
+[MODE | Sets the mode to the default setting. Cannot be set after the file has been opened. ]
+MODE.SETDEFAULT
+;
+[OPEN | Opens a file, and returns 1 if the attempt was successful, using the set MODE flags. ]
+OPEN file_name
+;
+[POSITION | Gets the current position in the currently open file, in bytes. ]
+POSITION
+;
+[READBYTE | Reads the next byte from the currently open file. ]
+READBYTE
+;
+[READCHAR | Reads the next character from the currently open file. ]
+READCHAR
+;
+[READLINE | Reads the nth line from the currently open file (1-based). 0 Reads the last line. ]
+READLINE n
+;
+[SEEK | Changes the current position in the currently open file to position. Accepts "BEGIN" for the start of the file and "END" for the end of the file. Returns the new position in the file. ]
+SEEK position
+;
+[WRITE | Writes text to the currently open file. ]
+WRITE text
+;
+[WRITECHR | Writes a single character to the currently open file. ]
+WRITECHR ascii_value
+;
+[WRITELINE | Writes text to the currently open file, with newline character(s) on the end. ]
+WRITELINE text 
+;
+[ACCOUNT | Gets the name of the account that sent the page. ]
+ACCOUNT
+;
+[HANDLED | Gets the UID of the character currently handling the page. ]
+HANDLED
+;
+[P | Gets or sets the location that the page was sent from. ]
+P
+;
+[REASON | Gets or sets the reason for the page. ]
+REASON
+;
+[STATUS | Gets the status of the page sender (OFFLINE, LOGIN or character name). ]
+STATUS
+;
+[TIME | Gets the time since the page was originally sent in seconds. ]
+TIME 
+;
+[CONT | Gets or sets the character or container item that the object is inside. ]
+CONT
+;
+[LINK | Gets or sets the character or item that the item is linked to. ]
+LINK
+;
+[REGION | Gets the region that the object is in. ]
+REGION
+;
+[ROOM | Gets the room that the object is in. ]
+ROOM
+;
+[P | Gets or sets the position that the object is at. ]
+P
+;
+[SECTOR | Gets the sector that the object is in. ]
+SECTOR
+;
+[TOPOBJ | Gets the top-most character or item in the world that contains the item. ]
+TOPOBJ
+;
+[TYPEDEF | Gets the ITEMDEF that defines the item. ]
+TYPEDEF
+;
+[ADDCIRCLE | Adds all of the spells in the given circle to the spellbook. ]
+ADDCIRCLE spell_circle
+;
+[ADDSPELL | Gets whether or not a spell exists in the spellbook, or adds a spell to the spellbook. ]
+ADDSPELL spell_id
+;
+[AMOUNT | Gets the amount of this items this item represent (e.g. a pile of gold). ]
+AMOUNT
+;
+[ATTR | Gets or sets the item's attribute flags. ]
+ATTR
+;
+[BOUNCE | Moves the item to SRC's backpack. ]
+BOUNCE
+;
+[CANSEE | Returns 1 if SRC can see the item. ]
+CANSEE
+;
+[CANSEELOS | Returns 1 if SRC has line of sight to the item. ]
+CANSEELOS
+;
+[CANSEELOSFLAG | Returns 1 if SRC has line of sight to the item, with flags to modify what tests take place. ]
+CANSEELOSFLAG flags
+;
+[CLEARTAGS | Removes all TAGs from the item that start with the given prefix. ]
+CLEARTAGS prefix
+;
+[COLOR | Gets or sets the object's hue. ]
+COLOR
+;
+[CONSUME | Deducts an amount from the item, deleting it at 0. ]
+CONSUME amount
+;
+[CONTCONSUME | Deletes items from inside the container. ]
+CONTCONSUME resource_list
+;
+[CONTGRID | If in a container, gets or sets the grid number that the item occupies (in KR's grid view) ]
+CONTGRID
+;
+[CONTP | Gets or sets the position of the item within its container. ]
+CONTP
+;
+[DAMAGE | Inflicts damage upon the item. ]
+DAMAGE amount, type, source
+;
+[DCLICK | Double clicks the item, with SRC as the source of the event. ]
+DCLICK
+;
+[DECAY | Sets the decay timer for the item. ]
+DECAY time
+;
+[DIALOG | Displays a dialog to SRC. ]
+DIALOG dialog_id, page, parameters
+;
+[DISPID | Gets or sets the ID that the item will appear as to players. ]
+DISPID
+;
+[DISPIDDEC | Same as DISPID, except it returns the ID as a decimal number. ]
+DISPIDDEC
+;
+[DISTANCE | Gets the distance between this object and either SRC, a map location or another object. ]
+DISTANCE point_or_uid
+;
+[DMGCOLD | Gets or sets the amount of cold damage the weapon will give. ]
+DMGCOLD
+;
+[DMGENERGY | Gets or sets the amount of energy damage the weapon will give. ]
+DMGENERGY
+;
+[DMGFIRE | Gets or sets the amount of fire damage the weapon will give. ]
+DMGFIRE
+;
+[DMGPOISON | Gets or sets the amount of poison damage the weapon will give. ]
+DMGPOISON
+;
+[DROP | Drops the item to the ground. ]
+DROP
+;
+[DUPE | Clones the item. ]
+DUPE
+;
+[EDIT | Displays an editing dialog for the item to SRC. ]
+EDIT
+;
+[EFFECT | Displays an effect to nearby clients. ]
+EFFECT type, item_id, speed, loop, explode, colour, rendermode
+;
+[EMOTE | Displays a *You see* message to all nearby clients. ]
+EMOTE message
+;
+[EQUIP | Equips the item to SRC. ]
+EQUIP
+;
+[EVENTS | Gets a list of events attached to the object, or adds or removes an event to or from the object. ]
+EVENTS event_defname
+;
+[FIX | Re-aligns the item's Z level to ground level. ]
+FIX
+;
+[FLIP | Rotates the item. ]
+FLIP
+;
+[FRUIT | Gets or sets the fruit that will be produced by the crops. ]
+FRUIT
+;
+[HEIGHT | Gets the height of the item. ]
+HEIGHT
+;
+[HITS | Gets or sets the number of hitpoints the item has. ]
+HITS
+;
+[HITPOINTS | Gets or sets the number of hitpoints the item has. ]
+HITPOINTS
+;
+[ID | Gets or sets the ID of the item. ]
+ID
+;
+[INFO | Displays an information dialog about the item to SRC. ]
+INFO
+;
+[ISARMOR | Returns 1 if the object is armour. ]
+ISARMOR object_uid
+;
+[ISCHAR | Returns 1 if the object is a character. ]
+ISCHAR
+;
+[ISCONT | Returns 1 if the object is a container. ]
+ISCONT
+;
+[ISEVENT | Returns 1 if the object has an event attached to it. ]
+ISEVENT.event_defname
+;
+[ISITEM | Returns 1 if the object is an item. ]
+ISITEM
+;
+[ISNEARTYPE | Returns 1 if a nearby item has the given TYPE. ]
+ISNEARTYPE type, distance, flags
+;
+[ISNEARTYPETOP | Returns a nearby world location of a nearby item which has the given TYPE. ]
+ISNEARTYPETOP type, distance, flags
+;
+[ISPLAYER | Returns 1 if the object is a player. ]
+ISPLAYER
+;
+[ISTEVENT | Returns 1 if the object has an event attached to its ITEMDEF. ]
+ISTEVENT.event_defname
+;
+[ISWEAPON | Returns 1 if the object is a weapon. ]
+ISWEAPON object_uid
+;
+[LAYER | Gets or sets the layer that the item occupies when equipped. ]
+LAYER
+;
+[MAP | Gets or sets the map that this object is located. ]
+MAP
+;
+[MAXHITS | Gets or sets the maximum number of hitpoints the item can have. ]
+MAXHITS
+;
+[MENU | Displays a menu to SRC. ]
+MENU menu_defname
+;
+[MESSAGE | Displays a message above this item to SRC. ]
+MESSAGE message
+;
+[MESSAGEUA | Displays a UNICODE message above this item to SRC. ]
+MESSAGEUA colour, talkmode, font, lang_id, message
+;
+[MODAR | Gets or sets a modifier for the item's armour rating. ]
+MODAR
+;
+[MORE1 | Gets or sets the MORE1 value for the item. ]
+MORE1
+;
+[MORE1H | Gets or sets the upper 4 bytes of the item's MORE1 value. ]
+MORE1H
+;
+[MORE1L | Gets or sets the lower 4 bytes of the item's MORE1 value. ]
+MORE1L
+;
+[MORE2 | Gets or sets the MORE2 value for the item. ]
+MORE2
+;
+[MORE2H | Gets or sets the upper 4 bytes of the item's MORE2 value. ]
+MORE2H
+;
+[MORE2L | Gets or sets the lower 4 bytes of the item's MORE2 value. ]
+MORE2L
+;
+[MOREM | Gets or sets the MOREM value for the item. ]
+MOREM
+;
+[MOREX | Gets or sets the MOREX value for the item. ]
+MOREX
+;
+[MOREY | Gets or sets the MOREY value for the item. ]
+MOREY
+;
+[MOREZ | Gets or sets the MOREZ value for the item. ]
+MOREZ
+;
+[MOREP | Gets or sets the MOREP value for the item. ]
+MOREP
+;
+[MOVE | Moves the object relative to its current position. ]
+MOVE direction, amount
+MOVE
+;
+[MOVENEAR | Moves the object to a random location near another object within a certain distance. ]
+MOVENEAR object_uid, distance
+;
+[MOVETO | Moves the object to a specific location. ]
+MOVETO location
+;
+[NAME | Gets or sets the object's name. ]
+NAME
+;
+[NUDGEDOWN | Decreases the object's Z level. ]
+NUDGEDOWN amount
+;
+[NUDGEUP | Increases the object's Z level. ]
+NUDGEUP amount
+;
+[PROMPTCONSOLE | Displays a prompt message to SRC and passes their response into a specified function. ]
+PROMPTCONSOLE function, prompt_message
+;
+[PROMPTCONSOLEU | Displays a prompt message to SRC and passes their response into a specified function, supporting UNICODE response. ]
+PROMPTCONSOLEU function, prompt_message
+;
+[REMOVE | Deletes the object. ]
+REMOVE
+;
+[REMOVEFROMVIEW | Removes the object from nearby clients' screens. ]
+REMOVEFROMVIEW
+;
+[RESENDTOOLTIP | Forces Sphere to update the tooltips for nearby clients. ]
+RESENDTOOLTIP
+;
+[SAY | Makes the object speak a message. ]
+SAY message
+;
+[SAYU | Makes the object speak a UTF-8 message ]
+SAYU message
+;
+[SAYUA | MAkes the object speak a UNICODE message. ]
+SAYUA colour, talkmode, font, lang_id, text
+;
+[SDIALOG | Displays a dialog to SRC, providing that it is not already open. ]
+SDIALOG dialog_id, page, parameters
+;
+[SERIAL | Gets the item's unique ID in the world. ]
+SERIAL
+;
+[SEXTANTP | Converts the item's location or a specified location into sextant coordinates. ]
+SEXTANTP location
+;
+[SOUND | Plays a sound from this object. ]
+SOUND sound_id, repeat
+;
+[SPELLEFFECT | Causes the item to be affected by a spell. ]
+SPELLEFFECT spell_id, strength, source_character_uid, source_item_uid
+;
+[TAG | Gets or sets the value of a TAG. ]
+TAG.name
+;
+[TAGAT | Gets a TAG at the given zero-based index. ]
+TAGAT.index
+;
+[TAGAT | Gets the name of the TAG at the given zero-based index. ]
+TAGAT.index.KEY
+;
+[TAGAT | Gets the value of the TAG at the given zero-based index. ]
+TAGAT.index.VAL
+;
+[TAGCOUNT | Gets the number of TAGs stored on the item. ]
+TAGCOUNT
+;
+[TAGLIST | Outputs a list of the object's TAGs. ]
+TAGLIST
+;
+[TARGET | Displays a targeting cursor to SRC. ]
+TARGETFGMW function
+;
+[TIMER | Gets or sets the length of time before the item's timer expires, in seconds. ]
+TIMER
+;
+[TIMERD | Gets or sets the length of time before the item's timer expires, in tenths of a second. ]
+TIMERD
+;
+[TIMERF | Scheduled a function to be executed on this object in time seconds. ]
+TIMERF time, function
+;
+[TIMERF | Clears all scheduled functions from the object. ]
+TIMERF CLEAR
+;
+[TRIGGER | Fires a custom trigger and returns the RETURN value. ]
+TRIGGER trig_name, trig_type
+;
+[TYPE | Gets or sets the item type. You can use built-in or custom TYPEDEFs as a value. ]
+TYPE
+;
+[UID | Gets the item's unique ID in the world. ]
+UID
+;
+[UNEQUIP | Unequips the item and places it in SRC's backpack. ]
+UNEQUIP
+;
+[UPDATE | Updates the state of the item to nearby clients. ]
+UPDATE
+;
+[UPDATEX | Updates the state of the item to nearby clients, removing it from their view first to ensure a full refresh. ]
+UPDATEX
+;
+[USE | Uses the item, as if SRC had double clicked it. ]
+USE check_los
+;
+[USEITEM | Double clicks the item, with SRC as the source of the event, without checking for line of sight. ]
+USEITEM
+;
+[WEIGHT | Gets the weight of the item. ]
+WEIGHT
+;
+[Z | Gets the Z position of the item. ]
+Z 
+;
+[REGION | Gets the region that contains the map point. ]
+REGION
+;
+[ROOM | Gets the room that contains the map point. ]
+ROOM
+;
+[SECTOR | Gets the sector that contains the map point. ]
+SECTOR
+;
+[ISNEARTYPE | Returns 1 if an item exists within distance tiles of the location whose TYPE matches a specified type. ]
+ISNEARTYPE type, distance, check_multis
+;
+[M | Gets the location's map number. ]
+M
+MAP
+;
+[STATICS | Gets the number of static items at the location. ]
+STATICS
+;
+[STATICS | Gets the ID of the nth item at the location. (zero-based) ]
+STATICS.n.ID
+;
+[STATICS | Gets the hue of the nth item at the location. (zero-based) ]
+STATICS.n.COLOR
+;
+[STATICS | Gets the Z level of the nth item at the location. (zero-based) ]
+STATICS.n.Z
+;
+[STATICS | Gets the KEY property from the ITEMDEF of the nth item at the location. (zero-based) ]
+STATICS.n.KEY
+;
+[TERRAIN | Gets the terrain's ID at the location. ]
+TERRAIN
+;
+[TERRAIN | Gets the terrain's Z level at the location. ]
+TERRAIN.Z
+;
+[TYPE | Gets the terrain's TYPE at the location. ]
+TYPE
+;
+[X | Gets the X coordinate of the location. ]
+X
+;
+[Y | Gets the Y coordinate of the location. ]
+Y
+;
+[Z | Gets the Z coordinate of the location. ]
+Z 
+;
+[MASTER | Gets the party master, the character who originally formed the party. ]
+MASTER
+;
+[MEMBER | Gets the nth party member. (zero-based) ]
+MEMBER.n
+;
+[ADDMEMBER | Adds a character to the party. ]
+ADDMEMBER character_uid
+;
+[ADDMEMBERFORCED | Adds a character to the party. If the character is already in a party then they will be forced out of it. The character will be added even if the party has reached the maximum size of 10. ]
+ADDMEMBERFORCED character_uid
+;
+[CLEARTAGS | Removes all TAGs from the party. ]
+CLEARTAGS
+;
+[DISBAND | Disbands the party. ]
+DISBAND
+;
+[ISSAMEPARTYOF | Returns 1 if a specified character is a member of this party. ]
+ISSAMEPARTYOF character_uid
+;
+[MEMBERS | Gets the total number of characters in the party. ]
+MEMBERS
+;
+[REMOVEMEMBER | Removes a character from the party. ]
+REMOVEMEMBER character_uid
+;
+[REMOVEMEMBER | Removes the nth character from the party. (zero-based) ]
+REMOVEMEMBER @n
+;
+[SPEECHFILTER | Gets or sets a function that will be called every time a party member speaks to the party. ]
+SPEECHFILTER
+;
+[SYSMESSAGE | Sends a message to a party member (0 = Entire party). ]
+SYSMESSAGE character_uid, message
+;
+[SYSMESSAGE | Sends a message to the nth party member. ]
+SYSMESSAGE @n, message
+;
+[TAG | Gets or sets the value of a TAG. ]
+TAG
+;
+[TAGAT | Gets a TAG at the given zero-based index. ]
+TAGAT.index
+;
+[TAGAT | Gets the name of the TAG at the given zero-based index. ]
+TAGAT.index.KEY
+;
+[TAGAT | Gets the value of the TAG at the given zero-based index. ]
+TAGAT.index.VAL
+;
+[TAGCOUNT | Gets the number of TAGs stored on the party. ]
+TAGCOUNT
+;
+[TAGLIST | Displays a list of all TAGs to SRC. ]
+TAGLIST 
+;
+[AMOUNT | Gets or sets the initial amount of the resource available when it spawns. Accepts multiple values to build a weighted range of difficulty values. ]
+AMOUNT
+;
+[DEFNAME | Gets or sets the resource defname. ]
+DEFNAME
+;
+[REAP | Gets or sets the BASEID of the resource item. ]
+REAP
+;
+[REAPAMOUNT | Gets or sets the amount of the resource that can be gathered in one use of a skill. Accepts multiple values to adjust based on skill level. ]
+REAPAMOUNT
+;
+[REGEN | Gets or sets the length of time it takes for the resource to decay, in seconds. ]
+REGEN
+;
+[SKILL | Gets or sets the difficulty of gathering the resource. Accepts multiple values to build a weighted range of difficulty values. ]
+SKILL 
+;
+[REGION | For regions linked to a multi, gets the region that contains the multi region. Only valid for reading values. ]
+REGION
+;
+[ALLCLIENTS | Executes command on all clients inside the region boundaries. ]
+ALLCLIENTS command
+;
+[CLEARTAGS | Removes all TAGs from the region that start with the given prefix. ]
+CLEARTAGS prefix
+;
+[CLIENTS | Gets the total number of clients that are inside the sectors that touch the region. ]
+CLIENTS
+;
+[DEFNAME | Gets the region's defname. ]
+DEFNAME
+;
+[EVENTS | Gets a list of attached region events, or adds or removes a region event to or from the region. ]
+EVENTS +/-regiontype_defname
+;
+[ISEVENT | Returns 1 if the region has a specified region event attached. ]
+ISEVENT.regiontype_defname
+;
+[MAP | Gets the map that the region exists on. ]
+MAP
+;
+[RECT | Gets the number of rectangles that this region is made from. ]
+RECT
+;
+[RECT | Gets the nth rectangle that this region is made from. ]
+RECT.n
+;
+[RESOURCES | Gets a list of attached region events, or adds or removes a region event to or from the region. ]
+RESOURCES +/-regiontype_defname
+;
+[TAGAT | Gets a TAG at the given zero-based index. ]
+TAGAT.index
+;
+[TAGAT | Gets the name of the TAG at the given zero-based index. ]
+TAGAT.index.KEY
+;
+[TAGAT | Gets the value of the TAG at the given zero-based index. ]
+TAGAT.index.VAL
+;
+[TAGCOUNT | Gets the number of TAGs stored on the region. ]
+TAGCOUNT
+;
+[TAGLIST | Outputs a list of the region's TAGs. ]
+TAGLIST
+;
+[TYPE | If the region is linked to a multi, returns the multi's BASEID property. ]
+TYPE
+;
+[UID | Gets the region's unique ID in the world. ]
+UID 
+;
+[ALLCLIENTS | Executes command on all clients inside the room boundaries. ]
+ALLCLIENTS command
+;
+[CLIENTS | Gets the total number of clients that are inside the sectors that touch the room. ]
+CLIENTS
+;
+[MAP | Gets the map that the room exists on. ]
+MAP
+;
+[RECT | Gets the number of rectangles that this room is made from. ]
+RECT
+;
+[RECT | Gets the nth rectangle that this room is made from. ]
+RECT.n
+;
+[UID | Gets the room's unique ID in the world. ]
+UID 
+;
+[ALLCHARS | Executes command on all characters inside the sector. ]
+ALLCHARS command
+;
+[ALLCHARSIDLE | Executes command on all disconnected characters inside the sector. ]
+ALLCHARSIDLE command
+;
+[ALLCLIENTS | Executes command on all clients inside the sector. ]
+ALLCLIENTS command
+;
+[ALLITEMS | Executes command on all items inside the sector. ]
+ALLITEMS command
+;
+[CLIENTS | Gets the number of clients in the sector. ]
+CLIENTS
+;
+[COLDCHANCE | Gets or sets the chance of snow for the sector. ]
+COLDCHANCE
+;
+[COMPLEXITY | Gets the number of characters in the sector. ]
+COMPLEXITY
+;
+[COMPLEXITY | Returns 1 if the sector has a high complexity. (less than 5 characters) ]
+COMPLEXITY.HIGH
+;
+[COMPLEXITY | Returns 1 if the sector has a medium complexity. (less than 10 characters) ]
+COMPLEXITY.MEDIUM
+;
+[COMPLEXITY | Returns 1 if the sector has a low complexity. (10+ characters) ]
+COMPLEXITY.LOW
+;
+[DRY | Sets the weather to dry. ]
+DRY
+;
+[ISDARK | Returns 1 if the light level in the sector is considered to be dark. ]
+ISDARK
+;
+[ISNIGHTTIME | Returns 1 if the local time of day is between 9pm and 7am. ]
+ISNIGHTTIME
+;
+[ITEMCOUNT | Returns the number of items in the sector. ]
+ITEMCOUNT
+;
+[LIGHT | Gets or sets the light level for the sector. ]
+LIGHT
+;
+[LOCALTIME | Gets the local time of day, as a descriptive string. ]
+LOCALTIME
+;
+[LOCALTOD | Gets the local time of day, in minutes. ]
+LOCALTOD
+;
+[RAIN | Sets the weather to raining. ]
+RAIN
+;
+[RAINCHANCE | Gets or sets the chance of rain for the sector. ]
+RAINCHANCE
+;
+[RESPAWN | Resurrects dead NPC characters (not corpses). If ALL is provided then all sectors will be affected. ]
+RESPAWN ALL
+;
+[RESTOCK | Restocks all NPCs in the sector. If ALL is provided then all sectors will be affected. ]
+RESTOCK ALL
+;
+[SEASON | Gets or sets the current season in the sector. ]
+SEASON
+;
+[SNOW | Sets the weather to snowing. ]
+SNOW
+;
+[WEATHER | Gets or sets the current weather in the sector. ]
+WEATHER 
+;
+[ACCOUNT | Gets the nth account on the server. (zero-based) ]
+SERV.ACCOUNT.n
+;
+[ACCOUNT | Gets the account with the specified name. ]
+SERV.ACCOUNT.name
+;
+[AREA | Gets the region with the specified defname. ]
+SERV.AREA.defname
+;
+[CHARDEF | Gets the character definition for defname. ]
+SERV.CHARDEF.defname
+;
+[CLIENT | Gets the nth client on the server. (zero-based)
+Note: The nth client may not be an ingame player character, check <CLIENT.n> first as it returns 1 for ingame clients and 0 for non-player clients. ]
+SERV.CLIENT.n
+;
+[GMPAGE | Gets the nth GM page on the server. (zero-based) ]
+SERV.GMPAGE.n
+;
+[GUILDSTONES | Gets the nth guild stone on the server. (zero-based) ]
+SERV.GUILDSTONES.n
+;
+[ITEMDEF | Gets the item definition for defname. ]
+SERV.ITEMDEF.defname
+;
+[LASTNEWCHAR | Gets the last character created on the server. ]
+SERV.LASTNEWCHAR
+;
+[LASTNEWITEM | Gets the last item created on the server. ]
+SERV.LASTNEWITEM
+;
+[MAP | Gets the map point for a specified location. ]
+SERV.MAP(x, y, map)
+MAP
+;
+[REGIONRESOURCE | Gets the region resource definition for defname. ]
+SERV.REGIONRESOURCE.defname
+;
+[REGIONTYPE | Gets the region type definition for defname. ]
+SERV.REGIONTYPE.defname
+;
+[ROOM | Gets the room with the specified defname. ]
+SERV.ROOM.defname
+;
+[SKILL | Gets the skill definition for defname. ]
+SERV.SKILL.defname
+;
+[SKILLCLASS | Gets the skillclass for defname. ]
+SERV.SKILLCLASS.defname
+;
+[SPAWN | Gets the spawn group for defname. ]
+SERV.SPAWN.defname
+;
+[SPELL | Gets the spell definition for defname. ]
+SERV.SPELL.defname
+;
+[SPELL | Gets the nth spell definition, ordered by skill requirements (1-based, ascending). ]
+SERV.SPELL.n
+;
+[TOWNSTONES | Gets the nth town stone on the server. (zero-based) ]
+SERV.TOWNSTONES.n
+;
+[ACCOUNT | Creates an account with the specified name and password. ]
+SERV.ACCOUNT ADD name password
+;
+[ACCOUNT | Creates an account with the specified name and MD5 password hash. ]
+SERV.ACCOUNT ADDMD5 name hash
+;
+[ACCOUNT | Executes command on all accounts that have been unused for days days and are currently blocked. ]
+SERV.ACCOUNT BLOCKED days command
+;
+[ACCOUNT | Executes command on all accounts that have been unused for days days and are currently jailed. ]
+SERV.ACCOUNT JAILED days command
+;
+[ACCOUNT | Executes command on all accounts that have been unused for days days. ]
+SERV.ACCOUNT UNUSED days command
+;
+[ACCOUNT | Saves the accounts to file. ]
+SERV.ACCOUNT UPDATE
+;
+[ACCOUNT | Executes command on the account with the specified name. ]
+SERV.ACCOUNT name command
+;
+[ACCOUNTS | Gets or sets the number of accounts on the server. ]
+SERV.ACCOUNTS
+;
+[ALLCLIENTS | Executes command on all online player characters. ]
+SERV.ALLCLIENTS command
+;
+[B | Broadcasts message to all clients on the server. ]
+SERV.B message
+;
+[BLOCKIP | Blocks an IP address for time, in tenths of a second (-1 = permanent). ]
+SERV.BLOCKIP address, time
+;
+[CHARS | Gets or sets the number of characters on the server. ]
+SERV.CHARS
+;
+[CLEARLISTS | Removes all LISTs whose name contains mask. ]
+SERV.CLEARLISTS mask
+;
+[CLEARVARS | Removes all VARs that start with the given prefix. ]
+SERV.CLEARVARS prefix
+;
+[CLIENTS | Gets the total number of connected clients. ]
+SERV.CLIENTS
+;
+[CONSOLE | Executes command as if it had been typed directly into the server console. ]
+SERV.CONSOLE command
+;
+[EXPORT | Exports all objects within distance tiles of SRC to a file. (Flags: 1 = Items, 2 = Characters, 3 = Both) ]
+SERV.EXPORT file, flags, distance
+;
+[GARBAGE | Forces an immediate garbage collection (checks for invalid objects and fixes them if possible, or else removes them). ]
+SERV.GARBAGE
+;
+[GMPAGES | Returns the total number of GM pages. ]
+SERV.GMPAGES
+;
+[GUILDS | Returns the total number of guild and town stones. ]
+SERV.GUILDS
+;
+[GUILDSTONES | Returns the total number of guild stones on the server. ]
+SERV.GUILDSTONES.COUNT
+;
+[HEARALL | Gets or sets whether player speech is logged to server console and log file. ]
+SERV.HEARALL
+;
+[IMPORT | Imports previously exported items that were within distance tiles. (Flags: 1 = Items, 2 = Characters, 3 = Both) ]
+SERV.IMPORT file, flags, distance
+;
+[INFORMATION | Displays server information to SRC. ]
+SERV.INFORMATION
+;
+[ITEMS | Gets or sets the number of items on the server. ]
+SERV.ITEMS
+;
+[LOAD | Loads a script file. ]
+SERV.LOAD file
+;
+[LOG | Logs message to server console and logs. ]
+SERV.LOG message
+;
+[LOOKUPSKILL | Looks up a skill name or key, and returns its skill number. ]
+SERV.LOOKUPSKILL skill_name
+;
+[MAP | Executes command on all sectors of a map. ]
+SERV.MAP.map_num.ALLSECTORS command
+;
+[MAPLIST | Returns 1 if map_num is a valid map number. ]
+SERV.MAPLIST.map_num
+;
+[MAPLIST | Returns the maximum X coordinate for a map. ]
+SERV.MAPLIST.map_num.BOUND.X
+;
+[MAPLIST | Returns the maximum Y coordinate for a map. ]
+SERV.MAPLIST.map_num.BOUND.Y
+;
+[MAPLIST | Returns the central X coordinate of a map. ]
+SERV.MAPLIST.map_num.CENTER.X
+;
+[MAPLIST | Returns the central Y coordinate of a map. ]
+SERV.MAPLIST.map_num.CENTER.Y
+;
+[MAPLIST | Returns the number of sector columns on a map. ]
+SERV.MAPLIST.map_num.SECTOR.COLS
+;
+[MAPLIST | Returns the number of sectors on a map. ]
+SERV.MAPLIST.map_num.SECTOR.QTY
+;
+[MAPLIST | Returns the number of sector rows on a map. ]
+SERV.MAPLIST.map_num.SECTOR.ROWs
+;
+[MAPLIST | Returns the size of the sectors on a map. ]
+SERV.MAPLIST.map_num.SECTOR.SIZE
+;
+[MEM | Returns the total amount of memory being used, in kilobytes. ]
+SERV.MEM
+;
+[PRINTLISTS | Displays a list of all LISTs to SRC, or the server console. ]
+SERV.PRINTLISTS LOG
+;
+[REGEN | Gets or sets the length of time it takes for characters to regenerate 1 health point, in seconds. ]
+SERV.REGEN0
+;
+[REGEN | Gets or sets the length of time it takes for characters to regenerate 1 mana point, in seconds. ]
+SERV.REGEN1
+;
+[REGEN | Gets or sets the length of time it takes for characters to regenerate 1 stamina point, in seconds. ]
+SERV.REGEN2
+;
+[REGEN | Gets or sets the length of time it takes for characters to lose 1 food point, in seconds. ]
+SERV.REGEN3
+;
+[RESPAWN | Respawns all dead NPCs (not corpses) in the world. ]
+SERV.RESPAWN
+;
+[RESTOCK | Restocks all NPCs in the world. ]
+SERV.RESTOCK
+;
+[RESTORE | Restores a player character from a backup save. ]
+SERV.RESTORE file, account_name, character_name
+;
+[RESYNC | Checks all script files for any changes made since they were last loaded. ]
+SERV.RESYNC
+;
+[RTICKS | Returns the real-world time, as a timestamp. ]
+SERV.RTICKS
+;
+[RTICKS | Returns the real-world timestamp as a formatted datetime string. ]
+SERV.RTICKS.FORMAT timestamp, format
+;
+[RTICKS | Returns the specified real-world time, as a timestamp. ]
+SERV.RTICKS.FROMTIME year, month, day, hour, minutes, seconds
+;
+[RTIME | Returns the real-world time, as a formatted string. ]
+SERV.RTIME
+;
+[RTIME | Returns the real-world time, as a formatted string. ]
+SERV.RTIME.FORMAT format
+;
+[SAVE | Begins a world save. If background saving is enabled, force_immediate can be used to force a foreground save. ]
+SERV.SAVE force_immediate
+;
+[SAVECOUNT | Returns the number of world saves that have taken place. ]
+SERV.SAVECOUNT
+;
+[SAVESTATICS | Performs a statics save. ]
+SERV.SAVESTATICS
+;
+[SHRINKMEM | Temporarily reduces memory usage. ]
+SERV.SHRINKMEM
+;
+[SHUTDOWN | Schedules a server shutdown in time minutes. ]
+SERV.SHUTDOWN time
+;
+[TIME | Returns the total server uptime, in tenths of a second. ]
+SERV.TIME
+;
+[TOWNSTONES | Returns the total number of town stones on the server. ]
+SERV.TOWNSTONES.COUNT
+;
+[UNBLOCKIP | Unblocks a previously blocked IP address. ]
+SERV.UNBLOCKIP address
+;
+[VARLIST | Displays a list of all VARs to SRC, or the server console. ]
+SERV.VARLIST LOG
+;
+[VERSION | Returns the SphereServer version. ]
+SERV.VERSION 
+;
+[COMP | Gets the number of components defined in the ITEMDEF. ]
+COMP
+;
+[COMP | Gets the KEY (ID,DX,DY,DZ,D) of the nth component defined in the ITEMDEF. ]
+COMP.n.key'
+;
+[MULTICREATE | When a multi is created via SERV.NEWITEM, this function must be used to initialise the multi-region. ]
+MULTICREATE owner_uid
+;
+[DESIGNER | Gets the character currently modifying the house design. ]
+DESIGNER
+;
+[ADDITEM | Adds an item to the house design. ]
+ADDITEM item_id, dx, dy, dz
+;
+[ADDMULTI | Adds a multi to the house design. ]
+ADDMULTI multi_id, dx, dy, dz
+;
+[CLEAR | Removes all items from the house design. ]
+CLEAR
+;
+[COMMIT | Commits all changes that have been made to the house design, updating the state of the building. ]
+COMMIT
+;
+[COMPONENTS | Gets the number of components in the house design. ]
+COMPONENTS
+;
+[CUSTOMIZE | Enters the building into edit mode for the specified character (or SRC). ]
+CUSTOMIZE character_uid
+;
+[DESIGN | Gets a property (ID,DX,DY,DZ,D,FIXTURE) from the nth component in the house design. ]
+DESIGN.n.KEY
+;
+[EDITAREA | Gets the designable area rectangle of the multi (left,top,right,bottom) ]
+EDITAREA
+;
+[ENDCUSTOMIZE | Exits the current designer from edit mode. ]
+ENDCUSTOMIZE
+;
+[FIXTURES | Gets the number of fixtures in the house design. ]
+FIXTURES
+;
+[REMOVEITEM | Removes an item from the house design. ]
+REMOVEITEM item_id, dx, dy, dz
+;
+[RESET | Resets the house design back to the house foundation. ]
+RESET
+;
+[RESYNC | Resends the current building state to the specified character (or SRC). ]
+RESYNC character_uid
+;
+[REVERT | Undoes all of the changes made to the house design since the last commit. ]
+REVERT
+;
+[REVISION | Gets the revision number of the house design. ]
+REVISION
+;
+[HATCH | Gets the ship's hatch. ]
+HATCH
+;
+[TILLER | Gets the ship's tiller. ]
+TILLER
+;
+[PLANK | Gets the nth ship plank. (zero-based) ]
+PLANK.n
+;
+[PLANKS | Gets the number of planks on the ship. ]
+PLANKS
+;
+[SHIPANCHORDROP | Drops the ship's anchor, preventing it from moving. ]
+SHIPANCHORDROP
+;
+[SHIPANCHORRAISE | Raises the ship's anchor, allowing it to move. ]
+SHIPANCHORRAISE
+;
+[SHIPBACK | Begins moving the ship backwards. ]
+SHIPBACK
+;
+[SHIPBACKLEFT | Begins moving the ship backwards and to its left. ]
+SHIPBACKLEFT
+;
+[SHIPBACKRIGHT | Begins moving the ship backwards and to its right. ]
+SHIPBACKRIGHT
+;
+[SHIPDOWN | Begins moving the ship downards, if ATTR_MAGIC is set. ]
+SHIPDOWN
+;
+[SHIPDRIFTLEFT | Begins moving the ship to its left. ]
+SHIPDRIFTLEFT
+;
+[SHIPDRIFTRIGHT | Begins moving the ship to its right. ]
+SHIPDRIFTRIGHT
+;
+[SHIPFACE | Sets the direction of the ship. ]
+SHIPFACE direction
+;
+[SHIPFORE | Begins moving the ship forwards. ]
+SHIPFORE
+;
+[SHIPFORELEFT | Begins moving the ship forwards and to its left. ]
+SHIPFORELEFT
+;
+[SHIPFORERIGHT | Begins moving the ship forwards and to its right. ]
+SHIPFORERIGHT
+;
+[SHIPGATE | Moves the entire ship and its contents to a specified location. ]
+SHIPGATE location
+;
+[SHIPLAND | Moves the ship to ground level, if ATTR_MAGIC is set. ]
+SHIPLAND
+;
+[SHIPMOVE | Begins moving the ship in the specified direction. ]
+SHIPMOVE direction
+;
+[SHIPSPEED | Gets the number of tiles that ths ship moves in one step. ]
+SHIPSPEED.TILES
+;
+[SHIPSPEED | Gets the length of time between each step, in tenths of a second. ]
+SHIPSPEED.PERIOD
+;
+[SHIPSTOP | Stops the ship. ]
+SHIPSTOP
+;
+[SHIPTURN | Turns the ship to face the opposite direction. ]
+SHIPTURN
+;
+[SHIPTURNLEFT | Rotates the ship to its left. ]
+SHIPTURNLEFT
+;
+[SHIPTURNRIGHT | Rotates the ship to its right. ]
+SHIPTURNRIGHT
+;
+[SHIPUP | Begins moving the ship upwards, if ATTR_MAGIC is set. ]
+SHIPUP
+;
+[PIN | Gets the position of the nth pin (zero-based), or adds a pin to the map at the specified location. ]
+PIN.n
+PIN
+;
+[MORE1H | Gets the top left coordinates (x,y) of the area displayed on t_map. ]
+MORE1H,MORE1L
+;
+[MORE2H | Gets the bottom right coordinates (x,y) of the area displayed on t_map. ]
+MORE2H,MORE2L
+;
+[AUTHOR | Gets or sets the author of the message. ]
+AUTHOR
+;
+[BODY | Gets the nth line of text from the message, or appends a new line of text to the message. ]
+BODY.n
+;
+[ERASE | Removes all lines of text from the message, or if a page number (one-based) if supplied erases just a single line. ]
+ERASE page_num
+;
+[PAGE | Sets the text of the nth single line of the message. (zero-based) ]
+PAGE.n
+;
+[PAGES | Gets the number of lines of text in the message. ]
+PAGES
+;
+[TITLE | Gets or sets the title of message. ]
+TITLE
+;
+[SPEECH | Gets a list of attached SPEECH blocks, or adds to or removes from the attached speech.. ]
+SPEECH -/+speech_defname
+;
+[GUILD | Gets the nth linked guild or town. (zero-based) ]
+GUILD.n
+;
+[GUILDFROMUID | Gets the linked guild or town with a specified UID. ]
+GUILDFROMUIDstone_uid
+;
+[MEMBER | Gets the nth member of the guild or town. (zero-based) ]
+MEMBER.n
+;
+[MEMBERFROMUID | Gets the member of the guild with a specified UID. ]
+MEMBERFROMUID.character_uid
+;
+[ABBREV | Gets or sets the guild/town abbreviation. ]
+ABBREV
+;
+[ABBREVIATIONTOGGLE | Returns one of the STONECONFIG_VARIOUSNAME_* defnames depending on whether SRC has their abbreviation showing or not. ]
+ABBREVIATIONTOGGLE
+;
+[ALIGN | Gets or sets the alignment of the guild/town. ]
+ALIGN
+;
+[ALIGNTYPE | Returns the name of the guild or town's alignment. ]
+ALIGNTYPE
+;
+[ALLGUILDS | Performs the given comamnd on all linked guilds or towns based on flags. (0 = All, 1 = War Declared by 'Us' only, 2 = War Declared by 'Them' only, 3 = War Declayed by both) ]
+ALLGUILDS flags, command
+;
+[ALLMEMBERS | Performs the given command on all guild or town members with the specified privelege level. (-1 = All) ]
+ALLMEMBERS priv, command
+;
+[APPLYTOJOIN | Adds a character as a candidate to the guild or town. ]
+APPLYTOJOIN character_uid
+;
+[CHANGEALIGN | Changes the guild or town alignment. ]
+CHANGEALIGN alignment
+;
+[DECLAREPEACE | Declares peace towards another guild or town. ]
+DECLAREPEACE stone_uid
+;
+[DECLAREWAR | Declares war towards another guild or town. ]
+DECLAREWAR stone_uid
+;
+[ELECTMASTER | Selects a new guild or town master based on which member has the most votes. ]
+ELECTMASTER
+;
+[GUILD | Gets the number linked guilds or towns. ]
+GUILD.COUNT
+;
+[INVITEWAR | Invites another guild or town to go to war (who_declared, 0 = They declared, 1 = We declared) ]
+INVITEWAR stone_uid, who_declared
+;
+[JOINASMEMBER | Adds a character as a full member of the guild or town. ]
+JOINASMEMBER character_uid
+;
+[LOYALTO | Returns the name of the guild or town member that SRC has declared fealty to. ]
+LOYALTO
+;
+[MASTER | Returns the name of the guild or town master. ]
+MASTER
+;
+[MASTERGENDERTITLE | Returns the gender of the guild or town mastser. ]
+MASTERGENDERTITLE
+;
+[MASTERTITLE | Returns the title of the guild or town master. ]
+MASTERTITLE
+;
+[MASTERUID | Gets the UID of the guild/town master, or sets it to the UID of a new master. ]
+MASTERUID
+;
+[MEMBER | Gets the number of members in the guild/town with at least the given privileges (or all if not supplied). ]
+MEMBER.COUNT priv
+;
+[RESIGN | Removes a character from the guild or town. ]
+RESIGN character_uid
+;
+[TOGGLEABBREVIATION | Toggles the display of guild/town abbreviation for a member or SRC. ]
+TOGGLEABBREVIATION character_uid
+;
+[WEBPAGE | Gets or sets the guild or town's webpage. ]
+WEBPAGE
+;
+[CHARTER | Gets or sets the nth line of the guild/town charter. (zero-based) ]
+CHARTER.n
+;
+[ACCOUNTGOLD | Gets or sets the amount of gold the member has in their guild/town account. ]
+ACCOUNTGOLD
+;
+[ISCANDIDATE | Returns 1 if the member is a candidate of the guild/town. ]
+ISCANDIDATE
+;
+[ISMASTER | Returns 1 if the member is a guild/town master. ]
+ISMASTER
+;
+[LOYALTO | Gets or sets the UID of who the member has declared fealty towards. ]
+LOYALTO
+;
+[PRIV | Gets or sets the member's privilege level within the guild/town. ]
+PRIV
+;
+[PRIVNAME | Returns the name of the member's privilege level within the guild/town. ]
+PRIVNAME
+;
+[TITLE | Gets or sets the member's title within the guild/town. ]
+TITLE
+;
+[SHOWABBREV | Gets or sets whether or not the member's abbreviation is shown. ]
+SHOWABBREV
+;
+[ISENEMY | Returns 1 if the other guild/town is considered an enemy. ]
+ISENEMY
+;
+[THEYALLIANCE | Gets or sets whether or not the other guild/town has declared an alliance with the guild/town. ]
+THEYALLIANCE
+;
+[THEYWAR | Gets or sets whether or not the other guild/town has declared war. ]
+THEYWAR
+;
+[WEALLIANCE | Gets or sets whether or not the guild/town has declared an alliance with the other guild/town. ]
+WEALLIANCE
+;
+[WEWAR | Gets or sets whether or not the guild/town has declared war with the other guild/town. ]
+WEWAR
+;
+[FINDCONT | Gets the nth item from inside the container. (zero-based) ]
+FINDCONT.n
+;
+[FINDID | Gets the first item found inside the container with the matching BASEID. ]
+FINDID.item_id
+;
+[FINDTYPE | Gets the first item found inside the container with the matching TYPE. ]
+FINDTYPE.type
+;
+[COUNT | Returns the number of items inside the container. ]
+COUNT
+;
+[DELETE | Deletes the nth item from inside the container. (1-based) ]
+DELETE nth
+;
+[EMPTY | Deletes all items inside the container. ]
+EMPTY
+;
+[FCOUNT | Returns the total number of items inside the container, including subcontainers. ]
+FCOUNT
+;
+[FIXWEIGHT | Recalculates the total weight of the container and its contained items. ]
+FIXWEIGHT
+;
+[OPEN | Opens the container, for SRC to view its contents. ]
+OPEN
+;
+[RESCOUNT | Returns the total amount of a specific item inside the container, including subcontainers. ]
+RESCOUNT item_defname
+;
+[RESTEST | Returns 1 if all of the items in the list can be found inside the container, including subcontainers. ]
+RESTEST item_list
+;
+[PRICE | Gets or sets the price of the item. ]
+PRICE
+;
+[QUALITY | Gets or sets the quality of the item. ]
+QUALITY 
+;
+[DB | Gets the server's database object. ]
+DB
+;
+[FILE | Gets the server's file object. ]
+FILE
+;
+[I | Gets the current object. ]
+I
+;
+[LIST | Gets the server's list object. ]
+LIST
+;
+[NEW | Gets or sets the last character or item created on the server. ]
+NEW
+;
+[OBJ | Gets or sets a reference to a character or item ]
+OBJ
+;
+[SRC | Gets the source character of an event. ]
+SRC
+;
+[UID | Gets a reference to the character or item with the specified UID. ]
+UID.object_uid
+;
+[ASC | Converts text into a series of ASCII values. ]
+ASC text
+;
+[BETWEEN | Returns the value that's numerator/denominator between min and max ]
+BETWEEN min, max, numerator, denominator
+;
+[BETWEEN2 | Returns the value that's numerator/denominator between max and min ]
+BETWEEN2 min, max, numerator, denominator
+;
+[CHR | Returns the character represented by the given ASCII code. ]
+CHR ascii_code
+;
+[CLEARVARS | Removes all server VARs whose name start with prefix. ]
+CLEARVARS prefix
+;
+[CLRBIT | Returns the value of value with bit not set. ]
+CLRBIT value, bit
+;
+[D | Forces a property or function to return a decimal value. ]
+Dproperty_or_function
+;
+[DEFMSG | Sets the value of a DEFMESSAGE. (see sphere_msgs.scp) ]
+DEFMSG.name
+;
+[EXPLODE | Splits text by the given separator characters. ]
+EXPLODE separators, text
+;
+[EVAL | Evaluates an expression and returns the result as an integer. ]
+EVAL expression
+;
+[FEVAL | Evaluates an expression and returns the result as an integer, supports floating point values. ]
+FEVAL expression
+;
+[FHVAL | Evaluates an expression and returns the result as a hexadecimal value, supports floating point values. ]
+FHVAL expression
+;
+[FLOATVAL | Evaluates an expression and returns the result as a floating point value. ]
+FLOATVAL expression
+;
+[FVAL | Evaluates an expression and formats the result with a single decimal point. ("1000" becomes "100.0") ]
+FVAL expression
+;
+[refref is. ]
+ref ;
+[HVAL | Evaluates an expression and returns the result as a hexadecimal value. ]
+HVAL expression
+;
+[ISBIT | Returns non-zero if bit is set in value. ]
+ISBIT value, bit
+;
+[ISEMPTY | Returns 1 if value is empty/blank text. ]
+ISEMPTY value
+;
+[ISNUM | Returns 1 if value is a numeric value. ]
+ISNUM value
+;
+[LISTCOL | Returns the alternating colour in webpage tables. ]
+LISTCOL
+;
+[MD5HASH | Returns an MD5 hash for text. ]
+MD5HASH text
+;
+[MULDIV | Returns (num * mul) / div. ]
+MULDIV num, mul, div
+;
+[NEWDUPE | Clones the character or item with the specified UID. ]
+NEWDUPE object_uid
+;
+[NEWITEM | Creates a new item. ]
+NEWITEM item_defname, amount, container, equip
+;
+[NEWNPC | Creates a new character. ]
+NEWNPC character_defname
+;
+[QVAL | Evaluates an expression and returns value_true if the result is true, otherwise returns value_false. ]
+QVAL expression? value_true:value_false
+;
+[R | Returns a random number between 0 and x - 1. ]
+Rx
+;
+[R | Returns a random number between x and y. ]
+Rx, y
+;
+[SETBIT | Returns the value of value with bit set. ]
+SETBIT value, bit
+;
+[SHOW | Displays the returned value from a property or function to SRC. ]
+SHOW property_or_function
+;
+[STRARG | Returns the first word from text. ]
+STRARG text
+;
+[STREAT | Removes the first word from text and returns the remaining text. ]
+STREAT text
+;
+[STRPOS | Returns the position of a character within the text, starting from position. ]
+STRPOS position character text
+;
+[STRREGEXNEW | Returns 1 if text matches a regular expression pattern. ]
+STRREGEXNEW pattern, text
+;
+[STRREVERSE | Returns text, after reversing its characters. ]
+STRREVERSE text
+;
+[STRSUB | Extracts count characters from text, starting from position. ]
+STRSUB position, count, text
+;
+[STRTOLOWER | Returns text in lowercase. ]
+STRTOLOWER text
+;
+[STRTOUPPER | Returns text in uppercase. ]
+STRTOUPPER text
+;
+[STRTRIM | Removes whitespace (i.e. spaces, tabs) from the start and end of text. ]
+STRTRIM text
+;
+[SYSCMD | Executes a system command on the server and waits for it to complete.
+//Note: Requires OF_FileCommands to be enabled in Sphere.ini ]
+SYSCMD command, arg1, arg2...
+;
+[SYSSPAWN | Executes a system command on the server and does not wait for it to complete.
+//Note: Requires OF_FileCommands to be enabled in Sphere.ini ]
+SYSSPAWN command, arg1, arg2...
+;
+[UVAL | Evaluates an expression and returns the result as an unsigned integer. ]
+UVAL expression
+;
+[VAR | Gets or sets the value of a VAR. ]
+VAR.name 
+;
+[BEGIN | Groups a set of lines together, for use with DORAND and DOSWITCH statements. ]
+BEGIN
+
+END
+;
+[DORAND | Executes a random line of code within the block. ]
+DORAND line_count
+
+ENDDO
+;
+[DOSWITCH | Executes the specified line of code within the block. ]
+DOSWITCH line_number
+
+ENDDO
+;
+[FOR | Loops through the block of code ]
+FOR start end
+
+ENDFOR
+;
+[FORCHARLAYER | Loops through all items that a character has equipped on a specified layer. ]
+FORCHARLAYER layer_id
+
+ENDFOR
+;
+[FORCHARMEMORYTYPE | Loops through all memory items on a character that have one of the specified flags. ]
+FORCHARMEMORYTYPE memory_flags
+
+ENDFOR
+;
+[FORCHARS | Loops through all characters within distance tiles. ]
+FORCHARS distance
+
+ENDFOR
+;
+[FORCLIENTS | Loops through all connected clients within distance tiles. ]
+FORCLIENTS distance
+
+ENDFOR
+;
+[FORCONT | Loops through all items inside a container. ]
+FORCONT container_uid, max_subcontainers
+
+ENDFOR
+;
+[FORCONTID | Loops through all items inside a container with a specified BASEID ]
+FORCONTID item_id, max_subcontainers''
+
+ENDFOR
+;
+[FORCONTTYPE | Loops through all items inside a container with a specified TYPE ]
+FORCONTTYPE type, max_subcontainers
+
+ENDFOR
+;
+[FORINSTANCES | Loops through all instances of characters or items with the specified BASEID ]
+FORINSTANCES defname
+
+ENDFOR
+;
+[FORITEMS | Loops through all items within distance tiles. ]
+FORITEMS distance
+
+ENDFOR
+;
+[FOROBJS | Loops through all items and players within distance tiles. ]
+FOROBJS distance
+
+ENDFOR
+;
+[FORPLAYERS | Loops through all players (online and offline) within distance tiles. ]
+FORPLAYERS distance
+
+ENDFOR
+;
+[IF | Executes the block of code if condition is true. ]
+IF condition
+ELIF
+
+ENDIF
+;
+[WHILE | Loops through the block of code whilst condition is true. ]
+WHILE condition
+
+ENDWHILE 
+;
+[ARGO | Gets or sets a reference to a character or item. ]
+ARGO
+;
+[REF | Gets or sets a reference to a character or item. ]
+REFx
+;
+[ARGN1 | Gets the first parameter passed into the function, as a numeric value. ]
+ARGN1
+;
+[ARGN2 | Gets the second parameter passed into the function, as a numeric value. ]
+ARGN2
+;
+[ARGN3 | Gets the third parameter passed into the function, as a numeric value. ]
+ARGN3
+;
+[ARGS | Gets the entire argument string passed into the function. ]
+ARGS
+;
+[ARGV | Returns the number of parameters passed into the function. ]
+ARGV
+;
+[ARGV | Returns the nth parameter passed into the function. (zero-based) ]
+ARGV[n]
+;
+[FLOAT | Gets or sets the value of a local floating point variable. ]
+FLOAT.name
+;
+[LOCAL | Gets or sets the value of a local variable. ]
+LOCAL.name
+;
+[RETURN | Exits the function, passing value back to whatever called it (if the function was used as <FUNCTION>. value can be either a string or numeric value. ]
+RETURN value
+;
+[TRY | Executes command. ]
+TRY command
+;
+[TRYSRV | Executes command, with the SERV object as SRC. ]
+TRYSRV command 
+;
+[COS | Returns the cosine of value. ]
+COS(value)
+;
+[ID | Returns the numeric value of defname. ]
+ID(defname)
+;
+[ISOBSCENE | Returns 1 if text is considered to contain obscene language. ]
+ISOBSCENE(text)
+;
+[ISNUMERIC | Returns 1 if value is numeric. ]
+ISNUMERIC(value)
+;
+[LOGARITHM | Returns the base-10 logarithm of value. ]
+LOGARITHM(value)
+;
+[LOGARITHM | Returns the base-base logarithm of value. (Accepts "e" and "pi" as bases, as well as numeric values) ]
+LOGARITHM(value, base)
+;
+[NAPIERPOW | Returns e (2.7182818) to the power of value. ]
+NAPIERPOW(value)
+;
+[QVAL | Returns less_than if a is less than b, equal_to is a is equal to b, or greater_than if a is greater than b. ]
+QVAL(a, b, less_than, equal_to, greater_than)
+;
+[RAND | Returns a random value between 0 value-1. ]
+RAND(value)
+;
+[RAND | Returns a random value between min and max. ]
+RAND(min, max)
+;
+[RANDBELL | Calculates a value based on a bell-shaped curve. ]
+RANDBELL(value, variance)
+;
+[SIN | Returns the sine of value. ]
+SIN(value)
+;
+[STRCMP | Compares string1 to string2 and returns the result. Case-sensitive. (<= 1 = string1 less than string2, 0 = string1 equal to string2, >= 1 = string1 greater than string2) ]
+STRCMP(string1, string2)
+;
+[STRCMPI | Compares string1 to string2 and returns the result. Case-insenstive. (<= 1 = string1 less than string2, 0 = string1 equal to string2, >= 1 = string1 greater than string2) ]
+STRCMPI(string1, string2)
+;
+[STRINDEXOF | Returns the index of the search string within text, starting from the nth character. (zero-based) ]
+STRINDEXOF(text, search, n)
+;
+[STRLEN | Returns the length of text. ]
+STRLEN(text)
+;
+[STRMATCH | Returns 1 if text matches the specified wildcard pattern. ]
+STRMATCH(pattern, text)
+;
+[STRREGEX | Returns 1 if text matches the specified regular expression pattern. ]
+STRREGEX(pattern, text)
+;
+[SQRT | Returns the square root of value. ]
+SQRT(value)
+;
+[TAN | Returns the tangent of value. ]
+TAN(value) 
+;
+;
+[button | Places a button on to the page ]
+button x y gump_down gump_up is_pressable page id
+;
+[buttontileart | Places a button on to the page, with an item image placed over the top as part of the button. ]
+buttontileart x y gump_down gump_up is_pressable page id tile_id tile_hue tile_x tile_Y
+;
+[checkbox | Places a checkbox on to the page. ]
+checkbox x y gump_check gump_uncheck initial_state id
+;
+[checkertrans | Adds a transparent area of the dialog. ]
+checkertrans x y width height
+;
+[croppedtext | Places some text on to the page that wraps to specified boundaries. ]
+croppedtext x y width height colour text_index
+;
+[dcroppedtext | Places some text on to the page that wraps to specified boundaries. Accepts dynamic coordinates relative to dorigin using -, +, * prefixes. ]
+dcroppedtext x y width height colour text
+;
+[dorigin | Sets the origin coordinates for dynamically positioned elements. ]
+dorigin x y
+;
+[dhtmlgump | Places some HTML text on to the page. Accepts dynamic coordinates relative to dorigin using -, +, * prefixes. ]
+dhtmlgump x y width height has_background has_scrollbar text
+;
+[dtext | Places some text on to the page. Accepts dynamic coordinates relative to dorigin using -, +, * prefixes. ]
+dtext x y colour text
+;
+[dtextentry | Places a text entry field on to the page where the client can enter text. Accepts dynamic coordinates relative to dorigin using -, +, * prefixes. ]
+dtextentry x y width height colour id text
+;
+[dtextentrylimited | Places a text entry field on to the page where the client can enter a limited amount of text. Accepts dynamic coordinates relative to dorigin using -, +, * prefixes. ]
+dtextentrylimited x y width height colour id limit text
+;
+[group | Defines a new group ID, for grouping sets of radio buttons. ]
+group id
+;
+[gumppic | Places a gump on to the page. ]
+gumppic x y gump hue
+;
+[gumppictiled | Tiles a gump over an area of the page. ]
+gumppictiled x y width height gump
+;
+[htmlgump | Places some HTML text on to the page. ]
+htmlgump x y width height text_index has_background has_scrollbar
+;
+[noclose | Prevents the dialog from being closed when right-clicked. ]
+noclose
+;
+[nodispose | Prevents the dialog from being closed by the "Close Dialogs" macro. ]
+nodispose
+;
+[nomove | Prevents the dialog from being moved around the screen. ]
+nomove
+;
+[page | Begins defining page num of the dialog. (page 0 content is shown on all pages) ]
+page num
+;
+[radio | Places a radio button on to the page. ]
+radio x y gump_check gump_uncheck initial_state id
+;
+[resizepic | Places a multi-part gump on to the page, often used for dialog backgrounds. ]
+resizepic x y gump width height
+;
+[text | Places some text on to the page. ]
+text x y colour text_index
+;
+[textentry | Places a text entry field on to the page where the client can enter text. ]
+textentry x y width height colour id text_index
+;
+[textentrylimited | Places a text entry field on to the page where the client can enter a limited amount of text. ]
+textentrylimited x y width height colour id text_index limit
+;
+[tilepic | Places an item image on to the page. ]
+tilepic x y item_id
+;
+[tilepichue | Places a coloured item image on to the page. ]
+tilepichue x y item_id hue
+;
+[tooltip | Places a tooltip on to the page. ]
+tooltip cliloc_id
+;
+[xmfhtmlgump | Places some localised HTML text on to the page. ]
+xmfhtmlgump x y width height clilod_id has_background has_scrollbar
+;
+[xmfhtmlgumpcolor | Places some localised HTML text on to the page with the specified colour. ]
+xmfhtmlgumpcolor x y width height cliloc_id has_background has_scrollbar colour
+;
+[xmfhtmltok | Places some localised HTML text on to the page, with arguments to the cliloc (multiple arguments separated by @). ]
+xmfhtmltok x y width height has_background has_scrollbar colour cliloc_id @args@
+;
+[ARGCHK | Returns the number of selected checkboxes/radio buttons. ]
+ARGCHK
+;
+[ARGCHK | Returns 1 if the checkbox/radio button with a specified ID was pressed down. ]
+ARGCHK[id]
+;
+[ARGCHKID | The ID of the first selected checkbox/radio button, or -1 if none were selected. ]
+ARGCHKID
+;
+[ARGN1 | The ID of the button pressed. ]
+ARGN1
+;
+[ARGTXT | Returns the number of text fields submitted. ]
+ARGTXT
+;
+[ARGTXT | Returns the submitted text for the text field with the specified ID. ]
+ARGTXT[id]] 
+;
+;-------------TRIGGERS------------------------------
+;
+[@AfterClick | Fires when the object has been single-clicked, just before the overhead name is shown. ]
+ON=@AfterClick
+;
+[@Attack | Fires when the character begins attacking another. ]
+ON=@Attack
+;
+[@CallGuards | Fires when the character calls for guards. ]
+ON=@CallGuards
+;
+[@CharAttack | Fires when the character is attacked by another character. ]
+ON=@CharAttack
+;
+[@CharClick | Fires when the character is clicked by another character. ]
+ON=@CharClick
+;
+[@CharClientTooltip | Fires when the tooltips are about to be sent to the character. ]
+ON=@CharClientTooltip
+;
+[@CharDClick | Fires when the character double clicks another character. ]
+ON=@CharDClick
+;
+[@CharTradeAccepted | Fires when another character accepts trade with the character. ]
+ON=@CharTradeAccepted
+;
+[@Click | Fires when the object has been single-clicked. ]
+ON=@Click
+;
+[@ClientTooltip | Fires when tooltips for this character are about to be sent to a client. ]
+ON=@ClientTooltip
+;
+[@ContextMenuRequest | Fires when a client requests the context menu options for the object. ]
+ON=@ContextMenuRequest
+;
+[@ContextMenuSelect | Fires when a client selects a context menu option for the object. ]
+ON=@ContextMenuSelect
+;
+[@Create | Fires when the object is initially created, before it is placed in the world. ]
+ON=@Create
+;
+[@Criminal | Fires when the character becomes a criminal. ]
+ON=@Criminal
+;
+[@DClick | Fires when the object is double-clicked. ]
+ON=@DClick
+;
+[@Death | Fires when the character's hitpoints reaches zero. ]
+ON=@Death
+;
+[@DeathCorpse | Fires when a corpse is created for the character. ]
+ON=@DeathCorpse
+;
+[@Destroy | Fires when the object is being deleted. ]
+ON=@Destroy
+;
+[@Dismount | Fires when the character dismounts their ride. ]
+ON=@Dismount
+;
+[@EnvironChange | Fires when the environment changes for the character. ]
+ON=@EnvironChange
+;
+[@ExpChange | Fires when the character's experience points change. ]
+ON=@ExpChange
+;
+[@ExpLevelChange | Fires when the character's experience level changes. ]
+ON=@ExpLevelChange
+;
+[@FameChange | Fires when the character's fame changes. ]
+ON=@FameChange
+;
+[@GetHit | Fires when the character receives damage. ]
+ON=@GetHit
+;
+[@Hit | Fires when the character hits another in combat. ]
+ON=@Hit
+;
+[@HitMiss | Fires when the character fails to hit another in combat. ]
+ON=@HitMiss
+;
+[@HouseDesignCommit | Fires when the character commits a new house design. ]
+ON=@HouseDesignCommit
+;
+[@HouseDesignExit | Fires when the character exits house design mode. ]
+ON=@HouseDesignExit
+;
+[@Hunger | Fires when the character's food level decreases. ]
+ON=@Hunger
+;
+[@ItemAfterClick | Fires when the character single-clicks an item, just before the overhead name is shown. ]
+ON=@ItemAfterClick
+;
+[@ItemBuy | Fires when the character buys an item from a vendor. ]
+ON=@ItemBuy
+;
+[@ItemClick | Fires when the character single-clicks an item. ]
+ON=@ItemClick
+;
+[@ItemClientTooltip | Fires when the tooltips are about to be sent to the client for an item. ]
+ON=@ItemClientTooltip
+;
+[@ItemContextMenuRequest | Fires when the character requests the context menu options for an item. ]
+ON=@ItemContextMenuRequest
+;
+[@ItemContextMenuSelect | Fires when the character selects a context menu option for an item. ]
+ON=@ItemContextMenuSelect
+;
+[@ItemCreate | Fires when an item is initially created, before it is placed in the world, and the character is in some way responsible for it. ]
+ON=@ItemCreate
+;
+[@ItemDamage | Fires when the character damages an item. ]
+ON=@ItemDamage
+;
+[@ItemDClick | Fires when the character double-clicks an item. ]
+ON=@ItemDClick
+;
+[@ItemDropOn_Char | Fires when the character drops an item on to a character. ]
+ON=@ItemDropOn_Char
+;
+[@ItemDropOn_Ground | Fires when the character drops an item on to the ground. ]
+ON=@ItemDropOn_Ground
+;
+[@ItemDropOn_Item | Fires when the character drops an item on to another item. ]
+ON=@ItemDropOn_Item
+;
+[@ItemDropOn_Self | Fires when the character drops an item inside another item. ]
+ON=@ItemDropOn_Self
+;
+[@ItemEquip | Fires when the character equips an item. ]
+ON=@ItemEquip
+;
+[@ItemEquipTest | Fires when the characer is about to equip an item. ]
+ON=@ItemEquipTest
+;
+[@ItemPickUp_Ground | Fires when the character picks an item up from the ground. ]
+ON=@ItemPickUp_Ground
+;
+[@ItemPickUp_Pack | Fires when the character picks an item up from inside a container. ]
+ON=@ItemPickUp_Pack
+;
+[@ItemPickUp_Self | Fires when the character picks an item up from inside another item. ]
+ON=@ItemPickUp_Self
+;
+[@ItemPickUp_Stack | Fires when the character picks up an item from a stack. ]
+ON=@ItemPickUp_Stack
+;
+[@ItemSell | Fires when the character sells an item to a vendor. ]
+ON=@ItemSell
+;
+[@ItemSpellEffect | Fires when the character hits an item with a spell. ]
+ON=@ItemSpellEffect
+;
+[@ItemStep | Fires when the character steps on an item. ]
+ON=@ItemStep
+;
+[@ItemTargOn_Cancel | Fires when the character cancels an item's target cursor. ]
+ON=@ItemTargOn_Cancel
+;
+[@ItemTargOn_Char | Fires when the character targets a character with an item's target cursor. ]
+ON=@ItemTargOn_Char
+;
+[@ItemTargOn_Ground | Fires when the character targets the ground with an item's target cursor. ]
+ON=@ItemTargOn_Ground
+;
+[@ItemTargOn_Item | Fires when the character targets an item with an item's target cursor. ]
+ON=@ItemTargOn_Item
+;
+[@ItemToolTip | Fires when the character requests old-style tooltips for an item. ]
+ON=@ItemToolTip
+;
+[@ItemUnEquip | Fires when the character unequips an item. ]
+ON=@ItemUnEquip
+;
+[@Jailed | Fires when the character is sent to jail. ]
+ON=@Jailed
+;
+[@KarmaChange | Fires when the character's karma changes. ]
+ON=@KarmaChange
+;
+[@Kill | Fires when the character kills another character. ]
+ON=@Kill
+;
+[@Login | Fires when the character logs in. ]
+ON=@Login
+;
+[@Logout | Fires when the character logs out. ]
+ON=@Logout
+;
+[@Mount | Fires when the character mounts a ride. ]
+ON=@Mount
+;
+[@MurderDecay | Fires when one of the character's kills is about to decay. ]
+ON=@MurderDecay
+;
+[@MurderMark | Fires when the character is about to gain a kill. ]
+ON=@MurderMark
+;
+[@NPCAcceptItem | Fires when the NPC receives an item. ]
+ON=@NPCAcceptItem
+;
+[@NPCActFight | Fires when the NPC makes a combat decision. ]
+ON=@NPCActFight
+;
+[@NPCActFollow | Fires when the NPC follows another character. ]
+ON=@NPCActFollow
+;
+[@NPCAction | Fires when the NPC is about to perform an AI action. ]
+ON=@NPCAction
+;
+[@NPCHearGreeting | Fires when the NPC hears a character for the first time. ]
+ON=@NPCHearGreeting
+;
+[@NPCHearUnknown | Fires when the NPC hears something they don't understand. ]
+ON=@NPCHearUnknown
+;
+[@NPCLookAtChar | Fires then the NPC looks at a character. ]
+ON=@NPCLookAtChar
+;
+[@NPCLookAtItem | Fires when the NPC looks at an item. ]
+ON=@NPCLookAtItem
+;
+[@NPCLostTeleport | Fires when the NPC is lost and is about to be teleported back to their HOME. ]
+ON=@NPCLostTeleport
+;
+[@NPCRefuseItem | Fires when the NPC refuses an item being given to them. ]
+ON=@NPCRefuseItem
+;
+[@NPCRestock | Fires when the NPC is having their items restocked. ]
+ON=@NPCRestock
+;
+[@NPCSeeNewPlayer | Fires when the NPC first sees a player. ]
+ON=@NPCSeeNewPlayer
+;
+[@NPCSeeWantItem | Fires when the NPC sees an item they want. ]
+ON=@NPCSeeWantItem
+;
+[@NPCSpecialAction | Fires when the NPC is about to perform a special action (leaving fire trail, dropping web). ]
+ON=@NPCSpecialAction
+;
+[@PersonalSpace | Fires when the character is stepped on. ]
+ON=@PersonalSpace
+;
+[@PetDesert | Fires when the character deserts its owner. ]
+ON=@PetDesert
+;
+[@Profile | Fires when a player attempts to read the character's profile from the paperdoll. ]
+ON=@Profile
+;
+[@ReceiveItem | Fires when the NPC receives an item from another character, before they decide if they want it or not. ]
+ON=@ReceiveItem
+;
+[@RegionEnter | Fires when the character enters a region. ]
+ON=@RegionEnter
+;
+[@RegionLeave | Fires when the character leaves a region. ]
+ON=@RegionLeave
+;
+[@Rename | Fires when the character renames another. ]
+ON=@Rename
+;
+[@SeeCrime | Fires when the character sees a crime take place. ]
+ON=@SeeCrime
+;
+[@SkillAbort | Fires when the character aborts a skill. ]
+ON=@SkillAbort
+;
+[@SkillChange | Fires when the character's skill level changes. ]
+ON=@SkillChange
+;
+[@SkillFail | Fires when the character fails a skill. ]
+ON=@SkillFail
+;
+[@SkillGain | Fires when the character has a chance to gain in a skill. ]
+ON=@SkillGain
+;
+[@SkillMakeItem | Fires when the character crafts an item. ]
+ON=@SkillMakeItem
+;
+[@SkillMenu | Fires when a skill menu is shown to the character. ]
+ON=@SkillMenu
+;
+[@SkillPreStart | Fires when the character starts a skill, before any hardcoded action takes place. ]
+ON=@SkillPreStart
+;
+[@SkillSelect | Fires when the character selects a skill on their skill menu. ]
+ON=@SkillSelect
+;
+[@SkillStart | Fires when the character starts a skill. ]
+ON=@SkillStart
+;
+[@SkillSuccess | Fires when the character succeeds at a skill. ]
+ON=@SkillSuccess
+;
+[@SkillUseQuick | Fires when the character quickly uses a skill. ]
+ON=@SkillUseQuick
+;
+[@SpellBook | Fires when the character opens their spellbook. ]
+ON=@SpellBook
+;
+[@SpellCast | Fires when the character casts a spell. ]
+ON=@SpellCast
+;
+[@SpellEffect | Fires when the character is hit by the effects of a spell. ]
+ON=@SpellEffect
+;
+[@SpellFail | Fires when the character fails to cast a spell. ]
+ON=@SpellFail
+;
+[@SpellSelect | Fires when the character selects a spell to cast. ]
+ON=@SpellSelect
+;
+[@SpellSuccess | Fires when the character successfully casts a spell. ]
+ON=@SpellSuccess
+;
+[@StatChange | Fires when the character's STR, DEX or INT is changed through skill gain. ]
+ON=@StatChange
+;
+[@StepStealth | Fires when the character takes a step whilst hidden. ]
+ON=@StepStealth
+;
+[@ToolTip | Fires when a player requests old-style tooltips for this character. ]
+ON=@ToolTip
+;
+[@TradeAccepted | Fires when the character accepts a trade with another player. ]
+ON=@TradeAccepted
+;
+[@UserBugReport | Fires when the player submits a bug report. ]
+ON=@UserBugReport
+;
+[@UserChatButton | Fires when the player presses the Chat button on the paperdoll. ]
+ON=@UserChatButton
+;
+[@UserExtCmd | Fires when the player sends an extended command packet. (used by some macros) ]
+ON=@UserExtCmd
+;
+[@UserExWalkLimit | Fires when the player's movement is restricted by the movement speed settings in Sphere.ini ]
+ON=@UserExWalkLimit
+;
+[@UserGuildButton | Fires when the player presses the Guild button on the paperdoll. ]
+ON=@UserGuildButton
+;
+[@UserKRToolbar | Fires when the player presses a button on the toolbar. ]
+ON=@UserKRToolbar
+;
+[@UserMailBag | Fires when the player drags the mail bag on to another character. ]
+ON=@UserMailBag
+;
+[@UserQuestArrowClick | Fires when the player clicks the quest arrow. ]
+ON=@UserQuestArrowClick
+;
+[@UserQuestButton | Fires when the player presses the Quest button on the paperdoll. ]
+ON=@UserQuestButton
+;
+[@UserSkills | Fires when the player opens their skill menu, or a skill update is sent to the player. ]
+ON=@UserSkills
+;
+[@UserSpecialMove | Fires when the player uses a special move. ]
+ON=@UserSpecialMove
+;
+[@UserStats | Fires when the player opens the status window. ]
+ON=@UserStats
+;
+[@UserVirtue | Fires when the player presses on the Virtue button. ]
+ON=@UserVirtue
+;
+[@UserVirtueInvoke | Fires when the player invokes a virtue through macros. ]
+ON=@UserVirtueInvoke
+;
+[@UserWarmode | Fires when the player switches between war and peace mode. ]
+ON=@UserWarmode
+;
+[@AfterClick | Fires when the object has been single-clicked, just before the overhead name is shown. ]
+ON=@AfterClick
+;
+[@Buy | Fires when the item is being bought from a vendor. ]
+ON=@Buy
+;
+[@Click | Fires when the object has been single-clicked. ]
+ON=@Click
+;
+[@ClientTooltip | Fires when tooltips are about to be sent to a client. ]
+ON=@ClientTooltip
+;
+[@ContextMenuRequest | Fires when a client requests the context menu options for the object. ]
+ON=@ContextMenuRequest
+;
+[@ContextMenuSelect | Fires when a client selects a context menu option for the object. ]
+ON=@ContextMenuSelect
+;
+[@Create | Fires when the object is initially created, before it is placed in the world. ]
+ON=@Create
+;
+[@Damage | Fires when the item receives damage. ]
+ON=@Damage
+;
+[@DClick | Fires when the object is double-clicked. ]
+ON=@DClick
+;
+[@Destroy | Fires when the object is being deleted. ]
+ON=@Destroy
+;
+[@DropOn_Char | Fires when the item has been dropped on to a character. ]
+ON=@DropOn_Char
+;
+[@DropOn_Ground | Fires when the item has been dropped on to the ground. ]
+ON=@DropOn_Ground
+;
+[@DropOn_Item | Fires when the item is dropped on to another item. ]
+ON=@DropOn_Item
+;
+[@DropOn_Self | Fires when an item has been dropped on to this item. ]
+ON=@DropOn_Self
+;
+[@Equip | Fires when the item has been equipped. ]
+ON=@Equip
+;
+[@EquipTest | Fires when the item is about to be equipped. ]
+ON=@EquipTest
+;
+[@PickUp_Ground | Fires when the item ihas been picked up from the ground. ]
+ON=@PickUp_Ground
+;
+[@PickUp_Pack | Fires when the item is picked up from inside a container. ]
+ON=@PickUp_Pack
+;
+[@PickUp_Self | Fires when an item has been picked up from inside the item. ]
+ON=@PickUp_Self
+;
+[@PickUp_Stack | Fires when the item is picked up from a stack. ]
+ON=@PickUp_Stack
+;
+[@Sell | Fires when the item is sold to a vendor. ]
+ON=@Sell
+;
+[@SpellEffect | Fires when the object is hit by the effects of a spell. ]
+ON=@SpellEffect
+;
+[@Step | Fires when a character steps on the item. ]
+ON=@Step
+;
+[@TargOn_Cancel | Fires when a target is cancelled from the item. ]
+ON=@TargOn_Cancel
+;
+[@TargOn_Char | Fires when a character is targeted from the item. ]
+ON=@TargOn_Char
+;
+[@TargOn_Ground | Fires when the ground is targeted from the item. ]
+ON=@TargOn_Ground
+;
+[@TargOn_Item | Fires when an item is targeted from this item. ]
+ON=@TargOn_Item
+;
+[@Timer | Fires when the item's timer expires. ]
+ON=@Timer
+;
+[@ToolTip | Fires when old-style tooltips are requested for the item. ]
+ON=@ToolTip
+;
+[@UnEquip | Fires when the item is unequipped. ]
+ON=@UnEquip
+;
+[@ResourceTest | Fires when the resource is being considered for spawning. ]
+ON=@ResourceTest
+;
+[@ResourceFound | Fires when the resource is spawned. ]
+ON=@ResourceFound
+;
+[@CliPeriodic | Fires multiple times approximately every 30 seconds, for each client in the region. ]
+ON=@CliPeriodic
+;
+[@Enter | Fires when a character enters the region. ]
+ON=@Enter
+;
+[@Exit | Fires when a character exits the region. ]
+ON=@Exit
+;
+[@RegPeriodic | Fires once approximately every 30 seconds, as long as there is at least one client in the region. ]
+ON=@RegPeriodic
+;
+[@Step | Fires whenever a character takes a step within the region. ]
+ON=@Step
+;
+[@Abort | Fires when a character aborts an attempt at using the skill. ]
+ON=@Abort
+;
+[@Fail | Fires when a character fails an attempt at using the skill. ]
+ON=@Fail
+;
+[@Gain | Fires when a character is given the chance to gain in the skill. ]
+ON=@Gain
+;
+[@PreStart | Fires when a character starts to use the skill, before any hardcoded behaviour takes place. ]
+ON=@PreStart
+;
+[@Select | Fires when a character selects the skill from their skill menu. ]
+ON=@Select
+;
+[@Start | Fires when a character starts to use the skill. ]
+ON=@Start
+;
+[@Success | Fires when a character succeeds an attempt at using the skill. ]
+ON=@Success
+;
+[@UseQuick | Fires when a character quickly uses the skill, without changing their ACTION. ]
+ON=@UseQuick
+;
+[@Effect | Fires when a character or item is hit by the spell. ]
+ON=@Effect
+;
+[@Fail | Fires when a character fails to cast the spell. ]
+ON=@Fail
+;
+[@Select | Fires when a character selects to cast the spell, or when Sphere checks if a character is capable of casting it. ]
+ON=@Select
+;
+[@Start | Fires when a character starts to cast the spell. ]
+ON=@Start
+;
+[@Success | Fires when a character successfully casts the spell. ]
+ON=@Success 

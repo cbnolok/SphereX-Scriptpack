@@ -14,7 +14,7 @@ DUPELIST=046a1
 ON=@Create
    MORE2=10
 ON=@ClientTooltip
-   SRC.ADDCLILOC 1049116,<dMORE2>	//[ Charges: ~1_CHARGES~ ]
+   addcliloc 1049116,<dMORE2>	//[ Charges: ~1_CHARGES~ ]
 ON=@DClick
    IF (<MORE2>)
     SRC.SYSMESSAGE You take some food from the cornucopia.
@@ -41,7 +41,7 @@ DUPELIST=0498f
 ON=@Create
    MORE2=8
 ON=@ClientTooltip
-   SRC.ADDCLILOC 1153515,<dMORE2>	//~1_COUNT~ pieces
+   addcliloc 1153515,<dMORE2>	//~1_COUNT~ pieces
 ON=@DClick
    SERV.NEWITEM {i_plate_food 1 i_bird_cooked 1 i_chicken_leg 1 i_bowl_pewter_potatoes 1}
    NEW.BOUNCE
@@ -68,7 +68,7 @@ DUPELIST=04bac
 ON=@Create
    MORE2=13
 ON=@ClientTooltip
-   SRC.ADDCLILOC 1153515,<dMORE2>	//~1_COUNT~ pieces
+   addcliloc 1153515,<dMORE2>	//~1_COUNT~ pieces
 ON=@DClick
    SERV.NEWITEM i_muffin
    NEW.NAME=dinner roll%s
@@ -96,7 +96,7 @@ DUPELIST=04bda
 ON=@Create
    MORE2=10
 ON=@ClientTooltip
-   SRC.ADDCLILOC 1049116,<dMORE2>	//[ Charges: ~1_CHARGES~ ]
+   addcliloc 1049116,<dMORE2>	//[ Charges: ~1_CHARGES~ ]
 ON=@DClick
    IF (<MORE2>)
     IF (<R5>)
@@ -169,7 +169,7 @@ DESCRIPTION=Sweet Potato Pie
 ON=@Create
    MORE2=6
 ON=@ClientTooltip
-   SRC.ADDCLILOC 1153515,<dMORE2>	//~1_COUNT~ pieces
+   addcliloc 1153515,<dMORE2>	//~1_COUNT~ pieces
 ON=@DClick
    SERV.NEWITEM i_pie_sweet_potato_slice
    NEW.BOUNCE

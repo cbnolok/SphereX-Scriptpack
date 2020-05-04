@@ -19,61 +19,56 @@ VERSION=X1
 ////////////////////////////////////////////////////////////////////////////////////////////
 
 [DEFNAME adddef]
-DB_File = scripts/adddialog.db
-Item_DB = sphere_items
-Char_DB = sphere_chars
+AddDLG_DB_File = 		databases/adddialog.db
+AddDLG_DB_Table_Item = 	sphere_items
+AddDLG_DB_Table_Char = 	sphere_chars
 
 
 [function f_add_rebuild]
-f_add_clear
-f_add_setup
-
-[function f_add_setup]
 if !(<ldb.connected>)
-	ldb.connect "<def.DB_File>"
-endif
-if (<ldb.connected>)
-	ldb.execute CREATE TABLE '<def.Item_DB>' ('id' TEXT PRIMARY KEY NOT NULL,'defname' TEXT, 'name' TEXT,'category' TEXT,'subsection' TEXT,'description' TEXT)
-	ldb.execute CREATE TABLE '<def.Char_DB>' ('id' TEXT PRIMARY KEY NOT NULL,'defname' TEXT, 'name' TEXT,'category' TEXT,'subsection' TEXT,'description' TEXT)
-	local.hour=<serv.rticks>
-	LDB.EXECUTE BEGIN
-	for 0 <eval <serv.deflist.itemdef.count>-1>
-		local.item=<serv.deflist.itemdef.<dlocal._for>>
-		if (<local.item>)
-			local.name=<serv.itemdef.<local.item>.name>
-			local.defname=<qval <isempty <serv.itemdef.<local.item>.defname>>?NULL:<serv.itemdef.<local.item>.defname>>
-			local.category=<qval <isempty <serv.itemdef.<local.item>.category>>?Uncategorized:<serv.itemdef.<local.item>.category>>
-			local.subsection=<qval <isempty <serv.itemdef.<local.item>.subsection>>?Uncategorized:<serv.itemdef.<local.item>.subsection>>
-			local.description=<qval <isempty <serv.itemdef.<local.item>.description>>?Undefined:<serv.itemdef.<local.item>.description>>
-			ldb.QUERY INSERT INTO '<def.Item_DB>' ('id','defname','name','category','subsection','description') VALUES ("<local.item>","<local.defname>","<local.name>","<local.category>","<local.subsection>","<local.description>")
-		endif
-	endfor
-	for 0 <eval <serv.deflist.chardef.count>-1>
-		local.char=<serv.deflist.chardef.<dlocal._for>>
-		if (<local.char>)
-			local.name=<serv.chardef.<local.char>.name>
-			local.defname=<qval <isempty <serv.chardef.<local.char>.defname>>?NULL:<serv.chardef.<local.char>.defname>>
-			local.category=<qval <isempty <serv.chardef.<local.char>.category>>?Uncategorized:<serv.chardef.<local.char>.category>>
-			local.subsection=<qval <isempty <serv.chardef.<local.char>.subsection>>?Uncategorized:<serv.chardef.<local.char>.subsection>>
-			local.description=<qval <isempty <serv.chardef.<local.char>.description>>?Uncategorized:<serv.chardef.<local.char>.description>>
-			ldb.QUERY INSERT INTO '<def.char_DB>' ('id','defname','name','category','subsection','description') VALUES ("<local.char>","<local.defname>","<local.name>","<local.category>","<local.subsection>","<local.description>")
-		endif
-	endfor
-	LDB.EXECUTE COMMIT
-	serv.log Output done in <eval <serv.rticks>-<local.hour>> seconds.
-ldb.close
+	ldb.connect "<serv.scpfiles><def.AddDLG_DB_File>"
+	if !<ldb.connected>
+		serv.log Can't connect to LDB "<serv.scpfiles><def.AddDLG_DB_File>".
+		return 0
+	endif
 endif
 
+ldb.execute DROP TABLE IF EXISTS '<def.AddDLG_DB_Table_Item>'
+ldb.execute DROP TABLE IF EXISTS '<def.AddDLG_DB_Table_Char>'
 
-[function f_add_clear]
-if !(<ldb.connected>)
-	ldb.connect "<def.DB_File>"
-endif
-if (<ldb.connected>)
-ldb.EXECUTE DROP TABLE IF EXISTS '<def.Item_DB>'
-ldb.EXECUTE DROP TABLE IF EXISTS '<def.Char_DB>'
+ldb.execute CREATE TABLE '<def.AddDLG_DB_Table_Item>' ('id' TEXT PRIMARY KEY NOT NULL,'defname' TEXT, 'name' TEXT,'category' TEXT,'subsection' TEXT,'description' TEXT)
+ldb.execute CREATE TABLE '<def.AddDLG_DB_Table_Char>' ('id' TEXT PRIMARY KEY NOT NULL,'defname' TEXT, 'name' TEXT,'category' TEXT,'subsection' TEXT,'description' TEXT)
+
+serv.log Starting AddDialog database rebuild...
+local.hour=<serv.rticks>
+LDB.EXECUTE BEGIN
+for 0 <eval <serv.deflist.itemdef.count>-1>
+	local.item=<serv.deflist.itemdef.<dlocal._for>>
+	if (<local.item>)
+		local.name=<serv.itemdef.<local.item>.name>
+		local.defname=<qval <isempty <serv.itemdef.<local.item>.defname>>?NULL:<serv.itemdef.<local.item>.defname>>
+		local.category=<qval <isempty <serv.itemdef.<local.item>.category>>?Uncategorized:<serv.itemdef.<local.item>.category>>
+		local.subsection=<qval <isempty <serv.itemdef.<local.item>.subsection>>?Uncategorized:<serv.itemdef.<local.item>.subsection>>
+		local.description=<qval <isempty <serv.itemdef.<local.item>.description>>?Undefined:<serv.itemdef.<local.item>.description>>
+		ldb.QUERY INSERT INTO '<def.AddDLG_DB_Table_Item>' ('id','defname','name','category','subsection','description') VALUES ("<local.item>","<local.defname>","<local.name>","<local.category>","<local.subsection>","<local.description>")
+	endif
+endfor
+for 0 <eval <serv.deflist.chardef.count>-1>
+	local.char=<serv.deflist.chardef.<dlocal._for>>
+	if (<local.char>)
+		local.name=<serv.chardef.<local.char>.name>
+		local.defname=<qval <isempty <serv.chardef.<local.char>.defname>>?NULL:<serv.chardef.<local.char>.defname>>
+		local.category=<qval <isempty <serv.chardef.<local.char>.category>>?Uncategorized:<serv.chardef.<local.char>.category>>
+		local.subsection=<qval <isempty <serv.chardef.<local.char>.subsection>>?Uncategorized:<serv.chardef.<local.char>.subsection>>
+		local.description=<qval <isempty <serv.chardef.<local.char>.description>>?Uncategorized:<serv.chardef.<local.char>.description>>
+		ldb.QUERY INSERT OR REPLACE INTO '<def.AddDLG_DB_Table_Char>' ('id','defname','name','category','subsection','description') VALUES ("<local.char>","<local.defname>","<local.name>","<local.category>","<local.subsection>","<local.description>")
+	endif
+endfor
+LDB.EXECUTE COMMIT
+serv.log Database rebuilt in <eval <serv.rticks>-<local.hour>> seconds.
+	
 ldb.close
-endif
+return 1
 
 
 [function f_add_search]
@@ -133,11 +128,11 @@ gumppictiled 10 10 210 117 2624   // darker background
 checkertrans 10 10 210 117   // transparency layer
 //Modes
 dtext 90 30 0480 Items
-LDB.Query "SELECT id from <def.Item_DB> WHERE ROWID = 1"
+LDB.Query "SELECT id from <def.AddDLG_DB_Table_Item> WHERE ROWID = 1"
 button 50 30 4005 4007 <qval <LDB.Row.NumRows>?1:0> 0 1		//No references in list? no click on buttons
 
 dtext 90 90 0480 Npcs
-LDB.Query "SELECT id from <def.Char_DB> WHERE ROWID = 1"
+LDB.Query "SELECT id from <def.AddDLG_DB_Table_Char> WHERE ROWID = 1"
 button 50 90 4005 4007 <qval <LDB.Row.NumRows>?1:0> 0 2
 
 [function f_add_generate_background]
@@ -173,7 +168,7 @@ else
 endif
 
 [function f_Add_generate_topbar]
-if (STRMATCH("<def.Item_DB>","<ctag.add_mode>")==1)
+if (STRMATCH("<def.AddDLG_DB_Table_Item>","<ctag.add_mode>")==1)
 	local.header = Items
 else
 	local.header = Npcs
@@ -319,7 +314,7 @@ endif
 IF !(<isempty <ctag.add_show>>)
 	LDB.query "SELECT id FROM <ctag.add_mode> WHERE rowid = '<dctag.add_show>'"
 	LOCAL.id = <ldb.row.0.id>
-	if (!strcmp("<def.Item_DB>","<ctag.add_mode>"))
+	if (!strcmp("<def.AddDLG_DB_Table_Item>","<ctag.add_mode>"))
 		if (<isnum <local.id>>)
 			dtext 126 440 0480 ID: <LOCAL.id> <qval <serv.itemdef.<LOCAL.id>.defname>?(<serv.itemdef.<LOCAL.id>.defname>):>
 		else
@@ -372,7 +367,7 @@ endif
 [dialog d_add]
 6,32
 ldb.close
-ldb.connect "<def.DB_File>"
+ldb.connect "<serv.scpfiles><def.AddDLG_DB_File>"
 IF (<isempty <ctag.add_mode>>)
 	f_add_generate_main				//Dialog shown when no item or npc view is selected yet.
 else
@@ -389,12 +384,12 @@ endif
 
 [DIALOG d_add BUTTON]
 ON=1
-ctag.add_mode=<def.Item_DB>
+ctag.add_mode=<def.AddDLG_DB_Table_Item>
 ctag.add_nosearch=1
 dialog d_add
 
 ON=2
-ctag.add_mode=<def.Char_DB>
+ctag.add_mode=<def.AddDLG_DB_Table_Char>
 ctag.add_nosearch=1
 dialog d_Add
 
@@ -485,11 +480,11 @@ dialog d_Add
 ON=100000 199999  //Add item
 LDB.query "SELECT id FROM <ctag.add_mode> WHERE rowid = '<eval <argn>-100000>'"
 local.id=<ldb.row.0.id>
-if (STRMATCH("<def.Item_DB>","<ctag.add_mode>")==1)
+if (STRMATCH("<def.AddDLG_DB_Table_Item>","<ctag.add_mode>")==1)
 	if (<serv.itemdef.<local.id>.id>)
 		add <local.id>
 	endif
-elseif (STRMATCH("<def.Char_DB>","<ctag.add_mode>")==1)
+elseif (STRMATCH("<def.AddDLG_DB_Table_Char>","<ctag.add_mode>")==1)
 	if (<serv.chardef.<local.id>>)
 		addnpc <local.id>
 	endif

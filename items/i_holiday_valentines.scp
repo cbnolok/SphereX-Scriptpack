@@ -158,7 +158,7 @@ DESCRIPTION=Cupid's Arrow
 DUPELIST=04f7b,04f7e,04f7f
 ON=@ClientTooltip
    IF !(<ISEMPTY <TAG.Name1>>) && !(<ISEMPTY <TAG.Name1>>)
-    SRC.ADDCLILOC 1152273,<TAG.Name1>,<TAG.Name2>	//~1_val~ is madly in love with ~2_val~
+    addcliloc 1152273,<TAG.Name1>,<TAG.Name2>	//~1_val~ is madly in love with ~2_val~
    ENDIF
 ON=@DClick
    IF (<TOPOBJ> != <SRC>)

@@ -1,0 +1,18 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
+[FUNCTION FormatMinutes]
+IF (<ARGN1> >= 518400)
+ return <eval <ARGN1> / 518400>y <eval (<ARGN1> % 518400) / 43200>m <eval ((<ARGN1> % 518400) % 43200) / 1440>d <eval (((<ARGN1> % 518400) % 43200) % 1440) / 60>h <eval (((<ARGN1> % 518400) % 43200) % 1440) % 60>m
+ELIF (<ARGN1> >= 43200)
+ return <eval <ARGN1> / 43200>m <eval (<ARGN1> % 43200) / 1440>d <eval ((<ARGN1> % 43200) % 1440) / 60>h <eval ((<ARGN1> % 43200) % 1440) % 60>m
+ELIF (<ARGN1> >= 1440)
+ return <eval <ARGN1> / 1440>d <eval (<ARGN1> % 1440) / 60>h <eval (<ARGN1> % 1440) % 60>m
+ELIF (<ARGN1> >= 60)
+ return <eval <ARGN1> / 60>h <eval <ARGN1> % 60>m
+ELSE
+ return <ARGN1>m
+ENDIF

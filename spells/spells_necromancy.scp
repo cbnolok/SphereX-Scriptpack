@@ -242,7 +242,7 @@ else
 	local.distance = <src.act.distance>
 	local.dam=<eval <local.damage> / (<local.distance>+1)>
 	damage=<dlocal.dam>,<src>,dam_magic,0,0,0,100,0	// Poison damage
-endfor
+endif
 
 // s_Strangle
 // Chokes an enemy with poison, doing more damage as their Stamina drops.
