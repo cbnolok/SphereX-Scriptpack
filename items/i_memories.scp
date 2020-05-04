@@ -576,4 +576,18 @@ LAYER=layer_horse
 TDATA3=c_serpentine_dragon_ethereal
 WEIGHT=0
 
+[ITEMDEF i_mt_eowmu]
+ID=03ecf
+TYPE=t_eq_horse
+LAYER=layer_horse
+TDATA3=c_eowmu
+WEIGHT=0
+
+[ITEMDEF i_mt_skeletal_cat]
+ID=03ed0
+TYPE=t_eq_horse
+LAYER=layer_horse
+TDATA3=c_skeletal_cat
+WEIGHT=0
+
 [EOF]

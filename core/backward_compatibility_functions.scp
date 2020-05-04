@@ -5,22 +5,22 @@
 VERSION=X1
 
 [FUNCTION addnpc]
-ARGS=<QVAL (<isnum <ARGS>>)? <ARGS>|08c000000 : <DEF.<ARGS>>>
-IF (<SERV.CHARDEF.<dARGS>>)
- ADD <ARGS>
- return 1
-ENDIF
-SYSMESSAGE <DEFMSG.cmd_invalid>
+args = <qval <isnum <args>> ? <resdef.<serv.chardef.<resourceindex <args>>.defname>> : <resdef.<args>>>
+if (!<isempty <args>> && <serv.chardef.<dargs>>)
+	add <args>
+	return 1
+endif
+sysmessage <defmsg.cmd_invalid>
 
 [FUNCTION tweak]
 INFO
 
-[FUNCTION brain] //by Darkandus
-IF (<ARGN>)
- NPC=<ARGN>
-ELSE
- return <NPC>
-ENDIF
+[function brain]
+if (<argn>)
+	npc = <argn>
+else
+	return <npc>
+endif
 
 [FUNCTION m]
 MOVE <ARGS>
@@ -31,21 +31,21 @@ INVUL <ARGS>
 [FUNCTION invisible]
 INVIS <ARGS>
 
-[FUNCTION static] //by Thomas20198701
-ARGS=<DEF0.<ARGS>>
-IF (<SERV.ITEMDEF.<dARGS>>)
- TARGETFG static_ <ARGS>
- SYSMESSAGE <DEFMSG.where_to_place> <SERV.ITEMDEF.<ARGS>.NAME>?
- return 1
-ENDIF
-SYSMESSAGE <DEFMSG.cmd_invalid>
+[FUNCTION static]
+args = <qval <isnum <args>> ? <args> : <resourceindex <args>>>
+if (<serv.itemdef.<dargs>>)
+	targetfg f_static <args>
+	sysmessage <defmsg.where_to_place> <serv.itemdef.<args>.name>?
+	return 1
+endif
+sysmessage <defmsg.cmd_invalid>
 
-[FUNCTION static_]
-SERV.NEWITEM <ARGS>
-NEW.ATTR |= 010
-NEW.TIMER=-1
-NEW.P=<SRC.TARGP>
-ACT=<NEW>
+[FUNCTION f_static]
+newitem <args>
+new.attr |= 010
+new.timer = -1
+new.p = <src.targp>
+act = <new>
 
 [FUNCTION sfx]
 SOUND <ARGS>

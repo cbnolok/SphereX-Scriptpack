@@ -67,6 +67,8 @@ mount_0x57f	i_mt_lasher
 mount_0x580	i_mt_palomino
 mount_0x582	i_mt_windrunner
 mount_0x59a	i_mt_serpentine_dragon_ethereal
+mount_0x5a0	i_mt_eowmu
+mount_0x5a1	i_mt_skeletal_cat
 
 
 [EOF]
