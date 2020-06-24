@@ -111,25 +111,25 @@ IF (<ISARMOR>)
 	dtext 250 135 193 Proprietes des armures
 
 	IF (<SERV.CombatFlags> & 08)	//COMBATF_ELEMENTAL_ENGINE
-		// button 250 155 4005 4007 1 0 120
-		// dtext 285 155 903 ResPhysical
-		// dcroppedtext 360 155 125 20 1000 <RESPHYSICAL>%
+		button 250 155 4005 4007 1 0 120
+		dtext 285 155 903 ResPhysical
+		dcroppedtext 360 155 125 20 1000 <RESPHYSICAL>%
 
-		// button 250 175 4005 4007 1 0 121
-		// dtext 285 175 333 ResFire
-		// dcroppedtext 360 175 125 20 1000 <RESFIRE>%
+		button 250 175 4005 4007 1 0 121
+		dtext 285 175 333 ResFire
+		dcroppedtext 360 175 125 20 1000 <RESFIRE>%
 
-		// button 250 195 4005 4007 1 0 122
-		// dtext 285 195 393 ResCold
-		// dcroppedtext 360 195 125 20 1000 <RESCOLD>%
+		button 250 195 4005 4007 1 0 122
+		dtext 285 195 393 ResCold
+		dcroppedtext 360 195 125 20 1000 <RESCOLD>%
 
-		// button 250 215 4005 4007 1 0 123
-		// dtext 285 215 363 ResPoison
-		// dcroppedtext 360 215 125 20 1000 <RESPOISON>%
+		button 250 215 4005 4007 1 0 123
+		dtext 285 215 363 ResPoison
+		dcroppedtext 360 215 125 20 1000 <RESPOISON>%
 
-		// button 250 235 4005 4007 1 0 124
-		// dtext 285 235 323 ResEnergy
-		// dcroppedtext 360 235 125 20 1000 <RESENERGY>%
+		button 250 235 4005 4007 1 0 124
+		dtext 285 235 323 ResEnergy
+		dcroppedtext 360 235 125 20 1000 <RESENERGY>%
 	ELSE
 		button 250 155 4005 4007 1 0 125
 		dtext 285 155 2048 Armor
@@ -144,9 +144,9 @@ ENDIF
 IF (<ISWEAPON>)
 	dtext 250 135 193 Proprietes des armes
 
-	// button 250 155 4005 4007 1 0 130
-	// dtext 285 155 2048 Range
-	// dcroppedtext 360 155 125 20 1000 <RANGE>
+	button 250 155 4005 4007 1 0 130
+	dtext 285 155 2048 Range
+	dcroppedtext 360 155 125 20 1000 <RANGE>
 
 	button 250 175 4020 4022 0 0 0
 	dtext 285 175 2048 Speed
@@ -157,25 +157,25 @@ IF (<ISWEAPON>)
 	dcroppedtext 360 195 125 20 1000 <DAM>
 
 	IF (<SERV.CombatFlags> & 08)	//COMBATF_ELEMENTAL_ENGINE
-		// button 250 215 4005 4007 1 0 132
-		// dtext 285 215 903 DamPhysical
-		// dcroppedtext 360 215 125 20 1000 <DAMPHYSICAL>%
+		button 250 215 4005 4007 1 0 132
+		dtext 285 215 903 DamPhysical
+		dcroppedtext 360 215 125 20 1000 <DAMPHYSICAL>%
 
-		// button 250 235 4005 4007 1 0 133
-		// dtext 285 235 333 DamFire
-		// dcroppedtext 360 235 125 20 1000 <DAMFIRE>%
+		button 250 235 4005 4007 1 0 133
+		dtext 285 235 333 DamFire
+		dcroppedtext 360 235 125 20 1000 <DAMFIRE>%
 
-		// button 250 255 4005 4007 1 0 134
-		// dtext 285 255 393 DamCold
-		// dcroppedtext 360 255 125 20 1000 <DAMCOLD>%
+		button 250 255 4005 4007 1 0 134
+		dtext 285 255 393 DamCold
+		dcroppedtext 360 255 125 20 1000 <DAMCOLD>%
 
-		// button 250 275 4005 4007 1 0 135
-		// dtext 285 275 363 DamPoison
-		// dcroppedtext 360 275 125 20 1000 <DAMPOISON>%
+		button 250 275 4005 4007 1 0 135
+		dtext 285 275 363 DamPoison
+		dcroppedtext 360 275 125 20 1000 <DAMPOISON>%
 
-		// button 250 295 4005 4007 1 0 136
-		// dtext 285 295 323 DamEnergy
-		// dcroppedtext 360 295 125 20 1000 <DAMENERGY>%
+		button 250 295 4005 4007 1 0 136
+		dtext 285 295 323 DamEnergy
+		dcroppedtext 360 295 125 20 1000 <DAMENERGY>%
 	ENDIF
 ENDIF
 
