@@ -1,0 +1,238 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
+[DIALOG d_ITEMPROP1]
+70, 70
+page 0
+resizepic 0 0 5100 550 360
+text 30 30 0 0
+//button 20 320 5200 5201 1 0 900		// cancel
+//button 100 320 <eval g_btn_gray_apply> <eval g_btn_gray_apply_press> 1 0 901	// apply
+//button 180 320 5202 5203 1 0 902	// save
+button 20 320 5042 5043 1 0 902		// continue
+button 180 320 5052 5053 1 0 903	// delete
+button 210 320 5050 5051 1 0 904	// bounce
+gumppic 275 15 2001
+tilepic 350 140 <DISPIDDEC>
+text 10 50 0 3
+page 1
+button 4 2 5007 5006 0 1
+button 92 2 5006 5007 1 2 802
+text 45 1 0 1
+text 133 1 0 2
+button 10 70 2443 2444 1 0 2
+text 15 70 0 4
+text 75 70 0 5
+button 10 95 2443 2444 1 0 3
+text 15 95 0 6
+text 75 95 0 7
+button 10 120 2443 2444 1 0 4
+text 15 120 0 8
+text 75 120 0 9
+button 10 145 2443 2444 1 0 5
+text 15 145 0 10
+text 75 145 0 11
+button 10 170 2443 2444 1 0 6
+text 15 170 0 12
+text 75 170 0 13
+button 10 195 2443 2444 1 0 7
+text 15 195 0 14
+text 75 195 0 15
+button 10 220 2443 2444 1 0 8
+text 15 220 0 16
+text 75 220 0 17
+button 10 245 2443 2444 1 0 9
+text 15 245 0 18
+text 75 245 0 19
+button 10 270 2443 2444 1 0 10
+text 15 270 0 20
+text 75 270 0 21
+button 10 295 2443 2444 1 0 11
+text 15 295 0 22
+text 75 295 0 23
+
+[DIALOG d_ITEMPROP1 TEXT]
+Item Properties 1
+1
+2
+Change  Value
+Serial
+<SERIAL>
+BaseId
+<BASEID>
+Name
+<NAME>
+Color
+<COLOR>
+Timer
+<TIMER>
+Pos
+<P>
+Amount
+<AMOUNT>
+Type
+<TYPE>
+More1
+<MORE1>
+More2
+<MORE2>
+
+[DIALOG d_ITEMPROP1 BUTTON]
+
+ON=903
+	TRY REMOVE
+
+ON=904
+	TRY BOUNCE
+
+ON=802
+	DIALOG=d_ITEMPROP2
+
+ON=2
+	TRYP 255 INPDLG=SERIAL 8
+
+ON=3
+	TRYP 4 INPDLG=ID 32
+
+ON=4
+	TRYP 4 INPDLG=NAME 30
+
+ON=5
+	TRYP 4 INPDLG=COLOR 32
+
+ON=6
+	TRYP 4 INPDLG=TIMER 8
+
+ON=7
+	TRYP 4 INPDLG=P 16
+
+ON=8
+	TRYP 4 INPDLG=AMOUNT 5
+
+ON=9
+	TRYP 4 INPDLG=TYPE 32
+
+ON=10
+	TRYP 4 INPDLG=MORE1 32
+
+ON=11
+	TRYP 4 INPDLG=MORE2 32
+
+[DIALOG d_ITEMPROP2]
+70, 70
+page 0
+resizepic 0 0 5100 550 360
+text 30 30 0 0
+//button 20 320 5200 5201 1 0 900		// cancel
+//button 100 320 <eval g_btn_gray_apply> <eval g_btn_gray_apply_press> 1 0 901	// apply
+//button 180 320 5202 5203 1 0 902	// save
+button 20 320 5042 5043 1 0 902		// continue
+button 180 320 5052 5053 1 0 903	// delete
+button 210 320 5050 5051 1 0 904	// bounce
+gumppic 275 15 2001
+tilepic 350 140 <DISPIDDEC>
+text 10 50 0 3
+page 1
+button 4 2 5006 5007 1 1 801
+button 92 2 5007 5006 0 2
+text 45 1 0 1
+text 133 1 0 2
+button 10 70 2443 2444 1 0 12
+text 15 70 0 4
+text 75 70 0 5
+button 10 95 2443 2444 1 0 13
+text 15 95 0 6
+text 75 95 0 7
+button 10 120 2443 2444 1 0 14
+text 15 120 0 8
+text 75 120 0 9
+button 10 145 2443 2444 1 0 15
+text 15 145 0 10
+text 75 145 0 11
+button 10 170 2443 2444 1 0 16
+text 15 170 0 12
+text 75 170 0 13
+button 10 195 2443 2444 1 0 17
+text 15 195 0 14
+text 75 195 0 15
+button 10 220 2443 2444 1 0 18
+text 15 220 0 16
+text 75 220 0 17
+button 10 245 2443 2444 1 0 19
+text 15 245 0 18
+text 75 245 0 19
+button 10 270 2443 2444 1 0 20
+text 15 270 0 20
+text 75 270 0 21
+button 10 295 2443 2444 1 0 21
+text 15 295 0 22
+text 75 295 0 23
+
+[DIALOG d_ITEMPROP2 TEXT]
+Item Properties 2
+1
+2
+Change  Value
+Attr
+<ATTR>
+Weight
+<WEIGHT>
+Layer
+<LAYER>
+Instances
+<INSTANCES>
+Armor
+<ARMOR>
+Value
+<VALUE>
+Dye
+<DYE>
+MoreP
+<MOREP>
+Link
+<LINK>
+DispID
+<DISPID>
+
+[DIALOG d_ITEMPROP2 BUTTON]
+
+ON=903
+	TRY REMOVE
+
+ON=904
+	TRY BOUNCE
+
+ON=801
+	DIALOG=d_ITEMPROP1
+
+ON=12
+	TRYP 4 INPDLG=ATTR 8
+
+ON=13
+	TRYP 4 INPDLG=WEIGHT 4
+
+ON=14
+	TRYP 5 INPDLG=LAYER 2
+
+ON=15
+	TRYP 4 INPDLG=INSTANCES 4
+
+ON=16
+	TRYP 4 INPDLG=ARMOR 4
+
+ON=17
+	TRYP 4 INPDLG=VALUE 7
+
+ON=18
+	TRYP 4 INPDLG=DYE 4
+
+ON=19
+	TRYP 4 INPDLG=MOREP 16
+
+ON=20
+	TRYP 4 INPDLG=LINK 8
+
+[EOF]

@@ -4,235 +4,397 @@
 //****************************************************************************
 VERSION=X1
 
-[DIALOG d_ITEMPROP1]
-70, 70
+[DIALOG d_itemprop1]
+50,50
+
 page 0
-resizepic 0 0 5100 550 360
-text 30 30 0 0
-//button 20 320 5200 5201 1 0 900		// cancel
-//button 100 320 <eval g_btn_gray_apply> <eval g_btn_gray_apply_press> 1 0 901	// apply
-//button 180 320 5202 5203 1 0 902	// save
-button 20 320 5042 5043 1 0 902		// continue
-button 180 320 5052 5053 1 0 903	// delete
-button 210 320 5050 5051 1 0 904	// bounce
-gumppic 275 15 2001
-tilepic 350 140 <DISPIDDEC>
-text 10 50 0 3
+resizepic 0 0 5054 605 345
+gumppictiled 10 10 585 20 2624
+gumppictiled 10 35 480 300 2624
+gumppictiled 495 35 100 100 2624
+gumppictiled 490 140 105 195 2624
+checkertrans 10 10 585 325
+dhtmlgump 10 11 585 20 0 0 <DEF.BFONT_WHITE><DEF.CENTER>ITEM PROPERTIES<DEF.CENTERE><DEF.BFONTE>
+tilepichue 525 70 <DISPIDDEC> <dCOLOR>
+
+button 490 140 4017 4019 1 0 1
+dtext 525 140 137 DELETE
+button 490 180 4026 4028 0 1 0
+dtext 525 180 1000 General
+button 490 200 4026 4028 0 2 0
+dtext 525 200 1000 PROPS
+
 page 1
-button 4 2 5007 5006 0 1
-button 92 2 5006 5007 1 2 802
-text 45 1 0 1
-text 133 1 0 2
-button 10 70 2443 2444 1 0 2
-text 15 70 0 4
-text 75 70 0 5
-button 10 95 2443 2444 1 0 3
-text 15 95 0 6
-text 75 95 0 7
-button 10 120 2443 2444 1 0 4
-text 15 120 0 8
-text 75 120 0 9
-button 10 145 2443 2444 1 0 5
-text 15 145 0 10
-text 75 145 0 11
-button 10 170 2443 2444 1 0 6
-text 15 170 0 12
-text 75 170 0 13
-button 10 195 2443 2444 1 0 7
-text 15 195 0 14
-text 75 195 0 15
-button 10 220 2443 2444 1 0 8
-text 15 220 0 16
-text 75 220 0 17
-button 10 245 2443 2444 1 0 9
-text 15 245 0 18
-text 75 245 0 19
-button 10 270 2443 2444 1 0 10
-text 15 270 0 20
-text 75 270 0 21
-button 10 295 2443 2444 1 0 11
-text 15 295 0 22
-text 75 295 0 23
+button 10 35 4005 4007 1 0 100
+dtext 45 35 2048 Amount
+dcroppedtext 120 35 125 20 1000 <AMOUNT>
 
-[DIALOG d_ITEMPROP1 TEXT]
-Item Properties 1
-1
-2
-Change  Value
-Serial
-<SERIAL>
-BaseId
-<BASEID>
-Name
-<NAME>
-Color
-<COLOR>
-Timer
-<TIMER>
-Pos
-<P>
-Amount
-<AMOUNT>
-Type
-<TYPE>
-More1
-<MORE1>
-More2
-<MORE2>
+button 10 55 4005 4007 1 0 101
+dtext 45 55 2048 Attr
+dcroppedtext 120 55 125 20 1000 <ATTR>
 
-[DIALOG d_ITEMPROP1 BUTTON]
+button 10 75 4005 4007 1 0 106
+dtext 45 75 2048 More1
+dcroppedtext 120 75 125 20 1000 <MORE1> <QVAL (<MORE1>)? (<MORE1L>/<MORE1H>):>
 
-ON=903
-	TRY REMOVE
+button 10 95 4005 4007 1 0 107
+dtext 45 95 2048 More2
+dcroppedtext 120 95 125 20 1000 <MORE2> <QVAL (<MORE2>)? (<MORE2L>/<MORE2H>):>
 
-ON=904
-	TRY BOUNCE
+button 10 115 4005 4007 1 0 108
+dtext 45 115 2048 MoreP
+dcroppedtext 120 115 125 20 1000 <MOREP>
 
-ON=802
-	DIALOG=d_ITEMPROP2
+button 10 135 4020 4022 0 1 0
+dtext 45 135 2048 Dye
+dcroppedtext 120 135 125 20 1000 <DYE>
 
-ON=2
-	TRYP 255 INPDLG=SERIAL 8
+button 10 155 4020 4022 0 1 0
+dtext 45 155 2048 Instances
+dcroppedtext 120 155 125 20 1000 <INSTANCES>
 
-ON=3
-	TRYP 4 INPDLG=ID 32
+button 10 175 4020 4022 0 1 0
+dtext 45 175 2048 Layer
+dcroppedtext 120 175 125 20 1000 <LAYER>
 
-ON=4
-	TRYP 4 INPDLG=NAME 30
+button 10 195 4005 4007 1 0 105
+dtext 45 195 2048 Link
+dcroppedtext 120 195 125 20 1000 <LINK> <QVAL (<LINK.UID>)? (<LINK.NAME>):>
 
-ON=5
-	TRYP 4 INPDLG=COLOR 32
+button 10 215 4005 4007 1 0 102
+dtext 45 215 2048 BaseID
+dcroppedtext 120 215 500 20 1000 <BASEID>
 
-ON=6
-	TRYP 4 INPDLG=TIMER 8
+button 10 235 4005 4007 1 0 103
+dtext 45 235 2048 Color
+dcroppedtext 120 235 125 20 1000 <COLOR>
 
-ON=7
-	TRYP 4 INPDLG=P 16
+button 10 255 4005 4007 1 0 104
+dtext 45 255 2048 DispID
+dcroppedtext 120 255 500 20 1000 <DISPID>
 
-ON=8
-	TRYP 4 INPDLG=AMOUNT 5
+button 10 275 4005 4007 1 0 109
+dtext 45 275 2048 Name
+dcroppedtext 120 275 500 20 1000 <NAME>
 
-ON=9
-	TRYP 4 INPDLG=TYPE 32
+button 10 295 <QVAL (<CONT>)? 4020 4022 0 1 0 : 4005 4007 1 0 110>
+dtext 45 295 2048 P
+dcroppedtext 120 295 125 20 1000 <QVAL (<CONT>)? <TOPOBJ.P> : <P>>
 
-ON=10
-	TRYP 4 INPDLG=MORE1 32
+button 10 315 4005 4007 1 0 111
+dtext 45 315 2048 Timer
+dcroppedtext 120 315 125 20 1000 <TIMER>
 
-ON=11
-	TRYP 4 INPDLG=MORE2 32
+button 250 35 4005 4007 1 0 112
+dtext 285 35 2048 Type
+dcroppedtext 360 35 125 20 1000 <TYPE>
 
-[DIALOG d_ITEMPROP2]
-70, 70
-page 0
-resizepic 0 0 5100 550 360
-text 30 30 0 0
-//button 20 320 5200 5201 1 0 900		// cancel
-//button 100 320 <eval g_btn_gray_apply> <eval g_btn_gray_apply_press> 1 0 901	// apply
-//button 180 320 5202 5203 1 0 902	// save
-button 20 320 5042 5043 1 0 902		// continue
-button 180 320 5052 5053 1 0 903	// delete
-button 210 320 5050 5051 1 0 904	// bounce
-gumppic 275 15 2001
-tilepic 350 140 <DISPIDDEC>
-text 10 50 0 3
-page 1
-button 4 2 5006 5007 1 1 801
-button 92 2 5007 5006 0 2
-text 45 1 0 1
-text 133 1 0 2
-button 10 70 2443 2444 1 0 12
-text 15 70 0 4
-text 75 70 0 5
-button 10 95 2443 2444 1 0 13
-text 15 95 0 6
-text 75 95 0 7
-button 10 120 2443 2444 1 0 14
-text 15 120 0 8
-text 75 120 0 9
-button 10 145 2443 2444 1 0 15
-text 15 145 0 10
-text 75 145 0 11
-button 10 170 2443 2444 1 0 16
-text 15 170 0 12
-text 75 170 0 13
-button 10 195 2443 2444 1 0 17
-text 15 195 0 14
-text 75 195 0 15
-button 10 220 2443 2444 1 0 18
-text 15 220 0 16
-text 75 220 0 17
-button 10 245 2443 2444 1 0 19
-text 15 245 0 18
-text 75 245 0 19
-button 10 270 2443 2444 1 0 20
-text 15 270 0 20
-text 75 270 0 21
-button 10 295 2443 2444 1 0 21
-text 15 295 0 22
-text 75 295 0 23
+button 250 55 4020 4022 0 1 0
+dtext 285 55 2048 UID
+dcroppedtext 360 55 125 20 1000 <UID>
 
-[DIALOG d_ITEMPROP2 TEXT]
-Item Properties 2
-1
-2
-Change  Value
-Attr
-<ATTR>
-Weight
-<WEIGHT>
-Layer
-<LAYER>
-Instances
-<INSTANCES>
-Armor
-<ARMOR>
-Value
-<VALUE>
-Dye
-<DYE>
-MoreP
-<MOREP>
-Link
-<LINK>
-DispID
-<DISPID>
+button 250 75 4020 4022 0 1 0
+dtext 285 75 2048 Value
+dcroppedtext 360 75 125 20 1000 <VALUE>
 
-[DIALOG d_ITEMPROP2 BUTTON]
+button 250 95 4020 4022 0 1 0
+dtext 285 95 2048 Weight
 
-ON=903
-	TRY REMOVE
+IF (<AMOUNT> > 1)
+ ARGS = "(<fval <BASEWEIGHT>> x <AMOUNT>)"
+ELIF (<WEIGHT> != <BASEWEIGHT>)
+ ARGS = "(<fval <BASEWEIGHT>> + <fval <WEIGHT>-<BASEWEIGHT>>)"
+ENDIF
+dcroppedtext 360 95 125 20 1000 <fval <WEIGHT>> <ARGS>
 
-ON=904
-	TRY BOUNCE
+IF (<ISARMOR>)
+	dtext 250 135 193 Proprietes des armures
 
-ON=801
-	DIALOG=d_ITEMPROP1
+	IF (<SERV.CombatFlags> & 08)	//COMBATF_ELEMENTAL_ENGINE
+		// button 250 155 4005 4007 1 0 120
+		// dtext 285 155 903 ResPhysical
+		// dcroppedtext 360 155 125 20 1000 <RESPHYSICAL>%
 
-ON=12
-	TRYP 4 INPDLG=ATTR 8
+		// button 250 175 4005 4007 1 0 121
+		// dtext 285 175 333 ResFire
+		// dcroppedtext 360 175 125 20 1000 <RESFIRE>%
 
-ON=13
-	TRYP 4 INPDLG=WEIGHT 4
+		// button 250 195 4005 4007 1 0 122
+		// dtext 285 195 393 ResCold
+		// dcroppedtext 360 195 125 20 1000 <RESCOLD>%
 
-ON=14
-	TRYP 5 INPDLG=LAYER 2
+		// button 250 215 4005 4007 1 0 123
+		// dtext 285 215 363 ResPoison
+		// dcroppedtext 360 215 125 20 1000 <RESPOISON>%
 
-ON=15
-	TRYP 4 INPDLG=INSTANCES 4
+		// button 250 235 4005 4007 1 0 124
+		// dtext 285 235 323 ResEnergy
+		// dcroppedtext 360 235 125 20 1000 <RESENERGY>%
+	ELSE
+		button 250 155 4005 4007 1 0 125
+		dtext 285 155 2048 Armor
+		dcroppedtext 360 155 125 20 1000 <ARMOR>
 
-ON=16
-	TRYP 4 INPDLG=ARMOR 4
+		button 250 175 4005 4007 1 0 126
+		dtext 285 175 2048 ModAR
+		dcroppedtext 360 175 125 20 1000 <MODAR>
+	ENDIF
+ENDIF
 
-ON=17
-	TRYP 4 INPDLG=VALUE 7
+IF (<ISWEAPON>)
+	dtext 250 135 193 Proprietes des armes
 
-ON=18
-	TRYP 4 INPDLG=DYE 4
+	// button 250 155 4005 4007 1 0 130
+	// dtext 285 155 2048 Range
+	// dcroppedtext 360 155 125 20 1000 <RANGE>
 
-ON=19
-	TRYP 4 INPDLG=MOREP 16
+	button 250 175 4020 4022 0 0 0
+	dtext 285 175 2048 Speed
+	dcroppedtext 360 175 125 20 1000 <SPEED>
 
-ON=20
-	TRYP 4 INPDLG=LINK 8
+	button 250 195 4005 4007 1 0 131
+	dtext 285 195 2048 Dam
+	dcroppedtext 360 195 125 20 1000 <DAM>
+
+	IF (<SERV.CombatFlags> & 08)	//COMBATF_ELEMENTAL_ENGINE
+		// button 250 215 4005 4007 1 0 132
+		// dtext 285 215 903 DamPhysical
+		// dcroppedtext 360 215 125 20 1000 <DAMPHYSICAL>%
+
+		// button 250 235 4005 4007 1 0 133
+		// dtext 285 235 333 DamFire
+		// dcroppedtext 360 235 125 20 1000 <DAMFIRE>%
+
+		// button 250 255 4005 4007 1 0 134
+		// dtext 285 255 393 DamCold
+		// dcroppedtext 360 255 125 20 1000 <DAMCOLD>%
+
+		// button 250 275 4005 4007 1 0 135
+		// dtext 285 275 363 DamPoison
+		// dcroppedtext 360 275 125 20 1000 <DAMPOISON>%
+
+		// button 250 295 4005 4007 1 0 136
+		// dtext 285 295 323 DamEnergy
+		// dcroppedtext 360 295 125 20 1000 <DAMENERGY>%
+	ENDIF
+ENDIF
+
+page 2 //Props
+ 
+
+checkbox 15 40 210 211 <eval <SRC.TARG.ATTR>&01> 0 // Identified
+dtext 45 40 995 Identified
+checkbox 15 60 210 211 <eval <SRC.TARG.ATTR>&02> 1 // Decay
+dtext 45 60 995 Decay
+checkbox 15 80 210 211 <eval <SRC.TARG.ATTR>&04> 2 // Newbie
+dtext 45 80 995 Newbie
+checkbox 15 100 210 211 <eval <SRC.TARG.ATTR>&08> 3 // Always Moveable
+dtext 45 100 995 Always Moveable
+checkbox 15 120 210 211 <eval <SRC.TARG.ATTR>&010> 4 // Never Moveable
+dtext 45 120 995 Never Moveable
+checkbox 15 140 210 211 <eval <SRC.TARG.ATTR>&020> 5 // Magic
+dtext 45 140 995 Magic
+checkbox 15 160 210 211 <eval <SRC.TARG.ATTR>&040> 6 // Town Owned
+dtext 45 160 995 Town Owned
+checkbox 15 180 210 211 <eval <SRC.TARG.ATTR>&080> 7 // Invisible
+dtext 45 180 995 Invisible
+checkbox 15 200 210 211 <eval <SRC.TARG.ATTR>&0100> 8 // Cursed
+dtext 45 200 995 Cursed
+checkbox 15 220 210 211 <eval <SRC.TARG.ATTR>&0200> 9 // Damned
+dtext 45 220 995 Damned
+checkbox 15 240 210 211 <eval <SRC.TARG.ATTR>&0400> 10 // Blessed
+dtext 45 240 995 Blessed
+checkbox 15 260 210 211 <eval <SRC.TARG.ATTR>&0800> 11 // Sacred
+dtext 45 260 995 Sacred
+checkbox 15 280 210 211 <eval <SRC.TARG.ATTR>&01000> 12 // For Sale
+dtext 45 280 995 For Sale
+checkbox 15 300 210 211 <eval <SRC.TARG.ATTR>&02000> 13 // Stolen
+dtext 45 300 995 Stolen
+checkbox 215 40 210 211 <eval <SRC.TARG.ATTR>&04000> 14 // Can Decay
+dtext 245 40 995 Can Decay
+checkbox 215 60 210 211 <eval <SRC.TARG.ATTR>&08000> 15 // Static
+dtext 245 60 995 Static
+button 350 295 4005 4007 1 0 999
+dtext 385 295 323 APPLY
+
+
+[DIALOG d_itemprop1 BUTTON]
+ON=1
+TRYP 4 REMOVE
+
+ON=100
+TRYP 4 INPDLG AMOUNT 5
+
+ON=101
+TRYP 4 INPDLG ATTR 9
+
+ON=102
+TRYP 4 INPDLG ID 30
+
+ON=103
+TRYP 4 INPDLG COLOR 16
+
+ON=104
+TRYP 4 INPDLG DISPID 30
+
+ON=105
+TRYP 4 INPDLG LINK 10
+
+ON=106
+TRYP 4 INPDLG MORE1 32
+
+ON=107
+TRYP 4 INPDLG MORE2 32
+
+ON=108
+TRYP 4 INPDLG MOREP 16
+
+ON=109
+TRYP 4 INPDLG NAME 30
+
+ON=110
+IF !(<CONT>)
+ TRYP 4 INPDLG P 16
+ENDIF
+
+ON=111
+TRYP 4 INPDLG TIMER 9
+
+ON=112
+TRYP 4 INPDLG TYPE 30
+
+ON=120
+TRYP 4 INPDLG RESPHYSICAL 4
+
+ON=121
+TRYP 4 INPDLG RESFIRE 4
+
+ON=122
+TRYP 4 INPDLG RESCOLD 4
+
+ON=123
+TRYP 4 INPDLG RESPOISON 4
+
+ON=124
+TRYP 4 INPDLG RESENERGY 4
+
+ON=125
+TRYP 4 INPDLG ARMOR 9
+
+ON=126
+TRYP 4 INPDLG MODAR 3
+
+ON=130
+TRYP 4 INPDLG RANGE 2
+
+ON=131
+TRYP 4 INPDLG DAM 9
+
+ON=132
+TRYP 4 INPDLG DAMPHYSICAL 4
+
+ON=133
+TRYP 4 INPDLG DAMFIRE 4
+
+ON=134
+TRYP 4 INPDLG DAMCOLD 4
+
+ON=135
+TRYP 4 INPDLG DAMPOISON 4
+
+ON=136
+TRYP 4 INPDLG DAMENERGY 4
+
+ON=999 //Apply props
+IF (<eval <SRC.ACCOUNT.PLEVEL>><4)
+	SRC.SYSMESSAGE="You are not privileged enough to do that."
+	RETURN 1
+ENDIF
+
+IF (<ARGCHK[0]>)
+	SRC.TARG.ATTR |= 01
+ELSE
+	SRC.TARG.ATTR &=~01
+ENDIF
+IF (<ARGCHK[1]>)
+	SRC.TARG.ATTR |= 02
+ELSE
+	SRC.TARG.ATTR &=~ 02
+ENDIF
+IF (<ARGCHK[2]>)
+	SRC.TARG.ATTR |= 4
+ELSE
+	SRC.TARG.ATTR &=~ 04
+ENDIF
+IF (<ARGCHK[3]>)
+	SRC.TARG.ATTR |= 08
+ELSE
+	SRC.TARG.ATTR &=~ 08
+ENDIF
+IF (<ARGCHK[4]>)
+	SRC.TARG.ATTR |= 010
+ELSE
+	SRC.TARG.ATTR &=~ 010
+ENDIF
+IF (<ARGCHK[5]>)
+	SRC.TARG.ATTR |= 020
+ELSE
+	SRC.TARG.ATTR &=~ 020
+ENDIF
+IF (<ARGCHK[6]>)
+	SRC.TARG.ATTR |= 040
+ELSE
+	SRC.TARG.ATTR &=~ 040
+ENDIF
+IF (<ARGCHK[7]>)
+	SRC.TARG.ATTR |= 080
+ELSE
+	SRC.TARG.ATTR &=~ 080
+ENDIF
+IF (<ARGCHK[8]>)
+	SRC.TARG.ATTR |= 0100
+ELSE
+	SRC.TARG.ATTR &=~ 0100
+ENDIF
+IF (<ARGCHK[9]>)
+	SRC.TARG.ATTR |= 0200
+ELSE
+	SRC.TARG.ATTR &=~ 0200
+ENDIF
+IF (<ARGCHK[10]>)
+	SRC.TARG.ATTR |= 0400
+ELSE
+	SRC.TARG.ATTR &=~ 0400
+ENDIF
+IF (<ARGCHK[11]>)
+	SRC.TARG.ATTR |= 0800
+ELSE
+	SRC.TARG.ATTR &=~ 0800
+ENDIF
+IF (<ARGCHK[12]>)
+	SRC.TARG.ATTR |= 01000
+ELSE
+	SRC.TARG.ATTR &=~ 01000
+ENDIF
+IF (<ARGCHK[13]>)
+	SRC.TARG.ATTR |= 02000
+ELSE
+	SRC.TARG.ATTR &=~ 02000
+ENDIF
+IF (<ARGCHK[14]>)
+	SRC.TARG.ATTR |= 04000
+ELSE
+	SRC.TARG.ATTR &=~ 04000
+ENDIF
+IF (<ARGCHK[15]>)
+	SRC.TARG.ATTR |= 08000
+ELSE
+	SRC.TARG.ATTR &=~ 08000
+ENDIF
+SRC.TARG.UPDATE
+
+SRC.sysmessage Modification made to <SRC.TARG.name>
+DIALOG d_itemprop1 2
+
 
 [EOF]

@@ -4,896 +4,568 @@
 //****************************************************************************
 VERSION=X1
 
-// NOTE: low button id's are reserved for page tabs.
-// button id 0 is reserved for the CANCEL command
-// TRYP arg3 INPDLG=arg1 arg2
-//	arg1 = ITEM/CHAR property associated with this button
-//	arg2 = formating for output/input (max length/max value)
-//	arg3 = minimum privelege needed to change this (couns=2, seer=3, gm=4, developer=5, admin=6, never=255)
 
-[DIALOG d_CHARPROP1]// prop sheet.
-70, 70        // this is always the size.
+[DIALOG d_charprop1]
+50,50
+
 page 0
-resizepic 0 0 5100 600 440
-text 30 30 0 0
-button 10 405 247 248 1 0 900
-//button 10 400 5200 5201 1 0 900
-//button 90 400 5204 5205 1 0 901
-//button 170 400 5202 5203 1 0 902
-gumppic 325 15 2000
-tilepic 400 140 <DISPIDDEC>
-text 10 50 80 4
+resizepic 0 0 5054 605 445
+gumppictiled 10 10 585 20 2624
+gumppictiled 10 35 480 400 2624
+gumppictiled 495 35 100 100 2624
+gumppictiled 490 140 105 295 2624
+checkertrans 10 10 585 425
+dhtmlgump 10 11 585 20 0 0 <DEF.BFONT_WHITE><DEF.CENTER>CHARACTER PROPERTIES<DEF.CENTERE><DEF.BFONTE>
+tilepichue 525 60 <DISPIDDEC> <eval <COLOR> &~ 08000|04000>
+
 page 1
-gumppic 4 2 5007
-button 92 2 5006 5007 1 2 802
-button 180 2 5006 5007 1 3 803
-text 45 1 0 1
-text 133 1 0 2
-text 221 1 0 3
-button 10 70 2443 2444 1 0 2
-text 15 70 0 5
-text 75 70 0 6
-button 10 95 2443 2444 1 0 3
-text 15 95 0 7
-text 75 95 0 8
-button 10 120 2443 2444 1 0 4
-text 15 120 0 9
-text 75 120 0 10
-button 10 145 2443 2444 1 0 5
-text 15 145 0 11
-text 75 145 0 12
-button 10 170 2443 2444 1 0 6
-text 15 170 0 13
-text 75 170 0 14
-button 10 195 2443 2444 1 0 7
-text 15 195 0 15
-text 75 195 0 16
-button 10 220 2443 2444 1 0 8
-text 15 220 0 17
-text 75 220 0 18
-button 10 245 2443 2444 1 0 9
-text 15 245 0 19
-text 75 245 0 20
-button 10 270 2443 2444 1 0 10
-text 15 270 0 21
-text 75 270 0 22
-button 10 295 2443 2444 1 0 11
-text 15 295 0 23
-text 75 295 0 24
-button 10 320 2443 2444 1 0 12
-text 15 320 0 25
-text 75 320 0 26
-button 10 345 2443 2444 1 0 13
-text 15 345 0 27
-text 75 345 0 28
-button 10 370 2443 2444 1 0 14
-text 15 370 0 29
-text 75 370 0 30
-text 320 370 100 31
-button 365 340 2443 2444 1 0 15
-text 370 340 50 31
-text 430 340 50 32
-button 365 370 2443 2444 1 0 16
-text 370 370 50 33
-text 430 370 50 34
-button 365 400 2443 2444 1 0 17
-text 370 400 50 35
-text 430 400 50 36
-text 430 290 2100 37
-text 150 370 2100 38
-button 240 370 4011 4013 1 0 18
-
-[DIALOG d_CHARPROP1 TEXT]
-Character Properties 1
-1
-2
-3
-Change Value
-Serial
-<SERIAL>
-Acct
-<ACCOUNT>
-Name
-<NAME>
-Title
-<TITLE>
-Color
-<COLOR>
-OSkin
-<OSKIN>
-ID
-<ID>
-Body
-<BODY>
-OBody
-<OBODY>
-Timer
-<TIMER>
-P
-<P>
-Home
-<HOME>
-Action
-<ACTION>
-NPC
-<NPC>
-Owner
-<MEMORYFINDTYPE.02.LINK.NAME>
-Speech
-<SPEECH>
-<DISPIDDEC>
-Action Menu
-
-[DIALOG d_CHARPROP1 BUTTON]
-
-ON=802
-	DIALOG d_CHARPROP2
-
-ON=803
-	DIALOG d_CHARPROP3
-
-ON=2
-	TRYP 255 INPDLG SERIAL 8
-
-ON=3
-	TRYP 6 INPDLG=ACCOUNT 30
-
-ON=4
-	TRYP 3 INPDLG=NAME 30
-
-ON=5
-	TRYP 4 INPDLG=TITLE 30
-
-ON=6
-	TRYP 3 INPDLG=COLOR 6
-
-ON=7
-	TRYP 3 INPDLG=OSKIN 6
-
-ON=8
-	TRYP 3 INPDLG=ID 30
-
-ON=9
-	TRYP 3 INPDLG=BODY 30
-
-ON=10
-	TRYP 3 INPDLG=OBODY 30
-
-ON=11
-	TRYP 4 INPDLG=TIMER 8
-
-ON=12
-	TRYP 3 INPDLG=P 16
-
-ON=13
-	TRYP 3 INPDLG=HOME 16
-
-ON=14
-	TRYP 4 INPDLG=ACTION 3
-
-ON=15
-	TRYP 4 INPDLG=NPC 4
-
-ON=16
-	SRC.SYSMESSAGE This belongs to <MEMORYFINDTYPE.02.NAME 8>
-
-ON=17
-	TRYP 4 INPDLG=SPEECH 20
-
-ON=18
-	IF ((<ACTION> >= SKILL_ANATOMY) && (<ACTION> <= SKILL_THROWING))	//1~57
-	 SRC.MESSAGE @50 <DEFMSG.skillact_using> skill <SERV.SKILL.<EVAL <ACTION> & 0ff>.KEY>
-	ELIF (<ACTION>==064)	//100
-	 SRC.MESSAGE @50 <DEFMSG.skillact_following>
-	ELIF (<ACTION>==065)	//101
-	 SRC.MESSAGE @50 <DEFMSG.skillact_staying>
-	ELIF (<ACTION>==066)	//102
-	 SRC.MESSAGE @50 <DEFMSG.skillact_goingto>
-	ELIF (<ACTION>==067)	//103
-	 SRC.MESSAGE @50 <DEFMSG.skillact_wandering>
-	ELIF (<ACTION>==068)	//104
-	 SRC.MESSAGE @50 <DEFMSG.skillact_looking>
-	ELIF (<ACTION>==069)	//105
-	 SRC.MESSAGE @50 <DEFMSG.skillact_fleeing>
-	ELIF (<ACTION>==06a)	//106
-	 SRC.MESSAGE @50 <DEFMSG.skillact_talking>
-	ELIF (<ACTION>==06b)	//107
-	 SRC.MESSAGE @50 <DEFMSG.skillact_talkfollow>
-	ELIF (<ACTION>==06c)	//108
-	 SRC.MESSAGE @50 <DEFMSG.skillact_guarding>
-	ELIF (<ACTION>==06d)	//109
-	 SRC.MESSAGE @50 <DEFMSG.skillact_goinghome>
-	ELIF (<ACTION>==06e)	//110
-	 SRC.MESSAGE @50 <DEFMSG.skillact_breathing>
-	ELIF (<ACTION>==06f)	//111
-	 SRC.MESSAGE @50 <DEFMSG.skillact_ridden>
-	ELIF (<ACTION>==070)	//112
-	 SRC.MESSAGE @50 <DEFMSG.skillact_throwing>
-	ELIF (<ACTION>==071)	//113
-	 SRC.MESSAGE @50 <DEFMSG.skillact_training>
-	ELIF (<ACTION>==072)	//114
-	 SRC.MESSAGE @50 <DEFMSG.skillact_napping>
-	ELIF (<ACTION>==073)	//115
-	 SRC.MESSAGE @50 <DEFMSG.skillact_searchingfood>
-	ELIF (<ACTION>==074)	//116
-	 SRC.MESSAGE @50 <DEFMSG.skillact_runningto>
-	ELSE
-	 SRC.MESSAGE @50 <DEFMSG.skillact_idling>
-	ENDIF
-
-[DIALOG d_CHARPROP2]
-70, 70
-page 0
-resizepic 0 0 5100 600 440
-text 30 30 0 0
-button 10 405 247 248 1 0 900
-//button 10 400 5200 5201 1 0 900
-//button 90 400 5204 5205 1 0 901
-//button 170 400 5202 5203 1 0 902
-gumppic 325 15 2000
-tilepic 400 140 <DISPIDDEC>
-text 10 50 80 4
-page 1
-button 4 2 5006 5007 1 1 801
-gumppic 92 2 5007
-button 180 2 5006 5007 1 3 803
-text 45 1 0 1
-text 133 1 0 2
-text 221 1 0 3
-button 10 70 2443 2444 1 0 1
-text 15 70 1100 5
-text 75 70 0 6
-button 150 70 2443 2444 1 0 18
-text 155 70 1100 38
-text 215 70 0 39
-button 10 95 2443 2444 1 0 2
-text 15 95 3 7
-text 75 95 0 8
-button 150 95 2443 2444 1 0 19
-text 155 95 3 40
-text 215 95 0 41
-button 10 120 2443 2444 1 0 3
-text 15 120 450 9
-text 75 120 0 10
-button 150 120 2443 2444 1 0 20
-text 155 120 450 42
-text 215 120 0 43
-button 10 145 2443 2444 1 0 4
-text 15 145 1100 11
-text 75 145 0 12
-button 150 145 2443 2444 1 0 21
-text 155 145 1100 44
-text 215 145 0 45
-button 10 170 2443 2444 1 0 5
-text 15 170 3 13
-text 75 170 0 14
-button 150 170 2443 2444 1 0 22
-text 155 170 3 46
-text 215 170 0 47
-button 10 195 2443 2444 1 0 6
-text 15 195 450 15
-text 75 195 0 16
-button 150 195 2443 2444 1 0 23
-text 155 195 450 48
-text 215 195 0 49
-button 10 220 2443 2444 1 0 7
-text 15 220 0 17
-text 75 220 0 18
-button 10 245 2443 2444 1 0 8
-text 15 245 0 19
-text 75 245 0 20
-button 10 270 2443 2444 1 0 9
-text 15 270 0 21
-text 75 270 0 22
-button 10 295 2443 2444 1 0 10
-text 15 295 0 23
-text 75 295 0 24
-button 10 320 2443 2444 1 0 11
-text 15 320 0 25
-text 75 320 0 26
-button 10 345 2443 2444 1 0 12
-text 15 345 0 27
-text 75 345 0 28
-button 10 370 2443 2444 1 0 13
-text 15 370 0 29
-text 75 370 0 30
-text 430 290 2100 31
-button 155 245 2443 2444 1 0 14
-text 160 245 0 32
-text 220 245 0 33
-button 155 270 2443 2444 1 0 15
-text 160 270 0 34
-text 220 270 0 35
-button 155 295 2443 2444 1 0 16
-text 160 295 58 36
-text 220 295 58 37
-button 155 315 2443 2444 1 0 25
-dtext 160 315 80 mWeight
-dtext 220 315 80 <MODMAXWEIGHT>
-button 155 355 4011 4013 1 0 17
-dtext 187 355 1110 Empty the backpack
-button 155 375 4011 4013 1 0 24
-dtext 187 375 1120 Delete the backpack
-
-[DIALOG d_CHARPROP2 TEXT]
-Character Properties 2
-1
-2
-3
-Change Value
-oSTR
-<OSTR>
-oINT
-<OINT>
-oDEX
-<ODEX>
-Hits
-<HITS>
-Mana
-<MANA>
-Stam
-<STAMINA>
-Karma
-<KARMA>
-Fame
-<FAME>
-Kills
-<KILLS>
-Food
-<FOOD>
-Flags
-<FLAGS>
-Plot1
-<TAG0.PLOT1>
-Plot2
-<TAG0.PLOT2>
-<DISPIDDEC>
-Exp
-<EXP>
-Level
-<LEVEL>
-modAR
-<MODAR>
-modSTR
-<MODSTR>
-modINT
-<MODINT>
-modDEX
-<MODDEX>
-maxHits
-<MAXHITS>
-maxMana
-<MAXMANA>
-maxStam
-<MAXSTAM>
-
-[DIALOG d_CHARPROP2 BUTTON]
-
-ON=801
-	DIALOG=d_CHARPROP1
-
-ON=803
-	DIALOG=d_CHARPROP3
-
-ON=1
-	TRYP 4 INPDLG=OSTR 5
-
-ON=2
-	TRYP 4 INPDLG=OINT 5
-
-ON=3
-	TRYP 4 INPDLG=ODEX 5
-
-ON=4
-	TRYP 4 INPDLG=HITS 5
-
-ON=5
-	TRYP 4 INPDLG=MANA 5
-
-ON=6
-	TRYP 4 INPDLG=STAMINA 5
-
-ON=7
-	TRYP 4 INPDLG=KARMA 5
-
-ON=8
-	TRYP 4 INPDLG=FAME 5
-
-ON=9
-	TRYP 4 INPDLG=KILLS 5
-
-ON=10
-	TRYP 3 INPDLG=FOOD 4
-
-ON=11
-	TRYP 4 INPDLG=FLAGS 9
-
-ON=12
-	TRYP 6 INPDLG=TAG.PLOT1 4
-
-ON=13
-	TRYP 6 INPDLG=TAG.PLOT2 4
-
-ON=14
-	TRYP 4 INPDLG=EXP 6
-
-ON=15
-	TRYP 4 INPDLG=LEVEL 6
-
-ON=16
-	TRYP 4 INPDLG=MODAR 5
-
-ON=17
-	SRC.TARG.FINDLAYER(21).EMPTY
-
-ON=18
-	TRYP 6 INPDLG=MODSTR 5
-
-ON=19
-	TRYP 6 INPDLG=MODINT 5
-
-ON=20
-	TRYP 6 INPDLG=MODDEX 5
-
-ON=21
-	TRYP 4 INPDLG=MAXHITS 5
-
-ON=22
-	TRYP 4 INPDLG=MAXMANA 5
-
-ON=23
-	TRYP 4 INPDLG=MAXSTAM 5
-
-ON=24
-	SRC.TARG.FINDLAYER(21).REMOVE
-
-ON=25
-	TRYP 4 INPDLG=MODMAXWEIGHT 5
-
-[DIALOG d_CHARPROP3]
-70, 70
-page 0
-resizepic 0 0 5100 600 440
-text 30 30 0 0
-button 10 405 247 248 1 0 900
-//button 10 400 5200 5201 1 0 900
-//button 90 400 5204 5205 1 0 901
-//button 170 400 5202 5203 1 0 902
-//gumppic 325 15 2000
-//tilepic 400 140 <DISPIDDEC>
-text 10 50 80 4
-text 210 50 80 4
-text 410 50 80 4
-button 410 25 2443 2444 1 0 51
-text 285 25 1100 105
-text 415 25 0 106
-page 1
-button 4 2 5006 5007 1 1 801
-button 92 2 5006 5007 1 2 802
-gumppic 180 2 5007
-text 45 1 0 1
-text 133 1 0 2
-text 221 1 0 3
-button 10 70 2443 2444 1 0 1
-text 15 70 0 5
-text 75 70 0 6
-button 10 90 2443 2444 1 0 2
-text 15 90 0 7
-text 75 90 0 8
-button 10 110 2443 2444 1 0 3
-text 15 110 0 9
-text 75 110 0 10
-button 10 130 2443 2444 1 0 4
-text 15 130 0 11
-text 75 130 0 12
-button 10 150 2443 2444 1 0 5
-text 15 150 0 13
-text 75 150 0 14
-button 10 170 2443 2444 1 0 6
-text 15 170 0 15
-text 75 170 0 16
-button 10 190 2443 2444 1 0 7
-text 15 190 0 17
-text 75 190 0 18
-button 10 210 2443 2444 1 0 8
-text 15 210 0 19
-text 75 210 0 20
-button 10 230 2443 2444 1 0 9
-text 15 230 0 21
-text 75 230 0 22
-button 10 250 2443 2444 1 0 10
-text 15 250 0 23
-text 75 250 0 24
-button 10 270 2443 2444 1 0 11
-text 15 270 0 25
-text 75 270 0 26
-button 10 290 2443 2444 1 0 12
-text 15 290 0 27
-text 75 290 0 28
-button 10 310 2443 2444 1 0 13
-text 15 310 0 29
-text 75 310 0 30
-button 10 330 2443 2444 1 0 14
-text 15 330 0 31
-text 75 330 0 32
-button 10 350 2443 2444 1 0 15
-text 15 350 0 33
-text 75 350 0 34
-button 10 370 2443 2444 1 0 16
-text 15 370 0 35
-text 75 370 0 36
-button 210 70 2443 2444 1 0 17
-text 215 70 0 37
-text 275 70 0 38
-button 210 90 2443 2444 1 0 18
-text 215 90 0 39
-text 275 90 0 40
-button 210 110 2443 2444 1 0 19
-text 215 110 0 41
-text 275 110 0 42
-button 210 130 2443 2444 1 0 20
-text 215 130 0 43
-text 275 130 0 44
-button 210 150 2443 2444 1 0 21
-text 215 150 0 45
-text 275 150 0 46
-button 210 170 2443 2444 1 0 22
-text 215 170 0 47
-text 275 170 0 48
-button 210 190 2443 2444 1 0 23
-text 215 190 0 49
-text 275 190 0 50
-button 210 210 2443 2444 1 0 24
-text 215 210 0 51
-text 275 210 0 52
-button 210 230 2443 2444 1 0 25
-text 215 230 0 53
-text 275 230 0 54
-button 210 250 2443 2444 1 0 26
-text 215 250 0 55
-text 275 250 0 56
-button 210 270 2443 2444 1 0 27
-text 215 270 0 57
-text 275 270 0 58
-button 210 290 2443 2444 1 0 28
-text 215 290 0 59
-text 275 290 0 60
-button 210 310 2443 2444 1 0 29
-text 215 310 0 61
-text 275 310 0 62
-button 210 330 2443 2444 1 0 30
-text 215 330 0 63
-text 275 330 0 64
-button 210 350 2443 2444 1 0 31
-text 215 350 0 65
-text 275 350 0 66
-button 210 370 2443 2444 1 0 32
-text 215 370 0 67
-text 275 370 0 68
-button 210 390 2443 2444 1 0 33
-text 215 390 0 69
-text 275 390 0 70
-button 410 70 2443 2444 1 0 34
-text 415 70 0 71
-text 475 70 0 72
-button 410 90 2443 2444 1 0 35
-text 415 90 0 73
-text 475 90 0 74
-button 410 110 2443 2444 1 0 36
-text 415 110 0 75
-text 475 110 0 76
-button 410 130 2443 2444 1 0 37
-text 415 130 0 77
-text 475 130 0 78
-button 410 150 2443 2444 1 0 38
-text 415 150 0 79
-text 475 150 0 80
-button 410 170 2443 2444 1 0 39
-text 415 170 0 81
-text 475 170 0 82
-button 410 190 2443 2444 1 0 40
-text 415 190 0 83
-text 475 190 0 84
-button 410 210 2443 2444 1 0 41
-text 415 210 0 85
-text 475 210 0 86
-button 410 230 2443 2444 1 0 42
-text 415 230 0 87
-text 475 230 0 88
-button 410 250 2443 2444 1 0 43
-text 415 250 0 89
-text 475 250 0 90
-button 410 270 2443 2444 1 0 44
-text 415 270 0 91
-text 475 270 0 92
-button 410 290 2443 2444 1 0 45
-text 415 290 0 93
-text 475 290 0 94
-button 410 310 2443 2444 1 0 46
-text 415 310 0 95
-text 475 310 0 96
-button 410 330 2443 2444 1 0 47
-text 415 330 0 97
-text 475 330 0 98
-button 410 350 2443 2444 1 0 48
-text 415 350 0 99
-text 475 350 0 100
-button 410 370 2443 2444 1 0 49
-text 415 370 0 101
-text 475 370 0 102
-button 410 390 2443 2444 1 0 50
-text 415 390 0 103
-text 475 390 0 104
-
-[DIALOG d_CHARPROP3 TEXT]
-Skills
-1
-2
-3
-Change Value
-<ALCHEMY>
-Alchemy
-<ANATOMY>
-Anatomy
-<ANIMALLORE>
-AnimalLore
-<ARCHERY>
-Archery
-<ARMSLORE>
-ArmsLore
-<BEGGING>
-Begging
-<BLACKSMITHING>
-Blacksmithing
-<BOWCRAFT>
-Bowcraft
-<CAMPING>
-Camping
-<CARPENTRY>
-Carpentry
-<CARTOGRAPHY>
-Cartography
-<COOKING>
-Cooking
-<DETECTINGHIDDEN>
-DetectingHidden
-<ENTICEMENT>
-Enticement
-<EVALUATINGINTEL>
-EvaluatingIntel
-<FENCING>
-Fencing
-<FISHING>
-Fishing
-<FORENSICS>
-Forensics
-	<HEALING>
-	Healing
-	<HERDING>
-	Herding
-	<HIDING>
-	Hiding
-	<INSCRIPTION>
-	Inscription
-	<ITEMID>
-	ItemID
-	<LOCKPICKING>
-	LockPicking
-	<LUMBERJACKING>
-	Lumberjacking
-	<MACEFIGHTING>
-	Macefighting
-	<MAGERY>
-	Magery
-	<MAGICRESISTANCE>
-	MagicResistance
-	<MEDITATION>
-	Meditation
-	<MINING>
-	Mining
-	<MUSICIANSHIP>
-	Musicianship
-	<NECROMANCY>
-	Necromancy
-	<PARRYING>
-	Parrying
-	<PEACEMAKING>
-	Peacemaking
-	<POISONING>
-	Poisoning
-	<PROVOCATION>
-	Provocation
-	<REMOVETRAP>
-	RemoveTrap
-	<SNOOPING>
-	Snooping
-	<SPIRITSPEAK>
-	SpiritSpeak
-	<STEALING>
-	Stealing
-	<STEALTH>
-	Stealth
-	<SWORDSMANSHIP>
-	Swordsmanship
-	<TACTICS>
-	Tactics
-	<TAILORING>
-	Tailoring
-	<TAMING>
-	Taming
-	<TASTEID>
-	TasteID
-	<TINKERING>
-	Tinkering
-	<TRACKING>
-	Tracking
-	<VETERINARY>
-	Veterinary
-	<WRESTLING>
-	Wrestling
-	Set Allskills to
-	<SKILLTOTAL>
-
-[DIALOG d_CHARPROP3 BUTTON]
-
-ON=801
-	DIALOG=d_CHARPROP1
-
-ON=802
-	DIALOG=d_CHARPROP2
-
-ON=1
-	TRYP 4 INPDLG=ALCHEMY 5
-
-ON=2
-	TRYP 4 INPDLG=ANATOMY 5
-
-ON=3
-	TRYP 4 INPDLG=ANIMALLORE 5
-
-ON=4
-	TRYP 4 INPDLG=ARCHERY 5
-
-ON=5
-	TRYP 4 INPDLG=ARMSLORE 5
-
-ON=6
-	TRYP 4 INPDLG=BEGGING 5
-
-ON=7
-	TRYP 4 INPDLG=BLACKSMITHING 5
-
-ON=8
-	TRYP 4 INPDLG=BOWCRAFT 5
-
-ON=9
-	TRYP 4 INPDLG=CAMPING 5
-
-ON=10
-	TRYP 4 INPDLG=CARPENTRY 5
-
-ON=11
-	TRYP 4 INPDLG=CARTOGRAPHY 5
-
-ON=12
-	TRYP 4 INPDLG=COOKING 5
-
-ON=13
-	TRYP 4 INPDLG=DETECTINGHIDDEN 5
-
-ON=14
-	TRYP 4 INPDLG=ENTICEMENT 5
-
-ON=15
-	TRYP 4 INPDLG=EVALUATINGINTEL 5
-
-ON=16
-	TRYP 4 INPDLG=FENCING 5
-
-ON=17
-	TRYP 4 INPDLG=FISHING 5
-
-ON=18
-	TRYP 4 INPDLG=FORENSICS 5
-
-ON=19
-	TRYP 4 INPDLG=HEALING 5
-
-ON=20
-	TRYP 4 INPDLG=HERDING 5
-
-ON=21
-	TRYP 4 INPDLG=HIDING 5
-
-ON=22
-	TRYP 4 INPDLG=INSCRIPTION 5
-
-ON=23
-	TRYP 4 INPDLG=ITEMID 5
-
-ON=24
-	TRYP 4 INPDLG=LOCKPICKING 5
-
-ON=25
-	TRYP 4 INPDLG=LUMBERJACKING 5
-
-ON=26
-	TRYP 4 INPDLG=MACEFIGHTING 5
-
-ON=27
-	TRYP 4 INPDLG=MAGERY 5
-
-ON=28
-	TRYP 4 INPDLG=MAGICRESISTANCE 5
-
-ON=29
-	TRYP 4 INPDLG=MEDITATION 5
-
-ON=30
-	TRYP 4 INPDLG=MINING 5
-
-ON=31
-	TRYP 4 INPDLG=MUSICIANSHIP 5
-
-ON=32
-	TRYP 4 INPDLG=NECROMANCY 5
-
-ON=33
-	TRYP 4 INPDLG=PARRYING 5
-
-ON=34
-	TRYP 4 INPDLG=PEACEMAKING 5
-
-ON=35
-	TRYP 4 INPDLG=POISONING 5
-
-ON=36
-	TRYP 4 INPDLG=PROVOCATION 5
-
-ON=37
-	TRYP 4 INPDLG=REMOVETRAP 5
-
-ON=38
-	TRYP 4 INPDLG=SNOOPING 5
-
-ON=39
-	TRYP 4 INPDLG=SPIRITSPEAK 5
-
-ON=40
-	TRYP 4 INPDLG=STEALING 5
-
-ON=41
-	TRYP 4 INPDLG=STEALTH 5
-
-ON=42
-	TRYP 4 INPDLG=SWORDSMANSHIP 5
-
-ON=43
-	TRYP 4 INPDLG=TACTICS 5
-
-ON=44
-	TRYP 4 INPDLG=TAILORING 5
-
-ON=45
-	TRYP 4 INPDLG=TAMING 5
-
-ON=46
-	TRYP 4 INPDLG=TASTEID 5
-
-ON=47
-	TRYP 4 INPDLG=TINKERING 5
-
-ON=48
-	TRYP 4 INPDLG=TRACKING 5
-
-ON=49
-	TRYP 4 INPDLG=VETERINARY 5
-
-ON=50
-	TRYP 4 INPDLG=WRESTLING 5
-
-ON=51
-	TRYP 4 INPDLG=ALLSKILLS 5
+button 490 140 4008 4010 0 1 0
+dtext 525 140 193 GENERAL
+button 490 160 4026 4028 0 2 0
+dtext 525 160 1000 STATS
+button 490 180 4011 4013 0 3 0
+dtext 525 180 1000 SKILLS
+button 490 200 4029 4031 0 4 0
+dtext 525 200 1000 FLAGS
+
+button 10 35 4020 4022 0 0 0
+dtext 45 35 2048 Action
+dcroppedtext 120 35 125 20 1000 <ACTION> (<GetCharActionName>)
+
+button 10 55 4005 4007 1 0 100
+dtext 45 55 2048 Body
+dcroppedtext 120 55 125 20 1000 <BODY>
+
+button 10 75 4005 4007 1 0 101
+dtext 45 75 2048 Color
+dcroppedtext 120 75 125 20 1000 <COLOR>
+
+button 10 95 4020 4022 0 0 0
+dtext 45 95 2048 Created
+dcroppedtext 120 95 125 20 1000 <FormatMinutes <eval <CREATE>/60>> ago
+
+button 10 115 4005 4007 1 0 102
+dtext 45 115 2048 Flags
+dcroppedtext 120 115 125 20 1000 <FLAGS>
+
+button 10 135 4005 4007 1 0 103
+dtext 45 135 2048 Food
+dcroppedtext 120 135 125 20 1000 <FOOD> (<FOOD>/<MAXFOOD>)
+
+button 10 155 4005 4007 1 0 104
+dtext 45 155 2048 Name
+dcroppedtext 120 155 125 20 1000 <NAME>
+
+button 10 175 4005 4007 1 0 105
+dtext 45 175 2048 P
+dcroppedtext 120 175 125 20 1000 <P>
+
+button 10 195 4005 4007 1 0 106
+dtext 45 195 2048 Title
+dcroppedtext 120 195 125 20 1000 <TITLE>
+
+button 10 215 4020 4022 0 0 0
+dtext 45 215 2048 UID
+dcroppedtext 120 215 125 20 1000 <UID>
+
+button 10 235 4020 4022 0 0 0
+dtext 45 235 2048 Weight
+dcroppedtext 120 235 125 20 1000 <fval <WEIGHT>>/<fval <MAXWEIGHT>>
+
+button 10 275 4005 4007 1 0 107
+dtext 45 275 2048 Fame
+dcroppedtext 120 275 125 20 1000 <FAME>
+
+button 10 295 4005 4007 1 0 108
+dtext 45 295 2048 Karma
+dcroppedtext 120 295 125 20 1000 <KARMA>
+
+IF (<SERV.ExperienceSystem>)
+ button 10 335 4005 4007 1 0 109
+ dtext 45 335 2048 Exp
+ dcroppedtext 120 335 125 20 1000 <EXP>
+ENDIF
+
+IF (<SERV.LevelSystem>)
+ button 10 355 4005 4007 1 0 110
+ dtext 45 355 2048 Level
+ dcroppedtext 120 355 125 20 1000 <LEVEL>
+ENDIF
+
+IF (<ISPLAYER>)
+ dtext 250 35 193 Player properties
+
+ button 250 55 4020 4022 0 0 0
+ dtext 285 55 2048 Account
+ dcroppedtext 360 55 125 20 1000 <ACCOUNT>
+
+ button 250 75 4020 4022 0 0 0
+ dtext 285 75 2048 LastUsed
+ dcroppedtext 360 75 125 20 1000 <FormatMinutes <eval <LASTUSED>/60>> ago
+
+ button 250 115 4020 4022 0 0 0
+ dtext 285 115 2048 Gold
+ dcroppedtext 360 115 125 20 1000 <QVAL (<SERV.FeatureTOL> & 02)? <VIRTUALGOLD> : <GOLD>>	//FEATURE_TOL_VIRTUALGOLD
+
+ button 250 135 4020 4022 0 0 0
+ dtext 285 135 2048 Guild
+ IF (<GUILD>)
+  dcroppedtext 360 135 125 20 1000 <GUILD> (<GUILDABBREV>)
+ ENDIF
+
+ button 250 155 4005 4007 1 0 120
+ dtext 285 155 2048 Profile
+ dcroppedtext 360 155 125 20 1000 <PROFILE>
+
+ button 250 175 4005 4007 1 0 121
+ dtext 285 175 2048 RefuseTrade
+ dcroppedtext 360 175 125 20 1000 <REFUSETRADES>
+
+ button 250 215 4005 4007 1 0 122
+ dtext 285 215 2048 Kills
+ dcroppedtext 360 215 125 20 1000 <KILLS>
+
+ button 250 235 4005 4007 1 0 123
+ dtext 285 235 2048 Deaths
+ dcroppedtext 360 235 125 20 1000 <DEATHS>
+
+ IF (<SERV.OptionFlags> & 010)	//OF_PetSlots
+  button 250 275 4020 4022 0 0 0
+  dtext 285 275 2048 Followers
+  dcroppedtext 360 275 125 20 1000 <CURFOLLOWER>/<MAXFOLLOWER>
+ ENDIF
+ELSE
+ dtext 250 35 193 NPC properties
+
+ button 250 55 4005 4007 1 0 130
+ dtext 285 55 2048 Brain
+ dcroppedtext 360 55 125 20 1000 <NPC> (<DEF.NPCBrain.<NPC>>)
+
+ button 250 75 4005 4007 1 0 131
+ dtext 285 75 2048 Home
+ dcroppedtext 360 75 125 20 1000 <HOME>
+
+ button 250 95 4005 4007 1 0 132
+ dtext 285 95 2048 HomeDist
+ dcroppedtext 360 95 125 20 1000 <HOMEDIST>
+
+ button 250 115 4020 4022 0 0 0
+ dtext 285 115 2048 Owner
+ IF (<OWNER>)
+  dcroppedtext 360 115 125 20 1000 <OWNER> (<OWNER.NAME>)
+ ENDIF
+
+ button 250 135 4020 4022 0 0 0
+ dtext 285 135 2048 SpawnItem
+ IF (<FLAGS> & statf_spawned)
+  dcroppedtext 360 135 125 20 1000 <SPAWNITEM>
+ ENDIF
+
+ button 250 175 4005 4007 1 0 133
+ dtext 285 175 2048 Bonded
+ dcroppedtext 360 175 125 20 1000 <BONDED>
+
+ IF (<SERV.OptionFlags> & 010)	//OF_PetSlots
+  button 250 195 4005 4007 1 0 134
+  dtext 285 195 2048 FollowerSlot
+  dcroppedtext 360 195 125 20 1000 <FOLLOWERSLOTS>
+ ENDIF
+ENDIF
+
+page 2
+button 490 140 4008 4010 0 1 0
+dtext 525 140 1000 GENERAL
+button 490 160 4026 4028 0 2 0
+dtext 525 160 193 STATS
+button 490 180 4011 4013 0 3 0
+dtext 525 180 1000 SKILLS
+button 490 200 4029 4031 0 4 0
+dtext 525 200 1000 FLAGS
+
+button 10 35 4005 4007 1 0 200
+dtext 45 35 333 STR
+dcroppedtext 120 35 125 20 1000 <STR>
+
+button 10 55 4005 4007 1 0 201
+dtext 45 55 353 DEX
+dcroppedtext 120 55 125 20 1000 <DEX>
+
+button 10 75 4005 4007 1 0 202
+dtext 45 75 393 INT
+dcroppedtext 120 75 125 20 1000 <INT>
+
+button 10 115 4005 4007 1 0 203
+dtext 45 115 333 Hits
+dcroppedtext 120 115 125 20 1000 <HITS>
+
+button 10 135 4005 4007 1 0 204
+dtext 45 135 353 Stam
+dcroppedtext 120 135 125 20 1000 <STAM>
+
+button 10 155 4005 4007 1 0 205
+dtext 45 155 393 Mana
+dcroppedtext 120 155 125 20 1000 <MANA>
+
+button 10 195 4005 4007 1 0 206
+dtext 45 195 2048 Dam
+dcroppedtext 120 195 125 20 1000 <DAM>
+
+IF (<SERV.CombatFlags> & 08)	//COMBATF_ELEMENTAL_ENGINE
+ button 10 215 4005 4007 1 0 207
+ dtext 45 215 903 DamPhysical
+ dcroppedtext 120 215 125 20 1000 <DAMPHYSICAL>%
+
+ button 10 235 4005 4007 1 0 208
+ dtext 45 235 333 DamFire
+ dcroppedtext 120 235 125 20 1000 <DAMFIRE>%
+
+ button 10 255 4005 4007 1 0 209
+ dtext 45 255 393 DamCold
+ dcroppedtext 120 255 125 20 1000 <DAMCOLD>%
+
+ button 10 275 4005 4007 1 0 210
+ dtext 45 275 363 DamPoison
+ dcroppedtext 120 275 125 20 1000 <DAMPOISON>%
+
+ button 10 295 4005 4007 1 0 211
+ dtext 45 295 323 DamEnergy
+ dcroppedtext 120 295 125 20 1000 <DAMENERGY>%
+ENDIF
+
+button 250 35 4005 4007 1 0 212
+dtext 285 35 333 ModSTR
+dcroppedtext 360 35 125 20 1000 <MODSTR>
+
+button 250 55 4005 4007 1 0 213
+dtext 285 55 353 ModDEX
+dcroppedtext 360 55 125 20 1000 <MODDEX>
+
+button 250 75 4005 4007 1 0 214
+dtext 285 75 393 ModINT
+dcroppedtext 360 75 125 20 1000 <MODINT>
+
+button 250 115 4005 4007 1 0 215
+dtext 285 115 333 MaxHits
+dcroppedtext 360 115 125 20 1000 <MAXHITS>
+
+button 250 135 4005 4007 1 0 216
+dtext 285 135 353 MaxStam
+dcroppedtext 360 135 125 20 1000 <MAXSTAM>
+
+button 250 155 4005 4007 1 0 217
+dtext 285 155 393 MaxMana
+dcroppedtext 360 155 125 20 1000 <MAXMANA>
+
+IF (<SERV.CombatFlags> & 08)	//COMBATF_ELEMENTAL_ENGINE
+ button 250 215 4005 4007 1 0 218
+ dtext 285 215 903 ResPhysical
+ dcroppedtext 360 215 125 20 1000 <RESPHYSICAL>%
+
+ button 250 235 4005 4007 1 0 219
+ dtext 285 235 333 ResFire
+ dcroppedtext 360 235 125 20 1000 <RESFIRE>%
+
+ button 250 255 4005 4007 1 0 220
+ dtext 285 255 393 ResCold
+ dcroppedtext 360 255 125 20 1000 <RESCOLD>%
+
+ button 250 275 4005 4007 1 0 221
+ dtext 285 275 363 ResPoison
+ dcroppedtext 360 275 125 20 1000 <RESPOISON>%
+
+ button 250 295 4005 4007 1 0 222
+ dtext 285 295 323 ResEnergy
+ dcroppedtext 360 295 125 20 1000 <RESENERGY>%
+ELSE
+ button 250 195 4020 4022 0 0 0
+ dtext 285 195 2048 AR
+ dcroppedtext 360 195 125 20 1000 <AR>
+
+ button 250 215 4005 4007 1 0 223
+ dtext 285 215 2048 ModAR
+ dcroppedtext 360 215 125 20 1000 <MODAR>
+ENDIF
+
+page 3
+button 490 140 4008 4010 0 1 0
+dtext 525 140 1000 GENERAL
+button 490 160 4026 4028 0 2 0
+dtext 525 160 1000 STATS
+button 490 180 4011 4013 0 3 0
+dtext 525 180 193 SKILLS
+button 490 200 4029 4031 0 4 0
+dtext 525 200 1000 FLAGS
+
+FOR 0 57
+ IF (<SERV.SKILL.<LOCAL._FOR>>)
+  button <eval 10+((<LOCAL._FOR>/20)*160)> <eval 35+((<LOCAL._FOR>%20)*20)> 4005 4007 1 0 <eval 300+<LOCAL._FOR>>
+  dcroppedtext <eval 45+((<LOCAL._FOR>/20)*160)> <eval 35+((<LOCAL._FOR>%20)*20)> 70 20 2048 <SERV.SKILL.<LOCAL._FOR>.KEY>
+  dcroppedtext <eval 120+((<LOCAL._FOR>/20)*160)> <eval 35+((<LOCAL._FOR>%20)*20)> 45 20 1000 <I.<LOCAL._FOR>>
+ ENDIF
+ENDFOR
+
+button 330 415 4005 4007 1 0 360
+dtext 365 415 2048 All Skills
+dcroppedtext 440 415 45 20 1000 <fval <SKILLTOTAL>>
+
+page 4
+button 490 140 4008 4010 0 1 0
+dtext 525 140 1000 GENERAL
+button 490 160 4026 4028 0 2 0
+dtext 525 160 1000 STATS
+button 490 180 4011 4013 0 3 0
+dtext 525 180 1000 SKILLS
+button 490 200 4029 4031 0 0 0
+dtext 525 200 193 FLAGS
+
+LOCAL.Flag=01
+FOR 0 38
+ IF !(<isempty <DEF.CharFlag.<eval <LOCAL._FOR>+1>>>)
+  checkbox <eval 10+((<LOCAL._FOR>/20)*240)> <eval 35+((<LOCAL._FOR>%20)*20)> 210 211 <hval (<FLAGS> & <LOCAL.Flag>)> <eval 400+<LOCAL._FOR>>
+  dtext <eval 35+((<LOCAL._FOR>/20)*240)> <eval 35+((<LOCAL._FOR>%20)*20)> 1000 <DEF0.CharFlag.<eval <LOCAL._FOR>+1>>
+ ENDIF
+ // Workaround: LOCAL.Flag=<hval <LOCAL.Flag> << 1> doesn't evaluate << correctly
+ LOCAL.Flag="<LOCAL.Flag> << 1"
+ LOCAL.Flag=<hval <LOCAL.Flag>>
+ENDFOR
+
+button 250 415 4005 4006 1 0 400
+dtext 285 415 2048 Set flags
+
+[DIALOG d_charprop1 BUTTON]
+ON=0
+IF (<SRC.CTAG0.Dialog.Admin.Clients>)
+ DIALOG d_admin_player_tweak
+ENDIF
+
+ON=100
+TRYP 4 INPDLG BODY 30
+
+ON=101
+TRYP 4 INPDLG COLOR 16
+
+ON=102
+TRYP 4 INPDLG FLAGS 9
+
+ON=103
+TRYP 3 INPDLG FOOD 4
+
+ON=104
+TRYP 3 INPDLG NAME 30
+
+ON=105
+TRYP 3 INPDLG P 16
+
+ON=106
+TRYP 4 INPDLG TITLE 30
+
+ON=107
+TRYP 4 INPDLG FAME 6
+
+ON=108
+TRYP 4 INPDLG KARMA 6
+
+ON=109
+TRYP 4 INPDLG EXP 10
+
+ON=110
+TRYP 4 INPDLG LEVEL 10
+
+ON=120
+TRYP 4 INPDLG PROFILE 4096
+
+ON=121
+TRYP 3 INPDLG REFUSETRADES 1
+
+ON=122
+TRYP 4 INPDLG KILLS 5
+
+ON=123
+TRYP 4 INPDLG DEATHS 5
+
+ON=130
+TRYP 4 INPDLG NPC 20
+
+ON=131
+TRYP 3 INPDLG HOME 16
+
+ON=132
+TRYP 3 INPDLG HOMEDIST 16
+
+ON=133
+TRYP 4 INPDLG BONDED 1
+
+ON=134
+TRYP 4 INPDLG FOLLOWERSLOTS 1
+
+ON=200
+TRYP 4 INPDLG STR 5
+
+ON=201
+TRYP 4 INPDLG DEX 5
+
+ON=202
+TRYP 4 INPDLG INT 5
+
+ON=203
+TRYP 4 INPDLG HITS 5
+
+ON=204
+TRYP 4 INPDLG STAM 5
+
+ON=205
+TRYP 4 INPDLG MANA 5
+
+ON=206
+TRYP 4 INPDLG DAM 9
+
+ON=207
+TRYP 4 INPDLG DAMPHYSICAL 4
+
+ON=208
+TRYP 4 INPDLG DAMFIRE 4
+
+ON=209
+TRYP 4 INPDLG DAMCOLD 4
+
+ON=210
+TRYP 4 INPDLG DAMPOISON 4
+
+ON=211
+TRYP 4 INPDLG DAMENERGY 4
+
+ON=212
+TRYP 4 INPDLG MODSTR 5
+
+ON=213
+TRYP 4 INPDLG MODDEX 5
+
+ON=214
+TRYP 4 INPDLG MODINT 5
+
+ON=215
+TRYP 4 INPDLG MAXHITS 5
+
+ON=216
+TRYP 4 INPDLG MAXSTAM 5
+
+ON=217
+TRYP 4 INPDLG MAXMANA 5
+
+ON=218
+TRYP 4 INPDLG RESPHYSICAL 4
+
+ON=219
+TRYP 4 INPDLG RESFIRE 4
+
+ON=220
+TRYP 4 INPDLG RESCOLD 4
+
+ON=221
+TRYP 4 INPDLG RESPOISON 4
+
+ON=222
+TRYP 4 INPDLG RESENERGY 4
+
+ON=223
+TRYP 4 INPDLG MODAR 3
+
+ON=300 357
+TRYP 4 INPDLG <SERV.SKILL.<eval <ARGN>-300>.KEY> 5
+
+ON=360
+TRYP 4 INPDLG ALLSKILLS 5
+
+ON=400
+LOCAL.Flag=01
+FOR 0 38
+ IF !(<isempty <DEF.CharFlag.<eval <LOCAL._FOR>+1>>>)
+  IF (<ARGCHK[<eval <LOCAL._FOR>+400>]>)
+   FLAGS |= <LOCAL.Flag>
+  ELSE
+   FLAGS &= ~<LOCAL.Flag>
+  ENDIF
+ ENDIF
+ // Workaround: LOCAL.Flag=<hval <LOCAL.Flag> << 1> doesn't evaluate << correctly
+ LOCAL.Flag="<LOCAL.Flag> << 1"
+ LOCAL.Flag=<hval <LOCAL.Flag>>
+ENDFOR
+DIALOG d_charprop1 4
+SRC.SYSMESSAGE Flags modified
+
+[DEFNAME CharFlagNames]
+CharFlag.1	"Invulnerable"
+CharFlag.2	"Dead"
+CharFlag.3	"Frozen"
+CharFlag.4	"Invisible"
+CharFlag.5	"Freeze cast"
+CharFlag.6	"Warmode"
+CharFlag.7	"Reactive Armor"
+CharFlag.8	"Poisoned"
+CharFlag.9	"Nightsight"
+CharFlag.10	"Magic Reflect"
+CharFlag.11	"Polymorphed"
+CharFlag.12	"Incognito"
+CharFlag.13	"Spirit Speak"
+CharFlag.14	"Insubstantial"
+CharFlag.15	"Emote actions"
+CharFlag.16	"Communication crystal"
+CharFlag.17	"Has shield"
+CharFlag.18	"Can move with bow"
+CharFlag.19	"Stoned"
+CharFlag.20	"Hovering"
+CharFlag.21	"Flying"
+CharFlag.23	"Hallucinated"
+CharFlag.24	"Hidden"
+CharFlag.25	"Indoors"
+CharFlag.26	"Criminal"
+CharFlag.27	"Summoned"
+CharFlag.28	"Pet"
+CharFlag.29	"Spawned"
+CharFlag.30	"Save parity"
+CharFlag.31	"Ridden"
+CharFlag.32	"Mounted on horseback"
+
+[FUNCTION GetCharActionName]
+IF ((<ACTION> >= skill_anatomy) && (<ACTION> <= skill_throwing))	//1 ~ 57
+ return <DEFMSG.skillact_using> <SERV.SKILL.<eval <ACTION> & 0ff>.KEY>
+ELIF (<ACTION> == 100)
+ return <DEFMSG.skillact_following>
+ELIF (<ACTION> == 101)
+ return <DEFMSG.skillact_staying>
+ELIF (<ACTION> == 102)
+ return <DEFMSG.skillact_goingto>
+ELIF (<ACTION> == 103)
+ return <DEFMSG.skillact_wandering>
+ELIF (<ACTION> == 104)
+ return <DEFMSG.skillact_looking>
+ELIF (<ACTION> == 105)
+ return <DEFMSG.skillact_fleeing>
+ELIF (<ACTION> == 106)
+ return <DEFMSG.skillact_talking>
+ELIF (<ACTION> == 107)
+ return <DEFMSG.skillact_talkfollow>
+ELIF (<ACTION> == 108)
+ return <DEFMSG.skillact_guarding>
+ELIF (<ACTION> == 109)
+ return <DEFMSG.skillact_goinghome>
+ELIF (<ACTION> == 110)
+ return <DEFMSG.skillact_breathing>
+ELIF (<ACTION> == 111)
+ return <DEFMSG.skillact_ridden>
+ELIF (<ACTION> == 112)
+ return <DEFMSG.skillact_throwing>
+ELIF (<ACTION> == 113)
+ return <DEFMSG.skillact_training>
+ELIF (<ACTION> == 114)
+ return <DEFMSG.skillact_napping>
+ELIF (<ACTION> == 115)
+ return <DEFMSG.skillact_searchingfood>
+ELIF (<ACTION> == 116)
+ return <DEFMSG.skillact_runningto>
+ELSE
+ return Waiting//<DEFMSG.skillact_idling>
+ENDIF
 
 [EOF]
 	
