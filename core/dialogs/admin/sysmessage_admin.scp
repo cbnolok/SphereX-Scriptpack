@@ -1,0 +1,98 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereServer.net
+//****************************************************************************
+// Save in ANSI encoding
+//****************************************************************************
+// New Multilanguage Admin
+// Created by Golfin (http://eranova.cz/)
+//****************************************************************************
+// Last file update: 2.10.2020
+//
+VERSION=X
+
+[DEFNAME Sysmessage_CSY]
+CSY_Properties_Sys					"Vlastnosti"
+CSY_Updated_Sys						"byly aktualizovány."
+CSY_Allskills_Sys					"Všechny dovednosti"
+CSY_Set_Sys						"byly nastaveny na"
+CSY_Skills_Sys						"Dovednosti"
+CSY_Flags_Sys						"Flagy"
+CSY_Events_Sys						"Eventy"
+CSY_Tags_Sys						"Tagy"
+CSY_For_Account_Sys					"Pro úèet"
+CSY_Added_Note_Sys					"byla pøidána poznámka."
+CSY_Note_For_Account_Sys				"Záznam pro úèet"
+CSY_Del_Note_Sys					"byl vymazán."
+
+[DEFNAME Sysmessage_SKY]
+SKY_Properties_Sys					"Vlastnosti"
+SKY_Updated_Sys						"boli aktualizované."
+SKY_Allskills_Sys					"Všetky zruènosti"
+SKY_Set_Sys						"boli nastavené na"
+SKY_Skills_Sys						"Zruènosti"
+SKY_Flags_Sys						"Flagy"
+SKY_Events_Sys						"Eventy"
+SKY_Tags_Sys						"Tagy"
+SKY_For_Account_Sys					"Pre úèet"
+SKY_Added_Note_Sys					"bola pridaná poznámka."
+SKY_Note_For_Account_Sys				"Záznam pre úèet"
+SKY_Del_Note_Sys					"bol vymazán."
+
+[DEFNAME Sysmessage_ENU]
+ENU_Properties_Sys					"Properties"
+ENU_Updated_Sys						"have been updated."
+ENU_Allskills_Sys					"All skills"
+ENU_Set_Sys						"have been set to"
+ENU_Skills_Sys						"Skills"
+ENU_Flags_Sys						"Flags"
+ENU_Events_Sys						"Events"
+ENU_Tags_Sys						"Tags"
+ENU_For_Account_Sys					"For Account"
+ENU_Added_Note_Sys					"a note has been added."
+ENU_Note_For_Account_Sys				"The record for the account"
+ENU_Del_Note_Sys					"has been deleted."
+
+[DEFNAME Sysmessage_ENG]
+ENG_Properties_Sys					"Properties"
+ENG_Updated_Sys						"have been updated."
+ENG_Allskills_Sys					"All skills"
+ENG_Set_Sys						"have been set to"
+ENG_Skills_Sys						"Skills"
+ENG_Flags_Sys						"Flags"
+ENG_Events_Sys						"Events"
+ENG_Tags_Sys						"Tags"
+ENG_For_Account_Sys					"For Account"
+ENG_Added_Note_Sys					"a note has been added."
+ENG_Note_For_Account_Sys				"The record for the account"
+ENG_Del_Note_Sys					"has been deleted."
+
+[DEFNAME Sysmessage_DEU]
+DEU_Properties_Sys					"Eigenschaften"
+DEU_Updated_Sys						"aktualisiert."
+DEU_Allskills_Sys					"Alle Fähigkeiten"
+DEU_Set_Sys						"wurden eingestellt"
+DEU_Skills_Sys						"Fähigkeiten"
+DEU_Flags_Sys						"Flagy"
+DEU_Events_Sys						"Eventy"
+DEU_Tags_Sys						"Tagy"
+DEU_For_Account_Sys					"Für das Konto"
+DEU_Added_Note_Sys					"eine Notiz wurde hinzugefügt."
+DEU_Note_For_Account_Sys				"Notiz für Konto"
+DEU_Del_Note_Sys					"wurde gelöscht."
+
+[DEFNAME Sysmessage_TRK]
+TRK_Properties_Sys					"Özellikler"
+TRK_Updated_Sys						"Güncellendi"
+TRK_Allskills_Sys					"Tüm Yetenekler
+TRK_Set_Sys						"ayarlandý"
+TRK_Skills_Sys						"Skills"
+TRK_Flags_Sys						"Flags"
+TRK_Events_Sys						"Events"
+TRK_Tags_Sys						"Tags"
+TRK_For_Account_Sys					"Hesap için"
+TRK_Added_Note_Sys					"Bir not eklendi."
+TRK_Note_For_Account_Sys				"Notlar"
+TRK_Del_Note_Sys					"Silindi."
+
+[EOF]

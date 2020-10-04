@@ -1,0 +1,74 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereServer.net
+//****************************************************************************
+// Save in ANSI encoding
+//****************************************************************************
+// New Multilanguage Admin
+// Created by Golfin (http://eranova.cz/)
+//****************************************************************************
+// Last file update: 2.10.2020
+//
+VERSION=X
+
+[DEFNAME admin_options]
+// If you do not want clients to see clients with a higher plevel that are
+// invisible (.invis) in the list, set this to 1
+Admin_Hidehighpriv 0
+
+// When a flag is set or unset, it is sometimes necessary for the character
+// to be updated for the new setting to take effect. The settings below
+// control whether to call UPDATEX, UPDATE or RESENDTOOLTIP on the character
+// based on which flags have been modified.
+admin_updatexflags      statf_invisible|statf_insubstantial|statf_hidden
+admin_updateflags      statf_invul|statf_freeze|statf_stone|statf_hallucinating|statf_poisoned|statf_criminal|statf_nightsight|statf_hovering
+admin_resendtooltipflags   statf_incognito
+
+Admin_ReqPlevelSearch		4	// Plevel required to use search button
+
+[DEFNAME admin_strings]
+admin_resdisp_0					"Pre-T2A"
+admin_resdisp_1					"The 2nd Age"
+admin_resdisp_2					"Lord Blackthorn's Revenge"
+admin_resdisp_3					"Age Of Shadows"
+admin_resdisp_4					"Samurai Empire"
+admin_resdisp_5					"Mondain's Legacy"
+admin_resdisp_6					"Kingdom Reborn"
+admin_resdisp_7					"Stygian Abyss"
+admin_resdisp_8					"High Seas"
+admin_resdisp_9					"Time of Legends"
+
+admin_flag_1					"Invulnerability"
+admin_flag_2					"Dead"
+admin_flag_3					"Paralyzed"
+admin_flag_4					"Invisible"
+admin_flag_5					"Sleeping"
+admin_flag_6					"Warmode"
+admin_flag_7					"Reactive Armor"
+admin_flag_8					"Poisoned"
+admin_flag_9					"Nightsight"
+admin_flag_10					"Magic Reflect"
+admin_flag_11					"Polymorphed"
+admin_flag_12					"Incognito"
+admin_flag_13					"Spirit Speak"
+admin_flag_14					"Insubstantial"
+admin_flag_15					"Emote"
+admin_flag_16					"Comm Crystal"
+admin_flag_17					"Has Shield"
+admin_flag_18					"Can move with bow"
+admin_flag_19					"Stoned"
+admin_flag_20					"Hovering"
+admin_flag_21					"Flying"
+admin_flag_22					"" // unused
+admin_flag_23					"Hallucinating"
+admin_flag_24					"Hidden"
+admin_flag_25					"Indoors"
+admin_flag_26					"Criminal"
+admin_flag_27					"Conjured (summoned)"
+admin_flag_28					"Pet"
+admin_flag_29					"Spawned"
+admin_flag_30					"Save parity"
+admin_flag_31					"Ridden"
+admin_flag_32					"Mounted on horseback"
+
+[Eof]

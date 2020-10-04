@@ -1,0 +1,239 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereServer.net
+//****************************************************************************
+// Save in ANSI encoding
+//****************************************************************************
+// New Multilanguage Admin
+// Created by Golfin (http://eranova.cz/)
+//****************************************************************************
+// Last file update: 2.10.2020
+//
+VERSION=X
+
+[DIALOG d_SpherePlayerNotes]
+50,50
+Src.Dialogclose d_SpherePlayerTweak
+
+Page 0
+Resizepic 0 0 30546 650 507
+Gumppictiled 5 5 640 497 2604
+Gumppictiled 5 5 640 25 30550  
+Gumppictiled 5 35 145 440 30550
+Gumppictiled 155 35 490 440 30550
+Gumppictiled 5 480 640 22 30550
+Checkertrans 5 5 640 497
+
+DText 10 7 0c1 SphereServer <Src.Version> Admin Panel (<Serv.ServName>) - <Def.<Account.Lang>_Notes_Acc> <Account.Name>
+Button 615 5 4017 4018 1 0 0
+Button 585 5 4008 4009 1 0 1
+
+DText 10 37 0c1 <Def.<Account.Lang>_Account>
+
+DText 40 62 0480 <Def.<Account.Lang>_Info_Account>
+Button 5 60 4005 4006 1 0 2
+
+DText 40 87 0480 <Def.<Account.Lang>_Action_Acc>
+Button 5 85 4005 4006 1 0 3
+
+DText 40 112 0480 <Def.<Account.Lang>_Notes>
+Button 5 110 4005 4006 1 0 4
+
+DText 10 142 0c1 <Def.<Account.Lang>_Character>
+
+DText 40 167 0480 <Def.<Account.Lang>_Properties>
+Button 5 165 4005 4006 1 0 5
+
+DText 40 192 0480 <Def.<Account.Lang>_Skills>
+Button 5 190 4005 4006 1 0 6
+
+DText 40 217 0480 <Def.<Account.Lang>_Flags>
+Button 5 215 4005 4006 1 0 7
+
+DText 40 242 0480 <Def.<Account.Lang>_Tags>
+Button 5 240 4005 4006 1 0 8
+
+DText 40 267 0480 <Def.<Account.Lang>_Events>
+Button 5 265 4005 4006 1 0 9
+
+DText 200 35 0c1 <Def.<Account.Lang>_Info_Note>
+DText 200 55 0c1 <Def.<Account.Lang>_Evidence_Note_1> <Eval 0<Account.Tag0.NumNotes>> <Def.<Account.Lang>_Evidence_Note_2>
+Button 160 75 4005 4006 1 0 10
+DText 200 75 0480 <Def.<Account.Lang>_Add_Note> (<Account>).
+
+If (0<Account.Tag0.NumNotes>)
+   Local.Page=1
+   Local.oy=120
+   Page 1
+   For x 1 <Account.Tag0.NumNotes>
+      If (<Local.oy> > 400)
+         Local.oy = 120
+         Local.Page += 1
+         Button 615 480 4005 4006 0 <Eval <Local.Page>> 0
+         Page <Eval <Local.Page>>
+         Button 150 480 4014 4015 0 <Eval <Local.Page> - 1> 0
+      Endif
+      dHtmlgump 160 <Eval <Local.oy>> 435 80 1 1 <Def.<Account.Lang>_Added> <Account.Tag0.Note_<Eval <Local.x>>_by> <Account.Tag0.Note_<Eval <Local.x>>_time>: <Account.Tag0.Note_<Eval <Local.x>>>
+      Button 605 <Eval <Local.oy>> 4017 4018 1 0 <Eval 10+<Local.X>>
+      Local.oy += 90
+   end
+Endif
+
+[DIALOG d_SpherePlayerNotes Button]
+On=0 1
+   Src.Dialog d_SphereAdmin
+
+On=2
+   Dialog d_SpherePlayerTweak 1
+
+On=3
+   Dialog d_SpherePlayerTweak 2
+
+On=4
+   Dialog d_SpherePlayerNotes
+
+On=5
+   Dialog d_SpherePlayerTweak 3
+
+On=6
+   Dialog d_SpherePlayerTweak 4
+
+On=7
+   Dialog d_SpherePlayerTweak 5
+
+On=8
+   Dialog d_SphereplayerTags
+
+On=9
+   Dialog d_SpherePlayerTweak 6
+
+On=10
+   Dialog d_sphereplayerAddNotes
+
+On=11 500
+   //If ( <Account.Plevel> > <Src.Account.Plevel> )
+      Src.CTag.noteFor=<UID>
+      Src.f_Admin_Removenote <Eval (<ArgN1>-10)>
+   //Else
+   //   Src.Sysmessage @tcolor_Orange Nemùžeš mìnit poznámku vyšímu Plevelu než máš Ty.
+   //   Src.Dialog d_SpherePlayerNotes
+   //Endif
+
+[DIALOG d_SphereplayerAddNotes]
+50,50
+Src.Dialogclose d_SpherePlayerNotes
+
+Page 0
+Resizepic 0 0 30546 650 507
+Gumppictiled 5 5 640 497 2604
+Gumppictiled 5 5 640 25 30550  
+Gumppictiled 5 35 145 440 30550
+Gumppictiled 155 35 490 440 30550
+Gumppictiled 5 480 640 22 30550
+Checkertrans 5 5 640 497
+
+DText 10 7 0c1 SphereServer <Src.Version> Admin Panel (<Serv.ServName>) - <Def.<Account.Lang>_Notes_Acc> <Account.Name>
+Button 615 5 4017 4018 1 0 0
+Button 585 5 4008 4009 1 0 1
+
+DText 10 37 0c1 <Def.<Account.Lang>_Account>
+
+DText 40 62 0480 <Def.<Account.Lang>_Info_Account>
+Button 5 60 4005 4006 1 0 2
+
+DText 40 87 0480 <Def.<Account.Lang>_Action_Acc>
+Button 5 85 4005 4006 1 0 3
+
+DText 40 112 0480 <Def.<Account.Lang>_Notes>
+Button 5 110 4005 4006 1 0 4
+
+DText 10 142 0c1 <Def.<Account.Lang>_Character>
+
+DText 40 167 0480 <Def.<Account.Lang>_Properties>
+Button 5 165 4005 4006 1 0 5
+
+DText 40 192 0480 <Def.<Account.Lang>_Skills>
+Button 5 190 4005 4006 1 0 6
+
+DText 40 217 0480 <Def.<Account.Lang>_Flags>
+Button 5 215 4005 4006 1 0 7
+
+DText 40 242 0480 <Def.<Account.Lang>_Tags>
+Button 5 240 4005 4006 1 0 8
+
+DText 40 267 0480 <Def.<Account.Lang>_Events>
+Button 5 265 4005 4006 1 0 9
+
+DText 160 35 0c1 <Def.<Account.Lang>_Diakritics>
+DText 160 55 0c1 <Def.<Account.Lang>_Number_Character>
+DText 160 75 0480 <Def.<Account.Lang>_Write_note> (<Account>).
+
+Resizepic 160 100 3000 420 100
+dtextentrylimited 165 105 405 90 0480 0 500 <Def.<Account.Lang>_Simple_Text>
+
+DText 200 205 0480 <Def.<Account.Lang>_Save>
+Button 160 205 4005 4006 1 0 11
+
+[DIALOG d_SphereplayerAddNotes Button]
+On=0 1
+   Src.Dialog d_SpherePlayerNotes
+
+On=2
+   Dialog d_SpherePlayerTweak 1
+
+On=3
+   Dialog d_SpherePlayerTweak 2
+
+On=4
+   Dialog d_SpherePlayerNotes
+
+On=5
+   Dialog d_SpherePlayerTweak 3
+
+On=6
+   Dialog d_SpherePlayerTweak 4
+
+On=7
+   Dialog d_SpherePlayerTweak 5
+
+On=8
+   Dialog d_SphereplayerTags
+
+On=9
+   Dialog d_SpherePlayerTweak 6
+
+On=10
+   Dialog d_sphereplayerAddNotes
+
+On=11
+If !(<isEmpty <ArgTxt[0]>>)
+  Account.Tag0.NumNotes ++
+  Account.Tag.Note_<dAccount.Tag0.NumNotes>=""<ArgTxt[0]>""
+  Account.Tag.Note_<dAccount.Tag0.NumNotes>_By=<Src.Name>
+  Account.Tag.Note_<dAccount.Tag0.NumNotes>_Time=<Serv.rTime>
+  Sysmessage @tcolor_orange <Def.<Account.Lang>_For_Account_Sys> <Account.Name> <Def.<Account.Lang>_Added_Note_Sys>
+Endif
+Src.Dialog d_SpherePlayerNotes <Eval 1+((<Account.Tag0.NumNotes>-1)/4)>
+
+[FUNCTION f_Admin_Removenote]
+Local.Note=<ArgV[0]>
+Local.OldObj=<Obj>
+Obj=<CTag.noteFor>
+If (<Local.Note>==<Obj.Account.Tag.NumNotes>)
+   TrySrv Obj.Account.Tag.Note_<Eval <Local.Note>>
+   TrySrv Obj.Account.Tag.Note_<Eval <Local.Note>>_By
+   TrySrv Obj.Account.Tag.Note_<Eval <Local.Note>>_Time
+Else
+   WHILE (<Local.Note> < <Account.Tag0.NumNotes>)
+      TrySrv Obj.Account.Tag.Note_<Eval <Local.Note>>=<Obj.Account.Tag.Note_<Eval <Local.Note>+1>>
+      TrySrv Obj.Account.Tag.Note_<Eval <Local.Note>>_By=<Obj.Account.Tag.Note_<Eval <Local.Note>+1>_By>
+      TrySrv Obj.Account.Tag.Note_<Eval <Local.Note>>_Time=<Obj.Account.Tag.Note_<Eval <Local.Note>+1>_Time>
+      Local.Note += 1
+   end
+Endif
+TrySrv Obj.Account.Tag0.NumNotes=<Eval <Obj.Account.Tag0.NumNotes>-1>
+Sysmessage @tcolor_Orange <Def.<Account.Lang>_Note_For_Account_Sys> <Obj.Account> <Def.<Account.Lang>_Del_Note_Sys>
+Obj.Dialog d_SpherePlayerNotes
+Obj=<Local.OldObj>
+
+[EOF]

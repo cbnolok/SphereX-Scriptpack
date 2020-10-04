@@ -43,6 +43,7 @@ core/msgs.scp
 core/serv_triggers.scp
 core/magic_preaos.scp
 core/dialogs/
+core/dialogs/admin/
 //core/dialogs/legacy/
 book_content_default.scp
 name_templates.scp

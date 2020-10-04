@@ -1,0 +1,717 @@
+
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereServer.net
+//****************************************************************************
+// Save in ANSI encoding
+//****************************************************************************
+// New Multilanguage Admin
+// Created by Golfin (http://eranova.cz/)
+//****************************************************************************
+// Last file update: 2.10.2020
+//
+VERSION=X
+
+[FUNCTION admin]
+If (<GetRefType> == <Def.TRef_Serv>)
+   Return
+Endif
+Serv.AllClients f_Admin_GetPlayers
+CTag.Dialog.Admin.Page=1
+CTag.Dialog.Admin.MaxPage=<Eval (((<CTag0.Dialog.Admin.Clients>-1)/20)+1)>
+Dialog d_SphereAdmin
+
+[FUNCTION f_Admin_GetPlayers]
+If ((<Src.Account.Plevel> < <Account.Plevel>) && (<Flags> & statf_insubstantial) && !(<Def0.Admin_Hidehighpriv>))
+   Return
+Endif
+Src.CTag0.Dialog.Admin.Clients ++
+Src.CTag0.Dialog.Admin.C<dSrc.CTag0.Dialog.Admin.Clients>=<UID>
+
+[FUNCTION f_Admin_GetClientType]
+If (<isOnline>)
+   If (<ClientisKr>)
+      Return "Kingdom Reborn Client"
+   Elif  (<ClientisEnhanced>)
+      Return "Enhanced Client"
+   Elif (<Clientis3d>)
+      Return "Classic Client 3D"
+   Else
+      Return "Classic Client 2D"
+   Endif
+Else
+   Return "Offline"
+Endif
+
+[Dialog d_SphereAdmin]
+50,50
+
+Page 0 // Basic layout
+Resizepic 0 0 30546 650 507
+Gumppictiled 5 5 640 497 2604
+Gumppictiled 5 5 640 25 30550
+Gumppictiled 5 480 640 22 30550
+Gumppictiled 5 35 640 440 30550
+Checkertrans 5 5 640 497
+
+DText 10 7 0c1 SphereServer <Src.Version> Admin Panel (<Serv.Servname>) - <Def.<Account.Lang>_clients> <QVal (<CTag0.Dialog.Admin.Search>)? <Def.<Account.Lang>_Found> <dCTag0.Dialog.Admin.Clients> <Def.<Account.Lang>_Results> : <dCTag0.Dialog.Admin.Clients>>
+Button 615 5 4017 4018 1 0 0
+
+If (<Account.Plevel> >= <Def0.Admin_ReqPlevelSearch>)
+   If (<CTag0.Dialog.Admin.Search>)
+      DText 530 7 0480 <Def.<Account.Lang>_Clear>
+      Button 580 5 4017 4018 1 0 4
+   Else
+      DText 530 7 0480 <Def.<Account.Lang>_Search>
+      Button 580 5 4029 4031 1 0 3
+   Endif
+Endif
+
+DText 275 480 0c1 <Def.<Account.Lang>_Page> <dCTag0.Dialog.Admin.Page> / <dCTag0.Dialog.Admin.MaxPage>
+If (<CTag0.Dialog.Admin.Page> > 1)
+   Button 5 370 4014 4015 1 0 1
+Endif
+If (<CTag0.Dialog.Admin.Page> < <CTag0.Dialog.Admin.MaxPage>)
+   Button 615 370 4005 4006 1 0 2
+Endif
+
+Page 1
+DText 45 35 025 <Def.<Account.Lang>_Account_Name>
+DText 170 35 025 <Def.<Account.Lang>_Character_Name>
+DText 310 35 025 <Def.<Account.Lang>_IP_Address>:
+DText 420 35 025 <Def.<Account.Lang>_Location>:
+DText 540 35 025 <Def.<Account.Lang>_Plevel>
+
+Local.Y=55
+For <Eval ((<CTag0.Dialog.Admin.Page> - 1) * 20) + 1> <Eval (<CTag0.Dialog.Admin.Page> * 20)>
+   Ref1=<CTag0.Dialog.Admin.C<dLocal._For>>
+   If (<Ref1>)
+      Local.Hue=<QVal (<Ref1.Flags> & statf_insubstantial)? 0450 : 0480>
+      Button 10 <Local.Y> 4005 4006 1 0 <Eval 10+<Local._For>>
+      DCroppeDText 45 <Local.Y> 120 20 <Local.Hue> <QVal (<Ref1.Account.Plevel> > 1)? (+):> <Ref1.Account>
+      DCroppeDText 170 <Local.Y> 160 20 <Local.Hue> <QVal (<Ref1.Flags> & statf_incognito)? <Ref1.FindID.i_rune_incognito.Name> : <Ref1.Name>>
+      DCroppeDText 310 <Local.Y> 120 20 <Local.Hue> <QVal (<Ref1.isOnline>)? <Ref1.Account.LastIP> : Offline>
+      DCroppeDText 420 <Local.Y> 120 20 <Local.Hue> <Ref1.Region.Name>
+      DCroppeDText 540 <Local.Y> 120 20 <Local.Hue> <Ref1.Account.Plevel> (<Def0.<Account.Lang>_Admin_Plevel_<Eval <Ref1.Account.Plevel>>>)
+      Local.Y += 20
+   Endif
+Endfor
+
+[Dialog d_SphereAdmin Button]
+On=0
+   ClearCTags Dialog.Admin
+
+On=1
+   If (<CTag0.Dialog.Admin.Page> > 1)
+      CTag0.Dialog.Admin.Page --
+   Endif
+   Dialog d_SphereAdmin
+
+On=2
+If (<CTag0.Dialog.Admin.Page> < <CTag0.Dialog.Admin.MaxPage>)
+   CTag0.Dialog.Admin.Page ++
+Endif
+Dialog d_SphereAdmin
+
+On=3
+   If (<Account.Plevel> >= <Def0.Admin_ReqPlevelSearch>)
+      Dialog d_Search
+   Endif
+
+On=4
+   ClearCTags Dialog.Admin
+   admin
+
+On=10 65535
+   UID.<CTag.Dialog.Admin.C<Eval <ArgN>-10>>.Dialog d_SpherePlayerTweak
+
+[Dialog d_SpherePlayerTweak]
+50,50
+Src.Dialogclose d_SpherePlayerTweak
+
+Page 0
+Resizepic 0 0 30546 650 507
+Gumppictiled 5 5 640 497 2604
+Gumppictiled 5 5 640 25 30550
+Gumppictiled 5 35 145 285 30550
+Gumppictiled 5 325 145 177 30550
+Gumppictiled 155 35 490 467 30550
+Checkertrans 5 5 640 497
+
+DText 10 7 0c1 SphereServer <Src.Version> Admin Panel (<Serv.ServName>) - <Def.<Account.Lang>_Edit_Clients> <Account.Name>
+Button 615 5 4017 4018 1 0 0
+Button 585 5 4008 4009 1 0 1
+
+DText 10 37 0c1 <Def.<Account.Lang>_Account>
+
+DText 40 62 0480 <Def.<Account.Lang>_Info_Account>
+Button 5 60 4005 4006 0 1 0
+
+DText 40 87 0480 <Def.<Account.Lang>_Action_Acc>
+Button 5 85 4005 4006 0 2 0
+
+DText 40 112 0480 <Def.<Account.Lang>_Notes>
+Button 5 110 4005 4006 1 0 2
+
+DText 10 142 0c1 <Def.<Account.Lang>_Character>
+
+DText 40 167 0480 <Def.<Account.Lang>_Properties>
+Button 5 165 4005 4006 0 3 0
+
+DText 40 192 0480 <Def.<Account.Lang>_Skills>
+Button 5 190 4005 4006 0 4 0
+
+DText 40 217 0480 <Def.<Account.Lang>_Flags>
+Button 5 215 4005 4006 0 5 0
+
+DText 40 242 0480 <Def.<Account.Lang>_Tags>
+Button 5 240 4005 4006 1 0 3
+
+DText 40 267 0480 <Def.<Account.Lang>_Events>
+Button 5 265 4005 4006 0 6 0
+
+page 1
+DText 160 35 0c1 <Def.<Account.Lang>_Account_Name>
+DText 300 35 0480 <Account.Name>
+
+DText 160 55 00c1 <Def.<Account.Lang>_Status>
+DText 300 55 <QVal (<isOnline>)? 63 <Def.<Account.Lang>_Online> : 137 <Def.<Account.Lang>_Offline>>
+
+DText 160 75 0c1 <Def.<Account.Lang>_Char_Account>
+DText 300 75 0480 <Account.Chars>/<Account.MaxChars>
+For 0 (<Account.Chars>-1)
+   DText 160  <Eval  95+(<Local._For>*20)> <QVal (<UID>==<Account.Char.<Local._For>.UID>)?00c1:03e1> <Def.<Account.Lang>_Character> #<Eval <Local._For>+1>:
+   DText 300  <Eval  95+(<Local._For>*20)> <QVal (<UID>==<Account.Char.<Local._For>.UID>)?0480:03e1> <Account.Char.<Local._For>.Name>
+   DText 450  <Eval  95+(<Local._For>*20)> <QVal (<UID>==<Account.Char.<Local._For>.UID>)?00c1:03e1> UID:
+   DText 490  <Eval  95+(<Local._For>*20)> <QVal (<UID>==<Account.Char.<Local._For>.UID>)?0480:03e1> <Account.Char.<Local._For>.UID>
+Endfor
+
+DText 160 235 0c1 <Def.<Account.Lang>_Plevel>
+DText 300 235 0480 <Account.Plevel> (<Def0.<Account.Lang>_Admin_Plevel_<Eval <Account.Plevel>>>)
+
+DText 160 255 0c1 <Def.<Account.Lang>_Client_Version>
+DText 300 255 <QVal (<isOnline>)? 0480 <Reportedcliver> (<f_Admin_GetClientType>) : 137 <Def.<Account.Lang>_Offline>>
+
+DText 160 275 0c1 Resdisp:
+DText 300 275 0480 <Account.Resdisp> (<Def0.Admin_Resdisp_<Eval <Account.Resdisp>>>)
+
+DText 160 295 0c1 <Def.<Account.Lang>_First_Connect>
+DText 300 295 0480 <Account.FirstConnectDate> <Def.<Account.Lang>_From_IP> <Account.FirstIP>
+
+DText 160 315 0c1 <Def.<Account.Lang>_Last_Connect>
+DText 300 315 0480 <Account.LastConnectDate> <Def.<Account.Lang>_From_IP> <Account.LastIP>
+
+DText 160 335 00c1 <Def.<Account.Lang>_TotalConnectTime>
+DText 300 335 0480 <Account.TotalConnectTime> <Def.<Account.Lang>_Minute>
+
+DText 160 355 00c1 <Def.<Account.Lang>_National>
+DText 300 355 0480 <Def.<Account.Lang>_CountryName_<Account.Lang>> - <Account.Lang>
+
+Page 2
+DText 200 40 0480 <Def.<Account.Lang>_Go_Player>
+Button 160 40 4005 4006 1 0 21
+
+DText 200 60 0480 <Def.<Account.Lang>_Go_Player_Invis>
+Button 160 60 4005 4006 1 0 22
+
+DText 200 80 0480 <Def.<Account.Lang>_Summon_Player>
+Button 160 80 4005 4006 1 0 23
+
+DText 200 100 0480 <Def.<Account.Lang>_Summon_Player_Cage>
+Button 160 100 4005 4006 1 0 24
+
+DText 200 120 0480 <Def.<Account.Lang>_Follow_Player>
+Button 160 120 4005 4006 1 0 25
+
+DText 200 140 0480 <QVal (<Account.jail>) ? <Def.<Account.Lang>_Forgive_Player>:<Def.<Account.Lang>_Jail_Player>>
+Button 160 140 4005 4006 1 0 26
+
+DText 200 160 0480 <QVal (<Flags> & Statf_Dead)?<Def.<Account.Lang>_Resurrect_Player>:<Def.<Account.Lang>_Kill_Player>>
+Button 160 160 4005 4006 1 0 27
+
+DText 200 180 0480 <Def.<Account.Lang>_Disconnect_Player>
+Button 160 180 4005 4006 1 0 28
+
+DText 200 200 025 <Def.<Account.Lang>_Ban_Player>
+Button 160 200 4005 4006 1 0 29
+
+Page 3
+DText 160 35 0c1 UID:
+DText 235 35 0480 <UID>
+
+DText 160 60 0c1 <Def.<Account.Lang>_Account>
+DText 235 60 0480 <Account>
+
+DText 160 85 0c1 <Def.<Account.Lang>_Character_Name>
+Resizepic 225 85 30546 142 21
+Checkertrans 227 87 138 17
+DTextenTrylimited 235 85 122 15 0480 301 20 <Name>
+
+DText 160 110 0c1 <Def.<Account.Lang>_Race>
+If <f_isHuman>
+   DText 235 110 0480 <Sex <Def.<Account.Lang>_Human>>
+ElseIf <f_isElf>
+   DText 235 110 0480 <Sex <Def.<Account.Lang>_Elf>>
+ElseIf <f_isGargoyle>
+   DText 235 110 0480 <Sex <Def.<Account.Lang>_Gargoyle>>
+Endif
+
+DText 160 135  0c1 <Def.<Account.Lang>_Sex>
+DText 235 135 0480 <Sex <Def.<Account.Lang>_Male>/<Def.<Account.Lang>_Female>>
+
+DText 160 160 0c1 <Def.<Account.Lang>_Title>
+Resizepic 225 160 30546 142 21
+Checkertrans 227 162 138 17
+DTextenTrylimited 235 160 122 15 0480 302 20 <Title>
+
+DText 160 185 0c1 ID:
+Resizepic 225 185 30546 142 21
+Checkertrans 227 187 138 17
+DTextenTrylimited 235 185 122 15 0480 303 20 <Id>
+
+DText 160 210 0c1 Body:
+Resizepic 225 210 30546 142 21
+Checkertrans 227 212 138 17
+DTextenTrylimited 235 210 122 15 0480 304 20 <Body>
+
+DText 160 235 0c1 oBody:
+Resizepic 225 235 30546 142 21
+Checkertrans 227 237 138 17
+DTextenTrylimited 235 235 122 15 0480 305 20 <oBody>
+
+DText 160 260 0c1 <Def.<Account.Lang>_Location>
+Resizepic 225 260 30546 142 21
+Checkertrans 227 262 138 17
+DTextenTrylimited 235 260 122 15 0480 306 20 <P>//<p.x>,<p.y>,<p.z>,<p.m>
+
+DText 160 285 0c1 <Def.<Account.Lang>_Home>
+Resizepic 225 285 30546 142 21
+Checkertrans 227 287 138 17
+DTextenTrylimited 235 285 122 15 0480 307 20 <Home>
+
+DText 160 310 0c1 <Def.<Account.Lang>_Golds>
+Resizepic 225 310 30546 142 21
+Checkertrans 227 312 138 17
+DTextenTrylimited 235 310 122 15 0480 308 20 <gold>
+
+DText 160 335 0c1 <Def.<Account.Lang>_Timer>
+Resizepic 225 335 30546 142 21
+Checkertrans 227 337 138 17
+DTextenTrylimited 235 335 122 15 0480 309 20 <Timer>
+
+DText 160 360 0c1 <Def.<Account.Lang>_Weight>
+Resizepic 225 360 30546 142 21
+Checkertrans 227 362 138 17
+DTextenTrylimited 235 360 122 15 0480 310 20 <Fval <Weight>>
+
+DText 160 385 0c1 <Def.<Account.Lang>_MaxWeight>
+Resizepic 225 385 30546 142 21
+Checkertrans 227 387 138 17
+DTextenTrylimited 235 385 122 15 0480 311 20 <Fval <MaxWeight>>
+
+DText 160 410 0c1 <Def.<Account.Lang>_Luck>
+Resizepic 225 410 30546 142 21
+Checkertrans 227 412 138 17
+DTextenTrylimited 235 410 122 15 0480 312 20 <Luck>
+
+DText 160 435 0c1 <Def.<Account.Lang>_Guilds>
+If <isPlayer>
+   If <memoryfindtype.memory_guild.link>
+      DText 235 435 0480 <memoryfindtype.memory_guild.link.Name>
+      Button 160 460 4007 4006 1 0 31
+      DText 235 460 0c1 <Def.<Account.Lang>_Port_Guildstone>
+   Else
+      DText 235 435 0480 <Def.<Account.Lang>_No_Guild>
+   Endif
+Endif
+
+DText 380 35 0c1 <Def.<Account.Lang>_Level>
+Resizepic 450 35 30546 40 21
+Checkertrans 452 37 36 17
+DTextenTrylimited 460 35 20 15 0480 313 20 <Level>
+
+DText 380 60 0c1 <Def.<Account.Lang>_Exp>
+Resizepic 450 60 30546 190 21
+Checkertrans 452 62 186 17
+DTextenTrylimited 460 60 120 15 0480 314 20 <Exp>
+
+DText 380 110 0c1 <Def.<Account.Lang>_Max_Stats>
+DText 460 110 0480 <SkillClass.Statsum>
+
+DText 380 135 0c1 <Def.<Account.Lang>_Str>
+Resizepic 435 135 30546 70 21
+Checkertrans 437 137 66 17
+DTextenTrylimited 445 135 70 15 0480 315 20 <Str>
+DText 510 135 0c1 <Def.<Account.Lang>_Mod_Str>
+Resizepic 570 135 30546 70 21
+Checkertrans 572 137 66 17
+DTextenTrylimited 580 135 70 15 0480 316 20 <ModStr>
+
+DText 380 160 0c1 <Def.<Account.Lang>_Dex>
+Resizepic 435 160 30546 70 21
+Checkertrans 437 162 66 17
+DTextenTrylimited 445 160 70 15 0480 317 20 <Dex>
+DText 510 160 0c1 <Def.<Account.Lang>_Mod_Dex>
+Resizepic 570 160 30546 70 21
+Checkertrans 572 162 66 17
+DTextenTrylimited 580 160 70 15 0480 318 20 <ModDex>
+
+DText 380 185 0c1 <Def.<Account.Lang>_Int>
+Resizepic 435 185 30546 70 21
+Checkertrans 437 187 66 17
+DTextenTrylimited 445 185 70 15 0480 319 20 <Int>
+DText 510 185 0c1 <Def.<Account.Lang>_Mod_Int>
+Resizepic 570 185 30546 70 21
+Checkertrans 572 187 66 17
+DTextenTrylimited 580 185 70 15 0480 320 20 <ModInt>
+
+DText 380 210 0c1 <Def.<Account.Lang>_Hits>
+Resizepic 435 210 30546 70 21
+Checkertrans 437 212 66 17
+DTextenTrylimited 445 210 70 15 0480 321 20 <Hits>
+DText 510 210 0c1 <Def.<Account.Lang>_Max_Hits>
+Resizepic 570 210 30546 70 21
+Checkertrans 572 212 66 17
+DTextenTrylimited 580 210 70 15 0480 322 20 <MaxHits>
+
+DText 380 235 0c1 <Def.<Account.Lang>_Stam>
+Resizepic 435 235 30546 70 21
+Checkertrans 437 237 66 17
+DTextenTrylimited 445 235 70 15 0480 323 20 <Stam>
+DText 510 235 0c1 <Def.<Account.Lang>_Max_Stam>
+Resizepic 570 235 30546 70 21
+Checkertrans 572 237 66 17
+DTextenTrylimited 580 235 70 15 0480 324 20 <MaxStam>
+
+DText 380 260 0c1 <Def.<Account.Lang>_Mana>
+Resizepic 435 260 30546 70 21
+Checkertrans 437 262 66 17
+DTextenTrylimited 445 260 70 15 0480 325 20 <Mana>
+DText 510 260 0c1 <Def.<Account.Lang>_Max_Mana>
+Resizepic 570 260 30546 70 21
+Checkertrans 572 262 66 17
+DTextenTrylimited 580 260 70 15 0480 326 20 <MaxMana>
+
+DText 380 285 0c1 <Def.<Account.Lang>_Color>
+Resizepic 435 285 30546 70 21
+Checkertrans 437 287 66 17
+DTextenTrylimited 445 285 70 15 0480 327 20 <Color>
+DText 510 285 0c1 oSkin
+Resizepic 570 285 30546 70 21
+Checkertrans 572 287 66 17
+DTextenTrylimited 580 285 70 15 0480 328 20 <oSkin>
+
+DText 380 310 0c1 <Def.<Account.Lang>_Kills>
+Resizepic 435 310 30546 70 21
+Checkertrans 437 312 66 17
+DTextenTrylimited 445 310 70 15 0480 329 20 <Kills>
+DText 510 310 0c1 <Def.<Account.Lang>_Deaths>
+Resizepic 570 310 30546 70 21
+Checkertrans 572 312 66 17
+DTextenTrylimited 580 310 70 15 0480 330 20 <Deaths>
+
+DText 380 335 0c1 <Def.<Account.Lang>_Fame>
+Resizepic 435 335 30546 70 21
+Checkertrans 437 337 66 17
+DTextenTrylimited 445 335 70 15 0480 331 20 <Fame>
+DText 510 335 0c1 <Def.<Account.Lang>_Karma>
+Resizepic 570 335 30546 70 21
+Checkertrans 572 337 66 17
+DTextenTrylimited 580 335 70 15 0480 332 20 <Karma>
+
+DText 380 360 0c1 Plot1:
+Resizepic 435 360 30546 70 21
+Checkertrans 437 362 66 17
+DTextenTrylimited 445 360 70 15 0480 333 20 <Tag0.Plot1>
+DText 510 360 0c1 Plot2:
+Resizepic 570 360 30546 70 21
+Checkertrans 572 362 66 17
+DTextenTrylimited 580 360 70 15 0480 334 20 <Tag0.Plot2>
+
+DText 380 385 0c1 <Def.<Account.Lang>_Action>
+Resizepic 435 385 30546 70 21
+Checkertrans 437 387 66 17
+DTextenTrylimited 445 385 70 15 0480 335 20 <Action>
+DText 510 385 0c1 <Def.<Account.Lang>_Food>
+Resizepic 570 385 30546 70 21
+Checkertrans 572 387 66 17
+DTextenTrylimited 580 385 70 15 0480 336 20 <Food>
+
+DText 380 410 43 <Def.<Account.Lang>_Resfire>
+Resizepic 435 410 30546 70 21
+Checkertrans 437 412 66 17
+DTextenTrylimited 445 410 70 15 0480 337 20 <Resfire>
+DText 510 410 88 <Def.<Account.Lang>_Rescold>
+Resizepic 570 410 30546 70 21
+Checkertrans 572 412 66 17
+DTextenTrylimited 580 410 70 15 0480 338 20 <Rescold>
+DText 380 435 63 <Def.<Account.Lang>_Respoison>
+Resizepic 435 435 30546 70 21
+Checkertrans 437 437 66 17
+DTextenTrylimited 445 435 70 15 0480 339 20 <Respoison>
+DText 510 435 24 <Def.<Account.Lang>_Resenergy>
+Resizepic 570 435 30546 70 21
+Checkertrans 572 437 66 17
+DTextenTrylimited 580 435 70 15 0480 340 20 <Resenergy>
+
+DText 380 460 0c1 <Def.<Account.Lang>_Ar>
+Resizepic 435 460 30546 70 21
+Checkertrans 437 462 66 17
+DTextenTrylimited 445 460 70 15 0480 341 20 <Ar>
+DText 510 460 0c1 <Def.<Account.Lang>_ModAr>
+Resizepic 570 460 30546 70 21
+Checkertrans 572 462 66 17
+DTextenTrylimited 580 460 70 15 0480 342 20 <ModAr>
+
+Button 5 330 4023 4025 1 0 32
+DText 40 330 0c1 <Def.<Account.Lang>_Empty_Backpack>
+
+Button 5 355 4023 4025 1 0 33
+DText 40 355 0c1 <Def.<Account.Lang>_Del_Backpack>
+
+Button 5 405 4023 4025 1 0 34
+DText 40 405 0c1 <Def.<Account.Lang>_Save_Properties>
+
+Page 4
+Button 5 330 4023 4025 1 0 41
+DText 40 330 0c1 <Def.<Account.Lang>_Set_Allskills>
+Resizepic 5 355 30546 142 21
+Checkertrans 7 357 138 17
+DTextenTrylimited 15 355 122 15 0480 411 20 ?
+
+DText 5 380 0c1 <Def.<Account.Lang>_SkillTotal>
+DText 80 380 0480 <Fval <SkillTotal>>
+
+Button 5 405 4023 4025 1 0 42
+DText 40 405 0c1 <Def.<Account.Lang>_Save_Skills>
+
+dorigin 160 16
+For x 0 57
+	if (<Local.x>==20) 
+		dorigin 324 16
+	elif (<Local.x>==40)
+		dorigin 488 16
+	endif
+	DText +0 *23 0480 <serv.skill.<Local.x>.key>
+	Resizepic +94 +0 30546 58 21
+	Checkertrans +92 +2 54 17
+	DTextenTrylimited +102 +0 40 15 0480 <dLocal.x> 100 <fval <<serv.skill.<dLocal.x>.key>>>
+Endfor
+
+Page 5
+Local.Flag=01
+Local.ox=160
+Local.oy=40
+For x 0 31
+   If !(<isEmpty <Def.Admin_Flag_<Eval <Local.x> + 1>>>)
+      checkbox <Eval <Local.ox>> <Eval <Local.oy>> 210 211 <hval (<Flags> & <Local.Flag>)> <Eval 300 + <Local.x>>
+      DText <Eval <Local.ox> + 40> <Eval <Local.oy>> 0480 <Def0.Admin_Flag_<Eval <Local.x> + 1>>
+      Local.oy += 20
+      If (<Local.oy> > 360)
+         Local.ox += 200
+         Local.oy = 40
+      Endif
+   Endif
+   Local.Flag="<Local.Flag> << 1"
+   Local.Flag=<hval <Local.Flag>>
+End
+
+Button 5 330 4023 4025 1 0 51
+DText 40 330 0c1 Set All Flags
+Resizepic 5 355 30546 142 21
+Checkertrans 7 357 138 17
+DTextenTrylimited 15 355 122 15 0480 511 20 <Flags>
+
+Button 5 405 4023 4025 1 0 52
+DText 40 405 0c1 <Def.<Account.Lang>_Set_Flags>
+
+Page 6
+If (<Src.Account.Plevel> > 4)
+   DText 160 35 0c1 <Def.<Account.Lang>_Del_Events>
+Endif
+   dorigin 160 50 
+   f_Split_Events <EVENTS>
+
+//Ben's Function
+[FUNCTION f_Split_Events]
+If (!<ArgV>)
+   DText +29 +20 0c1 <Def.<Account.Lang>_Empty_Events>
+   Return 1
+Endif
+For x 0 <Eval <ArgV>+-1>
+   DText +45 *25 0480 <ArgV[<DLocal.X>]>   
+   If (<Src.Account.Plevel> > 4)
+      If (<isEvent.<ArgV[<DLocal.X>]>>)
+         Button +10 +3 4017 4018 1 0 <Eval <Local.X>+600>
+      Endif
+   Endif
+Endfor
+
+[DIALOG d_SpherePlayerTweak BUTTON]
+On=0 1
+   Src.Dialog d_SphereAdmin
+
+On=2
+   Dialog d_SpherePlayerNotes
+
+On=3
+   Dialog d_SphereplayerTags
+
+On=21
+   Src.Go <P>
+   SRC.CLEARCTAGS Dialog.Admin
+
+On=22
+   Src.Invis 1
+   Src.Go <P>
+   SRC.CLEARCTAGS Dialog.Admin
+
+On=23
+   Go <Src.P>
+   SRC.CLEARCTAGS Dialog.Admin
+
+On=24
+   SummonCage
+   SRC.CLEARCTAGS Dialog.Admin
+
+On=25
+   If ( <Src.UID> != <UID> )
+      Src.Follow <UID>
+   Endif
+   SRC.CLEARCTAGS Dialog.Admin
+
+On=26
+   If (<Account.Jail>)
+      Forgive
+   Else
+      Jail
+   Endif
+   SRC.CLEARCTAGS Dialog.Admin
+
+On=27
+   If (<Flags> & statf_dead)
+      Resurrect
+   Else
+      Hits=0
+      // Use kill here if you want the lightning effect
+   Endif
+   SRC.CLEARCTAGS Dialog.Admin
+
+On=28
+   Disconnect
+   SRC.CLEARCTAGS Dialog.Admin
+
+On=29
+   Kick
+   SRC.CLEARCTAGS Dialog.Admin
+
+On=31
+   Go <MemoryFindType.memory_guild.Link.P>
+   Dialog d_SpherePlayerTweak 3
+
+On=32
+   Src.FindLayer(21).Empty
+   Dialog d_SpherePlayerTweak 3
+
+On=33
+   Src.FindLayer(21).Remove
+   Dialog d_SpherePlayerTweak 3
+
+On=34
+   Name <argtxt[301]>
+   Title <argtxt[302]>
+   Id <argtxt[303]>
+   Body <argtxt[304]>
+   oBody <argtxt[305]>
+   P <argtxt[306]>
+   Home <argtxt[307]>
+   Gold <argtxt[308]>
+   Timer <argtxt[309]>
+   Weight <argtxt[310]>
+   MaxWeight <argtxt[311]>
+   Luck <argtxt[312]>
+   Level <argtxt[313]>
+   Exp <argtxt[314]>
+   Str <argtxt[315]>
+   ModStr <argtxt[316]>
+   Dex <argtxt[317]>
+   ModDex <argtxt[318]>
+   Int <argtxt[319]>
+   ModInt <argtxt[320]>
+   Hits <argtxt[321]>
+   MaxHits <argtxt[322]>
+   Stam <argtxt[323]>
+   MaxStam <argtxt[324]>
+   Mana <argtxt[325]>
+   MaxMana <argtxt[326]>
+   Color <argtxt[327]>
+   oSkin <argtxt[328]>
+   Kills <argtxt[329]>
+   Deaths <argtxt[330]>
+   Fame <argtxt[331]>
+   Karma <argtxt[332]>
+   Tag0.Plot1 <argtxt[333]>
+   Tag0.Plot2 <argtxt[334]>
+   Action <argtxt[335]>
+   Food <argtxt[336]>
+   Resfire <argtxt[337]>
+   Rescold <argtxt[338]>
+   Respoison <argtxt[339]>
+   Resenergy <argtxt[340]>
+   Ar <argtxt[341]>
+   ModAr <argtxt[342]>
+   Src.Sysmessage @tcolor_Orange <Def.<Account.Lang>_Properties_Sys> <Name> <Def.<Account.Lang>_Updated_Sys>
+   Dialog d_SpherePlayerTweak 3
+
+On=41
+   Src.Allskills=<Argtxt[411]>
+   Src.Sysmessage @tcolor_Orange <Def.<Account.Lang>_Allskills_Sys> <Name> <Def.<Account.Lang>_Set_Sys> <Fval <<Serv.Skill.<dLocal.X>.Key>>>.
+   Dialog d_SpherePlayerTweak 4
+
+On=42
+   For 0 57
+      <Serv.Skill.<dLocal._For>.Key> <Argtxt[<dLocal._For>]>
+   Endfor
+   Dialog d_SpherePlayerTweak 4
+   Src.Sysmessage @tcolor_Orange <Def.<Account.Lang>_Skills_Sys> <Name> <Def.<Account.Lang>_Updated_Sys>
+
+On=51
+   Src.Flags=<Argtxt[511]>
+   Dialog d_SpherePlayerTweak 5
+   Src.Sysmessage @tcolor_Orange <Def.<Account.Lang>_Skills_Sys> <Name> <Def.<Account.Lang>_Updated_Sys>
+
+On=52
+   Local.UpdatexFlags = <Flags>&<Def0.Admin_UpdatexFlags>
+   Local.UpdateFlags = <Flags>&<Def0.Admin_UpdateFlags>
+   Local.ResendTooltipFlags = <Flags>&<Def0.Admin_ResendTooltipFlags>
+   Local.Flag=01
+   For x 0 31
+      If !(<isEmpty <Def.Admin_Flag_<Eval <Local.x> + 1>>>)
+         If (<Argchk[<Eval 300 + <Local.x>>]>)
+            Flags |= <Local.Flag>
+         Else
+            Flags &= ~<Local.Flag>
+         Endif
+      Endif
+      Local.Flag="<Local.Flag> << 1"
+      Local.Flag=<Hval <Local.Flag>>
+   Endfor
+   If ((<Flags>&<Def0.Admin_UpdatexFlags>) != <Local.UpdatexFlags>)
+      Updatex
+   Elseif ((<Flags>&<Def0.Admin_UpdateFlags>) != <Local.UpdateFlags>)
+      Update
+   Elseif ((<Flags>&<Def0.Admin_ResendTooltipFlags>) != <Local.ResendTooltipFlags>)
+      ResendTtooltip
+   Endif
+   Dialog d_SpherePlayerTweak 5
+   Src.Sysmessage @tcolor_Orange <Def.<Account.Lang>_Flags_Sys> <Name> <Def.<Account.Lang>_Updated_Sys>
+
+On=600, 699
+   Events -<f_GetEvents <Eval <ArgN>+-600>,<Events>>
+	Dialog d_SpherePlayerTweak 6
+	Src.Sysmessage @tcolor_Orange <Def.<Account.Lang>_Events_Sys> <Name> <Def.<Account.Lang>_Updated_Sys>
+
+[FUNCTION f_GetEvents]
+Return <ArgV[<Eval <ArgV[0]>+1>]>
+
+[EOF]
