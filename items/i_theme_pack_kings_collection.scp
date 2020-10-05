@@ -1184,7 +1184,8 @@ DESCRIPTION=Fancy Loveseat (east)
 MULTIREGION=0,0,0,0
 COMPONENT=04c89,0,1
 
-[ITEMDEF[MULTIDEFID=04c8a
+[MULTIDEF m_couch_fancy_east]
+ID=04c8a
 NAME=Fancy Couch
 TYPE=t_multi
 CATEGORY=King's Collection
