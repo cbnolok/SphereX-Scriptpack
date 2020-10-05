@@ -23,41 +23,41 @@ Gumppictiled 5 480 640 22 30550
 Gumppictiled 5 35 640 440 30550
 Checkertrans 5 5 640 497
 
-DText 10 7 0c1 SphereServer <Src.Version> Admin Panel (<Serv.Servname>) - <Def.<Account.Lang>_Search_Acc>
+DText 10 7 0c1 SphereServer <Src.Version> Admin Panel (<Serv.Servname>) - <Def.<SRC.CTAG0.accountlang>_Search_Acc>
 Button 615 5 4017 4018 1 0 0
-DText 10 35 0c1 <Def.<Account.Lang>_Search_Info>
+DText 10 35 0c1 <Def.<SRC.CTAG0.accountlang>_Search_Info>
 
 Button 10 60 4005 4006 1 0 1
-DText 45 60 2048 <Def.<Account.Lang>_Account>
+DText 45 60 2048 <Def.<SRC.CTAG0.accountlang>_Account>
 Resizepic 120 62 30546 175 18
 Checkertrans 122 64 171 14
 DTextentry 130 60 171 18 0480 1
 
 Button 10 80 4005 4006 1 0 2
-DText 45 80 2048 <Def.<Account.Lang>_Character>
+DText 45 80 2048 <Def.<SRC.CTAG0.accountlang>_Character>
 Resizepic 120 82 30546 175 18
 Checkertrans 122 84 171 14
 DTextentry 130 80 171 18 0480 2
 
 Button 10 100 4005 4006 1 0 3
-DText 45 100 2048 <Def.<Account.Lang>_IP_Address>
+DText 45 100 2048 <Def.<SRC.CTAG0.accountlang>_IP_Address>
 Resizepic 120 102 30546 175 18
 Checkertrans 122 104 171 14
 DTextentry 130 100 171 18 0480 3
 
 Button 10 120 4005 4006 1 0 4
-DText 45 120 2048 <Def.<Account.Lang>_Location>
+DText 45 120 2048 <Def.<SRC.CTAG0.accountlang>_Location>
 Resizepic 120 122 30546 175 18
 Checkertrans 122 124 171 14
 DTextentry 130 120 171 18 0480 4
 
-dtext 340 60 193 <Def.<Account.Lang>_Filter>
+dtext 340 60 193 <Def.<SRC.CTAG0.accountlang>_Filter>
 radio 340 80 210 211 1 1
-dtext 365 80 2048 <Def.<Account.Lang>_Online>
+dtext 365 80 2048 <Def.<SRC.CTAG0.accountlang>_Online>
 radio 340 100 210 211 0 2
-dtext 365 100 2048 <Def.<Account.Lang>_Offline>
+dtext 365 100 2048 <Def.<SRC.CTAG0.accountlang>_Offline>
 radio 340 120 210 211 0 3
-dtext 365 120 2048 <Def.<Account.Lang>_Both>
+dtext 365 120 2048 <Def.<SRC.CTAG0.accountlang>_Both>
 
 [DIALOG d_Search Button]
 
