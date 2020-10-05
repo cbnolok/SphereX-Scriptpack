@@ -8,97 +8,102 @@ VERSION=X1
 50,50
 
 page 0
-resizepic 0 0 5054 605 345
-gumppictiled 10 10 585 20 2624
-gumppictiled 10 35 480 300 2624
-gumppictiled 495 35 100 100 2624
-gumppictiled 490 140 105 195 2624
-checkertrans 10 10 585 325
-dhtmlgump 10 11 585 20 0 0 <DEF.BFONT_WHITE><DEF.CENTER>ITEM PROPERTIES<DEF.CENTERE><DEF.BFONTE>
+resizepic 0 0 30546 605 345
+gumppictiled 3 3 599 339 2604
+
+gumppictiled 6 6 593 22 30550
+gumppictiled 6 32 480 306 30550
+
+gumppictiled 490 35 109 100 30550
+gumppictiled 490 140 109 197 30550
+checkertrans 3 3 599 338
+dhtmlgump 10 10 585 19 0 0 <DEF.BFONT_WHITE><DEF.CENTER>ITEM PROPERTIES<DEF.CENTERE><DEF.BFONTE>
 tilepichue 525 70 <DISPIDDEC> <dCOLOR>
 
 button 490 140 4017 4019 1 0 1
 dtext 525 140 137 DELETE
+
+page 1
+
 button 490 180 4026 4028 0 1 0
-dtext 525 180 1000 General
+dtext 525 180 193 General
 button 490 200 4026 4028 0 2 0
 dtext 525 200 1000 PROPS
 
-page 1
 button 10 35 4005 4007 1 0 100
-dtext 45 35 2048 Amount
+dtext 45 35 0c1 Amount
 dcroppedtext 120 35 125 20 1000 <AMOUNT>
 
 button 10 55 4005 4007 1 0 101
-dtext 45 55 2048 Attr
+dtext 45 55 0c1 Attr
 dcroppedtext 120 55 125 20 1000 <ATTR>
 
 button 10 75 4005 4007 1 0 106
-dtext 45 75 2048 More1
+dtext 45 75 0c1 More1
 dcroppedtext 120 75 125 20 1000 <MORE1> <QVAL (<MORE1>)? (<MORE1L>/<MORE1H>):>
 
 button 10 95 4005 4007 1 0 107
-dtext 45 95 2048 More2
+dtext 45 95 0c1 More2
 dcroppedtext 120 95 125 20 1000 <MORE2> <QVAL (<MORE2>)? (<MORE2L>/<MORE2H>):>
 
 button 10 115 4005 4007 1 0 108
-dtext 45 115 2048 MoreP
+dtext 45 115 0c1 MoreP
 dcroppedtext 120 115 125 20 1000 <MOREP>
 
 button 10 135 4020 4022 0 1 0
-dtext 45 135 2048 Dye
+dtext 45 135 0c1 Dye
 dcroppedtext 120 135 125 20 1000 <DYE>
 
 button 10 155 4020 4022 0 1 0
-dtext 45 155 2048 Instances
+dtext 45 155 0c1 Instances
 dcroppedtext 120 155 125 20 1000 <INSTANCES>
 
 button 10 175 4020 4022 0 1 0
-dtext 45 175 2048 Layer
+dtext 45 175 0c1 Layer
 dcroppedtext 120 175 125 20 1000 <LAYER>
 
 button 10 195 4005 4007 1 0 105
-dtext 45 195 2048 Link
+dtext 45 195 0c1 Link
 dcroppedtext 120 195 125 20 1000 <LINK> <QVAL (<LINK.UID>)? (<LINK.NAME>):>
 
 button 10 215 4005 4007 1 0 102
-dtext 45 215 2048 BaseID
+dtext 45 215 0c1 BaseID
 dcroppedtext 120 215 500 20 1000 <BASEID>
 
 button 10 235 4005 4007 1 0 103
-dtext 45 235 2048 Color
+dtext 45 235 0c1 Color
 dcroppedtext 120 235 125 20 1000 <COLOR>
 
 button 10 255 4005 4007 1 0 104
-dtext 45 255 2048 DispID
+dtext 45 255 0c1 DispID
 dcroppedtext 120 255 500 20 1000 <DISPID>
 
 button 10 275 4005 4007 1 0 109
-dtext 45 275 2048 Name
+dtext 45 275 0c1 Name
 dcroppedtext 120 275 500 20 1000 <NAME>
 
 button 10 295 <QVAL (<CONT>)? 4020 4022 0 1 0 : 4005 4007 1 0 110>
-dtext 45 295 2048 P
+dtext 45 295 0c1 P
 dcroppedtext 120 295 125 20 1000 <QVAL (<CONT>)? <TOPOBJ.P> : <P>>
 
 button 10 315 4005 4007 1 0 111
-dtext 45 315 2048 Timer
+dtext 45 315 0c1 Timer
 dcroppedtext 120 315 125 20 1000 <TIMER>
 
 button 250 35 4005 4007 1 0 112
-dtext 285 35 2048 Type
+dtext 285 35 0c1 Type
 dcroppedtext 360 35 125 20 1000 <TYPE>
 
 button 250 55 4020 4022 0 1 0
-dtext 285 55 2048 UID
+dtext 285 55 0c1 UID
 dcroppedtext 360 55 125 20 1000 <UID>
 
 button 250 75 4020 4022 0 1 0
-dtext 285 75 2048 Value
+dtext 285 75 0c1 Value
 dcroppedtext 360 75 125 20 1000 <VALUE>
 
 button 250 95 4020 4022 0 1 0
-dtext 285 95 2048 Weight
+dtext 285 95 0c1 Weight
 
 IF (<AMOUNT> > 1)
  ARGS = "(<fval <BASEWEIGHT>> x <AMOUNT>)"
@@ -108,7 +113,7 @@ ENDIF
 dcroppedtext 360 95 125 20 1000 <fval <WEIGHT>> <ARGS>
 
 IF (<ISARMOR>)
-	dtext 250 135 193 Proprietes des armures
+	dtext 250 135 193 Property of armor
 
 	IF (<SERV.CombatFlags> & 08)	//COMBATF_ELEMENTAL_ENGINE
 		button 250 155 4005 4007 1 0 120
@@ -132,28 +137,28 @@ IF (<ISARMOR>)
 		dcroppedtext 360 235 125 20 1000 <RESENERGY>%
 	ELSE
 		button 250 155 4005 4007 1 0 125
-		dtext 285 155 2048 Armor
+		dtext 285 155 0c1 Armor
 		dcroppedtext 360 155 125 20 1000 <ARMOR>
 
 		button 250 175 4005 4007 1 0 126
-		dtext 285 175 2048 ModAR
+		dtext 285 175 0c1 ModAR
 		dcroppedtext 360 175 125 20 1000 <MODAR>
 	ENDIF
 ENDIF
 
 IF (<ISWEAPON>)
-	dtext 250 135 193 Proprietes des armes
+	dtext 250 135 193 Property of weapon
 
 	button 250 155 4005 4007 1 0 130
-	dtext 285 155 2048 Range
+	dtext 285 155 0c1 Range
 	dcroppedtext 360 155 125 20 1000 <RANGE>
 
 	button 250 175 4020 4022 0 0 0
-	dtext 285 175 2048 Speed
+	dtext 285 175 0c1 Speed
 	dcroppedtext 360 175 125 20 1000 <SPEED>
 
 	button 250 195 4005 4007 1 0 131
-	dtext 285 195 2048 Dam
+	dtext 285 195 0c1 Dam
 	dcroppedtext 360 195 125 20 1000 <DAM>
 
 	IF (<SERV.CombatFlags> & 08)	//COMBATF_ELEMENTAL_ENGINE
@@ -180,7 +185,10 @@ IF (<ISWEAPON>)
 ENDIF
 
 page 2 //Props
- 
+button 490 180 4026 4028 0 1 0
+dtext 525 180 1000 General
+button 490 200 4026 4028 0 2 0
+dtext 525 200 193 PROPS
 
 checkbox 15 40 210 211 <eval <SRC.TARG.ATTR>&01> 0 // Identified
 dtext 45 40 995 Identified
@@ -215,7 +223,7 @@ dtext 245 40 995 Can Decay
 checkbox 215 60 210 211 <eval <SRC.TARG.ATTR>&08000> 15 // Static
 dtext 245 60 995 Static
 button 350 295 4005 4007 1 0 999
-dtext 385 295 323 APPLY
+dtext 385 295 0c1 APPLY
 
 
 [DIALOG d_itemprop1 BUTTON]

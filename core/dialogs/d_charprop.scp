@@ -9,12 +9,15 @@ VERSION=X1
 50,50
 
 page 0
-resizepic 0 0 5054 605 445
-gumppictiled 10 10 585 20 2624
-gumppictiled 10 35 480 400 2624
-gumppictiled 495 35 100 100 2624
-gumppictiled 490 140 105 295 2624
-checkertrans 10 10 585 425
+resizepic 0 0 30546 605 445
+gumppictiled 3 3 595 435 2604
+
+gumppictiled 6 6 590 22 30550
+gumppictiled 6 32 480 402 30550
+
+gumppictiled 490 33 106 103 30550
+gumppictiled 490 140 105 295 30550
+checkertrans 3 3 595 435
 dhtmlgump 10 11 585 20 0 0 <DEF.BFONT_WHITE><DEF.CENTER>CHARACTER PROPERTIES<DEF.CENTERE><DEF.BFONTE>
 tilepichue 525 60 <DISPIDDEC> <eval <COLOR> &~ 08000|04000>
 
@@ -29,66 +32,66 @@ button 490 200 4029 4031 0 4 0
 dtext 525 200 1000 FLAGS
 
 button 10 35 4020 4022 0 0 0
-dtext 45 35 2048 Action
+dtext 45 35 0c1 Action
 dcroppedtext 120 35 125 20 1000 <ACTION> (<GetCharActionName>)
 
 button 10 55 4005 4007 1 0 100
-dtext 45 55 2048 Body
+dtext 45 55 0c1 Body
 dcroppedtext 120 55 125 20 1000 <BODY>
 
 button 10 75 4005 4007 1 0 101
-dtext 45 75 2048 Color
+dtext 45 75 0c1 Color
 dcroppedtext 120 75 125 20 1000 <COLOR>
 
 button 10 95 4020 4022 0 0 0
-dtext 45 95 2048 Created
+dtext 45 95 0c1 Created
 dcroppedtext 120 95 125 20 1000 <FormatMinutes <eval <CREATE>/60>> ago
 
 button 10 115 4005 4007 1 0 102
-dtext 45 115 2048 Flags
+dtext 45 115 0c1 Flags
 dcroppedtext 120 115 125 20 1000 <FLAGS>
 
 button 10 135 4005 4007 1 0 103
-dtext 45 135 2048 Food
+dtext 45 135 0c1 Food
 dcroppedtext 120 135 125 20 1000 <FOOD> (<FOOD>/<MAXFOOD>)
 
 button 10 155 4005 4007 1 0 104
-dtext 45 155 2048 Name
+dtext 45 155 0c1 Name
 dcroppedtext 120 155 125 20 1000 <NAME>
 
 button 10 175 4005 4007 1 0 105
-dtext 45 175 2048 P
+dtext 45 175 0c1 P
 dcroppedtext 120 175 125 20 1000 <P>
 
 button 10 195 4005 4007 1 0 106
-dtext 45 195 2048 Title
+dtext 45 195 0c1 Title
 dcroppedtext 120 195 125 20 1000 <TITLE>
 
 button 10 215 4020 4022 0 0 0
-dtext 45 215 2048 UID
+dtext 45 215 0c1 UID
 dcroppedtext 120 215 125 20 1000 <UID>
 
 button 10 235 4020 4022 0 0 0
-dtext 45 235 2048 Weight
+dtext 45 235 0c1 Weight
 dcroppedtext 120 235 125 20 1000 <fval <WEIGHT>>/<fval <MAXWEIGHT>>
 
 button 10 275 4005 4007 1 0 107
-dtext 45 275 2048 Fame
+dtext 45 275 0c1 Fame
 dcroppedtext 120 275 125 20 1000 <FAME>
 
 button 10 295 4005 4007 1 0 108
-dtext 45 295 2048 Karma
+dtext 45 295 0c1 Karma
 dcroppedtext 120 295 125 20 1000 <KARMA>
 
 IF (<SERV.ExperienceSystem>)
  button 10 335 4005 4007 1 0 109
- dtext 45 335 2048 Exp
+ dtext 45 335 0c1 Exp
  dcroppedtext 120 335 125 20 1000 <EXP>
 ENDIF
 
 IF (<SERV.LevelSystem>)
  button 10 355 4005 4007 1 0 110
- dtext 45 355 2048 Level
+ dtext 45 355 0c1 Level
  dcroppedtext 120 355 125 20 1000 <LEVEL>
 ENDIF
 
@@ -96,78 +99,78 @@ IF (<ISPLAYER>)
  dtext 250 35 193 Player properties
 
  button 250 55 4020 4022 0 0 0
- dtext 285 55 2048 Account
+ dtext 285 55 0c1 Account
  dcroppedtext 360 55 125 20 1000 <ACCOUNT>
 
  button 250 75 4020 4022 0 0 0
- dtext 285 75 2048 LastUsed
+ dtext 285 75 0c1 LastUsed
  dcroppedtext 360 75 125 20 1000 <FormatMinutes <eval <LASTUSED>/60>> ago
 
  button 250 115 4020 4022 0 0 0
- dtext 285 115 2048 Gold
+ dtext 285 115 0c1 Gold
  dcroppedtext 360 115 125 20 1000 <QVAL (<SERV.FeatureTOL> & 02)? <VIRTUALGOLD> : <GOLD>>	//FEATURE_TOL_VIRTUALGOLD
 
  button 250 135 4020 4022 0 0 0
- dtext 285 135 2048 Guild
+ dtext 285 135 0c1 Guild
  IF (<GUILD>)
   dcroppedtext 360 135 125 20 1000 <GUILD> (<GUILDABBREV>)
  ENDIF
 
  button 250 155 4005 4007 1 0 120
- dtext 285 155 2048 Profile
+ dtext 285 155 0c1 Profile
  dcroppedtext 360 155 125 20 1000 <PROFILE>
 
  button 250 175 4005 4007 1 0 121
- dtext 285 175 2048 RefuseTrade
+ dtext 285 175 0c1 RefuseTrade
  dcroppedtext 360 175 125 20 1000 <REFUSETRADES>
 
  button 250 215 4005 4007 1 0 122
- dtext 285 215 2048 Kills
+ dtext 285 215 0c1 Kills
  dcroppedtext 360 215 125 20 1000 <KILLS>
 
  button 250 235 4005 4007 1 0 123
- dtext 285 235 2048 Deaths
+ dtext 285 235 0c1 Deaths
  dcroppedtext 360 235 125 20 1000 <DEATHS>
 
  IF (<SERV.OptionFlags> & 010)	//OF_PetSlots
   button 250 275 4020 4022 0 0 0
-  dtext 285 275 2048 Followers
+  dtext 285 275 0c1 Followers
   dcroppedtext 360 275 125 20 1000 <CURFOLLOWER>/<MAXFOLLOWER>
  ENDIF
 ELSE
  dtext 250 35 193 NPC properties
 
  button 250 55 4005 4007 1 0 130
- dtext 285 55 2048 Brain
+ dtext 285 55 0c1 Brain
  dcroppedtext 360 55 125 20 1000 <NPC> (<DEF.NPCBrain.<NPC>>)
 
  button 250 75 4005 4007 1 0 131
- dtext 285 75 2048 Home
+ dtext 285 75 0c1 Home
  dcroppedtext 360 75 125 20 1000 <HOME>
 
  button 250 95 4005 4007 1 0 132
- dtext 285 95 2048 HomeDist
+ dtext 285 95 0c1 HomeDist
  dcroppedtext 360 95 125 20 1000 <HOMEDIST>
 
  button 250 115 4020 4022 0 0 0
- dtext 285 115 2048 Owner
+ dtext 285 115 0c1 Owner
  IF (<OWNER>)
   dcroppedtext 360 115 125 20 1000 <OWNER> (<OWNER.NAME>)
  ENDIF
 
  button 250 135 4020 4022 0 0 0
- dtext 285 135 2048 SpawnItem
+ dtext 285 135 0c1 SpawnItem
  IF (<FLAGS> & statf_spawned)
   dcroppedtext 360 135 125 20 1000 <SPAWNITEM>
  ENDIF
 
  button 250 175 4005 4007 1 0 133
- dtext 285 175 2048 Bonded
+ dtext 285 175 0c1 Bonded
  dcroppedtext 360 175 125 20 1000 <BONDED>
 
  IF (<SERV.OptionFlags> & 010)	//OF_PetSlots
   button 250 195 4005 4007 1 0 134
-  dtext 285 195 2048 FollowerSlot
+  dtext 285 195 0c1 FollowerSlot
   dcroppedtext 360 195 125 20 1000 <FOLLOWERSLOTS>
  ENDIF
 ENDIF
@@ -333,10 +336,10 @@ button 250 415 4005 4006 1 0 400
 dtext 285 415 2048 Set flags
 
 [DIALOG d_charprop1 BUTTON]
-ON=0
-IF (<SRC.CTAG0.Dialog.Admin.Clients>)
- DIALOG d_admin_player_tweak
-ENDIF
+// ON=0
+// IF (<SRC.CTAG0.Dialog.Admin.Clients>)
+//  DIALOG d_SpherePlayerTweak
+// ENDIF
 
 ON=100
 TRYP 4 INPDLG BODY 30

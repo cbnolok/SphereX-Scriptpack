@@ -19,7 +19,7 @@ Endif
 Serv.AllClients f_Admin_GetPlayers
 CTag.Dialog.Admin.Page=1
 CTag.Dialog.Admin.MaxPage=<Eval (((<CTag0.Dialog.Admin.Clients>-1)/20)+1)>
-Dialog d_SphereAdmin
+SDialog d_SphereAdmin
 
 [FUNCTION f_Admin_GetPlayers]
 If ((<Src.Account.Plevel> < <Account.Plevel>) && (<Flags> & statf_insubstantial) && !(<Def0.Admin_Hidehighpriv>))
@@ -202,7 +202,7 @@ DText 160 315 0c1 <Def.<Account.Lang>_Last_Connect>
 DText 300 315 0480 <Account.LastConnectDate> <Def.<Account.Lang>_From_IP> <Account.LastIP>
 
 DText 160 335 00c1 <Def.<Account.Lang>_TotalConnectTime>
-DText 300 335 0480 <Account.TotalConnectTime> <Def.<Account.Lang>_Minute>
+DText 300 335 0480 <FormatMinutes <eval <Account.TotalConnectTime>>> // <Def.<Account.Lang>_Minute>
 
 DText 160 355 00c1 <Def.<Account.Lang>_National>
 DText 300 355 0480 <Def.<Account.Lang>_CountryName_<Account.Lang>> - <Account.Lang>
