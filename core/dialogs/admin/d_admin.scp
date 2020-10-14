@@ -74,11 +74,11 @@ Endif
 50,50
 
 Page 0 // Basic layout
-Resizepic 0 0 30546 650 507
+Resizepic 0 0 5054 650 507
 Gumppictiled 5 5 640 497 2604
-Gumppictiled 5 5 640 25 30550
-Gumppictiled 5 480 640 22 30550
-Gumppictiled 5 35 640 440 30550
+Gumppictiled 5 5 640 25 2624
+Gumppictiled 5 480 640 22 2624
+Gumppictiled 5 35 640 440 2624
 Checkertrans 5 5 640 497
 
 DText 10 7 0c1 SphereServer <Src.Version> Admin Panel (<Serv.Servname>) - <Def.<SRC.CTAG0.accountlang>_clients> <QVal (<CTag0.Dialog.Admin.Search>)? <Def.<SRC.CTAG0.accountlang>_Found> <dCTag0.Dialog.Admin.Clients> <Def.<SRC.CTAG0.accountlang>_Results> : <dCTag0.Dialog.Admin.Clients>>

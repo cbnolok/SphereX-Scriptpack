@@ -9,14 +9,14 @@ VERSION=X1
 50,50
 
 page 0
-resizepic 0 0 30546 605 445
+resizepic 0 0 5054 605 445
 gumppictiled 3 3 595 435 2604
 
-gumppictiled 6 6 590 22 30550
-gumppictiled 6 32 480 402 30550
+gumppictiled 6 6 590 22 2624
+gumppictiled 6 32 480 402 2624
 
-gumppictiled 490 33 106 103 30550
-gumppictiled 490 140 105 295 30550
+gumppictiled 490 33 106 103 2624
+gumppictiled 490 140 105 295 2624
 checkertrans 3 3 595 435
 dhtmlgump 10 11 585 20 0 0 <DEF.BFONT_WHITE><DEF.CENTER>CHARACTER PROPERTIES<DEF.CENTERE><DEF.BFONTE>
 tilepichue 525 60 <DISPIDDEC> <eval <COLOR> &~ 08000|04000>
