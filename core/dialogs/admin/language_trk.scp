@@ -10,7 +10,7 @@
 //***********************************************************************************
 VERSION=X1
 
-[DEFNAME Language_TRK]
+[DEFNAME defs_d_admin_Language_TRK]
 d_admin_TRK_Admin_Plevel_0				"Ziyetretçi"
 d_admin_TRK_Admin_Plevel_1				"Oyuncu"
 d_admin_TRK_Admin_Plevel_2				"Danışman"
@@ -156,7 +156,7 @@ d_admin_TRK_CountryName_NOR				"Norveç"
 d_admin_TRK_CountryName_TRK				"Türkiye"
 d_admin_TRK_CountryName_LTH				"Litvanya"
 
-[DEFNAME Sysmessage_TRK]
+[DEFNAME defs_d_admin_Sysmessage_TRK]
 d_admin_TRK_Properties_Sys					"Özellikler"
 d_admin_TRK_Updated_Sys						"Güncellendi"
 d_admin_TRK_Allskills_Sys					"Tüm Yetenekler
