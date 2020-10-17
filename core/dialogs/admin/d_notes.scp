@@ -22,42 +22,42 @@ Gumppictiled 5 325 145 177 2624
 Gumppictiled 155 35 490 467 2624
 Checkertrans 5 5 640 497
 
-DText 10 7 0c1 SphereServer <Src.Version> Admin Panel (<Serv.ServName>) - <Def.<Src.CTag0.AccountLang>_Notes_Acc> <Account.Name>
+DText 10 7 0c1 SphereServer <Src.Version> Admin Panel (<Serv.ServName>) - <Def.d_admin_<Src.CTag0.AccountLang>_Notes_Acc> <Account.Name>
 Button 615 5 4017 4018 1 0 0
 Button 585 5 4008 4009 1 0 1
 
-DText 10 37 0c1 <Def.<Src.CTag0.AccountLang>_Account>
+DText 10 37 0c1 <Def.d_admin_<Src.CTag0.AccountLang>_Account>
 
-DText 40 62 0480 <Def.<Src.CTag0.AccountLang>_Info_Account>
+DText 40 62 0480 <Def.d_admin_<Src.CTag0.AccountLang>_Info_Account>
 Button 5 60 4005 4006 1 0 2
 
-DText 40 87 0480 <Def.<Src.CTag0.AccountLang>_Action_Acc>
+DText 40 87 0480 <Def.d_admin_<Src.CTag0.AccountLang>_Action_Acc>
 Button 5 85 4005 4006 1 0 3
 
-DText 40 112 0480 <Def.<Src.CTag0.AccountLang>_Notes>
+DText 40 112 0480 <Def.d_admin_<Src.CTag0.AccountLang>_Notes>
 Button 5 110 4005 4006 1 0 4
 
-DText 10 142 0c1 <Def.<Src.CTag0.AccountLang>_Character>
+DText 10 142 0c1 <Def.d_admin_<Src.CTag0.AccountLang>_Character>
 
-DText 40 167 0480 <Def.<Src.CTag0.AccountLang>_Properties>
+DText 40 167 0480 <Def.d_admin_<Src.CTag0.AccountLang>_Properties>
 Button 5 165 4005 4006 1 0 5
 
-DText 40 192 0480 <Def.<Src.CTag0.AccountLang>_Skills>
+DText 40 192 0480 <Def.d_admin_<Src.CTag0.AccountLang>_Skills>
 Button 5 190 4005 4006 1 0 6
 
-DText 40 217 0480 <Def.<Src.CTag0.AccountLang>_Flags>
+DText 40 217 0480 <Def.d_admin_<Src.CTag0.AccountLang>_Flags>
 Button 5 215 4005 4006 1 0 7
 
-DText 40 242 0480 <Def.<Src.CTag0.AccountLang>_Tags>
+DText 40 242 0480 <Def.d_admin_<Src.CTag0.AccountLang>_Tags>
 Button 5 240 4005 4006 1 0 8
 
-DText 40 267 0480 <Def.<Src.CTag0.AccountLang>_Events>
+DText 40 267 0480 <Def.d_admin_<Src.CTag0.AccountLang>_Events>
 Button 5 265 4005 4006 1 0 9
 
-DText 200 35 0c1 <Def.<Src.CTag0.AccountLang>_Info_Note>
-DText 200 55 0c1 <Def.<Src.CTag0.AccountLang>_Evidence_Note_1> <Eval 0<Account.Tag0.NumNotes>> <Def.<Src.CTag0.AccountLang>_Evidence_Note_2>
+DText 200 35 0c1 <Def.d_admin_<Src.CTag0.AccountLang>_Info_Note>
+DText 200 55 0c1 <Def.d_admin_<Src.CTag0.AccountLang>_Evidence_Note_1> <Eval 0<Account.Tag0.NumNotes>> <Def.d_admin_<Src.CTag0.AccountLang>_Evidence_Note_2>
 Button 160 75 4005 4006 1 0 10
-DText 200 75 0480 <Def.<Src.CTag0.AccountLang>_Add_Note> (<Account>).
+DText 200 75 0480 <Def.d_admin_<Src.CTag0.AccountLang>_Add_Note> (<Account>).
 
 If (0<Account.Tag0.NumNotes>)
    Local.Page=1
@@ -71,7 +71,7 @@ If (0<Account.Tag0.NumNotes>)
          Page <Eval <Local.Page>>
          Button 150 480 4014 4015 0 <Eval <Local.Page> - 1> 0
       Endif
-      dHtmlgump 160 <Eval <Local.oy>> 435 80 1 1 <Def.<Src.CTag0.AccountLang>_Added> <Account.Tag0.Note_<Eval <Local.x>>_by> <Account.Tag0.Note_<Eval <Local.x>>_time>: <Account.Tag0.Note_<Eval <Local.x>>>
+      dHtmlgump 160 <Eval <Local.oy>> 435 80 1 1 <Def.d_admin_<Src.CTag0.AccountLang>_Added> <Account.Tag0.Note_<Eval <Local.x>>_by> <Account.Tag0.Note_<Eval <Local.x>>_time>: <Account.Tag0.Note_<Eval <Local.x>>>
       Button 605 <Eval <Local.oy>> 4017 4018 1 0 <Eval 10+<Local.X>>
       Local.oy += 90
    end
@@ -130,46 +130,46 @@ Gumppictiled 5 325 145 177 2624
 Gumppictiled 155 35 490 467 2624
 Checkertrans 5 5 640 497
 
-DText 10 7 0c1 SphereServer <Src.Version> Admin Panel (<Serv.ServName>) - <Def.<Src.CTag0.AccountLang>_Notes_Acc> <Account.Name>
+DText 10 7 0c1 SphereServer <Src.Version> Admin Panel (<Serv.ServName>) - <Def.d_admin_<Src.CTag0.AccountLang>_Notes_Acc> <Account.Name>
 Button 615 5 4017 4018 1 0 0
 Button 585 5 4008 4009 1 0 1
 
-DText 10 37 0c1 <Def.<Src.CTag0.AccountLang>_Account>
+DText 10 37 0c1 <Def.d_admin_<Src.CTag0.AccountLang>_Account>
 
-DText 40 62 0480 <Def.<Src.CTag0.AccountLang>_Info_Account>
+DText 40 62 0480 <Def.d_admin_<Src.CTag0.AccountLang>_Info_Account>
 Button 5 60 4005 4006 1 0 2
 
-DText 40 87 0480 <Def.<Src.CTag0.AccountLang>_Action_Acc>
+DText 40 87 0480 <Def.d_admin_<Src.CTag0.AccountLang>_Action_Acc>
 Button 5 85 4005 4006 1 0 3
 
-DText 40 112 0480 <Def.<Src.CTag0.AccountLang>_Notes>
+DText 40 112 0480 <Def.d_admin_<Src.CTag0.AccountLang>_Notes>
 Button 5 110 4005 4006 1 0 4
 
-DText 10 142 0c1 <Def.<Src.CTag0.AccountLang>_Character>
+DText 10 142 0c1 <Def.d_admin_<Src.CTag0.AccountLang>_Character>
 
-DText 40 167 0480 <Def.<Src.CTag0.AccountLang>_Properties>
+DText 40 167 0480 <Def.d_admin_<Src.CTag0.AccountLang>_Properties>
 Button 5 165 4005 4006 1 0 5
 
-DText 40 192 0480 <Def.<Src.CTag0.AccountLang>_Skills>
+DText 40 192 0480 <Def.d_admin_<Src.CTag0.AccountLang>_Skills>
 Button 5 190 4005 4006 1 0 6
 
-DText 40 217 0480 <Def.<Src.CTag0.AccountLang>_Flags>
+DText 40 217 0480 <Def.d_admin_<Src.CTag0.AccountLang>_Flags>
 Button 5 215 4005 4006 1 0 7
 
-DText 40 242 0480 <Def.<Src.CTag0.AccountLang>_Tags>
+DText 40 242 0480 <Def.d_admin_<Src.CTag0.AccountLang>_Tags>
 Button 5 240 4005 4006 1 0 8
 
-DText 40 267 0480 <Def.<Src.CTag0.AccountLang>_Events>
+DText 40 267 0480 <Def.d_admin_<Src.CTag0.AccountLang>_Events>
 Button 5 265 4005 4006 1 0 9
 
-DText 160 35 0c1 <Def.<Src.CTag0.AccountLang>_Diakritics>
-DText 160 55 0c1 <Def.<Src.CTag0.AccountLang>_Number_Character>
-DText 160 75 0480 <Def.<Src.CTag0.AccountLang>_Write_note> (<Account>).
+DText 160 35 0c1 <Def.d_admin_<Src.CTag0.AccountLang>_Diakritics>
+DText 160 55 0c1 <Def.d_admin_<Src.CTag0.AccountLang>_Number_Character>
+DText 160 75 0480 <Def.d_admin_<Src.CTag0.AccountLang>_Write_note> (<Account>).
 
 Resizepic 160 100 3000 420 100
-dtextentrylimited 165 105 405 90 0480 0 500 <Def.<Src.CTag0.AccountLang>_Simple_Text>
+dtextentrylimited 165 105 405 90 0480 0 500 <Def.d_admin_<Src.CTag0.AccountLang>_Simple_Text>
 
-DText 200 205 0480 <Def.<Src.CTag0.AccountLang>_Save>
+DText 200 205 0480 <Def.d_admin_<Src.CTag0.AccountLang>_Save>
 Button 160 205 4005 4006 1 0 11
 
 [DIALOG d_SphereplayerAddNotes Button]
@@ -209,7 +209,7 @@ If !(<isEmpty <ArgTxt[0]>>)
   Account.Tag.Note_<dAccount.Tag0.NumNotes>=""<ArgTxt[0]>""
   Account.Tag.Note_<dAccount.Tag0.NumNotes>_By=<Src.Name>
   Account.Tag.Note_<dAccount.Tag0.NumNotes>_Time=<Serv.rTime>
-  Sysmessage @tcolor_orange <Def.<Src.CTag0.AccountLang>_For_Account_Sys> <Account.Name> <Def.<Src.CTag0.AccountLang>_Added_Note_Sys>
+  Sysmessage @tcolor_orange <Def.d_admin_<Src.CTag0.AccountLang>_For_Account_Sys> <Account.Name> <Def.d_admin_<Src.CTag0.AccountLang>_Added_Note_Sys>
 Endif
 Src.Dialog d_SpherePlayerNotes <Eval 1+((<Account.Tag0.NumNotes>-1)/4)>
 
@@ -230,7 +230,7 @@ Else
    end
 Endif
 TrySrv Obj.Account.Tag0.NumNotes=<Eval <Obj.Account.Tag0.NumNotes>-1>
-Sysmessage @tcolor_Orange <Def.<Src.CTag0.AccountLang>_Note_For_Account_Sys> <Obj.Account> <Def.<Src.CTag0.AccountLang>_Del_Note_Sys>
+Sysmessage @tcolor_Orange <Def.d_admin_<Src.CTag0.AccountLang>_Note_For_Account_Sys> <Obj.Account> <Def.d_admin_<Src.CTag0.AccountLang>_Del_Note_Sys>
 Obj.Dialog d_SpherePlayerNotes
 Obj=<Local.OldObj>
 
