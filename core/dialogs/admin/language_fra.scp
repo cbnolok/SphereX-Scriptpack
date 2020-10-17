@@ -157,7 +157,7 @@ d_admin_FRA_CountryName_NOR				"Norvège"
 d_admin_FRA_CountryName_TRK				"Turquie"
 d_admin_FRA_CountryName_LTH				"Lituanie"
 
-[DEFNAME Sysmessage_FRA]
+[DEFNAME defs_d_admin_Sysmessage_FRA]
 d_admin_FRA_Properties_Sys					"Propriétés"
 d_admin_FRA_Updated_Sys						"ont été mis à jour."
 d_admin_FRA_Allskills_Sys					"Toutes les compétences"
