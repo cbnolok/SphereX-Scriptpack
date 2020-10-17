@@ -10,7 +10,7 @@
 //***********************************************************************************
 VERSION=X1
 
-[DEFNAME Language_DEU]
+[DEFNAME defs_d_admin_Language_DEU]
 d_admin_DEU_Admin_Plevel_0				"Gastgeber"
 d_admin_DEU_Admin_Plevel_1				"Spieler"
 d_admin_DEU_Admin_Plevel_2				"Berater"
