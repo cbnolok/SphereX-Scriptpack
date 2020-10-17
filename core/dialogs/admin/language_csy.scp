@@ -160,7 +160,7 @@ d_admin_CSY_CountryName_NOR				"Norsko"
 d_admin_CSY_CountryName_TRK				"Turecko"
 d_admin_CSY_CountryName_LTH				"Litva"
 
-[DEFNAME Sysmessage_CSY]
+[DEFNAME defs_d_admin_Sysmessage_CSY]
 d_admin_CSY_Properties_Sys					"Vlastnosti"
 d_admin_CSY_Updated_Sys						"byly aktualizovány."
 d_admin_CSY_Allskills_Sys					"Všechny dovednosti"
