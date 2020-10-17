@@ -10,7 +10,7 @@
 //***********************************************************************************
 VERSION=X1
 
-[DEFNAME Language_CSY]
+[DEFNAME defs_d_admin_Language_CSY]
 d_admin_CSY_Admin_Plevel_0				"Host"
 d_admin_CSY_Admin_Plevel_1				"Hráč"
 d_admin_CSY_Admin_Plevel_2				"Kancléř"
