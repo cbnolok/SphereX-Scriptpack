@@ -10,7 +10,7 @@
 //***********************************************************************************
 VERSION=X1
 
-[DEFNAME Language_FRA]
+[DEFNAME defs_d_admin_Language_FRA]
 d_admin_FRA_Admin_Plevel_0				"Invité"
 d_admin_FRA_Admin_Plevel_1				"Joueur"
 d_admin_FRA_Admin_Plevel_2				"Chancelier"
