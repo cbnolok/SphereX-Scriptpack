@@ -157,7 +157,7 @@ d_admin_ITA_CountryName_NOR				"Norvegia"
 d_admin_ITA_CountryName_TRK				"Tacchino"
 d_admin_ITA_CountryName_LTH				"Lituania"
 
-[DEFNAME Sysmessage_ITA]
+[DEFNAME defs_d_admin_Sysmessage_ITA]
 d_admin_ITA_Properties_Sys					"Proprietà"
 d_admin_ITA_Updated_Sys						"sono stati aggiornati."
 d_admin_ITA_Allskills_Sys					"Tutte le abilità"
