@@ -1,13 +1,13 @@
-//****************************************************************************
+//***********************************************************************************
 // SphereServer by: SphereServer development team and Menasoft.
 // www.sphereServer.net
-//****************************************************************************
+//***********************************************************************************
 // Save in ANSI encoding
-//****************************************************************************
+//***********************************************************************************
 // New Multilanguage Admin
-// Created by Golfin (http://eranova.cz/)
-//****************************************************************************
-// Last file update: 2.10.2020
+// Created by Golfin (http://eranova.cz/) and Jhobean (https://www.uocryptonite.com/)
+//***********************************************************************************
+// Last file update: 5.10.2020
 //
 VERSION=X
 
@@ -16,48 +16,48 @@ VERSION=X
 Src.Dialogclose d_SphereplayerTags
 
 Page 0
-Resizepic 0 0 30546 650 507
+Resizepic 0 0 5054 652 507
 Gumppictiled 5 5 640 497 2604
-Gumppictiled 5 5 640 25 30550
-Gumppictiled 5 35 145 440 30550
-Gumppictiled 155 35 490 440 30550
-Gumppictiled 5 480 640 22 30550
+Gumppictiled 5 5 640 25 2624
+Gumppictiled 5 35 145 285 2624
+Gumppictiled 5 325 145 177 2624
+Gumppictiled 155 35 490 467 2624
 Checkertrans 5 5 640 497
 
-DText 10 7 0c1 SphereServer <Src.Version> Admin Panel (<Serv.Servname>) - <Def.<SRC.CTAG0.accountlang>_Tags_for_Character> <Name>
+DText 10 7 0c1 SphereServer <Src.Version> Admin Panel (<Serv.Servname>) - <Def.<Src.CTag0.AccountLang>_Tags_for_Character> <Name>
 Button 615 5 4017 4018 1 0 0
 Button 585 5 4008 4009 1 0 1
 
-DText 10 37 0c1 <Def.<SRC.CTAG0.accountlang>_Account>
+DText 10 37 0c1 <Def.<Src.CTag0.AccountLang>_Account>
 
-DText 40 62 0480 <Def.<SRC.CTAG0.accountlang>_Info_Account>
+DText 40 62 0480 <Def.<Src.CTag0.AccountLang>_Info_Account>
 Button 5 60 4005 4006 1 0 2
 
-DText 40 87 0480 <Def.<SRC.CTAG0.accountlang>_Action_Acc>
+DText 40 87 0480 <Def.<Src.CTag0.AccountLang>_Action_Acc>
 Button 5 85 4005 4006 1 0 3
 
-DText 40 112 0480 <Def.<SRC.CTAG0.accountlang>_Notes>
+DText 40 112 0480 <Def.<Src.CTag0.AccountLang>_Notes>
 Button 5 110 4005 4006 1 0 4
 
-DText 10 142 0c1 <Def.<SRC.CTAG0.accountlang>_Character>
+DText 10 142 0c1 <Def.<Src.CTag0.AccountLang>_Character>
 
-DText 40 167 0480 <Def.<SRC.CTAG0.accountlang>_Properties>
+DText 40 167 0480 <Def.<Src.CTag0.AccountLang>_Properties>
 Button 5 165 4005 4006 1 0 5
 
-DText 40 192 0480 <Def.<SRC.CTAG0.accountlang>_Skills>
+DText 40 192 0480 <Def.<Src.CTag0.AccountLang>_Skills>
 Button 5 190 4005 4006 1 0 6
 
-DText 40 217 0480 <Def.<SRC.CTAG0.accountlang>_Flags>
+DText 40 217 0480 <Def.<Src.CTag0.AccountLang>_Flags>
 Button 5 215 4005 4006 1 0 7
 
-DText 40 242 0480 <Def.<SRC.CTAG0.accountlang>_Tags>
+DText 40 242 0480 <Def.<Src.CTag0.AccountLang>_Tags>
 Button 5 240 4005 4006 1 0 8
 
-DText 40 267 0480 <Def.<SRC.CTAG0.accountlang>_Events>
+DText 40 267 0480 <Def.<Src.CTag0.AccountLang>_Events>
 Button 5 265 4005 4006 1 0 9
 
 Page 1
-DText 160 35 0c1 <Def.<SRC.CTAG0.accountlang>_Del_Tags>
+DText 160 35 0c1 <Def.<Src.CTag0.AccountLang>_Del_Tags>
 If (0<TagCount>)
    Local.Page=1
    Local.oy=60
@@ -77,7 +77,7 @@ If (0<TagCount>)
       Local.oy += 25
    end
 Else
-   DText 160 60 0c1 <Def.<SRC.CTAG0.accountlang>_No_Tags>
+   DText 160 60 0c1 <Def.<Src.CTag0.AccountLang>_No_Tags>
 Endif
 
 [DIALOG d_SphereplayerTags Button]
@@ -111,6 +111,6 @@ On=9
 On=1000,1999
 	Tag.<Tagat.<Eval <ArgN>-1000>.Key>=
 	Dialog d_SphereplayerTags
-	Src.Sysmessage @tcolor_Orange <Def.<SRC.CTAG0.accountlang>_Tags_Sys> <Name> <Def.<SRC.CTAG0.accountlang>_Updated_Sys>
+	Src.Sysmessage @tcolor_Orange <Def.<Src.CTag0.AccountLang>_Tags_Sys> <Name> <Def.<Src.CTag0.AccountLang>_Updated_Sys>
 
 [EOF]

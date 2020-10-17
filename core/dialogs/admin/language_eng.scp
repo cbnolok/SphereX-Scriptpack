@@ -1,13 +1,14 @@
-//****************************************************************************
+//***********************************************************************************
 // SphereServer by: SphereServer development team and Menasoft.
 // www.sphereServer.net
-//****************************************************************************
+//***********************************************************************************
 // Save in ANSI encoding
-//****************************************************************************
+//***********************************************************************************
 // New Multilanguage Admin
-// Created by Golfin (http://eranova.cz/)
-//****************************************************************************
-// Last file update: 2.10.2020
+// Created by Golfin (http://eranova.cz/) and Jhobean (https://www.uocryptonite.com/)
+// Translated by Golfin
+//***********************************************************************************
+// Last file update: 5.10.2020
 //
 VERSION=X
 
@@ -46,6 +47,7 @@ ENG_Save_Skills					"Save skills"
 ENG_Tags					"Tags"
 ENG_Events					"Events"
 ENG_Flags					"Flags"
+ENG_Account_Name				"Account name:"
 ENG_Status					"Status:"
 ENG_Online					"Online"
 ENG_Offline					"Offline"
