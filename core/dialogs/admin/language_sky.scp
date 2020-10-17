@@ -10,7 +10,7 @@
 //***********************************************************************************
 VERSION=X1
 
-[DEFNAME Language_SKY]
+[DEFNAME defs_d_admin_Language_SKY]
 d_admin_SKY_Admin_Plevel_0				"Host"
 d_admin_SKY_Admin_Plevel_1				"Hráč"
 d_admin_SKY_Admin_Plevel_2				"Kancelár"
@@ -157,7 +157,7 @@ d_admin_SKY_CountryName_NOR				"Nórsko"
 d_admin_SKY_CountryName_TRK				"Turecko"
 d_admin_SKY_CountryName_LTH				"Litva"
 
-[DEFNAME Sysmessage_SKY]
+[DEFNAME defs_d_admin_Sysmessage_SKY]
 d_admin_SKY_Properties_Sys					"Vlastnosti"
 d_admin_SKY_Updated_Sys						"boli aktualizované."
 d_admin_SKY_Allskills_Sys					"Všetky zruènosti"
