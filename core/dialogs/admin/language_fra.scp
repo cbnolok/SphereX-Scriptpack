@@ -157,18 +157,4 @@ d_admin_FRA_CountryName_NOR				"Norvège"
 d_admin_FRA_CountryName_TRK				"Turquie"
 d_admin_FRA_CountryName_LTH				"Lituanie"
 
-[DEFNAME defs_d_admin_Sysmessage_FRA]
-d_admin_FRA_Properties_Sys					"Propriétés"
-d_admin_FRA_Updated_Sys						"ont été mis à jour."
-d_admin_FRA_Allskills_Sys					"Toutes les compétences"
-d_admin_FRA_Set_Sys						"ont été définis sur"
-d_admin_FRA_Skills_Sys						"Compétences"
-d_admin_FRA_Flags_Sys						"Flags"
-d_admin_FRA_Events_Sys						"Événements"
-d_admin_FRA_Tags_Sys						"Balises"
-d_admin_FRA_For_Account_Sys					"Pour le compte"
-d_admin_FRA_Added_Note_Sys					"une note a été ajoutée."
-d_admin_FRA_Note_For_Account_Sys				"L'enregistrement du compte"
-d_admin_FRA_Del_Note_Sys					"a été supprimé."
-
 [Eof]

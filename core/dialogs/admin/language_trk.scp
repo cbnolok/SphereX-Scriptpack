@@ -156,18 +156,5 @@ d_admin_TRK_CountryName_NOR				"Norveç"
 d_admin_TRK_CountryName_TRK				"Türkiye"
 d_admin_TRK_CountryName_LTH				"Litvanya"
 
-[DEFNAME defs_d_admin_Sysmessage_TRK]
-d_admin_TRK_Properties_Sys					"Özellikler"
-d_admin_TRK_Updated_Sys						"Güncellendi"
-d_admin_TRK_Allskills_Sys					"Tüm Yetenekler
-d_admin_TRK_Set_Sys						"ayarlandý"
-d_admin_TRK_Skills_Sys						"Skills"
-d_admin_TRK_Flags_Sys						"Flags"
-d_admin_TRK_Events_Sys						"Events"
-d_admin_TRK_Tags_Sys						"Tags"
-d_admin_TRK_For_Account_Sys					"Hesap için"
-d_admin_TRK_Added_Note_Sys					"Bir not eklendi."
-d_admin_TRK_Note_For_Account_Sys				"Notlar"
-d_admin_TRK_Del_Note_Sys					"Silindi."
 
 [Eof]

@@ -157,18 +157,5 @@ d_admin_SKY_CountryName_NOR				"Nórsko"
 d_admin_SKY_CountryName_TRK				"Turecko"
 d_admin_SKY_CountryName_LTH				"Litva"
 
-[DEFNAME defs_d_admin_Sysmessage_SKY]
-d_admin_SKY_Properties_Sys					"Vlastnosti"
-d_admin_SKY_Updated_Sys						"boli aktualizované."
-d_admin_SKY_Allskills_Sys					"Všetky zruènosti"
-d_admin_SKY_Set_Sys						"boli nastavené na"
-d_admin_SKY_Skills_Sys						"Zruènosti"
-d_admin_SKY_Flags_Sys						"Flagy"
-d_admin_SKY_Events_Sys						"Eventy"
-d_admin_SKY_Tags_Sys						"Tagy"
-d_admin_SKY_For_Account_Sys					"Pre úèet"
-d_admin_SKY_Added_Note_Sys					"bola pridaná poznámka."
-d_admin_SKY_Note_For_Account_Sys				"Záznam pre úèet"
-d_admin_SKY_Del_Note_Sys					"bol vymazán."
 
 [Eof]

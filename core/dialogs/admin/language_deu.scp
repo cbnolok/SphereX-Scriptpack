@@ -157,18 +157,4 @@ d_admin_DEU_CountryName_NOR				"Norwegen"
 d_admin_DEU_CountryName_TRK				"Truthahn"
 d_admin_DEU_CountryName_LTH				"Litauen"
 
-[DEFNAME defs_d_admin_Sysmessage_DEU]
-d_admin_DEU_Properties_Sys					"Eigenschaften"
-d_admin_DEU_Updated_Sys						"aktualisiert."
-d_admin_DEU_Allskills_Sys					"Alle Fähigkeiten"
-d_admin_DEU_Set_Sys						"wurden eingestellt"
-d_admin_DEU_Skills_Sys						"Fähigkeiten"
-d_admin_DEU_Flags_Sys						"Flagy"
-d_admin_DEU_Events_Sys						"Eventy"
-d_admin_DEU_Tags_Sys						"Tagy"
-d_admin_DEU_For_Account_Sys					"Für das Konto"
-d_admin_DEU_Added_Note_Sys					"eine Notiz wurde hinzugefügt."
-d_admin_DEU_Note_For_Account_Sys				"Notiz für Konto"
-d_admin_DEU_Del_Note_Sys					"wurde gelöscht."
-
 [Eof]

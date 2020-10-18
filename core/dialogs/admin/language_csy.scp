@@ -160,18 +160,4 @@ d_admin_CSY_CountryName_NOR				"Norsko"
 d_admin_CSY_CountryName_TRK				"Turecko"
 d_admin_CSY_CountryName_LTH				"Litva"
 
-[DEFNAME defs_d_admin_Sysmessage_CSY]
-d_admin_CSY_Properties_Sys					"Vlastnosti"
-d_admin_CSY_Updated_Sys						"byly aktualizovány."
-d_admin_CSY_Allskills_Sys					"Všechny dovednosti"
-d_admin_CSY_Set_Sys						"byly nastaveny na"
-d_admin_CSY_Skills_Sys						"Dovednosti"
-d_admin_CSY_Flags_Sys						"Flagy"
-d_admin_CSY_Events_Sys						"Eventy"
-d_admin_CSY_Tags_Sys						"Tagy"
-d_admin_CSY_For_Account_Sys					"Pro úèet"
-d_admin_CSY_Added_Note_Sys					"byla pøidána poznámka."
-d_admin_CSY_Note_For_Account_Sys				"Záznam pro úèet"
-d_admin_CSY_Del_Note_Sys					"byl vymazán."
-
 [Eof]
