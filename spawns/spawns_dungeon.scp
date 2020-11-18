@@ -3,7 +3,7 @@
 // www.sphereserver.net
 //****************************************************************************
 VERSION=X1
-
+[EOF]
 [SPAWN spawn_Deceit2]
 CATEGORY=Spawn Groups
 SUBSECTION=Dungeons
