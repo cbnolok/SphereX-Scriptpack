@@ -101,7 +101,7 @@ height_054 28 //DEFNAME=c_ogre_lord_arctic2
 height_055 18 //DEFNAME=c_ophidian_shaman
 height_056 18 //DEFNAME=c_ophidian_warrior
 height_057 18 //DEFNAME=c_ophidian_queen
-height_058 8  //DEFNAME=c_goat
+height_058 8  //DEFNAME=c_mountain_goat
 height_059 6  //DEFNAME=c_serpent_ice
 height_05a 6  //DEFNAME=c_serpent_lava
 height_05b 6  //DEFNAME=c_serpent_silver
@@ -223,7 +223,7 @@ height_0ce 8  //DEFNAME=c_lava_lizard
 height_0cf 5  //DEFNAME=c_sheep_woolly
 
 height_0d0 3  //DEFNAME=c_chicken
-height_0d1 8  //DEFNAME=c_goat_mountain
+height_0d1 8  //DEFNAME=c_goat
 height_0d2 18 //DEFNAME=c_ostard_desert
 height_0d3 9  //DEFNAME=c_bear_black
 height_0d4 11 //DEFNAME=c_bear_grizzly

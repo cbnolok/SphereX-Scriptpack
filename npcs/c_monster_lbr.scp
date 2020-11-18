@@ -1716,6 +1716,46 @@ ON=@CreateLoot
     //ITEM=i_seed_fragrant
     //ITEM=i_see_peculiar
 
+[CHARDEF 09c] //on some client it's a sea monster
+DEFNAME=c_turkey
+NAME=Turkey
+ICON=i_pet_chicken
+SOUND=snd_animals_chicken1
+CAN=MT_WALK|MT_NONHUM
+DAM=1,2
+ARMOR=1
+DESIRES=r_civilization
+AVERSIONS=e_carnivores2,e_carnivores3
+FOODTYPE=t_grain
+MAXFOOD=5
+RESOURCES=25 i_feather,i_bird_raw,1 i_eggs_fresh
+TAG.Barding.Diff=3.4
+TAG.SlayerGroup=BIRD
+FollowerSlots=1
+CATEGORY=Animals
+SUBSECTION=Tame
+DESCRIPTION=turkey
+ON=@Create
+
+   NPC=brain_animal
+   FAME={1 499}
+   KARMA={-1 -499}
+   STR={1 10}
+   MAXHITS={1 5}
+   DEX={10 20}
+   MAXSTAM={10 20}
+   INT={1 10}
+   MAXMANA={1 10}
+   MAGICRESISTANCE={1.0 10.0}
+   TACTICS={1.0 5.0}
+   TAMING={0.1 5.0}
+   WRESTLING={1.0 5.0}
+   RESPHYSICAL={0 4}
+   RESCOLD=0
+   RESENERGY=0
+   RESFIRE=0
+   RESPOISON=0
+
 
 [CHARDEF 09d]
 DEFNAME=c_giant_black_widow

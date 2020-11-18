@@ -3,7 +3,7 @@
 // www.sphereserver.net
 //****************************************************************************
 VERSION=X1
-[EOF]
+
 [SPAWN spawn_Animals]
 CATEGORY=Spawn Groups
 SUBSECTION=Animals
@@ -30,9 +30,9 @@ ID=c_dog
 ID=c_eagle
 ID=c_ferret
 ID=c_goat
-ID=c_goat_mountain
+ID=c_mountain_goat
 ID=c_gorilla
-ID=c_lava_snake
+//ID=c_lava_snake //Todo add custom sphere
 ID=c_leopard
 ID=c_leopard_snow
 ID=c_llama
@@ -91,7 +91,7 @@ ID=c_cougar
 ID=c_doe
 ID=c_eagle
 ID=c_gorilla
-ID=c_jackrabbit
+// ID=c_jackrabbit //todo add custom sphere
 ID=c_rabbit
 ID=c_rat
 ID=c_skittering_hopper
@@ -173,7 +173,7 @@ CATEGORY=Spawn Groups
 SUBSECTION=Animals
 DESCRIPTION=Mountain Animals
 ID=c_eagle                  13
-ID=c_goat_mountain          13
+ID=c_mountain_goat          13
 ID=c_horse_brown_lt
 
 [SPAWN spawn_CaveAnimals]
@@ -191,7 +191,7 @@ ID=c_walrus                 15
 ID=c_leopard_snow           13
 ID=c_wolf_white             13
 ID=c_bear_polar
-ID=c_ice_snake              14
+//ID=c_ice_snake              14 //todo add custom sphere
 
 [SPAWN spawn_PlainsAnimals]
 CATEGORY=Spawn Groups
@@ -208,8 +208,8 @@ ID=c_horse_brown_lt
 ID=c_horse_gray
 ID=c_horse_tan
 ID=c_wolf_silver            10
-ID=c_bird_crow
-ID=c_bird_raven
+ID=c_black_crow
+//ID=c_bird_raven
 ID=c_bird
 ID=c_boura
 ID=c_boura_armoured

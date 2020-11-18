@@ -868,7 +868,7 @@ ADD c_BIRD
 ON=0 Tropical Bird
 ADD C_BIRD_TROPICAL
 ON=0 Crow
-ADD C_BIRD_CROW
+ADD c_black_crow
 ON=0 Raven
 ADD C_BIRD_RAVEN
 ON=0 Magpie

@@ -3576,6 +3576,51 @@ ON=@Create
 ON=@CreateLoot
    ITEM=loot_ratman_mage
 
+[CHARDEF 091]
+DEFNAME=c_sea_serpent_deep
+NAME=Deep sea serpent
+ICON=i_pet_shark
+SOUND=snd_monster_seaserp1
+CAN=MT_SWIM|MT_NONHUM
+
+DAM=15,37
+RANGE=3
+ARMOR=30
+
+DESIRES=r_water,t_coin,t_gold,t_gem,t_ship
+AVERSIONS=r_civilization
+FOODTYPE=t_fish
+MAXFOOD=75
+RESOURCES=10 i_ribs_raw,10 i_hide_horned,8 i_dragonscale_blue
+BLOODCOLOR=
+TAG.Barding.Diff=77.0
+TAG.SlayerGroup=SNAKE,REPTILE
+
+CATEGORY=Monsters
+SUBSECTION=Aquatique
+DESCRIPTION=Sea Serpent (deep)
+ON=@Create
+    NPC=brain_monster
+    FAME={2000 2499}
+    KARMA={-2000 -2499}
+    STR={251 425}
+    MAXHITS={151 255}
+    DEX={87 135}
+    MAXSTAM={87 135}
+    INT={87 155}
+    MAXMANA={87 155}
+    MAGICRESISTANCE={60.0 75.0}
+    TACTICS={60.0 70.0}
+    WRESTLING={60.0 70.0}
+    RESPHYSICAL={0 10}
+    RESCOLD={40 50}
+    RESENERGY={15 20}
+    RESFIRE={70 80}
+    RESPOISON={30 40}
+
+ON=@CreateLoot
+    ITEM=loot_deep_sea_serpent
+
 [CHARDEF 090]
 DEFNAME=c_horse_sea
 NAME=Sea Horse
@@ -3828,6 +3873,50 @@ ON=@CreateLoot
      //ITEM=magic_items
      ITEM=i_treasure_map5,R99
 
+[CHARDEF 0a5]
+DEFNAME=c_wisp_dark
+NAME=Wisp dark
+ICON=i_pet_wisp
+SOUND=snd_monster_wisp1
+CAN=MT_WALK|MT_RUN|MT_NONHUM
+
+DAM=40,46
+ARMOR=35
+DESIRES=r_dungeon,r_caves,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
+AVERSIONS=t_trap,r_civilization
+
+BLOODCOLOR=-1
+TAG.Barding.Diff=60.6
+DamEnergy=50
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Wisp (dark)
+
+ON=@Create
+   NPC=brain_animal
+   FAME={2000 2499}
+   KARMA={-2000 -2499}
+   STR={196 225}
+   MAXHITS={118 135}
+   DEX={196 225}
+   MAXSTAM={196 225}
+   INT={196 225}
+   MAXMANA={196 225}
+   EVALUATINGINTEL={80.0 90.0}
+   MAGERY={80.0 90.0}
+   MAGICRESISTANCE={80.0 90.0}
+   MEDITATION={15.0 25.0}
+   TACTICS={75.0 85.0}
+   WRESTLING={75.0 85.0}
+   RESPHYSICAL={0 10}
+   RESCOLD={10 20}
+   RESENERGY={40 50}
+   RESFIRE={10 20}
+   RESPOISON={10 20}
+   ITEMNEWBIE=i_light_source
+ON=@CreateLoot
+   ITEM=loot_wisp_dark
 
 [CHARDEF 0a7]
 DEFNAME=c_bear_brown
