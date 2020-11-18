@@ -14,7 +14,7 @@ What do you want to summon ?
 
 ON=i_pet_demon_horde <name>
 TEST=NECROMANCY 30.0,SPIRITSPEAK 30.0
-SUMMON=c_demon_horde_minion
+SUMMON=c_daemon_horde_minion
 
 ON=i_pet_wisp <name>
 TEST=NECROMANCY 50.0,SPIRITSPEAK 50.0

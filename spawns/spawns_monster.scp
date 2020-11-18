@@ -4,20 +4,19 @@
 //****************************************************************************
 VERSION=X1
 [EOF]
-
 [SPAWN spawn_Demons]
 CATEGORY=Spawn Groups
 SUBSECTION=Monsters
 DESCRIPTION=Demons
-ID=c_demon_horde_minion   23
+ID=c_daemon_horde_minion   23
 ID=c_imp                  22
-ID=c_demon                21
-ID=c_demon_arcane         20
+ID=c_daemon                21
+ID=c_daemon_arcane         20
 ID=c_gargoyle             19
 ID=c_gargoyle_enforcer    18
 ID=c_gibberling           17
 ID=c_gargoyle_enslaved    16
-ID=c_demon_chaos          15
+ID=c_daemon_chaos          15
 ID=c_maddening_horror     14
 ID=c_ravager              13
 ID=c_demon_horde_large    12
@@ -31,7 +30,7 @@ ID=c_fan_dancer            5
 ID=c_tsuki_wolf            4
 ID=c_gargoyle_destroyer    3
 ID=c_devourer_souls        2
-ID=c_demon_balron          1
+ID=c_daemon_balron          1
 //ID=c_demon_exodus        1
 
 [SPAWN spawn_Dragons]
@@ -42,7 +41,7 @@ ID=c_wyvern               13
 ID=c_serpentine_dragon    12
 ID=c_kepetch              11
 ID=c_dragon_wolf          10
-ID=c_drake                 9
+ID=c_drake_gray				9
 ID=c_drake_red             9
 ID=c_dragon_greendrake     9
 ID=c_dragon_bluedrake      9
@@ -93,7 +92,7 @@ DESCRIPTION=Fey Monsters
 ID=c_squirrel               17
 ID=c_doe                    16
 ID=c_stag                   15
-ID=c_demon_horde_minion     14
+ID=c_daemon_horde_minion     14
 ID=c_skittering_hopper      14
 ID=c_gazer_larva            13
 ID=c_vampire_bat            12
