@@ -1,3 +1,9 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
 [CHARDEF 0b]
 DEFNAME=c_spider_dread
 NAME=dread spider
@@ -2138,6 +2144,55 @@ ON=@CreateLoot
     ITEM=i_gold,{770 920}
     ITEM=random_weapon
 
+[CHARDEF 0b5]
+//FIXME: Teleports away and hides when damaged
+//FIXME: Stealth walks when hidden
+//FIXME: Heals using bandages
+DEFNAME=c_orc_scout
+NAME=orc scout
+ICON=i_pet_orc
+SOUND=snd_monster_orc2_1
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+DAM=28,31
+ARMOR=25
+DESIRES=r_orc_camp,t_coin,t_gold,t_gem,t_potion
+AVERSIONS=t_trap,r_civilization
+FOODTYPE=t_meat_raw
+MAXFOOD=25
+RESOURCES=1 i_ribs_raw
+TAG.Barding.Diff=57.9
+TAG.SlayerGroup=ORC,REPOND
+TEVENTS=e_carnivores2
+CATEGORY=Monsters
+SUBSECTION=Orcs
+DESCRIPTION=Orc Scout
+ON=@Create
+   NPC=brain_monster
+   FAME={1500 1999}
+   KARMA={-2500 -2999}
+   STR={96 120}
+   MAXHITS={58 72}
+   DEX={101 130}
+   MAXSTAM={101 130}
+   INT={36 60}
+   MAXMANA={36 60}
+   ARCHERY={55.0 80.0}
+   FENCING={55.0 80.0}
+   HIDING={40.0 50.0}
+   MAGICRESISTANCE={50.0 75.0}
+   PARRYING={40.0 55.0}
+   STEALTH={40.0 50.0}
+   TACTICS={55.0 80.0}
+   WRESTLING={55.0 80.0}
+   RESPHYSICAL={0 10}
+   RESCOLD={15 25}
+   RESENERGY={25 30}
+   RESFIRE={30 40}
+   RESPOISON={15 20}
+
+ON=@CreateLoot
+   ITEM=loot_orc_scout
+   ITEM=loot_ai_healer
 
 [CHARDEF 0b6]
 DEFNAME=c_orc_bomber
@@ -2189,6 +2244,245 @@ ON=@CreateLoot
     ITEM=i_reag_mandrake_root,{6 10}
     ITEM=i_mortar_pestle
     //ITEM=i_bola_ball
+
+[CHARDEF 0b7]
+//FIXME: Bola attack vs mounted opponents
+DEFNAME=c_savage_warrior_male
+NAME=#NAMES_SAVAGE_MALE the savage warrior
+ICON=i_pet_man_naked
+SOUND=snd_special_human
+CAN=MT_WALK|MT_RUN|MT_USEHANDS|MT_EQUIP|MT_MOUNT
+DAM=23,27
+ARMOR=30
+DESIRES=r_jungle,t_coin,t_gold,t_gem,t_potion
+AVERSIONS=t_trap,r_civilization
+FOODTYPE=t_fish
+MAXFOOD=25
+RESOURCES=1 i_ribs_raw
+TAG.Barding.Diff=74.7
+TAG.SlayerGroup=REPOND
+CATEGORY=Evil NPC
+SUBSECTION=Savages
+DESCRIPTION=Savage Warrior (male)
+ON=@Create
+   COLOR=colors_skin
+   NPC=brain_human
+   FAME={1500 1999}
+   KARMA={-1500 -1999}
+   STR={96 115}
+   MAXHITS={96 115}
+   DEX={86 105}
+   MAXSTAM={86 105}
+   INT={51 65}
+   MAXMANA={51 65}
+   ARCHERY={60.0 83.0}
+   FENCING={60.0 83.0}
+   MACEFIGHTING={80.0 83.0}
+   MAGICRESISTANCE={57.0 80.0}
+   PARRYING={65.0 87.0}
+   SWORDSMANSHIP={60.0 83.0}
+   TACTICS={60.0 83.0}
+   WRESTLING={60.0 83.0}
+   RESPHYSICAL={0 10}
+   RESCOLD={20 30}
+   RESENERGY={40 50}
+   RESFIRE={20 30}
+   RESPOISON={20 30}
+   ITEMNEWBIE=random_male_hair
+   COLOR=colors_hair
+ON=@NPCRestock
+   ITEM=loot_savage_warrior
+ON=@Hit
+   //Triple Damage Attack vs pets
+   IF (<FLAGS>&statf_pet)
+      ARGN1=<ARGN1> * 3
+      ARGN2=<DEF.dam_physical>
+   ENDIF
+
+[CHARDEF 0b8]
+//FIXME: Heals using bandages
+DEFNAME=c_savage_warrior_female
+NAME=#NAMES_SAVAGE_FEMALE the savage warrior
+ICON=i_pet_woman_naked
+SOUND=snd_special_human
+CAN=MT_WALK|MT_RUN|MT_USEHANDS|MT_EQUIP|MT_FEMALE|MT_MOUNT
+DAM=23,27
+ARMOR=30
+DESIRES=r_jungle,t_coin,t_gold,t_gem,t_potion
+AVERSIONS=t_trap,r_civilization
+FOODTYPE=t_fish
+MAXFOOD=25
+RESOURCES=1 i_ribs_raw
+TAG.Barding.Diff=74.3
+TAG.SlayerGroup=REPOND
+CATEGORY=Evil NPC
+SUBSECTION=Savages
+DESCRIPTION=Savage Warrior (female)
+ON=@Create
+   COLOR=colors_skin
+   NPC=brain_human
+   FAME={1500 1999}
+   KARMA={-1500 -1999}
+   STR={96 115}
+   MAXHITS={96 115}
+   DEX={86 105}
+   MAXSTAM={86 105}
+   INT={51 65}
+   MAXMANA={51 65}
+   ARCHERY={60.0 83.0}
+   FENCING={60.0 83.0}
+   MACEFIGHTING={80.0 83.0}
+   MAGICRESISTANCE={57.0 80.0}
+   PARRYING={65.0 87.0}
+   SWORDSMANSHIP={60.0 83.0}
+   TACTICS={60.0 83.0}
+   WRESTLING={60.0 83.0}
+   RESPHYSICAL={0 10}
+   RESCOLD={20 30}
+   RESENERGY={40 50}
+   RESFIRE={20 30}
+   RESPOISON={20 30}
+   ITEMNEWBIE=random_female_hair
+   COLOR=colors_hair
+   
+ON=@Createloot
+   ITEM=loot_savage_warrior
+ON=@Hit
+   //Triple Damage Attack vs pets
+   IF (<FLAGS>&statf_pet)
+      ARGN1=<ARGN1> * 3
+      ARGN2=<DEF.dam_physical>
+   ENDIF
+
+[CHARDEF 0b9]
+//FIXME: Heals himself with bandages.
+DEFNAME=c_savage_rider
+NAME=#NAMES_SAVAGE_MALE the savage rider
+ICON=i_pet_man_naked
+SOUND=snd_special_human
+CAN=MT_WALK|MT_RUN|MT_USEHANDS|MT_EQUIP|MT_MOUNT
+DAM=29,34
+ARMOR=35
+DESIRES=r_jungle,t_coin,t_gold,t_gem,t_potion
+AVERSIONS=t_trap,r_civilization
+FOODTYPE=t_fish
+MAXFOOD=25
+RESOURCES=1 i_ribs_raw
+TAG.Barding.Diff=78.3
+TAG.SlayerGroup=REPOND
+CATEGORY=Evil NPC
+SUBSECTION=Savages
+DESCRIPTION=Savage Rider
+
+ON=@Create
+   COLOR=colors_skin
+   NPC=brain_human
+   FAME={1500 1999}
+   KARMA={-1500 -1999}
+   STR={151 170}
+   MAXHITS={151 170}
+   DEX={92 130}
+   MAXSTAM={92 130}
+   INT={51 65}
+   MAXMANA={51 65}
+   ARCHERY={73.0 95.0}
+   FENCING={73.0 95.0}
+   MAGICRESISTANCE={73.0 95.0}
+   PARRYING={73.0 95.0}
+   TACTICS={73.0 95.0}
+   WRESTLING={73.0 95.0}
+   RESPHYSICAL={0 10}
+   RESCOLD={20 30}
+   RESENERGY={40 50}
+   RESFIRE={20 30}
+   RESPOISON={20 30}
+   ITEMNEWBIE=random_male_hair
+   COLOR=colors_hair
+   ITEM=03eba
+
+ON=@Createloot
+   ITEM=loot_savage_rider
+   ITEM=loot_ai_healer
+ON=@Hit
+   //Dismount Attack
+   IF (<MANA> >= 20) && (<SRC.FLAGS> & statf_onhorse)
+      MANA -= 20
+      SRC.DISMOUNT
+      SRC.EMOTE knocked off mount!
+      SRC.DAMAGE <R15,25> <DEF.dam_physical> <UID>
+   ENDIF
+   //Triple Damage Attack vs pets
+   IF (<FLAGS>&statf_pet)
+      ARGN1=<ARGN1> * 3
+      ARGN2=<DEF.dam_physical>
+   ENDIF
+ON=@Death
+   SERV.NEWNPC c_savage_ridgeback
+   NEW.P=<SRC.P>
+   NEW.HOME=<SRC.P>
+   NEW.HOMEDIST=7
+   NEW.ATTACK <SRC>
+
+[CHARDEF 0ba]
+//FIXME: Tribal dance attack
+//"Each time a Savage Shaman is hit, she has a chance to initiate a
+// tribal dance (best viewed in 3D). If she initiates the dance, she searches
+// the area for other Savage Shamans. If she finds three or more Savage
+// Shamans within a certain radius, the Shaman and all those near her begin
+// to dance. When they finish the dance, the Savages cast a powerful group
+// spell that can cause harm to players or even heal all savages near the
+// casters (Chain lightning, Mass Poison or Mass Greater Heal)."
+DEFNAME=c_savage_shaman
+NAME=#NAMES_SAVAGE_FEMALE the savage shaman
+ICON=i_pet_woman_naked
+SOUND=snd_special_human
+CAN=MT_WALK|MT_RUN|MT_USEHANDS|MT_EQUIP|MT_FEMALE|MT_MOUNT
+DAM=7,18
+ARMOR=30
+DESIRES=r_jungle,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
+AVERSIONS=t_trap,r_civilization
+FOODTYPE=t_fish
+MAXFOOD=25
+RESOURCES=1 i_ribs_raw
+TAG.Barding.Diff=88.9
+TAG.SlayerGroup=REPOND
+CATEGORY=Evil NPC
+SUBSECTION=Savages
+DESCRIPTION=Savage Shaman
+ON=@Create
+   NPC=brain_human
+   FAME={1500 1999}
+   KARMA={-1500 -1999}
+   STR={126 145}
+   MAXHITS={126 145}
+   DEX={91 110}
+   MAXSTAM={91 110}
+   INT={161 185}
+   MAXMANA={161 185}
+   EVALUATINGINTEL={77.0 100.0}
+   FENCING={63.0 85.0}
+   MAGERY={73.0 95.0}
+   MAGICRESISTANCE={77.0 100.0}
+   MEDITATION={77.0 100.0}
+   PARRYING={63.0 85.0}
+   TACTICS={63.0 85.0}
+   WRESTLING={63.0 85.0}
+   RESPHYSICAL={0 10}
+   RESCOLD={20 30}
+   RESENERGY={40 50}
+   RESFIRE={20 30}
+   RESPOISON={20 30}
+   ITEMNEWBIE=random_female_hair
+   COLOR=colors_hair
+
+ON=@Createloot
+   ITEM=loot_savage_warrior
+ON=@Hit
+   //Triple Damage Attack vs pets
+   IF (<FLAGS>&statf_pet)
+      ARGN1=<ARGN1> * 3
+      ARGN2=<DEF.dam_physical>
+   ENDIF
 
 
 [CHARDEF 0bb]
@@ -4404,6 +4698,55 @@ ON=@Create
     WRESTLING={65.0 80.0}
     TAMING=100.0
 
+[CHARDEF 031c]
+//FIXME: No Stratics entry
+DEFNAME=c_daemon_horde_large
+NAME=horde daemon lord
+ICON=i_pet_daemon_horde
+SOUND=snd_monster_ogre1
+CAN=MT_WALK|MT_RUN|MT_USEHANDS
+DAM=21,42
+ARMOR=35
+DESIRES=r_forests,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
+AVERSIONS=t_trap,r_civilization,e_carnivores3
+FOODTYPE=t_meat_raw
+MAXFOOD=40
+RESOURCES=1 i_ribs_raw,1 i_reag_daemon_bone,1 i_reag_blood_vial
+TAG.Barding.Diff=58.0
+TAG.SlayerGroup=DEMON
+TEVENTS=e_carnivores2
+
+CATEGORY=Monsters
+SUBSECTION=Demons
+DESCRIPTION=Horde Demon (large)
+RESLEVEL=2
+RESDISPDNID=c_man
+RESDISPDNHUE=33
+ON=@Create
+   NPC=brain_monster
+   FAME={2500 2999}
+   KARMA={-2500 -2999}
+   STR={400 550}
+   MAXHITS={350 400}
+   DEX={75 100}
+   MAXSTAM={75 100}
+   INT={100 150}
+   MAXMANA={200 250}
+   ANATOMY={20.0 35.0}
+   EVALUATINGINTEL={70.0 85.0}
+   MAGERY={90.0 100.0}
+   MAGICRESISTANCE={90.0 100.0}
+   MEDITATION={75.0 100.0}
+   TACTICS={80.0 90.0}
+   WRESTLING={80.0 100.0}
+   RESPHYSICAL={0 10}
+   RESCOLD={30 40}
+   RESENERGY={40 50}
+   RESFIRE={60 70}
+   RESPOISON={35 45}
+
+ON=@CreateLoot
+   ITEM=loot_horde_demon_large
 
 [CHARDEF 031f]
 DEFNAME=c_armored_swamp_dragon

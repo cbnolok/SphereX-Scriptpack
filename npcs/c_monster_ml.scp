@@ -1,3 +1,9 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
 [CHARDEF 013]
 //"Malefic is a named Dread Spider from the Twisted Weald."
 DEFNAME=c_spider_malefic
@@ -822,6 +828,52 @@ ON=@CreateLoot
     ITEM=i_bandage,{2 5}
     //ITEM=i_primitive_flesh
     ITEM=i_treasure_map2,R99
+
+[CHARDEF 010e]
+// This opportunist entity can spawn when a treasure hunter fails
+// lockpicking on a treasure chest, it will steal contents from the
+// chest so be sure to reclaim the treasure stolen!
+//FIXME: Incomplete Stratics data
+//FIXME: Steals loot and runs away...
+DEFNAME=c_grubber
+NAME=grubber
+SOUND=snd_monster_daemon1
+//ICON=i_pet_fixme
+CAN=MT_WALK|MT_RUN|MT_NONHUM
+DAM=1,2
+ARMOR=5
+DESIRES=r_swamp,t_coin,t_gold,t_gem
+AVERSIONS=t_trap,r_civilization
+FOODTYPE=t_meat_raw
+MAXFOOD=25
+RESOURCES=5 i_ribs_raw
+TAG.Barding.Diff=83.8
+TEVENTS=e_carnivores
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Grubber
+
+ON=@Create
+   NPC=brain_monster
+   FAME={500 999}
+   KARMA={-500 -999}
+   STR={10 20}
+   MAXHITS={195 205}
+   DEX={1900 2100}
+   MAXSTAM={490 510}
+   INT={990 1010}
+   MAXMANA={20 30}
+   MAGICRESISTANCE={195.0 205.0}
+   SNOOPING={10.0 20.0}
+   STEALING={95.0 100.0}
+   TACTICS={5.0 10.0}
+   WRESTLING={5.0 10.0}
+   RESPHYSICAL={0 5}
+
+ON=@Createloot
+   ITEM=random_jewel,{1 4}
+   ITEM=i_gold,{80 130}
 
 
 [CHARDEF 010f]

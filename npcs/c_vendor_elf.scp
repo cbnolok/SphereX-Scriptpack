@@ -1,3 +1,9 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
 [CHARDEF c_alchemist_elf]
 ID=c_elf_male
 NAME=#NAMES_ELF_MALE the alchemist

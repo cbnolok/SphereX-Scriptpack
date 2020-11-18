@@ -1547,6 +1547,54 @@ ON=@CreateLoot
     //ITEM=i_slith_eye
     //ITEM=i_pottery_fragments
 
+[CHARDEF c_slith_toxic]
+ID=c_slith
+NAME=toxic slith
+ICON=i_pet_slith
+SOUND=snd_monster_slith1
+CAN=MT_WALK|MT_RUN|MT_NONHUM
+DAM=6,24
+ARMOR=35
+DESIRES=r_swamp,t_coin,t_gold,t_gem
+AVERSIONS=t_trap,r_civilization
+FOODTYPE=t_ingot
+MAXFOOD=35
+RESOURCES=6 i_ribs_raw,11 i_hide_horned,6 i_reag_dragon_blood
+TAG.Barding.Diff=82.8
+TAG.HitPoison=5	//Lethal
+TAG.SlayerGroup=REPTILE
+CATEGORY=Monsters
+SUBSECTION=Reptiles
+DESCRIPTION=Toxic Slith
+ON=@Create
+   COLOR=0818
+   NPC=brain_dragon
+   FAME={2500 2999}
+   KARMA={-3000 -3499}
+   STR={220 310}
+   MAXHITS={195 215}
+   DEX={230 260}
+   MAXSTAM={230 260}
+   INT={30 35}
+   MAXMANA={30 35}
+   MAGICRESISTANCE={95.0 100.0}
+   TACTICS={85.0 90.0}
+   WRESTLING={90.0 95.0}
+   RESPHYSICAL={0 10}
+   RESCOLD={5 10}
+   RESENERGY={5 10}
+   RESFIRE={0 10}
+   RESPOISON=100
+   //BREATH.ANIM=i_fx_explode		//explosion id
+   //BREATH.TYPE=3				// Follow target
+   
+ON=@Createloot
+   ITEM=i_gold,{400 500}
+   ITEM=i_slith_tongue,{1 3},R5
+   ITEM=i_toxic_venom_sac,{1 3},R5
+   //ITEM=i_map_treasure,1,R20
+   //FIXME: slith eye, pottery fragments, magic items
+
 
 [CHARDEF 02df]
 //FIXME: Incomplete Stratics data

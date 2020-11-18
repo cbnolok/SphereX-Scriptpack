@@ -385,7 +385,7 @@ ADD c_ORC
 ON=0 Orc (with club)
 ADD c_orc_w_club
 ON=0 Orcish Mage
-ADD c_orc_mage
+ADD c_orc_shaman
 ON=0 Orc Captian
 ADD c_orc_captain
 ON=0 Orc Lord

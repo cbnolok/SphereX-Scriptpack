@@ -4,34 +4,34 @@
 //****************************************************************************
 VERSION=X1
 
-// [SPAWN spawn_Villagers]
-// CATEGORY=Spawn Groups
-// SUBSECTION=Humans
-// DESCRIPTION=Villagers
-// ID=c_begger_f
-// ID=c_begger
-// ID=c_mayor_f
-// ID=c_mayor
-// ID=c_noble_f
-// ID=c_noble
-// ID=c_peasant_f
-// ID=c_peasant
-// ID=c_thief_f
-// ID=c_thief
-// ID=c_priest
-// ID=c_priestess_f
-// ID=c_fighter_f
-// ID=c_fighter
-// ID=c_mercenary_f
-// ID=c_mercenary
-// ID=c_actor_f
-// ID=c_actor
-// ID=c_artist
-// ID=c_artist_f
-// ID=c_bard_f
-// ID=c_bard
-// ID=c_sculptor_f
-// ID=c_sculptor
+[SPAWN spawn_Villagers]
+CATEGORY=Spawn Groups
+SUBSECTION=Humans
+DESCRIPTION=Villagers
+ID=c_begger_f
+ID=c_begger
+ID=c_mayor_f
+ID=c_mayor
+ID=c_noble_f
+ID=c_noble
+ID=c_peasant_f
+ID=c_peasant
+ID=c_thief_f
+ID=c_thief
+ID=c_priest
+ID=c_priestess_f
+ID=c_fighter_f
+ID=c_fighter
+ID=c_mercenary_f
+ID=c_mercenary
+ID=c_actor_f
+ID=c_actor
+ID=c_artist
+ID=c_artist_f
+ID=c_bard_f
+ID=c_bard
+ID=c_sculptor_f
+ID=c_sculptor
 
 [SPAWN spawn_Alchemists]
 CATEGORY=Spawn Groups
@@ -133,14 +133,14 @@ ID=c_baker
 ID=c_cook_f
 ID=c_cook
 
-// [SPAWN spawn_Dockhands]
-// CATEGORY=Spawn Groups
-// SUBSECTION=Humans
-// DESCRIPTION=Dockhands
-// ID=c_sailor_f
-// ID=c_sailor
-// ID=c_fisher
-// ID=c_fisher_f
+[SPAWN spawn_Dockhands]
+CATEGORY=Spawn Groups
+SUBSECTION=Humans
+DESCRIPTION=Dockhands
+ID=c_sailor_f
+ID=c_sailor
+ID=c_fisher
+ID=c_fisher_f
 
 [SPAWN spawn_Farmers]
 CATEGORY=Spawn Groups
@@ -198,20 +198,20 @@ DESCRIPTION=Mages
 ID=c_mageshop_f
 ID=c_mageshop
 
-// [SPAWN spawn_Mercenaries]
-// CATEGORY=Spawn Groups
-// SUBSECTION=Humans
-// DESCRIPTION=Mercenaries
-// ID=c_fighter_f
-// ID=c_fighter
-// ID=c_mercenary_f
-// ID=c_mercenary
-// ID=c_paladin_f
-// ID=c_paladin
-// ID=c_ranger_f
-// ID=c_ranger
-// ID=c_weaponstrainer_f
-// ID=c_weaponstrainer
+[SPAWN spawn_Mercenaries]
+CATEGORY=Spawn Groups
+SUBSECTION=Humans
+DESCRIPTION=Mercenaries
+ID=c_fighter_f
+ID=c_fighter
+ID=c_mercenary_f
+ID=c_mercenary
+ID=c_paladin_f
+ID=c_paladin
+ID=c_ranger_f
+ID=c_ranger
+ID=c_weaponstrainer_f
+ID=c_weaponstrainer
 
 [SPAWN spawn_Millers]
 CATEGORY=Spawn Groups
@@ -220,36 +220,36 @@ DESCRIPTION=Millers
 ID=c_miller_f
 ID=c_miller
 
-// [SPAWN spawn_Miners]
-// CATEGORY=Spawn Groups
-// SUBSECTION=Humans
-// DESCRIPTION=Miners
-// ID=c_miner_f
-// ID=c_miner
-// ID=c_guild_miner_f
-// ID=c_guild_miner
+[SPAWN spawn_Miners]
+CATEGORY=Spawn Groups
+SUBSECTION=Humans
+DESCRIPTION=Miners
+ID=c_miner_f
+ID=c_miner
+ID=c_guild_miner_f
+ID=c_guild_miner
 
-// [SPAWN spawn_Peasants]
-// CATEGORY=Spawn Groups
-// SUBSECTION=Humans
-// DESCRIPTION=Peasants
-// ID=c_peasant_f
-// ID=c_peasant
-// ID=c_thief_f
-// ID=c_thief
-// ID=c_begger_f
-// ID=c_begger
+[SPAWN spawn_Peasants]
+CATEGORY=Spawn Groups
+SUBSECTION=Humans
+DESCRIPTION=Peasants
+ID=c_peasant_f
+ID=c_peasant
+ID=c_thief_f
+ID=c_thief
+ID=c_begger_f
+ID=c_begger
 
-// [SPAWN spawn_Performers]
-// CATEGORY=Spawn Groups
-// SUBSECTION=Humans
-// DESCRIPTION=Performers
-// ID=c_actor_f
-// ID=c_actor
-// ID=c_artist
-// ID=c_artist_f
-// ID=c_bard_f
-// ID=c_bard
+[SPAWN spawn_Performers]
+CATEGORY=Spawn Groups
+SUBSECTION=Humans
+DESCRIPTION=Performers
+ID=c_actor_f
+ID=c_actor
+ID=c_artist
+ID=c_artist_f
+ID=c_bard_f
+ID=c_bard
 
 [SPAWN spawn_Provisioners]
 CATEGORY=Spawn Groups
@@ -258,36 +258,36 @@ DESCRIPTION=Provisioners
 ID=c_provis_f
 ID=c_provis
 
-// [SPAWN spawn_Rangers]
-// CATEGORY=Spawn Groups
-// SUBSECTION=Humans
-// DESCRIPTION=Rangers
-// ID=c_ranger_f
-// ID=c_ranger
-// ID=c_guild_ranger_f
-// ID=c_guild_ranger
+[SPAWN spawn_Rangers]
+CATEGORY=Spawn Groups
+SUBSECTION=Humans
+DESCRIPTION=Rangers
+ID=c_ranger_f
+ID=c_ranger
+ID=c_guild_ranger_f
+ID=c_guild_ranger
 
 [SPAWN spawn_Religious]
 CATEGORY=Spawn Groups
 SUBSECTION=Humans
 DESCRIPTION=Religious
-// ID=c_monk_f
-// ID=c_monk
-// ID=c_priest
-// ID=c_priestess_f
+ID=c_monk_f
+ID=c_monk
+ID=c_priest
+ID=c_priestess_f
 ID=c_cashual
 ID=c_cashual_f
 
-// [SPAWN spawn_Rogues]
-// CATEGORY=Spawn Groups
-// SUBSECTION=Humans
-// DESCRIPTION=Rogues
-// ID=c_pirate_f
-// ID=c_pirate_m
-// ID=c_brigand_f
-// ID=c_brigand
-// ID=c_thief_f
-// ID=c_thief
+[SPAWN spawn_Rogues]
+CATEGORY=Spawn Groups
+SUBSECTION=Humans
+DESCRIPTION=Rogues
+ID=c_pirate_f
+ID=c_pirate_m
+ID=c_brigand_f
+ID=c_brigand
+ID=c_thief_f
+ID=c_thief
 
 [SPAWN spawn_Shipwrights]
 CATEGORY=Spawn Groups
@@ -314,20 +314,20 @@ ID=c_tanner
 ID=c_furtrader_f
 ID=c_furtrader
 
-// [SPAWN spawn_TavernFolk]
-// CATEGORY=Spawn Groups
-// SUBSECTION=Shopkeepers
-// DESCRIPTION=Tavernfolk
-// ID=c_bard_f
-// ID=c_bard
-// ID=c_actor_f
-// ID=c_actor
-// ID=c_gambler_f
-// ID=c_gambler
-// ID=c_peasant_f
-// ID=c_peasant
-// ID=c_mercenary_f
-// ID=c_mercenary
+[SPAWN spawn_TavernFolk]
+CATEGORY=Spawn Groups
+SUBSECTION=Shopkeepers
+DESCRIPTION=Tavernfolk
+ID=c_bard_f
+ID=c_bard
+ID=c_actor_f
+ID=c_actor
+ID=c_gambler_f
+ID=c_gambler
+ID=c_peasant_f
+ID=c_peasant
+ID=c_mercenary_f
+ID=c_mercenary
 
 [SPAWN spawn_TavernKeepers]
 CATEGORY=Spawn Groups
@@ -373,14 +373,14 @@ ID=c_weaponsmith_blunt_f
 ID=c_weaponsmith_blade
 ID=c_weaponsmith_blunt
 
-// [SPAWN spawn_MaginciaTownMembers]
-// CATEGORY=Spawn Groups
-// SUBSECTION=Humans
-// DESCRIPTION=Magincia Town Members
-// ID=c_magincia_council_f
-// ID=c_magincia_council
-// ID=c_magincia_servant_f
-// ID=c_magincia_servant
+[SPAWN spawn_MaginciaTownMembers]
+CATEGORY=Spawn Groups
+SUBSECTION=Humans
+DESCRIPTION=Magincia Town Members
+ID=c_magincia_council_f
+ID=c_magincia_council
+ID=c_magincia_servant_f
+ID=c_magincia_servant
 
 
 [EOF]

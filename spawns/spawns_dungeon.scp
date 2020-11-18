@@ -3,7 +3,7 @@
 // www.sphereserver.net
 //****************************************************************************
 VERSION=X1
-[EOF]
+
 [SPAWN spawn_Deceit2]
 CATEGORY=Spawn Groups
 SUBSECTION=Dungeons
@@ -79,7 +79,7 @@ ID=c_lizardman_spear
 ID=c_orc_lord
 ID=c_ogre
 ID=c_goblin_chief
-ID=c_goblin_gray_mage
+ID=c_gremlin
 ID=c_slime
 ID=c_spider_giant
 
@@ -103,7 +103,7 @@ ID=c_snake_giant
 ID=c_spider_giant
 ID=c_gazer
 ID=c_orc_lord
-ID=c_orc_mage
+ID=c_orc_shaman
 
 [SPAWN spawn_Shame4]
 CATEGORY=Spawn Groups
@@ -297,7 +297,7 @@ ID=c_orc_bomber
 ID=c_orc_chopper
 ID=c_orc_scout
 ID=c_orc_lord
-ID=c_orc_mage
+ID=c_orc_shaman
 
 [SPAWN spawn_OrcCave_level3]
 CATEGORY=Spawn Groups
@@ -327,7 +327,7 @@ CATEGORY=Spawn Groups
 SUBSECTION=Dungeons
 DESCRIPTION=Fan Dancer Dojo Level 3
 ID=c_maddening_horror        7
-ID=c_demon_horde_large       6
+ID=c_daemon_horde_large       6
 ID=c_succubus                5
 ID=c_fan_dancer              4
 ID=c_tsuki_wolf              4
@@ -375,11 +375,10 @@ ID=c_daemon                  12
 ID=c_hellhound_leader       11
 ID=c_daemon_arcane           11
 ID=c_daemon_chaos            10
-ID=c_plague_spawn            8
 ID=c_slith_toxic             7
 ID=c_elemental_acid          7
 ID=c_succubus                6
-ID=c_demon_moloch            6
+ID=c_daemon_moloch            6
 ID=c_plague_beast            5
 ID=c_plague_beast_lord       4
 ID=c_elemental_poison        3
