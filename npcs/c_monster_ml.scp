@@ -1505,7 +1505,7 @@ DESCRIPTION=Elf, Female
 
 
 [CHARDEF 025f]
-DEFNAME=c_elf_ghost_male
+DEFNAME=c_elf_ghost_man
 NAME=Elf male Ghost
 ICON=i_pet_MAN
 CAN=mt_equip|mt_walk|mt_run|mt_ghost
@@ -1522,7 +1522,7 @@ TSPEECH=spk_human_default
 TEVENTS=e_Human_HearUnk
 
 RESLEVEL=5
-RESDISPDNID=c_ghost_male
+RESDISPDNID=c_ghost_man
 
 ERALIMITLOOT=5
 ERALIMITGEAR=5

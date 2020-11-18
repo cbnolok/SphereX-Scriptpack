@@ -5249,7 +5249,7 @@ ON=@Create
 [CHARDEF 0192]
 //Ghost robe is not automatic !
 //DEFNAME2=GHOSTMAN
-DEFNAME=c_ghost_male
+DEFNAME=c_ghost_man
 NAME=Ghost
 ICON=i_pet_man
 CAN=mt_equip|mt_walk|mt_run|mt_ghost
