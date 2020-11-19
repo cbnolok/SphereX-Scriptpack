@@ -3,7 +3,6 @@
 // www.sphereserver.net
 //****************************************************************************
 VERSION=X1
-[EOF]
 
 [SPAWN spawn_PlainsMonsters]
 CATEGORY=Spawn Groups
@@ -42,7 +41,7 @@ ID=c_frost_troll            10
 ID=c_elemental_ice          10
 ID=c_serpent_ice             9
 ID=c_lady_of_snow            6
-ID=c_demon_ice               4
+ID=c_daemon_ice               4
 ID=c_elemental_snow          2
 ID=c_ogre_lord_arctic        1
 ID=c_dragon_ice              1
@@ -276,7 +275,7 @@ ID=c_elemental_ore_gold      7
 ID=c_solen_warrior           6
 ID=c_terathan_matriarch      5
 ID=c_mimic                   4
-ID=c_ophidian_avenger        4
+ID=c_ophidian_knight        4
 ID=c_spider_wolf             4
 ID=c_rune_beetle             3
 ID=c_ophidian_queen          2

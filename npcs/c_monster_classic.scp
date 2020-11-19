@@ -3365,6 +3365,50 @@ ON=@Create
    RESENERGY=0
    RESFIRE={5 10}
    RESPOISON={5 10}
+
+[CHARDEF 0a6]
+DEFNAME=c_elemental_ore_gold
+NAME=golden elemental
+ICON=i_pet_elem_earth
+SOUND=snd_elementl_erthel1
+CAN=MT_WALK|MT_USEHANDS
+DAM=20,37
+ARMOR=60
+DESIRES=r_caves,t_coin,t_gold,t_gem,t_potion,t_arock,t_ore
+AVERSIONS=t_trap,r_civilization
+FOODTYPE=t_arock,t_coin,t_ore,t_ingot
+MAXFOOD=45
+RESOURCES=10 i_ore_gold
+BLOODCOLOR=color_o_gold
+MOVERATE=120
+TAG.Barding.Diff=73.9
+TAG.SlayerGroup=EARTHELEM,ELEMENTAL
+
+CATEGORY=Monsters
+SUBSECTION=Elementals
+DESCRIPTION=Ore Elemental (gold)
+
+ON=@Create
+   NPC=brain_monster
+   FAME={2500 2999}
+   KARMA={-2500 -2999}
+   STR={226 255}
+   MAXHITS={136 153}
+   DEX={126 145}
+   MAXSTAM={126 145}
+   INT={71 92}
+   MAXMANA={71 92}
+   MAGICRESISTANCE={50.0 95.0}
+   TACTICS={60.0 100.0}
+   WRESTLING={60.0 100.0}
+   RESPHYSICAL={0 15}
+   RESCOLD={30 40}
+   RESENERGY={10 20}
+   RESFIRE={30 40}
+   RESPOISON={30 40}
+
+ON=@CreateLoot
+   ITEM=loot_elem_ore_gold
 	
 [CHARDEF 08a]
 DEFNAME=c_orc_lord

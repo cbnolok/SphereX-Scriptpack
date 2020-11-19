@@ -3,7 +3,7 @@
 // www.sphereserver.net
 //****************************************************************************
 VERSION=X1
-[EOF]
+
 [SPAWN spawn_Demons]
 CATEGORY=Spawn Groups
 SUBSECTION=Monsters
@@ -21,7 +21,7 @@ ID=c_maddening_horror     14
 ID=c_ravager              13
 ID=c_daemon_horde_large    12
 ID=c_gargoyle_undead      11
-ID=c_demon_ice            10
+ID=c_daemon_ice            10
 ID=c_gargoyle_fire         9
 ID=c_gargoyle_stone        8
 ID=c_daemon_moloch          7
@@ -216,7 +216,7 @@ DESCRIPTION=Ophidians
 ID=c_ophidian_archmage     5
 ID=c_ophidian_shaman       4
 ID=c_ophidian_warrior      3
-ID=c_ophidian_avenger      2
+ID=c_ophidian_knight      2
 ID=c_ophidian_queen        1
 
 [SPAWN spawn_Orcs]

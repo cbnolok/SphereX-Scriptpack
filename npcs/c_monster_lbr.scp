@@ -555,7 +555,55 @@ ON=@CreateLoot
     ITEM=random_jewel
     ITEM=i_treasure_map5,R99
 
+[CHARDEF 069]
+//FIXME: Incomplete Stratics data
+//FIXME: Bleed attack
+DEFNAME=c_dragon_greater
+NAME=greater dragon
+ICON=i_pet_dragon
+SOUND=snd_monster_dragon1
+CAN=MT_WALK|MT_FLY|MT_NONHUM
+DAM=24,33
+ARMOR=60
+DESIRES=r_dungeon,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
+AVERSIONS=t_trap,r_civilization
+FOODTYPE=t_meat_raw
+MAXFOOD=80
+RESOURCES=19 i_ribs_raw,30 i_hide_barbed,6 i_reag_dragon_blood,7 i_dragonscale_yellow
+TAG.Barding.Diff=128.3
+FollowerSlots=5
+TAG.SlayerGroup=DRAGON,REPTILE
+TEVENTS=e_carnivores3
+CATEGORY=Monsters
+SUBSECTION=Dragonkind
+DESCRIPTION=Greater Dragon
 
+ON=@Create
+   NPC=brain_dragon
+   FAME={5000 5999}
+   KARMA={-5000 -5999}
+   STR={1025 1425}
+   MAXHITS={1000 2000}
+   DEX={80 150}
+   MAXSTAM={120 130}
+   INT={475 675}
+   MAXMANA={475 675}
+   EVALUATINGINTEL={90.0 100.0}
+   MAGERY={110.0 140.0}
+   MAGICRESISTANCE={110.0 140.0}
+   POISONING={100.0 125.0}
+   TACTICS={110.0 140.0}
+   TAMING=104.7
+   WRESTLING={115.0 145.0}
+   RESPHYSICAL={0 15}
+   RESCOLD={40 55}
+   RESENERGY={50 75}
+   RESFIRE={65 90}
+   RESPOISON={40 60}
+   //BREATH.ANIM=i_fx_explode		//explosion id
+   //BREATH.TYPE=3				// Follow target
+ON=@CreateLoot
+   ITEM=loot_dragon
    
 [CHARDEF 072]
 //FIXME: No Stratics data
@@ -1811,6 +1859,53 @@ ON=@CreateLoot
     ITEM=i_reag_spider_silk,5
     ITEM=random_potion,2    //lesser
     
+[CHARDEF 0a8]
+//FIXME: attracted by hidden players and will reveal them when they are close enough.
+DEFNAME=c_shadow_fiend
+NAME=shadow fiend
+ICON=i_pet_imp
+SOUND=snd_animal_ostard_desert1
+CAN=MT_WALK|MT_RUN|MT_USEHANDS|MT_NONHUM
+DAM=13,28
+ARMOR=20
+DESIRES=r_dungeon_khaldun,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
+AVERSIONS=t_trap,r_civilization
+FOODTYPE=t_meat_raw
+MAXFOOD=25
+RESOURCES=1 i_ribs_raw,6 i_hide
+BLOODCOLOR=-1
+TAG.Barding.Diff=22.1
+DamCold=80
+TEVENTS=e_carnivores2
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Shadow Fiend
+
+ON=@Create
+   NPC=brain_monster
+   FAME={1000 1499}
+   KARMA={-1000 -1499}
+   STR={91 115}
+   MAXHITS={55 69}
+   DEX={61 80}
+   MAXSTAM={61 80}
+   INT={86 110}
+   MAXMANA={86 110}
+   DETECTINGHIDDEN={40.0 50.0}
+   EVALUATINGINTEL={20.0 30.0}
+   MAGERY={90.0 100.0}
+   MAGICRESISTANCE={30.0 50.0}
+   TACTICS={42.0 50.0}
+   WRESTLING={40.0 44.0}
+   RESPHYSICAL={0 5}
+   RESCOLD={20 30}
+   RESENERGY={30 40}
+   RESFIRE={40 50}
+   RESPOISON={30 40}
+
+ON=@Createloot
+   ITEM=loot_imp
 
 [CHARDEF 0a9]
 DEFNAME=c_beetle_fire
@@ -2344,7 +2439,7 @@ ON=@Create
    RESPOISON={20 30}
    ITEMNEWBIE=random_female_hair
    COLOR=colors_hair
-   
+
 ON=@Createloot
    ITEM=loot_savage_warrior
 ON=@Hit
@@ -2912,6 +3007,96 @@ ON=@Create
 ON=@CreateLoot
     ITEM=i_ingot_iron,{11 25}
 
+
+[CHARDEF 02f1]
+//FIXME: Incomplete Stratics data
+DEFNAME=c_gargoyle_enslaved
+NAME=enslaved gargoyle
+ICON=i_pet_gargoyle_fire
+SOUND=snd_monster_gargyl1
+CAN=MT_WALK|MT_RUN|MT_FLY|MT_USEHANDS|MT_EQUIP
+DAM=7,14
+ARMOR=35
+DESIRES=r_caves,t_coin,t_gold,t_gem,t_potion
+AVERSIONS=t_trap,r_civilization,e_carnivores3
+FOODTYPE=t_meat_raw
+MAXFOOD=40
+RESOURCES=1 i_ribs_raw
+TAG.Barding.Diff=70.8
+TAG.SlayerGroup=GARGOYLE,DEMON
+TEVENTS=e_carnivores2
+CATEGORY=Monsters
+SUBSECTION=Gargoyles
+DESCRIPTION=Gargoyle (enslaved)
+
+ON=@Create
+   NPC=brain_monster
+   FAME=3500
+   KARMA=-3500
+   STR={302 360}
+   DEX={76 95}
+   INT={81 105}
+   MAXHITS={186 212}
+   MAGICRESISTANCE={70.0 85.0}
+   TACTICS={50.0 70.0}
+   WRESTLING={40.0 80.0}
+   RESPHYSICAL={30 40}
+   RESFIRE={50 70}
+   RESCOLD={15 25}
+   RESPOISON={25 30}
+   RESENERGY={25 30}
+
+ON=@Createloot
+   ITEM=loot_gargoyle_enslaved
+
+[CHARDEF 02f2]
+DEFNAME=c_gargoyle_enforcer
+NAME=gargoyle enforcer
+ICON=i_pet_gargoyle_fire
+SOUND=snd_monster_gargyl1
+DAM=7,13
+DAMFIRE=25
+DAMENERGY=25
+ARMOR=50
+CAN=MT_WALK|MT_RUN|MT_FLY|MT_USEHANDS|MT_EQUIP
+DESIRES=r_dungeon,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
+AVERSIONS=t_trap,r_civilization,e_carnivores3
+FOODTYPE=t_meat_raw
+MAXFOOD=45
+RESOURCES=1 i_ribs_raw
+TAG.Barding.Diff=88.0
+TAG.SlayerGroup=GARGOYLE,DEMON
+TEVENTS=e_carnivores2
+
+CATEGORY=Monsters
+SUBSECTION=Gargoyles
+DESCRIPTION=Gargoyle (enforcer)
+
+ON=@Create
+   NPC=brain_monster
+   FAME=5000
+   KARMA=-5000
+   STR={260 350}
+   DEX={76 95}
+   INT={101 125}
+   MAXHITS={182 185}
+   ANATOMY={70.0 80.0}
+   EVALUATINGINTEL={70.0 100.0}
+   MAGERY={80.0 90.0}
+   MAGICRESISTANCE={120.0 130.0}
+   MEDITATION={70.0 100.0}
+   PARRYING={70.0 80.0}
+   TACTICS={70.0 80.0}
+   WRESTLING={80.0 90.0}
+   SWORDSMANSHIP={80.0 90.0}
+   RESPHYSICAL={40 60}
+   RESFIRE={50 60}
+   RESCOLD={20 30}
+   RESPOISON={25 35}
+   RESENERGY={15 25}
+
+ON=@Createloot
+   ITEM=loot_gargoyle_enforcer
 
 [CHARDEF 02f3]
 DEFNAME=c_gargoyle_destroyer
@@ -3831,6 +4016,47 @@ ON=@create
     TACTICS=100
     WRESTLING=100
 
+[CHARDEF c_bogle]
+ID=c_ghoul
+NAME=bogle
+ICON=i_pet_ghoul
+SOUND=snd_monster_shadows1
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+DAM=11,18
+ARMOR=25
+DESIRES=r_jungle,t_coin,t_gold,t_gem
+AVERSIONS=t_trap,r_civilization
+FOODTYPE=t_meat_raw
+MAXFOOD=15
+RESOURCES=1 i_ribs_raw
+TAG.SlayerGroup=UNDEAD
+TEVENTS=e_carnivores
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Bogle
+
+ON=@Create
+   NPC=brain_monster
+   FAME={1000 1499}
+   KARMA={-1000 -1499}
+   STR={76 100}
+   MAXHITS={46 60}
+   DEX={76 95}
+   MAXSTAM={76 95}
+   INT={36 60}
+   MAXMANA={36 60}
+   MAGICRESISTANCE={45.0 60.0}
+   TACTICS={45.0 60.0}
+   WRESTLING={45.0 55.0}
+   RESPHYSICAL={0 5}
+   RESCOLD={20 30}
+   RESENERGY={10 20}
+   RESFIRE=0
+   RESPOISON={5 10}
+
+ON=@CreateLoot
+   ITEM=loot_bogle
 
 [CHARDEF 0308]
 DEFNAME=c_daemon_horde_minion
@@ -4747,6 +4973,111 @@ ON=@Create
 
 ON=@CreateLoot
    ITEM=loot_horde_demon_large
+
+[CHARDEF 031d]
+//FIXME: No Stratics entry
+DEFNAME=c_reptile_lord
+NAME=reptile lord
+ICON=i_pet_dragon
+SOUND=snd_monster_dragon1
+DAM=150,163
+ARMOR=75
+CAN=MT_WALK|MT_RUN|MT_NONHUM
+DESIRES=r_dungeon,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
+AVERSIONS=t_trap,r_civilization
+FOODTYPE=t_meat_raw
+MAXFOOD=80
+RESOURCES=19 i_ribs_raw,40 i_hide,6 i_reag_dragon_blood
+TAG.Barding.Diff=128.4
+DamFire=50
+TAG.SlayerGroup=DRAGON,REPTILE
+TEVENTS=e_carnivores3
+
+CATEGORY=Monsters
+SUBSECTION=Dragonkind
+DESCRIPTION=Reptile Lord
+RESLEVEL=2
+RESDISPDNID=c_dragon_red
+RESDISPDNHUE=38
+
+ON=@Create
+   NPC=brain_dragon
+   FAME={6000 6999}
+   KARMA={-6000 -6999}
+   STR={900 1000}
+   MAXHITS={550 750}
+   DEX={90 120}
+   MAXSTAM={90 120}
+   INT={500 600}
+   MAXMANA={500 600}
+   ANATOMY={75.0 100.0}
+   EVALUATINGINTEL={80.0 100.0}
+   MAGERY={80.0 100.0}
+   MAGICRESISTANCE={110.0 125.0}
+   MEDITATION={52.0 75.0}
+   TACTICS={80.0 90.0}
+   WRESTLING={80.0 100.0}
+   RESPHYSICAL={0 10}
+   RESCOLD={60 70}
+   RESENERGY={50 60}
+   RESFIRE={80 90}
+   RESPOISON={70 80}
+   //BREATH.ANIM=i_fx_explode	//explosion id
+   //BREATH.TYPE=3				// Follow target
+
+ON=@CreateLoot
+   ITEM=loot_wyrm_white
+
+[CHARDEF 031e]
+//DEFNAME=
+NAME=unknown ancient wyrm
+ICON=i_pet_dragon
+SOUND=snd_monster_dragon1
+CAN=MT_WALK|MT_RUN|MT_NONHUM
+DAM=146,182
+ARMOR=85
+DESIRES=r_dungeon,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
+AVERSIONS=t_trap,r_civilization
+FOODTYPE=t_meat_raw
+MAXFOOD=80
+RESOURCES=19 i_ribs_raw,40 i_hide,6 i_reag_dragon_blood
+TAG.Barding.Diff=160.0
+DamEnergy=20
+DamFire=20
+TAG.SlayerGroup=DRAGON,REPTILE
+TEVENTS=e_carnivores3
+CATEGORY=Monsters
+SUBSECTION=Duplicates
+DESCRIPTION=Unknown Wyrm (ancient)
+
+ON=@Create
+   NPC=brain_monster
+   FAME={8500 8999}
+   KARMA={-8500 -8999}
+   STR={1096 1185}
+   MAXHITS={658 711}
+   DEX={86 175}
+   MAXSTAM={86 175}
+   INT={686 775}
+   MAXMANA={686 775}
+   ANATOMY={75.0 100.0}
+   EVALUATINGINTEL={80.0 100.0}
+   MAGERY={80.0 100.0}
+   MAGICRESISTANCE={100.0 150.0}
+   MEDITATION={52.0 75.0}
+   TACTICS={98.0 100.0}
+   WRESTLING={98.0 100.0}
+   RESPHYSICAL={0 5}
+   RESCOLD={70 80}
+   RESENERGY={60 70}
+   RESFIRE={80 90}
+   RESPOISON={60 70}
+   //BREATH.ANIM=i_fx_explode	//explosion id
+   //BREATH.TYPE=3				// Follow target
+
+ON=@CreateLoot
+   ITEM=loot_wyrm_ancient
+
 
 [CHARDEF 031f]
 DEFNAME=c_armored_swamp_dragon

@@ -217,35 +217,6 @@ ON=@Create
    RESFIRE=0
    RESPOISON=0
 
-[CHARDEF c_ostard_zostrich]
-ID=c_ostard_frenzied
-NAME=zostrich
-CAN=MT_WALK|MT_RUN|MT_USEHANDS
-ICON=i_pet_ostard_frenzied_2
-DAM=16,28
-ARMOR=18
-FollowerSlots=2
-CATEGORY=Mounts
-SUBSECTION=Domestic
-DESCRIPTION=Zostrich
-ON=@Create
-   NPC=brain_animal
-   FAME={100 1499}
-   KARMA={-500 -999}
-   STR={94 150}
-   DEX={86 95}
-   INT={60 100}
-   FENCING={75.0 95.0}
-   MAGICRESISTANCE={75.0 80.0}
-   PARRYING={75.0 85.0}
-   TACTICS={79.0 94.0}
-   TAMING=85.0
-   RESCOLD={10 20}
-   RESENERGY={10 20}
-   RESFIRE=0
-   RESPOISON=0
-   ITEMNEWBIE=i_knife_skinning
-
 [CHARDEF c_ice_snake]
 ID=c_snake
 NAME=ice snake
@@ -365,72 +336,6 @@ ON=@CreateLoot
 //////////////
 // Ophidian //
 //////////////
-
-[CHARDEF c_ophidian_archmage]
-ID=c_ophidian_shaman
-NAME=ophidian archmage
-DAM=26,32
-ARMOR=32
-TAG.SlayerGroup=OPHIDIAN,REPTILE
-CATEGORY=Monsters
-SUBSECTION=Ophidians
-DESCRIPTION=Ophidian Archmage
-ON=@Create
-   NPC=brain_monster
-   FAME={2000 2499}
-   KARMA={-2000 -2499}
-   STR={280 305}
-   DEX={228 250}
-   INT={290 315}
-   ARCHERY={30.0 40.0}
-   EVALUATINGINTEL={70.0 80.0}
-   FENCING={30.0 40.0}
-   MACEFIGHTING={30.0 40.0}
-   MAGERY={95.0 100.0}
-   MAGICRESISTANCE={75.0 97.0}
-   MEDITATION={65.0 75.0}
-   PARRYING={65.0 87.0}
-   SWORDSMANSHIP={40.0 60.0}
-   TACTICS={65.0 87.0}
-   WRESTLING={60.0 70.0}
-   RESCOLD={10 20}
-   RESENERGY={40 50}
-   RESFIRE={10 20}
-   RESPOISON={10 20}
-ON=@CreateLoot
-   ITEM=loot_ophidian_archmage
-
-[CHARDEF c_ophidian_knight]
-ID=c_ophidian_avenger
-NAME=ophidian knight
-CAN=MT_WALK|MT_RUN|MT_EQUIP|MT_USEHANDS
-DAM=30,55
-ARMOR=40
-TAG.SlayerGroup=OPHIDIAN,REPTILE
-CATEGORY=Monsters
-SUBSECTION=Ophidians
-DESCRIPTION=Ophidian Knight
-ON=@Create
-   NPC=brain_monster
-   FAME={3000 3499}
-   KARMA={-3000 -3499}
-   STR={415 595}
-   DEX={165 175}
-   INT={46 70}
-   ARCHERY={90.0 100.0}
-   FENCING={80.0 90.0}
-   MACEFIGHTING={80.0 90.0}
-   MAGICRESISTANCE={65.0 80.0}
-   PARRYING={75.0 85.0}
-   SWORDSMANSHIP={90.0 100.0}
-   TACTICS={90.0 100.0}
-   RESCOLD={1 10}
-   RESENERGY={10 20}
-   RESFIRE={10 20}
-   RESPOISON={10 20}
-ON=@CreateLoot
-   ITEM=loot_ai_hard
-   ITEM=loot_ophidian_knight
 
 [CHARDEF c_ophidian_apprentice]
 ID=c_ophidian_shaman
@@ -574,37 +479,6 @@ ON=@CreateLoot
    ITEM=loot_ai_archer
    ITEM=average_undead_backpack
    ITEM={ random_armor_bone 1 0 15 }
-
-[CHARDEF c_wraith]
-ID=c_spectre
-NAME=wraith
-ICON=i_pet_ghoul
-SOUND=snd_monster_shadows1
-CAN=MT_GHOST|MT_WALK|MT_EQUIP|MT_USEHANDS//|MT_PASSWALLS
-DAM=12,20
-ARMOR=20
-TAG.SlayerGroup=UNDEAD
-CATEGORY=Monsters
-SUBSECTION=Undead
-DESCRIPTION=Wraith
-ON=@Create
-   COLOR=color_spectral
-   NPC=brain_monster
-   KARMA={-1500 -1999}
-   FAME={1500 1999}
-   STR={100 125}
-   DEX={90 120}
-   INT={60 90}
-   MAGICRESISTANCE={60.0 85.0}
-   PARRYING={60.0 85.0}
-   TACTICS={60.0 85.0}
-   WRESTLING={60.0 85.0}
-   RESCOLD={20 30}
-   RESENERGY={10 20}
-   RESFIRE={30 40}
-   RESPOISON={10 20}
-ON=@CreateLoot
-   ITEM=loot_wraith
 
 [CHARDEF c_ghost]
 ID=c_phantom
@@ -908,46 +782,6 @@ ON=@Create
    //BREATH.ANIM=i_fx_explode		//explosion id
    //BREATH.TYPE=3				// Follow target
    BREATH.HUE=0480
-ON=@CreateLoot
-   ITEM=loot_ai_hard
-   ITEM=loot_dragon
-
-[CHARDEF c_dragon_wyrm]
-ID=c_dragon
-NAME=wyrm
-CAN=MT_WALK|MT_FLY|MT_EQUIP|MT_USEHANDS
-DAM=75,115
-ARMOR=59
-TAG.SlayerGroup=DRAGON,REPTILE
-CATEGORY=Monsters
-SUBSECTION=Dragons and Drakes
-DESCRIPTION=Wyrm
-ON=@Create
-   COLOR=colors_wyrm
-   NPC=brain_dragon
-   FAME={6000 6999}
-   KARMA={-6000 -6999}
-   STR={1095 1185}
-   DEX={125 155}
-   INT={685 775}
-   MAXHITS={2000 2500}
-   ARCHERY={110.0 130.0}
-   EVALUATINGINTEL={70.0 80.0}
-   FENCING={10.0 20.0}
-   MACEFIGHTING={10.0 20.0}
-   MAGERY={99.0 110.0}
-   MAGICRESISTANCE={99.0 100.0}
-   MEDITATION={85.0 115.0}
-   PARRYING={55.0 95.0}
-   SWORDSMANSHIP={140.0 180.0}
-   TACTICS={98.0 100.0}
-   WRESTLING={90.0 103.0}
-   RESCOLD={20 30}
-   RESENERGY={30 40}
-   RESFIRE=100
-   RESPOISON={80 90}
-   //BREATH.ANIM=i_fx_explode		//explosion id
-   //BREATH.TYPE=3				// Follow target
 ON=@CreateLoot
    ITEM=loot_ai_hard
    ITEM=loot_dragon
@@ -1481,52 +1315,6 @@ ON=@CreateLoot
    ITEM={ random_jewel 1 0 1 }
    ITEM=i_gold,{50 100}
    ITEM={ meager_backpack 1 average_backpack 2 }
-
-
-/////////////
-// Insects //
-/////////////
-
-[CHARDEF c_spider_lord]
-ID=c_champ_mephitis
-NAME=spider lord
-CAN=MT_WALK|MT_RUN|MT_USEHANDS|MT_EQUIP
-ARMOR=25
-DAM=31,55
-TAG.SlayerGroup=SPIDER,ARACHNID
-CATEGORY=Monsters
-SUBSECTION=Spiders
-DESCRIPTION=Spider Lord
-ON=@Create
-   NPC=brain_monster
-   FAME={3500 3999}
-   KARMA={-3500 -3999}
-   STR={276 300}
-   MAXHITS={346 460}
-   INT={36 60}
-   DEX={96 115}
-   MAGICRESISTANCE={45.0 60.0}
-   TACTICS={65.0 85.0}
-   WRESTLING={70.0 85.0}
-   ANATOMY={30.0 75.0}
-   POISONING={60.0 80.0}
-   RESCOLD={20 30}
-   RESENERGY={20 30}
-   RESFIRE={10 20}
-   RESPOISON=100
-ON=@CreateLoot
-   ITEM=loot_ai_hard
-   ITEM=i_gold,{125 175}
-   ITEM=i_reag_spider_silk,5
-   ITEM=i_potion_poison,R4
-ON=@GetHit
-   IF !(<R9>)
-      SERV.NEWNPC c_spider_dread
-      NEW.P=<P>
-      NEW.HOME=<NEW.P>
-      NEW.HOMEDIST=7
-      NEW.f_NPCRemovalTimer 1200
-   ENDIF
 
 ////////////////////
 // Quest Monsters //

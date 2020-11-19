@@ -98,6 +98,67 @@ ON=@Createloot
    ITEM=loot_dragon_stygian
    ITEM=loot_ai_hard
    
+[CHARDEF 011d]
+//Stratics indicates this is just a new reaper animation
+DEFNAME=c_reaper_redux
+NAME=elder reaper
+ICON=i_pet_reaper
+SOUND=snd_monster_reaper1
+CAN=MT_WALK|MT_NONHUM
+DAM=20,35
+ARMOR=40
+DESIRES=r_forests,r_jungle,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
+AVERSIONS=t_trap,r_civilization
+FOODTYPE=t_kindling
+MAXFOOD=45
+RESOURCES=3 i_log,10 i_kindling,3 i_reag_dead_wood
+BLOODCOLOR=colors_brown
+MOVERATE=200
+TAG.Barding.Diff=85.5
+TAG.SlayerGroup=MAGE
+DamPoison=25
+TAG.HitPoison=3	//Greater
+CATEGORY=Monsters
+SUBSECTION=Treefolk
+DESCRIPTION=Elder Reaper
+RESLEVEL=5
+RESDISPDNID=c_reaper
+RESDISPDNHUE=33
+
+ON=@Create
+   NPC=brain_monster
+   FAME={2500 2999}
+   KARMA={-2500 -2999}
+   STR={310 400}
+   MAXHITS={200 300}
+   DEX={66 75}
+   MAXSTAM={75 110}
+   INT={190 285}
+   MAXMANA={190 285}
+   ANATOMY={90.0 100.0}
+   EVALUATINGINTEL={70.0 80.0}
+   MAGERY={90.0 100.0}
+   MAGICRESISTANCE={85.0 100.0}
+   MEDITATION={90.0 100.0}
+   POISONING={55.0 70.0}
+   TACTICS={80.0 100.0}
+   WRESTLING={80.0 100.0}
+   RESPHYSICAL={0 10}
+   RESCOLD={20 30}
+   RESENERGY={50 60}
+   RESFIRE=0
+   RESPOISON={40 50}
+
+ON=@CreateLoot
+   ITEM=loot_ai_hard
+   ITEM=random_jewel,{1 4}
+   ITEM=i_gold,{280 330}
+
+[CHARDEF 011e]
+////No animation - dont use
+NAME=011e
+CAN=MT_NONMOVER|MT_NONHUM
+
 [CHARDEF 011f]
 DEFNAME=c_BloodWorm
 NAME=bloodworm
@@ -1587,7 +1648,7 @@ ON=@Create
    RESPOISON=100
    //BREATH.ANIM=i_fx_explode		//explosion id
    //BREATH.TYPE=3				// Follow target
-   
+
 ON=@Createloot
    ITEM=i_gold,{400 500}
    ITEM=i_slith_tongue,{1 3},R5
@@ -2125,6 +2186,185 @@ ON=@Create
    TACTICS={95.0 105.0}
    WRESTLING={95.0 105.0}
 
+
+[CHARDEF 02e7]
+//FIXME: Needs to be scripted
+DEFNAME=c_tunnel_spirit_tentacle
+NAME=tunnel spirit tentacle
+CAN=MT_NONMOVER|MT_NONHUM
+
+[CHARDEF 02e8]
+DEFNAME=c_vampire
+NAME=#NAMES_HUMANMALE the vampire
+ICON=i_pet_man
+SOUND=snd_special_human
+CAN=MT_WALK|MT_RUN|MT_USEHANDS|MT_EQUIP
+DAM=25,30
+ARMOR=35
+DESIRES=r_graveyards,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
+AVERSIONS=t_trap,r_civilization
+FOODTYPE=t_food,t_drink,t_fruit,t_grain
+MAXFOOD=30
+RESOURCES=i_flesh_head_2, i_flesh_torso, i_flesh_right_arm, i_flesh_left_arm, i_flesh_left_leg, i_flesh_right_leg
+TAG.Barding.Diff=110.0
+TAG.SlayerGroup=UNDEAD,MAGE
+TEVENTS=e_undead
+CATEGORY=Monsters
+SUBSECTION=Undead
+DESCRIPTION=Vampire (male)
+ON=@Create
+   NPC=brain_monster
+   COLOR=047e
+   FAME={3000 3499}
+   KARMA={-3000 -3499}
+   STR={400 450}
+   MAXHITS={250 350}
+   DEX={85 125}
+   MAXSTAM={85 125}
+   INT={200 300}
+   MAXMANA={200 300}
+   ARCHERY={90.0 100.0}
+   EVALUATINGINTEL={70.0 80.0}
+   FENCING={45.0 58.0}
+   MACEFIGHTING={45.0 58.0}
+   MAGERY={100.0 120.0}
+   MAGICRESISTANCE={55.0 78.0}
+   MEDITATION={65.0 80.0}
+   NECROMANCY={100.0 120.0}
+   PARRYING={45.0 68.0}
+   SWORDSMANSHIP={45.0 58.0}
+   TACTICS={70.0 90.0}
+   WRESTLING={90.0 100.0}
+   RESCOLD={40 50}
+   RESENERGY={30 40}
+   RESFIRE={20 30}
+   RESPOISON={50 60}
+   ITEMNEWBIE=random_male_hair
+   COLOR=colors_hair
+   ITEMNEWBIE=random_facial_hair
+   COLOR=match_hair
+   ITEM=i_cape
+   COLOR=1
+   ITEM=i_robe
+   COLOR=1
+   ITEM=i_doublet
+   COLOR=0
+   ITEM=random_armor_european
+   ITEM=random_weapon_all_normal
+   ITEM=i_boots_calf
+   ITEM=i_bracelet_gold
+   ITEM=i_ring_gold
+
+ON=@Createloot
+   ITEM=rich_backpack
+   ITEM=loot_ai_hard
+   ITEM=monster_regbag_necromancy
+
+[CHARDEF 02e9]
+DEFNAME=c_vampire_f 
+NAME=#NAMES_HUMANFEMALE the vampire
+ICON=i_pet_man
+SOUND=snd_special_human
+CAN=MT_WALK|MT_RUN|MT_USEHANDS|MT_EQUIP
+DAM=25,30
+ARMOR=35
+DESIRES=r_graveyards,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
+AVERSIONS=t_trap,r_civilization
+FOODTYPE=t_food,t_drink,t_fruit,t_grain
+MAXFOOD=30
+RESOURCES=i_flesh_head_2, i_flesh_torso, i_flesh_right_arm, i_flesh_left_arm, i_flesh_left_leg, i_flesh_right_leg
+TAG.Barding.Diff=110.0
+TAG.SlayerGroup=UNDEAD,MAGE
+TEVENTS=e_undead
+CATEGORY=Monsters
+SUBSECTION=Undead
+DESCRIPTION=Vampire (female)
+ON=@Create
+   NPC=brain_monster
+   COLOR=047e
+   FAME={3000 3499}
+   KARMA={-3000 -3499}
+   STR={400 450}
+   MAXHITS={250 350}
+   DEX={85 130}
+   MAXSTAM={85 130}
+   INT={200 300}
+   MAXMANA={200 300}
+   ARCHERY={90.0 100.0}
+   EVALUATINGINTEL={70.0 80.0}
+   FENCING={45.0 58.0}
+   MACEFIGHTING={45.0 58.0}
+   MAGERY={100.0 120.0}
+   MAGICRESISTANCE={55.0 78.0}
+   MEDITATION={65.0 80.0}
+   NECROMANCY={100.0 120.0}
+   PARRYING={45.0 68.0}
+   SWORDSMANSHIP={45.0 58.0}
+   TACTICS={70.0 90.0}
+   WRESTLING={90.0 100.0}
+   RESCOLD={40 50}
+   RESENERGY={30 40}
+   RESFIRE={20 30}
+   RESPOISON={50 60}
+   ITEMNEWBIE=random_male_hair
+   COLOR=colors_hair
+   ITEMNEWBIE=random_facial_hair
+   COLOR=match_hair
+   ITEM=random_armor_european
+   ITEM=random_weapon_all_normal
+   ITEM=i_cape
+   COLOR=1
+   ITEM=i_robe
+   COLOR=1
+   ITEM=i_doublet
+   COLOR=0
+   ITEM=i_boots_calf
+   ITEM=i_bracelet_gold
+   ITEM=i_ring_gold
+
+ON=@Createloot
+   ITEM=rich_backpack
+   ITEM=loot_ai_hard
+   ITEM=monster_regbag_necromancy
+
+[CHARDEF 02ea] //FIXME Die on spawn
+DEFNAME=c_horrific_beast
+NAME=horrific beast
+ICON=i_pet_daemon_moloch
+SOUND=snd_monster_daemon1
+CAN=MT_WALK|MT_RUN|MT_USEHANDS|MT_EQUIP
+DAM=41,61
+ARMOR=60
+TAG.SlayerGroup=DEMON
+TEVENTS=e_carnivores2
+
+CATEGORY=Spells
+SUBSECTION=Necromancy
+DESCRIPTION=Horrific Beast (Moloch)
+
+ON=@SpellCast
+IF (<IsPlayer>)
+	//SysMessage=You canno't cast in your current state.
+	return 1
+endif
+
+[CHARDEF 02eb]  //FIXME Die on spawn
+DEFNAME=c_vampire_form
+NAME=vampire
+ICON=i_pet_harrower//FIXME: This is probably not right
+SOUND=snd_monster_shadowlord1
+CAN=MT_WALK|MT_RUN|MT_USEHANDS|MT_EQUIP
+DAM=15,25
+ARMOR=40
+//FOODTYPE=
+//MAXFOOD=
+//RESOURCES=
+BLOODCOLOR=colors_green
+TAG.SlayerGroup=UNDEAD
+CATEGORY=Spells
+SUBSECTION=Necromancy
+DESCRIPTION=Vampiric Embrace
+
 [CHARDEF 033e]
 DEFNAME=c_lich_primeval
 NAME=primeval lich
@@ -2256,6 +2496,127 @@ ON=@Create
 ON=@CreateLoot
     ITEM=loot_phoenix
 
+[CHARDEF 03ca]
+//FIXME: This may be a better summoned revenant
+DEFNAME=c_phantom
+NAME=phantom
+ICON=i_pet_lich
+SOUND=snd_monster_ghost1
+CAN=MT_WALK|MT_GHOST|MT_USEHANDS|MT_EQUIP//|MT_PASSWALLS
+DAM=10,18
+ARMOR=30
+DESIRES=r_graveyards,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
+AVERSIONS=t_trap,r_civilization
+//FOODTYPE=
+//MAXFOOD=
+RESOURCES=1 i_reag_blackmoor
+BLOODCOLOR=-1
+MOVERATE=120
+TAG.Barding.Diff=78.9
+DamCold=40
+TAG.SlayerGroup=UNDEAD
+TEVENTS=e_undead
+
+CATEGORY=Monsters
+SUBSECTION=Undead
+DESCRIPTION=Phantom
+
+ON=@Create
+   COLOR=colors_black
+   NPC=brain_monster
+   KARMA={-5000 -3000}
+   FAME={1000 2000}
+   STR={130 150}
+   MAXHITS={130 150}
+   DEX={100 150}
+   MAXSTAM={100 150}
+   INT={170 190}
+   MAXMANA={170 190}
+   ARCHERY={10.0 20.0}
+   EVALUATINGINTEL={70.0 80.0}
+   FENCING={10.0 20.0}
+   MACEFIGHTING={10.0 20.0}
+   MAGERY={10.0 20.0}
+   MAGICRESISTANCE={50.0 79.0}
+   MEDITATION={75.0 100.0}
+   PARRYING={55.0 78.0}
+   SWORDSMANSHIP={60.0 90.0}
+   TACTICS={68.0 89.0}
+   WRESTLING={10.0 20.0}
+   RESPHYSICAL={0 10}
+   RESCOLD={30 40}
+   RESENERGY={20 30}
+   RESFIRE={20 30}
+   RESPOISON={50 60}
+
+ON=@CreateLoot
+   ITEM=random_weapon_sword_normal
+   ITEM=average_undead_backpack
+
+[CHARDEF 03db] //Fixme Dead on spawn
+DEFNAME=c_man_gm
+NAME=GM
+DAM=1,4
+CAN=MT_WALK|MT_RUN|MT_SWIM|MT_USEHANDS|MT_EQUIP|MT_GHOST
+
+CATEGORY=Civilized
+SUBSECTION=Other Bodies
+DESCRIPTION=GM Body
+
+[CHARDEF 03e7]
+//FIXME: No Stratics data
+//FIXME: Bad animation in 3d client
+DEFNAME=c_demon_horde_colored
+NAME=multi colored horde demon
+ICON=i_pet_demon_horde
+SOUND=snd_monster_daemon1
+CAN=MT_WALK|MT_RUN|MT_USEHANDS|MT_EQUIP
+DAM=44,88
+ARMOR=45
+DESIRES=r_dungeon,t_coin,t_gold,t_gem,t_wand,t_potion,t_scroll,t_reagent
+AVERSIONS=t_trap,r_civilization,e_carnivores3
+FOODTYPE=t_meat_raw
+MAXFOOD=60
+RESOURCES=1 i_ribs_raw,1 i_reag_daemon_bone,1 i_reag_blood_vial
+TAG.Barding.Diff=98.1
+DamEnergy=60
+TAG.SlayerGroup=DEMON
+TEVENTS=e_carnivores3
+CATEGORY=Monsters
+SUBSECTION=Demons
+DESCRIPTION=Horde Demon (colored)
+RESLEVEL=2
+RESDISPDNID=c_man
+RESDISPDNHUE=33
+
+ON=@Create
+   NPC=brain_monster
+   FAME={4500 4999}
+   KARMA={-4500 -4999}
+   STR={550 750}
+   MAXHITS={450 550}
+   INT={300 390}
+   DEX={90 120}
+   ARCHERY={80.0 90.0}
+   EVALUATINGINTEL={99.0 100.0}
+   FENCING={80.0 90.0}
+   MACEFIGHTING={80.0 90.0}
+   MAGERY={99.0 100.0}
+   MAGICRESISTANCE={90.0 120.0}
+   MEDITATION={99.0 100.0}
+   PARRYING={80.0 90.0}
+   SWORDSMANSHIP={80.0 90.0}
+   TACTICS={80.0 90.0}
+   WRESTLING={80.0 90.0}
+   RESPHYSICAL={0 15}
+   RESCOLD={30 40}
+   RESENERGY={60 70}
+   RESFIRE={30 40}
+   RESPOISON={60 70}
+
+ON=@CreateLoot
+   ITEM=loot_drake
+   ITEM=loot_ai_hard
 
 [CHARDEF 0402]
 DEFNAME=c_turkey_giant
