@@ -1721,7 +1721,6 @@ NAME=Axe of Vanquishing
 RESOURCES=14 i_ingot_iron, i_axe
 TEVENTS=ei_equipitem
 TEVENTS=ei_magic_preaos
-value=10,20
 //INCREASEDAM=35
 
 CATEGORY=Provisions - Weapons - Magic
