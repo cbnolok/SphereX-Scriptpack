@@ -321,7 +321,7 @@ height_013f 8  //DEFNAME=c_mound_maggots
 
 height_0190 16 //DEFNAME=c_man
 height_0191 16 //DEFNAME=c_woman
-height_0192 16 //DEFNAME=c_ghost_male
+height_0192 16 //DEFNAME=c_ghost_man
 height_0193 16 //DEFNAME=c_ghost_female
 
 height_01a4 8  //DEFNAME=c_child_mb
@@ -334,7 +334,7 @@ height_023e 16 //DEFNAME=c_blade_spirit
 
 height_025d 16 //DEFNAME=c_elf_male
 height_025e 16 //DEFNAME=c_elf_female
-height_025f 16 //DEFNAME=c_elf_ghost_male
+height_025f 16 //DEFNAME=c_elf_ghost_man
 
 height_0260 16 //DEFNAME=c_elf_ghost_female
 

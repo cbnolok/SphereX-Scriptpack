@@ -5,13 +5,13 @@
 VERSION=X1
 
 [FUNCTION f_isHuman]
-IF (<BODY>==c_man) || (<BODY>==c_woman) || (<BODY>==c_ghost_male) || (<BODY>==c_ghost_female)
+IF (<BODY>==c_man) || (<BODY>==c_woman) || (<BODY>==c_ghost_man) || (<BODY>==c_ghost_female)
 	RETURN 1
 ENDIF
 RETURN 0
 
 [FUNCTION f_isElf]
-IF (<BODY>==c_elf_male) || (<BODY>==c_elf_female) || (<BODY>==c_elf_ghost_male) || (<BODY>==c_elf_ghost_female)
+IF (<BODY>==c_elf_male) || (<BODY>==c_elf_female) || (<BODY>==c_elf_ghost_man) || (<BODY>==c_elf_ghost_female)
 	RETURN 1
 ENDIF
 RETURN 0

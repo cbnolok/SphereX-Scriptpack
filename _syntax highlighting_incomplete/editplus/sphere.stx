@@ -1565,7 +1565,7 @@ c_ettin
 c_ettin_w_axe
 c_gargoyle
 c_gazer
-c_ghost_male
+c_ghost_man
 c_ghost_female
 c_goat
 c_gorilla
@@ -2523,7 +2523,7 @@ i_axe_war_force
 i_axe_war_might
 i_axe_war_power
 i_axe_war_ruin
-i_axe_war_vanquisihng
+i_axe_war_vanq
 
 i_axel
 i_axel_and_gears
