@@ -1,15 +1,8 @@
 //****************************************************************************
-// SPHERE by : Menasoft �1997-2018
+// SphereServer by: SphereServer development team and Menasoft.
 // www.sphereserver.net
-// All SPHERE script files and formats are copyright Menasoft & Partners.
-// This file may be freely edited for personal use, but may not be distributed
-// in whole or in part, in any format without express written permission from
-// Menasoft & Partners.  All donations and contributions
-// become the property of Menasoft & Partners.
 //****************************************************************************
-// FILE LAST UPDATED: Wednesday, April 18, 2018
-//
-VERSION=0.56d
+VERSION=X1
 
 
 //No idea why this is here.

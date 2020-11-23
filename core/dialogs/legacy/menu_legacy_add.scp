@@ -885,7 +885,7 @@ ADD c_elem_ice
 ON=0 Snow Elemental
 ADD c_elem_ice
 ON=0 Ice Fiend
-ADD c_ICEFIEND
+ADD c_daemon_ice
 ON=0 Ice Snake
 ADD c_ice_snake
 ON=0 Oclock (Desert Ostard)
