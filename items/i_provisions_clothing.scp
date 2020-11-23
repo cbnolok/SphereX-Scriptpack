@@ -173,10 +173,12 @@ WEIGHT=3.0
 RESOURCES=1 i_ingot_gold,1 i_cloth
 SKILLMAKE=Tailoring 31.4,t_sewing_kit
 DUPELIST=01536
+
 CATEGORY=Provisions - Clothes
 SUBSECTION=Miscellaneous
 DESCRIPTION=Gold Belt (Unwearable)
 //Expansion=RDS_PRET2A
+
 [ITEMDEF 01536]
 //gold belt
 DUPEITEM=01535
@@ -251,10 +253,12 @@ CanUse=can_u_human|can_u_elf
 ReqStr=10
 TEVENTS=ei_equipitem
 DUPELIST=0153c
+
 CATEGORY=Provisions - Clothes
 SUBSECTION=Miscellaneous
 DESCRIPTION=Half Apron
 //Expansion=RDS_PRET2A
+
 ON=@Create
    HITPOINTS={36 48}
    RESPHYSICAL=1

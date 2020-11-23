@@ -1,3 +1,9 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
 [CHARDEF 01]
 DEFNAME=c_ogre
 NAME=#NAMES_OGRE the Ogre
@@ -3641,8 +3647,9 @@ TAG.Barding.Diff=77.0
 TAG.SlayerGroup=SNAKE,REPTILE
 
 CATEGORY=Monsters
-SUBSECTION=Aquatique
+SUBSECTION=Aquatic
 DESCRIPTION=Sea Serpent (deep)
+
 ON=@Create
     NPC=brain_monster
     FAME={2000 2499}
@@ -3934,7 +3941,7 @@ TAG.Barding.Diff=60.6
 DamEnergy=50
 
 CATEGORY=Monsters
-SUBSECTION=Miscellaneous
+SUBSECTION=Mythological
 DESCRIPTION=Wisp (dark)
 
 ON=@Create

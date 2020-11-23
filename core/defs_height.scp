@@ -290,7 +290,7 @@ height_0117 3  //DEFNAME=c_ferret
 height_0118 30 //DEFNAME=c_minotaur_captain
 height_0119 30 //DEFNAME=c_minotaur_scout
 height_011a 4  //DEFNAME=c_parrot
-height_011b 3  //DEFNAME=c_black_crow
+height_011b 3  //DEFNAME=c_bird_crow
 height_011c 16 //DEFNAME=c_armor_steed
 height_011d 30 //DEFNAME=c_reaper_redux
 

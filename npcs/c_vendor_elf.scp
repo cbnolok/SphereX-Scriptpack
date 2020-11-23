@@ -120,7 +120,6 @@ ON=@NPCRestock
    SELL=VENDOR_S_ALCHEMIST
    BUY=VENDOR_B_ALCHEMIST
 
-
 [CHARDEF c_animaltrainer_elf]
 ID=c_elf_male
 NAME=#NAMES_ELF_MALE the animal trainer
@@ -233,7 +232,6 @@ ON=@NPCRestock
    SELL=VENDOR_S_TRAINER
    BUY=VENDOR_B_TRAINER
 
-
 [CHARDEF c_architect_elf]
 ID=c_elf_male
 NAME=#NAMES_ELF_MALE the architect
@@ -345,7 +343,6 @@ ON=@Create
 ON=@NPCRestock
    SELL=VENDOR_S_DEED_TEMPLATE
    BUY=VENDOR_B_DEED_TEMPLATE
-
 
 [CHARDEF c_armorer_elf]
 ID=c_elf_male

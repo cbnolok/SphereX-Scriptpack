@@ -282,8 +282,9 @@ CAN=MT_WALK|MT_FLY
 DAM=1,2
 ARMOR=5
 CATEGORY=Monsters
-SUBSECTION=Miscellaneous
-DESCRIPTION=Arboreal Mongbat
+SUBSECTION=Mongbats
+DESCRIPTION=Mongbat, Arboreal
+
 ON=@Create
    NPC=brain_monster
    FAME={1 499}
@@ -793,9 +794,11 @@ CAN=MT_WALK
 DAM=8,16
 ARMOR=12
 RESOURCES=1 i_crystals_broken
+
 CATEGORY=Monsters
-SUBSECTION=Miscellaneous
-DESCRIPTION=Crystaline Slime
+SUBSECTION=Slimes
+DESCRIPTION=Slime, Crystaline
+
 ON=@Create
    COLOR=0481
    NPC=brain_monster

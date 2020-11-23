@@ -2385,7 +2385,7 @@ ON=@Create
    RESPOISON={20 30}
    ITEMNEWBIE=random_male_hair
    COLOR=colors_hair
-ON=@NPCRestock
+ON=@CreateLoot
    ITEM=loot_savage_warrior
 ON=@Hit
    //Triple Damage Attack vs pets
@@ -4033,7 +4033,7 @@ TAG.SlayerGroup=UNDEAD
 TEVENTS=e_carnivores
 
 CATEGORY=Monsters
-SUBSECTION=Miscellaneous
+SUBSECTION=Undeads
 DESCRIPTION=Bogle
 
 ON=@Create

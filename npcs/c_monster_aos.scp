@@ -1,3 +1,9 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
 [CHARDEF 01b]
 //"The Dark Wolf Familiar will attack the foes that its master attacks,
 // and as an extra bonus it will allow its master to tame any wolf he meets

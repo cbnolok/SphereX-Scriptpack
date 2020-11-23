@@ -1401,7 +1401,7 @@ ON=@Create
 
 [CHARDEF 011b]
 NAME=Crow
-DEFNAME=c_black_crow
+DEFNAME=c_bird_crow
 SOUND=snd_ANIMALS_CROW1
 ICON=i_pet_bird
 CAN=mt_walk|mt_run|mt_fly
