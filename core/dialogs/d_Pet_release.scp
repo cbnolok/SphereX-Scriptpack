@@ -1,0 +1,35 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
+//This dialog can be desactivate by removing it or changing the name. If it's done
+//the server will no more ask this dialog before a pet release and will release automatically the pet.
+[DIALOG d_pet_release]
+50,50
+
+resizepic 0 0 5054 270 120
+IF (<FLAGS> & statf_dead)
+ dhtmlgump 10 10 250 75 1 0 <DEF.CENTER>Releasing a ghost pet will destroy it, with no chance of recovery.  Do you wish to continue?<DEF.CENTERE>
+ button 20 90 4005 4007 1 0 1
+ dhtmlgump 55 90 75 20 0 0 OKAY
+ button 135 90 4005 4007 1 0 0
+ dhtmlgump 170 90 75 20 0 0 CANCEL
+ELSE
+ resizepic 10 10 3000 250 100
+ dhtmlgump 20 15 230 60 1 1 Are you sure you want to release your pet? Summoned Pets will vanish permanently!
+ button 20 80 4005 4007 1 0 1
+ dhtmlgump 55 80 75 20 0 0 OKAY
+ button 135 80 4005 4007 1 0 0
+ dhtmlgump 170 80 75 20 0 0 CANCEL
+ENDIF
+
+[DIALOG d_pet_release BUTTON]
+ON=1
+IF !(<SRC.CANSEELOS <UID>>) || !(<ISMYPET>)
+ return 1
+ENDIF
+RELEASE
+
+[EOF]
