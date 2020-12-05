@@ -171,6 +171,7 @@ NAME=Bank Box
 LAYER=layer_bankbox
 TYPE=t_eq_bank_box
 TDATA2=04a
+WEIGHT=0
 
 
 [ITEMDEF 0b45]
