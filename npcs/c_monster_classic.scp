@@ -5311,6 +5311,7 @@ SOUND=snd_special_human
 ICON=i_pet_man
 CAN=mt_equip|mt_walk|mt_run|mt_usehands
 
+DAM=1,4
 HEIGHT=16
 RESPHYSICALMAX=70
 RESFIREMAX=70
@@ -5352,6 +5353,7 @@ CAN=mt_equip|mt_walk|mt_run|mt_female|mt_usehands
 SOUND=snd_special_human
 ICON=i_pet_woman
 
+DAM=1,4
 HEIGHT=16
 RESPHYSICALMAX=70
 RESFIREMAX=70

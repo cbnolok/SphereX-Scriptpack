@@ -1492,6 +1492,7 @@ NAME=Elf Male
 ICON=i_pet_MAN
 CAN=mt_equip|mt_walk|mt_run|mt_usehands
 
+DAM=1,4
 HEIGHT=16
 RESPHYSICALMAX=70
 RESFIREMAX=70
@@ -1527,6 +1528,7 @@ NAME=Elf Female
 ICON=i_pet_woman
 CAN=mt_equip|mt_walk|mt_run|mt_female|mt_usehands
 
+DAM=1,4
 HEIGHT=16
 RESPHYSICALMAX=70
 RESFIREMAX=70

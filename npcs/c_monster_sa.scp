@@ -373,6 +373,7 @@ NAME=Gargoyle Male
 ICON=i_pet_man
 CAN=mt_equip|mt_walk|mt_run|mt_usehands
 
+DAM=1,4
 HEIGHT=16
 RESPHYSICALMAX=70
 RESFIREMAX=70
@@ -408,6 +409,7 @@ NAME=Gargoyle Female
 ICON=i_pet_woman
 CAN=mt_equip|mt_walk|mt_run|mt_usehands|mt_female
 
+DAM=1,4
 HEIGHT=16
 RESPHYSICALMAX=70
 RESFIREMAX=70
