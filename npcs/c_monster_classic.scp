@@ -1936,7 +1936,7 @@ ON=@Create
 
 ON=@CreateLoot
      ITEM=i_gold,{25 50}
-     ITEM=random_bone_armor
+     ITEM=random_armor_bone
 
 
 [CHARDEF 033]
@@ -2161,7 +2161,7 @@ ON=@Create
 
 ON=@CreateLoot
      ITEM=i_gold,{25 50}
-     ITEM=random_bone_armor
+     ITEM=random_armor_bone
 
 
 [CHARDEF 039]
