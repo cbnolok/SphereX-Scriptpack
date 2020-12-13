@@ -138,7 +138,7 @@ ENDIF
 [EVENTS e_extendedAI_aura_summonDreadSpider]
 ON=@GetHit
 IF !(<R9>)
-    SERV.NEWNPC C_DREAD_SPIDER
+    SERV.NEWNPC c_spider_dread
     NEW.P=<P>
     NEW.HOME=<NEW.P>
     NEW.HOMEDIST=7

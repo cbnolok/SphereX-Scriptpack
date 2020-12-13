@@ -4924,6 +4924,11 @@ ON=@Create
     WRESTLING={65.0 80.0}
     TAMING=100.0
 
+[CHARDEF 031b]
+//FIXME: Anim do not work
+//DEFNAME=c_daemon_horde_medium
+
+
 [CHARDEF 031c]
 //FIXME: No Stratics entry
 DEFNAME=c_daemon_horde_large
@@ -5029,7 +5034,7 @@ ON=@CreateLoot
    ITEM=loot_wyrm_white
 
 [CHARDEF 031e]
-//DEFNAME=
+DEFNAME=c_ancient_wyrm
 NAME=unknown ancient wyrm
 ICON=i_pet_dragon
 SOUND=snd_monster_dragon1

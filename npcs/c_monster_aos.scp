@@ -115,7 +115,7 @@ ON=@CreateLoot
 
 
 [CHARDEF 012c]
-DEFNAME=c_elem_crystal
+DEFNAME=c_elemental_crystal
 defname2=c_crystal_elemental
 NAME=Crystal Elemental
 SOUND=278

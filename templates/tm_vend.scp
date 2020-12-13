@@ -38,7 +38,7 @@ SELL=i_deed_small_stone_workshop,{10 20}
 SELL=i_deed_small_marble_workshop,{10 20}
 SELL=i_deed_tower,{2 6}
 SELL=i_deed_Castle,{2 6}
-SELL=i_deed_evil_compound,{5 10}
+SELL=i_deed_evil_compound,{1 2}
 
 
 

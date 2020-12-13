@@ -1828,10 +1828,15 @@ DUPEITEM=011ce
 [ITEMDEF 011d6]
 DEFNAME=i_table_bamboo
 FLIP=1
+VALUE=80
+WEIGHT=24.2
 CATEGORY=Decoration - Furniture
 SUBSECTION=Tables
 DESCRIPTION=Table (Bamboo)
 DUPELIST=011d7,011d8,011d9,011da,011db
+
+ON=@CREATE
+	ATTR=attr_move_always
 
 [ITEMDEF 011d7]
 //bamboo table

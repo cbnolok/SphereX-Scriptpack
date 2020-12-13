@@ -226,6 +226,7 @@ ID=c_lizardman_spear
 ID=c_lizardman_mace
 
 [SPAWN spawn_Despise_level3]
+DEFNAME=SPAWN_Despise3
 CATEGORY=Spawn Groups
 SUBSECTION=Dungeons
 DESCRIPTION=Despise 3
@@ -245,6 +246,7 @@ ID=c_titan                   3
 ID=c_ogre_lord
 
 [SPAWN spawn_Destard_level1]
+DEFNAME=SPAWN_Destard1
 CATEGORY=Spawn Groups
 SUBSECTION=Dungeons
 DESCRIPTION=Destard 1
@@ -257,6 +259,7 @@ ID=c_dragon
 ID=c_dragon_red
 
 [SPAWN spawn_Destard_level2]
+DEFNAME=SPAWN_Destard2
 CATEGORY=Spawn Groups
 SUBSECTION=Dungeons
 DESCRIPTION=Destard 2

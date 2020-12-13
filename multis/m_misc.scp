@@ -311,6 +311,7 @@ MULTIREGION=-1,-1,1,1
 DEFNAME=m_evil_compound
 NAME=Evil Compound
 TYPE=t_multi
+VALUE=1865250
 CATEGORY=Multis
 SUBSECTION=Misc
 DESCRIPTION=Evil Compound

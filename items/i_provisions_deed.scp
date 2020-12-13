@@ -294,6 +294,16 @@ DESCRIPTION=Small Marble Workshop
 ON=@Create
    MORE=m_small_marble_workshop
 
+[ITEMDEF i_deed_evil_compound]
+ID=i_deed
+NAME=Deed to an Evil Compound
+VALUE=1865250
+CATEGORY=Provisions - Deeds
+SUBSECTION=House Deeds
+DESCRIPTION=Evil Compound
+ON=@Create
+   MORE=m_evil_compound
+
 [ITEMDEF i_deed_guildstone]
 ID=i_deed
 NAME=Deed to a Guildstone

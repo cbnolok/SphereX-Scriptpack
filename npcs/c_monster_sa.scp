@@ -1835,6 +1835,7 @@ ON=@CreateLoot
 [CHARDEF 02e2]
 DEFNAME=c_fire_Ant
 NAME=fire ant
+ICON=i_pet_fire_ant
 SOUND=846
 CAN=mt_walk|mt_run|mt_equip|mt_usehands
 
@@ -2570,7 +2571,7 @@ DESCRIPTION=GM Body
 //FIXME: Bad animation in 3d client
 DEFNAME=c_demon_horde_colored
 NAME=multi colored horde demon
-ICON=i_pet_demon_horde
+ICON=i_pet_daemon_horde
 SOUND=snd_monster_daemon1
 CAN=MT_WALK|MT_RUN|MT_USEHANDS|MT_EQUIP
 DAM=44,88

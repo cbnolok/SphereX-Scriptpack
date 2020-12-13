@@ -12,7 +12,7 @@ sm_summon_familiar	= Triggered by the Necromancy "Summon Familiar" spell
 [SKILLMENU sm_Summon_Familiar]
 What do you want to summon ?
 
-ON=i_pet_demon_horde <name>
+ON=i_pet_daemon_horde <name>
 TEST=NECROMANCY 30.0,SPIRITSPEAK 30.0
 SUMMON=c_daemon_horde_minion
 

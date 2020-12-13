@@ -699,7 +699,7 @@ ON=treasure*
 	ELSE
 		DORAND 3
 			SAY The more dangerous creatures will carry gold that they've scavenged.
-			SAY Tell thee what... go kill a deamon. They got lotsa good stuff on 'em.
+			SAY Tell thee what... go kill a daemon. They got lotsa good stuff on 'em.
 			SAY Find thy own gold! I ain't lettin' my secrets out!
 		ENDDO
 	ENDIF

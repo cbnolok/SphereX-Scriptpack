@@ -337,6 +337,7 @@ ID=c_tavernkeeper_f
 ID=c_tavernkeeper
 
 [SPAWN spawn_TavernWaitStaff]
+DEFNAME=SPAWN_Waitstaff
 CATEGORY=Spawn Groups
 SUBSECTION=Shopkeepers
 DESCRIPTION=Waitstaff

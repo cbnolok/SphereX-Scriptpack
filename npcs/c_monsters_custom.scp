@@ -907,7 +907,7 @@ ON=@CreateLoot
    ITEM=loot_dragon
 
 [CHARDEF c_dragon_greendrake]
-ID=c_drake
+ID=c_drake_gray
 NAME=green drake
 CAN=MT_WALK|MT_FLY|MT_FIRE_IMMUNE|MT_EQUIP|MT_USEHANDS
 DAM=42,64
@@ -943,7 +943,7 @@ ON=@CreateLoot
    ITEM=loot_drake
 
 [CHARDEF c_dragon_copperdrake]
-ID=c_drake
+ID=c_drake_gray
 NAME=copper drake
 CAN=MT_WALK|MT_FLY|MT_FIRE_IMMUNE|MT_EQUIP|MT_USEHANDS
 DAM=32,64
@@ -980,7 +980,7 @@ ON=@CreateLoot
    ITEM=loot_drake
 
 [CHARDEF c_dragon_bluedrake]
-ID=c_drake
+ID=c_drake_gray
 NAME=blue drake
 CAN=MT_WALK|MT_FLY|MT_FIRE_IMMUNE
 DAM=32,64
@@ -1017,7 +1017,7 @@ ON=@CreateLoot
    ITEM=loot_drake
 
 [CHARDEF c_dragon_golddrake]
-ID=c_drake
+ID=c_drake_gray
 NAME=gold drake
 CAN=MT_WALK|MT_FLY|MT_FIRE_IMMUNE|MT_EQUIP|MT_USEHANDS
 DAM=32,64
@@ -1054,7 +1054,7 @@ ON=@CreateLoot
    ITEM=loot_drake
 
 [CHARDEF c_dragon_blackdrake]
-ID=c_drake
+ID=c_drake_gray
 NAME=black drake
 CAN=MT_WALK|MT_FLY|MT_FIRE_IMMUNE|MT_EQUIP|MT_USEHANDS
 DAM=35,65
