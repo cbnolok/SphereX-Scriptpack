@@ -923,7 +923,7 @@ EMOTE_DEF_UNICODE	0
 //tasteid_result				"It tastes like %s."
 //tasteid_self				"Yummy!"
 //tasteid_unable				"You can't use this."
-//Too_many_item                    	"Too many items here!"
+//too_many_items                    	"Too many items here!"
 //tracking_skillmenu_title    	"Tracking"
 //tracking_skillmenu_animals  	"Animals"
 //tracking_skillmenu_monsters  	"Monsters"
