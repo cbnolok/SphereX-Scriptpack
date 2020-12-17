@@ -18,7 +18,7 @@ height_05 6  //DEFNAME=c_eagle
 height_06 2  //DEFNAME=c_bird
 height_07 15 //DEFNAME=c_orc_captain
 height_08 18 //DEFNAME=c_corpser
-height_09 35 //DEFNAME=c_demon_summoned
+height_09 35 //DEFNAME=c_daemon_summoned
 height_0a 35 //DEFNAME=c_daemon
 height_0b 10 //DEFNAME=c_spider_dread
 height_0c 35 //DEFNAME=c_dragon
@@ -48,7 +48,7 @@ height_022 10 //DEFNAME=c_wolf_white
 height_023 18 //DEFNAME=c_lizardman_spear
 height_024 18 //DEFNAME=c_lizardman_mace
 height_025 10 //DEFNAME=c_wolf_unknown
-height_026 35 //DEFNAME=c_demon_dark
+height_026 35 //DEFNAME=c_daemon_dark
 height_027 10 //DEFNAME=c_mongbat
 height_028 35 //DEFNAME=c_daemon_balron
 height_029 15 //DEFNAME=c_orc_w_club
@@ -390,6 +390,6 @@ height_031e 45 //DEFNAME=c_ancient_wyrm
 height_031f 15 //DEFNAME=c_armored_swamp_dragon
 height_03ca 18 //DEFNAME=c_phantom
 height_03db 16 //DEFNAME=c_man_gm
-height_03e7 40 //DEFNAME=c_demon_horde_colored
+height_03e7 40 //DEFNAME=c_daemon_horde_colored
 
 [EOF]

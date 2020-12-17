@@ -155,6 +155,7 @@ ON=@Create
 DEFNAME=i_pie_sweet_potato_raw
 NAME=sweet potato pie
 TYPE=t_food_raw
+VALUE=3
 TDATA1=i_pie_sweet_potato
 CATEGORY=Thanksgiving
 SUBSECTION=Food
@@ -163,6 +164,7 @@ DESCRIPTION=Sweet Potato Pie (raw)
 [ITEMDEF 04c0d]
 DEFNAME=i_pie_sweet_potato
 NAME=sweet potato pie
+VALUE=5
 CATEGORY=Thanksgiving
 SUBSECTION=Food
 DESCRIPTION=Sweet Potato Pie

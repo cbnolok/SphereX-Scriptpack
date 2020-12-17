@@ -11,7 +11,7 @@ TreasureMap_L1_Guardians	{c_mongbat 1 c_ratman 1 c_headless 1 c_skeleton 1 c_zom
 
 TreasureMap_L2_Cartography	71.0
 TreasureMap_L2_Lockpicking	76.0
-TreasureMap_L2_Guardians	{c_orc_mage 1 c_gargoyle 1 c_gazer 1 c_hellhound 1 c_elemental_earth 1}
+TreasureMap_L2_Guardians	{c_orc_shaman 1 c_gargoyle 1 c_gazer 1 c_hellhound 1 c_elemental_earth 1}
 
 TreasureMap_L3_Cartography	81.0
 TreasureMap_L3_Lockpicking	84.0
@@ -19,11 +19,11 @@ TreasureMap_L3_Guardians	{c_lich 1 c_ogre_lord 1 c_spider_dread 1 c_elemental_ai
 
 TreasureMap_L4_Cartography	91.0
 TreasureMap_L4_Lockpicking	92.0
-TreasureMap_L4_Guardians	{c_spider_dread 1 c_lich_lord 1 c_demon 1 c_gazer_elder 1 c_ogre_lord 1}
+TreasureMap_L4_Guardians	{c_spider_dread 1 c_lich_lord 1 c_daemon 1 c_gazer_elder 1 c_ogre_lord 1}
 
 TreasureMap_L5_Cartography	100.0
 TreasureMap_L5_Lockpicking	100.0
-TreasureMap_L5_Guardians	{c_lich_lord 1 c_demon 1 c_gazer_elder 1 c_elemental_poison 1 c_elemental_blood 1}
+TreasureMap_L5_Guardians	{c_lich_lord 1 c_daemon 1 c_gazer_elder 1 c_elemental_poison 1 c_elemental_blood 1}
 
 // On OSI publish 67 (client 7.0.8.0), treasure maps got updated to have treasures
 // on all facets instead only Felucca/Trammel. The treasure location always points
@@ -39,180 +39,6 @@ TreasureMap_Facet2		0 // Ilshenar
 TreasureMap_Facet3		0 // Malas
 TreasureMap_Facet4		0 // Tokuno Islands
 TreasureMap_Facet5		0 // Ter Mur
-
-///////////
-// Items //
-///////////
-
-[ITEMDEF i_ttm_l1]
-ID=i_map_blank
-NAME=Tattered, Plainly Drawn Treasure Map
-TYPE=t_map
-TDATA1=300	//map width
-TDATA2=300	//map height
-TDATA3=1	//map level
-TEVENTS=t_map_treasure
-
-CATEGORY=Maps - Treasure
-SUBSECTION=Maps
-DESCRIPTION=Level 1 (Plainly Drawn)
-
-ON=@Create
-TIMERF 1,TreasureMap_SetRandomLocation
-
-[ITEMDEF i_ttm_l2]
-ID=i_map_blank
-NAME=Tattered, Expertly Drawn Treasure Map
-TYPE=t_map
-TDATA1=300	//map width
-TDATA2=300	//map height
-TDATA3=2	//map level
-TEVENTS=t_map_treasure
-
-CATEGORY=Maps - Treasure
-SUBSECTION=Maps
-DESCRIPTION=Level 2 (Expertly Drawn)
-
-ON=@Create
-TIMERF 1,TreasureMap_SetRandomLocation
-
-[ITEMDEF i_ttm_l3]
-ID=i_map_blank
-NAME=Tattered, Adeptly Drawn Treasure Map
-TYPE=t_map
-TDATA1=300	//map width
-TDATA2=300	//map height
-TDATA3=3	//map level
-TEVENTS=t_map_treasure
-
-CATEGORY=Maps - Treasure
-SUBSECTION=Maps
-DESCRIPTION=Level 3 (Adeptly Drawn)
-
-ON=@Create
-TIMERF 1,TreasureMap_SetRandomLocation
-
-[ITEMDEF i_ttm_l4]
-ID=i_map_blank
-NAME=Tattered, Cleverly Drawn Treasure Map
-TYPE=t_map
-TDATA1=300	//map width
-TDATA2=300	//map height
-TDATA3=4	//map level
-TEVENTS=t_map_treasure
-
-CATEGORY=Maps - Treasure
-SUBSECTION=Maps
-DESCRIPTION=Level 4 (Cleverly Drawn)
-
-ON=@Create
-TIMERF 1,TreasureMap_SetRandomLocation
-
-[ITEMDEF i_ttm_l5]
-ID=i_map_blank
-NAME=Tattered, Deviously Drawn Treasure Map
-TYPE=t_map
-TDATA1=300	//map width
-TDATA2=300	//map height
-TDATA3=5	//map level
-TEVENTS=t_map_treasure
-
-CATEGORY=Maps - Treasure
-SUBSECTION=Maps
-DESCRIPTION=Level 5 (Deviously Drawn)
-
-ON=@Create
-TIMERF 1,TreasureMap_SetRandomLocation
-
-[ITEMDEF i_chest_treasure]
-ID=i_chest_metal_brass
-NAME=Treasure Chest
-
-ON=@Create
-ATTR=attr_move_never
-
-ON=@PickUp_Self
-SRC.TARGPRV=04fffffff
-SRC.REVEAL
-IF (10 >= <R100>)
- TreasureMap_SpawnGuardians
-ENDIF
-
-ON=@DropOn_Self
-IF !(<SRC.ISGM>)
- SRC.SYSMESSAGE @08a5 The chest refuses to be filled with treasure again.
- return 1
-ENDIF
-
-ON=@ContextMenuRequest
-IF (<SRC> == <LINK>) || (<SRC.ISGM>)
- SRC.AddContextEntry 200,6149	//Remove Chest
-ENDIF
-
-ON=@ContextMenuSelect
-IF (<ARGN> == 200)
- IF (<SRC> == <LINK>) || (<SRC.ISGM>)
-  SDIALOG d_treasure_chest_remove
- ENDIF
-ENDIF
-
-////////////
-// Events //
-////////////
-
-[TYPEDEF t_map_treasure]
-ON=@DClick
-IF (<TOPOBJ> != <SRC>)
- SRC.SYSMESSAGE <DEFMSG.reach_fail>
- return 1
-ELIF !(<MORE1>)
- TreasureMap_Decode
- return 1
-ELIF (<TreasureMap_CanDig>)
- TreasureMap_Dig
- return 1
-ENDIF
-MESSAGE The treasure is marked by the red pin. Grab a shovel and go dig it up!
-return 0
-
-ON=@ClientToolTip
-IF (<MOREM> == 0)
- SRC.ADDCLILOC 1041502	//for somewhere in Felucca
-ELIF (<MOREM> == 1)
- SRC.ADDCLILOC 1041503	//for somewhere in Trammel
-ELIF (<MOREM> == 2)
- SRC.ADDCLILOC 1060850	//for somewhere in Ilshenar
-ELIF (<MOREM> == 3)
- SRC.ADDCLILOC 1060851	//for somewhere in Malas
-ELIF (<MOREM> == 4)
- SRC.ADDCLILOC 1115645	//for somewhere in Tokuno Islands
-ELIF (<MOREM> == 5)
- SRC.ADDCLILOC 1115646	//for somewhere in Ter Mur
-ENDIF
-
-ON=@ContextMenuRequest
-IF !(<MORE1>)
- SRC.AddContextEntry 120,6147,<QVAL (<TOPOBJ> == <SRC>)? 0:1>	//Decode Map
-ELSE
- SRC.AddContextEntry 121,6148,<QVAL (<TOPOBJ> == <SRC>)? 0:1>	//Dig For Treasure
-ENDIF
-
-ON=@ContextMenuSelect
-IF (<TOPOBJ> != <SRC>)
- return 1
-ELIF (<ARGN> == 120)
- IF !(<MORE1>)
-  TreasureMap_Decode
- ENDIF
-ELIF (<ARGN> == 121)
- IF (<TreasureMap_CanDig>)
-  TreasureMap_Dig
- ENDIF
-ENDIF
-
-///////////////
-// Functions //
-///////////////
 
 [FUNCTION TreasureMap_Decode]
 IF (<SRC.CARTOGRAPHY> < <DEF0.TreasureMap_L<TDATA3>_Cartography>)
@@ -431,27 +257,5 @@ ELIF (<ISNEARTYPE t_tree 2 0 1>) || (<ISNEARTYPE t_rock 2 0 1>) || (<ISNEARTYPE 
  return 0
 ENDIF
 return 1
-
-/////////////
-// Dialogs //
-/////////////
-
-[DIALOG d_treasure_chest_remove]
-15,15
-
-resizepic 30 0 2620 240 240
-dhtmlgump 45 15 200 80 0 0 <DEF.BFONT_WHITE>When this treasure chest is removed, any items still inside of it will be lost.
-dhtmlgump 45 95 200 60 0 0 <DEF.BFONT_WHITE>Are you certain you're ready to remove this chest?
-button 40 153 4005 4007 1 0 1
-dhtmlgump 75 155 180 40 0 0 <DEF.BFONT_WHITE>Remove the Treasure Chest
-button 40 195 4005 4007 1 0 0
-dhtmlgump 75 197 180 35 0 0 <DEF.BFONT_WHITE>Cancel
-
-[DIALOG d_treasure_chest_remove BUTTON]
-ON=1
-IF ((<SRC> == <LINK>) && (<SRC.CANSEELOS <UID>>)) || (<SRC.ISGM>)
- SRC.SYSMESSAGE @08a5 The old, rusted chest crumbles when you hit it.
- REMOVE
-ENDIF
 
 [EOF]

@@ -1,0 +1,25 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
+[DIALOG d_treasure_chest_remove]
+15,15
+
+resizepic 30 0 2620 240 240
+dhtmlgump 45 15 200 80 0 0 <DEF.BFONT_WHITE>When this treasure chest is removed, any items still inside of it will be lost.
+dhtmlgump 45 95 200 60 0 0 <DEF.BFONT_WHITE>Are you certain you're ready to remove this chest?
+button 40 153 4005 4007 1 0 1
+dhtmlgump 75 155 180 40 0 0 <DEF.BFONT_WHITE>Remove the Treasure Chest
+button 40 195 4005 4007 1 0 0
+dhtmlgump 75 197 180 35 0 0 <DEF.BFONT_WHITE>Cancel
+
+[DIALOG d_treasure_chest_remove BUTTON]
+ON=1
+IF ((<SRC> == <LINK>) && (<SRC.CANSEELOS <UID>>)) || (<SRC.ISGM>)
+ SRC.SYSMESSAGE @08a5 The old, rusted chest crumbles when you hit it.
+ REMOVE
+ENDIF
+
+[EOF]

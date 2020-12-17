@@ -1797,10 +1797,10 @@ ON=@Create
 ON=@CreateLoot
    ITEM=loot_demon_elder
 
-[CHARDEF c_demon_crystal]
+[CHARDEF c_daemon_crystal]
 //"The Crystal Daemon is one of the crystaline inhabitants of the Prism
 // of Light dungeon."
-ID=c_demon_arcane
+ID=c_daemon_arcane
 NAME=crystal demon
 ICON=i_pet_demon_arcane
 SOUND=snd_monster_dragon1

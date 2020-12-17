@@ -166,16 +166,98 @@ ON=@TargOn_Item
 // to it, in which case, it allows only t_fish and t_aquarium_item objects to be
 // put into it.  Every time it is opened, those objects change position...
 // hours of entertainment - no really!
+// ON=@DClick
+//    //Randomize all object locations when opened
+//    FORCONT <UID> 0
+//       CONTP=<R1,348>,<R1,198>
+//    ENDFOR
+// ON=@DropOn_Self
+//    //Only allow aquarium items and fish
+//    IF (<ARGO.TYPE>!=t_aquarium_item) && (<ARGO.TYPE>!=t_fish)
+//       RETURN 1
+//    ENDIF
 ON=@DClick
-   //Randomize all object locations when opened
-   FORCONT <UID> 0
-      CONTP=<R1,348>,<R1,198>
-   ENDFOR
+SDIALOG d_aquarium
+SOUND 05a4
+return 1
+
+ON=@ClientTooltip
+SRC.ADDCLILOC 1074247,<dTAG0.LiveCreatures>,30	//Live Creatures: ~1_NUM~ / ~2_MAX~
+IF (<TAG0.Decorations>)
+   SRC.ADDCLILOC 1074249,<dTAG0.Decorations>	//Decorations: ~1_NUM~
+ENDIF
+
 ON=@DropOn_Self
-   //Only allow aquarium items and fish
-   IF (<ARGO.TYPE>!=t_aquarium_item) && (<ARGO.TYPE>!=t_fish)
-      RETURN 1
+IF (<ARGO.TAG0.AquariumCreature>)
+   IF (<TAG0.LiveCreatures> >= 30)
+      SRC.SYSMESSAGE The aquarium can not hold the creature.
+      return 1
    ENDIF
+   SRC.SYSMESSAGE You add the following creature to your aquarium: <ARGO.NAME>
+   TAG0.LiveCreatures ++
+ELSE
+   IF !(<ARGO.TAG0.AquariumDecoration>)
+      SRC.SYSMESSAGE The aquarium can not hold that item.
+      return 1
+   ELIF (<RESCOUNT> >= 125)
+      SRC.SYSMESSAGE The decoration will not fit in the aquarium.
+      return 1
+   ENDIF
+   SRC.SYSMESSAGE You add the following decoration to your aquarium: <ARGO.NAME>
+   TAG0.Decorations ++
+ENDIF
+TIMERF 1,RESENDTOOLTIP
+
+
+[TYPEDEF t_map_treasure]
+ON=@DClick
+IF (<TOPOBJ> != <SRC>)
+ SRC.SYSMESSAGE <DEFMSG.reach_fail>
+ return 1
+ELIF !(<MORE1>)
+ TreasureMap_Decode
+ return 1
+ELIF (<TreasureMap_CanDig>)
+ TreasureMap_Dig
+ return 1
+ENDIF
+MESSAGE The treasure is marked by the red pin. Grab a shovel and go dig it up!
+return 0
+
+ON=@ClientToolTip
+IF (<MOREM> == 0)
+ SRC.ADDCLILOC 1041502	//for somewhere in Felucca
+ELIF (<MOREM> == 1)
+ SRC.ADDCLILOC 1041503	//for somewhere in Trammel
+ELIF (<MOREM> == 2)
+ SRC.ADDCLILOC 1060850	//for somewhere in Ilshenar
+ELIF (<MOREM> == 3)
+ SRC.ADDCLILOC 1060851	//for somewhere in Malas
+ELIF (<MOREM> == 4)
+ SRC.ADDCLILOC 1115645	//for somewhere in Tokuno Islands
+ELIF (<MOREM> == 5)
+ SRC.ADDCLILOC 1115646	//for somewhere in Ter Mur
+ENDIF
+
+ON=@ContextMenuRequest
+IF !(<MORE1>)
+ SRC.AddContextEntry 120,6147,<QVAL (<TOPOBJ> == <SRC>)? 0:1>	//Decode Map
+ELSE
+ SRC.AddContextEntry 121,6148,<QVAL (<TOPOBJ> == <SRC>)? 0:1>	//Dig For Treasure
+ENDIF
+
+ON=@ContextMenuSelect
+IF (<TOPOBJ> != <SRC>)
+ return 1
+ELIF (<ARGN> == 120)
+ IF !(<MORE1>)
+  TreasureMap_Decode
+ ENDIF
+ELIF (<ARGN> == 121)
+ IF (<TreasureMap_CanDig>)
+  TreasureMap_Dig
+ ENDIF
+ENDIF
 
 [TYPEDEF t_mounted_pixie]
 ON=@DClick

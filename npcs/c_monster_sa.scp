@@ -2569,7 +2569,7 @@ DESCRIPTION=GM Body
 [CHARDEF 03e7]
 //FIXME: No Stratics data
 //FIXME: Bad animation in 3d client
-DEFNAME=c_demon_horde_colored
+DEFNAME=c_daemon_horde_colored
 NAME=multi colored horde demon
 ICON=i_pet_daemon_horde
 SOUND=snd_monster_daemon1

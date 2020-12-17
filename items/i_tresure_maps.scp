@@ -1,0 +1,120 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
+[ITEMDEF i_ttm_l1]
+ID=i_map_blank
+NAME=Tattered, Plainly Drawn Treasure Map
+TYPE=t_map
+TDATA1=300	//map width
+TDATA2=300	//map height
+TDATA3=1	//map level
+TEVENTS=t_map_treasure
+
+CATEGORY=Maps - Treasure
+SUBSECTION=Maps
+DESCRIPTION=Level 1 (Plainly Drawn)
+
+ON=@Create
+TIMERF 1,TreasureMap_SetRandomLocation
+
+[ITEMDEF i_ttm_l2]
+ID=i_map_blank
+NAME=Tattered, Expertly Drawn Treasure Map
+TYPE=t_map
+TDATA1=300	//map width
+TDATA2=300	//map height
+TDATA3=2	//map level
+TEVENTS=t_map_treasure
+
+CATEGORY=Maps - Treasure
+SUBSECTION=Maps
+DESCRIPTION=Level 2 (Expertly Drawn)
+
+ON=@Create
+TIMERF 1,TreasureMap_SetRandomLocation
+
+[ITEMDEF i_ttm_l3]
+ID=i_map_blank
+NAME=Tattered, Adeptly Drawn Treasure Map
+TYPE=t_map
+TDATA1=300	//map width
+TDATA2=300	//map height
+TDATA3=3	//map level
+TEVENTS=t_map_treasure
+
+CATEGORY=Maps - Treasure
+SUBSECTION=Maps
+DESCRIPTION=Level 3 (Adeptly Drawn)
+
+ON=@Create
+TIMERF 1,TreasureMap_SetRandomLocation
+
+[ITEMDEF i_ttm_l4]
+ID=i_map_blank
+NAME=Tattered, Cleverly Drawn Treasure Map
+TYPE=t_map
+TDATA1=300	//map width
+TDATA2=300	//map height
+TDATA3=4	//map level
+TEVENTS=t_map_treasure
+
+CATEGORY=Maps - Treasure
+SUBSECTION=Maps
+DESCRIPTION=Level 4 (Cleverly Drawn)
+
+ON=@Create
+TIMERF 1,TreasureMap_SetRandomLocation
+
+[ITEMDEF i_ttm_l5]
+ID=i_map_blank
+NAME=Tattered, Deviously Drawn Treasure Map
+TYPE=t_map
+TDATA1=300	//map width
+TDATA2=300	//map height
+TDATA3=5	//map level
+TEVENTS=t_map_treasure
+
+CATEGORY=Maps - Treasure
+SUBSECTION=Maps
+DESCRIPTION=Level 5 (Deviously Drawn)
+
+ON=@Create
+TIMERF 1,TreasureMap_SetRandomLocation
+
+[ITEMDEF i_chest_treasure]
+ID=i_chest_metal_brass
+NAME=Treasure Chest
+
+ON=@Create
+ATTR=attr_move_never
+
+ON=@PickUp_Self
+SRC.TARGPRV=04fffffff
+SRC.REVEAL
+IF (10 >= <R100>)
+ TreasureMap_SpawnGuardians
+ENDIF
+
+ON=@DropOn_Self
+IF !(<SRC.ISGM>)
+ SRC.SYSMESSAGE @08a5 The chest refuses to be filled with treasure again.
+ return 1
+ENDIF
+
+ON=@ContextMenuRequest
+IF (<SRC> == <LINK>) || (<SRC.ISGM>)
+ SRC.AddContextEntry 200,6149	//Remove Chest
+ENDIF
+
+ON=@ContextMenuSelect
+IF (<ARGN> == 200)
+ IF (<SRC> == <LINK>) || (<SRC.ISGM>)
+  SDIALOG d_treasure_chest_remove
+ ENDIF
+ENDIF
+
+
+[EOF]
