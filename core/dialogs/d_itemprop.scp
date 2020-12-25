@@ -222,6 +222,8 @@ checkbox 215 40 210 211 <eval <SRC.TARG.ATTR>&04000> 14 // Can Decay
 dtext 245 40 995 Can Decay
 checkbox 215 60 210 211 <eval <SRC.TARG.ATTR>&08000> 15 // Static
 dtext 245 60 995 Static
+checkbox 215 80 210 211 <eval <SRC.TARG.ATTR>&080000000 > 16 // CanUse Paralyse
+dtext 245 80 995 Canuse Paralyzed
 button 350 295 4005 4007 1 0 999
 dtext 385 295 0c1 APPLY
 
@@ -398,6 +400,11 @@ IF (<ARGCHK[15]>)
 	SRC.TARG.ATTR |= 08000
 ELSE
 	SRC.TARG.ATTR &=~ 08000
+ENDIF
+IF (<ARGCHK[16]>)
+	SRC.TARG.ATTR |= 080000000 
+ELSE
+	SRC.TARG.ATTR &=~ 080000000 
 ENDIF
 SRC.TARG.UPDATE
 
