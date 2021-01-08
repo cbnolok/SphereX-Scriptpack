@@ -334,7 +334,7 @@ DTextenTrylimited 235 410 122 15 0480 312 20 <Luck>
 
 DText 160 435 0c1 <Def.d_admin_<Src.CTag0.AccountLang>_Guilds>
 If <isPlayer>
-   If <memoryfindtype.memory_guild.link>
+   If <memoryfindtype.memory_guild>
       DText 235 435 0480 <memoryfindtype.memory_guild.link.Name>
       Button 160 460 4007 4006 1 0 31
       DText 235 460 0c1 <Def.d_admin_<Src.CTag0.AccountLang>_Port_Guildstone>

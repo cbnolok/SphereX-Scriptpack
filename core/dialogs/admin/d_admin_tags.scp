@@ -68,7 +68,7 @@ If (0<TagCount>)
          Page <Eval <Local.Page>>
          Button 150 480 4014 4015 0 <Eval <Local.Page> - 1> 0 // Back Button
       Endif
-      DText 195 <Local.oy> 0480 Tag.<Tagat.<Local.x>.key> = <Eval <Tagat.<Local.x>.val>>
+      DText 195 <Local.oy> 0480 Tag.<Tagat.<Local.x>.key> = <Tagat.<Local.x>.val>
       If (<Src.Account.Plevel> > 3)
          Button 160 <Local.oy> 4017 4018 1 0 <Eval (1000 + <Local.x>)>
       Endif

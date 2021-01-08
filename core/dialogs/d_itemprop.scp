@@ -64,7 +64,7 @@ dcroppedtext 120 175 125 20 1000 <LAYER>
 
 button 10 195 4005 4007 1 0 105
 dtext 45 195 0c1 Link
-dcroppedtext 120 195 125 20 1000 <LINK> <QVAL (<LINK.UID>)? (<LINK.NAME>):>
+dcroppedtext 120 195 125 20 1000 <QVAL <LINK.ISVALID> ? <QVAL (<LINK.UID>)? (<LINK.NAME>):>:0>
 
 button 10 215 4005 4007 1 0 102
 dtext 45 215 0c1 BaseID
