@@ -40,6 +40,19 @@ brain_monster          8
 brain_berserk          9
 brain_dragon           10
 
+[DEFNAME NPCBrainNames]
+NPCBrain.0	brain_none
+NPCBrain.1	brain_animal
+NPCBrain.2	brain_human
+NPCBrain.3	brain_healer
+NPCBrain.4	brain_guard
+NPCBrain.5	brain_banker
+NPCBrain.6	brain_vendor
+NPCBrain.7	brain_animal_trainer
+NPCBrain.8	brain_monster
+NPCBrain.9	brain_berserk
+NPCBrain.10	brain_dragon
+
 [DEFNAME region_flags]
 region_antimagic_all			000001   // all magic banned here.
 region_antimagic_recall_in		000002   // teleport,recall in to this, and mark
