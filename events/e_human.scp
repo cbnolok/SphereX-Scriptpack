@@ -31,24 +31,25 @@ ON=@EnvironChange
 	return 0
 
 [EVENTS e_trainer]
-ON=@ContextMenuRequest
-   IF (<NPC> < brain_human) || (<NPC> > brain_animal_trainer) || (<NPC> == brain_guard)
-      return 0
-   ENDIF
-   FOR 0 57
-      IF (<SERV.SKILL.<LOCAL._FOR>>)
-         LOCAL.NpcSkill = <<SERV.SKILL.<LOCAL._FOR>.KEY>>
-         IF (<LOCAL.NpcSkill>)
-            LOCAL.PlayerSkill = <SRC.<SERV.SKILL.<LOCAL._FOR>.KEY>>
-            LOCAL.Enabled = <QVAL ((<LOCAL.PlayerSkill> < <SERV.NPCTrainMax>) && (<eval (<LOCAL.NpcSkill> * <SERV.NPCTrainPercent>) / 100> > <LOCAL.PlayerSkill>)) ? 0 : 1>
-            SRC.ADDCONTEXTENTRY <eval 200 + <LOCAL._FOR>>,<eval 6000 + <LOCAL._FOR>>,<LOCAL.Enabled>
-         ENDIF
-      ENDIF
-   ENDFOR
-ON=@ContextMenuSelect
-   IF (<ARGN> >= 200) && (<ARGN> <= 257)
-      TRAIN <SERV.SKILL.<eval <ARGN>-200>.KEY>
-   ENDIF
-   
+//This events is not use anymore because it's harcode on the Server since 2019/04
+ ON=@ContextMenuRequest
+//    IF (<NPC> < brain_human) || (<NPC> > brain_animal_trainer) || (<NPC> == brain_guard)
+//       return 0
+//    ENDIF
+//    FOR 0 57
+//       IF (<SERV.SKILL.<LOCAL._FOR>>)
+//          LOCAL.NpcSkill = <<SERV.SKILL.<LOCAL._FOR>.KEY>>
+//          IF (<LOCAL.NpcSkill>)
+//             LOCAL.PlayerSkill = <SRC.<SERV.SKILL.<LOCAL._FOR>.KEY>>
+//             LOCAL.Enabled = <QVAL ((<LOCAL.PlayerSkill> < <SERV.NPCTrainMax>) && (<eval (<LOCAL.NpcSkill> * <SERV.NPCTrainPercent>) / 100> > <LOCAL.PlayerSkill>)) ? 0 : 1>
+//             SRC.ADDCONTEXTENTRY <eval 200 + <LOCAL._FOR>>,<eval 6000 + <LOCAL._FOR>>,<LOCAL.Enabled>
+//          ENDIF
+//       ENDIF
+//    ENDFOR
+// ON=@ContextMenuSelect
+//    IF (<ARGN> >= 200) && (<ARGN> <= 257)
+//       TRAIN <SERV.SKILL.<eval <ARGN>-200>.KEY>
+//    ENDIF
+
    [EOF]
    
