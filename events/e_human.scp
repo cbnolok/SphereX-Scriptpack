@@ -31,8 +31,9 @@ ON=@EnvironChange
 	return 0
 
 [EVENTS e_trainer]
-//This events is not use anymore because it's harcode on the Server since 2019/04
- ON=@ContextMenuRequest
+//The majority of skill training are set directly on server side
+//This event can be use to add some trainning skill
+// ON=@ContextMenuRequest
 //    IF (<NPC> < brain_human) || (<NPC> > brain_animal_trainer) || (<NPC> == brain_guard)
 //       return 0
 //    ENDIF

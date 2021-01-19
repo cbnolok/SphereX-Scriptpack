@@ -511,30 +511,31 @@ IF (<HasComponentProps <def.CompProps_ItemEquippable>>)
 			// SRC.SYSMESSAGELOC <def.color_text>,1079552//"Your luck just ran out."
 		// ENDIF
 	// ENDIF
-	IF (<BonusStr>)//strength bonus
-		SRC.MODSTR += <BonusStr>
-	ENDIF
-	IF (<BonusHitsMax>)//hitpoint increase
-		SRC.MODMAXHITS += <BonusHitsMax>
-	ENDIF
+
+	// IF (<BonusStr>)//strength bonus
+	// 	SRC.MODSTR += <BonusStr>
+	// ENDIF
+	// IF (<BonusHitsMax>)//hitpoint increase
+	// 	SRC.MODMAXHITS += <BonusHitsMax>
+	// ENDIF
 	IF (<RegenHits>)
 		SRC.RegenHits += <RegenHits>
 	ENDIF
-	IF (<BonusDex>)//dexterity bonus
-		SRC.MODDEX += <BonusDex>
-	ENDIF
-	IF (<BonusStamMax>)//stamina increase
-		SRC.MODMAXSTAM += <BonusStamMax>
-	ENDIF
+	// IF (<BonusDex>)//dexterity bonus
+	// 	SRC.MODDEX += <BonusDex>
+	// ENDIF
+	// IF (<BonusStamMax>)//stamina increase
+	// 	SRC.MODMAXSTAM += <BonusStamMax>
+	// ENDIF
 	IF (<RegenStam>)
 		SRC.RegenStam += <RegenStam>
 	ENDIF
-	IF (<BonusINT>)//intelligence bonus
-		SRC.MODINT += <BonusINT>
-	ENDIF
-	IF (<BonusManaMax>)//mana increase
-		SRC.MODMAXMANA <BonusManaMax>
-	ENDIF
+	// IF (<BonusINT>)//intelligence bonus
+	// 	SRC.MODINT += <BonusINT>
+	// ENDIF
+	//IF (<BonusManaMax>)//mana increase
+	//	SRC.MODMAXMANA <BonusManaMax>
+	//ENDIF
 	IF (<RegenMana>)//alters the "rate" of mana regeneration
 		SRC.RegenMana += <RegenMana>
 	ENDIF
@@ -708,30 +709,30 @@ IF (<HasComponentProps <def.CompProps_ItemEquippable>>)
 		// ENDIF
 		// SRC.LUCK -= <LUCK>
 	// ENDIF
-	IF (<BonusStr>)//strength bonus
-		SRC.MODSTR -= <BonusStr>
-	ENDIF
-	IF (<BonusHitsMax>)//hitpoint increase
-		SRC.MODMAXHITS -= <BonusHitsMax>
-	ENDIF
+	// IF (<BonusStr>)//strength bonus
+	// 	SRC.MODSTR -= <BonusStr>
+	// ENDIF
+	// IF (<BonusHitsMax>)//hitpoint increase
+	// 	SRC.MODMAXHITS -= <BonusHitsMax>
+	// ENDIF
 	IF (<RegenHits>)
 		SRC.RegenHits -= <RegenHits>
 	ENDIF
-	IF (<BonusDex>)//dexterity bonus
-		SRC.MODDEX -= <BonusDex>
-	ENDIF
-	IF (<BonusStamMax>)//stamina increase
-		SRC.MODMAXSTAM -= <BonusStamMax>
-	ENDIF
+	// IF (<BonusDex>)//dexterity bonus
+	// 	SRC.MODDEX -= <BonusDex>
+	// ENDIF
+	// IF (<BonusStamMax>)//stamina increase
+	// 	SRC.MODMAXSTAM -= <BonusStamMax>
+	// ENDIF
 	IF (<RegenStam>)
 		SRC.RegenStam -= <RegenStam>
 	ENDIF
-	IF (<BonusINT>)//intelligence bonus
-		SRC.MODINT -= <BonusINT>
-	ENDIF
-	IF (<BonusManaMax>)//mana increase
-		SRC.MODMAXMANA -= <BonusManaMax>
-	ENDIF
+	// IF (<BonusINT>)//intelligence bonus
+	// 	SRC.MODINT -= <BonusINT>
+	// ENDIF
+	// IF (<BonusManaMax>)//mana increase
+	// 	SRC.MODMAXMANA -= <BonusManaMax>
+	// ENDIF
 	IF (<RegenMana>)
 		SRC.RegenMana -= <RegenMana>
 	ENDIF
