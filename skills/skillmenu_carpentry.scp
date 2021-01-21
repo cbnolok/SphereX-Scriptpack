@@ -201,20 +201,11 @@ MAKEITEM=i_DRESS_FORM
 ON=i_TRAINING_DUMMY <name> (<resmake>)
 MAKEITEM=i_DEED_DUMMYW
 
-ON=i_DEED_DUMMYN <name> (<resmake>)
-MAKEITEM=i_DEED_DUMMYN
+ON=i_deed_pickpock <name> (<resmake>)
+MAKEITEM=i_deed_pickpock
 
-ON=i_DEED_PICKPOCKW <name> (<resmake>)
-MAKEITEM=i_DEED_PICKPOCKN
-
-ON=i_DEED_PICKPOCKN <name> (<resmake>)
-MAKEITEM=i_DEED_PICKPOCKN
-
-ON=i_DEED_ARCHBUTTEW <name> (<resmake>)
-MAKEITEM=i_DEED_ARCHBUTTEW
-
-ON=i_DEED_ARCHBUTTEN <name> (<resmake>)
-MAKEITEM=i_DEED_ARCHBUTTEN
+ON=i_DEED_ARCHBUTTE <name> (<resmake>)
+MAKEITEM=i_DEED_ARCHBUTTE
 
 ON=i_DEED_SPINWHEEL <name> (<resmake>)
 MAKEITEM=i_DEED_SPINWHEEL
@@ -324,25 +315,25 @@ Beds
 ON=i_bed_small_unmade_2 <name> (<resmake>)
 MAKEITEM=i_bed_small_unmade_2
 
-ON=i_BED_11 <name> (<resmake>)
-MAKEITEM=i_BED_11
+ON=0a6b <name> (<resmake>)
+MAKEITEM=0a6b
 
-ON=i_BED_16 <name> (<resmake>)
-MAKEITEM=i_BED_16
+ON=0a74 <name> (<resmake>)
+MAKEITEM=0a74
 
-ON=i_BED_17 <name> (<resmake>)
-MAKEITEM=i_BED_17
+ON=0a75 <name> (<resmake>)
+MAKEITEM=0a75
 
-ON=i_BED_18 <name> (<resmake>)
-MAKEITEM=i_BED_18
+ON=0a76 <name> (<resmake>)
+MAKEITEM=0a76
 
-ON=i_BED_19 <name> (<resmake>)
-MAKEITEM=i_BED_19
+ON=0a77 <name> (<resmake>)
+MAKEITEM=0a77
 
-ON=i_BED_7 <name> (<resmake>)
-MAKEITEM=i_BED_7
+ON=0a66 <name> (<resmake>)
+MAKEITEM=0a66
 
-ON=i_BED_8 <name> (<resmake>)
-MAKEITEM=i_BED_8
+ON=0a68 <name> (<resmake>)
+MAKEITEM=0a68
 
 [EOF]

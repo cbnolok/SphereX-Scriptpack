@@ -21,4 +21,208 @@ RETURN 0
 [function f_getDefnameFromCorpse]
 RETURN <HVAL (<DEF.RES_CHARDEF> << <DEF.RESTYPE_BIT_SHIFT>)|<MOREX>>
 
+[function f_resenddialog]
+src.dialogclose <ARGV[0]>
+sdialog <ARGS>
+
+[function f_resources]
+return <ARGV>
+
+[function f_loopanim] // ID of anim, repeat, delay
+if <argv[1]>>1
+	for <eval (<argv[1]>-1)>
+	timerf <eval (<local._for>*<argv[2]>)>,anim <eval <argv[0]>>
+	endfor
+endif
+anim <argv[0]>
+
+[function f_loopsound]
+if <argv[1]>>1
+	for <eval (<argv[1]>-1)>
+	timerf <eval (<local._for>*<argv[2]>)>,sound <eval <argv[0]>>
+	endfor
+endif
+sound <argv[0]>
+
+// <pet uid>.f_MakePetOf <owner uid>
+[function f_MakePetOf]
+serv.newitem i_memory
+new.color = memory_ipet
+new.more1 = 04
+new.more2 = <serv.time>
+new.morep = <p>
+new.link = <args>
+new.cont = <uid>
+
+// Check if the introduced argument is a spell number
+// Arguments = spell
+[function isdamagespell]
+IF ((<ARGN1> == 5) || (<ARGN1> == 12) || (<ARGN1> == 18) || (<ARGN1> == 30) || (<ARGN1> == 42) || (<ARGN1> == 49) || (<ARGN1> == 51) || (<ARGN1> == 55))
+RETURN 1
+ENDIF
+RETURN 0
+
+// Close all dialogs of the player
+[FUNCTION closealldialogs]
+IF (<DIALOGLIST.COUNT>)
+	FOR 0 <EVAL <DIALOGLIST.COUNT>-1>
+	LOCAL.DIALOGNAME=<DIALOGLIST.<dLOCAL._FOR>.ID>
+		IF (STRCMPI(d_pages_resp_alerta,<LOCAL.DIALOGNAME>))
+		DIALOGCLOSE <LOCAL.DIALOGNAME> <ARGN2>
+		ENDIF
+	ENDFOR
+ENDI
+
+// New ADDITEM function with works with 65000+ items pile
+// Arguments = id,amount
+[function f_additem]
+IF (0<DEF.<ARGV[0]>>)
+IF (0<ARGV[1]>)
+LOCAL.AMOUNT=<ARGV[1]>
+ELSE
+LOCAL.AMOUNT=1
+ENDIF
+WHILE <LOCAL.AMOUNT>
+SERV.NEWITEM=<ARGV[0]>
+IF (<SERV.ITEMDEF.<ARGV[0]>.CAN>&CAN_I_PILE)
+IF (<LOCAL.AMOUNT> > 64999)
+NEW.AMOUNT=65000
+ELSE
+NEW.AMOUNT=<LOCAL.AMOUNT>
+ENDIF
+ENDIF
+LOCAL.AMOUNT -= <NEW.AMOUNT>
+IF (0<ARGV[2]>)
+NEW.CONT=<ARGV[2]>
+ELSE
+BOUNCE <NEW>
+ENDIF
+ENDWHILE
+ENDIF
+
+[FUNCTION f_skill_delay]
+if !<isplayer>
+return 0
+endif
+if <def.scp.SkillWaitingTimes> == 1
+	if <args> != -1
+	ctag.skillrecovery = <eval <serv.time> + <args>>
+		if <serv.time> > <ctag.skillrecovery>
+		ctag.skillrecovery =
+		endif
+	endif
+endif
+
+[FUNCTION max]
+RETURN <QVAL <ARGN2> < <ARGN1>? <ARGN1> : <ARGN2>>
+
+[FUNCTION min]
+RETURN <QVAL <ARGN2> < <ARGN1>? <ARGN2> : <ARGN1>>
+
+
+
+[function getargv]
+local.toret = <strarg <args>>
+args = <streat <args>>
+return <argv[<local.toret>]>
+
+[function isdialogopen]
+for 0 <eval <dialoglist.count> - 1>
+	if strmatch("<dialoglist.<dlocal._for>.id>","<args>")
+	return 1
+	endif
+endfor
+return 0
+
+
+[function abs] // Absolute value: <abs x>
+if <argn1> < 0
+	return <eval (<argn1> * -1)>
+endif
+return <argn1>
+
+[function getpinpos] // Original position of pin. <getpinpos Pin#>
+local.dX = <eval (<more2h> - <more1h>)>
+local.dY = <eval (<more2l> - <more1l>)>
+
+local.mapX = <qval (<tdata1>) ? <tdata1>:200>
+local.mapY = <qval (<tdata2>) ? <tdata2>:200>
+
+float.x = <floatval (((<dlocal.dX> / <dlocal.mapX>) * <strarg <pin.<argn1>>>) + <more1h>)>
+float.y = <floatval (((<dlocal.dY> / <dlocal.mapY>) * <streat <pin.<argn1>>>) + <more1l>)>
+
+return <feval <float.x>>,<feval <float.y>>
+
+[function emoteloc] // emoteloc self_cliloc_id, others_cliloc_id, color1(optional), color2 (optional - color1 can be used if not set), args for 2nd cliloc (@ : seperator)
+ref1=<uid>
+local.color1 = <qval ((<argv> < 3) || (<argv[2]> == 0)) ? 03b2:<argv[2]>>
+local.color2 = <qval ((<argv> < 4) || (<argv[3]> == 0)) ? <local.color1>:<argv[3]>>
+trysrc <ref1> uid.<ref1>.message @<local.color1>,,2 <argv[0]>
+forclients
+	if <ref1> != <uid>
+		trysrc <uid> uid.<ref1>.message @<local.color2>,,2 <argv[1]>,<explode @,<argv[4]>>
+	endif
+endfor
+
+[FUNCTION moveback]
+DOSWITCH <DIR>
+BEGIN
+IF (<CANMOVE S>)
+MOVE S
+ENDIF
+END
+BEGIN
+IF (<CANMOVE SW>)
+MOVE SW
+ENDIF
+END
+BEGIN
+IF (<CANMOVE W>)
+MOVE W
+ENDIF
+END
+BEGIN
+IF (<CANMOVE NW>)
+MOVE NW
+ENDIF
+END
+BEGIN
+IF (<CANMOVE N>)
+MOVE N
+ENDIF
+END
+BEGIN
+IF (<CANMOVE NE>)
+MOVE NE
+ENDIF
+END
+BEGIN
+IF (<CANMOVE E>)
+MOVE E
+ENDIF
+END
+BEGIN
+IF (<CANMOVE SE>)
+MOVE SE
+ENDIF
+END
+BEGIN
+IF (<CANMOVE S>)
+MOVE S
+ENDIF
+END
+enddo
+
+[FUNCTION f_get_random_skill]
+RETURN <SERV.SKILL.<R55>.NAME>
+
+// Converts a 24-bit RGB value to 16-bit.
+// Usage: F_24TO16 <R> <G> <B>
+//
+[FUNCTION f_24to16]
+LOCAL.R = ((<ARGN1> & 0ff) / 8) << 10
+LOCAL.G = ((<ARGN2> & 0ff) / 8) << 5
+LOCAL.B = ((<ARGN3> & 0ff) / 8)
+RETURN <EVAL (<LOCAL.A>) | (<LOCAL.R>) | (<LOCAL.G>) | (<LOCAL.B>)>
+
 [EOF]

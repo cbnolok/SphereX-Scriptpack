@@ -1,0 +1,68 @@
+//****************************************************************************
+// SphereServer ©1997-2009
+// This script is part from the Sphere Community Script Pack.
+// You can download the full pack from: www.sphereserver.net
+//****************************************************************************
+// FILE LAST UPDATED: Friday, April 1, 2011
+VERSION=0.56b
+
+[comment typedef_t_ingot]
+This event override detects when an ingot is double clicked and sets the ctag
+used by the crafting system so that material is used in the crafting dialog.
+The script assumes no more than 20 ingot types are defined in the crafting
+file for blacksmithing (likely named sphere_skillmenu_blacksmithing.scp)
+
+[typedef t_ingot]
+on=@dclick
+if <def0.scp.CraftingSystem> == 0
+   return 0
+endif
+if <def0.scp.NewCrafting_Blacksmithing> == 0
+   return 0
+endif
+if <def0.blacksmithing_material_1_resourceid>==<defname>
+   src.ctag.craft.material.blacksmithing=1
+elif <def0.blacksmithing_material_2_resourceid>==<defname>
+   src.ctag.craft.material.blacksmithing=2
+elif <def0.blacksmithing_material_3_resourceid>==<defname>
+   src.ctag.craft.material.blacksmithing=3
+elif <def0.blacksmithing_material_4_resourceid>==<defname>
+   src.ctag.craft.material.blacksmithing=4
+elif <def0.blacksmithing_material_5_resourceid>==<defname>
+   src.ctag.craft.material.blacksmithing=5
+elif <def0.blacksmithing_material_6_resourceid>==<defname>
+   src.ctag.craft.material.blacksmithing=6
+elif <def0.blacksmithing_material_7_resourceid>==<defname>
+   src.ctag.craft.material.blacksmithing=7
+elif <def0.blacksmithing_material_8_resourceid>==<defname>
+   src.ctag.craft.material.blacksmithing=8
+elif <def0.blacksmithing_material_9_resourceid>==<defname>
+   src.ctag.craft.material.blacksmithing=9
+elif <def0.blacksmithing_material_10_resourceid>==<defname>
+   src.ctag.craft.material.blacksmithing=10
+elif <def0.blacksmithing_material_11_resourceid>==<defname>
+   src.ctag.craft.material.blacksmithing=11
+elif <def0.blacksmithing_material_12_resourceid>==<defname>
+   src.ctag.craft.material.blacksmithing=12
+elif <def0.blacksmithing_material_13_resourceid>==<defname>
+   src.ctag.craft.material.blacksmithing=13
+elif <def0.blacksmithing_material_14_resourceid>==<defname>
+   src.ctag.craft.material.blacksmithing=14
+elif <def0.blacksmithing_material_15_resourceid>==<defname>
+   src.ctag.craft.material.blacksmithing=15
+elif <def0.blacksmithing_material_16_resourceid>==<defname>
+   src.ctag.craft.material.blacksmithing=16
+elif <def0.blacksmithing_material_17_resourceid>==<defname>
+   src.ctag.craft.material.blacksmithing=17
+elif <def0.blacksmithing_material_18_resourceid>==<defname>
+   src.ctag.craft.material.blacksmithing=18
+elif <def0.blacksmithing_material_19_resourceid>==<defname>
+   src.ctag.craft.material.blacksmithing=19
+elif <def0.blacksmithing_material_20_resourceid>==<defname>
+   src.ctag.craft.material.blacksmithing=20
+else
+   src.ctag.craft.material.blacksmithing=
+endif
+return 0
+
+[eof]

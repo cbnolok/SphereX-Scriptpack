@@ -1,0 +1,36 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
+// SCRIPT DOCUMENTATION
+// --------------------
+// Main settings of every system. Switches, possibilities, etc
+// Every setting has its own description.
+//
+[DEFNAME SPHERE_COMMUNITY_PACK_SETTINGS]
+///////////////////////////////////////////////////////////////
+//////// Crafting Settings
+///////////////////////////////////////////////////////////////
+
+// Enables, switch or disable the new crafting system
+// 0 = Default. 1 = OSI-Like.
+scp.CraftingSystem=1
+
+// Enable or disable the crafting menu for specific skill.
+// <boolean> (1 if enable, 0 if not). Default = 1
+scp.NewCrafting_Alchemy=0
+scp.NewCrafting_Blacksmithing=1
+scp.NewCrafting_Bowcraft=0
+scp.NewCrafting_Carpentry=0
+scp.NewCrafting_Cooking=0 // NOT DONE!!
+scp.NewCrafting_Inscription=0
+scp.NewCrafting_Tailoring=0
+scp.NewCrafting_Tinkering=0
+
+// If the item needs a recipe and the player doesn't have it, display resources as "????"
+// If this is 0, it will display the skillmake/resources normally.
+scp.NewCrafting_RecipeNeeded=1
+
+[EOF]

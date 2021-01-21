@@ -1,0 +1,78 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
+// SCRIPT CREDITS
+// --------------
+// pyromapes2k - Base crafting system used in here
+// coruja - Updated to be more OSI compatible
+// ShiryuX - Updated to the scriptpack and tweaked many parts of it
+//
+// SCRIPT DOCUMENTATION
+// --------------------
+// OSI Crafting System
+
+[events e_PlayerCraftingEvent]
+on=@skillabort
+if <def.scp.CraftingSystem> == 0
+   return 0
+endif
+if <def0.scp.NewCrafting_<serv.skill.<argn>.key>> == 0
+   return 0
+endif
+ctag.craft.message = <def.scp.craft_msg_fail>
+
+on=@skillfail
+if <def.scp.CraftingSystem> == 0
+   return 0
+endif
+if <def0.scp.NewCrafting_<serv.skill.<argn>.key>> == 1
+   if !<isempty <ctag.craft.skill>>
+      ctag.craft.message = <def.scp.craft_msg_fail>
+      craftskill <ctag0.craft.skill>
+   endif
+endif
+
+on=@skillmakeitem
+ctag.craft.message =
+if <def.scp.CraftingSystem> == 0
+   return 0
+endif
+if <def0.scp.NewCrafting_<serv.skill.<action>.key>> == 0
+   return 0
+endif
+ref2 = <act.uid>
+ref2.name = <serv.itemdef.<ref2.baseid>.name>
+ctag.craft.message = Your last successful creation: <ref2.name>.
+if <ref2.craft_exceptionalchance> > <r>
+   if !<isempty <def.<ctag0.craft.skill>_exceptional_bonus>>
+      ref2.<def.<ctag0.craft.skill>_exceptional_bonus> <uid>
+   endif
+   ctag0.craft.message = <def.scp.craft_msg_exceptional>
+   ref2.tag.exceptional = 1
+   if <<serv.skill.<action>.key>> >= 100.0
+      if <ctag0.craft.mark> == 2
+         ref2.dialog d_craft_prompt
+      elif <ctag0.craft.mark> == 1
+         ref2.tag.craftedby = <qval (<fame> < 10000) ? "<name>":"<sex Lord/Lady> <name>">
+         ctag.craft.message = <def.scp.craft_msg_excepmark>
+      endif
+   endif
+endif
+if !<isempty <def.<ctag0.craft.skill>_aftercraft>>
+   ref2.<def.<ctag0.craft.skill>_aftercraft>
+endif
+if <ctag0.craft.material.<ctag.craft.skill>>
+   if !<isempty <def.<ctag0.craft.skill>_<ctag0.craft.material.<ctag0.craft.skill>>_aftercraft>>
+      ref2.<def.<ctag0.craft.skill>_<ctag0.craft.material.<ctag0.craft.skill>>_aftercraft>>
+   endif
+endif
+//trigger @ItemCraft,<def.tat_as_argo>,<ref2.uid>
+//ref2.trigger @Craft,<def.tat_as_argo,<uid>
+ref2.resendtooltip 1
+f_resenddialog d_craft_menu
+return 0
+
+[eof]

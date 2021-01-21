@@ -236,12 +236,14 @@ DUPEITEM=01bc4
 
 [ITEMDEF 01bc6]
 DEFNAME=i_shield_scale
+NAME=Scale Shield (unwearable)
 TYPE=t_shield
 FLIP=1
 ARMOR=16
 VALUE=158
 WEIGHT=20.0
 RESOURCES=10 i_ingot_silver,4 i_ingot_blackrock,2 i_ingot_gold
+SKILLMAKE=Blacksmithing 110.0,Armslore 110.0
 CATEGORY=Provisions - Armor
 SUBSECTION=Shields
 DESCRIPTION=Scale Shield (unwearable)

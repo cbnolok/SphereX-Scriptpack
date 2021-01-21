@@ -1,0 +1,16 @@
+//****************************************************************************
+// SphereServer ©1997-2009
+// This script is part from the Sphere Community Script Pack.
+// You can download the full pack from: www.sphereserver.net
+//****************************************************************************
+// FILE LAST UPDATED: Friday, April 1, 2011
+VERSION=0.56b
+
+[TYPEDEF t_forge]
+on=@targon_item
+if <argo.type> == t_ore
+   src.dclick <argo.uid>
+   return 1
+endif
+
+[eof]

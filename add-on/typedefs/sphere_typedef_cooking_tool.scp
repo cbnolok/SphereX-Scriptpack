@@ -1,0 +1,19 @@
+//****************************************************************************
+// SphereServer ©1997-2009
+// This script is part from the Sphere Community Script Pack.
+// You can download the full pack from: www.sphereserver.net
+//****************************************************************************
+// FILE LAST UPDATED: Friday, April 2, 2011
+VERSION=0.56b
+
+
+[TYPEDEF t_cooking_tool]
+ON=@DClick
+if <topobj.uid> == <src.uid>
+   src.craftskill cooking
+else
+   src.sysmessage @,,1 It must be in your backpack.
+endif
+return 1
+
+[eof]

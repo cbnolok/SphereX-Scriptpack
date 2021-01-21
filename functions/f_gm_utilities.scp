@@ -13,7 +13,7 @@ IF (<ARGO>)
 ELSEIF (<TARGP>)
 	GO <TARGP>
 ELSE
-	SYSMESSAGE Target non valido
+	SYSMESSAGE Target not valid
 ENDIF
 TARGETFG t_sub
 

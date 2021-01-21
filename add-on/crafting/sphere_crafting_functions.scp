@@ -1,0 +1,192 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+//
+// SCRIPT CREDITS
+// --------------
+// pyromapes2k - Base crafting system used in here
+// coruja - Updated to be more OSI compatible
+// ShiryuX - Updated to the scriptpack and tweaked many parts of it
+//
+// SCRIPT DOCUMENTATION
+// --------------------
+// OSI Crafting System
+
+[function craftskill]
+if strcmp("<argv[0]>","<ctag.craft.skill>")
+   ctag.craft.last
+   ctag.craft.page.sidebar
+   ctag.craft.sidebar = 01
+endif
+ctag.craft.skill=<argv[0]>
+if !(<ctag0.craft.mark>) && (<def0.<ctag0.craft.skill>_marking>)
+   ctag.craft.mark=2
+endif
+f_resenddialog d_craft_menu
+
+
+[function craft]
+local.recipe = <getargv 3 <ctag0.craft.item.options>>
+if <local.recipe> == 1
+   if !<tag0.recipe.<serv.itemdef.<ctag0.craft.item>.baseid>>
+      ctag.craft.message = <def.scp.craft_msg_norecipe>
+      f_resenddialog d_craft_menu
+      return 1
+   endif
+endif
+if <account.resdisp> < <getargv 4 <ctag0.craft.item.options>>
+   ctag.craft.message = <def.scp.craft_msg_noexpansion>
+   f_resenddialog d_craft_menu
+   return 1
+endif
+if !<canmakeskill <args>>
+   ctag.craft.message = <def.scp.craft_msg_noskill>
+   f_resenddialog d_craft_menu
+   return 1
+elif !<canmake <args>>
+   ctag.craft.message = <def.scp.craft_msg_noresources>
+   f_resenddialog d_craft_menu
+   return 1
+elif !<isempty <def.<ctag0.craft.skill>_check>>
+   if (<<def.<ctag0.craft.skill>_check> <args>>)
+      f_resenddialog d_craft_menu
+      return 1
+   endif
+endif
+makeitem <args>
+craftsuccesschance <args>
+ctag.craft.message = "Creating <serv.itemdef.<args>.name>..."
+ctag.craft.last.<ctag0.craft.skill> = <args>
+if !strcmpi("Cooking","<ctag0.craft.skill>")
+   timerf <eval <serv.skill.13.delay>/10>,craftcooking <args>,<actdiff> // Cooking Fix
+endif
+LOCAL.NewLastTen=<args>
+for 0 9
+   LOCAL.TempItem=<getargv <LOCAL._for> <TAG0.craft.lastTen.<ctag0.craft.skill>>>
+   IF (<LOCAL.TempItem>) && !(STRMATCH(*<LOCAL.TempItem>*,<LOCAL.NewLastTen>))
+      LOCAL.NewLastTen=<LOCAL.NewLastTen>,<LOCAL.TempItem>
+   ENDIF
+endfor
+TAG.craft.lastTen.<ctag0.craft.skill>=<LOCAL.NewLastTen>
+
+
+[function craftcooking]
+if (<canmake <argv[0]>>) && (<argv[1]> > 0)
+   serv.newitem <argv[0]>
+   consume <new.resources>
+   new.bounce
+   ctag.craft.message = <def.scp.craft_msg_success>
+   skillgain cooking <r2>
+else
+   ctag.craft.message = <def.scp.craft_msg_fail>
+endif
+craftskill cooking
+
+[function cancraft]
+IF (STRMATCH("*t_masonry_tool*","<SERV.ITEMDEF.<ARGS>.SKILLMAKE>") && !(<TAG0.crafting.masonry>))
+   RETURN 0
+ENDIF
+IF (STRMATCH("*t_glassblowing*","<SERV.ITEMDEF.<ARGS>.SKILLMAKE>") && !(<TAG0.crafting.glassblowing>))
+   RETURN 0
+ENDIF
+IF !(<CANMAKE <ARGS>>)
+   RETURN 0
+ENDIF
+RETURN 1
+
+[FUNCTION enhancesuccesschance]
+IF (<SRC.Imbuing> >= <serv.itemdef.<args>.skillmake.1.val>)
+   LOCAL.R = <EVAL (<SRC.Imbuing>> - <SERV.ITEMDEF.<ARGS>.SKILLMAKE.1.VAL>) * 2>
+   LOCAL.R += <DEF.<SERV.ITEMDEF.<ARGS>.SKILLMAKE.1.NAME>_CHANCEATMIN>
+ENDIF
+IF !(<ISITEM>)
+   IF (<R1000> < <LOCAL.R>)
+      ACTDIFF = 10
+   ELSE
+      ACTDIFF = -10
+   ENDIF
+   RETURN 1
+ELSE
+   IF <LOCAL.R> < 0
+      LOCAL.R = 0
+   ELIF <LOCAL.R> > 1000
+      LOCAL.R = 1000
+   ENDIF
+   RETURN <LOCAL.R>
+ENDIF
+
+[function craftsuccesschance]
+if (<src.<serv.skill.<serv.itemdef.<args>.skillmake.1.key>.key>> >= <serv.itemdef.<args>.skillmake.1.val>)
+   local.r = <eval (<src.<serv.skill.<serv.itemdef.<args>.skillmake.1.key>.key>> - <serv.itemdef.<args>.skillmake.1.val>) * 2>
+   local.r += <def.<src.ctag0.craft.skill>_chanceatmin>
+endif
+if !(<isitem>)
+   if (<r1000> < <local.r>)
+      actdiff = 10
+   else
+      actdiff = -10
+   endif
+   return 1
+else
+   if <local.r> < 0
+      local.r = 0
+   elif <local.r> > 1000
+      local.r = 1000
+   endif
+   return <local.r>
+endif
+
+[function craft_exceptionalchance]
+if !(<getargv 1 <src.ctag0.craft.item.options>>)
+   return 0
+endif
+local.successchance = <eval (<src.<serv.skill.<serv.itemdef.<baseid>.skillmake.1.key>.key>> - <serv.itemdef.<baseid>.skillmake.1.val>) * 2>
+local.successchance += <def.<src.ctag0.craft.skill>_chanceatmin>
+local.r = <eval <local.successchance> - 450>
+
+if <local.r> < 0
+   local.r = 0
+elif <local.r> > 1000
+   local.r = 1000
+endif
+return <local.r>
+
+[function f_crafting_render_materials]
+xmfhtmlgumpcolor 175 40 370 20 1044011 0 0 <ddef.dcolor_white>
+local.x = 180
+dorigin 180 45
+while !(<isempty <def.<ctag0.craft.skill>_material_<dlocal.n>_name>>)
+dtext +35 *20 0480 <def.<ctag0.craft.skill>_material_<dlocal.n>_name>
+button *0 *0 4005 4007 1 0 <eval 5020 + <local.n>>
+if <local.n> > 9
+   local.x += 180
+   dorigin <local.x> 45
+endif
+local.n ++
+endwhile
+
+[function f_craft_exceptionalbonus] // ITEM.f_craft_exceptionalbonus <UID>
+ref1 = <args>
+if <isweapon>
+	local.totalbonus = <min 40,<eval 35 + (<ref1.armslore> / 200)>>
+	tag0.DamageIncrease += <local.totalbonus>
+elif <isarmor>
+	local.totalbonus = <min 20,<eval 15 + (<ref1.armslore> / 200)>>
+	for <local.totalbonus>
+		dorand 5
+			tag0.ResPhysical ++
+			tag0.ResFire ++
+			tag0.ResCold ++
+			tag0.ResEnergy ++
+			tag0.ResPoison ++
+		enddo
+	endfor
+elif <tag0.UsesRemaining>
+	local.totalbonus = <min 40,<eval 35 + (<ref1.armslore> / 200)>> // FIXME: couldn't find any information on the actual formula so this is completely made up.
+	tag0.UsesRemaining += <local.totalbonus>
+endif
+
+
+[eof]
