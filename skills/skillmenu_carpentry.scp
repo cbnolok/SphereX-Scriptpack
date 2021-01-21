@@ -199,7 +199,7 @@ ON=i_DRESS_FORM <name> (<resmake>)
 MAKEITEM=i_DRESS_FORM
 
 ON=i_TRAINING_DUMMY <name> (<resmake>)
-MAKEITEM=i_DEED_DUMMYW
+MAKEITEM=i_DEED_DUMMY
 
 ON=i_deed_pickpock <name> (<resmake>)
 MAKEITEM=i_deed_pickpock
