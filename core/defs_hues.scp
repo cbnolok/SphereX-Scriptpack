@@ -89,4 +89,8 @@ tcolor_cyan_lt		180
 tcolor_violet		109
 tcolor_violet_lt	116
 
+[DEFNAME DIALOG_COLORS]
+dcolor_white		16777215
+dcolor_red			15540260
+
 [EOF]
