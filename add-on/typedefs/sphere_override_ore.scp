@@ -1,0 +1,50 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
+
+[typedef t_ore]
+on=@dclick
+if <def0.scp.OSIOreFormula> < 1
+   return 0
+endif
+if <cont> != <src.findlayer.21>
+   src.sysmessage <def.scp.mining_smelt_notinpack>
+elif <src.mining> >= <eval <skillmake.1.value>-100>
+   if <src.isneartype t_forge 2>
+      args = <src.isneartype.p t_forge 2>
+      forclients 18
+         src.smelt_fx
+      endfor
+      if <r> <= <eval (((<src.mining> - <skillmake.1.value>)*2)+50)>
+         serv.newitem <tdata1>
+         new.amount <eval ((<amount>*(<src.mining>/10))/100)>
+         if <new.amount> < 1
+            new.amount = 1
+         endif
+         src.sysmessage <def.scp.mining_smelt_success>
+         src.consume <new.amount> <baseid>
+         new.cont <src.findlayer.21>
+      else
+         src.sysmessage <def.scp.mining_smelt_fail>
+         src.consume 1 <baseid>
+      endif
+   else
+      src.sysmessage <def.scp.mining_smelt_noforge>
+   endif
+else
+   src.sysmessage <def.scp.mining_smelt_noskill>
+endif
+return 1
+
+[FUNCTION smelt_fx]
+FORITEMS 1
+   IF (<TYPE>==t_forge)
+      SRC.SENDPACKET 0c0 0 d0 d0 wi_fire w<P.X> w<P.Y> <eval <P.Z>+6> w<P.X> w<P.Y> <eval <P.Z>+15> 0 0 w0 1 0 d0 d1
+      return 1
+   ENDIF
+ENDFOR
+
+[eof]

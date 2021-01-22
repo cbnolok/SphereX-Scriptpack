@@ -1,10 +1,8 @@
 //****************************************************************************
-// SphereServer ©1997-2009
-// This script is part from the Sphere Community Script Pack.
-// You can download the full pack from: www.sphereserver.net
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
 //****************************************************************************
-// FILE LAST UPDATED: Friday, April 1, 2011
-VERSION=0.56b
+VERSION=X1
 
 [TYPEDEF t_forge]
 on=@targon_item

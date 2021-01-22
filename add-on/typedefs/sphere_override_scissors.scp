@@ -1,0 +1,25 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
+
+[TYPEDEF t_scissors]
+ON=@TargOn_Item
+IF !(<ARGO.TOPOBJ.UID>==<SRC.UID>)
+   SRC.SYSMESSAGELOC color_text,502437//"Items you wish to cut must be in your backpack."
+   RETURN 1
+ENDIF
+IF (<ARGO.TYPE>==t_cloth_bolt) || (<ARGO.TYPE>==t_cloth)
+   RETURN 0
+ELSEIF (<ARGO.TYPE>==t_hide)
+   SERV.NEWITEM <SERV.ITEMDEF.<ARGO.DEFNAME>.TDATA1>,<ARGO.AMOUNT>,<SRC.UID>
+   SRC.CONSUME <ARGO.AMOUNT> <ARGO.BASEID>
+   SRC.SYSMESSAGELOC color_text,1008123//"You cut the material and place it into your backpack."
+ELSE
+   SRC.SYSMESSAGELOC color_text,502440//"Scissors cannot be used on that to produce anything."
+ENDIF
+RETURN 1
+
+[EOF]
