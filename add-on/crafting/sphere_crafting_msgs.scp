@@ -1,0 +1,90 @@
+[DEFNAME sphere_crafting_msgs_Clilocs]
+// The following are ONLY clilocs used by some dialogs or other things
+// Just remember, only clilocs if you're not sure of how it works.
+scp.craft_msg_fail		"1044043" // You failed to create the item, and some of your materials are lost.
+scp.craft_msg_noskill		"1044153" // You don't have the required skills to attempt this item.
+scp.craft_msg_success		"1044154" // You create the item.
+scp.craft_msg_exceptional	"1044155" // You create an exceptional quality item.
+scp.craft_msg_excepmark		"1044156" // You create an exceptional quality item and affix your maker's mark.
+
+scp.craft_msg_smithingneeds      "1044267" // You must be near an anvil and a forge to smith items. AS
+scp.craft_msg_smithsmeltneeds    "1044265" // You must be near a forge.
+scp.craft_msg_smithenhanceneeds  "1042678" // You are not near an anvil or a forge.
+scp.craft_msg_smithrepairneeds   "1044282" // You must be near a forge and and anvil to repair items.
+
+scp.craft_msg_noresources	"1044253" // You don't have the components needed to make that.
+scp.craft_msg_nomana		"1044380" // You don't have enough mana to inscribe that spell.
+scp.craft_msg_norecipe		"1073620"	// You have not learned this recipe.
+scp.craft_msg_nocast		"You need to be able to cast this spell in order to inscribe it."
+scp.craft_msg_noexpansion	"You don't have the expansion pack needed."
+
+
+scp.craft_title_alchemy		"1044001" // <CENTER>ALCHEMY MENU</CENTER>
+scp.craft_title_blacksmithing	"1044002" // <CENTER>BLACKSMITHY MENU</CENTER>
+scp.craft_title_cooking		"1044003" // <CENTER>COOKING MENU</CENTER>
+scp.craft_title_carpentry	"1044004" // <CENTER>CARPENTRY MENU</CENTER>
+scp.craft_title_tailoring	"1044005" // <CENTER>TAILORING MENU</CENTER>
+scp.craft_title_bowcraft	"1044006" // <CENTER>BOWCRAFT AND FLETCHING MENU</CENTER>
+scp.craft_title_tinkering	"1044007" // <CENTER>TINKERING MENU</CENTER>
+scp.craft_title_cartography	"1044008" // <CENTER>CARTOGRAPHY MENU</CENTER>
+scp.craft_title_inscription	"1044009" // <CENTER>INSCRIPTION MENU</CENTER>
+scp.craft_title_masonry		"1044500" // <CENTER>MASONRY MENU</CENTER>
+scp.craft_title_glassblowing	"1044622" // <CENTER>GLASSBLOWING MENU</CENTER>
+scp.craft_title_dragonscale	"1053135" // <CENTER>DRAGON SCALE ARMOR MENU</CENTER>
+
+scp.craft_head_categories	"1044010"	// <CENTER>CATEGORIES</CENTER>
+scp.craft_head_selections	"1044011"	// <CENTER>SELECTIONS</CENTER>
+scp.craft_head_notices		"1044012"	// <CENTER>NOTICES</CENTER>
+
+scp.craft_button_makelast	"1044013"	// MAKE LAST
+scp.craft_button_lastten	"1044014"	// LAST TEN
+scp.craft_button_repair		"1044015"	// REPAIR ITEM
+scp.craft_button_smelt		"1044016"	// SMELT ITEM
+scp.craft_button_enhance	"1061001"	// ENHANCE ITEM
+scp.craft_button_nextpage	"1044045"	// NEXT PAGE
+scp.craft_button_prevpage	"1044044"	// PREV PAGE
+scp.craft_button_exit		"1011441"	// EXIT
+
+scp.craft_resdisp_4		"1063363"	// * Requires the "Samurai Empire" expansion
+scp.craft_resdisp_5		"1072651"	// * Requires the "Mondain's Legacy" expansion
+scp.craft_resdisp_7		"1094732"	// * Requires the "Stygian Abyss" expansion
+scp.craft_resdisp_8      "1094732" // * Requires the "High Seas" booster
+scp.craft_colored		"1044152"	// * The item retains the color of this material
+scp.craft_markable		"1044059"	// This item may hold its maker's mark
+scp.craft_msg_gotrecipe		"1073427"	// You already know this recipe.
+
+
+
+
+
+
+[DEFNAME Shere_crafting_msgs_Messages]
+// The following are sysmessages, messages, say, etc.
+// You can change it for everything, even for text.
+scp.craft_repair_targ        "@,,2 1044276"   // Target an item to repair.
+scp.craft_repair_notitem     "1044283"   // You cannot repair that.
+scp.craft_repair_inpack      "1044275"   // The item must be in your backpack to repair it.
+scp.craft_repair_wrongskill  "1044277"   // That item cannot be repaired.
+scp.craft_repair_fullrepair  "1044281"   // That item is in full repair
+scp.craft_repair_cannot      "1044278"   // That item has been repaired many times, and will break if repairs are attempted again.
+scp.craft_repair_fail        "1044280"   // You fail to repair the item.
+scp.craft_repair_success     "1044279"   // You repair the item.
+
+scp.craft_smelt_targ         "@,,2 1044273"   // Target an item to recycle.
+scp.craft_smelt_notitem      "@,,2 1044272"   // You can't melt that down into ingots.
+scp.craft_smelt_notsmeltable "@,,2 1044272"   // You can't melt that down into ingots.
+scp.craft_smelt_success      "@,,2 1044270"   // You melt the item down into ingots.
+
+scp.craft_enhance_targ       "@,,2 1061004"   //"Target an item to enhance with your chosen material."
+scp.craft_enhance_notitem    "1061011"   //"You cannot enhance this type of item with the properties of the selected special material."
+scp.craft_enhance_nomaterial "1074861"   //"You do not have everything you need!"
+scp.craft_enhance_inpack     "1061005"   //"The item must be in your backpack to enhance it."
+scp.craft_enhance_already    "1061012"   //"This item is already enhanced with the properties of a special material."
+scp.craft_enhance_enchanted  "1080131"   //"You cannot enhance an item that is currently enchanted."
+scp.craft_enhance_notrunicT  "1061002"   //"You must use a runic tailoring kit to enhance a tailored item."
+scp.craft_enhance_notrunicB  "1061003"   //"You must be using a runic hammer to enhance a smithed item."
+scp.craft_enhance_notspecial "1061010"   //"You must select a special material in order to enhance an item with its properties."
+scp.craft_enhance_fail       "@,,2 1061082"   //"You attempt to enhance the item, but fail. Some material is lost in the process."
+scp.craft_enhance_totalfail  "@,,2 1061080"   //"You attempt to enhance the item, but fail catastrophically. The item is lost."
+scp.craft_enhance_success    "@,,2 1061008"   //"You enhance the item with the properties of the special material."
+[EOF]
