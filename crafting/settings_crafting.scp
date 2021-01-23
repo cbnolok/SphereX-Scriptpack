@@ -9,7 +9,7 @@ VERSION=X1
 // Main settings of every system. Switches, possibilities, etc
 // Every setting has its own description.
 //
-[DEFNAME SPHERE_COMMUNITY_PACK_SETTINGS]
+[DEFNAME SETTINGS_CRAFTING]
 
 
 ///////////////////////////////////////////////////////////////
@@ -23,14 +23,14 @@ scp.CraftingSystem=1
 
 // Enable or disable the crafting menu for specific skill.
 // <boolean> (1 if enable, 0 if not). Default = 1
-scp.NewCrafting_Alchemy=0
-scp.NewCrafting_Blacksmithing=1
-scp.NewCrafting_Bowcraft=0
-scp.NewCrafting_Carpentry=0
+scp.NewCrafting_Alchemy=0 // NOT DONE!!
+scp.NewCrafting_Blacksmithing=0
+scp.NewCrafting_Bowcraft=0 // NOT DONE!!
+scp.NewCrafting_Carpentry=0 // NOT DONE!!
 scp.NewCrafting_Cooking=0 // NOT DONE!!
-scp.NewCrafting_Inscription=0
-scp.NewCrafting_Tailoring=0
-scp.NewCrafting_Tinkering=0
+scp.NewCrafting_Inscription=0 // NOT DONE!!
+scp.NewCrafting_Tailoring=0 // NOT DONE!!
+scp.NewCrafting_Tinkering=0 // NOT DONE!!
 
 // If the item needs a recipe and the player doesn't have it, display resources as "????"
 // If this is 0, it will display the skillmake/resources normally.
