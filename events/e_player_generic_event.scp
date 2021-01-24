@@ -5,54 +5,6 @@
 VERSION=X1
 
 [events e_player_generic_event]
-
-// Crafting System
-on=@skillmenu
-if <def.scp.CraftingSystem> == 0
-return 0
-endif
-if <args>==sm_blacksmith
-	if <def0.scp.NewCrafting_Blacksmithing> == 1
-	craftskill Blacksmithing
-	return 1
-	endif
-elif <args>==sm_alchemy
-	if <def0.scp.NewCrafting_Alchemy> == 1
-	craftskill Alchemy
-	return 1
-	endif
-elif <args>==sm_bowcraft
-	if <def0.scp.NewCrafting_Bowcraft> == 1
-	craftskill Bowcraft
-	return 1
-	endif
-elif <args>==sm_cartography
-	if <def0.scp.NewCrafting_Cartography> == 1
-	craftskill Cartography
-	return 1
-	endif
-elif <args>==sm_carpentry
-	if <def0.scp.NewCrafting_Carpentry> == 1
-	craftskill Carpentry
-	return 1
-	endif
-elif (<args>==sm_tailor_leather) || (<args>==sm_tailor_cloth)
-	if <def0.scp.NewCrafting_Tailoring> == 1
-	craftskill Tailoring
-	return 1
-	endif
-elif <args>==sm_tinker
-	if <def0.scp.NewCrafting_Tinkering> == 1
-	craftskill Tinkering
-	return 1
-	endif
-elif <args>==sm_inscription
-	if <def0.scp.NewCrafting_Inscription> == 1
-	craftskill Inscription
-	return 1
-	endif
-endif
-return 0
-
+//Generic event to all players
 
 [eof]

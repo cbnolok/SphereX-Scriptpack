@@ -9,7 +9,7 @@ SphereServer has a number of hardcoded skillmenu's, this file contains the softc
 The purpose of this specific skillmenu is as follows:
 sm_blacksmith			= Triggered by DClicking a blacksmithing hammer
 
-[SKILLMENU sm_blacksmith]
+[SKILLMENU sm_blacksmith]  
 Blacksmithing
 
 ON=i_ANVIL Repair	// pretty much anyone can attempt to repair.

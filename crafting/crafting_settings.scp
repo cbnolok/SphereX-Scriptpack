@@ -19,7 +19,7 @@ VERSION=X1
 
 // Enables, switch or disable the new crafting system
 // 0 = Default. 1 = OSI-Like.
-scp.CraftingSystem=1
+scp.CraftingSystem=0
 
 // Enable or disable the crafting menu for specific skill.
 // <boolean> (1 if enable, 0 if not). Default = 1
