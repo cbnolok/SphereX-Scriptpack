@@ -23,7 +23,7 @@ scp.CraftingSystem=0
 
 // Enable or disable the crafting menu for specific skill.
 // <boolean> (1 if enable, 0 if not). Default = 1
-scp.NewCrafting_Alchemy=0 // NOT DONE!!
+scp.NewCrafting_Alchemy=0
 scp.NewCrafting_Blacksmithing=0
 scp.NewCrafting_Bowcraft=0 // NOT DONE!!
 scp.NewCrafting_Carpentry=0 // NOT DONE!!

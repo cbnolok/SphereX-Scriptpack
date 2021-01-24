@@ -9,7 +9,7 @@ DEFNAME=Skill_Alchemy
 KEY=Alchemy
 TITLE=Alchemist
 FLAGS=skf_craft
-DELAY=1.2		//Old value=3.0,1.0 // per stroke.
+DELAY=2.5		//Old value=3.0,1.0 // per stroke.
 STAT_STR=5
 STAT_DEX=40
 STAT_INT=75

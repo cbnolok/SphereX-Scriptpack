@@ -5,10 +5,9 @@
 VERSION=X1
 
 [TYPEDEF t_forge]
-on=@targon_item
-if <argo.type> == t_ore
-   src.dclick <argo.uid>
-   return 1
-endif
+ON=@DCLICK
+   TARGETF f_craft_blacksmith_smelt_targ
+RETURN 1
+
 
 [eof]

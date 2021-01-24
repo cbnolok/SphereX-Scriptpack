@@ -1,0 +1,118 @@
+//****************************************************************************
+// SphereServer ©1997-2009
+// This script is part from the Sphere Community Script Pack.
+// You can download the full pack from: www.sphereserver.net
+//****************************************************************************
+// FILE LAST UPDATED: 
+VERSION=0.56b
+//
+// SCRIPT CREDITS
+// --------------
+// ShiryuX - All the script
+//
+// SCRIPT DOCUMENTATION
+// --------------------
+// Based on EA crafting lists
+
+[defname sphere_crafting_alchemy_default]
+alchemy_marking			"0" // 1 or 0
+alchemy_firstmaterial	"0" // 1 or 0
+alchemy_secondmaterial	"0" // 1 or 0
+
+alchemy_smelt			""
+alchemy_repair			""
+alchemy_check			""
+alchemy_check_notice		""
+alchemy_chanceatmin		"0.0"
+alchemy_exceptional_bonus	"f_craft_exceptionalbonus"
+alchemy_aftercraft		""	// function called on the item AFTER you craft it (if success only).
+
+alchemy_category_1_name		"1044530"	// Refresh
+alchemy_category_2_name		"1044531"	// Agility
+alchemy_category_3_name		"1044532"	// Night Sight
+alchemy_category_4_name		"1044533"	// Heal
+alchemy_category_5_name		"1044534"	// Strength
+alchemy_category_6_name		"1044535"	// Poison
+alchemy_category_7_name		"1044536"	// Cure
+alchemy_category_8_name		"1044537"	// Explosion
+alchemy_category_9_name		"1044109"	// Necromancy
+alchemy_category_10_name	"1074832"	// Earthen Mixtures
+
+alchemy_category_1_1	"i_potion_refresh"		// 1044538
+alchemy_category_1_2	"i_potion_refreshtotal"		// 1044539
+
+alchemy_category_2_1	"i_potion_agility"		// 1044540
+alchemy_category_2_2	"i_potion_agilitygreat"		// 1044541
+
+alchemy_category_3_1	"i_potion_nightsight"		// 1044542
+
+alchemy_category_4_1	"i_potion_healless"		// 1044543
+alchemy_category_4_2	"i_potion_heal"			// 1044544
+alchemy_category_4_3	"i_potion_healgreat"		// 1044545
+//Elixir Of Rebirth
+
+alchemy_category_5_1	"i_potion_strength"		// 1044546
+alchemy_category_5_2	"i_potion_strengthgreat"	// 1044547
+
+alchemy_category_6_1	"i_potion_poisonless"		// 1044548
+alchemy_category_6_2	"i_potion_poison"		// 1044549
+alchemy_category_6_3	"i_potion_poisongreat"		// 1044550
+alchemy_category_6_4	"i_potion_poisondeadly"		// 1044551
+// Scouring Toxin
+
+alchemy_category_7_1	"i_potion_cureless"		// 1044552
+alchemy_category_7_2	"i_potion_cure"			// 1044553
+alchemy_category_7_3	"i_potion_curegreat"		// 1044554
+
+alchemy_category_8_1	"i_potion_explosionless"	// 1044555
+alchemy_category_8_2	"i_potion_explosion"		// 1044556
+alchemy_category_8_3	"i_potion_explosiongreat"	// 1044557
+//alchemy_category_8_4	smoke bomb			// 1030248
+
+//alchemy_category_9_1	conflagration			// 1072096
+//alchemy_category_9_2	greater conflagration		// 1072099
+//alchemy_category_9_3	confusion blast			// 1072106
+//alchemy_category_9_4	greater confusion blast		// 1072109
+
+alchemy_category_10_1	"i_potion_invisibility"		// 1074860
+//alchemy_category_10_2	parasitic			// 1072942
+//alchemy_category_10_3	darkglow			// 1072943
+//alchemy_category_10_4	hovering wisp			// 1072881
+//Plant Pigment
+//Natural Dye
+//Color Fixative
+//Crystal Granules	
+//Crystal Dust
+//Softened Reeds
+//Vial of Vitriol
+//Bottle of Ichor
+
+
+[comment several potions from sphere]
+// add them in the category you like.
+// the numbers and categories listed below are from an older file.
+//alchemy_category_1_3	"i_potion_forget_less"
+//alchemy_category_2_4	"i_potion_forget"
+//alchemy_category_2_6	"i_potion_mana"
+//alchemy_category_2_10	"i_potion_restore"
+//alchemy_category_2_12	"i_potion_trance"
+//alchemy_category_3_2	"i_potion_clever_great"
+//alchemy_category_3_5	"i_potion_forget_great"
+//alchemy_category_3_7	"i_potion_manatotal"
+//alchemy_category_3_11	"i_potion_restore_great"
+//alchemy_category_3_13	"i_potion_trance_great"
+//alchemy_category_4_1	"i_potion_clumsiness"
+//alchemy_category_4_2	"i_potion_confusion"
+//alchemy_category_4_3	"i_potion_chameleon"
+//alchemy_category_4_4	"i_potion_gender"
+//alchemy_category_4_6	"i_potion_monster"
+//alchemy_category_4_7	"i_potion_particle"
+//alchemy_category_4_8	"i_potion_shield"
+//alchemy_category_4_9	"i_potion_shrink"
+//alchemy_category_4_10	"i_potion_steelskin"
+//alchemy_category_4_11	"i_potion_stoneskin"
+//alchemy_category_4_12	"i_potion_sustenance"
+//alchemy_category_4_13	"i_potion_weakness"
+
+
+[eof]

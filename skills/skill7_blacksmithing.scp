@@ -9,7 +9,7 @@ DEFNAME=Skill_Blacksmith
 KEY=Blacksmithing
 TITLE=Blacksmith
 FLAGS=skf_craft
-DELAY=1.2		//Old value=1.7
+DELAY=1.7
 STAT_STR=95
 STAT_DEX=25
 STAT_INT=15

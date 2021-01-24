@@ -71,10 +71,13 @@ scp.craft_repair_cannot      "1044278"   // That item has been repaired many tim
 scp.craft_repair_fail        "1044280"   // You fail to repair the item.
 scp.craft_repair_success     "1044279"   // You repair the item.
 
+scp.craft_smelt_notinpack    "@,,2 1044274"   // The item must be in your backpack to recycle it.
 scp.craft_smelt_targ         "@,,2 1044273"   // Target an item to recycle.
-scp.craft_smelt_notitem      "@,,2 1044272"   // You can't melt that down into ingots.
-scp.craft_smelt_notsmeltable "@,,2 1044272"   // You can't melt that down into ingots.
+scp.craft_smelt_notitem      "@,,2 1044271"   // You can't melt down the tool you are working with!
+scp.craft_smelt_notsmeltable "@,,2 1044268"   // You cannot work this strange and unusual metal.
 scp.craft_smelt_success      "@,,2 1044270"   // You melt the item down into ingots.
+scp.craft_smelt_fail    	 "@,,2 1044272"   // You can't melt that down into ingots.
+scp.craft_smelt_noskill  	 "@,,2 1044269"   // You have no idea how to work this metal.
 
 scp.craft_enhance_targ       "@,,2 1061004"   //"Target an item to enhance with your chosen material."
 scp.craft_enhance_notitem    "1061011"   //"You cannot enhance this type of item with the properties of the selected special material."

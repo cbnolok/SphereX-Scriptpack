@@ -28,6 +28,7 @@ f_resenddialog d_craft_menu
 
 
 [function craft]
+//<args> = Item ID need to be craft
 local.recipe = <getargv 3 <ctag0.craft.item.options>>
 if <local.recipe> == 1
    if !<tag0.recipe.<serv.itemdef.<ctag0.craft.item>.baseid>>
@@ -187,6 +188,128 @@ elif <tag0.UsesRemaining>
 	local.totalbonus = <min 40,<eval 35 + (<ref1.armslore> / 200)>> // FIXME: couldn't find any information on the actual formula so this is completely made up.
 	tag0.UsesRemaining += <local.totalbonus>
 endif
+
+//Blacksmithing
+
+[FUNCTION f_craft_blacksmith_checkforge]
+IF ((!<ISNEARTYPE t_forge 3>) || (!<ISNEARTYPE t_anvil 3>))
+   CTAG.craft.message=<DEF.SCP.craft_msg_smithingneeds>
+   RETURN 1
+ENDIF
+RETURN 0
+
+[FUNCTION f_craft_blacksmith_exceptionalbonus]
+REF5=<ARGS>
+NAME=Exceptional <NAME>
+IF (<ISWEAPON>)
+   tag0.damageincrease += <eval 35 + (<ref5.armslore> / 200)>
+ELIF (<ISARMOR>)
+   modar += <eval (<armor.high> * 15) / 100>
+ENDIF
+
+
+[FUNCTION f_craft_blacksmith_repair]
+IF (!<ISNEARTYPE t_forge 3>) || (!<ISNEARTYPE t_anvil 3>)
+   CTAG.craft.message=<DEF.SCP.craft_msg_smithrepairneeds>
+   f_resenddialog d_craft_menu
+   RETURN 1
+ENDIF
+TARGETF f_craft_blacksmith_repair_targ
+SYSMESSAGE <DEF.SCP.craft_repair_targ>
+
+[FUNCTION f_craft_blacksmith_repair_targ]
+LOCAL.Max = <argo.more1h>
+LOCAL.Res = <STRARG <ARGO.RESOURCES.1>>
+LOCAL.Total = <LOCAL.max>/<LOCAL.res>
+LOCAL.ToRepair = <argo.more1h> - <argo.more1l>
+LOCAL.IngotNeeded = <LOCAL.ToRepair>/<LOCAL.Total>
+
+IF (!<ISNEARTYPE t_forge 3>) || (!<ISNEARTYPE t_anvil 3>)
+   CTAG.craft.message=<DEF.SCP.craft_msg_smithrepairneeds>
+   LOCAL.FailedRequirement=1
+// ELIF (!<ARGO.ISTEVENT.t_equipitem>)
+   // CTAG.Craft.Message=<DEF.SCP.craft_repair_notitem>
+   // LOCAL.FailedRequirement=1
+ELIF (<ARGO.SKILLMAKE.1.KEY>!=<SRC.CTAG0.craft.skill>)
+   CTAG.Craft.Message=<DEF.SCP.craft_repair_wrongskill>
+   LOCAL.FailedRequirement=1
+ELIF (<ARGO.CONT> != <FINDLAYER(layer_pack).UID>)
+   CTAG.Craft.Message=<DEF.SCP.craft_repair_inpack>
+   LOCAL.FailedRequirement=1
+ELIF ((<ARGO.SKILLMAKE.1.KEY> != skill_blacksmith) || !((<ARGO.TYPE> == t_armor) || (<ARGO.TYPE> == t_shield) || (<ARGO.ISWEAPON>)))
+   CTAG.Craft.Message=<DEF.SCP.craft_repair_wrongskill>
+   LOCAL.FailedRequirement=1
+ELIF (<ARGO.MORE1L> >= <ARGO.MORE1H>)
+   CTAG.Craft.Message=<DEF.SCP.craft_repair_fullrepair>
+   LOCAL.FailedRequirement=1
+ELIF (<ARGO.MORE1H> <= 0)
+   CTAG.Craft.Message=<DEF.SCP.craft_repair_cannot>
+   LOCAL.FailedRequirement=1
+ENDIF
+IF !(<SRC.RESTEST <DLOCAL.IngotNeeded> <STREAT <ARGO.RESOURCES.1>>>)
+	CTAG.Craft.Message=Il vous manque de lingots.
+	LOCAL.FailedRequirement=1
+ENDIF
+IF (<LOCAL.FailedRequirement>)
+   f_resenddialog d_craft_menu
+   RETURN 1
+ENDIF
+f_loopanim 11,3,1
+f_loopsound 42,3,1
+LOCAL.difficulty=<EVAL ((((<ARGO.MORE1H> - <ARGO.MORE1L>) * 1250) / <ARGO.MORE1H>) - 250) / 10>
+LOCAL.decrease=<EVAL 30 - (<Blacksmithing> / 33)>
+IF (<LOCAL.decrease> < 0)
+   LOCAL.decrease=0
+   ENDIF
+//LOCAL.decrease += <EVAL {2 4}>
+ARGO.MORE1H=<EVAL (<ARGO.MORE1H> * (100 - <LOCAL.decrease>)) / 100>
+IF (<LOCAL.difficulty> > <R100>)
+   CTAG.craft.message=<DEF.SCP.craft_repair_fail>
+   f_resenddialog d_craft_menu
+   RETURN 1
+ELSE
+   ARGO.MORE1L=<ARGO.MORE1H>
+   CTAG.craft.message=<DEF.SCP.craft_repair_success>
+   SRC.CONSUME <DLOCAL.IngotNeeded> <STREAT <ARGO.RESOURCES.1>>
+   f_resenddialog d_craft_menu
+ENDIF
+RESENDTOOLTIP
+
+
+[FUNCTION f_craft_blacksmith_smelt]
+IF (!<ISNEARTYPE t_forge 3>)
+   CTAG.craft.message=<DEF.SCP.craft_msg_smithsmeltneeds>
+   f_resenddialog d_craft_menu
+   RETURN 1
+ENDIF
+TARGETF f_craft_blacksmith_smelt_targ
+SYSMESSAGE <DEF.SCP.craft_smelt_targ>
+
+[FUNCTION f_craft_blacksmith_smelt_targ]
+IF (<ARGO.TOPOBJ> != <SRC>)
+   src.sysmessage <def.scp.craft_smelt_notinpack>
+	return 1
+ELIF (!<ISNEARTYPE t_forge 3>)
+   CTAG.craft.message=<DEF.SCP.craft_msg_smithsmeltneeds>
+   RETURN 1
+ELIF !<ARGO.ISITEM>
+   SYSMESSAGE <DEF.SCP.craft_smelt_notitem>
+   RETURN 1
+ELIF (<ARGO.TYPE>==t_ore))
+   dclick <argo.uid>
+	RETURN 1
+ELIF (<ARGO.TYPE>==t_clothing) || (<ARGO.ATTR>&attr_magic) || !((<ARGO.ISARMOR>) || (<ARGO.ISWEAPON>) || STRMATCH("*ingot*","<ARGO.RESOURCES.1>"))
+   SYSMESSAGE <DEF.SCP.craft_smelt_notsmeltable>
+   RETURN 1
+ELSE
+   LOCAL.AMOUNT=<MULDIV <STRARG <ARGO.RESOURCES.1>>,60,100>
+   SERV.NEWITEM=<STREAT <ARGO.RESOURCES.1>>,<dLOCAL.AMOUNT>
+   NEW.CONT=<ARGO.CONT>
+   ARGO.REMOVE
+   SYSMESSAGE <DEF.SCP.craft_smelt_success>
+   src.f_fireforge
+ENDIF
+
 
 
 [eof]
