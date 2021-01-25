@@ -5,7 +5,7 @@
 VERSION=X1
 
 [DEFNAME items_random_magic]
-random_spellbooks          { i_spellbook 2 i_runebook 1 }
+random_spellbooks          { i_spellbook 2 i_spellbook_runebook 1 }
 random_unknown_scrolls     { i_scroll_x_red 1 i_scroll_x_blue 1 i_scroll_x_green 1 i_scroll_x_teal 1 i_scroll_x_brown 1 i_scroll_x_purp 1 }
 random_wands               { i_wand_1 1 i_wand_2 1 i_wand_3 1 i_wand_4 1 }
 random_crystal_balls       i_crystal_ball

@@ -469,7 +469,7 @@ DESCRIPTION=Anvil
 ON=@Create
    MORE=i_anvil
 
-[ITEMDEF i_deed_dummyw]
+[ITEMDEF i_deed_dummy]
 ID=i_deed
 NAME=Deed to a Training Dummy
 CATEGORY=Provisions - Deeds

@@ -310,6 +310,15 @@ ELSE
    src.f_fireforge
 ENDIF
 
+[FUNCTION f_check_recipe] //Verification if player have the recipe of the item
+//Parameter: ARGS is the ID of the item  ex i_potion_refresh
+//Return 1 mean fabrication can't be DONE
+
+if <tag0.recipe.<ARGS>>
+   return 0
+else
+   return 1
+endif
 
 
 [eof]

@@ -28,7 +28,7 @@ scp.NewCrafting_Blacksmithing=0
 scp.NewCrafting_Bowcraft=0 // NOT DONE!!
 scp.NewCrafting_Carpentry=0 // NOT DONE!!
 scp.NewCrafting_Cooking=0 // NOT DONE!!
-scp.NewCrafting_Inscription=0 // NOT DONE!!
+scp.NewCrafting_Inscription=0
 scp.NewCrafting_Tailoring=0 // NOT DONE!!
 scp.NewCrafting_Tinkering=0 // NOT DONE!!
 

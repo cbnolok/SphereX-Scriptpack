@@ -73,16 +73,16 @@ for z <local.sidebar> <eval <local.sidebar>+9>
    if !<isempty <def.<ctag0.craft.skill>_category_<dlocal.z>_name>>
       button 15 <dlocal.wid> 4005 4007 1 0 <local.sidebar>
       if (<isnum <def.<ctag0.craft.skill>_category_<dlocal.z>_name>>)
-         xmfhtmlgumpcolor 50 <eval <local.wid>+2> 115 20 <ddef.<ctag0.craft.skill>_category_<dlocal.z>_name> 0 0 <ddef.dcolor_white>
+         xmfhtmlgumpcolor 50 <eval <local.wid>+2> 145 20 <ddef.<ctag0.craft.skill>_category_<dlocal.z>_name> 0 0 <ddef.dcolor_white>
       else
-         dcroppedtext 50 <eval <local.wid>+2> 115 20 0480 <def.<ctag0.craft.skill>_category_<dlocal.z>_name>
+         dcroppedtext 50 <eval <local.wid>+2> 145 20 0480 <def.<ctag0.craft.skill>_category_<dlocal.z>_name>
       endif
    endif
    local.wid += 20
    local.sidebar ++
 endfor
 if !<isempty <def.<ctag0.craft.skill>_category_<dlocal.sidebar>_name>>
-  button 135 267 4005 4007 1 0 401
+  button 175 267 4005 4007 1 0 401
 endif
 if <ctag0.craft.page.sidebar> > 0
    button 15 267 4014 4015 1 0 400
@@ -498,10 +498,9 @@ xmfhtmlgumpcolor 10 13 530 20 <ddef.scp.craft_title_<ctag0.craft.skill>> 0 0 <dd
 args = <ctag0.craft.item>
 serv.newitem <argv[0]>
 ref1=<new>
-if <def.scp.NewCrafting_RecipeNeeded> == 1
-   local.recipe = <getargv 3 <ctag0.craft.item.options>>
-   if <tag0.recipe.<new.baseid>>
-      local.recipe = 0
+if <def0.scp.NewCrafting_RecipeNeeded> == 1
+   if (<getargv 3 <ctag0.craft.item.options>>)
+      local.recipe = <f_check_recipe <new.baseid>>
    endif
 endif
 IF (STRMATCH("*t_masonry_tool*","<REF1.SKILLMAKE>")) || (STRMATCH("*t_glassblowing*","<REF1.SKILLMAKE>"))
@@ -523,13 +522,15 @@ dtext 305 388 0480 Make Item
 args = <ref1.skillmake>
 dorigin 170 112
 for 1 <argv>
-   if (<serv.skill.<ref1.skillmake.<local._for>.key>>)
-      if <local.recipe> == 1
-         dcroppedtext 170 *20 170 20 0480 ??????????
-         dcroppedtext 430 *0 50 20 0480 ??.?
-      else
-         dcroppedtext 170 *20 170 20 0480 <serv.skill.<ref1.skillmake.<local._for>.key>.name>
-         dcroppedtext 430 *0 50 20 0480 <fval <ref1.skillmake.<local._for>.val>>
+	IF !( (<ref1.skillmake.<local._for>.key>==t_carpentry) || (<ref1.skillmake.<local._for>.key>==t_tinker_tools) || (<ref1.skillmake.<local._for>.key>==t_cooking) || (<ref1.skillmake.<local._for>.key>==t_sewing_kit) || (<ref1.skillmake.<local._for>.key>==t_mortar) || (<ref1.skillmake.<local._for>.key>==i_pen_and_ink) )
+      if (<serv.skill.<ref1.skillmake.<local._for>.key>>)
+         if <local.recipe> == 1
+            dcroppedtext 170 *20 170 20 0480 ??????????
+            dcroppedtext 430 *0 50 20 0480 ??.?
+         else
+            dcroppedtext 170 *20 170 20 0480 <serv.skill.<ref1.skillmake.<local._for>.key>.name>
+            dcroppedtext 430 *0 50 20 0480 <fval <ref1.skillmake.<local._for>.val>>
+         endif
       endif
    endif
 endfor

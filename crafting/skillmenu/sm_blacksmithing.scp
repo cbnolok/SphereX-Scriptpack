@@ -80,7 +80,7 @@ VERSION=X1
 blacksmithing_marking		"1" // 1 or 0
 blacksmithing_firstmaterial	"1" // 1 or 0
 blacksmithing_secondmaterial	"0" // 1 or 0
-blacksmithing_options_default	"1,1,1,0,0"
+blacksmithing_options_default	"1,1,1,0,0" //"mark,exceptional,colored,recipe,expansion"
 
 blacksmithing_smelt		"f_craft_blacksmith_smelt"
 blacksmithing_repair		"f_craft_blacksmith_repair"
@@ -190,7 +190,7 @@ blacksmithing_category_6_22	"i_sword_assassin_spike"
 blacksmithing_category_6_23	"i_sword_leafblade"
 blacksmithing_category_6_24	"i_rune_blade"
 blacksmithing_category_6_25	"i_elven_machete"
-blacksmithing_category_6_26	"i_knife_skinning"
+// blacksmithing_category_6_26	"i_rune_carving_knife"
 // blacksmithing_category_6_27	"i_cold_forged_blade"
 // blacksmithing_category_6_28	"i_overseer_sundered_blade"
 // blacksmithing_category_6_29	"i_luminous_rune_blade"

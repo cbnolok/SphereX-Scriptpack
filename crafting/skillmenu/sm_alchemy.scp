@@ -1,11 +1,9 @@
 //****************************************************************************
-// SphereServer ©1997-2009
-// This script is part from the Sphere Community Script Pack.
-// You can download the full pack from: www.sphereserver.net
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
 //****************************************************************************
-// FILE LAST UPDATED: 
-VERSION=0.56b
-//
+VERSION=X1
+
 // SCRIPT CREDITS
 // --------------
 // ShiryuX - All the script
@@ -18,6 +16,7 @@ VERSION=0.56b
 alchemy_marking			"0" // 1 or 0
 alchemy_firstmaterial	"0" // 1 or 0
 alchemy_secondmaterial	"0" // 1 or 0
+alchemy_options_default	"1,1,0,0,0" //"mark,exceptional,colored,recipe,expansion"
 
 alchemy_smelt			""
 alchemy_repair			""

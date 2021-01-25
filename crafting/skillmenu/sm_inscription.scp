@@ -1,0 +1,155 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
+// SCRIPT CREDITS
+// --------------
+// ShiryuX - All the script
+//
+// SCRIPT DOCUMENTATION
+// --------------------
+
+[DEFNAME crafting_inscription]
+inscription_marking		"0" // 1 or 0
+inscription_firstmaterial	"0" // 1 or 0
+inscription_secondmaterial	"0" // 1 or 0
+inscription_options_default	"1,1,0,0,0"  //"mark,exceptional,colored,recipe,expansion"
+
+inscription_smelt		""
+inscription_repair		""
+inscription_check		""
+inscription_check_notice	"1044379" // Inscribing scrolls also requires a blank scroll and mana.
+inscription_chanceatmin		"40.0"
+inscription_exceptional_bonus	"f_craft_exceptionalbonus"
+inscription_aftercraft		""	// function called on the item AFTER you craft it (if success only).
+
+inscription_category_1_name	"1044369" // first circle
+inscription_category_2_name	"1044370"
+inscription_category_3_name	"1044371"
+inscription_category_4_name	"1044372"
+inscription_category_5_name	"1044373"
+inscription_category_6_name	"1044374"
+inscription_category_7_name	"1044375"
+inscription_category_8_name	"1044376" //Eighth Circle
+inscription_category_9_name	"1061677" //Spell of Necromancy
+inscription_category_10_name	"1111671" //Spell of mysticism
+inscription_category_11_name	"1015100" //other item
+
+inscription_category_1_1	"i_scroll_clumsy"
+inscription_category_1_2	"i_scroll_create_food"
+inscription_category_1_3	"i_scroll_feeblemind"
+inscription_category_1_4	"i_scroll_heal"
+inscription_category_1_5	"i_scroll_magic_arrow"
+inscription_category_1_6	"i_scroll_night_sight"
+inscription_category_1_7	"i_scroll_reactive_armor"
+inscription_category_1_8	"i_scroll_weaken"
+
+inscription_category_2_1	"i_scroll_agility"
+inscription_category_2_2	"i_scroll_cunning"
+inscription_category_2_3	"i_scroll_cure"
+inscription_category_2_4	"i_scroll_harm"
+inscription_category_2_5	"i_scroll_magic_trap"
+inscription_category_2_6	"i_scroll_magic_untrap"
+inscription_category_2_7	"i_scroll_protection"
+inscription_category_2_8	"i_scroll_strength"
+
+inscription_category_3_1	"i_scroll_bless"
+inscription_category_3_2	"i_scroll_fireball"
+inscription_category_3_3	"i_scroll_magic_lock"
+inscription_category_3_4	"i_scroll_poison"
+inscription_category_3_5	"i_scroll_telekinesis"
+inscription_category_3_6	"i_scroll_teleport"
+inscription_category_3_7	"i_scroll_unlock"
+inscription_category_3_8	"i_scroll_wall_of_stone"
+
+inscription_category_4_1	"i_scroll_archcure"
+inscription_category_4_2	"i_scroll_archprotection"
+inscription_category_4_3	"i_scroll_curse"
+inscription_category_4_4	"i_scroll_fire_field"
+inscription_category_4_5	"i_scroll_greater_heal"
+inscription_category_4_6	"i_scroll_lightning"
+inscription_category_4_7	"i_scroll_mana_drain"
+inscription_category_4_8	"i_scroll_recall"
+
+inscription_category_5_1	"i_scroll_blade_spirits"
+inscription_category_5_2	"i_scroll_dispel_field"
+inscription_category_5_3	"i_scroll_incognito"
+inscription_category_5_4	"i_scroll_magic_reflection"
+inscription_category_5_5	"i_scroll_mind_blast"
+inscription_category_5_6	"i_scroll_paralyze"
+inscription_category_5_7	"i_scroll_poison_field"
+inscription_category_5_8	"i_scroll_summon_creature"
+
+inscription_category_6_1	"i_scroll_dispel"
+inscription_category_6_2	"i_scroll_energy_bolt"
+inscription_category_6_3	"i_scroll_explosion"
+inscription_category_6_4	"i_scroll_invisibility"
+inscription_category_6_5	"i_scroll_mark"
+inscription_category_6_6	"i_scroll_mass_curse"
+inscription_category_6_7	"i_scroll_paralyze_field"
+inscription_category_6_8	"i_scroll_reveal"
+
+inscription_category_7_1	"i_scroll_chain_lightning"
+inscription_category_7_2	"i_scroll_energy_field"
+inscription_category_7_3	"i_scroll_flamestrike"
+inscription_category_7_4	"i_scroll_gate_travel"
+inscription_category_7_5	"i_scroll_mana_vampire"
+inscription_category_7_6	"i_scroll_mass_dispel"
+inscription_category_7_7	"i_scroll_meteor_swarm"
+inscription_category_7_8	"i_scroll_polymorph"
+
+inscription_category_8_1	"i_scroll_earthquake"
+inscription_category_8_2	"i_scroll_energy_vortex"
+inscription_category_8_3	"i_scroll_resurrection"
+inscription_category_8_4	"i_scroll_summon_elem_air"
+inscription_category_8_5	"i_scroll_summon_daemon"
+inscription_category_8_6	"i_scroll_summon_elem_earth"
+inscription_category_8_7	"i_scroll_summon_elem_fire"
+inscription_category_8_8	"i_scroll_summon_elem_water"
+
+inscription_category_9_1	"i_scroll_animate_dead"
+inscription_category_9_2	"i_scroll_blood_oath"
+inscription_category_9_3	"i_scroll_corpse_skin"
+inscription_category_9_4	"i_scroll_curse_weapon"
+inscription_category_9_5	"i_scroll_evil_omen"
+inscription_category_9_6	"i_scroll_horrific_beast"
+inscription_category_9_7	"i_scroll_lich_form"
+inscription_category_9_8	"i_scroll_mind_rot"
+inscription_category_9_9	"i_scroll_pain_spike"
+inscription_category_9_10	"i_scroll_poison_strike"
+inscription_category_9_11	"i_scroll_strangle"
+inscription_category_9_12	"i_scroll_summon_familiar"
+inscription_category_9_13	"i_scroll_vampiric_embrace"
+inscription_category_9_14	"i_scroll_vengeful_spirit"
+inscription_category_9_15	"i_scroll_wither"
+inscription_category_9_16	"i_scroll_wraith_form"
+
+inscription_category_10_1	"i_scroll_nether_bolt"
+inscription_category_10_2	"i_scroll_healing_stone"
+inscription_category_10_3	"i_scroll_purge_magic"
+inscription_category_10_4	"i_scroll_enchant"
+inscription_category_10_5	"i_scroll_sleep"
+inscription_category_10_6	"i_scroll_eagle_strike"
+inscription_category_10_7	"i_scroll_animated_weapon"
+inscription_category_10_8	"i_scroll_stone_form"
+inscription_category_10_9	"i_scroll_spell_trigger"
+inscription_category_10_10	"i_scroll_mass_sleep"
+inscription_category_10_11	"i_scroll_cleansing_winds"
+inscription_category_10_12	"i_scroll_bombard"
+inscription_category_10_13	"i_scroll_spell_plague"
+inscription_category_10_14	"i_scroll_hail_storm"
+inscription_category_10_15	"i_scroll_nether_cyclone"
+inscription_category_10_16	"i_scroll_rising_colossus"
+
+inscription_category_11_1	"i_spellbook_runebook"
+inscription_category_11_2	"i_spellbook"
+inscription_category_11_3	"i_spellbook_necromancy"
+inscription_category_11_4	"i_spellbook_mystic"
+//inscription_category_11_5	"i_spellbook_paladin"
+//inscription_category_11_6	"i_spellbook_bushido"
+//inscription_category_11_7	"i_spellbook_ninjitsu"
+//inscription_category_11_8	"i_spellbook_arcanist"
+
+[eof]
