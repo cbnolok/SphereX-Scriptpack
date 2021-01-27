@@ -24,8 +24,8 @@ As a general rule:
 // All the other scripts we want to load.
 functions/
 crafting/
-crafting/skillmenu/
-crafting/skillmenu/legacy/
+crafting/interface/
+crafting/interface/legacy skillmenu/
 core/backwards_compatibility_functions.scp
 //core/backwards_compatibility_56b.scp
 //core/backwards_compatibility_56c.scp
