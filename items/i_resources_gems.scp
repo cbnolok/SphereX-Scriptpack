@@ -1,0 +1,449 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
+// SCRIPT DOCUMENTATION
+// --------------------
+// Gems
+// ----
+// Dark Sapphire = 0x3192
+// Turquoise = 0x3193
+// Perfect Emerald = 0x3194
+// Ecru Citrine = 0x3195
+// White Pearl = 0x3196
+// Fire Ruby = 0x3197
+// Blue Diamond = 0x3198
+// Brilliant Amber = 0x3199
+
+[ITEMDEF 0f0f]
+//Star Sapphire
+DEFNAME=i_gem_star_sapphire
+TYPE=t_gem
+VALUE=35
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Star Sapphire 1 (Dark Blue)
+
+[ITEMDEF 0f10]
+//emerald
+DEFNAME=i_gem_emerald
+TYPE=t_gem
+VALUE=40
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Emerald 1
+
+[ITEMDEF 0f11]
+//Sapphire (gem)
+DEFNAME=i_gem_sapphire
+TYPE=t_gem
+VALUE=30
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Sapphire 1 (Light Blue)
+
+[ITEMDEF 0f12]
+//sapphire
+DEFNAME=i_gem_sapphire_2
+TYPE=t_gem
+VALUE=35
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Sapphire 2 (Dark Blue)
+
+[ITEMDEF 0f13]
+//ruby
+DEFNAME=i_gem_ruby
+TYPE=t_gem
+VALUE=30
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Ruby 1
+
+[ITEMDEF 0f14]
+//ruby
+DEFNAME=i_gem_ruby_2
+TYPE=t_gem
+VALUE=30
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Ruby 2
+
+[ITEMDEF 0f15]
+//citrine
+DEFNAME=i_gem_citrine
+TYPE=t_gem
+VALUE=20
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Citrine 1
+
+[ITEMDEF 0f16]
+//Amethyst (gem)
+DEFNAME=i_gem_amethyst
+TYPE=t_gem
+VALUE=20
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Amethyst 1
+
+[ITEMDEF 0f17]
+//amethyst
+DEFNAME=i_gem_amethyst_2
+TYPE=t_gem
+VALUE=20
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Amethyst 2
+
+[ITEMDEF 0f18]
+//Tourmaline (gem)
+DEFNAME=i_gem_tourmaline
+TYPE=t_gem
+VALUE=20
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Tourmaline 1
+
+[ITEMDEF 0f19]
+//sapphire
+DEFNAME=i_gem_sapphire_3
+TYPE=t_gem
+VALUE=35
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Sapphire 3
+
+[ITEMDEF 0f1a]
+//Ruby (gem)
+DEFNAME=i_gem_ruby_3
+TYPE=t_gem
+VALUE=40
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Ruby 3
+
+[ITEMDEF 0f1b]
+//star sapphire
+DEFNAME=i_gem_star_sapphire_2
+TYPE=t_gem
+VALUE=35
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Star Sapphire 2 (Shining Blue)
+
+[ITEMDEF 0f1c]
+//ruby
+DEFNAME=i_gem_ruby_4
+TYPE=t_gem
+VALUE=40
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Ruby 4 (Small)
+
+[ITEMDEF 0f1d]
+//ruby
+DEFNAME=i_gem_ruby_5
+TYPE=t_gem
+VALUE=40
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Ruby 5 (Small) (Darkened)
+
+[ITEMDEF 0f1e]
+//tourmaline
+DEFNAME=i_gem_tourmaline_2
+TYPE=t_gem
+VALUE=30
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Tourmaline 2
+
+[ITEMDEF 0f1f]
+//sapphire
+DEFNAME=i_gem_sapphire_4
+TYPE=t_gem
+VALUE=30
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Sapphire 4
+
+[ITEMDEF 0f20]
+//tourmaline
+DEFNAME=i_gem_tourmaline_3
+TYPE=t_gem
+VALUE=20
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Tourmaline 3 (Shining Green)
+
+[ITEMDEF 0f21]
+//star sapphire
+DEFNAME=i_gem_star_sapphire_3
+TYPE=t_gem
+VALUE=30
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Star Sapphire 3 (Big)
+
+[ITEMDEF 0f22]
+//Amethyst (gem) (large)
+DEFNAME=i_gem_amethyst_3
+TYPE=t_gem
+VALUE=20
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Amethyst 1
+
+[ITEMDEF 0f23]
+//Citrine (gem)
+DEFNAME=i_gem_citrine_2
+TYPE=t_gem
+VALUE=10
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Citrine 2 (Big)
+
+[ITEMDEF 0f24]
+//citrine
+DEFNAME=i_gem_citrine_3
+TYPE=t_gem
+VALUE=10
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Citrine 3 (Big)
+
+[ITEMDEF 0f25]
+//Piece of Amber (gem)
+DEFNAME=i_gem_amber
+TYPE=t_gem
+VALUE=10
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Piece of Amber
+
+[ITEMDEF 0f26]
+//Diamond (gem)
+DEFNAME=i_gem_diamond
+TYPE=t_gem
+VALUE=45
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Diamond 1 (Dark) (Small)
+
+[ITEMDEF 0f27]
+//diamond
+DEFNAME=i_gem_diamond_2
+TYPE=t_gem
+VALUE=45
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Diamond 2 (Dark) (Big)
+
+[ITEMDEF 0f28]
+//diamond
+DEFNAME=i_gem_diamond_3
+TYPE=t_gem
+VALUE=45
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Diamond 3 (Light) (Small)
+
+[ITEMDEF 0f29]
+//diamond
+DEFNAME=i_gem_diamond_4
+TYPE=t_gem
+VALUE=45
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Diamond 4 (Light) (Big)
+
+[ITEMDEF 0f2a]
+//ruby
+DEFNAME=i_gem_ruby_6
+TYPE=t_gem
+VALUE=30
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Ruby 6 (Big)
+
+[ITEMDEF 0f2b]
+//ruby
+// DEFNAME2=GEM25
+DEFNAME=i_gem_ruby_7
+TYPE=t_gem
+VALUE=30
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Ruby 7 (Big)
+
+[ITEMDEF 0f2c]
+//citrine
+// DEFNAME2=GEM26
+DEFNAME=i_gem_citrine_4
+TYPE=t_gem
+VALUE=30
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Citrine 4
+
+[ITEMDEF 0f2d]
+//tourmaline
+// DEFNAME2=GEM27
+DEFNAME=i_gem_tourmaline_4
+TYPE=t_gem
+VALUE=30
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Tourmaline 4 (Big)
+
+[ITEMDEF 0f2e]
+//amethyst (large)
+// DEFNAME2=GEM28
+DEFNAME=i_gem_amethyst_4
+TYPE=t_gem
+VALUE=30
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Amethyst 4
+
+[ITEMDEF 0f2f]
+//Emerald (gem)
+// DEFNAME2=GEM29
+DEFNAME=i_gem_emerald_2
+TYPE=t_gem
+VALUE=40
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Emerald (Big)
+
+[ITEMDEF 0f30]
+//diamond
+// DEFNAME2=GEM30
+DEFNAME=i_gem_diamond_5
+TYPE=t_gem
+VALUE=50
+WEIGHT=0.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewels
+DESCRIPTION=Diamond 5 (Big)
+
+[ITEMDEF 03192]
+DEFNAME=i_gem_dark_sapphire
+NAME=Dark Sapphire
+TYPE=t_normal
+VALUE=25
+CATEGORY=Crafting Resources
+SUBSECTION=Gems
+DESCRIPTION=Dark Sapphire
+
+[ITEMDEF 03193]
+//Is an imbuing ingredient used to imbue the Intelligence Bonus properties onto items.
+DEFNAME=i_gem_turquoise
+NAME=turquoise
+TYPE=t_gem
+VALUE=100
+WEIGHT=0.1
+CATEGORY=Resources
+SUBSECTION=Gem (rare)
+DESCRIPTION=Turquoise
+
+[ITEMDEF 03194]
+DEFNAME=i_gem_perfect_emerald
+NAME=perfect emerald
+TYPE=t_gem
+VALUE=100
+WEIGHT=0.1
+CATEGORY=Resources
+SUBSECTION=Gem (rare)
+DESCRIPTION=Perfect Emerald
+
+[ITEMDEF 03195]
+DEFNAME=i_gem_ecru_citrine
+NAME=ecru citrine
+TYPE=t_gem
+VALUE=100
+WEIGHT=0.1
+CATEGORY=Resources
+SUBSECTION=Gem (rare)
+DESCRIPTION=Ecru Citrine
+
+[ITEMDEF 03196]
+// Is an Imbuing ingredient used to imbue any of the regular Slayer properties onto weapons.
+DEFNAME=i_gem_white_pearl
+NAME=white pearl
+TYPE=t_gem
+VALUE=100
+WEIGHT=0.1
+CATEGORY=Resources
+SUBSECTION=Gem (rare)
+DESCRIPTION=White Pearl
+
+[ITEMDEF 03197]
+//Is an imbuing ingredient used to imbue the Hit Fireball and Strength Bonus properties onto items.
+DEFNAME=i_gem_fire_ruby
+NAME=fire ruby
+TYPE=t_gem
+VALUE=100
+WEIGHT=0.1
+CATEGORY=Resources
+SUBSECTION=Gem (rare)
+DESCRIPTION=Fire Ruby
+
+[ITEMDEF 03198]
+//Is an imbuing ingredient used to imbue the Dexterity Bonus properties onto items.
+DEFNAME=i_gem_blue_diamond
+NAME=blue diamond
+TYPE=t_gem
+VALUE=100
+WEIGHT=0.1
+CATEGORY=Resources
+SUBSECTION=Gem (rare)
+DESCRIPTION=Blue Diamond
+
+[ITEMDEF 03199]
+DEFNAME=i_gem_brilliant_amber
+NAME=brilliant amber
+TYPE=t_normal
+VALUE=100
+WEIGHT=0.1
+CATEGORY=Resources
+SUBSECTION=Plant
+DESCRIPTION=Brilliant Amber
+
+[eof]

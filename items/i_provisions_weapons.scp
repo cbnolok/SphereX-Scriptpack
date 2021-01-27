@@ -2400,28 +2400,121 @@ Expansion=RDS_ML
 ON=@Create
    HITPOINTS={36 48}
 
+
+///////////////////////////////////////////////////////////////
+//////// WILD STAVES
+///////////////////////////////////////////////////////////////
 [ITEMDEF 02d25]
 DEFNAME=i_staff_wild
 NAME=wild staff
 TYPE=t_weapon_mace_staff
 DAM=11,13
 FLIP=1
-SKILL=Macefighting
+SKILL=MaceFighting
 SPEED=50
-//TAG.OVERRIDE.SPEED=22	// 22.5
 VALUE=36
 WEIGHT=9.0
+REQSTR=40
 TWOHANDS=N
 RESOURCES=16 i_log
-SKILLMAKE=Carpentry 63.8,t_carpentry
-CATEGORY=Provisions - Weapons
-SUBSECTION=Macefighting
+SKILLMAKE=CARPENTRY 63.8, t_carpentry
+CATEGORY=Provisions - Weapons - MaceFighting
+SUBSECTION=Wild Staves
 DESCRIPTION=Wild Staff
-ReqStr=40
 TEVENTS=ei_equipitem
 DUPELIST=02d31
 Expansion=RDS_ML
 ON=@Create
+   HITPOINTS={36 48}
+
+[ITEMDEF 02d31]
+DUPEITEM=02d25
+
+[ITEMDEF i_staff_wild_ancient]
+ID=i_staff_wild
+NAME=Ancient Wild Staff
+RESOURCES=16 i_log, 1 i_gem_perfect_emerald
+SKILLMAKE=CARPENTRY 63.8, t_carpentry
+TEVENTS=ei_equipitem
+RESPOISON=5
+CATEGORY=Provisions - Weapons - MaceFighting
+SUBSECTION=Wild Staves
+DESCRIPTION=Ancient Wild Staff
+DUPELIST=02d31
+Expansion=RDS_ML
+ON=@Create
+   COLOR=0 //FIXME: unknown color
+   HITPOINTS={36 48}
+
+[ITEMDEF i_staff_wild_arcanist]
+ID=i_staff_wild
+NAME=Arcanist Wild Staff
+RESOURCES=16 i_log, 1 i_gem_white_pearl
+SKILLMAKE=CARPENTRY 63.8, t_carpentry
+TEVENTS=ei_equipitem
+BonusManaMax=3
+IncreaseDam=3
+CATEGORY=Provisions - Weapons - MaceFighting
+SUBSECTION=Wild Staves
+DESCRIPTION=Arcanist's Wild Staff
+DUPELIST=02d31
+Expansion=RDS_ML
+ON=@Create
+   COLOR=0 //FIXME: unknown color
+   HITPOINTS={36 48}
+
+[ITEMDEF i_staff_wild_hardened]
+ID=i_staff_wild
+NAME=Hardened Wild Staff
+RESOURCES=16 i_log, 1 i_gem_turquoise
+SKILLMAKE=Carpentry 63.8, t_carpentry
+TEVENTS=ei_equipitem
+TEVENTS=ei_equipitem_tooltip
+IncreaseDam=5
+CATEGORY=Provisions - Weapons - MaceFighting
+SUBSECTION=Wild Staves
+DESCRIPTION=Hardened Wild Staff
+DUPELIST=02d31
+Expansion=RDS_ML
+ON=@Create
+   COLOR=0 //FIXME: unknown color
+   HITPOINTS={36 48}
+
+[ITEMDEF i_staff_phantom]
+ID=i_staff_wild
+NAME=Phantom Staff
+RESOURCES=16 i_log, 10 i_ingredient_putrefaction, 10 i_ingredient_taint, 1 i_ingredient_diseased_bark
+SKILLMAKE=Carpentry 90.0, t_carpentry
+TEVENTS=ei_equipitem
+RegenHits=2
+NightSight=1
+IncreaseSwingSpeed=20
+IncreaseDam=60
+DamCold=50
+DamPoison=50
+CATEGORY=Provisions - Weapons - MaceFighting
+SUBSECTION=Wild Staves
+DESCRIPTION=Phantom Staff
+DUPELIST=02d31
+Expansion=RDS_ML
+ON=@Create
+   COLOR=01
+   HITPOINTS=255
+
+[ITEMDEF i_staff_wild_thorned]
+ID=i_staff_wild
+NAME=Thorned Wild Staff
+RESOURCES=16 i_log, 1 i_gem_fire_ruby
+SKILLMAKE=Carpentry 63.8, t_carpentry
+TEVENTS=ei_equipitem
+ReflectPhysicalDam=12
+CATEGORY=Provisions - Weapons - MaceFighting
+SUBSECTION=Wild Staves
+DESCRIPTION=Thorned Wild Staff
+DUPELIST=02d31
+Expansion=RDS_ML
+ON=@Create
+   COLOR=0 //FIXME: unknown color
    HITPOINTS={36 48}
 
 [ITEMDEF 02d26]
@@ -2549,9 +2642,6 @@ DUPEITEM=02d23
 //diamond mace
 DUPEITEM=02d24
 
-[ITEMDEF 02d31]
-//wild staff
-DUPEITEM=02d25
 
 [ITEMDEF 02d32]
 //rune blade

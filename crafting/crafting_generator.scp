@@ -173,11 +173,11 @@ if <file.open <local.topen>>
    file.writeline "RESOURCES=<local.resources>"
    file.writeline "SKILLMAKE=<serv.itemdef.<ref1.baseid>.skillmake>"
    file.writeline "WEIGHT=<fval <ref1.weight>>"
-   if <ref1.tag.LowerRequirements>
-      file.writeline "REQSTR=<muldiv <ref1.reqstr>,<ref1.tag.lowerrequirements>,100>"
+   if <ref1.LowerReq>
+      file.writeline "REQSTR=<muldiv <ref1.reqstr>,<ref1.LowerReq>,100>"
    endif
-   if <ref1.istevent.t_iprop>
-      file.writeline "TEVENTS=t_iprop"
+   if <ref1.istevent.ei_equipitem>
+      file.writeline "TEVENTS=ei_equipitem"
       for 1 <def.itemprops>
          if !<isempty <ref1.tag.<getargv 5 <def.itemprop_<local.x>>>>>
             file.writeline "TAG.<getargv 5 <def.itemprop_<local.x>>=<ref1.tag0.<getargv 5 <def.itemprop_<local.x>>>>"

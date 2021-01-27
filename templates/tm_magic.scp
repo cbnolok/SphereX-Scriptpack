@@ -57,7 +57,7 @@ random_reagent_pagan   { i_reag_blackmoor 1 i_reag_blood_spawn 1 i_reag_brimston
 [DEFNAME imbuing_ingredients]
 random_imbuing_base    { i_magical_residue 50 i_enchanted_essence 10 i_relic_fragment 1 }
 random_essence_virtue  { i_essence_achievement 1 i_essence_control 1 i_essence_diligence 1 i_essence_direction 1 i_essence_feeling 1 i_essence_order 1 i_essence_passion 1 i_essence_persistence 1 i_essence_precision 1 i_essence_singularity 1 }
-random_imbuing_item    { random_imbuing_base 1 random_essence_virtue 1 i_pearl_white 1 i_spider_carapace 1 i_daemon_claw 1 i_vial_of_vitriol 1 i_goblin_blood 1 i_lava_serpent_crust 1 i_undying_flesh 1 i_crystalline_blackrock 1 i_seed_of_renewal 1 i_elven_fletching 1 i_crystal_shards 1 i_delicate_scales 1 i_crushed_glass 1 i_powdered_iron 1 i_void_orb 1 i_boura_pelt 1 i_chaga_mushroom 1 i_silver_snake_skin 1 i_fairy_dust 1 i_slith_tongue 1 i_raptor_teeth 1 i_bottle_ichor 1 i_reflective_wolf_eye 1 i_abyssal_cloth 1 i_fungi_luminescent 1 i_plant_parasitic 1 }
+random_imbuing_item    { random_imbuing_base 1 random_essence_virtue 1 i_gem_white_pearl 1 i_spider_carapace 1 i_daemon_claw 1 i_vial_of_vitriol 1 i_goblin_blood 1 i_lava_serpent_crust 1 i_undying_flesh 1 i_crystalline_blackrock 1 i_seed_of_renewal 1 i_elven_fletching 1 i_crystal_shards 1 i_delicate_scales 1 i_crushed_glass 1 i_powdered_iron 1 i_void_orb 1 i_boura_pelt 1 i_chaga_mushroom 1 i_silver_snake_skin 1 i_fairy_dust 1 i_slith_tongue 1 i_raptor_teeth 1 i_bottle_ichor 1 i_reflective_wolf_eye 1 i_abyssal_cloth 1 i_fungi_luminescent 1 i_plant_parasitic 1 }
 
 
 [DEFNAME random_artifacts]
@@ -497,13 +497,13 @@ DESCRIPTION=Bag of Imbuing Minerals
 CONTAINER=i_pouch
 NAME=Bag of Imbuing Minerals
 ITEM=i_dark_sapphire,50
-ITEM=i_turquoise,50
-ITEM=i_emerald_perfect,50
-ITEM=i_citrine_ecru,50
-ITEM=i_pearl_white,50
-ITEM=i_ruby_fire,50
-ITEM=i_diamond_blue,50
-ITEM=i_amber_brilliant,50
+ITEM=i_gem_turquoise,50
+ITEM=i_gem_perfect_emerald,50
+ITEM=i_gem_ecru_citrine,50
+ITEM=i_gem_white_pearl,50
+ITEM=i_gem_fire_ruby,50
+ITEM=i_gem_blue_diamond,50
+ITEM=i_gem_brilliant_amber,50
 ITEM=i_crystalline_blackrock,50
 ITEM=i_crystal_shards,50
 ITEM=i_crushed_glass,50

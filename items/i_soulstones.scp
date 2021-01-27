@@ -1,0 +1,168 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
+
+[ITEMDEF 02a93]
+DEFNAME=i_soulstone_green
+NAME=green soulstone
+TYPE=t_normal //t_soulstone
+TDATA3=1
+WEIGHT=200.0
+RESOURCES=20 i_rock_plain
+CATEGORY=Decoration - Miscellaneous
+SUBSECTION=Soulstones
+DESCRIPTION=Green Soulstone
+DUPELIST=02a94,02a95,02a96,02a97
+
+[ITEMDEF 02a94]
+//green soulstone
+DUPEITEM=02a93
+
+[ITEMDEF 02a95]
+//green soulstone
+DUPEITEM=02a93
+
+[ITEMDEF 02a96]
+//green soulstone
+DUPEITEM=02a93
+
+[ITEMDEF 02a97]
+//green soulstone
+DUPEITEM=02a93
+
+
+[ITEMDEF 02aa1]
+DEFNAME=i_soulstone_fragment1
+TYPE=t_normal
+WEIGHT=50.0
+RESOURCES=5 i_rock_plain
+CATEGORY=Decoration - Miscellaneous
+SUBSECTION=Soulstones
+DESCRIPTION=Soulstone Fragment 1
+DUPELIST=02aa2,02aa3
+
+[ITEMDEF 02aa2]
+//soulstone fragment
+DUPEITEM=02aa1
+
+[ITEMDEF 02aa3]
+//soulstone fragment
+DUPEITEM=02aa1
+
+[ITEMDEF 02aa4]
+DEFNAME=i_soulstone_fragment2
+TYPE=t_normal
+WEIGHT=50.0
+RESOURCES=5 i_rock_plain
+CATEGORY=Decoration - Miscellaneous
+SUBSECTION=Soulstones
+DESCRIPTION=Soulstone Fragment 2
+DUPELIST=02aa5,02aa6
+
+[ITEMDEF 02aa5]
+//soulstone fragment
+DUPEITEM=02aa4
+
+[ITEMDEF 02aa6]
+//soulstone fragment
+DUPEITEM=02aa4
+
+[ITEMDEF 02aa7]
+DEFNAME=i_soulstone_fragment3
+TYPE=t_normal
+WEIGHT=50.0
+RESOURCES=5 i_rock_plain
+CATEGORY=Decoration - Miscellaneous
+SUBSECTION=Soulstones
+DESCRIPTION=Soulstone Fragment 3
+DUPELIST=02aa8,02aa9
+
+[ITEMDEF 02aa8]
+//soulstone fragment
+DUPEITEM=02aa7
+
+[ITEMDEF 02aa9]
+//soulstone fragment
+DUPEITEM=02aa7
+
+
+[ITEMDEF 02adc]
+DEFNAME=i_soulstone_blue
+NAME=Blue Soulstone
+TYPE=t_normal //t_soulstone
+TDATA3=1
+WEIGHT=200.0
+RESOURCES=20 i_rock_plain
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Soulstones
+DESCRIPTION=Blue Soulstone
+DUPELIST=02add,02ade,02adf,02ae0,02aec,02aed,02aee,02aef,02af0
+
+[ITEMDEF 02add]
+//blue soulstone
+DUPEITEM=02adc
+
+[ITEMDEF 02ade]
+//blue soulstone
+DUPEITEM=02adc
+
+[ITEMDEF 02adf]
+//blue soulstone
+DUPEITEM=02adc
+
+[ITEMDEF 02ae0]
+//blue soulstone
+DUPEITEM=02adc
+
+[ITEMDEF 02aec]
+//blue soulstone
+DUPEITEM=02adc
+
+[ITEMDEF 02aed]
+//blue soulstone
+DUPEITEM=02adc
+
+[ITEMDEF 02aee]
+//blue soulstone
+DUPEITEM=02adc
+
+[ITEMDEF 02aef]
+//blue soulstone
+DUPEITEM=02adc
+
+[ITEMDEF 02af0]
+//blue soulstone
+DUPEITEM=02adc
+
+[ITEMDEF 032f3]
+DEFNAME=i_soulstone_red
+NAME=red soulstone
+TYPE=t_normal //t_soulstone
+WEIGHT=200.0
+RESOURCES=20 i_rock_plain
+CATEGORY=Decoration - Miscellaneous
+SUBSECTION=Soulstones
+DESCRIPTION=Red Soulstone
+DUPELIST=032f4,032f5,032f6,032f7
+
+[ITEMDEF 032f4]
+//red soulstone
+DUPEITEM=032f3
+
+[ITEMDEF 032f5]
+//red soulstone
+DUPEITEM=032f3
+
+[ITEMDEF 032f6]
+//red soulstone
+DUPEITEM=032f3
+
+[ITEMDEF 032f7]
+//red soulstone
+DUPEITEM=032f3
+
+
+[EOF]

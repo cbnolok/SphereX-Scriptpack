@@ -3543,6 +3543,9 @@ SUBSECTION=Bedroom Furniture
 DESCRIPTION=Elven Dresser (multi-part)
 DUPELIST=030e4,030e5,030e6
 
+ON=@CREATE
+attr=attr_move_always
+
 [ITEMDEF 030e4]
 //elven dresser
 DUPEITEM=030e3

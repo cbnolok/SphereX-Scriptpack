@@ -101,6 +101,7 @@ blacksmithing_category_8_name	"1011083" // Axes
 blacksmithing_category_9_name	"1011084" // Polearms
 blacksmithing_category_10_name	"1060885" // Dragon Scale Armor
 blacksmithing_category_11_name	"1044117" // Throwing
+blacksmithing_category_12_name	"1044290" // Misc. Add-Ons
 
 [defname sphere_crafting_blacksmithing_skillmenu_items]
 //
@@ -268,6 +269,8 @@ blacksmithing_category_11_1	"i_boomerang"
 blacksmithing_category_11_2	"i_cyclone"
 blacksmithing_category_11_3	"i_soul_glaive"
 
+blacksmithing_category_12_1	"i_deed_anvil"
+blacksmithing_category_12_2	"i_deed_forge"
 
 [defname sphere_crafting_blacksmithing_colored]
 blacksmithing_material_0		""
@@ -356,23 +359,23 @@ blacksmithing_material_12_color		"color_o_valorite"
 blacksmithing_material_12_resourceid	"i_ingot_valorite"
 
 blacksmithing_material_13_name		"Bloodrock"
-blacksmithing_material_13_skill		"Blacksmithing 110.0"
+blacksmithing_material_13_skill		"Blacksmithing 99.0"
 blacksmithing_material_13_resourceid	"i_ingot_bloodrock"
 
 blacksmithing_material_14_name		"Blackrock"
-blacksmithing_material_14_skill		"Blacksmithing 110.0"
+blacksmithing_material_14_skill		"Blacksmithing 99.0"
 blacksmithing_material_14_resourceid	"i_ingot_blackrock"
 
 blacksmithing_material_15_name		"Mytheril"
-blacksmithing_material_15_skill		"Blacksmithing 110.0"
+blacksmithing_material_15_skill		"Blacksmithing 99.0"
 blacksmithing_material_15_resourceid	"i_ingot_mytheril"
 
 [function f_colored_armor_dullcopper]
-tag.LowerRequirements = 20
+LowerReq = 20
 hitpoints += 50
 
 [function f_colored_weaps_dullcopper]
-tag.LowerRequirements = 50
+LowerReq = 50
 hitpoints += 100
 
 [function f_colored_armor_shadow]
@@ -382,18 +385,18 @@ hitpoints += 100
 hitpoints += 50
 
 [function f_colored_armor_golden]
-if !<istevent.t_iprop>
-events +t_iprop
+if !<istevent.ei_equipitem>
+events +ei_equipitem
 endif
-tag.Luck = <eval <tag0.Luck> + 40>
-tag.LowerRequirements = 30
+Luck = <eval <Luck> + 40>
+LowerReq = 30
 
 [function f_colored_weaps_golden]
-if !<istevent.t_iprop>
-events +t_iprop
+if !<istevent.ei_equipitem>
+events +ei_equipitem
 endif
-tag.Luck = <eval <tag0.Luck> + 40>
-tag.LowerRequirements = 50
+Luck = <eval <Luck> + 40>
+LowerReq = 50
 
 [function f_colored_armor_valorite]
 hitpoints += 50

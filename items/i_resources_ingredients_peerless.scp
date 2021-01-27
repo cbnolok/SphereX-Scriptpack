@@ -1,0 +1,128 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
+// SCRIPT CREDITS
+// --------------
+// ShiryuX - All the script
+//
+// SCRIPT DOCUMENTATION
+// --------------------
+// common ingredients
+// ------------------
+// blight = 0x3183
+// corruption = 0x3184
+// putrefaction = 0x3185
+// scourge = 0x3186
+// taint = 0x3187
+// muculent = 0x3188
+// ----------------
+// rare ingredients
+// ----------------
+// lard of paroxysmus = 0x3189
+// dread horn mane = 0x318a
+// diseased bark = 0x318b
+// grizzled bones = 0x318c
+// eye of the travesty = 0x318d
+// captured essence = 0x318e
+// -----------------
+
+[ITEMDEF 03183]
+DEFNAME=i_ingredient_blight
+NAME=Blight
+TYPE=t_normal
+CATEGORY=Crafting Resources
+SUBSECTION=Ingredients
+DESCRIPTION=Blight
+
+[ITEMDEF 03184]
+DEFNAME=i_ingredient_corruption
+NAME=Corruption
+TYPE=t_normal
+CATEGORY=Crafting Resources
+SUBSECTION=Ingredients
+DESCRIPTION=Corruption
+
+[ITEMDEF 03185]
+DEFNAME=i_ingredient_putrefaction
+NAME=Putrefaction
+TYPE=t_normal
+CATEGORY=Crafting Resources
+SUBSECTION=Ingredients
+DESCRIPTION=Putrefaction
+
+[ITEMDEF 03186]
+DEFNAME=i_ingredient_scourge
+NAME=Scourge
+TYPE=t_normal
+CATEGORY=Crafting Resources
+SUBSECTION=Ingredients
+DESCRIPTION=Scourge
+
+[ITEMDEF 03187]
+DEFNAME=i_ingredient_taint
+NAME=Taint
+TYPE=t_normal
+CATEGORY=Crafting Resources
+SUBSECTION=Ingredients
+DESCRIPTION=Taint
+
+[ITEMDEF 03188]
+DEFNAME=i_ingredient_muculent
+NAME=Muculent
+TYPE=t_normal
+CATEGORY=Crafting Resources
+SUBSECTION=Ingredients
+DESCRIPTION=Muculent
+
+[ITEMDEF 03189]
+DEFNAME=i_ingredient_paroxysmus_lard
+NAME=Lard of Paroxysmus
+TYPE=t_normal
+CATEGORY=Crafting Resources
+SUBSECTION=Ingredients
+DESCRIPTION=Lard of Paroxysmus
+
+[ITEMDEF 0318a]
+DEFNAME=i_ingredient_dread_horn_mane
+NAME=Dread Horn Mane
+TYPE=t_normal
+CATEGORY=Crafting Resources
+SUBSECTION=Ingredients
+DESCRIPTION=Dread Horn Mane
+
+[ITEMDEF 0318b]
+DEFNAME=i_ingredient_diseased_bark
+NAME=Diseased Bark
+TYPE=t_normal
+CATEGORY=Crafting Resources
+SUBSECTION=Ingredients
+DESCRIPTION=Diseased Bark
+
+[ITEMDEF 0318c]
+DEFNAME=i_ingredient_grizzled_bones
+NAME=Grizzled Bones
+TYPE=t_normal
+CATEGORY=Crafting Resources
+SUBSECTION=Ingredients
+DESCRIPTION=Grizzled Bones
+
+[ITEMDEF 0318d]
+DEFNAME=i_ingredient_travesty_eye
+NAME=Eye of the Travesty
+TYPE=t_normal
+CATEGORY=Crafting Resources
+SUBSECTION=Ingredients
+DESCRIPTION=Eye of the Travesty
+
+[ITEMDEF 0318e]
+DEFNAME=i_ingredient_captured_essence
+NAME=Captured Essence
+TYPE=t_normal
+CATEGORY=Crafting Resources
+SUBSECTION=Ingredients
+DESCRIPTION=Captured Essence
+
+[eof]

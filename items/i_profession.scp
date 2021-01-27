@@ -557,6 +557,10 @@ SUBSECTION=Blacksmith
 DESCRIPTION=Anvil
 DUPELIST=0fb0
 
+ON=@Create
+ATTR=attr_move_always
+
+
 [ITEMDEF 0fb0]
 //anvil
 DUPEITEM=0faf
@@ -566,8 +570,8 @@ DEFNAME=i_forge
 TYPE=t_forge
 VALUE=250
 WEIGHT=575.0
-RESOURCES=50 i_rock_plain,25 i_ingot_iron,50 i_log
-SKILLMAKE=Tinkering 56.0,t_tinker_tools
+RESOURCES=75 i_ingot_iron,5 i_log
+SKILLMAKE=Carpentry 56.0, Blacksmithing 75.0
 CATEGORY=Items by Professions
 SUBSECTION=Blacksmith
 DESCRIPTION=Small Forge
@@ -594,6 +598,9 @@ CATEGORY=Items by Professions
 SUBSECTION=Blacksmith
 DESCRIPTION=Forged Metal
 DUPELIST=0fb8
+
+ON=@Create
+ATTR=attr_move_always
 
 [ITEMDEF 0fb8]
 //forged metal
@@ -744,13 +751,20 @@ DESCRIPTION=Barrel Tap
 
 [ITEMDEF 0100a]
 DEFNAME=i_archery_butte
+NAME=Archery Butte
 TYPE=t_archery_butte
 FLIP=1
-CAN=can_i_dcignoredist
+VALUE=100
+WEIGHT=10.0
+RESOURCES=20 i_wheat_sheaf, 10 i_BOARD, 8 i_CLOTH
+SKILLMAKE=Carpentry 40.0, TAILORING 40.0,t_carpentry,t_sewing_kit
 CATEGORY=Items by Professions
 SUBSECTION=Archer/Bowyer
 DESCRIPTION=Archery Butte
 DUPELIST=0100b
+
+ON=@Create
+ATTR=attr_move_always
 
 [ITEMDEF 0100b]
 //archery butte
@@ -1138,12 +1152,17 @@ DUPEITEM=0105d
 [ITEMDEF 01070]
 DEFNAME=i_training_dummy
 TYPE=t_train_dummy
+FLIP=1
+WEIGHT=10.0
 RESOURCES=55 i_log,60 i_cloth
 SKILLMAKE=Carpentry 68.4,Tailoring 50.0,t_carpentry
 CATEGORY=Items by Professions
 SUBSECTION=Fighter
 DESCRIPTION=Training Dummy
 DUPELIST=01071,01072,01073,01074,01075,01076,01077
+
+ON=@Create
+ATTR=attr_move_always
 
 [ITEMDEF 01071]
 //training dummy
@@ -1884,6 +1903,9 @@ SUBSECTION=Blacksmith
 DESCRIPTION=Large Forge (bellows)
 DUPELIST=0197b,0197c,0197d,01986,01987,01988,01989,01992,01993,01994,01995,0199e,0199f,019a0,019a1
 
+ON=@Create
+ATTR=attr_move_always
+
 [ITEMDEF 0197b]
 //large forge (bellows)
 DUPEITEM=0197a
@@ -1906,6 +1928,9 @@ CATEGORY=Items by Professions
 SUBSECTION=Blacksmith
 DESCRIPTION=Large Forge (center)
 DUPELIST=0197f,01980,01981,0198a,0198b,0198c,0198d,01996,01997,01998,01999,019a2,019a3,019a4,019a5,01982,01983,01984,01985,0198e,0198f,01990,01991,0199a,0199b,0199c,0199d,019a6,019a7,019a8,019a9
+
+ON=@Create
+ATTR=attr_move_always
 
 [ITEMDEF 0197f]
 //large forge (center)
@@ -2643,12 +2668,16 @@ DESCRIPTION=Sheaf of Wheat
 DEFNAME=i_pickpocket_dip //Blue
 TYPE=t_train_pickpocket
 FLIP=1
+WEIGHT=10.0
 RESOURCES=65 i_log,60 i_cloth
 SKILLMAKE=Carpentry 73.6,Tailoring 50.0,t_carpentry
 CATEGORY=Items by Professions
 SUBSECTION=Thief
 DESCRIPTION=Pickpocket Dip
 DUPELIST=01ec1,01ec2,01e2c
+
+ON=@Create
+ATTR=attr_move_always
 
 [ITEMDEF 01ec1]
 //pickpocket dip
@@ -2666,12 +2695,16 @@ DUPEITEM=01ec0
 DEFNAME=i_pickpocket_dip2 //Yellow
 TYPE=t_train_pickpocket
 FLIP=1
+WEIGHT=10.0
 RESOURCES=65 i_log,60 i_cloth
 SKILLMAKE=Carpentry 73.6,Tailoring 50.0,t_carpentry
 CATEGORY=Items by Professions
 SUBSECTION=Thief
 DESCRIPTION=Pickpocket Dip
 DUPELIST=01ec4,01ec5,01e2d
+
+ON=@Create
+ATTR=attr_move_always
 
 [ITEMDEF 01ec4]
 //pickpocket dip
@@ -2833,7 +2866,6 @@ SKILLMAKE=Carpentry 94.7,t_carpentry
 CATEGORY=Items by Professions
 SUBSECTION=Blacksmith
 DESCRIPTION=Elven Forge
-
 
 [ITEMDEF 032f8]
 DEFNAME=i_hammer_and_chisel

@@ -199,16 +199,19 @@ ON=i_DRESS_FORM <name> (<resmake>)
 MAKEITEM=i_DRESS_FORM
 
 ON=i_TRAINING_DUMMY <name> (<resmake>)
-MAKEITEM=i_DEED_DUMMY
+MAKEITEM=i_TRAINING_DUMMY
 
-ON=i_deed_pickpock <name> (<resmake>)
-MAKEITEM=i_deed_pickpock
+ON=i_pickpocket_dip <name> (<resmake>)
+MAKEITEM=i_pickpocket_dip
 
-ON=i_DEED_ARCHBUTTE <name> (<resmake>)
-MAKEITEM=i_DEED_ARCHBUTTE
+ON=i_pickpocket_dip2 <name> (<resmake>)
+MAKEITEM=i_pickpocket_dip2
 
-ON=i_DEED_SPINWHEEL <name> (<resmake>)
-MAKEITEM=i_DEED_SPINWHEEL
+ON=i_archery_butte <name> (<resmake>)
+MAKEITEM=i_archery_butte
+
+ON=i_spinning_wheel <name> (<resmake>)
+MAKEITEM=i_spinning_wheel
 
 ON=i_MODEL_SHIP <name> (<resmake>)
 MAKEITEM=i_MODEL_SHIP

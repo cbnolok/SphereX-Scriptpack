@@ -427,6 +427,8 @@ ON=@Create
 [ITEMDEF i_deed_bboardw]
 ID=i_deed
 NAME=Deed to a Bulletin Board W
+RESOURCES=50 i_board
+SKILLMAKE=Carpentry 85.0,t_carpentry
 CATEGORY=Provisions - Deeds
 SUBSECTION=Item Deeds
 DESCRIPTION=Bulletin Board W
@@ -436,6 +438,8 @@ ON=@Create
 [ITEMDEF i_deed_bboardn]
 ID=i_deed
 NAME=Deed to a Bulletin Board N
+RESOURCES=50 i_board
+SKILLMAKE=Carpentry 85.0,t_carpentry
 CATEGORY=Provisions - Deeds
 SUBSECTION=Item Deeds
 DESCRIPTION=Bulletin Board N
@@ -454,6 +458,8 @@ ON=@Create
 [ITEMDEF i_deed_forge]
 ID=i_deed
 NAME=Deed to a Forge
+RESOURCES=75 i_ingot_iron,5 i_log
+SKILLMAKE=Carpentry 56.0, Blacksmithing 75.0
 CATEGORY=Provisions - Deeds
 SUBSECTION=Item Deeds
 DESCRIPTION=Forge
@@ -463,6 +469,8 @@ ON=@Create
 [ITEMDEF i_deed_anvil]
 ID=i_deed
 NAME=Deed to an Anvil
+RESOURCES=150 i_ingot_iron,5 i_log
+SKILLMAKE=Carpentry 56.0, Blacksmithing 75.0
 CATEGORY=Provisions - Deeds
 SUBSECTION=Item Deeds
 DESCRIPTION=Anvil
@@ -487,14 +495,23 @@ DESCRIPTION=Archery Butte
 ON=@Create
    MORE=i_archery_butte
 
-[ITEMDEF i_deed_pickpock]
+[ITEMDEF i_deed_pickpock_blue]
 ID=i_deed
-NAME=Deed to a Pickpocket Dip
+NAME=Deed to a Pickpocket Dip blue
 CATEGORY=Provisions - Deeds
 SUBSECTION=House Deeds
 DESCRIPTION=Pickpocket Dip
 ON=@Create
    MORE=i_pickpocket_dip
+
+[ITEMDEF i_deed_pickpock_yellow]
+ID=i_deed
+NAME=Deed to a Pickpocket Dip yellow
+CATEGORY=Provisions - Deeds
+SUBSECTION=House Deeds
+DESCRIPTION=Pickpocket Dip
+ON=@Create
+   MORE=i_pickpocket_dip2
 
 [ITEMDEF i_deed_vendor]
 ID=i_deed
