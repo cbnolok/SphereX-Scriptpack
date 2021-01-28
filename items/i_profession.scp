@@ -2852,6 +2852,11 @@ DUPEITEM=02dd5
 [ITEMDEF 02dd7]
 DEFNAME=i_elven_bow_stringer
 NAME=elven bow stringer
+TYPE=t_normal
+VALUE=21
+WEIGHT=3.0
+RESOURCES=2 i_ingot_iron,1 i_wire_iron
+SKILLMAKE=Tinkering 24.1,t_tinker_tools
 CATEGORY=Items by Professions
 SUBSECTION=Archer/Bowyer
 DESCRIPTION=Elven Bow Stringer

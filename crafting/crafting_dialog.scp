@@ -423,7 +423,6 @@ on=500 // smelt button
 try <def.<ctag0.craft.skill>_smelt>
 
 on=501 502 // material buttons
-serv.log here
 f_resenddialog d_craft_material <eval <argn> - 500>
 
 on=503 // exit button

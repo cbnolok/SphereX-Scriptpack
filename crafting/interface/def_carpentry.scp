@@ -133,12 +133,7 @@ carpentry_category_4_23		"i_table_wood_rough_board"
 
 carpentry_category_5_1		"i_aud_char"
 carpentry_category_5_2		"i_flute_bamboo"
-carpentry_category_5_3		"i_drum"
-carpentry_category_5_4		"i_lyre"
-carpentry_category_5_5		"i_HARP_LARGE"
-carpentry_category_5_6		"i_lute"
-carpentry_category_5_7		"i_tambourine"
-carpentry_category_5_8		"i_tambourine_tas"
+carpentry_category_5_3		"i_tambourine_tas"
 
 carpentry_category_6_1		"i_bulletin_board"
 carpentry_category_6_2		"i_dartboard"
@@ -198,8 +193,6 @@ carpentry_category_9_1		"i_TRAINING_DUMMY"
 carpentry_category_9_2		"i_pickpocket_dip"
 carpentry_category_9_3		"i_pickpocket_dip2"
 carpentry_category_9_4		"i_archery_butte"
-
-
 
 [defname sphere_crafting_carpentry_colored]
 carpentry_material_0		""

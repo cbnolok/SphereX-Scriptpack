@@ -1,0 +1,231 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
+// SCRIPT DOCUMENTATION
+// --------------------
+// Based on EA crafting lists
+
+[defname sphere_crafting_bowcraft_default]
+bowcraft_marking		"1" // 1 or 0
+bowcraft_firstmaterial	"1" // 1 or 0
+bowcraft_secondmaterial	"0" // 1 or 0
+bowcraft_options_default	"1,1,0,0,0" //"mark,exceptional,colored,recipe,expansion"
+
+bowcraft_smelt			""
+bowcraft_repair			""
+bowcraft_check			""
+bowcraft_check_notice		""
+bowcraft_chanceatmin		"50.0"
+bowcraft_exceptional_bonus	"f_craft_exceptionalbonus"
+bowcraft_aftercraft		""	// function called on the item AFTER you craft it (if success only).
+
+bowcraft_category_1_name	"1044457" // Materials
+bowcraft_category_2_name	"1044565" // Ammunition
+bowcraft_category_3_name	"1044566" // Weapons
+
+bowcraft_category_1_1		"i_kindling"
+bowcraft_category_1_2		"i_arrow_shaft"
+
+bowcraft_category_2_1		"i_arrow"
+bowcraft_category_2_2		"i_xbolt"
+bowcraft_category_2_3		"i_fukiya_dart"
+
+bowcraft_category_3_1		"i_bow"
+bowcraft_category_3_2		"i_bow_composite"
+bowcraft_category_3_3		"i_crossbow"
+bowcraft_category_3_4		"i_elven_composite_longbow"
+bowcraft_category_3_5		"i_crossbow_heavy"
+bowcraft_category_3_6		"i_magical_shortbow"
+bowcraft_category_3_7		"i_crossbow_repeating"
+bowcraft_category_3_8		"i_yumi"
+bowcraft_category_3_9		"i_blight_gripped_longbow"
+bowcraft_category_3_10		"i_faerie_fire"
+bowcraft_category_3_11		"i_silvani_feywood_bow"
+bowcraft_category_3_12		"i_mischief_maker"
+bowcraft_category_3_13		"i_night_reaper"
+bowcraft_category_3_14		"i_barbed_longbow"
+bowcraft_category_3_15		"i_slayer_longbow"
+bowcraft_category_3_16		"i_frozen_longbow"
+bowcraft_category_3_17		"i_longbow_might"
+bowcraft_category_3_18		"i_ranger_shortbow"
+bowcraft_category_3_19		"i_lightweight_shortbow"
+bowcraft_category_3_20		"i_mystical_shortbow"
+bowcraft_category_3_21		"i_assassin_shortbow"
+
+
+[defname sphere_crafting_bowcraft_colored]
+bowcraft_material_0			""
+bowcraft_material_0_name	"LOG"
+bowcraft_material_0_skill	"Bowcraft 0.0"
+bowcraft_resourceid			"i_log"
+
+bowcraft_material_1			"oak"
+bowcraft_material_1_name	"Oak"
+bowcraft_material_1_skill	"Bowcraft 65.0"
+bowcraft_material_1_armor_res	"3,3,0,2,3,f_colored_armor_oak"
+bowcraft_material_1_shield_res	"1,1,1,1,1"
+bowcraft_material_1_weaps_dam	"0,0,0,0,0,f_colored_weaps_oak"
+bowcraft_material_1_color		"color_o_oak"
+bowcraft_material_1_resourceid	"i_log_oak"
+
+bowcraft_material_2			"ash"
+bowcraft_material_2_name	"Ash"
+bowcraft_material_2_skill	"Bowcraft 80.0"
+bowcraft_material_2_armor_res	"4,2,4,1,6,f_colored_armor_ash"
+bowcraft_material_2_shield_res	"0,0,0,0,3,f_colored_armor_ash"
+bowcraft_material_2_weaps_dam	"0,0,0,0,0,f_colored_weaps_ash"
+bowcraft_material_2_color	"color_o_ash"
+bowcraft_material_2_resourceid	"i_log_ash"
+
+bowcraft_material_3			"yew"
+bowcraft_material_3_name	"Yew"
+bowcraft_material_3_skill	"Bowcraft 95.0"
+bowcraft_material_3_armor_res	"6,3,3,0,3,f_colored_armor_yew"
+bowcraft_material_3_shield_res	"3,0,0,0,0,f_colored_armor_yew"
+bowcraft_material_3_weaps_dam	"0,0,0,0,0,f_colored_weaps_yew"
+bowcraft_material_3_color	"color_o_yew"
+bowcraft_material_3_resourceid	"i_log_yew"
+
+bowcraft_material_4			"bloodwood"
+bowcraft_material_4_name	"Bloodwood"
+bowcraft_material_4_skill	"Bowcraft 100.0"
+bowcraft_material_4_armor_res	"3,8,1,3,3,f_colored_armor_bloodwood"
+bowcraft_material_4_shield_res	"0,3,0,0,0,f_colored_shield_bloodwood"
+bowcraft_material_4_weaps_dam	"0,0,0,0,0,f_colored_weaps_bloodwood"
+bowcraft_material_4_color	"color_o_bloodwood"
+bowcraft_material_4_resourceid	"i_log_bloodwood"
+
+bowcraft_material_5			"heartwood"
+bowcraft_material_5_name	"Heartwood"
+bowcraft_material_5_skill	"Bowcraft 100.0"
+bowcraft_material_5_armor_res	"2,3,2,7,2,f_colored_armor_heartwood"
+bowcraft_material_5_shield_res	"0,0,0,0,0,f_colored_armor_heartwood"
+bowcraft_material_5_weaps_dam	"0,0,0,0,0,f_colored_weaps_heartwood"
+bowcraft_material_5_color	"color_o_heartwood"
+bowcraft_material_5_resourceid	"i_log_heartwood"
+
+bowcraft_material_6			"frostwood"
+bowcraft_material_6_name	"Frostwood"
+bowcraft_material_6_skill	"Bowcraft 100.0"
+bowcraft_material_6_armor_res	"2,1,8,3,4"
+bowcraft_material_6_shield_res	"0,0,3,0,0,f_colored_shield_frostwood"
+bowcraft_material_6_weaps_dam	"0,0,40,0,0,f_colored_weaps_frostwood"
+bowcraft_material_6_color	"color_o_frostwood"
+bowcraft_material_6_resourceid	"i_log_frostwood"
+
+
+[function f_colored_armor_oak]
+if !<istevent.t_iprop>
+events +t_iprop
+endif
+Luck = <eval <Luck> + 40>
+
+[function f_colored_weaps_oak]
+if !<istevent.ei_equipitem>
+events +ei_equipitem
+endif
+Luck = <eval <Luck> + 40>
+IncreaseDam = 5
+
+[function f_colored_armor_ash]
+LowerReq = 20
+
+[function f_colored_weaps_ash]
+if !<istevent.ei_equipitem>
+events +ei_equipitem
+endif
+IncreaseSwingSpeed = 10
+LowerReq = 20
+
+[function f_colored_armor_yew]
+if !<istevent.ei_equipitem>
+events +ei_equipitem
+endif
+RegenHits = 1
+
+[function f_colored_weaps_yew]
+if !<istevent.ei_equipitem>
+events +ei_equipitem
+endif
+IncreaseHitChance = 5
+IncreaseDam = 10
+
+[function f_colored_armor_bloodwood]
+if !<istevent.ei_equipitem>
+events +ei_equipitem
+endif
+RegenHits = 2
+
+[function f_colored_shield_bloodwood]
+if !<istevent.ei_equipitem>
+events +ei_equipitem
+endif
+Luck = 40
+RegenHits = 2
+
+[function f_colored_weaps_bloodwood]
+if !<istevent.ei_equipitem>
+events +ei_equipitem
+endif
+RegenHits = 2
+HitLeechLife = 16
+
+[function f_colored_armor_heartwood]
+if !<istevent.ei_equipitem>
+events +ei_equipitem
+endif
+dorand 6
+	Luck = 40
+	hitpoints += <eval <hitpoints> / 2>
+	LowerReq = 20
+	IncreaseDam = 10
+	IncreaseHitChance = 5
+	MageArmor = 1
+enddo
+
+[function f_colored_shield_heartwood]
+if !<istevent.ei_equipitem>
+events +ei_equipitem
+endif
+dorand 7
+	BonusDEX = 2
+	BonusStr = 2
+	RESPHYSICAL = 5
+	ReflectPhysicalDam = 5
+	SelfRepair = 2
+	RESCOLD = 3
+	SpellChanneling = 1
+enddo
+
+[function f_colored_weaps_heartwood]
+if !<istevent.ei_equipitem>
+events +ei_equipitem
+endif
+dorand 7
+	Luck = 40
+	hitpoints += <eval <hitpoints> / 2>
+	LowerReq = 20
+	IncreaseSwingSpeed = 10
+	IncreaseHitChance = 5
+	HitLeechLife = <r100>
+	Luck = 10
+enddo
+
+[function f_colored_shield_frostwood]
+if !<istevent.ei_equipitem>
+events +ei_equipitem
+endif
+SpellChanneling = 1
+FasterCasting = -1
+
+[function f_colored_weaps_frostwood]
+if !<istevent.ei_equipitem>
+events +ei_equipitem
+endif
+IncreaseDam = 12
+DamCold = 40
+
+[eof]

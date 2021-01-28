@@ -1,0 +1,114 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
+// SCRIPT DOCUMENTATION
+// --------------------
+// Based on sphere_skillmenu.scp
+//
+
+[DEFNAME crafting_tinkering]
+tinkering_marking		"1" // 1 or 0
+tinkering_firstmaterial	"0" // 1 or 0
+tinkering_secondmaterial	"0" // 1 or 0
+tinkering_options_default	"1,1,0,0,0" //"mark,exceptional,colored,recipe,expansion"
+
+tinkering_smelt			""
+tinkering_repair		""
+tinkering_check			""
+tinkering_check_notice		""
+tinkering_chanceatmin		"50.0"
+tinkering_exceptional_bonus	"f_craft_exceptionalbonus"
+tinkering_aftercraft		""	// function called on the item AFTER you craft it (if success only).
+
+tinkering_category_1_name	"Containers"
+tinkering_category_2_name	"Parts"
+tinkering_category_3_name	"Tools"
+tinkering_category_4_name	"Keys"
+tinkering_category_5_name	"Instruments"
+tinkering_category_6_name	"Jewelry"
+tinkering_category_7_name	"Tavern Types"
+tinkering_category_8_name	"Wooden Items"
+
+tinkering_category_1_1		"i_box_brass"
+tinkering_category_1_2		"i_keg_small"
+tinkering_category_1_3		"i_keg_potion"
+tinkering_category_1_4		"i_barrel_open"
+tinkering_category_1_5		"i_barrel"
+tinkering_category_1_6		"i_chest_metal"
+tinkering_category_1_7		"i_chest_metal_brass"
+
+tinkering_category_2_1		"i_wire_iron"
+tinkering_category_2_2		"i_clock_parts"
+tinkering_category_2_3		"i_gears"
+tinkering_category_2_4		"i_hinge"
+tinkering_category_2_5		"i_barrel_tap"
+tinkering_category_2_6		"i_barrel_hoops"
+tinkering_category_2_7		"i_sextant_parts"
+tinkering_category_2_8		"i_springs"
+tinkering_category_2_9		"i_elven_bow_stringer"
+
+tinkering_category_3_1		"i_shovel"
+tinkering_category_3_2		"i_saw_dovetail"
+tinkering_category_3_3		"i_bottle_empty"
+tinkering_category_3_4		"i_hatchet"
+tinkering_category_3_5		"i_lockpick"
+tinkering_category_3_6		"i_mortar_pestle"
+tinkering_category_3_7		"i_pickaxe"
+tinkering_category_3_8		"i_saw"
+tinkering_category_3_9		"i_scissors"
+tinkering_category_3_10		"i_sewing_kit"
+tinkering_category_3_11		"i_sextant"
+tinkering_category_3_12		"i_hammer_sledge"
+tinkering_category_3_13		"i_hammer_smith"
+tinkering_category_3_14		"i_tinker_tools"
+tinkering_category_3_15		"i_toolkit"
+tinkering_category_3_16		"i_hammer_smith"
+//tinkering_category_3_17		"i_watering_bucket_empty"
+
+tinkering_category_4_1		"i_key_ring"
+tinkering_category_4_2		"i_key_copper"
+tinkering_category_4_3		"i_key_gold"
+tinkering_category_4_4		"i_key_iron"
+
+tinkering_category_5_1		"i_tambourine"
+tinkering_category_5_2		"i_drum"
+tinkering_category_5_3		"i_lyre"
+tinkering_category_5_4		"i_HARP_LARGE"
+tinkering_category_5_5		"i_lute"
+tinkering_category_5_6		"i_harp_large"
+
+tinkering_category_6_1		"i_beads"
+tinkering_category_6_2		"i_necklace_metal_beads"
+tinkering_category_6_3		"i_necklace_gold"
+tinkering_category_6_4		"i_necklace_gold_beads"
+tinkering_category_6_5		"i_earrings_gold"
+tinkering_category_6_6		"i_ring_gold"
+tinkering_category_6_7		"i_bracelet_gold"
+tinkering_category_6_8		"i_necklace_silver"
+tinkering_category_6_9		"i_necklace_silver_beads"
+tinkering_category_6_10		"i_earrings_silver"
+tinkering_category_6_11		"i_ring_silver"
+tinkering_category_6_12		"i_bracelet_silver"
+
+tinkering_category_7_1		"i_mug_ceramic"
+tinkering_category_7_2		"i_goblet"
+tinkering_category_7_3		"i_mug_pewter"
+tinkering_category_7_4		"i_goblet_2"
+tinkering_category_7_5		"i_skull_mug"
+tinkering_category_7_6		"i_pitcher"
+tinkering_category_7_7		"i_spittoon"
+tinkering_category_7_8		"i_backgammon_game"
+tinkering_category_7_9		"i_game_board"
+tinkering_category_7_10		"i_dice_cup"
+
+tinkering_category_8_1		"i_axle"
+tinkering_category_8_2		"i_clock_frame"
+tinkering_category_8_3		"i_plane_jointing"
+tinkering_category_8_4		"i_plane_moulding"
+tinkering_category_8_5		"i_plane_smoothing"
+tinkering_category_8_6		"i_clock"
+
+[EOF]

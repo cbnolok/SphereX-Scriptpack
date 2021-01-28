@@ -317,45 +317,6 @@ ON=@Create
 DUPEITEM=0ec4
 
 
-[ITEMDEF 0f3e]
-//arrow (its a rock in older clients)
-DUPEITEM=0f3f
-
-[ITEMDEF 0f3f]
-DEFNAME=i_arrow
-NAME=arrow%s
-TYPE=t_weapon_arrow
-FLIP=0
-WEIGHT=0.1
-REPLICATE=1
-RESOURCES=1 i_arrow_shaft,1 i_feather
-SKILLMAKE=Bowcraft 0.0
-CATEGORY=Provisions - Ammunition
-SUBSECTION=Archery
-DESCRIPTION=Arrow
-DUPELIST=0f3e
-
-[ITEMDEF 0f40]
-DEFNAME=i_arrows
-NAME=arrows
-WEIGHT=0.5
-RESOURCES=5 i_arrow
-CATEGORY=Provisions - Ammunition
-SUBSECTION=Archery
-DESCRIPTION=Arrows
-
-[ITEMDEF 0f41]
-DEFNAME=i_arrow_pile
-NAME=pile of arrows
-WEIGHT=2.0
-RESOURCES=20 i_arrow
-CATEGORY=Provisions - Ammunition
-SUBSECTION=Archery
-DESCRIPTION=Arrow Pile
-
-[ITEMDEF 0f42]
-//arrow animation
-DEFNAME=i_arrow_x
 
 
 [ITEMDEF 0f43]
@@ -531,38 +492,6 @@ ON=@Create
 [ITEMDEF 0f4e]
 //bardiche
 DUPEITEM=0f4d
-
-[ITEMDEF 0f4f]
-DEFNAME=i_crossbow
-NAME=crossbow
-TYPE=t_weapon_xbow
-TDATA3=i_xbolt
-TDATA4=i_xbolt_x
-DAM=18,22
-FLIP=1
-SKILL=Archery
-SPEED=26
-//TAG.OVERRIDE.SPEED=45
-RANGE=2,8
-VALUE=33
-WEIGHT=9.0
-TWOHANDS=Y
-RESOURCES=7 i_log
-SKILLMAKE=Bowcraft 60.0
-CATEGORY=Provisions - Weapons
-SUBSECTION=Archery
-DESCRIPTION=Crossbow
-ReqStr=30
-CanUse=can_u_human|can_u_elf
-TEVENTS=ei_equipitem
-DUPELIST=0f50
-//Expansion=RDS_PRET2A
-ON=@Create
-   HITPOINTS={36 48}
-
-[ITEMDEF 0f50]
-//crossbow
-DUPEITEM=0f4f
 
 [ITEMDEF 0f51]
 DEFNAME=i_dagger
@@ -767,37 +696,6 @@ ON=@Create
 //War Axe
 DUPEITEM=013af
 
-[ITEMDEF 013b1]
-DEFNAME=i_bow
-NAME=bow
-TYPE=t_weapon_bow
-TDATA3=i_arrow
-TDATA4=i_arrow_x
-DAM=15,19
-FLIP=1
-SKILL=Archery
-SPEED=29
-//TAG.OVERRIDE.SPEED=42	// 42.5
-RANGE=2,10
-VALUE=20
-WEIGHT=8.0
-TWOHANDS=Y
-RESOURCES=7 i_log
-SKILLMAKE=Bowcraft 30.0
-CATEGORY=Provisions - Weapons
-SUBSECTION=Archery
-DESCRIPTION=Bow
-CanUse=can_u_human|can_u_elf
-ReqStr=20
-TEVENTS=ei_equipitem
-DUPELIST=013b2
-//Expansion=RDS_PRET2A
-ON=@Create
-   HITPOINTS={36 48}
-
-[ITEMDEF 013b2]
-//bow
-DUPEITEM=013b1
 
 [ITEMDEF 013b3]
 DEFNAME=i_club
@@ -1051,38 +949,6 @@ ON=@Create
 [ITEMDEF 013fb]
 //Large Battle Axe
 DUPEITEM=013fa
-
-[ITEMDEF 013fc]
-DEFNAME=i_crossbow_heavy
-NAME=heavy crossbow
-TYPE=t_weapon_xbow
-TDATA3=i_xbolt
-TDATA4=i_xbolt_x
-DAM=20,24
-FLIP=1
-SKILL=Archery
-SPEED=20
-//TAG.OVERRIDE.SPEED=50
-RANGE=2,8
-VALUE=35
-WEIGHT=14.0
-TWOHANDS=Y
-RESOURCES=10 i_log
-SKILLMAKE=Bowcraft 80.0
-CATEGORY=Provisions - Weapons
-SUBSECTION=Archery
-DESCRIPTION=Heavy Crossbow
-CanUse=can_u_human|can_u_elf
-ReqStr=80
-TEVENTS=ei_equipitem
-DUPELIST=013fd
-//Expansion=RDS_PRET2A
-ON=@Create
-   HITPOINTS={36 48}
-
-[ITEMDEF 013fd]
-//heavy crossbow
-DUPEITEM=013fc
 
 [ITEMDEF 013fe]
 DEFNAME=i_katana
@@ -1397,39 +1263,6 @@ ON=@Create
 DUPEITEM=01442
 
 
-[ITEMDEF 01bfb]
-DEFNAME=i_xbolt
-TYPE=t_weapon_bolt
-FLIP=1
-VALUE=6
-WEIGHT=0.1
-REPLICATE=1
-RESOURCES=1 i_arrow_shaft,1 i_feather
-SKILLMAKE=17.8 Bowcraft
-CATEGORY=Provisions - Ammunition
-SUBSECTION=Archery
-DESCRIPTION=Crossbow Bolt
-DUPELIST=01bfc,01bfd,01bfe
-
-[ITEMDEF 01bfc]
-DUPEITEM=01bfb
-CATEGORY=Provisions - Ammunition
-SUBSECTION=Archery
-DESCRIPTION=Crossbow Bolts (5)
-
-[ITEMDEF 01bfd]
-DUPEITEM=01bfb
-CATEGORY=Provisions - Ammunition
-SUBSECTION=Archery
-DESCRIPTION=Crossbow Bolts (Many)
-
-[ITEMDEF 01bfe]
-//crossbow bolt
-DEFNAME=i_xbolt_x
-DUPEITEM=01bfb
-CATEGORY=Provisions - Ammunition
-SUBSECTION=Archery
-DESCRIPTION=Crossbow bolt (Straight)
 
 
 [ITEMDEF 026ba]
@@ -1629,59 +1462,7 @@ Expansion=RDS_AOS
 ON=@Create
    HITPOINTS={36 48}
 
-[ITEMDEF 026c2]
-DEFNAME=i_bow_composite
-NAME=composite bow
-TYPE=t_weapon_bow
-TDATA3=i_arrow
-TDATA4=i_arrow_x
-DAM=13,17
-FLIP=1
-SKILL=Archery
-SPEED=32
-//TAG.OVERRIDE.SPEED=40
-RANGE=2,10
-VALUE=26
-WEIGHT=14.9
-TWOHANDS=Y
-RESOURCES=7 i_log
-SKILLMAKE=Bowcraft 70.0
-CATEGORY=Provisions - Weapons
-SUBSECTION=Archery
-DESCRIPTION=Composite Bow
-ReqStr=45
-TEVENTS=ei_equipitem
-DUPELIST=026cc
-Expansion=RDS_AOS
-ON=@Create
-   HITPOINTS={36 48}
 
-[ITEMDEF 026c3]
-DEFNAME=i_crossbow_repeating
-NAME=repeating crossbow
-TYPE=t_weapon_xbow
-TDATA3=i_xbolt
-TDATA4=i_xbolt_x
-DAM=8,12
-FLIP=1
-SKILL=Archery
-SPEED=47
-//TAG.OVERRIDE.SPEED=27	//27.5
-RANGE=2,7
-VALUE=34
-WEIGHT=22.0
-TWOHANDS=Y
-RESOURCES=10 i_log
-SKILLMAKE=Bowcraft 90.0
-CATEGORY=Provisions - Weapons
-SUBSECTION=Archery
-DESCRIPTION=Repeating Crossbow
-ReqStr=30
-TEVENTS=ei_equipitem
-DUPELIST=026cd
-Expansion=RDS_AOS
-ON=@Create
-   HITPOINTS={36 48}
 
 [ITEMDEF 026c4]
 //scythe
@@ -1714,14 +1495,6 @@ DUPEITEM=026c0
 [ITEMDEF 026cb]
 //crescent blade
 DUPEITEM=026c1
-
-[ITEMDEF 026cc]
-//composite bow
-DUPEITEM=026c2
-
-[ITEMDEF 026cd]
-//repeating crossbow
-DUPEITEM=026c3
 
 [ITEMDEF 026ce]
 //FIXME: this is not on stratics?
@@ -1831,34 +1604,6 @@ Expansion=RDS_SE
 ON=@Create
    HITPOINTS={36 48}
 
-[ITEMDEF 027a5]
-DEFNAME=i_yumi
-NAME=yumi
-TYPE=t_weapon_bow
-TDATA3=i_arrow
-TDATA4=i_arrow_x
-DAM=16,20
-FLIP=1
-SKILL=Archery
-SPEED=26
-//TAG.OVERRIDE.SPEED=45
-RANGE=2,10
-VALUE=29
-WEIGHT=10.9
-TWOHANDS=Y
-RESOURCES=10 i_log
-SKILLMAKE=Bowcraft 90.0
-CATEGORY=Provisions - Weapons
-SUBSECTION=Archery
-DESCRIPTION=Yumi
-CanUse=can_u_human|can_u_elf
-ReqStr=75
-TEVENTS=ei_equipitem
-DUPELIST=027f0
-Expansion=RDS_SE
-ON=@Create
-   HITPOINTS={36 48}
-
 [ITEMDEF 027a6]
 DEFNAME=i_tetsubo
 NAME=tetsubo
@@ -1961,42 +1706,6 @@ Expansion=RDS_SE
 ON=@Create
    HITPOINTS={36 48}
 
-[ITEMDEF 027aa]
-//FIXME: load and unload,
-//cliloc... doubleclick to fire a dart equip message
-//requires at least 50 ninjitsu to use
-//one-handed when used by GM ninja
-//no movement when shooting penalty
-//cliloc 3006224 Load Fukiya
-//cliloc 3006225 Unload Fukiya
-//cliloc 3006226 Fukia Dart
-//Sounds:
-// snd_combat_fukiya
-DEFNAME=i_fukiya
-NAME=fukiya
-TYPE=t_weapon_bow
-TDATA3=i_fukiya_dart
-TDATA4=i_fukiya_dartx
-DAM=14,15 //unknown
-FLIP=1
-SKILL=Archery
-SPEED=26  //unknown
-RANGE=0,5 //unknown
-VALUE=26
-WEIGHT=8.0
-TWOHANDS=Y
-RESOURCES=8 i_board
-SKILLMAKE=Carpentry 60.0,t_carpentry
-CATEGORY=Provisions - Weapons
-SUBSECTION=Archery
-DESCRIPTION=Fukiya
-CanUse=can_u_human|can_u_elf
-ReqStr=10
-TEVENTS=ei_equipitem
-DUPELIST=027f5
-Expansion=RDS_SE
-ON=@Create
-   HITPOINTS={36 48}
 
 [ITEMDEF 027ab]
 DEFNAME=i_tekagi
@@ -2130,10 +1839,6 @@ DUPEITEM=027a3
 //wakizashi
 DUPEITEM=027a4
 
-[ITEMDEF 027f0]
-//yumi
-DUPEITEM=027a5
-
 [ITEMDEF 027f1]
 //tetsubo
 DUPEITEM=027a6
@@ -2175,30 +1880,6 @@ DUPEITEM=027ae
 DUPEITEM=027af
 
 
-[ITEMDEF 02804]
-DEFNAME=i_fukiya_dartx
-NAME=fukiya dart%s
-TYPE=t_weapon_arrow
-VALUE=2
-WEIGHT=0.1
-REPLICATE=1
-RESOURCES=1 i_board
-SKILLMAKE=Archery 50.0
-CATEGORY=Provisions - Ammunition
-SUBSECTION=Darts
-DESCRIPTION=Fukiya Dart (straight)
-
-[ITEMDEF 02806]
-DEFNAME=i_fukiya_dart
-NAME=fukiya dart%s
-TYPE=t_weapon_arrow
-VALUE=2
-WEIGHT=0.1
-CATEGORY=Provisions - Ammunition
-SUBSECTION=Darts
-DESCRIPTION=Fukiya Dart
-
-
 [ITEMDEF 02808]
 //This weapon is not equiped, it is thrown
 DEFNAME=i_bomb_smoke
@@ -2226,59 +1907,6 @@ SUBSECTION=Thrown
 DESCRIPTION=Egg Bomb
 
 
-[ITEMDEF 02d1e]
-DEFNAME=i_elven_composite_longbow
-NAME=elven composite longbow
-TYPE=t_weapon_bow
-TDATA3=i_arrow
-TDATA4=i_arrow_x
-DAM=12,16
-FLIP=1
-SKILL=Archery
-SPEED=32
-//TAG.OVERRIDE.SPEED=40
-RANGE=2,10
-VALUE=35
-WEIGHT=10.0
-TWOHANDS=Y
-RESOURCES=20 i_log
-SKILLMAKE=Bowcraft 95.0
-CATEGORY=Provisions - Weapons
-SUBSECTION=Archery
-DESCRIPTION=Elven Composite LongBow
-ReqStr=45
-TEVENTS=ei_equipitem
-DUPELIST=02d2a
-Expansion=RDS_ML
-ON=@Create
-   HITPOINTS={36 48}
-
-[ITEMDEF 02d1f]
-DEFNAME=i_magical_shortbow
-NAME=magical shortbow
-TYPE=t_weapon_bow
-TDATA3=i_arrow
-TDATA4=i_arrow_x
-DAM=9,13
-FLIP=1
-SKILL=Archery
-SPEED=44
-//TAG.OVERRIDE.SPEED=30
-RANGE=2,10
-VALUE=93
-WEIGHT=12.0
-TWOHANDS=Y
-RESOURCES=15 i_log
-SKILLMAKE=Bowcraft 85.0
-CATEGORY=Provisions - Weapons
-SUBSECTION=Archery
-DESCRIPTION=Magical Shortbow
-ReqStr=45
-TEVENTS=ei_equipitem
-DUPELIST=02d2b
-Expansion=RDS_ML
-ON=@Create
-   HITPOINTS={36 48}
 
 [ITEMDEF 02d20]
 DEFNAME=i_elven_spellblade
@@ -2436,7 +2064,6 @@ NAME=Ancient Wild Staff
 RESOURCES=16 i_log, 1 i_gem_perfect_emerald
 SKILLMAKE=CARPENTRY 63.8, t_carpentry
 TEVENTS=ei_equipitem
-RESPOISON=5
 CATEGORY=Provisions - Weapons - MaceFighting
 SUBSECTION=Wild Staves
 DESCRIPTION=Ancient Wild Staff
@@ -2445,6 +2072,7 @@ Expansion=RDS_ML
 ON=@Create
    COLOR=0 //FIXME: unknown color
    HITPOINTS={36 48}
+   RESPOISON=5
 
 [ITEMDEF i_staff_wild_arcanist]
 ID=i_staff_wild
@@ -2452,8 +2080,6 @@ NAME=Arcanist Wild Staff
 RESOURCES=16 i_log, 1 i_gem_white_pearl
 SKILLMAKE=CARPENTRY 63.8, t_carpentry
 TEVENTS=ei_equipitem
-BonusManaMax=3
-IncreaseDam=3
 CATEGORY=Provisions - Weapons - MaceFighting
 SUBSECTION=Wild Staves
 DESCRIPTION=Arcanist's Wild Staff
@@ -2462,6 +2088,8 @@ Expansion=RDS_ML
 ON=@Create
    COLOR=0 //FIXME: unknown color
    HITPOINTS={36 48}
+   BonusManaMax=3
+   IncreaseDam=3
 
 [ITEMDEF i_staff_wild_hardened]
 ID=i_staff_wild
@@ -2469,8 +2097,6 @@ NAME=Hardened Wild Staff
 RESOURCES=16 i_log, 1 i_gem_turquoise
 SKILLMAKE=Carpentry 63.8, t_carpentry
 TEVENTS=ei_equipitem
-TEVENTS=ei_equipitem_tooltip
-IncreaseDam=5
 CATEGORY=Provisions - Weapons - MaceFighting
 SUBSECTION=Wild Staves
 DESCRIPTION=Hardened Wild Staff
@@ -2479,6 +2105,7 @@ Expansion=RDS_ML
 ON=@Create
    COLOR=0 //FIXME: unknown color
    HITPOINTS={36 48}
+   IncreaseDam=5
 
 [ITEMDEF i_staff_phantom]
 ID=i_staff_wild
@@ -2486,12 +2113,7 @@ NAME=Phantom Staff
 RESOURCES=16 i_log, 10 i_ingredient_putrefaction, 10 i_ingredient_taint, 1 i_ingredient_diseased_bark
 SKILLMAKE=Carpentry 90.0, t_carpentry
 TEVENTS=ei_equipitem
-RegenHits=2
-NightSight=1
-IncreaseSwingSpeed=20
-IncreaseDam=60
-DamCold=50
-DamPoison=50
+
 CATEGORY=Provisions - Weapons - MaceFighting
 SUBSECTION=Wild Staves
 DESCRIPTION=Phantom Staff
@@ -2500,6 +2122,12 @@ Expansion=RDS_ML
 ON=@Create
    COLOR=01
    HITPOINTS=255
+   RegenHits=2
+   NightSight=1
+   IncreaseSwingSpeed=20
+   IncreaseDam=60
+   DamCold=50
+   DamPoison=50
 
 [ITEMDEF i_staff_wild_thorned]
 ID=i_staff_wild
@@ -2613,14 +2241,6 @@ DUPELIST=02d35
 Expansion=RDS_ML
 ON=@Create
    HITPOINTS={36 48}
-
-[ITEMDEF 02d2a]
-//elven composite longbow
-DUPEITEM=02d1e
-
-[ITEMDEF 02d2b]
-//magical shortbow
-DUPEITEM=02d1f
 
 [ITEMDEF 02d2c]
 //elven spellblade

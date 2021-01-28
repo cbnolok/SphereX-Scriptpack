@@ -1,0 +1,31 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
+[defname sphere_crafting_bowcraft_options]
+// $skill_category_#_#_opt	"mark,exceptional,colored,recipe,expansion"
+bowcraft_category_3_1_opt	"1,1,1,0,0"
+bowcraft_category_3_2_opt	"1,1,1,0,0"
+bowcraft_category_3_3_opt	"1,1,1,0,0"
+bowcraft_category_3_4_opt	"1,1,1,0,5"
+bowcraft_category_3_5_opt	"1,1,1,0,0"
+bowcraft_category_3_6_opt	"1,1,1,0,5"
+bowcraft_category_3_7_opt	"1,1,1,0,0"
+bowcraft_category_3_8_opt	"1,1,1,0,0"
+bowcraft_category_3_9_opt	"0,0,0,1,5"
+bowcraft_category_3_10_opt	"0,0,0,1,5"
+bowcraft_category_3_11_opt	"0,0,0,1,5"
+bowcraft_category_3_12_opt	"0,0,0,1,5"
+bowcraft_category_3_13_opt	"0,0,0,1,5"
+bowcraft_category_3_14_opt	"1,1,1,1,5"
+bowcraft_category_3_15_opt	"1,1,1,1,5"
+bowcraft_category_3_16_opt	"1,1,1,1,5"
+bowcraft_category_3_17_opt	"1,1,1,1,5"
+bowcraft_category_3_18_opt	"1,1,1,1,5"
+bowcraft_category_3_19_opt	"1,1,1,1,5"
+bowcraft_category_3_20_opt	"1,1,1,1,5"
+bowcraft_category_3_21_opt	"1,1,1,1,5"
+
+[eof]

@@ -1,0 +1,845 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
+///////////////////////////////////////////////////////////////
+//////// BOWS
+///////////////////////////////////////////////////////////////
+
+[ITEMDEF 013b1]
+DEFNAME=i_bow
+NAME=bow
+TYPE=t_weapon_bow
+TDATA3=i_arrow
+TDATA4=i_arrow_x
+DAM=15,19
+FLIP=1
+SKILL=Archery
+SPEED=29
+//TAG.OVERRIDE.SPEED=42	// 42.5
+RANGE=2,10
+VALUE=20
+WEIGHT=8.0
+TWOHANDS=Y
+RESOURCES=7 i_log
+SKILLMAKE=Bowcraft 30.0
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Archery
+DESCRIPTION=Bow
+CanUse=can_u_human|can_u_elf
+ReqStr=20
+TEVENTS=ei_equipitem
+DUPELIST=013b2
+//Expansion=RDS_PRET2A
+ON=@Create
+   HITPOINTS={36 48}
+
+[ITEMDEF 013b2]
+//bow
+DUPEITEM=013b1
+
+
+[ITEMDEF i_bow_superior]
+//FIXME: the superior and exceptional concept should be implemented as part
+// of the crafting system as oposed to adding a new itemdefs...
+ID=i_bow
+NAME=superior bow
+DAM=16,20
+SPEED=41
+REQSTR=35
+RESOURCES=8 i_log
+SKILLMAKE=Bowcraft 40.0
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Bows
+DESCRIPTION=Superior Bow
+ON=@Create
+   HITPOINTS={48 60}
+
+[ITEMDEF i_bow_exceptional]
+ID=i_bow
+NAME=exceptional bow
+DAM=17,21
+SPEED=40
+REQSTR=40
+RESOURCES=9 i_log
+SKILLMAKE=Bowcraft 50.0
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Bows
+DESCRIPTION=Exceptional Bow
+ON=@Create
+   HITPOINTS={60 72}
+
+[ITEMDEF i_swiftflight]
+ID=i_bow
+NAME=Swiftflight
+TEVENTS=t_iprop
+//TEVENTS=t_set_marksman //FIXME add it
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Bows
+DESCRIPTION=Swiftflight
+ON=@Create
+   COLOR=0 //FIXME: unknown color
+   HITPOINTS=255
+   IncreaseDam=40
+
+
+///////////////////////////////////////////////////////////////
+//////// COMPOSITE BOWS
+///////////////////////////////////////////////////////////////
+[ITEMDEF 026c2]
+DEFNAME=i_bow_composite
+NAME=composite bow
+TYPE=t_weapon_bow
+TDATA3=i_arrow
+TDATA4=i_arrow_x
+DAM=13,17
+FLIP=1
+SKILL=Archery
+SPEED=32
+//TAG.OVERRIDE.SPEED=40
+RANGE=2,10
+VALUE=26
+WEIGHT=14.9
+TWOHANDS=Y
+RESOURCES=7 i_log
+SKILLMAKE=Bowcraft 70.0
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Archery
+DESCRIPTION=Composite Bow
+ReqStr=45
+TEVENTS=ei_equipitem
+DUPELIST=026cc
+Expansion=RDS_AOS
+ON=@Create
+   HITPOINTS={36 48}
+
+[ITEMDEF 026cc]
+//composite bow
+DUPEITEM=026c2
+
+[ITEMDEF i_heartseeker]
+ID=i_bow_composite
+NAME=Heartseeker
+REQSTR=13
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Composite Bows
+DESCRIPTION=Heartseeker
+TEVENTS=ei_equipitem
+DUPELIST=026cc
+Expansion=RDS_AOS
+ON=@Create
+   COLOR=0 //FIXME: unknown color
+   HITPOINTS={36 48}
+   IncreaseHitChance=5
+   IncreaseSwingSpeed=10
+   IncreaseDam=25
+   LowerReq=70
+
+///////////////////////////////////////////////////////////////
+//////// ELVEN COMPOSITE BOWS
+///////////////////////////////////////////////////////////////
+[ITEMDEF 02d1e]
+DEFNAME=i_elven_composite_longbow
+NAME=elven composite longbow
+TYPE=t_weapon_bow
+TDATA3=i_arrow
+TDATA4=i_arrow_x
+DAM=12,16
+FLIP=1
+SKILL=Archery
+SPEED=32
+//TAG.OVERRIDE.SPEED=40
+RANGE=2,10
+VALUE=35
+WEIGHT=10.0
+TWOHANDS=Y
+RESOURCES=20 i_log
+SKILLMAKE=Bowcraft 95.0
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Archery
+DESCRIPTION=Elven Composite LongBow
+ReqStr=45
+TEVENTS=ei_equipitem
+DUPELIST=02d2a
+Expansion=RDS_ML
+ON=@Create
+   HITPOINTS={36 48}
+
+[ITEMDEF 02d2a]
+//elven composite longbow
+DUPEITEM=02d1e
+
+[ITEMDEF i_barbed_longbow]
+ID=i_elven_composite_longbow
+NAME=Barbed Longbow
+RESOURCES=20 i_log, 1 i_gem_fire_ruby
+SKILLMAKE=Bowcraft 95.0,1 i_elven_bow_stringer
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Elven Composite Longbows
+DESCRIPTION=Barbed Longbow
+TEVENTS=ei_equipitem
+DUPELIST=02d2a
+Expansion=RDS_ML
+ON=@Create
+   COLOR=0 //FIXME: unknown color
+   HITPOINTS={36 48}
+   ReflectPhysicalDam=12
+
+[ITEMDEF i_blight_gripped_longbow]
+ID=i_elven_composite_longbow
+NAME=Blight Gripped Longbow
+RESOURCES=20 i_log, 10 i_ingredient_blight, 10 i_ingredient_corruption, 1 i_ingredient_paroxysmus_lard
+SKILLMAKE=Bowcraft 75.0,1 i_elven_bow_stringer
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Elven Composite Longbows
+DESCRIPTION=Blight Gripped Longbow
+TEVENTS=ei_equipitem
+DUPELIST=02d2a
+Expansion=RDS_ML
+ON=@Create
+   COLOR=<ColorElementalType>
+   HITPOINTS=255
+   NightSight=1
+   HitAreaPoison=20
+   RegenStam=4
+   IncreaseSwingSpeed=20
+   IncreaseDam=35
+   DamPoison=100
+
+[ITEMDEF i_faerie_fire]
+ID=i_elven_composite_longbow
+NAME=Faerie Fire
+RESOURCES=20 i_log, 10 i_ingredient_blight, 10 i_ingredient_corruption, 1 i_ingredient_paroxysmus_lard
+SKILLMAKE=Bowcraft 75.0,1 i_elven_bow_stringer
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Elven Composite Longbows
+DESCRIPTION=Faerie Fire
+TEVENTS=ei_equipitem
+DUPELIST=02d2a
+Expansion=RDS_ML
+ON=@Create
+   COLOR=<ColorElementalType>
+   HITPOINTS=255
+   HitFireball=25
+   Balanced=1
+   Bonusdex=3
+   IncreaseSwingSpeed=20
+   IncreaseDam=60
+   DamFire=100
+
+[ITEMDEF i_frozen_longbow]
+ID=i_elven_composite_longbow
+NAME=Frozen Longbow
+RESOURCES=20 i_log, 1 i_gem_turquoise
+SKILLMAKE=Bowcraft 70.0,1 i_elven_bow_stringer
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Elven Composite Longbows
+DESCRIPTION=Frozen Longbow
+TEVENTS=ei_equipitem
+DUPELIST=02d2a
+Expansion=RDS_ML
+ON=@Create
+   COLOR=0 //FIXME: unknown color
+   HITPOINTS={36 48}
+   IncreaseSwingSpeed=-5
+   IncreaseDam=10
+
+[ITEMDEF i_longbow_might]
+ID=i_elven_composite_longbow
+NAME=Longbow of Might
+RESOURCES=20 i_log, 1 i_gem_blue_diamond
+SKILLMAKE=Bowcraft 70.0,1 i_elven_bow_stringer
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Elven Composite Longbows
+DESCRIPTION=Longbow of Might
+TEVENTS=ei_equipitem
+DUPELIST=02d2a
+Expansion=RDS_ML
+ON=@Create
+   COLOR=0 //FIXME: unknown color
+   HITPOINTS={36 48}
+   IncreaseDam=5
+
+[ITEMDEF i_silvani_feywood_bow]
+ID=i_elven_composite_longbow
+NAME=Faerie Fire
+RESOURCES=20 i_log, 10 i_ingredient_muculent, 10 i_ingredient_scourge, 1 i_ingredient_paroxysmus_lard
+SKILLMAKE=Bowcraft 75.0,1 i_elven_bow_stringer
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Elven Composite Longbows
+DESCRIPTION=Faerie Fire
+TEVENTS=ei_equipitem
+DUPELIST=02d2a
+Expansion=RDS_ML
+ON=@Create
+   COLOR=<ColorElementalType>
+   HITPOINTS=255
+   SpellChanneling=1
+   IncreaseHitChance=12
+   IncreaseSwingSpeed=30
+   IncreaseDam=35
+   DamEnergy=100
+
+[ITEMDEF i_slayer_longbow]
+ID=i_elven_composite_longbow
+NAME=Slayer Longbow
+RESOURCES=20 i_log, 1 i_gem_brilliant_amber
+SKILLMAKE=Bowcraft 70.0,1 i_elven_bow_stringer
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Elven Composite Longbows
+DESCRIPTION=Slayer Longbow
+TEVENTS=ei_equipitem
+DUPELIST=02d2a
+Expansion=RDS_ML
+ON=@Create
+   COLOR=0 //FIXME: unknown color
+   HITPOINTS={36 48}
+
+///////////////////////////////////////////////////////////////
+//////// MAGICAL SHORTBOWS
+///////////////////////////////////////////////////////////////
+[ITEMDEF 02d1f]
+DEFNAME=i_magical_shortbow
+NAME=magical shortbow
+TYPE=t_weapon_bow
+TDATA3=i_arrow
+TDATA4=i_arrow_x
+DAM=9,13
+FLIP=1
+SKILL=Archery
+SPEED=44
+//TAG.OVERRIDE.SPEED=30
+RANGE=2,10
+VALUE=93
+WEIGHT=12.0
+TWOHANDS=Y
+RESOURCES=15 i_log
+SKILLMAKE=Bowcraft 85.0
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Archery
+DESCRIPTION=Magical Shortbow
+ReqStr=45
+TEVENTS=ei_equipitem
+DUPELIST=02d2b
+Expansion=RDS_ML
+ON=@Create
+   HITPOINTS={36 48}
+
+[ITEMDEF 02d2b]
+//magical shortbow
+DUPEITEM=02d1f
+
+[ITEMDEF i_assassin_shortbow]
+ID=i_magical_shortbow
+NAME=Assassin's Shortbow
+RESOURCES=15 i_log, 1 i_gem_dark_sapphire
+SKILLMAKE=Bowcraft 70.0
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Magical Shortbows
+DESCRIPTION=Assassin's Shortbow
+TEVENTS=ei_equipitem
+DUPELIST=02d2b
+Expansion=RDS_ML
+ON=@Create
+   COLOR=0 //FIXME: unknown color
+   HITPOINTS={36 48}
+   IncreaseHitChance=3
+   Increasedam=4
+
+[ITEMDEF i_lightweight_shortbow]
+ID=i_magical_shortbow
+NAME=Lightweight Shortbow
+RESOURCES=15 i_log, 1 i_gem_white_pearl
+SKILLMAKE=Bowcraft 70.0
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Magical Shortbows
+DESCRIPTION=Lightweight Shortbow
+TEVENTS=ei_equipitem
+DUPELIST=02d2b
+Expansion=RDS_ML
+ON=@Create
+   COLOR=0 //FIXME: unknown color
+   HITPOINTS={36 48}
+   Balanced=1
+
+[ITEMDEF i_mischief_maker]
+ID=i_magical_shortbow
+NAME=Mischief Maker
+RESOURCES=15 i_log, 10 i_ingredient_corruption, 10 i_ingredient_putrefaction, 1 i_ingredient_dread_horn_mane
+SKILLMAKE=Bowcraft 75.0
+//TAG.Slayer.Super=SSLAYER_UNDEAD
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Magical Shortbows
+DESCRIPTION=Mischief Maker
+TEVENTS=ei_equipitem
+DUPELIST=02d2b
+Expansion=RDS_ML
+ON=@Create
+   COLOR=<ColorElementalType>
+   HITPOINTS=255
+   Balanced=1
+   IncreaseSwingSpeed=35
+   IncreaseDam=45
+   DamCold=100
+
+[ITEMDEF i_mystical_shortbow]
+ID=i_magical_shortbow
+NAME=Mystical Shortbow
+RESOURCES=15 i_log, 1 i_gem_ecru_citrine
+SKILLMAKE=Bowcraft 70.0
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Magical Shortbows
+DESCRIPTION=Mystical Shortbows
+TEVENTS=ei_equipitem
+DUPELIST=02d2b
+Expansion=RDS_ML
+ON=@Create
+   COLOR=0 //FIXME: unknown color
+   HITPOINTS={36 48}
+   SpellChanneling=1
+   FasterCasting=-1
+
+[ITEMDEF i_ranger_shortbow]
+ID=i_magical_shortbow
+NAME=Ranger's Shortbow
+RESOURCES=15 i_log, 1 i_gem_perfect_emerald
+SKILLMAKE=Bowcraft 70.0
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Magical Shortbows
+DESCRIPTION=Ranger's Shortbow
+TEVENTS=ei_equipitem
+DUPELIST=02d2b
+Expansion=RDS_ML
+ON=@Create
+   COLOR=0 //FIXME: unknown color
+   HITPOINTS={36 48}
+   IncreaseSwingSpeed=5
+
+///////////////////////////////////////////////////////////////
+//////// YUMIS
+///////////////////////////////////////////////////////////////
+
+[ITEMDEF 027a5]
+DEFNAME=i_yumi
+NAME=yumi
+TYPE=t_weapon_bow
+TDATA3=i_arrow
+TDATA4=i_arrow_x
+DAM=16,20
+FLIP=1
+SKILL=Archery
+SPEED=26
+//TAG.OVERRIDE.SPEED=45
+RANGE=2,10
+VALUE=29
+WEIGHT=10.9
+TWOHANDS=Y
+RESOURCES=10 i_log
+SKILLMAKE=Bowcraft 90.0
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Archery
+DESCRIPTION=Yumi
+CanUse=can_u_human|can_u_elf
+ReqStr=75
+TEVENTS=ei_equipitem
+DUPELIST=027f0
+Expansion=RDS_SE
+ON=@Create
+   HITPOINTS={36 48}
+
+[ITEMDEF 027f0]
+//yumi
+DUPEITEM=027a5
+
+[ITEMDEF i_hanzo_bow]
+ID=i_yumi
+NAME=Hanzo's Bow
+BonusSkill1=Ninjitsu
+BonusSkill1Amt=10.0
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Yumis
+DESCRIPTION=Hanzo's Bow
+TEVENTS=ei_equipitem
+DUPELIST=027f0
+Expansion=RDS_SE
+ON=@Create
+   COLOR=0 //FIXME: unknown color
+   HITPOINTS=255
+   HitLeechLife=45
+   SelfRepair=3
+   IncreaseDam=50
+
+[ITEMDEF i_horselord]
+ID=i_yumi
+NAME=The Horselord
+//TAG.Slayer.Super=SSLAYER_ELEMENTAL
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Yumis
+DESCRIPTION=The Horselord
+TEVENTS=ei_equipitem
+DUPELIST=027f0
+Expansion=RDS_SE
+ON=@Create
+   COLOR=0 //FIXME: unknown color
+   HITPOINTS=255
+   BonusDex=5
+   RegenMana=1
+   Luck=125
+   IncreaseDam=50
+
+///////////////////////////////////////////////////////////////
+//////// CROSSBOWS
+///////////////////////////////////////////////////////////////
+[ITEMDEF 0f4f]
+DEFNAME=i_crossbow
+NAME=crossbow
+TYPE=t_weapon_xbow
+TDATA3=i_xbolt
+TDATA4=i_xbolt_x
+DAM=18,22
+FLIP=1
+SKILL=Archery
+SPEED=26
+//TAG.OVERRIDE.SPEED=45
+RANGE=2,8
+VALUE=33
+WEIGHT=9.0
+TWOHANDS=Y
+RESOURCES=7 i_log
+SKILLMAKE=Bowcraft 60.0
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Archery
+DESCRIPTION=Crossbow
+ReqStr=30
+CanUse=can_u_human|can_u_elf
+TEVENTS=ei_equipitem
+DUPELIST=0f50
+//Expansion=RDS_PRET2A
+ON=@Create
+   HITPOINTS={36 48}
+
+[ITEMDEF 0f50]
+//crossbow
+DUPEITEM=0f4f
+
+[ITEMDEF i_crossbow_superior]
+ID=i_crossbow
+NAME=superior crossbow
+DAM=19,23
+SPEED=44
+RESOURCES=8 i_log
+SKILLMAKE=Bowcraft 70.0
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Crossbows
+DESCRIPTION=Superior Crossbow
+TEVENTS=ei_equipitem
+//Expansion=RDS_PRET2A
+ON=@Create
+   HITPOINTS={48 60}
+
+[ITEMDEF i_crossbow_exceptional]
+ID=i_crossbow
+NAME=exceptional crossbow
+DAM=20,24
+SPEED=43
+RESOURCES=9 i_log
+SKILLMAKE=Bowcraft 80.0
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Crossbows
+DESCRIPTION=Exceptional Crossbow
+TEVENTS=ei_equipitem
+//Expansion=RDS_PRET2A
+ON=@Create
+   HITPOINTS={60 72}
+
+///////////////////////////////////////////////////////////////
+//////// HEAVY CROSSBOWS
+///////////////////////////////////////////////////////////////
+[ITEMDEF 013fc]
+DEFNAME=i_crossbow_heavy
+NAME=heavy crossbow
+TYPE=t_weapon_xbow
+TDATA3=i_xbolt
+TDATA4=i_xbolt_x
+DAM=20,24
+FLIP=1
+SKILL=Archery
+SPEED=20
+//TAG.OVERRIDE.SPEED=50
+RANGE=2,8
+VALUE=35
+WEIGHT=14.0
+TWOHANDS=Y
+RESOURCES=10 i_log
+SKILLMAKE=Bowcraft 80.0
+CATEGORY=Provisions - Weapons
+SUBSECTION=Archery
+DESCRIPTION=Heavy Crossbow
+CanUse=can_u_human|can_u_elf
+ReqStr=80
+TEVENTS=ei_equipitem
+DUPELIST=013fd
+//Expansion=RDS_PRET2A
+ON=@Create
+   HITPOINTS={36 48}
+
+[ITEMDEF 013fd]
+//heavy crossbow
+DUPEITEM=013fc
+
+[ITEMDEF i_crossbow_heavy_superior]
+ID=i_crossbow_heavy
+NAME=superior heavy crossbow
+DAM=21,25
+SPEED=4.9
+RESOURCES=11 i_log
+SKILLMAKE=Bowcraft 90.0
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Bows
+DESCRIPTION=Superior Heavy Crossbow
+TEVENTS=ei_equipitem
+DUPELIST=013fd
+//Expansion=RDS_PRET2A
+ON=@Create
+   HITPOINTS={48 60}
+
+[ITEMDEF i_crossbow_heavy_exceptional]
+ID=i_crossbow_heavy
+NAME=exceptional heavy crossbow
+DAM=22,26
+SPEED=4.8
+RESOURCES=12 i_log
+SKILLMAKE=Bowcraft 100.0
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Bows
+DESCRIPTION=Exceptional Heavy Crossbow
+TEVENTS=ei_equipitem
+DUPELIST=013fd
+//Expansion=RDS_PRET2A
+ON=@Create
+   HITPOINTS={60 72}
+
+///////////////////////////////////////////////////////////////
+//////// REPEATING CROSSBOWS
+///////////////////////////////////////////////////////////////
+
+[ITEMDEF 026c3]
+DEFNAME=i_crossbow_repeating
+NAME=repeating crossbow
+TYPE=t_weapon_xbow
+TDATA3=i_xbolt
+TDATA4=i_xbolt_x
+DAM=8,12
+FLIP=1
+SKILL=Archery
+SPEED=47
+//TAG.OVERRIDE.SPEED=27	//27.5
+RANGE=2,7
+VALUE=34
+WEIGHT=22.0
+TWOHANDS=Y
+RESOURCES=10 i_log
+SKILLMAKE=Bowcraft 90.0
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Archery
+DESCRIPTION=Repeating Crossbow
+ReqStr=30
+TEVENTS=ei_equipitem
+DUPELIST=026cd
+Expansion=RDS_AOS
+ON=@Create
+   HITPOINTS={36 48}
+
+[ITEMDEF 026cd]
+//repeating crossbow
+DUPEITEM=026c3
+
+[ITEMDEF i_shamino_best_crossbow]
+ID=i_crossbow_repeating
+NAME=Shamino's Best Crossbow
+REQSTR=0
+SelfRepair=10
+IncreaseHitChance=15
+LowerReq=100
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Repeating Crossbows
+DESCRIPTION=Shamino's Best Crossbow
+TEVENTS=ei_equipitem
+DUPELIST=026cd
+Expansion=RDS_AOS
+ON=@Create
+   COLOR=0504
+   HITPOINTS=255
+
+[ITEMDEF i_night_reaper]
+ID=i_crossbow_repeating
+NAME=The Night Reaper
+RESOURCES=10 i_log, 10 i_ingredient_blight, 10 i_ingredient_scourge, 1 i_ingredient_dread_horn_mane
+SKILLMAKE=Bowcraft 75.0
+//TAG.Slayer.Super=SSLAYER_DEMON
+CATEGORY=Provisions - Weapons - Archery
+SUBSECTION=Repeating Crossbows
+DESCRIPTION=The Night Reaper
+TEVENTS=ei_equipitem
+DUPELIST=026cd
+Expansion=RDS_AOS
+ON=@Create
+   COLOR=041c
+   HITPOINTS=255
+   NightSight=1
+   IncreaseSwingSpeed=25
+   IncreaseDam=55
+
+///////////////////////////////////////////////////////////////
+//////// FUKIYA
+///////////////////////////////////////////////////////////////
+
+[COMMENT comment_fukiya]
+The Fukiya is a Japanese blowgun. In UO, it is a ranged the weapon that
+can be used by the Ninja with the proper amount of skill. A minimum of 50
+is required. Hit chance success is related to Ninjitsu skill level. It
+is a One-Handed Weapon for anyone with the requisite skill, however,
+Grandmaster Ninjas can use them while equipped with a two-handed weapon. A
+carpenter can find it in the Weapons category of the crafting menu. 
+
+[ITEMDEF 027aa]
+//FIXME: load and unload,
+//cliloc... doubleclick to fire a dart equip message
+//requires at least 50 ninjitsu to use
+//one-handed when used by GM ninja
+//no movement when shooting penalty
+//cliloc 3006224 Load Fukiya
+//cliloc 3006225 Unload Fukiya
+//cliloc 3006226 Fukia Dart
+//Sounds:
+// snd_combat_fukiya
+DEFNAME=i_fukiya
+NAME=fukiya
+TYPE=t_weapon_bow
+TDATA3=i_fukiya_dart
+TDATA4=i_fukiya_dartx
+DAM=14,15 //unknown
+FLIP=1
+SKILL=Archery
+SPEED=26  //unknown
+RANGE=0,5 //unknown
+VALUE=26
+WEIGHT=8.0
+TWOHANDS=Y
+RESOURCES=8 i_board
+SKILLMAKE=Carpentry 60.0,t_carpentry
+CATEGORY=Provisions - Weapons
+SUBSECTION=Archery
+DESCRIPTION=Fukiya
+CanUse=can_u_human|can_u_elf
+ReqStr=10
+TEVENTS=ei_equipitem
+DUPELIST=027f5
+Expansion=RDS_SE
+ON=@Create
+   HITPOINTS={36 48}
+
+///////////////////////////////////////////////////////////////
+//////// AMMUNITION
+///////////////////////////////////////////////////////////////
+
+[ITEMDEF 0f3e]
+//arrow (its a rock in older clients)
+DUPEITEM=0f3f
+
+[ITEMDEF 0f3f]
+DEFNAME=i_arrow
+NAME=arrow%s
+TYPE=t_weapon_arrow
+FLIP=0
+WEIGHT=0.1
+REPLICATE=1
+RESOURCES=1 i_arrow_shaft,1 i_feather
+SKILLMAKE=Bowcraft 0.0
+CATEGORY=Provisions - Ammunition
+SUBSECTION=Archery
+DESCRIPTION=Arrow
+DUPELIST=0f3e
+
+[ITEMDEF 0f40]
+DEFNAME=i_arrows
+NAME=arrows
+WEIGHT=0.5
+RESOURCES=5 i_arrow
+CATEGORY=Provisions - Ammunition
+SUBSECTION=Archery
+DESCRIPTION=Arrows
+
+[ITEMDEF 0f41]
+DEFNAME=i_arrow_pile
+NAME=pile of arrows
+WEIGHT=2.0
+RESOURCES=20 i_arrow
+CATEGORY=Provisions - Ammunition
+SUBSECTION=Archery
+DESCRIPTION=Arrow Pile
+
+[ITEMDEF 0f42]
+//arrow animation
+DEFNAME=i_arrow_x
+
+[ITEMDEF 01bfb]
+DEFNAME=i_xbolt
+TYPE=t_weapon_bolt
+FLIP=1
+VALUE=6
+WEIGHT=0.1
+REPLICATE=1
+RESOURCES=1 i_arrow_shaft,1 i_feather
+SKILLMAKE=17.8 Bowcraft
+CATEGORY=Provisions - Ammunition
+SUBSECTION=Archery
+DESCRIPTION=Crossbow Bolt
+DUPELIST=01bfc,01bfd,01bfe
+
+[ITEMDEF 01bfc]
+DUPEITEM=01bfb
+CATEGORY=Provisions - Ammunition
+SUBSECTION=Archery
+DESCRIPTION=Crossbow Bolts (5)
+
+[ITEMDEF 01bfd]
+DUPEITEM=01bfb
+CATEGORY=Provisions - Ammunition
+SUBSECTION=Archery
+DESCRIPTION=Crossbow Bolts (Many)
+
+[ITEMDEF 01bfe]
+//crossbow bolt
+DEFNAME=i_xbolt_x
+DUPEITEM=01bfb
+CATEGORY=Provisions - Ammunition
+SUBSECTION=Archery
+DESCRIPTION=Crossbow bolt (Straight)
+
+[ITEMDEF 02804]
+DEFNAME=i_fukiya_dartx
+NAME=fukiya dart%s
+TYPE=t_weapon_arrow
+VALUE=2
+WEIGHT=0.1
+REPLICATE=1
+RESOURCES=1 i_board
+SKILLMAKE=Archery 50.0
+CATEGORY=Provisions - Ammunition
+SUBSECTION=Darts
+DESCRIPTION=Fukiya Dart (straight)
+
+[ITEMDEF 02806]
+DEFNAME=i_fukiya_dart
+NAME=fukiya dart%s
+TYPE=t_weapon_arrow
+VALUE=2
+WEIGHT=0.1
+CATEGORY=Provisions - Ammunition
+SUBSECTION=Darts
+DESCRIPTION=Fukiya Dart
+
+[EOF]

@@ -58,6 +58,7 @@ types/
 items/
 items/magic_pre_aos/
 items/material_nonbase/
+items/weapons/
 multis/
 core/regionresources.scp 	//Must be define after ITEM
 core/regiontypes.scp		//Must be define after ITEM

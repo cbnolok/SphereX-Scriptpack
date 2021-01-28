@@ -3574,8 +3574,28 @@ ON=@Create
 
 
 [ITEMDEF 02fc5]
-//light chest
-DUPEITEM=0317b
+DEFNAME=i_leaf_tunic
+NAME=leaf tunic
+TYPE=t_armor_leather
+FLIP=1
+WEIGHT=2
+REQSTR=20
+RESOURCES=15 i_hides_cut
+SKILLMAKE=Tailoring 75.0
+CanUse=can_u_elf|can_u_female
+CATEGORY=Provisions - Armor - Leather
+SUBSECTION=Leaf Armor
+DESCRIPTION=Leaf Tunic
+TEVENTS=ei_equipitem
+DUPELIST=0317b
+Expansion=RDS_ML
+ON=@Create
+   HITPOINTS={50 60}
+   ResPhysical=2
+   ResFire=3
+   ResCold=2
+   RESPOISON=4
+   RESENERGY=4
 
 [ITEMDEF 02fc6]
 //light gloves

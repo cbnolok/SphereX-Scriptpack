@@ -49,6 +49,7 @@ DUPELIST=0e7d
 
 [ITEMDEF 09ab]
 DEFNAME=i_chest_metal
+NAME=Metal chest
 TYPE=t_container
 TDATA2=04a
 FLIP=1
@@ -210,6 +211,7 @@ DUPEITEM=0e3e
 
 [ITEMDEF 0e40]
 DEFNAME=i_chest_metal_brass
+NAME=Metal chest with brass
 TYPE=t_container
 TDATA2=042
 FLIP=1
@@ -275,6 +277,7 @@ DESCRIPTION=Leather Bag
 
 [ITEMDEF 0e77]
 DEFNAME=i_barrel_open
+NAME=Open barrel
 TYPE=t_container
 TDATA2=03e
 FLIP=1
@@ -384,6 +387,7 @@ ON=@Create
 
 [ITEMDEF 0fae]
 DEFNAME=i_barrel
+NAME=Barrel
 TYPE=t_container
 TDATA2=03e
 FLIP=1
