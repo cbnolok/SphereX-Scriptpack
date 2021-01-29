@@ -25,12 +25,12 @@ scp.CraftingSystem=0
 // <boolean> (1 if enable, 0 if not). Default = 1
 scp.NewCrafting_Alchemy=0
 scp.NewCrafting_Blacksmithing=0
-scp.NewCrafting_Bowcraft=0 // NOT DONE!!
+scp.NewCrafting_Bowcraft=0
 scp.NewCrafting_Carpentry=0
-scp.NewCrafting_Cooking=0 // NOT DONE!!
+scp.NewCrafting_Cooking=0
 scp.NewCrafting_Inscription=0
-scp.NewCrafting_Tailoring=0 // NOT DONE!!
-scp.NewCrafting_Tinkering=0 // NOT DONE!!
+scp.NewCrafting_Tailoring=0
+scp.NewCrafting_Tinkering=0
 
 // If the item needs a recipe and the player doesn't have it, display resources as "????"
 // If this is 0, it will display the skillmake/resources normally.
@@ -42,6 +42,6 @@ scp.NewCrafting_RecipeNeeded=1
 
 // Activate or deactivate the calculation of smelt chances according to OSI.
 // <boolean> (1 if yes, 0 if not).
-scp.OSIOreFormula=1
+scp.OSIOreFormula=0
 
 [EOF]

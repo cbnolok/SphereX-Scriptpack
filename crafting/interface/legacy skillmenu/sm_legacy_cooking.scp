@@ -7,7 +7,7 @@ VERSION=X1
 [COMMENT sphere_skillmenu]
 SphereServer has a number of hardcoded skillmenu's, this file contains the softcoded component.
 The purpose of this specific skillmenu is as follows:
-sm_cooking			= Triggered by DClicking a skillet, rolling pin or flour sifter
+sm_cooking			= Triggered by DClicking a i_fry_pan, rolling pin or flour sifter
 
 [SKILLMENU sm_cooking]
 Cooking

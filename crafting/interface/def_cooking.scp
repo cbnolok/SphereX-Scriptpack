@@ -1,0 +1,89 @@
+//****************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereserver.net
+//****************************************************************************
+VERSION=X1
+
+// SCRIPT DOCUMENTATION
+// --------------------
+// Cooking section for the OSI Crafting system.
+
+[DEFNAME SphereCommunityPack_Crafting_Cooking]
+cooking_marking			"0" // 1 or 0
+cooking_firstmaterial	"0" // 1 or 0
+cooking_secondmaterial	"0" // 1 or 0
+cooking_options_default	"0,0,0,0,0" //"mark,exceptional,colored,recipe,expansion"
+
+cooking_smelt			""
+cooking_repair			""
+cooking_check			"f_craft_cooking_checkfire"
+cooking_check_notice	"1044487" //You must be near a fire source to cook
+cooking_chanceatmin		"0.0"
+cooking_exceptional_bonus	"f_craft_exceptionalbonus"
+cooking_aftercraft		""
+
+cooking_category_1_name "1044495" // Ingredients
+cooking_category_2_name "1044496" // Preparations
+cooking_category_3_name "1044497" // Baking
+cooking_category_4_name "1044498" // Barbecue
+//cooking_category_5_name "1073108" // Enchanted
+//cooking_category_6_name "1080001" // Chocolatiering
+
+cooking_category_1_1	"i_flour_sack"
+cooking_category_1_2	"i_dough"
+cooking_category_1_3	"i_dough_sweet"
+cooking_category_1_4	"i_cake_mix"
+cooking_category_1_5	"i_cookie_mix"
+//cooking_category_1_6	"1079998" // cocoa butter
+//cooking_category_1_7	"1079999" // cocoa liquor
+
+cooking_category_2_1	"i_unbaked_quiche"
+cooking_category_2_2	"i_unbaked_pie_meat"
+cooking_category_2_3	"i_pizza_sausage_uncooked"
+cooking_category_2_4	"i_unbaked_pie_fruit"
+cooking_category_2_5	"i_unbaked_peach_cobbler"
+cooking_category_2_6	"i_unbaked_pie_apple"
+cooking_category_2_7	"i_unbaked_pie_pumpkin"
+//cooking_category_2_9	"1030316" // green tea
+//cooking_category_2_10	"1029451" // wasabi clumps
+//cooking_category_2_11	"1030302" // sushi rolls
+//cooking_category_2_12	"1030304" // sushi platter
+//cooking_category_2_13	"1040000" // savage kin paint
+//cooking_category_2_14	"1030249" // egg bomb
+//cooking_category_2_15	"1032246" // parrot wafer
+
+cooking_category_3_1	"i_bread_loaf"
+cooking_category_3_2	"i_pan_cookies"
+cooking_category_3_3	"i_cake"
+cooking_category_3_4	"i_muffin"
+cooking_category_3_5	"i_baked_quiche"
+cooking_category_3_6	"i_baked_pie_meat"
+cooking_category_3_7	"i_pizza_sausage"
+cooking_category_3_8	"i_pizza"
+cooking_category_3_9	"i_baked_pie_fruit"
+cooking_category_3_10	"i_baked_peach_cobbler"
+cooking_category_3_11	"i_baked_pie_apple"
+cooking_category_3_12	"i_baked_pie_pumpkin"
+//cooking_category_3_13	"1030317" // miso soup
+//cooking_category_3_14	"1030318" // white miso soup
+//cooking_category_3_15	"1030319" // red miso soup
+//cooking_category_3_16	"1030320" // awase miso soup
+//cooking_category_3_17	"1077414" // gingerbread cookie
+
+cooking_category_4_1	"i_bird_cooked"
+cooking_category_4_2	"i_chicken_leg"
+cooking_category_4_3	"i_fish_cut_cooked"
+cooking_category_4_4	"i_eggs_fried"
+cooking_category_4_5	"i_lamb_leg"
+cooking_category_4_6	"i_ribs_cooked"
+
+//cooking_category_5_1	"1072951" // food decoration tool
+//cooking_category_5_2	"1072952" // enchanted apple
+//cooking_category_5_3	"1072953" // grapes of wrath
+//cooking_category_5_4	"1072950" // fruit bowl
+
+//cooking_category_6_1	"1079994" // dark chocolate
+//cooking_category_6_2	"1079995" // milk chocolate
+//cooking_category_6_3	"1079996" // white chocolate
+
+[eof]

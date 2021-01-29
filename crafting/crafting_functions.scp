@@ -310,10 +310,20 @@ ELSE
    src.f_fireforge
 ENDIF
 
+[FUNCTION f_craft_cooking_checkfire]
+if (<serv.itemdef.<STREAT <serv.itemdef.<args>.resources>>.type> == t_meat_raw) || (<serv.itemdef.<STREAT <serv.itemdef.<args>.resources>>.type> == t_food_raw)
+   IF !((<ISNEARTYPE t_fire 3>) || (<ISNEARTYPE t_forge 3>) || (<ISNEARTYPE t_campfire 3>))
+      serv.log non
+      CTAG.craft.message=<DEF.cooking_check_notice>
+      RETURN 1
+   ENDIF
+endif
+serv.log ok
+RETURN 0
+
 [FUNCTION f_check_recipe] //Verification if player have the recipe of the item
 //Parameter: ARGS is the ID of the item  ex i_potion_refresh
 //Return 1 mean fabrication can't be DONE
-
 if <tag0.recipe.<ARGS>>
    return 0
 else

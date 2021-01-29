@@ -1200,6 +1200,7 @@ FLIP=1
 VALUE=5
 WEIGHT=5.0
 RESOURCES=4 i_wheat_sheaf,1 i_cloth
+SKILLMAKE=Cooking 0.0, t_cooking
 CATEGORY=Items by Professions
 SUBSECTION=Miller
 DESCRIPTION=Sack of Flour
@@ -2816,5 +2817,430 @@ DESCRIPTION=Cocoa Liquor
 ON=@Create
    MOREM=1
    COLOR=046a
+
+///////////////////////
+// Custom food items //
+///////////////////////
+
+[ITEMDEF i_tomato_sauce]
+ID=i_bottle_red
+NAME=tomato sauce
+TYPE=t_food
+VALUE=4
+WEIGHT=0.1
+RESOURCES=2 i_fruit_tomato,1 i_sugar,1 i_bottle_empty
+SKILLMAKE=Cooking 16.2
+CATEGORY=Provisions - Food
+SUBSECTION=Assembled
+DESCRIPTION=Tomato Sauce
+ON=@Create
+   MOREM=1
+
+[ITEMDEF i_sugar]
+ID=i_reag_volcanic_ash
+NAME=sugar
+TYPE=t_food
+PILE=1
+VALUE=1
+WEIGHT=0.1
+CATEGORY=Provisions - Food
+SUBSECTION=Natural
+DESCRIPTION=Sugar
+ON=@Create
+   COLOR=0481
+   MOREM=1
+
+[ITEMDEF i_honey]
+ID=i_reag_eye_of_newt
+NAME=honey
+TYPE=t_food
+PILE=1
+VALUE=1
+WEIGHT=0.2
+CATEGORY=Provisions - Food
+SUBSECTION=Natural
+DESCRIPTION=Honey
+ON=@Create
+   COLOR=0481
+   MOREM=1
+
+[ITEMDEF i_milk]
+ID=0122a
+NAME=milk
+TYPE=t_drink
+PILE=1
+VALUE=1
+WEIGHT=0.1
+CATEGORY=Provisions - Food
+SUBSECTION=Natural
+DESCRIPTION=Milk
+ON=@Create
+   COLOR=0481
+
+[ITEMDEF i_fruit_potato]
+ID=0f7f
+NAME=potato%es
+TYPE=t_fruit
+TDATA1=i_crop_potato1
+PILE=1
+VALUE=1
+WEIGHT=0.1
+CATEGORY=Provisions - Food
+SUBSECTION=Fruits
+DESCRIPTION=Potato
+ON=@Create
+   COLOR=083c
+   MOREM=1
+
+[ITEMDEF i_fruit_tomato]
+ID=09d0
+NAME=tomato%es
+TYPE=t_fruit
+TDATA1=i_crop_tomato1
+PILE=1
+VALUE=1
+WEIGHT=0.1
+CATEGORY=Provisions - Food
+SUBSECTION=Fruits
+DESCRIPTION=Tomato
+ON=@Create
+   COLOR=020
+   MOREM=1
+
+[ITEMDEF i_fruit_peas]
+ID=0105e
+NAME=peas
+TYPE=t_fruit
+TDATA1=i_crop_peas1
+PILE=1
+VALUE=1
+WEIGHT=0.1
+CATEGORY=Provisions - Food
+SUBSECTION=Fruits
+DESCRIPTION=Peas
+ON=@Create
+   COLOR=044
+   MOREM=1
+
+[ITEMDEF i_fruit_barley]
+ID=i_hay_sheaf
+NAME=barley
+TYPE=t_grain
+VALUE=1
+WEIGHT=0.5
+CATEGORY=Provisions - Food
+SUBSECTION=Fruits
+DESCRIPTION=Barley
+ON=@Create
+   COLOR=colors_brown
+
+
+[ITEMDEF i_dough_sweet]
+ID=i_dough
+NAME=sweet dough
+TYPE=t_food_raw
+SKILLMAKE=Cooking 0.1, t_cooking
+RESOURCES=1 i_dough, 1 i_jar_honey
+CATEGORY=Provisions - Food
+SUBSECTION=Raw Food
+DESCRIPTION=Sweet Dough
+ON=@Create
+   COLOR=colors_yellow
+
+[ITEMDEF i_cake_mix]
+ID=i_cookie_mix
+NAME=cake mix
+TYPE=t_food_raw
+SKILLMAKE=Cooking 40.0,i_spoon_wood_large
+RESOURCES=1 i_dough_sweet,1 i_sugar
+WEIGHT=1
+CATEGORY=Provisions - Food
+SUBSECTION=Raw Food
+DESCRIPTION=Cake Mix
+
+
+[ITEMDEF i_unbaked_quiche]
+ID=i_quiche_unbaked
+NAME=unbaked quiche
+TYPE=t_food_raw
+TDATA1=i_baked_quiche
+RESOURCES=1 i_dough, 1 i_eggs_fresh
+SKILLMAKE=Cooking 0.1, t_cooking
+CATEGORY=Provisions - Food
+SUBSECTION=Raw Food
+DESCRIPTION=Unbaked Quiche
+ON=@Create
+   MOREM=3
+
+[ITEMDEF i_baked_quiche]
+ID=i_pie_baked
+NAME=baked quiche
+TYPE=t_food
+RESOURCES=1 i_unbaked_quiche
+SKILLMAKE=Cooking 0.1
+CATEGORY=Provisions - Food
+SUBSECTION=Baked
+DESCRIPTION=Baked Quiche
+ON=@Create
+   MOREM=3
+
+
+[ITEMDEF i_unbaked_pie_meat]
+ID=i_quiche_unbaked
+NAME=unbaked meat pie
+TYPE=t_food_raw
+TDATA1=i_baked_pie_meat
+RESOURCES=1 i_dough, 1 i_ribs_raw
+SKILLMAKE=Cooking 0.1, t_cooking
+CATEGORY=Provisions - Food
+SUBSECTION=Raw Food
+DESCRIPTION=Unbaked Meat Pie
+ON=@Create
+   MOREM=3
+
+[ITEMDEF i_baked_pie_meat]
+ID=i_pie_baked
+NAME=baked meat pie
+TYPE=t_food
+RESOURCES=1 i_unbaked_pie_meat
+SKILLMAKE=Cooking 0.1
+CATEGORY=Provisions - Food
+SUBSECTION=Baked
+DESCRIPTION=Baked Meat Pie
+ON=@Create
+   MOREM=3
+
+
+[ITEMDEF i_unbaked_pie_fruit]
+ID=i_quiche_unbaked
+NAME=unbaked fruit pie
+TYPE=t_food_raw
+TDATA1=i_baked_pie_fruit
+RESOURCES=1 i_dough, 1 i_fruit_peach
+SKILLMAKE=Cooking 0.1, t_cooking
+CATEGORY=Provisions - Food
+SUBSECTION=Raw Food
+DESCRIPTION=Unbaked Fruit Pie
+ON=@Create
+   MOREM=3
+
+[ITEMDEF i_baked_pie_fruit]
+ID=i_pie_baked
+NAME=baked fruit pie
+TYPE=t_food
+RESOURCES=1 i_unbaked_pie_fruit
+SKILLMAKE=Cooking 0.1
+CATEGORY=Provisions - Food
+SUBSECTION=Baked
+DESCRIPTION=Baked Fruit Pie
+ON=@Create
+   MOREM=3
+
+
+[ITEMDEF i_unbaked_peach_cobbler]
+ID=i_quiche_unbaked
+NAME=unbaked peach cobbler
+TYPE=t_food_raw
+TDATA1=i_baked_peach_cobbler
+RESOURCES=1 i_dough, 1 i_fruit_peach
+SKILLMAKE=Cooking 0.1, t_cooking
+CATEGORY=Provisions - Food
+SUBSECTION=Raw Food
+DESCRIPTION=Unbaked Peach Cobbler
+ON=@Create
+   MOREM=3
+
+[ITEMDEF i_baked_peach_cobbler]
+ID=i_pie_baked
+NAME=baked peach cobbler
+TYPE=t_food
+RESOURCES=1 i_unbaked_peach_cobbler
+SKILLMAKE=Cooking 0.1
+CATEGORY=Provisions - Food
+SUBSECTION=Baked
+DESCRIPTION=Baked Peach Cobbler
+ON=@Create
+   MOREM=3
+
+
+[ITEMDEF i_unbaked_pie_apple]
+ID=i_quiche_unbaked
+NAME=unbaked apple pie
+TYPE=t_food_raw
+TDATA1=i_baked_pie_apple
+RESOURCES=1 i_dough, 1 i_fruit_apple
+SKILLMAKE=Cooking 0.1, t_cooking
+CATEGORY=Provisions - Food
+SUBSECTION=Raw Food
+DESCRIPTION=Unbaked Apple Pie
+ON=@Create
+   MOREM=3
+
+[ITEMDEF i_baked_pie_apple]
+ID=i_pie_baked
+NAME=baked apple pie
+TYPE=t_food
+RESOURCES=1 i_unbaked_pie_apple
+SKILLMAKE=Cooking 0.1
+CATEGORY=Provisions - Food
+SUBSECTION=Baked
+DESCRIPTION=Baked Apple Pie
+ON=@Create
+   MOREM=3
+
+
+[ITEMDEF i_unbaked_pie_pumpkin]
+ID=i_quiche_unbaked
+NAME=unbaked pumpkin pie
+TYPE=t_food_raw
+TDATA1=i_baked_pie_pumpkin
+RESOURCES=1 i_dough, 1 i_fruit_pumpkin
+SKILLMAKE=Cooking 0.1, t_cooking
+CATEGORY=Provisions - Food
+SUBSECTION=Raw Food
+DESCRIPTION=Unbaked Pumpkin Pie
+ON=@Create
+   MOREM=3
+
+[ITEMDEF i_baked_pie_pumpkin]
+ID=i_pie_baked
+NAME=baked pumpkin pie
+TYPE=t_food
+RESOURCES=1 i_unbaked_pie_pumpkin
+SKILLMAKE=Cooking 0.1
+CATEGORY=Provisions - Food
+SUBSECTION=Baked
+DESCRIPTION=Baked Pumpkin Pie
+ON=@Create
+   MOREM=3
+
+
+[ITEMDEF i_pizza_sausage_uncooked]
+ID=i_pizza_uncooked
+NAME=uncooked sausage pizza
+TYPE=t_food_raw
+TDATA1=i_pizza_sausage
+RESOURCES=1 i_dough,1 i_cheese_wedge,1 i_sausages
+SKILLMAKE=Cooking 0.1, t_cooking
+CATEGORY=Provisions - Food
+SUBSECTION=Raw Food
+DESCRIPTION=Uncooked Sausage Pizza
+ON=@Create
+   MOREM=3
+
+[ITEMDEF i_pizza_sausage]
+ID=i_pizza
+NAME=sausage pizza
+TYPE=t_food
+RESOURCES=1 i_pizza_sausage_uncooked
+SKILLMAKE=Cooking 0.1
+CATEGORY=Provisions - Food
+SUBSECTION=Baked
+DESCRIPTION=Sausage Pizza
+ON=@Create
+   MOREM=3
+
+
+[ITEMDEF i_ale_amber]
+ID=i_bottle_ale
+NAME=Amber Ale
+TYPE=t_booze
+VALUE=24
+WEIGHT=1
+CATEGORY=Provisions - Food
+SUBSECTION=Drinks - Booze
+DESCRIPTION=Amber Ale
+ON=@Create
+	COLOR=COLOR_RED2
+
+[ITEMDEF i_ale_honey]
+ID=i_bottle_ale
+NAME=Honey Ale
+TYPE=t_booze
+VALUE=25
+WEIGHT=1
+CATEGORY=Provisions - Food
+SUBSECTION=Drinks - Booze
+DESCRIPTION=Honey Ale
+ON=@Create
+	COLOR=COLOR_O_GOLD
+
+[ITEMDEF i_ale_brown]
+ID=i_bottle_ale
+NAME=Brown Ale
+TYPE=t_booze
+VALUE=26
+WEIGHT=1
+CATEGORY=Provisions - Food
+SUBSECTION=Drinks - Booze
+DESCRIPTION=Brown Ale
+ON=@Create
+	COLOR=COLORS_BROWN
+
+[ITEMDEF i_ale_spiced]
+ID=i_bottle_ale
+NAME=Spiced Ale
+TYPE=t_booze
+VALUE=27
+WEIGHT=1
+CATEGORY=Provisions - Food
+SUBSECTION=Drinks - Booze
+DESCRIPTION=Spiced Ale
+ON=@Create
+	COLOR=02c
+
+[ITEMDEF i_ale_smoked]
+ID=i_bottle_ale
+NAME=Smoked Porter
+TYPE=t_booze
+VALUE=28
+WEIGHT=1
+CATEGORY=Provisions - Food
+SUBSECTION=Drinks - Booze
+DESCRIPTION=Smoked Porter
+ON=@Create
+	COLOR=COLOR_GRAY_DK
+
+[ITEMDEF i_ale_stout]
+ID=i_bottle_ale
+NAME=Stout
+TYPE=t_booze
+VALUE=29
+WEIGHT=1
+CATEGORY=Provisions - Food
+SUBSECTION=Drinks - Booze
+DESCRIPTION=Stout Ale
+ON=@Create
+	COLOR=COLOR_O_BLACKROCK
+
+[ITEMDEF i_ale_oktoberfest]
+ID=i_bottle_ale
+NAME=Oktoberfest Ale
+TYPE=t_booze
+VALUE=30
+WEIGHT=1
+CATEGORY=Provisions - Food
+SUBSECTION=Drinks - Booze
+DESCRIPTION=Oktoberfest Ale
+ON=@Create
+	COLOR=COLORS_ORANGE
+
+[ITEMDEF i_fish_full_moon]
+ID=i_sea_sponge
+NAME=full moon fish
+TYPE=t_fish
+CATEGORY=Provisions - Food
+SUBSECTION=Fish
+DESCRIPTION=Full Moon Fish
+ON=@Create
+	COLOR=colors_brown
+
+[ITEMDEF i_frostingbowl]
+ID=i_bowl_dough
+NAME=bowl of frosting
+ON=@Create
+   COLOR=colors_yellow
+
+
 
 [EOF]

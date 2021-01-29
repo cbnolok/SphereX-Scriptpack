@@ -59,6 +59,11 @@ elif <args>==sm_inscription
 	craftskill Inscription
 	return 1
 	endif
+elif <args>==sm_cooking
+	if <def0.scp.NewCrafting_Cooking> == 1
+	craftskill Cooking
+	return 1
+	endif
 endif
 return 0
 

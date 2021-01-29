@@ -40,8 +40,6 @@ SELL=i_deed_tower,{2 6}
 SELL=i_deed_Castle,{2 6}
 SELL=i_deed_evil_compound,{1 2}
 
-
-
 [TEMPLATE VENDOR_B_DEED_TEMPLATE]
 CATEGORY=Vendor Templates
 SUBSECTION=Buy Templates
@@ -84,6 +82,7 @@ SELL=i_pan_cookies,{30 105}
 SELL=i_pizza,{30 105}
 SELL=i_jar_honey,{30 105}
 SELL=i_dough,{30 105}
+SELL=i_rolling_pin,{1 6}
 
 [TEMPLATE VENDOR_B_BAKER_TEMPLATE]
 CATEGORY=Vendor Templates
