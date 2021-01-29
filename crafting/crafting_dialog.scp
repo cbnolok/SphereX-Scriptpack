@@ -521,7 +521,11 @@ dtext 305 388 0480 Make Item
 args = <ref1.skillmake>
 dorigin 170 112
 for 1 <argv>
-	IF !( (<ref1.skillmake.<local._for>.key>==t_carpentry) || (<ref1.skillmake.<local._for>.key>==t_tinker_tools) || (<ref1.skillmake.<local._for>.key>==t_cooking) || (<ref1.skillmake.<local._for>.key>==t_sewing_kit) || (<ref1.skillmake.<local._for>.key>==t_mortar) || (<ref1.skillmake.<local._for>.key>==i_pen_and_ink) )
+   if (<ref1.skillmake.<local._for>.key>==i_pen_and_ink) 
+      dcroppedtext 170 *20 170 20 0480 Need Pen and ink
+      continue
+   endif
+	IF !( (<ref1.skillmake.<local._for>.key>==t_carpentry) || (<ref1.skillmake.<local._for>.key>==t_tinker_tools) || (<ref1.skillmake.<local._for>.key>==t_cooking) || (<ref1.skillmake.<local._for>.key>==t_sewing_kit) || (<ref1.skillmake.<local._for>.key>==t_mortar) )
       if (<serv.skill.<ref1.skillmake.<local._for>.key>>)
          if <local.recipe> == 1
             dcroppedtext 170 *20 170 20 0480 ??????????
