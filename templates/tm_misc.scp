@@ -166,7 +166,7 @@ ITEM={ i_cape 1 i_shirt_plain 1 i_apron_half 1 i_apron_full 1 i_sash 1 i_shirt_f
 CATEGORY=Random Item Templates
 SUBSECTION=Clothing
 DESCRIPTION=Lower Body
-ITEM={ i_skirt_long 1 i_pants_short 1 i_skirt_short 1 i_kilt 1 i_pants_long 1 i_armor_female_shorts 1 i_skirt_knee 1 i_hakama 1 i_hakama_tattsuke 1 i_elven_pants 1 }
+ITEM={ i_skirt_long 1 i_pants_short 1 i_skirt_short 1 i_kilt 1 i_pants_long 1 i_armor_female_shorts 1 i_skirt_knee_3d 1 i_hakama 1 i_hakama_tattsuke 1 i_elven_pants 1 }
 
 [TEMPLATE random_clothing_footwear]
 CATEGORY=Random Item Templates
