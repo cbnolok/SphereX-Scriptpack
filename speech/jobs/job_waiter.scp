@@ -10,7 +10,7 @@ VERSION=X1
 //	job, what*do*do, food, drink, wine, ale, cider, booz, liquor, alcohol,
 //	waiter, server, waitperson, server, Service
 //
-[SPEECH jobWaiter]
+[SPEECH Spk_jobWaiter]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

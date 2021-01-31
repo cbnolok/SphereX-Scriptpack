@@ -10,7 +10,7 @@ VERSION=X1
 //	Shepherd, job, what*do*do, occupation, profession, sheep
 //
 
-[SPEECH jobShepherd]
+[SPEECH Spk_jobShepherd]
 ON=*Shepherd*
 ON=*job*
 ON=*work*

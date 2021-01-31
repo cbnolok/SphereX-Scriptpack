@@ -4,7 +4,7 @@
 //****************************************************************************
 VERSION=X1
 
-[SPEECH jobFighter]
+[SPEECH Spk_jobFighter]
 //FIGHTER
 DEFAULT=I do not understand thee.
 ON=Hi

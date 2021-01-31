@@ -9,7 +9,7 @@ VERSION=X1
 // Current Keyword List:
 //	work, labor, job, what*do*do
 //
-[SPEECH jobLaborer]
+[SPEECH Spk_jobLaborer]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

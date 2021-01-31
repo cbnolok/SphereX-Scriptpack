@@ -11,7 +11,7 @@ VERSION=X1
 // help,buy,potions,potion,healing*scrolls,job,what*do*do,profession,occupation,help,pet,hurt,injured,
 // cat,dog,bird,bear,dragon,mule,llama,horse,gorilla,buy
 //
-[SPEECH jobVet]
+[SPEECH Spk_jobVet]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

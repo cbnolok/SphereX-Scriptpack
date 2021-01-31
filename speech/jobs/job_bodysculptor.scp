@@ -4,7 +4,7 @@
 //****************************************************************************
 VERSION=X1
 
-[SPEECH jobBODYSCULPTOR]
+[SPEECH Spk_jobBODYSCULPTOR]
 ON=*buy*
 	IF (<SRC.f_isGargoyle>)
 		SRC.SYSMESSAGE Gargoyles cannot use the services of a body sculptor.

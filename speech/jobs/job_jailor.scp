@@ -10,7 +10,7 @@ VERSION=X1
 //	job, work, what*do*do, profession, occupation, jail, prison, Prisoner,
 //	guard, keeper, turnkey
 //
-[SPEECH jobJailor]
+[SPEECH Spk_jobJailor]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

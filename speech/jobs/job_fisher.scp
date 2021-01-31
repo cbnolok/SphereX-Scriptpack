@@ -4,7 +4,7 @@
 //****************************************************************************
 VERSION=X1
 
-[SPEECH jobFisher]
+[SPEECH Spk_jobFisher]
 //FISHERMAN/WOMAN
 DEFAULT=I do not understand thee.
 ON=BUY

@@ -10,7 +10,7 @@ VERSION=X1
 // Current Keyword List:
 //	job, what*do*do, trainer, train, animal, saddle, whip, dog, cat, horse
 //	=============================================================================
-[SPEECH jobAnimal]
+[SPEECH Spk_jobAnimal]
 
 ON=*job*
 ON=*work*

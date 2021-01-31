@@ -10,7 +10,7 @@ VERSION=X1
 //	job, ac*tor, what*do*do, ac-tore, stage, perform, Noble, Lord British,
 //	art, theatre, theater, costume, clothe, sissy, wuss, priss,  real job
 //
-[SPEECH jobActor]
+[SPEECH Spk_jobActor]
 ON=Hi*
 ON=Greet*
 ON=Hello*

@@ -9,7 +9,7 @@ VERSION=X1
 // Current Keyword List:
 //	job, what*do*do, profession, occupation, priest, god, Ocllo, huansuytin, Arpana
 //
-[SPEECH jobPriest]
+[SPEECH Spk_jobPriest]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

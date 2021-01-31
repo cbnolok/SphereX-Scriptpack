@@ -4,7 +4,7 @@
 //****************************************************************************
 VERSION=X1
 
-[SPEECH jobMerchantMaster]
+[SPEECH Spk_jobMerchantMaster]
 //GUILDMASTER Merchant
 DEFAULT=I do not understand thee.
 ON=Hail

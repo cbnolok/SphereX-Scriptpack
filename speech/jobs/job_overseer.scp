@@ -11,7 +11,7 @@ VERSION=X1
 //	fight, pit
 //
 
-[SPEECH jobOverseer]
+[SPEECH Spk_jobOverseer]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

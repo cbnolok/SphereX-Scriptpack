@@ -4,7 +4,7 @@
 //****************************************************************************
 VERSION=X1
 
-[SPEECH jobGUARD]
+[SPEECH Spk_jobGUARD]
 
 DEFAULT=I do not understand thee.
 

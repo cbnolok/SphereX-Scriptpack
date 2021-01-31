@@ -4,7 +4,7 @@
 //****************************************************************************
 VERSION=X1
 
-[SPEECH jobCook]
+[SPEECH Spk_jobCook]
 //COOK
 DEFAULT=I do not understand thee.
 ON=BUY

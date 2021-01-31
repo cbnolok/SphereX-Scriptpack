@@ -9,7 +9,7 @@ VERSION=X1
 // Current Keyword List:
 //   job,work,profession,occupation,what*do*do,miller,flour,mill,wheat,oat,grain
 //
-[SPEECH jobMILLER]
+[SPEECH Spk_jobMILLER]
 
 ON=*job*
 ON=*work*

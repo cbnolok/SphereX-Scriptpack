@@ -9,7 +9,7 @@ VERSION=X1
 // Current Keyword List:
 //	job, what*do*do, weave, loom, cloth, dye, cotton, wool, yarn
 //
-[SPEECH jobWeaver]
+[SPEECH Spk_jobWeaver]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

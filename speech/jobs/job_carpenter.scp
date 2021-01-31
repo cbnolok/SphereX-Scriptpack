@@ -10,7 +10,7 @@ VERSION=X1
 //	job, what*do*do, profession, occupation, skill, carpent, woodcarving, joining, tool, hammer, nail, saw, chisel, plane
 //
 
-[SPEECH jobCARPENTER]
+[SPEECH Spk_jobCARPENTER]
 
 ON=*job*
 ON=*work*

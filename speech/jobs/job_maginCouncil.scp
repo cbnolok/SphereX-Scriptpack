@@ -4,7 +4,7 @@
 //****************************************************************************
 VERSION=X1
 
-[SPEECH jobMaginCouncil]
+[SPEECH Spk_jobMaginCouncil]
 //MAGINCIA COUNCIL MEMBER
 DEFAULT=I do not understand thee.
 ON=Hail

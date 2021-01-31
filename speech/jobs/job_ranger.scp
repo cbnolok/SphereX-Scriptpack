@@ -15,7 +15,7 @@ VERSION=X1
 //
 //
 
-[SPEECH jobRANGER]
+[SPEECH Spk_jobRANGER]
 
 ON=*job*
 ON=*work*
@@ -585,7 +585,7 @@ ON=WOLF
 SAY= Bad luck, they are.  Track one and soon you may be faced with the whole pack!
 //RANDOM= All of life is a great hunt!  Except, of course, for brothels. That is like shooting fish in a barrel...
 
-[SPEECH jobRangerMaster]
+[SPEECH Spk_jobRangerMaster]
 //GUILDMASTER Ranger
 DEFAULT=I do not understand thee.
 ON=Hail

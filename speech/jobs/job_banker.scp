@@ -4,7 +4,7 @@
 //****************************************************************************
 VERSION=X1
 
-[SPEECH jobBANKER]
+[SPEECH Spk_jobBANKER]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

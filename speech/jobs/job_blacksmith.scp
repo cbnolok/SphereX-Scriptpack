@@ -11,7 +11,7 @@ VERSION=X1
 // plate,padded,chain,ring,gorget,shield,buckler,heater,helm,gauntlet,Smith,steel,forge,armour,armor,
 //
 //
-[SPEECH jobBlacksmith]
+[SPEECH Spk_jobBlacksmith]
 
 ON=*job*
 ON=*work*

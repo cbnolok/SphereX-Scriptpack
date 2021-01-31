@@ -4,7 +4,7 @@
 //****************************************************************************
 VERSION=X1
 
-[SPEECH jobWarriorMaster]
+[SPEECH Spk_jobWarriorMaster]
 //Guildmaster Warrior
 DEFAULT=I do not understand thee.
 ON=Hi

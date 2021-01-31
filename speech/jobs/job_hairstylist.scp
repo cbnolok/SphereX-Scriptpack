@@ -4,7 +4,7 @@
 //****************************************************************************
 VERSION=X1
 
-[SPEECH jobHAIRSTYLIST]
+[SPEECH Spk_jobHAIRSTYLIST]
 ON=*buy*
 	IF (<SRC.FLAGS> & statf_dead)
 		SRC.SYSMESSAGE You cannot use the services of a hairstylist right now.

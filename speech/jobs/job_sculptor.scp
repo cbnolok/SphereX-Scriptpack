@@ -9,7 +9,7 @@ VERSION=X1
 // Current Keyword List:
 //	job, what*do*do, profession, occupation, sculpt, carv, statue
 //
-[SPEECH jobSculptor]
+[SPEECH Spk_jobSculptor]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

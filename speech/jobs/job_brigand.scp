@@ -9,7 +9,7 @@ VERSION=X1
 // Current Keyword List: job,profession,occupation,what*do*do,steal,rob,theif,bandit,brigand,crime,villian
 //
 //
-[SPEECH jobBRIGAND]
+[SPEECH Spk_jobBRIGAND]
 
 ON=*job*
 ON=*work*

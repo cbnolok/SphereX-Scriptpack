@@ -8,7 +8,7 @@ VERSION=X1
 // Current Keyword List:job,occupation,what*do*do,profession,gem,sapphire,emerald,ruby,rubies,citrine,amethyst,tourmaline,
 // amber,diamond,necklace,bracelet,earring,ring,bead,gold,silver,skill,appraise,value,quality,estimate,jewel
 //
-[SPEECH jobJeweler]
+[SPEECH Spk_jobJeweler]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

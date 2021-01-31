@@ -10,7 +10,7 @@ VERSION=X1
 //	job, work, profession, occupation, what*do*do, minter, mint, mint., mint?,
 //	mint!, coin, money, currency, press, plates, die, gold, silver, copper,
 //
-[SPEECH jobMinter]
+[SPEECH Spk_jobMinter]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

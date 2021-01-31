@@ -11,7 +11,7 @@ VERSION=X1
 //	*I*sale*, *what*thou*sell*, *what*thou*sale*, *what*you*sell*, *what*you*sale*,
 //	*can*you*sell*, *can*you*sale*
 //
-[SPEECH jobSHOPKEEP]
+[SPEECH Spk_jobSHOPKEEP]
 
 ON=*what*thou*sell*
 ON=*what*thou*sale*

@@ -10,7 +10,7 @@ VERSION=X1
 //profession,what*do*do,occupation,skill,first*aid,anatomy,knowledge,bandaid,
 //items,raise*dead,cure,poison,hurt,injured
 //
-[SPEECH jobHealer]
+[SPEECH Spk_jobHealer]
 ON=*job*
 ON=*work*
 ON=*what*do*do*
@@ -540,7 +540,7 @@ ON=*bandage*
 		ENDIF
 	ENDIF
 
-[SPEECH jobHealerMaster]
+[SPEECH Spk_jobHealerMaster]
 //GUILDMASTER Healer
 // DEFAULT=I do not understand thee.
 

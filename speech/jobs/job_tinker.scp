@@ -10,7 +10,7 @@ VERSION=X1
 //	job, what*do*do, profession, occupation, tinker, clock, sextant, machine, device, part, gear, spring,
 //	sticks, wood, lumber, skill, trade
 //
-[SPEECH jobTinker]
+[SPEECH Spk_jobTinker]
 ON=*job*
 ON=*work*
 ON=*what*do*do*
@@ -240,7 +240,7 @@ ON=WOOD
 SAY=Wood?  Find a tree, take a axe and well, maybe ye shouldn't play with axes.
 //RANDOM=My grandfather's clock was to large for the shelf, so it stood ninety years on the floooooorrrr! dum dum ta de tum, la la la ....
 
-[SPEECH jobTinkerMaster]
+[SPEECH Spk_jobTinkerMaster]
 //GUILDMASTER Engineer
 DEFAULT=Thou art not well versed in logical speech!
 ON=Hail

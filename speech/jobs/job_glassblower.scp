@@ -9,7 +9,7 @@ VERSION=X1
 // Current Keyword List:
 //	job, glass, vial, jar
 //
-[SPEECH jobGLASSBLOWER]
+[SPEECH Spk_jobGLASSBLOWER]
 
 ON=*job*
 ON=*work*

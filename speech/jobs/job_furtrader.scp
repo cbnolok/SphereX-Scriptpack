@@ -12,7 +12,7 @@ VERSION=X1
 //	pie, cake, muffin, cheese, bird, ribs, mutton, chicken, carrots,
 //	corn, lettuce, peas, potatoes, stew, soup
 //
-[SPEECH jobFURTRADER]
+[SPEECH Spk_jobFURTRADER]
 
 
 ON=*job*

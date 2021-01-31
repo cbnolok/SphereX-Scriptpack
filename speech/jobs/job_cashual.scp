@@ -9,7 +9,7 @@ VERSION=X1
 // Current Keyword List:job,profession,occupation,what*do*do,mage,magic,spell,book,reagents,scroll,potion,
 //
 
-[SPEECH jobCashual]
+[SPEECH Spk_jobCashual]
 
 ON=*job*
 ON=*work*

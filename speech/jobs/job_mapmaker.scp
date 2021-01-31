@@ -8,7 +8,7 @@ VERSION=X1
 // Notes:  This is used for general information pertaining to all Britannian Mapmakers
 // Current Keyword List: what*do*do,occupation,job,profession,plot*course,chart*course,sextant,map*making,make*maps,
 //  maps,blank,empty,new,vellum,map
-[SPEECH jobMapmaker]
+[SPEECH Spk_jobMapmaker]
 
 ON=*job*
 ON=*work*

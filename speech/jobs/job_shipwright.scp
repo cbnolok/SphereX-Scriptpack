@@ -10,7 +10,7 @@ VERSION=X1
 //	job, what*do*do, profession, occupation, ship, vessel, sail, Sextant, Boat
 //
 
-[SPEECH jobShipwright]
+[SPEECH Spk_jobShipwright]
 ON=*job*
 ON=*work*
 ON=*what*do*do*
@@ -228,7 +228,7 @@ ON=SEXTANT
 SAY=Ah, no good sailor is without that position finding miracle!
 //RANDOM=I am hoping to hear of the good ship Thistle... hast thou any news?
 
-[SPEECH jobShipwrightMaster]
+[SPEECH Spk_jobShipwrightMaster]
 //GUILDMASTER Maritime
 DEFAULT=I do not understand thee.
 ON=Hi

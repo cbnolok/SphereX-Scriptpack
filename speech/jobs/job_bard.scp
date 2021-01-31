@@ -12,7 +12,7 @@ VERSION=X1
 //	where*monks, music, minstrel, troubad, play, song, tale, conservatory,
 //	bard
 //
-[SPEECH jobBard]
+[SPEECH Spk_jobBard]
 
 ON=*job*
 ON=*work*
@@ -174,7 +174,7 @@ ON=WHERE<ANY>MONKS
 SAY=Monks be here and there, but who knows exactly where?
 //RANDOM=Every artist is a cannibal, every poet is a thief.  All kill their inspiration and sing about the grief.
 
-[SPEECH jobBardMaster]
+[SPEECH Spk_jobBardMaster]
 //GUILDMASTER Bard
 DEFAULT=Perhaps things would be fine if thou spokest in a rhyme?
 ON=Hail

@@ -9,7 +9,7 @@ VERSION=X1
 // Current Keyword List:
 //	Runner, job, what*do*do, occupation, profession, message, cashual, Cashual
 //
-[SPEECH jobRunner]
+[SPEECH Spk_jobRunner]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

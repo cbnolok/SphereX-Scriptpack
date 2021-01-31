@@ -10,7 +10,7 @@ VERSION=X1
 //wench,waitress,food,lunch,breakfast,dinner
 //
 
-[SPEECH jobTavernKeeper]
+[SPEECH Spk_jobTavernKeeper]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

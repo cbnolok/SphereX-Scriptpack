@@ -10,7 +10,7 @@ VERSION=X1
 //	job, what*do*do, occupation, profession, material, architect, house, building, home
 //
 
-[SPEECH jobARCHITECT]
+[SPEECH Spk_jobARCHITECT]
 
 ON=*job*
 ON=*work*

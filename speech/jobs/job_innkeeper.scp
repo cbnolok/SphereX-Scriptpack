@@ -10,7 +10,7 @@ VERSION=X1
 //occupation,inn,for*the*night,work
 //
 //
-[SPEECH jobinnkeeper]
+[SPEECH Spk_jobinnkeeper]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

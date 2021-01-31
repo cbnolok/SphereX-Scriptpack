@@ -11,7 +11,7 @@ VERSION=X1
 // Wis*Uus,Uus*Jux,In*Mani*Ylemm,Rel*Wis,In*Mani,In*lor,In*Por*Ylem,Des*Mani,relvinian,guild
 //
 
-[SPEECH jobMage] // Non Shopkeeper
+[SPEECH Spk_jobMage] // Non Shopkeeper
 ON=*job*
 ON=*work*
 ON=*what*do*do*

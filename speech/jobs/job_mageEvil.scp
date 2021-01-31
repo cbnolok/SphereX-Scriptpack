@@ -4,7 +4,7 @@
 //****************************************************************************
 VERSION=X1
 
-[SPEECH jobMageEvil]
+[SPEECH Spk_jobMageEvil]
 DEFAULT=Speak sense or leave me.
 ON=Hi
 ON=Hello

@@ -9,7 +9,7 @@ VERSION=X1
 // Current Keyword List:
 //	job, What*do*do, prisoner, bail, jail, prison, escape
 //
-[SPEECH jobprisoner]
+[SPEECH Spk_jobprisoner]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

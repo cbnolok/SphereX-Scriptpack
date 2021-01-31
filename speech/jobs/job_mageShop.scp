@@ -4,7 +4,7 @@
 //****************************************************************************
 VERSION=X1
 
-[SPEECH jobMageShop]
+[SPEECH Spk_jobMageShop]
 ON=BUY
 	BUY
 ON=SELL
@@ -84,7 +84,7 @@ ON=WORDS OF POWER
 SAY=One must learn all the secret words of power.
 //RANDOM=Magic is the greatest gift to our world.  Do not abuse it.
 
-[SPEECH jobMageMaster]
+[SPEECH Spk_jobMageMaster]
 //GUILDMASTER of Arcane Arts (Guildmaster Mage's responses are the same as
 DEFAULT=I do not understand thee.
 ON=Hi

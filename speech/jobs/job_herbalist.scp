@@ -10,7 +10,7 @@ VERSION=X1
 //	job, work, what*do*do, profession, occupation, skill, taste, alchem, poison, herb, flower,
 //	onion
 //
-[SPEECH jobHERBALIST]
+[SPEECH Spk_jobHERBALIST]
 
 ON=*job*
 ON=*work*

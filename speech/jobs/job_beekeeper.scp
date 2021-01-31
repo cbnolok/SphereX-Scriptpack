@@ -9,7 +9,7 @@ VERSION=X1
 // Current Keyword List: job,profession,occupation,what*to*do,apiarist,bees,honey,flower
 //
 //
-[SPEECH jobBEEKEEPER]
+[SPEECH Spk_jobBEEKEEPER]
 
 ON=*job*
 ON=*work*

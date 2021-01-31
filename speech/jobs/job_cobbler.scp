@@ -9,7 +9,7 @@ VERSION=X1
 // Current Keyword List:
 //	job, what*do*do, profession, occupation, cobbler, hide, leather, shoe, boot, sandal
 //
-[SPEECH jobCOBBLER]
+[SPEECH Spk_jobCOBBLER]
 
 ON=*job*
 ON=*work*

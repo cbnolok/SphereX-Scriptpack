@@ -4,7 +4,7 @@
 //****************************************************************************
 VERSION=X1
 
-[SPEECH jobTailorMaster]
+[SPEECH Spk_jobTailorMaster]
 //GUILDMASTER Clothier
 ON=Hail
 ON=Hi

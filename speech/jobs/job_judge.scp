@@ -10,7 +10,7 @@ VERSION=X1
 //	job, work, what*do*do, occupation, profession, judge, court
 //
 
-[SPEECH jobJUDGE]
+[SPEECH Spk_jobJUDGE]
 
 ON=*job*
 ON=*work*

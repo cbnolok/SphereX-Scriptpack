@@ -9,7 +9,7 @@ VERSION=X1
 // Current Keyword List:
 //	job, what*do*do, occupation, profession, mine, shaft, hole, dig, ore
 //
-[SPEECH jobMiner]
+[SPEECH Spk_jobMiner]
 ON=*job*
 ON=*work*
 ON=*what*do*do*
@@ -125,7 +125,7 @@ ON=shaft
 SAY=Mine shafts can be deep and deadly. Aye! Deep and deadly they may be.
 //RANDOM=Oh! Sixteen tons and what did I get? Another day older and deeper in debt.
 
-[SPEECH jobMinerMaster]
+[SPEECH Spk_jobMinerMaster]
 //GUILDMASTER Miner
 DEFAULT=Art thou rock stupid?  There is no sense to what you say.
 ON=Hail

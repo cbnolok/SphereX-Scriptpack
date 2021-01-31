@@ -10,7 +10,7 @@ VERSION=X1
 //	job, what*do*do, occupation, profession, skill, appraise, evaluate, peek,
 //	gamble, game, cheat
 //
-[SPEECH jobGAMBLER]
+[SPEECH Spk_jobGAMBLER]
 
 ON=*job*
 ON=*work*

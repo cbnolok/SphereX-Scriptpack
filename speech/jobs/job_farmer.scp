@@ -12,7 +12,7 @@ VERSION=X1
 //
 
 // !!Note!!  No detail for attitude or notoriety has been added!!
-[SPEECH jobFARMER]
+[SPEECH Spk_jobFARMER]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

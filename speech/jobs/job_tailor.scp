@@ -4,7 +4,7 @@
 //****************************************************************************
 VERSION=X1
 
-[SPEECH jobTailor]
+[SPEECH Spk_jobTailor]
 //TAILOR
 DEFAULT=I do not understand thee.
 ON=BUY

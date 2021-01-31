@@ -9,7 +9,7 @@ VERSION=X1
 // Current Keyword List:
 //	job, what*do*do, profession, occupation, art, paint, portrait, picture, canvas, draw
 //
-[SPEECH jobArtist]
+[SPEECH Spk_jobArtist]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

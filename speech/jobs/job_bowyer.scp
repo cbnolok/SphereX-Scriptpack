@@ -9,7 +9,7 @@ VERSION=X1
 // Current Keyword List: job,bow,arrow,archer,cross,stick,feather,bolt,occupation,what*do*do,profession
 //
 //
-[SPEECH jobBowyer]
+[SPEECH Spk_jobBowyer]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

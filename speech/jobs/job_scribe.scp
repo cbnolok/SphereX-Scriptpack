@@ -9,7 +9,7 @@ VERSION=X1
 // Current Keyword List:
 //	job, what*do*do, profession, occupation, ink, scroll, oppressor, scribe
 //
-[SPEECH jobScribe]
+[SPEECH Spk_jobScribe]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

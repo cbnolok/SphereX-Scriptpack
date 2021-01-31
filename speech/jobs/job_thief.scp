@@ -9,7 +9,7 @@ VERSION=X1
 // Current Keyword List: authorities,guards,soldiers,Lord*British's*fork,gold,silver,copper,stole,ruffian,
 // adventurer,riches,treasure,lock,steal,fork,build,trap,hide,skill,fork*Lord*British,
 //
-[SPEECH jobTHIEF]
+[SPEECH Spk_jobTHIEF]
 
 ON=*gold*
 ON=*silver*
@@ -274,7 +274,7 @@ ON=LOCK
 SAY=A lock is but an invitation to one such as myself.
 //RANDOM=I didn't do it!
 
-[SPEECH jobThiefMaster]
+[SPEECH Spk_jobThiefMaster]
 //GUILDMASTER Thief
 DEFAULT=I do not understand thee.
 ON=Hail

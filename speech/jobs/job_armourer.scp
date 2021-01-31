@@ -11,7 +11,7 @@ VERSION=X1
 //	ring, gorget, shield, buckler, heater, helm, gauntlet, inventory, Smith,
 //	Armourer, Armorer, armor, Armour, protection, shield, skill
 //
-[SPEECH jobArmourer]
+[SPEECH Spk_jobArmourer]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

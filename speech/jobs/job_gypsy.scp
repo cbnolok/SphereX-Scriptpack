@@ -4,7 +4,7 @@
 //****************************************************************************
 VERSION=X1
 
-[SPEECH jobGypsy]
+[SPEECH Spk_jobGypsy]
 //GYPSY
 DEFAULT=I do not understand thee.
 ON=Hi

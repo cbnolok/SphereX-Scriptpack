@@ -9,7 +9,7 @@ VERSION=X1
 // Current Keyword List:
 //	job, what*do*do, profession, occupation, ranch, cattle, cow
 //
-[SPEECH jobRancher]
+[SPEECH Spk_jobRancher]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

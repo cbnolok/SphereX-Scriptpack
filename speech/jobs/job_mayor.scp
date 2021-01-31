@@ -9,7 +9,7 @@ VERSION=X1
 // Current Keyword List:
 //	job, profession, occupation, what*do*do, mayor
 //
-[SPEECH jobMayor]
+[SPEECH Spk_jobMayor]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

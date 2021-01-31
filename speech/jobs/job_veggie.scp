@@ -11,7 +11,7 @@ VERSION=X1
 //	plowshare, plowshares
 //
 
-[SPEECH jobVeggie]
+[SPEECH Spk_jobVeggie]
 // !!Note!!  No detail for attitude or notoriety has been added!!
 
 ON=*job*

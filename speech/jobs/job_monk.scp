@@ -9,7 +9,7 @@ VERSION=X1
 // Current Keyword List:
 //	job, what*do*do, profession, occupation, monk, empath, abbey, wine
 //
-[SPEECH jobMonk]
+[SPEECH Spk_jobMonk]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

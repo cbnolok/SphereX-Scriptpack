@@ -10,7 +10,7 @@ VERSION=X1
 // candle,torch,lantern,food,bread,meat,mutton,chicken,bird,ale,wine,liquor,cider,beer,drink,fruit,pear, apple
 //
 
-[SPEECH jobprovisioner]
+[SPEECH Spk_jobprovisioner]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

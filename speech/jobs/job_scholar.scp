@@ -9,7 +9,7 @@ VERSION=X1
 // Current Keyword List:
 //	what*do*do, relvinian, wisdom, knowledge, scholar
 //
-[SPEECH jobScholar]
+[SPEECH Spk_jobScholar]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

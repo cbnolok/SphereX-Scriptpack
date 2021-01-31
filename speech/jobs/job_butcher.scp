@@ -10,7 +10,7 @@ VERSION=X1
 //	job, what*do*do, butcher, profession, occupation, beef, buy, poultry, ham, cut, fresh, meat
 //
 
-[SPEECH jobBUTCHER]
+[SPEECH Spk_jobBUTCHER]
 
 ON=*job*
 ON=*work*

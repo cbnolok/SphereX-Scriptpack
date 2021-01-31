@@ -12,7 +12,7 @@ VERSION=X1
 // halberd,kryss,kitana,cutlass,dagger,crossbow,club,bullwhip,
 // bow,hammer,knife
 //
-[SPEECH jobWeaponSmith]
+[SPEECH Spk_jobWeaponSmith]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

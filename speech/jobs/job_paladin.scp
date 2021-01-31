@@ -12,7 +12,7 @@ VERSION=X1
 //kitana,cutlass,crossbow,club,bullwhip,bow,plate,padded,chain,ring,gorget,
 // bucket*helm,norse*helm,open*faced*helm,shield,bucker,helm,gauntlet
 //
-[SPEECH jobPaladin]
+[SPEECH Spk_jobPaladin]
 ON=*job*
 ON=*work*
 ON=*profession*

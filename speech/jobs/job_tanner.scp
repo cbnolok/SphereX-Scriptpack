@@ -9,7 +9,7 @@ VERSION=X1
 // Current Keyword List:
 //	job, what*do*do, occupation, profession, gloves, backpack, pouch, hide, fur
 
-[SPEECH jobTanner]
+[SPEECH Spk_jobTanner]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

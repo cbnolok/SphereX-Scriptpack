@@ -9,7 +9,7 @@ VERSION=X1
 // Current Keyword List:noble,nobility,wealthy,blueblood,blue_blood,job,occupation,what*do*do,profession,gold,diamond,
 // money,important,how*are*you,how*art*thee,how*art*thou,what's*up,are*you*well,art*thou*well
 //
-[SPEECH jobNoble]
+[SPEECH Spk_jobNoble]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

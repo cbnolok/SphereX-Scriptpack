@@ -11,7 +11,7 @@ VERSION=X1
 // cure,poison,resurrect,resurrection,raise*dead,buy,potions,potion,healing*scrolls,shrine,items,master
 //
 
-[SPEECH jobHealerWander]
+[SPEECH Spk_jobHealerWander]
 
 ON=*job*
 ON=*work*

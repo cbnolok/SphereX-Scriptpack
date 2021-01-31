@@ -15,7 +15,7 @@ VERSION=X1
 //	reagents
 //
 
-[SPEECH jobALCHEMIST]
+[SPEECH Spk_jobALCHEMIST]
 
 ON=*job*
 ON=*work*

@@ -9,7 +9,7 @@ VERSION=X1
 //	job, What*do*do, profession, occupation, skill, ability, abilities, defend, fight, weapon, sword,
 //	axe, dagger, bow, mace, hammer
 //
-[SPEECH jobWeaponsTrainer]
+[SPEECH Spk_jobWeaponsTrainer]
 ON=*job*
 ON=*work*
 ON=*what*do*do*

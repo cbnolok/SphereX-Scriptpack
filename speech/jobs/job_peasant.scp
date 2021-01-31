@@ -4,7 +4,7 @@
 //****************************************************************************
 VERSION=X1
 
-[SPEECH jobPeasant]
+[SPEECH Spk_jobPeasant]
 //PEASANT
 DEFAULT=Eh?
 ON=Hail

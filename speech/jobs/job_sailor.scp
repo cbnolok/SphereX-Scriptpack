@@ -9,7 +9,7 @@ VERSION=X1
 // Current Keyword List:
 //	p*word*?, job, what*do*do, profession, occupation, Pirate, Sailor, ship, sail
 //
-[SPEECH jobSailor]
+[SPEECH Spk_jobSailor]
 ON=*p*word*?*
 	IF ( <COMPLEXITY.HIGH> )
 		SAY Don't be callin' me a pirate, fool!
