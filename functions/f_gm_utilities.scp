@@ -30,31 +30,31 @@ FOR (<SERV.CLIENTS>)
 	ENDIF
 ENDFOR
 
-//Fonction for reinitialise all NPC spawn point
-[function f_respawnNpc]
+//Function for reinitialise all NPC spawn point
+[function f_resetAllNPC]
 SRC.SYSMESSAGE @032 REINITIALISATION OF SPAWNS ...
-local.servertic=<serv.rticks>
+local.servertick=<serv.rticks>
 forinstances i_worldgem_bit
 	IF (<type> == t_spawn_char)
-		reset //reset the spawn equivalent of a dclic
+		reset //reset the spawn equivalent of a dclick
 		timer=1
 		local.count ++
 	endif
 endfor
-SRC.SYSMESSAGE @032 <EVAL <local.count>> Spawn of NPC reset in <EVAL <serv.rticks>-<dlocal.servertic>> secs
+SRC.SYSMESSAGE @032 <EVAL <local.count>> Spawn of NPC reset in <EVAL <serv.rticks>-<dlocal.servertick>> secs
 
-//Fonction for reinitialise all ITEM spawn point
-[function f_respawnItem]
+//Function for reinitialise all ITEM spawn point
+[function f_resetAllItem]
 SRC.SYSMESSAGE @032 REINITIALISATION OF SPAWNS ...
-local.servertic=<serv.rticks>
+local.servertick=<serv.rticks>
 forinstances i_worldgem_bit
 	IF (<type> == t_spawn_item)
-		reset //reset the spawn equivalent of a dclic
+		reset //reset the spawn equivalent of a dclick
 		timer=1
 		local.count ++
 	endif
 endfor
-SRC.SYSMESSAGE @032 <EVAL <local.count>> Spawn of ITEM reset in <EVAL <serv.rticks>-<dlocal.servertic>> secs
+SRC.SYSMESSAGE @032 <EVAL <local.count>> Spawn of ITEM reset in <EVAL <serv.rticks>-<dlocal.servertick>> secs
 
 
 
