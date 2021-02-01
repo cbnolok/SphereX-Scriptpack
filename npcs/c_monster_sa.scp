@@ -2368,6 +2368,76 @@ CATEGORY=Spells
 SUBSECTION=Necromancy
 DESCRIPTION=Vampiric Embrace
 
+[CHARDEF 02ed]
+DEFNAME=c_lich_form
+NAME=lich form
+ICON=i_pet_lich
+SOUND=snd_monster_lich1
+CAN=MT_WALK|MT_RUN|MT_USEHANDS|MT_EQUIP
+DAM=50,55
+ARMOR=40
+//FOODTYPE=
+//MAXFOOD=
+//RESOURCES=
+BLOODCOLOR=colors_green
+MOVERATE=120
+//TAG.SlayerGroup=UNDEAD
+DamCold=40
+DamEnergy=50
+CATEGORY=Spells
+SUBSECTION=Necromancy
+DESCRIPTION=Lich Form
+
+
+[CHARDEF 02ee]
+//FIXME: Cannot be provoked.
+//FIXME: Cannot be peaced.
+DEFNAME=c_revenant_summoned
+NAME=summoned revenant
+ICON=i_pet_man
+SOUND=snd_monster_ghost1
+CAN=MT_WALK|MT_RUN|MT_GHOST|MT_USEHANDS|MT_EQUIP//|MT_PASSWALLS
+DAM=42,45
+ARMOR=60
+//FOODTYPE=
+//MAXFOOD=
+//RESOURCES=
+BLOODCOLOR=-1
+TAG.Barding.Diff=10000//Immune to barding
+FollowerSlots=3
+TAG.SlayerGroup=UNDEAD
+CATEGORY=Spells
+SUBSECTION=Necromancy
+DESCRIPTION=Vengeful Spirit (Revenant)
+ON=@Create
+   COLOR=colors_black
+   NPC=brain_monster
+   KARMA={-1000 -1499}
+   FAME={1000 1499}
+   STR={195 205}
+   MAXHITS={195 205}
+   DEX={145 155}
+   MAXSTAM={145 155}
+   INT={145 155}
+   MAXMANA={145 155}
+   MAGICRESISTANCE={115.0 125.0}
+   SWORDSMANSHIP={95.0 105.0}
+   TACTICS={95.0 105.0}
+   RESPHYSICAL={0 10}
+   RESCOLD={60 70}
+   RESENERGY={60 70}
+   RESFIRE={15 25}
+   RESPOISON=100
+   ITEMNEWBIE=i_deathshroud
+   COLOR=0497
+   ITEMNEWBIE=i_halberd
+   COLOR=0497
+
+[CHARDEF 02ef]
+//FIXME: Needs to be scripted (human female)
+NAME=02ef
+CAN=MT_NONMOVER|MT_NONHUM
+
 [CHARDEF 033e]
 DEFNAME=c_lich_primeval
 NAME=primeval lich
