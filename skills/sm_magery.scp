@@ -55,7 +55,7 @@ SUMMON=c_Bear_Grizzly
 
 ON=i_pet_horse_brown_lt <name>
 TEST=MAGERY 35.0
-SUMMON=HORSES
+SUMMON=c_horse_brown_lt
 
 ON=i_pet_bear_polar <name>
 TEST=MAGERY 75.0
