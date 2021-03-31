@@ -32,7 +32,7 @@ elif <src.mining> >= <eval <skillmake.1.value>-100>
          src.consume 1 <baseid>
       endif
    else
-      src.sysmessage <def.scp.craft_msg_smithsmeltneeds>
+      src.sysmessage @,,2 <def.scp.craft_msg_smithsmeltneeds>
    endif
 else
    src.sysmessage <def.scp.craft_smelt_noskill>
