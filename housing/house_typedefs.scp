@@ -453,7 +453,7 @@ DIALOGCLOSE d_house_menu
 if <argn1>
 	for <ARGN1>
 		if <REF<dLOCAL._FOR>>
-			if (<REF<dLOCAL._FOR>.TYPE>==ei_trade_house_deed)
+			if (<REF<dLOCAL._FOR>.TYPE>==t_trade_house_deed)
 				UID.<REF<dLOCAL._FOR>>.TRIGGER @HouseTraded
 				UID.<REF<dLOCAL._FOR>>.REMOVE
 			endif
