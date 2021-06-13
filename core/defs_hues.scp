@@ -90,7 +90,16 @@ tcolor_violet		109
 tcolor_violet_lt	116
 
 [DEFNAME DIALOG_COLORS]
+dcolor_gm			22818336
 dcolor_white		16777215
+dcolor_lred			1897774
 dcolor_red			15540260
+dcolor_purple		18117214
+dcolor_yelow		181172140
+dcolor_lblue		7154235
+dcolor_dblue		722958
+dcolor_lorange		720628
+dcolor_lgreen1		1621840
+dcolor_lgreen2		22616011
 
 [EOF]
