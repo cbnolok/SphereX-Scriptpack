@@ -1,0 +1,46 @@
+//***********************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereServer.net
+//***********************************************************************************
+// Save in UTF8 encoding
+//***********************************************************************************
+// Eranova
+// Multilanguage Region Creator
+// Created by Reflex. https://forum.spherecommunity.net/sshare.php?srt=1&uid=686
+// Reworked for a multilingual system  Golfin
+// Translated by Golfin
+//***********************************************************************************
+VERSION=X1
+
+[DEFNAME defs_d_Region_Record_Language_FRA]
+d_Region_FRA_Region_Record				"Créateur de région"
+d_Region_FRA_Region_Record_Notice			"Créateur de région - Commenter"
+d_Region_FRA_Region_Record_Events			"Les Events et les Flags sont utilisés par défaut."
+d_Region_FRA_Region_Record_Flags			"Sélectionnez et supprimez ceux que vous ne voulez pas."
+d_Region_FRA_Region_Record_File1			"Dans le dossier maps, les données créées sont enregistrées"
+d_Region_FRA_Region_Record_File2			"dans le fichier map_region_record.scp. Copiez la région créée"
+d_Region_FRA_Region_Record_File3			"dans le fichier de carte approprié et enregistrez.Vous devez"
+d_Region_FRA_Region_Record_File4			"redémarrer le serveur sphere pour l'activer sur le shard!"
+d_Region_FRA_Top_Left					"Supérieur gauche:"
+d_Region_FRA_Bottom_Right				"Inférieur droit:"
+d_Region_FRA_Area_Name					"Area Name:"
+d_Region_FRA_Name					"Name:"
+d_Region_FRA_Area_Group					"Group:"
+d_Region_FRA_Area_P					"P:"
+d_Region_FRA_Create					"Créer une région"
+d_Region_FRA_Target_TopLeft				"Visez la position supérieure gauche de la zone."
+d_Region_FRA_Target_BottomRight				"Visez la position inférieure droite de la zone."
+d_Region_FRA_Type_Area_Name				"Entrez le nom de la région (pas d'espaces ni d'accents!)."
+d_Region_FRA_Type_Name					"Entrez le nom de la région."
+d_Region_FRA_Type_Group					"Saisissez un nom pour le groupe."
+d_Region_FRA_Target_P					"Visez la position où vous voulez les coordonnées P."
+d_Region_FRA_Enter_Area_Name				"Vous devez entrer le nom de zone de la région!"
+d_Region_FRA_Enter_Name					"Vous devez saisir un nom de région!"
+d_Region_FRA_Enter_Group				"Vous devez saisir un nom de groupe!"
+d_Region_FRA_No_Space					"Le nom de la région ne peut pas contenir d'espaces!"
+d_Region_FRA_Area_Letters_Numbers			"Le nom de la région ne peut contenir que des mots, des chiffres et des traits de soulignement!"
+d_Region_FRA_No_Numbers					"Zone Le nom de la région ne doit pas seulement contenir des chiffres, il faut aussi ajouter un mot nom!"
+d_Region_FRA_Used					"Ce nom de région est déjà utilisé!"
+d_Region_FRA_Sys_Create					"La région est enregistrée dans un fichier /scripts/maps/sphere_map_region_record.scp..."
+
+[Eof]

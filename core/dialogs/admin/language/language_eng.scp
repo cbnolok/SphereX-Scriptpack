@@ -2,7 +2,7 @@
 // SphereServer by: SphereServer development team and Menasoft.
 // www.sphereServer.net
 //***********************************************************************************
-// Save in ANSI encoding
+// Save in UTF8 encoding
 //***********************************************************************************
 // New Multilanguage Admin
 // Created by Golfin (http://eranova.cz/) and Jhobean (https://www.uocryptonite.com/)
@@ -19,6 +19,17 @@ d_admin_ENG_Admin_Plevel_4				"Game Master"
 d_admin_ENG_Admin_Plevel_5				"Developer"
 d_admin_ENG_Admin_Plevel_6				"Administrator"
 d_admin_ENG_Admin_Plevel_7				"Owner"
+
+d_admin_ENG_GM_function					"GM function"
+d_admin_ENG_GM_function_Info				"GM and Admin tools for shard handling accessible by weed"
+d_admin_ENG_Send_Message				"Send a message to the world"
+d_admin_ENG_No_Diakritika				"The message must be written without diacritics, otherwise nonsense will be displayed!"
+d_admin_ENG_Commands					"List of basic and most used commands"
+d_admin_ENG_Shutdown_Info				"does not work yet (Client and sphere freeze)!"
+d_admin_ENG_Resync					"ATTENTION - The server scripts will be updated!"
+d_admin_ENG_Disconnect					"ATTENTION - In 15 minutes all players will be disconnected!"
+d_admin_ENG_Shutdown					"ATTENTION - In 15 minutes the server will be shut down, disconnect!"
+d_admin_ENG_Region_Creator				"Region Creator"
 
 d_admin_ENG_clients					"Clients:"
 d_admin_ENG_Found					"Found"
@@ -67,6 +78,7 @@ d_admin_ENG_Resurrect_Player				"Resurrect the player"
 d_admin_ENG_Kill_Player					"Kill the player"
 d_admin_ENG_Disconnect_Player				"Disconnect this player from the server"
 d_admin_ENG_Ban_Player					"Disconnect and ban this player from the server"
+d_admin_ENG_Set_All_Flags				"Set All Flags"
 d_admin_ENG_Set_Flags					"Set flags"
 d_admin_ENG_Race					"Race"
 d_admin_ENG_Human					"Human"
@@ -143,11 +155,12 @@ d_admin_ENG_CountryName_ENU				"USA"
 d_admin_ENG_CountryName_ENC				"Canada"
 d_admin_ENG_CountryName_FRA				"France"
 d_admin_ENG_CountryName_ITA				"Italy"
+d_admin_ENG_CountryName_ESP				"Spain"
 d_admin_ENG_CountryName_JPN				"Japan"
 d_admin_ENG_CountryName_PTB				"Brazil"
 d_admin_ENG_CountryName_PTG				"Portugal"
 d_admin_ENG_CountryName_RUS				"Russia"
-d_admin_ENG_CountryName_CSY				"Czechia"
+d_admin_ENG_CountryName_ENG				"Czechia"
 d_admin_ENG_CountryName_SKY				"Slovakia"
 d_admin_ENG_CountryName_FRB				"Belgium"
 d_admin_ENG_CountryName_FRC				"Canada"

@@ -1,0 +1,46 @@
+//***********************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereServer.net
+//***********************************************************************************
+// Save in UTF8 encoding
+//***********************************************************************************
+// Eranova
+// Multilanguage Region Creator
+// Created by Reflex. https://forum.spherecommunity.net/sshare.php?srt=1&uid=686
+// Reworked for a multilingual system  Golfin
+// Translated by Golfin
+//***********************************************************************************
+VERSION=X1
+
+[DEFNAME defs_d_Region_Record_Language_ENG]
+d_Region_ENG_Region_Record				"Region creator "
+d_Region_ENG_Region_Record_Notice			"Region kreator - Notes "
+d_Region_ENG_Region_Record_Events			"Events and Flags are used by default."
+d_Region_ENG_Region_Record_Flags			"Select and delete the ones you don't want."
+d_Region_ENG_Region_Record_File1			"In the maps folder, the created data is saved in the"
+d_Region_ENG_Region_Record_File2			"map_region_record.scp file. Copy the created region to"
+d_Region_ENG_Region_Record_File3			"the appropriate map file and save. You need to restart"
+d_Region_ENG_Region_Record_File4			"the sphere server to activate on the shard!"
+d_Region_ENG_Top_Left					"Upper left corner:"
+d_Region_ENG_Bottom_Right				"Lower right corner:"
+d_Region_ENG_Area_Name					"Area Name:"
+d_Region_ENG_Name					"Name:"
+d_Region_ENG_Area_Group					"Group:"
+d_Region_ENG_Area_P					"P:"
+d_Region_ENG_Create					"Create a region "
+d_Region_ENG_Target_TopLeft				"Aim for the upper left position of the area."
+d_Region_ENG_Target_BottomRight				"Aim for the lower right position of the area."
+d_Region_ENG_Type_Area_Name				"Enter the Area name of the Region (No spaces or accents!)."
+d_Region_ENG_Type_Name					"Enter the name of the region. "
+d_Region_ENG_Type_Group					"Enter a name for the group. "
+d_Region_ENG_Target_P					"Aim at the position where you want the P coordinates."
+d_Region_ENG_Enter_Area_Name				"You must enter the Area name of the region!"
+d_Region_ENG_Enter_Name					"You must enter a region name! "
+d_Region_ENG_Enter_Group				"You must enter a group name! "
+d_Region_ENG_No_Space					"Area region name cannot contain spaces!"
+d_Region_ENG_Area_Letters_Numbers			"Area region name may contain only words, numbers and underscores!"
+d_Region_ENG_No_Numbers					"Area The name of the region must not only contain numbers, also add a word name!"
+d_Region_ENG_Used					"This region name is already in use!"
+d_Region_ENG_Sys_Create					"The region is saved to a file /scripts/maps/sphere_map_region_record.scp..."
+
+[Eof]

@@ -1,0 +1,46 @@
+//***********************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereServer.net
+//***********************************************************************************
+// Save in UTF8 encoding
+//***********************************************************************************
+// Eranova
+// Multilanguage Region Creator
+// Created by Reflex. https://forum.spherecommunity.net/sshare.php?srt=1&uid=686
+// Reworked for a multilingual system  Golfin
+// Translated by Golfin
+//***********************************************************************************
+VERSION=X1
+
+[DEFNAME defs_d_Region_Record_Language_ITA]
+d_Region_ITA_Region_Record				"Creatore di regione"
+d_Region_ITA_Region_Record_Notice			"Creatore di regione - Commento"
+d_Region_ITA_Region_Record_Events			"Gli eventi ei flag vengono utilizzati per impostazione"
+d_Region_ITA_Region_Record_Flags			"predefinita. Seleziona ed elimina quelli che non desideri."
+d_Region_ITA_Region_Record_File1			"Nella cartella delle mappe, i dati creati vengono"
+d_Region_ITA_Region_Record_File2			"salvati nel file map_region_record.scp. Copia la regione"
+d_Region_ITA_Region_Record_File3			"creata nel file mappa appropriato e salva. Devi riavviare"
+d_Region_ITA_Region_Record_File4			"il server della sfera per attivare il frammento!"
+d_Region_ITA_Top_Left					"Superiore sinistro:"
+d_Region_ITA_Bottom_Right				"In basso a destra:"
+d_Region_ITA_Area_Name					"Area Name:"
+d_Region_ITA_Name					"Name:"
+d_Region_ITA_Area_Group					"Group:"
+d_Region_ITA_Area_P					"P:"
+d_Region_ITA_Create					"Crea una regione"
+d_Region_ITA_Target_TopLeft				"Mira alla posizione in alto a sinistra dell'area."
+d_Region_ITA_Target_BottomRight				"Mira alla posizione in basso a destra dell'area."
+d_Region_ITA_Type_Area_Name				"Inserisci il nome della regione dell'area (senza spazi o accenti!)."
+d_Region_ITA_Type_Name					"Inserisci il nome della regione. "
+d_Region_ITA_Type_Group					"Inserisci un nome per il gruppo."
+d_Region_ITA_Target_P					"Mira alla posizione in cui desideri le coordinate P."
+d_Region_ITA_Enter_Area_Name				"Devi inserire il nome dell'area della regione! "
+d_Region_ITA_Enter_Name					"Devi inserire un nome di regione!"
+d_Region_ITA_Enter_Group				"Devi inserire un nome di gruppo!"
+d_Region_ITA_No_Space					"Il nome della regione dell'area non può contenere spazi!"
+d_Region_ITA_Area_Letters_Numbers			"Il nome della regione dell'area può contenere solo parole, numeri e trattini bassi!"
+d_Region_ITA_No_Numbers					"Area Il nome della regione non deve contenere solo numeri, ma deve anche aggiungere un nome di parola! "
+d_Region_ITA_Used					"Questo nome di regione è già in uso! "
+d_Region_ITA_Sys_Create					"La regione viene salvata in un file /scripts/maps/sphere_map_region_record.scp..."
+
+[Eof]

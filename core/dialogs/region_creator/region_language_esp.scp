@@ -1,0 +1,46 @@
+//***********************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereServer.net
+//***********************************************************************************
+// Save in UTF8 encoding
+//***********************************************************************************
+// Eranova
+// Multilanguage Region Creator
+// Created by Reflex. https://forum.spherecommunity.net/sshare.php?srt=1&uid=686
+// Reworked for a multilingual system  Golfin
+// Translated by GorGo
+//***********************************************************************************
+VERSION=X1
+
+[DEFNAME defs_d_Region_Record_Language_ESP]
+d_Region_ESP_Region_Record				"Creador de Regiones"
+d_Region_ESP_Region_Record_Notice			"Creador de Región - Notas"
+d_Region_ESP_Region_Record_Events			"Los eventos y flags se insertan de forma"
+d_Region_ESP_Region_Record_Flags			"predeterminada, elimina los que sobren."
+d_Region_ESP_Region_Record_File1			"En la carpeta mapas, el archivo map_region_record.scp"
+d_Region_ESP_Region_Record_File2			"guarda los datos creados. Copia la región creada en"
+d_Region_ESP_Region_Record_File3			"el archivo de mapa apropiado y guárdalo. ¡Para"
+d_Region_ESP_Region_Record_File4			"activarlo Sphere Server necesita reiniciarse!"
+d_Region_ESP_Top_Left					"Esquina sup. izq.:"
+d_Region_ESP_Bottom_Right				"Esquina inf. der.:"
+d_Region_ESP_Area_Name					"Nombre del área:"
+d_Region_ESP_Name					"Nombre:"
+d_Region_ESP_Area_Group					"Grupo:"
+d_Region_ESP_Area_P					"P:"
+d_Region_ESP_Create					"Crear región"
+d_Region_ESP_Target_TopLeft				"Apunta a la posición superior izquierda del área."
+d_Region_ESP_Target_BottomRight				"Apunta a la posición inferior derecha del área."
+d_Region_ESP_Type_Area_Name				"Escribe el nombre del área de la región (¡sin espacios ni acentos!)."
+d_Region_ESP_Type_Name					"Escribe el nombre de la región."
+d_Region_ESP_Type_Group					"Escribe el nombre para el grupo"
+d_Region_ESP_Target_P					"Apunta a la posición donde quieras las coordenadas P."
+d_Region_ESP_Enter_Area_Name				"¡Debes ingresar el nombre de área de la región!"
+d_Region_ESP_Enter_Name					"¡Debes ingresar un nombre de región!"
+d_Region_ESP_Enter_Group				"¡Debes ingresar un nombre de grupo!"
+d_Region_ESP_No_Space					"¡El nombre de la región del área no puede contener espacios!"
+d_Region_ESP_Area_Letters_Numbers			"¡El nombre del área solo puede contener palabras, números y guiones bajos!"
+d_Region_ESP_No_Numbers					"Área El nombre de la región no solo debe contener números, ¡también debe agregar un nombre de palabra!"
+d_Region_ESP_Used					"¡Este nombre de región ya está en uso!"
+d_Region_ESP_Sys_Create					"La región se guarda en el archivo /scripts/maps/sphere_map_region_record.scp..."
+
+[Eof]

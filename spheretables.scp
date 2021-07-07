@@ -47,6 +47,8 @@ core/serv_triggers.scp
 core/magic_preaos.scp
 core/dialogs/
 core/dialogs/admin/
+core/dialogs/admin/language/
+core/dialogs/region_creator/
 //core/dialogs/legacy/
 skills/
 speech/

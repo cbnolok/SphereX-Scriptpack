@@ -1,0 +1,246 @@
+//***********************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereServer.net
+//***********************************************************************************
+// Save in UTF8 encoding
+//***********************************************************************************
+// Multilanguage Region Creator
+// Created by Reflex. https://forum.spherecommunity.net/sshare.php?srt=1&uid=686
+// Reworked for a multilingual system  Golfin
+//***********************************************************************************
+VERSION=X1
+
+//The script automatic find your langage and set the menu.
+//If you want to force a language, juste put Local.Lang=XXX 
+If (!strcmp(<Account.Lang>,CSY))
+   Local.Lang=<Account.Lang>
+Elif (!strcmp(<Account.Lang>,DEU))
+   Local.Lang=<Account.Lang>
+Elif (!strcmp(<Account.Lang>,ENG)) || (!strcmp(<Account.Lang>,ENU))
+   Local.Lang=ENG   
+Elif (!strcmp(<Account.Lang>,FRA)) || (!strcmp(<Account.Lang>,FRB)) || (!strcmp(<Account.Lang>,FRC))
+   Local.Lang=FRA  
+Elif (!strcmp(<Account.Lang>,ITA))
+   Local.Lang=<Account.Lang> 
+Elif (!strcmp(<Account.Lang>,SKY))
+   Local.Lang=<Account.Lang> 
+Elif (!strcmp(<Account.Lang>,TRK))
+   Local.Lang=<Account.Lang> 
+Elif (!strcmp(<Account.Lang>,ESP))
+   Local.Lang=<Account.Lang>
+Else //All other langage
+   Local.Lang=ENG 
+Endif
+CTag.AccountLang=<Local.Lang>
+SDialog d_Region_Record
+
+[PLEVEL 5]
+f_Region_Record
+
+[FUNCTION f_Region_Record]
+DIALOG d_Region_Record
+
+[DIALOG d_Region_Record]
+50,50
+Page 0
+
+Resizepic 0 0 5054 350 220
+Gumppictiled 5 5 340 210 2604
+Gumppictiled 5 5 340 25 2624
+Gumppictiled 5 35 340 180 2624
+Checkertrans 5 5 340 210
+
+DText 10 7 0c1 <Def.d_Region_<Src.CTag0.AccountLang>_Region_Record>
+
+Button 310 7 4017 4018 1 0 0
+Button 280 7 4029 4031 1 0 7
+
+DText 50 40 0c1 <Def.d_Region_<Src.CTag0.AccountLang>_Top_Left>
+gumppictiled 160 40 180 21 87
+Checkertrans 162 42 176 17
+DText 170 40 0480 <CTag0.Region.Record.TopLeft>
+Button 10 40 4005 4006 1 0 1
+
+DText 50 65 0c1 <Def.d_Region_<Src.CTag0.AccountLang>_Bottom_Right>
+gumppictiled 160 65 180 21 87
+Checkertrans 162 67 176 17
+DText 170 65 0480 <CTag0.Region.Record.BottomRight>
+Button 10 65 4005 4006 1 0 2
+
+DText 50 90 0c1 <Def.d_Region_<Src.CTag0.AccountLang>_Area_Name>
+gumppictiled 160 90 180 21 87
+Checkertrans 162 92 176 17
+DText 170 90 0480 [AREADEF a_<CTag0.Region.Record.Area.Name>]
+Button 10 90 4005 4006 1 0 3
+
+DText 50 115 0c1 <Def.d_Region_<Src.CTag0.AccountLang>_Name>
+gumppictiled 160 115 180 21 87
+Checkertrans 162 117 176 17
+DText 170 115 0480 <CTag0.Region.Record.Name>
+Button 10 115 4005 4006 1 0 4
+
+DText 50 140 0c1 <Def.d_Region_<Src.CTag0.AccountLang>_Area_Group>
+gumppictiled 160 140 180 21 87
+Checkertrans 162 142 176 17
+DText 170 140 0480 <CTag0.Region.Record.Group>
+Button 10 140 4005 4006 1 0 5
+
+DText 50 165 0c1 <Def.d_Region_<Src.CTag0.AccountLang>_Area_P>
+gumppictiled 160 165 180 21 87
+Checkertrans 162 167 176 17
+DText 170 165 0480 <CTag0.Region.Record.P>
+Button 10 165 4005 4006 1 0 6
+
+DText 210 187 0c1 <Def.d_Region_<Src.CTag0.AccountLang>_Create>
+Button 310 187 4023 4025 1 0 10
+
+[DIALOG d_Region_Record Button]
+On=0
+   ClearCTags Region.Record
+
+On=1 //Top Left
+   Sysmessage @tcolor_orange <Def.d_Region_<Src.CTag0.AccountLang>_Target_TopLeft>
+   Targetfg f_Region_Record_TopLeft
+
+On=2 //Bottom Right
+   Sysmessage @tcolor_orange <Def.d_Region_<Src.CTag0.AccountLang>_Target_BottomRight>
+   Targetfg f_Region_Record_BottomRight
+
+On=3 //Area Name
+   Sysmessage @tcolor_orange <Def.d_Region_<Src.CTag0.AccountLang>_Type_Area_Name>
+   PromptConsole f_Region_Record_Area_Name
+
+On=4 //Name
+   Sysmessage @tcolor_orange <Def.d_Region_<Src.CTag0.AccountLang>_Type_Name>
+   PromptConsole f_Region_Record_Name
+
+On=5 //Group
+   Sysmessage @tcolor_orange <Def.d_Region_<Src.CTag0.AccountLang>_Type_Group>
+   PromptConsole f_Region_Record_Group
+
+On=6 //Area P
+   Sysmessage @tcolor_orange <Def.d_Region_<Src.CTag0.AccountLang>_Target_P>
+   Targetfg f_Region_Record_P
+
+On=7 //Area P   
+   DIALOG d_Region_Record_Notice
+
+On=10 //Create
+   f_Region_Record_C10 <CTag0.Region.Record.Area.Name>
+
+[Function f_Region_Record_TopLeft]
+   CTag0.Region.Record.TopLeft = <TargP.X>,<TargP.Y>
+   DIALOG d_Region_Record
+
+[Function f_Region_Record_BottomRight]
+   CTag0.Region.Record.BottomRight = <Eval <TargP.X>+1>,<Eval <TargP.Y>+1>
+   DIALOG d_Region_Record
+
+[FUNCTION f_Region_Record_Area_Name]
+If <ISEMPTY <ARGS>>
+   Src.Sysmessage @tcolor_red <Def.d_Region_<Src.CTag0.AccountLang>_Enter_Name> 
+   DIALOG d_Region_Record
+Elseif !<ISEMPTY <STREAT <ARGS>>>
+   Src.Sysmessage @tcolor_red <Def.d_Region_<Src.CTag0.AccountLang>_No_Space> 
+   DIALOG d_Region_Record
+Elseif <ISNUM <ARGS>>
+   Src.Sysmessage @tcolor_red <Def.d_Region_<Src.CTag0.AccountLang>_No_Numbers> 
+   DIALOG d_Region_Record
+Elseif !<ISEMPTY <Def.<ARGS>>>
+   Src.Sysmessage @tcolor_red <Def.d_Region_<Src.CTag0.AccountLang>_Used>  
+   DIALOG d_Region_Record
+Else
+   CTag.Region.Record.Area.Name = <ARGS>
+   DIALOG d_Region_Record
+Endif
+
+[FUNCTION f_Region_Record_Name]
+If <ISEMPTY <ARGS>>
+   Src.Sysmessage @tcolor_red <Def.d_Region_<Src.CTag0.AccountLang>_Enter_Name> 
+   DIALOG d_Region_Record
+Elseif !<ISEMPTY <Def.<ARGS>>>
+   Src.Sysmessage @tcolor_red <Def.d_Region_<Src.CTag0.AccountLang>_Used>  
+   DIALOG d_Region_Record
+Else
+   CTag.Region.Record.Name = <ARGS>
+   DIALOG d_Region_Record
+Endif
+
+[FUNCTION f_Region_Record_Group]
+If <ISEMPTY <ARGS>>
+   Src.Sysmessage @tcolor_red <Def.d_Region_<Src.CTag0.AccountLang>_Enter_Group> 
+   DIALOG d_Region_Record
+Elseif !<ISEMPTY <Def.<ARGS>>>
+   Src.Sysmessage @tcolor_red <Def.d_Region_<Src.CTag0.AccountLang>_Used>  
+   DIALOG d_Region_Record
+Else
+   CTag.Region.Record.Group = <ARGS>
+   DIALOG d_Region_Record
+Endif
+
+[Function f_Region_Record_P]
+   CTag.Region.Record.P = <TargP>
+   DIALOG d_Region_Record
+
+[FUNCTION f_Region_Record_C10]
+CTag.region_rect = <CTag0.Region.Record.TopLeft>,<CTag0.Region.Record.BottomRight>,<Map>
+If <ISEMPTY <ARGS>>
+   Src.Sysmessage @tcolor_red <Def.d_Region_<Src.CTag0.AccountLang>_Enter_Name>
+   DIALOG d_Region_Record
+   Return 1
+ElseIf !<ISEMPTY <STREAT <ARGS>>>
+   Src.Sysmessage @tcolor_red <Def.d_Region_<Src.CTag0.AccountLang>_No_Space>
+   DIALOG d_Region_Record
+   Return 1
+ElseIf <ISNUM <ARGS>>
+   Src.Sysmessage @tcolor_red <Def.d_Region_<Src.CTag0.AccountLang>>_No_Numbers> 
+   DIALOG d_Region_Record
+   Return 1
+ElseIf !<ISEMPTY <Def.<ARGS>>>
+   Src.Sysmessage @tcolor_red <Def.d_Region_<Src.CTag0.AccountLang>_Used>  
+   DIALOG d_Region_Record
+   Return 1
+Else
+   Src.Sysmessage @tcolor_green <Def.d_Region_<Src.CTag0.AccountLang>_Sys_Create>
+Endif
+
+File.Mode.Append	
+File.Mode.SetDefault
+Local.File = <File.Open scripts/maps/map_region_record.scp>
+If <Local.File>		
+   File.Writeline " "
+   File.Writeline [AREADEF a_<CTag0.Region.Record.Area.Name>]
+   File.Writeline EVENTS=r_default,r_default_rock,r_default_water,r_default_tree,r_default_grass
+   File.Writeline NAME=<CTag0.Region.Record.Name>	//<ARGS>
+   File.Writeline FLAGS=region_antimagic_all|region_antimagic_recall_in|region_antimagic_recall_out|region_antimagic_gate|region_antimagic_teleport|region_antimagic_damage|region_flag_ship|region_flag_nobuilding|region_flag_announce|region_flag_insta_logout|region_flag_underground|region_flag_nodecay|region_flag_safe|region_flag_no_pvp|region_flag_arena|region_flag_nomining|region_flag_walk_noblockheight
+   File.Writeline GROUP=<CTag0.Region.Record.Group>
+   File.Writeline P=<CTag0.Region.Record.P>
+   File.Writeline RECT=<CTag0.Region_Rect>
+   File.Close
+Endif
+
+[DIALOG d_Region_Record_Notice]
+50,50
+Page 0
+
+Resizepic 0 0 5054 350 220
+Gumppictiled 5 5 340 210 2604
+Gumppictiled 5 5 340 25 2624
+Gumppictiled 5 35 340 180 2624
+Checkertrans 5 5 340 210
+
+DText 20 7 0c1 <Def.d_Region_<Src.CTag0.AccountLang>_Region_Record_Notice>
+
+Button 310 7 4017 4018 1 0 0
+DText 20 40 0480 <Def.d_Region_<Src.CTag0.AccountLang>_Region_Record_Events>
+DText 20 65 0480 <Def.d_Region_<Src.CTag0.AccountLang>_Region_Record_Flags>
+DText 20 90 0480 <Def.d_Region_<Src.CTag0.AccountLang>_Region_Record_File1>
+DText 20 115 0480 <Def.d_Region_<Src.CTag0.AccountLang>_Region_Record_File2>
+DText 20 140 0480 <Def.d_Region_<Src.CTag0.AccountLang>_Region_Record_File3>
+DText 20 165 0480 <Def.d_Region_<Src.CTag0.AccountLang>_Region_Record_File4>
+
+[DIALOG d_Region_Record_Notice Button]
+On=0
+   DIALOG d_Region_Record
+
+[Eof]

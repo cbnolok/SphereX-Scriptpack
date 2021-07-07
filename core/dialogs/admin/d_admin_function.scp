@@ -1,0 +1,174 @@
+//***********************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereServer.net
+//***********************************************************************************
+// Save in UTF8 encoding
+//***********************************************************************************
+// New Multilanguage Admin
+// Created by Golfin (http://eranova.cz/)
+//***********************************************************************************
+Version=X1
+
+[DIALOG d_SphereAdmin_function]
+50,50
+Src.Dialogclose d_SphereAdmin
+
+Page 0 // Basic layout
+Resizepic 0 0 5054 652 507
+Gumppictiled 5 5 640 497 2604
+Gumppictiled 5 5 640 25 2624
+Gumppictiled 5 480 640 22 2624
+Gumppictiled 5 35 640 440 2624
+Checkertrans 5 5 640 497
+
+DText 10 7 0c1 SphereServer <Src.Version> Admin Panel (<Serv.Servname>) - <Def.d_admin_<Src.CTag0.AccountLang>_GM_function>
+Button 615 5 4017 4018 1 0 0
+DText 10 35 0c1 <Def.d_admin_<Src.CTag0.AccountLang>_GM_function_Info>
+
+// Sending world news and news
+If (<Account.Plevel> > 3)
+   DText 10 60 025 <Def.d_admin_<Src.CTag0.AccountLang>_No_Diakritika>
+   Button 10 80 4005 4006 1 0 1
+   DText 45 80 2048 <Def.d_admin_<Src.CTag0.AccountLang>_Send_Message>
+   gumppictiled 190 82 450 18 87
+   Checkertrans 192 84 446 14
+   DTextentry 200 80 446 18 0480 0
+Endif
+
+// Overview of basic commands
+If (<Account.Plevel> > 2)
+   DText 10 120 0c1 <Def.d_admin_<Src.CTag0.AccountLang>_Commands>
+   Button 10 140 4005 4006 1 0 2
+   DText 45 140 2048 Invis
+   Button 10 160 4005 4006 1 0 3
+   DText 45 160 2048 Invul
+   Button 10 180 4005 4006 1 0 4
+   DText 45 180 2048 Info
+   Button 10 200 4005 4006 1 0 5
+   DText 45 200 2048 Tele
+   Button 10 220 4005 4006 1 0 6
+   DText 45 220 2048 MTele
+   Button 10 240 4005 4006 1 0 7
+   DText 45 240 2048 Nightsight
+Endif
+If (<Account.Plevel> > 3)
+   Button 110 140 4005 4006 1 0 8
+   DText 145 140 2048 Dupe
+   Button 110 160 4005 4006 1 0 9
+   DText 145 160 2048 Remove
+   Button 110 180 4005 4006 1 0 10
+   DText 145 180 2048 Nuke
+   Button 110 200 4005 4006 1 0 11
+   DText 145 200 2048 Kill
+   Button 110 220 4005 4006 1 0 12
+   DText 145 220 2048 Resurrect
+   Button 110 240 4005 4006 1 0 13
+   DText 145 240 2048 Disconnect
+Endif
+If (<Account.Plevel> > 4)
+   Button 220 140 4005 4006 1 0 14
+   DText 260 140 2048 Resync
+   Button 220 160 4005 4006 1 0 15
+   DText 260 160 2048 Save
+   Button 220 180 4005 4006 1 0 16
+   DText 260 180 2048 Shutdown - <Def.d_admin_<Src.CTag0.AccountLang>_Shutdown_Info>
+   Button 220 200 4005 4006 1 0 17
+   DText 260 200 2048 <Def.d_admin_<Src.CTag0.AccountLang>_Resync>
+   Button 220 220 4005 4006 1 0 18
+   DText 260 220 2048 <Def.d_admin_<Src.CTag0.AccountLang>_Disconnect>
+   Button 220 240 4005 4006 1 0 19
+   DText 260 240 2048 <Def.d_admin_<Src.CTag0.AccountLang>_Shutdown>
+Endif
+If (<Account.Plevel> > 4)
+   Button 10 280 4005 4006 1 0 20
+   DText 45 280 0c1 <Def.d_admin_<Src.CTag0.AccountLang>_Region_Creator>
+Endif
+
+[DIALOG d_SphereAdmin_function Button]
+
+On=0
+   Dialog d_SphereAdmin
+
+On=1
+   Serv.Allclients Sysmessage @<Def.World_Sysmessage_Color>,0,4,enu <ArgTxt[0]>
+   DIALOG d_SphereAdmin_function
+
+On=2
+   Src.invis
+   DIALOG d_SphereAdmin_function
+
+On=3
+   Src.invul
+   DIALOG d_SphereAdmin_function
+
+On=4
+   Src.info
+   DIALOG d_SphereAdmin_function
+
+On=5
+   Src.tele
+   DIALOG d_SphereAdmin_function
+
+On=6
+   Src.t
+   DIALOG d_SphereAdmin_function
+
+On=7
+   Src.nightsight
+   DIALOG d_SphereAdmin_function
+
+On=8
+   Src.set dupe
+   DIALOG d_SphereAdmin_function
+
+On=9
+   Src.set remove
+   DIALOG d_SphereAdmin_function
+
+On=10
+   nuke
+   DIALOG d_SphereAdmin_function
+
+On=11
+   Src.set kill
+   DIALOG d_SphereAdmin_function
+
+On=12
+   Src.set Resurrect
+   DIALOG d_SphereAdmin_function
+
+On=13
+   Src.set Disconnect
+   DIALOG d_SphereAdmin_function
+
+On=14
+   Serv.Resync
+   DIALOG d_SphereAdmin_function
+
+On=15
+   Serv.Save
+   DIALOG d_SphereAdmin_function
+
+On=16
+   Serv.Shutdown
+   DIALOG d_SphereAdmin_function
+
+On=17
+   Serv.Allclients Sysmessage @<Def.ATTENTION_Sysmessage_Color>,0,4,enu <Def.d_admin_<Src.CTag0.AccountLang>_Resync_Sys>
+   DIALOG d_SphereAdmin_function
+
+On=18
+   Serv.Allclients Sysmessage @<Def.ATTENTION_Sysmessage_Color>,0,4,enu <Def.d_admin_<Src.CTag0.AccountLang>_Disconnect_Sys>
+   DIALOG d_SphereAdmin_function
+
+On=19
+   Serv.Allclients Sysmessage @<Def.ATTENTION_Sysmessage_Color>,0,4,enu <Def.d_admin_<Src.CTag0.AccountLang>_Shutdown_Sys>
+   DIALOG d_SphereAdmin_function
+
+On=20
+   ClearCTags Dialog.Admin
+   f_Region_Record
+
+
+
+[EOF]

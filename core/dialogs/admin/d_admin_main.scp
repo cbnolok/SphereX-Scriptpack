@@ -18,7 +18,7 @@ CTag.Dialog.Admin.Page=1
 CTag.Dialog.Admin.MaxPage=<Eval (((<CTag0.Dialog.Admin.Clients>-1)/20)+1)>
 
 //The script automatic find your langage and set the menu.
-//If you want to force a langage, juste put Local.Lang=XXX 
+//If you want to force a language, just put CTag.AccountLang.Lang=XXX 
 If (!strcmp(<Account.Lang>,CSY))
    Local.Lang=<Account.Lang>
 Elif (!strcmp(<Account.Lang>,DEU))
@@ -33,6 +33,8 @@ Elif (!strcmp(<Account.Lang>,SKY))
    Local.Lang=<Account.Lang> 
 Elif (!strcmp(<Account.Lang>,TRK))
    Local.Lang=<Account.Lang> 
+Elif (!strcmp(<Account.Lang>,ESP))
+   Local.Lang=<Account.Lang>
 Else //All other langage
    Local.Lang=ENG 
 Endif
@@ -74,10 +76,18 @@ Checkertrans 5 5 640 497
 
 DText 10 7 0c1 SphereServer <Src.Version> Admin Panel (<Serv.Servname>) - <Def.d_admin_<Src.CTag0.AccountLang>_clients> <QVal (<CTag0.Dialog.Admin.Search>)? <Def.d_admin_<Src.CTag0.AccountLang>_Found> <dCTag0.Dialog.Admin.Clients> <Def.d_admin_<Src.CTag0.AccountLang>_Results> : <dCTag0.Dialog.Admin.Clients>>
 Button 615 5 4017 4018 1 0 0
+serv.log <Src.CTag0.AccountLang>
+
+If (<Def0.Admin_GM_Function> = 1)
+   If (<Account.Plevel> > 1)
+      DText 415 7 0480 <Def.d_admin_<Src.CTag0.AccountLang>_GM_function>
+      Button 490 5 4029 4031 1 0 5
+   Endif
+Endif
 
 If (<Account.Plevel> >= <Def0.Admin_ReqPlevElsearch>)
    If (<CTag0.Dialog.Admin.Search>)
-      DText 530 7 0480 <Def.d_admin_<Src.CTag0.AccountLang>_Clear>
+      DText 528 7 0480 <Def.d_admin_<Src.CTag0.AccountLang>_Clear>
       Button 580 5 4017 4018 1 0 4
    Else
       DText 530 7 0480 <Def.d_admin_<Src.CTag0.AccountLang>_Search>
@@ -109,8 +119,8 @@ For <Eval ((<CTag0.Dialog.Admin.Page> - 1) * 20) + 1> <Eval (<CTag0.Dialog.Admin
       DCroppeDText 45 <Local.Y> 120 20 <Local.Hue> <QVal (<Ref1.Account.Plevel> > 1)? (+):> <Ref1.Account>
       DCroppeDText 170 <Local.Y> 160 20 <Local.Hue> <QVal (<Ref1.Flags> & statf_incognito)? <Ref1.FindID.i_rune_incognito.Name> : <Ref1.Name>>
       DCroppeDText 310 <Local.Y> 120 20 <Local.Hue> <QVal (<Ref1.isOnline>)? <Ref1.Account.LastIP> : Offline>
-      DCroppeDText 420 <Local.Y> 120 20 <Local.Hue> <Ref1.Region.Name>
-      DCroppeDText 540 <Local.Y> 120 20 <Local.Hue> <Ref1.Account.Plevel> (<Def0.<Src.CTag0.AccountLang>_Admin_Plevel_<Eval <Ref1.Account.Plevel>>>)
+      DCroppeDText 420 <Local.Y> 120 20 <Local.Hue> <QVal (<Ref1.isOnline>)? <Ref1.Region.Name> : Offline>
+      DCroppeDText 540 <Local.Y> 120 20 <Local.Hue> <Ref1.Account.Plevel> (<Def.d_admin_<Src.CTag0.AccountLang>_Admin_Plevel_<Eval <Ref1.Account.Plevel>>>)
       Local.Y += 20
    Endif
 Endfor
@@ -139,6 +149,9 @@ On=3
 On=4
    ClearCTags Dialog.Admin
    admin
+
+On=5
+   Dialog d_SphereAdmin_function
 
 On=10 65535
    UID.<CTag.Dialog.Admin.C<Eval <ArgN>-10>>.Dialog d_SphereAdmin_PlayerTweak
@@ -205,7 +218,7 @@ For 0 (<Account.Chars>-1)
 Endfor
 
 DText 160 235 0c1 <Def.d_admin_<Src.CTag0.AccountLang>_Plevel>
-DText 300 235 0480 <Account.Plevel> (<Def0.<Src.CTag0.AccountLang>_Admin_Plevel_<Eval <Account.Plevel>>>)
+DText 300 235 0480 <Account.Plevel> (<Def.d_admin_<Src.CTag0.AccountLang>_Admin_Plevel_<Eval <Account.Plevel>>>)
 
 DText 160 255 0c1 <Def.d_admin_<Src.CTag0.AccountLang>_Client_Version>
 DText 300 255 <QVal (<isOnline>)? 0480 <Reportedcliver> (<f_Admin_GetClientType>) : 137 <Def.d_admin_<Src.CTag0.AccountLang>_Offline>>
@@ -334,8 +347,8 @@ DTextenTrylimited 235 410 122 15 0480 312 20 <Luck>
 
 DText 160 435 0c1 <Def.d_admin_<Src.CTag0.AccountLang>_Guilds>
 If <isPlayer>
-   If <memoryfindtype.memory_guild>
-      DText 235 435 0480 <memoryfindtype.memory_guild.link.Name>
+   If <MemoryFindType.memory_guild.isValid>
+      DText 235 435 0480 <MemoryFindType.memory_guild.Link.Name>
       Button 160 460 4007 4006 1 0 31
       DText 235 460 0c1 <Def.d_admin_<Src.CTag0.AccountLang>_Port_Guildstone>
    Else
@@ -535,7 +548,7 @@ For x 0 31
 End
 
 Button 5 330 4023 4025 1 0 51
-DText 40 330 0c1 Set All Flags
+DText 40 330 0c1 <Def.d_admin_<Src.CTag0.AccountLang>_Set_All_Flags>
 gumppictiled 5 355 142 21 87
 Checkertrans 7 357 138 17
 DTextenTrylimited 15 355 122 15 0480 511 20 <Flags>
@@ -696,7 +709,7 @@ On=42
 On=51
    Src.Flags=<Argtxt[511]>
    Dialog d_SphereAdmin_PlayerTweak 5
-   Src.Sysmessage @<def.tcolor_orange> <Def.d_admin_<Src.CTag0.AccountLang>_Skills_Sys> <Name> <Def.d_admin_<Src.CTag0.AccountLang>_Updated_Sys>
+   Src.Sysmessage @<def.tcolor_orange> <Def.d_admin_<Src.CTag0.AccountLang>_Flags_Sys> <Name> <Def.d_admin_<Src.CTag0.AccountLang>_Updated_Sys>
 
 On=52
    Local.UpdatexFlags = <Flags>&<Def0.Admin_UpdatexFlags>
@@ -719,7 +732,7 @@ On=52
    Elseif ((<Flags>&<Def0.Admin_UpdateFlags>) != <Local.UpdateFlags>)
       Update
    Elseif ((<Flags>&<Def0.Admin_ResendTooltipFlags>) != <Local.ResendTooltipFlags>)
-      ResendTtooltip
+      ResendTooltip
    Endif
    Dialog d_SphereAdmin_PlayerTweak 5
    Src.Sysmessage @<def.tcolor_orange> <Def.d_admin_<Src.CTag0.AccountLang>_Flags_Sys> <Name> <Def.d_admin_<Src.CTag0.AccountLang>_Updated_Sys>

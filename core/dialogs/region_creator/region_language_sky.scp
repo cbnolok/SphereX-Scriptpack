@@ -1,0 +1,46 @@
+//***********************************************************************************
+// SphereServer by: SphereServer development team and Menasoft.
+// www.sphereServer.net
+//***********************************************************************************
+// Save in UTF8 encoding
+//***********************************************************************************
+// Eranova
+// Multilanguage Region Creator
+// Created by Reflex. https://forum.spherecommunity.net/sshare.php?srt=1&uid=686
+// Reworked for a multilingual system  Golfin
+// Translated by Golfin
+//***********************************************************************************
+VERSION=X1
+
+[DEFNAME defs_d_Region_Record_Language_SKY]
+d_Region_SKY_Region_Record				"Región Kreator"
+d_Region_SKY_Region_Record_Notice			"Región Kreator - Poznámky"
+d_Region_SKY_Region_Record_Events			"Eventy a Flagy sú použité z východiskového nastavenia."
+d_Region_SKY_Region_Record_Flags			"Zvoľte a vymažte tie, ktoré nechcete."
+d_Region_SKY_Region_Record_File1			"V složke maps sa do súboru map_region_record.scp"
+d_Region_SKY_Region_Record_File2			"uloží vytvorené dáta. Vytvorený región skopíruj do"
+d_Region_SKY_Region_Record_File3			"príslušného máp súboru a ulož. Pre aktiváciu na"
+d_Region_SKY_Region_Record_File4			"šarde je potreba reštartovať sphere server!"
+d_Region_SKY_Top_Left					"Horný ľavý roh:"
+d_Region_SKY_Bottom_Right				"Dolný pravý roh:"
+d_Region_SKY_Area_Name					"Area Name:"
+d_Region_SKY_Name					"Name:"
+d_Region_SKY_Area_Group					"Group:"
+d_Region_SKY_Area_P					"P:"
+d_Region_SKY_Create					"Vytvoriť región"
+d_Region_SKY_Target_TopLeft				"Zameraj ľavú hornú pozíciu oblasti."
+d_Region_SKY_Target_BottomRight				"Zameraj pravú dolnú pozíciu oblasti."
+d_Region_SKY_Type_Area_Name				"Zadaj Area názov regiónu (Bez použitia medzier a diakritiky!)."
+d_Region_SKY_Type_Name					"Zadaj názov regiónu."
+d_Region_SKY_Type_Group					"Zadaj názov skupiny."
+d_Region_SKY_Target_P					"Zameraj pozícii, kde chceš mať súradnice P."
+d_Region_SKY_Enter_Area_Name				"Musíš zadať Area názov regiónu! "
+d_Region_SKY_Enter_Name					"Musíš zadať názov regiónu!"
+d_Region_SKY_Enter_Group				"Musíš zadať názov skupiny!"
+d_Region_SKY_No_Space					"Area názov regiónu nesmie obsahovať medzery!"
+d_Region_SKY_Area_Letters_Numbers			"Area názov regiónu môže obsahovať iba slová, čísla a podčiarkovník! "
+d_Region_SKY_No_Numbers					"Area názov regiónu nesmie obsahovať iba čísla, doplň tiež slovné názov! "
+d_Region_SKY_Used					"Tento názov regiónu je už použitý!"
+d_Region_SKY_Sys_Create					"Región sa ukladá do súboru /scripts/maps/sphere_map_region_record.scp..."
+
+[Eof]

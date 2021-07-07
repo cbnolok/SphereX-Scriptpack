@@ -12,7 +12,7 @@ VERSION=X1
 [DEFNAME admin_options]
 // If you do not want clients to see clients with a higher plevel that are
 // invisible (.invis) in the list, set this to 1
-Admin_Hidehighpriv 0
+Admin_Hidehighpriv 1
 
 // When a flag is set or unset, it is sometimes necessary for the character
 // to be updated for the new setting to take effect. The settings below
@@ -22,7 +22,10 @@ admin_updatexflags      statf_invisible|statf_insubstantial|statf_hidden
 admin_updateflags      statf_invul|statf_freeze|statf_stone|statf_hallucinating|statf_poisoned|statf_criminal|statf_nightsight|statf_hovering
 admin_resendtooltipflags   statf_incognito
 
-Admin_ReqPlevelSearch		4	// Plevel required to use search button
+Admin_GM_Function				1	// Accessing GM functions (Disable 0, Enable 1) 
+Admin_ReqPlevelSearch				4	// Plevel required to use search button
+World_Sysmessage_Color				03f	// Set color for world sysmessages (HEX format), 03f is bright green
+ATTENTION_Sysmessage_Color			044c	// Set color for ATTENTION sysmessages (HEX format), 044c is bright red - Hue.mul name "Me"
 
 [DEFNAME admin_strings]
 admin_resdisp_0					"Pre-T2A"
