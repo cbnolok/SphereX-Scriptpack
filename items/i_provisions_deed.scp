@@ -522,7 +522,7 @@ SUBSECTION=Vendor Deeds
 DESCRIPTION=Player Vendor
 ON=@DClick
    SRC.MESSAGE Your vendor has been created.
-   SERV.newnpc { c_h_vendor 1 c_h_vendor_f 1 }
+   SERV.newnpc { c_vendor 1 c_vendor_f 1 }
    REF1=<NEW>
    REF1.P=<SRC.P>
    SRC.UPDATE
@@ -537,7 +537,7 @@ ON=@DClick
    NEW.LAYER=layer_special
    NEW.CONT=<REF1>
    // get rid of the deed.
-   REMOVE
+   CONSUME
    RETURN 1
 
 [ITEMDEF i_deed_fount_br]
